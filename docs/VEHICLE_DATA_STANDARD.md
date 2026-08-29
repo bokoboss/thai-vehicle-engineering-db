@@ -96,6 +96,7 @@ Every turning observation must record its semantics.
   - BODY_PATH_OTHER
   - OEM_UNSPECIFIED
 - turning_load_state
+- turning_test_speed if stated
 - turning_direction if asymmetric
 - normalized_turning_radius_m
 - source_wording
@@ -107,6 +108,9 @@ Do not convert an unspecified OEM “minimum turning radius” into AVT curb-to-
 - steering_ratio
 - steering_ratio_type: FIXED / VARIABLE / UNKNOWN
 - steering_wheel_lock_to_lock_turns
+- avt_lock_to_lock_time_forward_s where known/selected
+- avt_lock_to_lock_time_reverse_s where known/selected
+- lock_to_lock_time_method / assumption
 - maximum_inner_road_wheel_angle_deg
 - maximum_outer_road_wheel_angle_deg
 - equivalent_center_steering_angle_deg
@@ -114,7 +118,7 @@ Do not convert an unspecified OEM “minimum turning radius” into AVT curb-to-
 - rear_wheel_max_angle_deg
 - steering_source_notes
 
-Lock-to-lock steering-wheel turns alone are insufficient to derive maximum road-wheel angle.
+Lock-to-lock steering-wheel turns alone are insufficient to derive maximum road-wheel angle. They are also not the same parameter as AVT lock-to-lock time: AVT defines lock-to-lock time as elapsed time from full steering lock in one direction to full lock in the opposite direction, and may use separate forward/reverse values.
 
 ### 4.6 Ground / vertical clearance
 - minimum_ground_clearance_mm
@@ -194,6 +198,8 @@ A source observation records the source literally before interpretation:
 - `raw_unit`
 - `raw_qualifier`
 - `raw_text_excerpt` limited to what is necessary for audit
+- source_reported_precision / significant digits where meaningful
+- measurement_or_extraction_uncertainty where known
 - page/section locator
 - extraction method: MANUAL / STRUCTURED / OCR / PARSER / OTHER
 - extracted_at
@@ -213,6 +219,7 @@ A normalized value has:
 - applicability to exact vehicle identity
 - status
 - evidence grade
+- numeric_precision / uncertainty representation where applicable
 - reviewer
 - reviewed_at
 
@@ -287,6 +294,29 @@ Conversions must be deterministic and tested.
 
 Do not round internally merely to match display precision.
 
+## 10.1 Geometry coordinate and datum standard
+
+Any point, polyline or polygon geometry must use an explicit vehicle-fixed reference frame.
+
+Default v1 convention for simple vehicles:
+- origin: ground-plane projection of the front axle centerline at the vehicle longitudinal centerline;
+- +X: rearward along the vehicle;
+- +Y: vehicle left when viewed in the forward travel direction;
+- +Z: upward;
+- units: mm.
+
+If source geometry uses another datum/axis convention, preserve that source convention and store the transformation used to normalize it.
+
+Every outline/profile asset must state:
+- datum/reference frame;
+- scale/unit;
+- load/ride-height state;
+- mirror/body inclusion;
+- source/derivation method;
+- uncertainty or drawing-scale limitation.
+
+The coordinate convention may be revised only as a breaking data-contract change.
+
 ## 11. Autodesk Vehicle Tracking mapping rules
 
 AVT fields are outputs from this database, not synonyms for OEM fields.
@@ -308,10 +338,17 @@ Only map a published turning observation to AVT curb-to-curb or wall-to-wall whe
 ### 11.3 Maximum steering angle
 AVT can calculate a maximum steering angle from an appropriate turning radius. If an authoritative turning radius is available and correctly classified, this is generally preferable to inventing a wheel angle from incomplete steering-wheel data.
 
-### 11.4 Effective wheelbase / axles
+### 11.4 Steering transition / lock-to-lock time
+AVT lock-to-lock time is a dynamic steering-rate input and is distinct from the number of steering-wheel turns lock-to-lock. Do not convert turns to seconds without an explicit driver/steering-rate assumption.
+
+If no defensible lock-to-lock time is available:
+- preserve it as unknown in the engineering database;
+- any AVT operational default or project assumption must be stored separately as an AVT scenario/model setting, not misrepresented as an OEM vehicle fact.
+
+### 11.5 Effective wheelbase / axles
 For simple two-axle passenger vehicles, actual front/rear axle geometry is generally sufficient as source geometry. Multi-axle/effective-axle behavior requires explicit AVT mapping rules and is deferred until that vehicle class is implemented.
 
-### 11.5 Body envelope
+### 11.6 Body envelope
 Store the real plan body outline where available. Overall width alone is a fallback envelope, not equivalent to an exact body polygon.
 
 Mirror inclusion must be explicit. A body envelope for physical wall-clearance checks may differ from the conventional swept body used for kerb/path design.
@@ -368,6 +405,7 @@ Deterministic validators should include:
 - verified/derived values require provenance;
 - derived values require rule version and input IDs;
 - estimated values require method and limitation;
+- measured/scaled values require precision or uncertainty metadata where reasonably determinable;
 - conflicting sources cannot be presented as unqualified verified values.
 
 ### Readiness
@@ -413,7 +451,9 @@ Autodesk Vehicle Tracking:
 - Glossary of Terms  
   https://help.autodesk.com/cloudhelp/2023/ENU/Autodesk-VehicleTracking-Help/files/GUID-A9F46388-F8AF-4389-B5A5-BDAB6C1E49AC.htm
 - Unit Details: Steering  
-  https://help.autodesk.com/cloudhelp/CHS/Autodesk-VehicleTracking-Help/files/GUID-AFC8272A-98A5-4AE2-BBB3-5D3818B5F539.htm
+  https://help.autodesk.com/cloudhelp/2022/ENU/Autodesk-VehicleTracking-Help/files/GUID-AFC8272A-98A5-4AE2-BBB3-5D3818B5F539.htm
+- Drawing Settings: Paths: Transitions  
+  https://help.autodesk.com/cloudhelp/2022/ENU/Autodesk-VehicleTracking-Help/files/GUID-FD56ED75-3D1A-42AA-AAF5-F6E164563D6F.htm
 - Unit Details: Unit  
   https://help.autodesk.com/cloudhelp/2022/ENU/Autodesk-VehicleTracking-Help/files/GUID-DB610206-15FF-4AA2-B2C5-07D4B28598ED.htm
 - Vehicle Libraries  
