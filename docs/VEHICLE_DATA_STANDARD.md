@@ -1,29 +1,34 @@
 # Vehicle Data Standard v1.0
 
-Status: Draft for foundation review  
-Date: 2026-08-29
+Status: Foundation candidate after Deep Research amendment  
+Date: 2026-08-30
 
 ## 1. Purpose
 
-Define how vehicle geometry, maneuverability, steering, tyre/wheel, vertical-clearance and provenance data are represented so the database can support engineering use without mixing source facts, interpretations and calculations.
+Define how vehicle identity, geometry, maneuverability, steering, tyre/wheel, vertical-clearance and provenance data are represented so the database can support engineering use without mixing source facts, interpretations, calculations or unresolved evidence.
 
 This document is normative for data semantics.
 
 ## 2. Core data model
 
-The standard separates five concepts:
+The standard separates:
 
 1. **Vehicle identity** — the exact engineering configuration the data applies to.
 2. **Source document** — a page, brochure, manual, dataset, drawing, regulatory record or measurement campaign.
 3. **Source observation** — what the source literally states or shows.
 4. **Normalized engineering value** — a value mapped to a controlled parameter definition/unit.
 5. **Derived result** — a calculated value produced from approved inputs and a versioned engineering rule.
+6. **Parameter assessment** — availability/research assessment when no defensible normalized value exists.
+7. **Conflict/preference decision** — an auditable resolution layer that never deletes conflicting evidence.
+8. **Geometry asset** — point/polyline/polygon/profile geometry with datum, role, fidelity and uncertainty.
+9. **Readiness result** — use-case-specific determination such as AVT-ready or ramp-screening-ready.
 
-A source observation is never overwritten by normalization or derivation.
+A source observation is never overwritten by normalization, derivation or conflict resolution.
 
 ## 3. Vehicle identity
 
 ### Required identity fields
+
 - `vehicle_id` — stable internal ID
 - `manufacturer`
 - `commercial_model`
@@ -37,128 +42,259 @@ A source observation is never overwritten by normalization or derivation.
 - `variant_trim`
 - `powertrain`
 - `drivetrain`
-- `door/body configuration`
-- `wheel_tyre_package` if geometry/manoeuvrability differs
+- `door/body_configuration`
+- `wheel_tyre_package` where engineering geometry/manoeuvrability differs
+- `equipment_package` where option-dependent geometry/steering differs
 - `source_identity_notes`
 
 ### Identity rule
-Two records must be separate when any geometry, tyre, ride-height, steering or turning parameter relevant to engineering use can differ materially.
 
-Do not merge records solely because the Thai commercial model name is the same.
+Two records must be separate when geometry, tyre fitment, ride height, steering, turning behaviour or body configuration relevant to engineering use differs materially.
+
+Commercial model name alone is never a sufficient engineering identity.
+
+Shared platform/family evidence may be referenced through explicit relationships; it must not be copied as if it were exact-configuration evidence unless equivalence is demonstrated.
 
 ## 4. Parameter families
 
-### 4.1 Overall body geometry
-- overall_length_mm
-- overall_width_body_mm
-- overall_width_including_mirrors_mm
-- overall_width_mirrors_folded_mm
-- overall_height_mm
+### 4.1 Overall body geometry and width semantics
+
+Store the source-reported value before assigning a normalized envelope.
+
+- `overall_length_mm`
+- `overall_height_mm`
+- `overall_width_reported_mm`
+- `width_envelope_definition`:
+  - BODY_EXCLUDING_MIRRORS
+  - INCLUDING_MIRRORS_OPEN
+  - INCLUDING_MIRRORS_FOLDED
+  - BODY_AND_FIXED_APPENDAGES
+  - OEM_UNSPECIFIED
+  - OTHER
+- `overall_width_body_mm` only when body-only semantics are established
+- `overall_width_including_mirrors_mm` only when mirror-open semantics are established
+- `overall_width_mirrors_folded_mm` only when folded semantics are established
 - roof/antenna inclusion note
-- body_outline_plan geometry when available
-- body_outline_side geometry when available
+
+An OEM field labelled only “width” must not silently become body width.
 
 ### 4.2 Longitudinal axle geometry
-- wheelbase_actual_mm
-- front_overhang_mm
-- rear_overhang_mm
-- front_axle_to_datum_mm
-- rear_axle_to_datum_mm
-- axle_group geometry for multi-axle vehicles
+
+- `wheelbase_actual_mm`
+- `front_overhang_mm`
+- `rear_overhang_mm`
+- `front_axle_to_datum_mm`
+- `rear_axle_to_datum_mm`
+- axle-group geometry for multi-axle vehicles
+- effective axle/wheelbase values only through an explicit AVT-specific mapping or other controlled engineering model
 
 ### 4.3 Lateral axle / tyre geometry
-Keep OEM axle-center / tread data separate from AVT outer-face track.
 
-- oem_front_tread_or_track_mm
-- oem_rear_tread_or_track_mm
-- oem_track_definition
-- front_tyre_size
-- rear_tyre_size
-- front_nominal_section_width_mm
-- rear_nominal_section_width_mm
-- wheel_rim_front
-- wheel_rim_rear
-- tyre_outer_diameter_mm where verified/derived
-- avt_front_outer_face_track_mm
-- avt_rear_outer_face_track_mm
-- avt_track_method
+OEM “tread/track” semantics and AVT track semantics are separate.
 
-### 4.4 Maneuverability
-Every turning observation must record its semantics.
+- `oem_front_tread_or_track_mm`
+- `oem_rear_tread_or_track_mm`
+- `oem_track_definition`:
+  - TYRE_CENTERLINE
+  - WHEEL_CENTERLINE
+  - OUTER_TYRE_FACES
+  - INNER_TYRE_FACES
+  - OEM_UNSPECIFIED
+  - OTHER
+- `front_tyre_size`
+- `rear_tyre_size`
+- `front_nominal_section_width_mm`
+- `rear_nominal_section_width_mm`
+- `wheel_rim_front`
+- `wheel_rim_rear`
+- `nominal_unloaded_tyre_radius_mm` where derived/verified
+- `static_loaded_tyre_radius_front_mm`
+- `static_loaded_tyre_radius_rear_mm`
+- load/pressure applicability for static-loaded radius
+- `avt_front_outer_face_track_mm`
+- `avt_rear_outer_face_track_mm`
+- `avt_track_method`
 
-- turning_value_raw
-- turning_unit_raw
-- turning_radius_or_diameter
-- turning_reference:
+Nominal tyre section width alone is not sufficient to establish mounted outer-face track for `AVT_READY`.
+
+### 4.4 Maneuverability / turning
+
+Every turning observation must preserve radius/diameter and reference-envelope semantics.
+
+- `turning_value_raw`
+- `turning_unit_raw`
+- `turning_radius_or_diameter`:
+  - RADIUS
+  - DIAMETER
+  - OEM_UNSPECIFIED
+- `turning_reference`:
   - CURB_TO_CURB
   - WALL_TO_WALL
   - WHEEL_PATH_OTHER
   - BODY_PATH_OTHER
   - OEM_UNSPECIFIED
-- turning_load_state
-- turning_test_speed if stated
-- turning_direction if asymmetric
-- normalized_turning_radius_m
-- source_wording
+- `turning_axle_scope`:
+  - ALL_AXLES
+  - ACTIVE_AXLES
+  - OEM_UNSPECIFIED
+  - OTHER
+- `turning_wall_envelope_scope`:
+  - BODY_ONLY
+  - BODY_AND_LOADS
+  - OEM_UNSPECIFIED
+  - NOT_APPLICABLE
+- `turning_load_condition_id`
+- `turning_test_speed` if stated
+- `turning_direction` if asymmetric
+- `normalized_turning_radius_m`
+- source wording
 
-Do not convert an unspecified OEM “minimum turning radius” into AVT curb-to-curb merely because that is common industry usage.
+An OEM “minimum turning radius” with no envelope definition remains `OEM_UNSPECIFIED`.
 
 ### 4.5 Steering
-- steering_system
-- steering_ratio
-- steering_ratio_type: FIXED / VARIABLE / UNKNOWN
-- steering_wheel_lock_to_lock_turns
-- avt_lock_to_lock_time_forward_s where known/selected
-- avt_lock_to_lock_time_reverse_s where known/selected
-- lock_to_lock_time_method / assumption
-- maximum_inner_road_wheel_angle_deg
-- maximum_outer_road_wheel_angle_deg
-- equivalent_center_steering_angle_deg
-- rear_wheel_steering_present
-- rear_wheel_max_angle_deg
-- steering_source_notes
 
-Lock-to-lock steering-wheel turns alone are insufficient to derive maximum road-wheel angle. They are also not the same parameter as AVT lock-to-lock time: AVT defines lock-to-lock time as elapsed time from full steering lock in one direction to full lock in the opposite direction, and may use separate forward/reverse values.
+Vehicle steering facts and AVT steering-model inputs remain distinct.
 
-### 4.6 Ground / vertical clearance
-- minimum_ground_clearance_mm
-- clearance_load_state:
-  - UNLADEN
-  - KERB
-  - DESIGN_LOAD
-  - GVW
-  - OEM_UNSPECIFIED
-- clearance_reference_point / component
-- front_low_point geometry
-- underbody profile geometry
-- rear_low_point geometry
-- suspension/ride-height mode
-- air_suspension state if applicable
+- `steering_system`
+- `steering_ratio`
+- `steering_ratio_type`: FIXED / VARIABLE / UNKNOWN
+- `steering_wheel_lock_to_lock_turns`
+- `maximum_inner_road_wheel_angle_deg`
+- `maximum_outer_road_wheel_angle_deg`
+- `virtual_center_steering_angle_deg`
+- AVT adapter output: `avt_maximum_steering_angle_deg`
+- `avt_lock_to_lock_time_forward_s` where known/selected
+- `avt_lock_to_lock_time_reverse_s` where known/selected
+- `lock_to_lock_time_method_or_assumption`
+- steering source notes
 
-### 4.7 Ramp-related geometry
-- approach_angle_deg
-- departure_angle_deg
-- breakover_angle_deg
-- ramp_angle_source_or_method
-- contact/reference points
-- load state
-- vehicle ride-height mode
+Steering-wheel turns lock-to-lock cannot be used to infer maximum road-wheel angle or AVT lock-to-lock time without additional evidence/assumptions.
 
-A true approach/departure/breakover angle must not be labelled VERIFIED if calculated only from global minimum ground clearance and a wheelbase/overhang when the actual limiting body/underbody points are unknown.
+#### Rear / secondary steering
 
-An idealized screening angle may be stored as a separate derived parameter only if clearly named and documented as a simplified model.
+Represent rear steering by axle and linkage behaviour, not only a boolean:
 
-### 4.8 Mass / loading (supporting)
-- kerb_mass_kg
-- gross_vehicle_mass_kg
-- front/rear axle loads where available
-- passenger/load assumption
+- `steered_axle_id`
+- `steering_role`: PRIMARY / SECONDARY / LINKED
+- `linkage_type`: FIXED_RATIO / VARIABLE_RATIO / FUNCTION / MODE_DEPENDENT / UNKNOWN
+- `max_steering_angle_deg`
+- `phase_behavior`: OPPOSITE_PHASE / SAME_PHASE / MODE_OR_SPEED_DEPENDENT / UNKNOWN
+- `angle_ratio_or_function`
+- speed/mode applicability
+- evidence/source
 
-These are supporting fields for clearance/load-state interpretation and future analysis; they are not mandatory for the initial swept-path MVP.
+### 4.6 Clearance taxonomy
 
-## 5. Source document model
+Do not collapse genuinely different clearance concepts into one generic minimum.
+
+- `clearance_value_mm`
+- `clearance_type`:
+  - OEM_MINIMUM_UNSPECIFIED
+  - RUNNING_CLEARANCE
+  - BETWEEN_AXLES
+  - FRONT_AXLE
+  - REAR_AXLE
+  - DIFFERENTIAL
+  - BATTERY_PACK
+  - COMPONENT_SPECIFIC
+  - OTHER
+- `clearance_component_or_reference`
+- `load_condition_id`
+- suspension/ride-height applicability
+- air-suspension state where applicable
+
+### 4.7 Structured load condition
+
+A reusable load-condition record may include:
+
+- mass basis: UNLADEN / KERB / OEM_LADEN / DESIGN_LOAD / GVW / OTHER
+- total mass where known
+- occupants/payload assumption
+- axle loads where known
+- tyre pressure where relevant
+- suspension / ride-height mode
+- OEM raw wording
+- source/evidence
+
+### 4.8 Ramp-related angles
+
+Separate result classes by semantics.
+
+#### OEM published
+- `oem_published_approach_angle_deg`
+- `oem_published_departure_angle_deg`
+- `oem_published_breakover_angle_deg`
+
+#### Geometry-derived physical
+- `geometry_derived_approach_angle_deg`
+- `geometry_derived_departure_angle_deg`
+- `geometry_derived_breakover_angle_deg`
+
+These require actual relevant lower-envelope/contact geometry, axle/tyre geometry, static-loaded tyre radius and load/ride-height state sufficient for the chosen definition.
+
+#### Engineering screening
+- `screening_front_contact_angle_deg`
+- `screening_rear_contact_angle_deg`
+- `screening_breakover_angle_deg`
+- `screening_breakover_symmetric_angle_deg`
+
+Screening outputs must never populate OEM-published or geometry-derived parameter codes.
+
+### 4.9 Mass / loading
+
+- kerb mass
+- gross vehicle mass
+- axle loads where available
+- passenger/payload assumptions
+- source/load-state semantics
+
+## 5. Geometry assets
+
+Every point/polyline/polygon/profile must declare a role.
+
+### Geometry roles
+
+- `PLAN_BODY_ENVELOPE`
+- `AVT_PLAN_PROFILE`
+- `SIDE_SILHOUETTE`
+- `LONGITUDINAL_LOWER_ENVELOPE`
+- `UNDERBODY_LOW_POINTS`
+- `TIRE_CIRCLE`
+- `AXLE_DATUM_GEOMETRY`
+- `OTHER`
+
+A side silhouette is not equivalent to a longitudinal lower interference envelope.
+
+### Coordinate convention
+
+Default v1 vehicle-fixed reference frame for simple vehicles:
+
+- origin: ground-plane projection of the front axle centerline at the vehicle longitudinal centerline
+- +X: rearward along the vehicle
+- +Y: vehicle left when viewed in the forward travel direction
+- +Z: upward
+- units: mm
+
+If a source uses another datum, preserve the source convention and store the transformation used to normalize it.
+
+### Geometry metadata
+
+Each asset must state:
+
+- datum/reference frame
+- scale/unit
+- load/ride-height state
+- body/mirror inclusion
+- geometry role
+- `geometry_method`: OEM_CAD / OEM_DIMENSION_DRAWING / SCALED_DRAWING / PHYSICAL_SURVEY / DERIVED / OTHER
+- `geometry_fidelity` or equivalent quality classification
+- source/derivation method
+- uncertainty/drawing-scale limitation
+
+## 6. Source document model
 
 Each source has:
+
 - `source_id`
 - title
 - publisher/authority
@@ -167,7 +303,7 @@ Each source has:
 - publication/model year
 - URL
 - retrieved_at
-- local_snapshot_reference if legally/operationally retained
+- local snapshot reference where legally/operationally retained
 - document fingerprint/hash where retained
 - page/section
 - access/licensing notes
@@ -175,18 +311,19 @@ Each source has:
 - archival status
 
 ### Source authority classes
-- `REGULATORY_OFFICIAL`
-- `OEM_THAILAND`
-- `OEM_REGIONAL_GLOBAL`
-- `OEM_SERVICE_TECHNICAL`
-- `OEM_HOMOLOGATION_CERTIFICATION`
-- `REPUTABLE_SECONDARY`
-- `OTHER_SECONDARY`
-- `PHYSICAL_MEASUREMENT`
 
-Authority class does not by itself determine confidence. Exact applicability and evidence method also matter.
+- REGULATORY_OFFICIAL
+- OEM_THAILAND
+- OEM_REGIONAL_GLOBAL
+- OEM_SERVICE_TECHNICAL
+- OEM_HOMOLOGATION_CERTIFICATION
+- REPUTABLE_SECONDARY
+- OTHER_SECONDARY
+- PHYSICAL_MEASUREMENT
 
-## 6. Source observation model
+Authority class alone never determines engineering confidence.
+
+## 7. Source observation model
 
 A source observation records the source literally before interpretation:
 
@@ -197,67 +334,77 @@ A source observation records the source literally before interpretation:
 - `raw_value`
 - `raw_unit`
 - `raw_qualifier`
-- `raw_text_excerpt` limited to what is necessary for audit
-- source_reported_precision / significant digits where meaningful
-- measurement_or_extraction_uncertainty where known
+- minimal audit excerpt where needed
+- source-reported precision/significant digits
+- measurement/extraction uncertainty where known
 - page/section locator
 - extraction method: MANUAL / STRUCTURED / OCR / PARSER / OTHER
 - extracted_at
 - extractor/reviewer
 - ambiguity note
 
-Where a source is a drawing, the observation may be a dimension annotation or controlled measurement rather than text.
+## 8. Orthogonal value/evidence state
 
-## 7. Normalized engineering value model
+Do not use one mutually exclusive `status` enum to represent method, conflict, review and availability.
 
-A normalized value has:
-- `parameter_code`
-- canonical value
-- canonical unit
-- source observation(s)
-- normalization rule/version
-- applicability to exact vehicle identity
-- status
-- evidence grade
-- numeric_precision / uncertainty representation where applicable
-- reviewer
-- reviewed_at
+A normalized/assessed parameter shall be able to express independent dimensions such as:
 
-### Status
-- VERIFIED_PUBLISHED
-- VERIFIED_MEASURED
+### Evidence method
+- PUBLISHED
+- MEASURED
 - DERIVED
 - ESTIMATED
+- NONE
+
+### Resolution state
+- UNCONTESTED
 - CONFLICTING
-- UNKNOWN
-- NOT_APPLICABLE
+- PREFERRED_WITH_CONFLICT
 - SUPERSEDED
+- NOT_APPLICABLE
 
-## 8. Evidence quality model
+### Verification state
+- UNREVIEWED
+- REVIEWED
+- VERIFIED
+- REJECTED
 
-Evidence quality is evaluated on three independent axes.
+### Availability state
+- AVAILABLE
+- UNKNOWN
+- NOT_FOUND_AFTER_SEARCH
+- NOT_APPLICABLE
 
-### 8.1 Authority
-How authoritative is the source for the parameter?
+This allows, for example:
 
-### 8.2 Applicability
+> PUBLISHED + CONFLICTING + REVIEWED + AVAILABLE
+
+without erasing any dimension of the evidence state.
+
+A separate `parameter_assessment` may record unknown reason, source families searched and review date when no normalized numeric value exists.
+
+## 9. Evidence quality model
+
+Evaluate at least three independent axes:
+
+### Authority
+How authoritative is the source for this parameter?
+
+### Applicability
 - EXACT_CONFIGURATION
 - SAME_GEOMETRY_CONFIRMED
 - SAME_GENERATION_UNCONFIRMED_VARIANT
 - ADJACENT_MARKET_UNCONFIRMED
 - UNKNOWN_APPLICABILITY
 
-### 8.3 Evidence method
-- PUBLISHED
-- MEASURED
-- DERIVED
-- ESTIMATED
+### Evidence method
+PUBLISHED / MEASURED / DERIVED / ESTIMATED
 
-### Display evidence grade
-A human-readable grade may be generated from the three axes, but the underlying axes remain stored.
+A human-readable grade may be generated, but underlying dimensions must remain stored.
 
 Suggested display grades:
-- A1 — primary/official, exact configuration, published or regulatory
+
+- A1 — primary/official, exact configuration, published/regulatory
 - A2 — OEM/official, same geometry confirmed
 - A3 — strong technical/homologation/service evidence with confirmed applicability
 - B — controlled engineering derivation from A-grade inputs
@@ -265,198 +412,267 @@ Suggested display grades:
 - D — estimate/inference/image scaling
 - M — documented physical measurement
 
-The grade must never hide the underlying authority/applicability/method metadata.
-
-## 9. Conflict policy
+## 10. Conflict policy
 
 Multiple observations may map to the same parameter.
 
 When values conflict:
+
 1. retain all observations;
-2. mark the normalized parameter CONFLICTING;
-3. compare identity, market, model year, units, load state and parameter definition;
-4. resolve only with documented rationale;
-5. never delete the losing evidence solely because another source was selected.
+2. retain evidence method for each observation/value;
+3. mark the resolution state as conflicting;
+4. compare identity, market, model year, units, load condition and parameter definition;
+5. resolve only with documented rationale;
+6. never delete losing evidence solely because another source becomes preferred.
 
-A selected/preferred value must reference the decision record or rule used.
+A preferred value must reference the decision record or rule used.
 
-## 10. Unit policy
+## 11. Unit and precision policy
 
 Canonical internal units:
+
 - length: mm
-- radius: m for user-facing turning radius; mm is permitted internally if consistent
+- turning radius: m user-facing; a consistent internal unit may be used
 - angle: degrees
 - mass: kg
 
-Always preserve raw units.
+Always preserve raw units and reported precision.
 
 Conversions must be deterministic and tested.
 
 Do not round internally merely to match display precision.
 
-## 10.1 Geometry coordinate and datum standard
+Measured/scaled/derived values must carry uncertainty/precision metadata where reasonably determinable.
 
-Any point, polyline or polygon geometry must use an explicit vehicle-fixed reference frame.
+## 12. Autodesk Vehicle Tracking mapping rules
 
-Default v1 convention for simple vehicles:
-- origin: ground-plane projection of the front axle centerline at the vehicle longitudinal centerline;
-- +X: rearward along the vehicle;
-- +Y: vehicle left when viewed in the forward travel direction;
-- +Z: upward;
-- units: mm.
+AVT fields are adapter outputs, not synonyms for OEM fields.
 
-If source geometry uses another datum/axis convention, preserve that source convention and store the transformation used to normalize it.
+### 12.1 Wheel track
 
-Every outline/profile asset must state:
-- datum/reference frame;
-- scale/unit;
-- load/ride-height state;
-- mirror/body inclusion;
-- source/derivation method;
-- uncertainty or drawing-scale limitation.
-
-The coordinate convention may be revised only as a breaking data-contract change.
-
-## 11. Autodesk Vehicle Tracking mapping rules
-
-AVT fields are outputs from this database, not synonyms for OEM fields.
-
-### 11.1 Wheel track
-Autodesk Vehicle Tracking defines wheel track for tyred wheels as the distance between the outer faces of the outermost tyres on an axle.
+AVT wheel track for a tyred axle is based on the outer faces of the outermost tyres.
 
 Therefore:
-- OEM tread/track-center data is stored separately.
-- It must not be copied directly into `avt_*_outer_face_track_mm`.
-- A derived outer-face track may be computed only under an explicit tyre-geometry rule and shall remain DERIVED.
-- Nominal tyre section width is not automatically equivalent to actual mounted section width; derivation uncertainty must be documented.
 
-### 11.2 Turning radius
-AVT supports maneuverability input using curb-to-curb radius, wall-to-wall radius or steering/wheel angle.
+- OEM tread/centerline track remains separate.
+- Direct AVT track requires source evidence explicitly matching outer-face semantics.
+- A valid derived AVT track requires explicit mounted wheel/tyre geometry sufficient to establish outer-face position.
+- OEM centreline track + nominal tyre section width may be retained only as an estimated/screening derivation.
+- That nominal-width derivation alone must fail `AVT_READY`.
 
-Only map a published turning observation to AVT curb-to-curb or wall-to-wall when the source definition supports that mapping.
+### 12.2 Turning radius
 
-### 11.3 Maximum steering angle
-AVT can calculate a maximum steering angle from an appropriate turning radius. If an authoritative turning radius is available and correctly classified, this is generally preferable to inventing a wheel angle from incomplete steering-wheel data.
+Only map to AVT curb-to-curb when curb semantics and required axle scope are established.
 
-### 11.4 Steering transition / lock-to-lock time
-AVT lock-to-lock time is a dynamic steering-rate input and is distinct from the number of steering-wheel turns lock-to-lock. Do not convert turns to seconds without an explicit driver/steering-rate assumption.
+Only map to AVT wall-to-wall when wall semantics and required body/body+loads envelope scope are established.
 
-If no defensible lock-to-lock time is available:
-- preserve it as unknown in the engineering database;
-- any AVT operational default or project assumption must be stored separately as an AVT scenario/model setting, not misrepresented as an OEM vehicle fact.
+Unknown scope fails closed.
 
-### 11.5 Effective wheelbase / axles
-For simple two-axle passenger vehicles, actual front/rear axle geometry is generally sufficient as source geometry. Multi-axle/effective-axle behavior requires explicit AVT mapping rules and is deferred until that vehicle class is implemented.
+### 12.3 Steering angle
 
-### 11.6 Body envelope
-Store the real plan body outline where available. Overall width alone is a fallback envelope, not equivalent to an exact body polygon.
+Keep distinct:
 
-Mirror inclusion must be explicit. A body envelope for physical wall-clearance checks may differ from the conventional swept body used for kerb/path design.
+- actual inner/outer road-wheel angles
+- virtual center steering angle
+- AVT Maximum Steering Angle adapter output
+- steering-wheel turns
 
-## 12. Controlled derivations
+No implicit conversion between them.
 
-Each derivation rule shall define:
+### 12.4 Lock-to-lock time
+
+AVT lock-to-lock time is a steering-transition/driver characteristic in seconds, distinct from steering-wheel revolutions.
+
+If no defensible time exists, retain unknown. A project/simulation assumption is stored as an AVT scenario/model setting, not as an OEM fact.
+
+### 12.5 Rear steering
+
+AVT mapping for linked/secondary steering must be based on explicit axle/linkage behaviour. A simple `rear_steering_present=true` is insufficient for an AVT-ready multi-steer record.
+
+### 12.6 Effective wheelbase / axles
+
+For simple two-axle vehicles, actual front/rear axle geometry is generally the source basis.
+
+Multi-axle/effective-axle behaviour requires an explicit AVT mapping rule and is deferred until those classes are implemented.
+
+### 12.7 Body envelope
+
+Store real plan geometry where available.
+
+Overall width alone is a fallback envelope, not an exact body polygon.
+
+Mirror inclusion must be explicit.
+
+### 12.8 AVT integration levels
+
+- Level 0 — evidence-backed engineering data sheet: supported
+- Level 1 — AVT input preparation sheet: supported
+- Level 2 — assisted/manual Vehicle Wizard/library workflow: supported
+- Level 3 — automated ATL/ATX or equivalent exchange: research/installed-environment experiment gate
+- Level 4 — company library management: manual/shared workflow plausible; automation unproven
+
+Do not claim an open ATL/ATX serialization format or supported external writer until verified.
+
+## 13. Controlled derivations
+
+Each rule shall define:
+
 - `derivation_rule_id`
 - formula
 - version
-- required parameters
+- required parameter IDs
 - prohibited/missing conditions
 - units
-- output parameter
+- output parameter code
 - uncertainty classification
 - test cases
 - source/reference basis
+- validity domain
 
-Examples of acceptable controlled derivations:
-- unit conversion;
-- overall front+rear overhang check: `L - wheelbase`;
-- nominal tyre diameter from standardized tyre size as a labelled nominal derived value;
-- AVT outer-face track approximation from centerline tread + tyre width only if the method is explicitly labelled approximate/derived.
+Examples acceptable in principle:
 
-Examples that require special caution:
-- true breakover angle from only wheelbase + minimum ground clearance;
-- approach/departure angle from global clearance;
-- max road-wheel angle from steering-wheel lock-to-lock;
-- wall-to-wall radius from curb-to-curb without body geometry.
+- unit conversion
+- front + wheelbase + rear overhang consistency check
+- nominal unloaded tyre radius from standard tyre-size notation, explicitly labelled nominal
+- screening ramp angles under explicit simplified geometry
+- AVT outer-face track only where actual mounted geometry is sufficiently defined
 
-These shall not be promoted to verified engineering values without adequate geometry.
+Examples that must fail closed without adequate geometry:
 
-## 13. Quality checks
+- true breakover angle from wheelbase + generic ground clearance
+- true approach/departure angle from generic clearance + overhang
+- maximum road-wheel angle from steering-wheel turns
+- wall-to-wall radius from curb-to-curb without body geometry
+- AVT-ready outer-face track from undefined OEM tread + nominal tyre section width
 
-Deterministic validators should include:
+## 14. Ramp / vertical-clearance methodology boundary
+
+### Evidence levels
+
+- **Level A — OEM published:** preserve the exact OEM physical-angle claim and applicability.
+- **Level B — Geometry-derived physical:** requires actual relevant lower-envelope/contact geometry, axle/tyre geometry, static-loaded tyre radius and load/ride-height state.
+- **Level C — Engineering screening:** simplified calculation with explicit assumptions and screening-specific parameter names.
+- **Level D — Insufficient evidence:** no defensible numeric result.
+
+### Future detailed ramp check
+
+A routine future 2D longitudinal check may use:
+
+- axle centers
+- static-loaded tyre radius
+- wheelbase/axle positions
+- front lower envelope
+- between-axle lower envelope
+- rear lower envelope
+- explicit datum
+- road/ramp vertical-alignment profile
+- load/ride-height state
+- geometry uncertainty
+
+It may report CLEAR / INTERFERENCE / INDETERMINATE_WITH_UNCERTAINTY.
+
+A 2D model is not proof where crossfall, diagonal approach, articulation, suspension dynamics, lateral underbody variation or 3D obstructions control.
+
+No ramp solver is part of Phase 0.
+
+## 15. Deterministic quality checks
 
 ### Identity
-- no overlapping duplicate exact configurations without an explicit relationship;
-- model-year ranges valid;
-- market set.
+- no unresolved duplicate exact configurations
+- valid model-year ranges
+- market set
+- option/wheel-package differences preserved where material
 
 ### Geometry
-- overall_length > wheelbase for normal road vehicles;
-- if both overhangs are verified: front + wheelbase + rear approximately equals overall length within defined tolerance;
-- positive widths/heights/tracks;
-- tyre size parse validity.
+- positive physical dimensions
+- wheelbase less than overall length for normal passenger vehicles
+- verified front + wheelbase + rear approximately equals overall length within declared tolerance
+- geometry asset role/datum/fidelity present
+
+### Width
+- OEM-unspecified width cannot populate a body-only or mirror-specific field silently
 
 ### Turning
-- radius/diameter semantics explicit or OEM_UNSPECIFIED;
-- normalized radius > 0;
-- no silent factor-of-two conversion without radius/diameter evidence.
+- radius/diameter semantics explicit or unknown
+- curb axle scope preserved
+- wall envelope scope preserved
+- no factor-of-two conversion without radius/diameter evidence
+
+### Steering
+- steering-wheel turns, actual wheel angle and virtual-center angle remain separate
+- rear-steer linkage required before AVT-ready rear-steer mapping
+
+### Clearance
+- clearance type and load applicability preserved
+- between-axles/axle/battery/running clearances remain distinct
 
 ### Evidence
-- verified/derived values require provenance;
-- derived values require rule version and input IDs;
-- estimated values require method and limitation;
-- measured/scaled values require precision or uncertainty metadata where reasonably determinable;
-- conflicting sources cannot be presented as unqualified verified values.
+- published/derived/measured/estimated method independent from conflict/review/availability
+- derived values require rule version + input lineage
+- measured/scaled values carry uncertainty where reasonably determinable
+- conflicting evidence cannot be presented as unqualified uncontested fact
 
-### Readiness
-AVT_READY and ramp-related readiness shall be computed from explicit rule sets and fail closed when required semantics are unknown.
+### AVT readiness
+Fail closed if required track, turning-envelope, steering or body semantics are unresolved.
 
-## 14. DLT / Thailand inventory role
+### Ramp readiness
+Fail closed if a geometry-derived physical angle lacks static-loaded tyre/contact/lower-envelope evidence required by its rule.
 
-The Department of Land Transport / MOT Data Catalog vehicle registration datasets may be used to:
-- discover commercial makes/models appearing in Thai registration data;
-- prioritize common models;
-- support market-presence metadata.
+## 16. Thailand inventory / DLT role
 
-They shall not be treated as authoritative geometry/configuration identifiers without further resolution.
+DLT/MOT registration data may support:
 
-Reference:
-https://datagov.mot.go.th/dataset/dataset_stat_1_001
+- discovery of makes/models appearing in Thailand
+- market-presence metadata
+- commercial-model prioritization
 
-## 15. Source snapshots and persistence
+It is not an exact geometry/configuration identifier.
+
+Generation, chassis, trim, powertrain, wheel package and engineering applicability require separate resolution.
+
+## 17. Source snapshots and persistence
 
 Because OEM pages and brochures change:
-- record retrieval date;
-- retain source title/publisher/URL/page;
-- retain a local snapshot or document fingerprint where legally and operationally appropriate;
-- do not rely on a bare URL as the only provenance record.
 
-Large source archives should not be committed to Git by default. Git should contain metadata, schemas, scripts, normalized/curated small data and audit records; source storage strategy is separate.
+- record retrieval date
+- retain source title/publisher/URL/page
+- retain local snapshot or document fingerprint where legally/operationally appropriate
+- do not rely on a bare URL as the only provenance
 
-## 16. Versioning
+Large source archives should not be committed to Git by default.
 
-- Data standard uses semantic document versions.
-- Schema migrations are versioned.
-- Derivation rules are versioned independently.
-- A normalized value must be reproducible against its source observations and rule versions.
-- Changing a parameter definition is a breaking data-contract change and requires migration/review.
+## 18. Versioning
 
-## 17. Authoritative AVT references used for this standard
+- data standard is versioned
+- schema migrations are versioned
+- derivation rules are independently versioned
+- AVT adapter/mapping rules are independently versioned
+- changing a parameter definition is a breaking contract change requiring migration/review
+- normalized/derived results must remain reproducible from evidence and rule versions
 
-Autodesk Vehicle Tracking:
-- Vehicle Wizard: Maneuverability  
-  https://help.autodesk.com/cloudhelp/2023/ENU/Autodesk-VehicleTracking-Help/files/GUID-ECD33096-4BA8-495D-BA86-A74882E63CE2.htm
-- Unit Details: Front and Rear Axles  
-  https://help.autodesk.com/cloudhelp/2022/ENU/Autodesk-VehicleTracking-Help/files/GUID-49418022-88CD-485E-8617-9E04E7077E83.htm
-- Glossary of Terms  
-  https://help.autodesk.com/cloudhelp/2023/ENU/Autodesk-VehicleTracking-Help/files/GUID-A9F46388-F8AF-4389-B5A5-BDAB6C1E49AC.htm
-- Unit Details: Steering  
-  https://help.autodesk.com/cloudhelp/2022/ENU/Autodesk-VehicleTracking-Help/files/GUID-AFC8272A-98A5-4AE2-BBB3-5D3818B5F539.htm
-- Drawing Settings: Paths: Transitions  
-  https://help.autodesk.com/cloudhelp/2022/ENU/Autodesk-VehicleTracking-Help/files/GUID-FD56ED75-3D1A-42AA-AAF5-F6E164563D6F.htm
-- Unit Details: Unit  
-  https://help.autodesk.com/cloudhelp/2022/ENU/Autodesk-VehicleTracking-Help/files/GUID-DB610206-15FF-4AA2-B2C5-07D4B28598ED.htm
-- Vehicle Libraries  
-  https://help.autodesk.com/cloudhelp/2024/ENU/Autodesk-VehicleTracking-Help/files/GUID-6F7BD13F-9363-40EC-AF22-A56D2270C410.htm
+## 19. Foundation research outcome incorporated
 
-Retrieved/verified for this foundation on 2026-08-29.
+Deep Research completed 2026-08-30 returned **GO WITH CONDITIONS** and required amendment of the foundation before schema implementation.
+
+The must-fix semantic conditions incorporated here are:
+
+1. orthogonal evidence/value state
+2. exact AVT curb/wall turning scope
+3. distinct AVT Maximum Steering Angle vs actual wheel angle
+4. stricter AVT outer-face-track readiness rule
+5. structured clearance taxonomy
+6. structured load condition + static-loaded tyre radius
+7. explicit lower-envelope geometry roles and screening-angle parameter names
+8. richer rear-steering/linkage semantics
+9. structured width/mirror semantics
+
+## 20. Key external reference families
+
+Authoritative implementation/research records should cite the exact version/page used. Foundation research relied principally on:
+
+- Autodesk Vehicle Tracking official Help: maneuverability, axle/track, steering, path transitions and vehicle-library workflows
+- Thailand DLT/MOT open-data catalog
+- Thai/global OEM primary specifications and owner/technical documentation
+- rigorous geometric definitions of approach/departure/breakover/static-loaded-radius from U.S. regulatory material as an engineering-definition reference, **not as Thai parking-design law**
+
+The repository must preserve exact source citations at the observation/decision level rather than treating this summary list as parameter evidence.
