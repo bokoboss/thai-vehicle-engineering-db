@@ -1,0 +1,428 @@
+{
+  "pack_id": "pilot-source-pack-01",
+  "purpose": "Real-source semantic fixtures before Phase 0 implementation",
+  "retrieved_at": "2026-08-30",
+  "status": "CURATION_INPUT_NOT_FINAL_DATABASE",
+  "records": [
+    {
+      "target": "Honda Civic e:HEV current Thailand generation",
+      "source": {
+        "publisher": "Honda Automobile (Thailand) Co., Ltd.",
+        "authority_class": "OEM_THAILAND",
+        "url": "https://www.honda.co.th/civic/specification",
+        "source_type": "WEB_SPECIFICATION"
+      },
+      "identity_state": "PARTIAL",
+      "observations": [
+        {
+          "raw_label": "Length",
+          "raw_value": "4681",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Width",
+          "raw_value": "1802",
+          "raw_unit": "mm",
+          "semantic_note": "mirror inclusion not stated in captured table"
+        },
+        {
+          "raw_label": "Height",
+          "raw_value": "1415",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Wheelbase",
+          "raw_value": "2734",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Steering wheel turns lock-to-lock",
+          "raw_value": "2.29 / 2.2",
+          "raw_unit": "turns",
+          "ambiguity_note": "source table groups e:HEV EL, EL+ and RS; exact value-to-grade column association must be verified from original table before exact-grade normalization"
+        },
+        {
+          "raw_label": "Turning radius",
+          "raw_value": "5.4 / 5.7",
+          "raw_unit": "m",
+          "ambiguity_note": "curb/wall reference not stated; grade grouping must be verified"
+        },
+        {
+          "raw_label": "Front track/tread",
+          "raw_value": "1547 / 1537",
+          "raw_unit": "mm",
+          "ambiguity_note": "OEM definition and grade grouping unresolved"
+        },
+        {
+          "raw_label": "Rear track/tread",
+          "raw_value": "1586 / 1576",
+          "raw_unit": "mm",
+          "ambiguity_note": "OEM definition and grade grouping unresolved"
+        },
+        {
+          "raw_label": "Ground clearance",
+          "raw_value": "128",
+          "raw_unit": "mm",
+          "ambiguity_note": "load/reference type not stated"
+        },
+        {
+          "raw_label": "Wheel size",
+          "raw_value": "17 X 7J / 18 X 8J",
+          "raw_unit": null
+        },
+        {
+          "raw_label": "Tyre size",
+          "raw_value": "215/50 R17 / 235/40 ZR18",
+          "raw_unit": null
+        }
+      ],
+      "fixture_value": "Tests variant-column extraction ambiguity, OEM-unspecified turning reference and steering-wheel-turns separation."
+    },
+    {
+      "target": "NEW MAZDA MX-5 35TH ANNIVERSARY EDITION 2.0 RF AT",
+      "source": {
+        "publisher": "Mazda Sales (Thailand) Co., Ltd.",
+        "authority_class": "OEM_THAILAND",
+        "url": "https://www.mazda.co.th/th/cars/mazda-mx5-35th/spec",
+        "source_type": "WEB_SPECIFICATION"
+      },
+      "identity_state": "RESOLVED_EXACT",
+      "observations": [
+        {
+          "raw_label": "Overall length (without number-plate holder)",
+          "raw_value": "3915",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Overall width (without wheel arch mouldings)",
+          "raw_value": "1735",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Overall height",
+          "raw_value": "1235",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Wheelbase",
+          "raw_value": "2310",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Tread: Front",
+          "raw_value": "1495",
+          "raw_unit": "mm",
+          "semantic_note": "OEM tread; not AVT outer-face track"
+        },
+        {
+          "raw_label": "Tread: Rear",
+          "raw_value": "1505",
+          "raw_unit": "mm",
+          "semantic_note": "OEM tread; not AVT outer-face track"
+        },
+        {
+          "raw_label": "Overhang: Front (without number-plate holder)",
+          "raw_value": "760",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Overhang: Rear",
+          "raw_value": "845",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Ground clearance (between axles, laden)",
+          "raw_value": "135",
+          "raw_unit": "mm",
+          "semantic_note": "explicit BETWEEN_AXLES + LADEN"
+        },
+        {
+          "raw_label": "Minimum turning radius (kerb-to-kerb)",
+          "raw_value": "4.7",
+          "raw_unit": "m",
+          "semantic_note": "explicit kerb-to-kerb"
+        },
+        {
+          "raw_label": "Tyre size",
+          "raw_value": "205/45R17",
+          "raw_unit": null
+        },
+        {
+          "raw_label": "Wheel size",
+          "raw_value": "17 x 7J",
+          "raw_unit": null
+        }
+      ],
+      "fixture_value": "High-quality semantic control record with explicit overhang, laden-between-axles clearance and kerb-to-kerb turning reference."
+    },
+    {
+      "target": "BYD ATTO 3 Extended Thailand",
+      "source": {
+        "publisher": "REVER Automotive",
+        "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+        "url": "https://www.reverautomotive.com/en/model/newatto3/tech-spec",
+        "source_type": "WEB_SPECIFICATION"
+      },
+      "identity_state": "RESOLVED_EXACT",
+      "observations": [
+        {
+          "raw_label": "Overall Length",
+          "raw_value": "4455",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Overall Width",
+          "raw_value": "1875",
+          "raw_unit": "mm",
+          "semantic_note": "mirror inclusion not stated"
+        },
+        {
+          "raw_label": "Overall Height",
+          "raw_value": "1615",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Wheel Track Front and Rear",
+          "raw_value": "1575 / 1580",
+          "raw_unit": "mm",
+          "semantic_note": "track definition unspecified; not AVT outer-face track"
+        },
+        {
+          "raw_label": "Wheelbase",
+          "raw_value": "2720",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Ground Clearance Unladen",
+          "raw_value": "175",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Ground Clearance Laden",
+          "raw_value": "150",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Minimum turning radius",
+          "raw_value": "5.35",
+          "raw_unit": "m",
+          "ambiguity_note": "curb/wall reference not stated"
+        },
+        {
+          "raw_label": "Kerb Weight",
+          "raw_value": "1750",
+          "raw_unit": "kg"
+        },
+        {
+          "raw_label": "Gross Vehicle Mass",
+          "raw_value": "2160",
+          "raw_unit": "kg"
+        },
+        {
+          "raw_label": "Tyre Size",
+          "raw_value": "235/50 R18",
+          "raw_unit": null
+        }
+      ],
+      "fixture_value": "Tests loaded/unloaded clearance, authorized-distributor source authority, undefined OEM track and undefined turning reference."
+    },
+    {
+      "target": "MG IM6 Long Range Thailand",
+      "source": {
+        "publisher": "MG Sales (Thailand) Co., Ltd.",
+        "authority_class": "OEM_THAILAND",
+        "url": "https://www.mgcars.com/th/cars/mg-im6",
+        "source_type": "WEB_SPECIFICATION"
+      },
+      "identity_state": "RESOLVED_EXACT",
+      "observations": [
+        {
+          "raw_label": "Length x Width x Height",
+          "raw_value": "4904 x 1988 x 1669",
+          "raw_unit": "mm",
+          "semantic_note": "width mirror semantics not stated"
+        },
+        {
+          "raw_label": "Wheelbase",
+          "raw_value": "2950",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Ground clearance",
+          "raw_value": "166",
+          "raw_unit": "mm",
+          "ambiguity_note": "load/reference type not stated"
+        },
+        {
+          "raw_label": "Front tyre",
+          "raw_value": "235/50 R20",
+          "raw_unit": null
+        },
+        {
+          "raw_label": "Rear tyre",
+          "raw_value": "255/45 R20",
+          "raw_unit": null
+        },
+        {
+          "raw_label": "INTELLIGENT FOUR-WHEEL STEERING SYSTEM",
+          "raw_value": "present",
+          "raw_unit": null
+        },
+        {
+          "raw_label": "Turning radius",
+          "raw_value": "5.1",
+          "raw_unit": "m",
+          "ambiguity_note": "source describes narrow turning radius but curb/wall reference not stated"
+        }
+      ],
+      "fixture_value": "Essential rear/four-wheel-steering fixture; conventional fixed-rear-axle mapping must fail closed."
+    },
+    {
+      "target": "Kia EV5 Earth Long Range Thailand",
+      "source": {
+        "publisher": "Kia Sales (Thailand) Co., Ltd.",
+        "authority_class": "OEM_THAILAND",
+        "url": "https://www.kia.com/th/en/cars/ev5/specification.html",
+        "source_type": "WEB_SPECIFICATION"
+      },
+      "identity_state": "RESOLVED_EXACT",
+      "observations": [
+        {
+          "raw_label": "Overall Length",
+          "raw_value": "4615",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Overall Width",
+          "raw_value": "1875",
+          "raw_unit": "mm",
+          "semantic_note": "mirror inclusion not stated"
+        },
+        {
+          "raw_label": "Overall Height",
+          "raw_value": "1715",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Wheelbase",
+          "raw_value": "2750",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Overhang front / rear",
+          "raw_value": "910 / 955",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Minimum Ground Clearance",
+          "raw_value": "166",
+          "raw_unit": "mm",
+          "ambiguity_note": "load/reference type not stated"
+        },
+        {
+          "raw_label": "Curb Weight",
+          "raw_value": "2142",
+          "raw_unit": "kg"
+        },
+        {
+          "raw_label": "Tyre size",
+          "raw_value": "235/55 R19",
+          "raw_unit": null
+        }
+      ],
+      "fixture_value": "Direct front/rear overhang evidence for longitudinal geometry; useful contrast with vehicles where overhang is absent."
+    },
+    {
+      "target": "Tesla Model Y 2025+ Thailand 5-Seater family",
+      "source": {
+        "publisher": "Tesla",
+        "authority_class": "OEM_THAILAND",
+        "url": "https://www.tesla.com/ownersmanual/modely/en_th/GUID-E414862C-CFA1-4A0B-9548-BE21C32CAA58.html",
+        "source_type": "OWNER_MANUAL"
+      },
+      "identity_state": "RESOLVED_SAME_GEOMETRY_GROUP",
+      "observations": [
+        {
+          "raw_label": "Steering type",
+          "raw_value": "Rack and pinion with electronic power steering, speed sensitive",
+          "raw_unit": null
+        },
+        {
+          "raw_label": "Number of turns lock to lock",
+          "raw_value": "2.4",
+          "raw_unit": "turns"
+        },
+        {
+          "raw_label": "Turning Circle (curb to curb) (5-Seater)",
+          "raw_value": "12.13",
+          "raw_unit": "m",
+          "semantic_note": "explicit curb-to-curb circle; radius conversion must be a controlled radius/diameter terminology rule"
+        }
+      ],
+      "fixture_value": "Clean curb-to-curb semantics plus steering-wheel-turns; tests turning-circle normalization without conflating lock-to-lock time."
+    },
+    {
+      "target": "Volvo EX30 Thailand geometry family",
+      "source": {
+        "publisher": "Volvo Cars",
+        "authority_class": "OEM_THAILAND",
+        "url": "https://www.volvocars.com/en-th/support/car/ex30/article/47d2c97fd33effd3c0a8cc3718c999b7-cf578f17ce837790c0a8b04a1abf9aaa-8664b2fa77a7e089c0a8296870d1a409/47d2c97fd33effd3c0a8cc3718c999b7-350655bc554de2a7c0a8b097561c9a50-8664b2fa77a7e089c0a8296870d1a409/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/",
+        "source_type": "OWNER_SUPPORT_TECHNICAL"
+      },
+      "identity_state": "RESOLVED_SAME_GEOMETRY_GROUP",
+      "observations": [
+        {
+          "raw_label": "Wheelbase",
+          "raw_value": "2650",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Length",
+          "raw_value": "4233",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Height",
+          "raw_value": "1550",
+          "raw_unit": "mm",
+          "qualifier": "at kerb weight plus one person"
+        },
+        {
+          "raw_label": "Ground clearance",
+          "raw_value": "171",
+          "raw_unit": "mm",
+          "qualifier": "at kerb weight plus one person"
+        },
+        {
+          "raw_label": "Width including folded-out wing mirrors",
+          "raw_value": "2032",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Width including folded-in wing mirrors",
+          "raw_value": "1940",
+          "raw_unit": "mm"
+        },
+        {
+          "raw_label": "Front track",
+          "raw_value": "1590",
+          "raw_unit": "mm",
+          "semantic_note": "OEM track definition not assumed to equal AVT track"
+        },
+        {
+          "raw_label": "Rear track",
+          "raw_value": "1595",
+          "raw_unit": "mm",
+          "semantic_note": "OEM track definition not assumed to equal AVT track"
+        },
+        {
+          "raw_label": "Width",
+          "raw_value": "1838",
+          "raw_unit": "mm",
+          "ambiguity_note": "body-envelope semantics should be confirmed from dimension diagram before normalized body-width promotion"
+        }
+      ],
+      "fixture_value": "Strong multi-width-envelope and explicit load-condition fixture."
+    }
+  ]
+}

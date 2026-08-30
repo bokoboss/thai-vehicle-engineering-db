@@ -1,0 +1,289 @@
+{
+  "registry_version": "1.0.0",
+  "purpose": "First curated pilot after Phase 0; exact sales code/model year/wheel fitment must be locked before configuration creation",
+  "targets": [
+    {
+      "priority": 1,
+      "category": "small_mainstream",
+      "target": "Honda City e:HEV RS",
+      "stress_tags": [
+        "thai_oem",
+        "steering_ltl",
+        "urban_design"
+      ]
+    },
+    {
+      "priority": 2,
+      "category": "mainstream_sedan",
+      "target": "Honda Civic e:HEV RS",
+      "stress_tags": [
+        "variant_fitment",
+        "track_variation",
+        "turning_variation",
+        "steering_ltl"
+      ]
+    },
+    {
+      "priority": 3,
+      "category": "large_mainstream_sedan",
+      "target": "Honda Accord e:HEV RS",
+      "stress_tags": [
+        "large_passenger",
+        "source_conflict_check"
+      ]
+    },
+    {
+      "priority": 4,
+      "category": "small_thai_sedan",
+      "target": "Toyota Yaris ATIV current premium-grade target",
+      "stress_tags": [
+        "high_thai_relevance",
+        "ordinary_incomplete_semantics"
+      ]
+    },
+    {
+      "priority": 5,
+      "category": "body_on_frame_suv",
+      "target": "Toyota Fortuner 2.4 Leader V 4WD",
+      "stress_tags": [
+        "ppv",
+        "high_clearance",
+        "ramp_access"
+      ]
+    },
+    {
+      "priority": 6,
+      "category": "luxury_mpv",
+      "target": "Toyota Alphard 2.5 HEV fourth-generation Thai target",
+      "stress_tags": [
+        "porte_cochere",
+        "large_mpv",
+        "exact_fitment_resolution"
+      ]
+    },
+    {
+      "priority": 7,
+      "category": "large_van",
+      "target": "Toyota Commuter 2.8 AT H300",
+      "stress_tags": [
+        "long_wheelbase",
+        "large_body",
+        "van"
+      ]
+    },
+    {
+      "priority": 8,
+      "category": "ev_suv",
+      "target": "Toyota bZ4X FWD",
+      "stress_tags": [
+        "ev",
+        "underfloor_battery"
+      ]
+    },
+    {
+      "priority": 9,
+      "category": "pickup",
+      "target": "Isuzu D-Max V-Cross 2.2 Z 4-door AT 4x4",
+      "stress_tags": [
+        "pickup",
+        "clearance_type"
+      ]
+    },
+    {
+      "priority": 10,
+      "category": "ppv",
+      "target": "Isuzu MU-X 2.2 ULTIMATE",
+      "stress_tags": [
+        "shared_platform_distinct_body",
+        "ppv"
+      ]
+    },
+    {
+      "priority": 11,
+      "category": "pickup",
+      "target": "Ford Ranger Wildtrak 2.0 Bi-Turbo 4x4",
+      "stress_tags": [
+        "body_builder_sources",
+        "pickup"
+      ]
+    },
+    {
+      "priority": 12,
+      "category": "large_ppv",
+      "target": "Ford Everest Platinum 3.0 V6 4WD",
+      "stress_tags": [
+        "wheel_fitment",
+        "offroad_geometry"
+      ]
+    },
+    {
+      "priority": 13,
+      "category": "pickup",
+      "target": "Mitsubishi Triton Double Cab Ultra 4WD",
+      "stress_tags": [
+        "difficult_source_ecosystem",
+        "pickup"
+      ]
+    },
+    {
+      "priority": 14,
+      "category": "pickup",
+      "target": "Nissan Navara Double Cab PRO-4X",
+      "stress_tags": [
+        "pickup",
+        "manufacturer_pattern"
+      ]
+    },
+    {
+      "priority": 15,
+      "category": "semantic_control",
+      "target": "Mazda MX-5 35th Anniversary Edition 2.0 RF AT",
+      "stress_tags": [
+        "explicit_kerb_to_kerb",
+        "laden_between_axles",
+        "direct_overhang"
+      ]
+    },
+    {
+      "priority": 16,
+      "category": "small_hatch",
+      "target": "Suzuki Swift GLX/current equivalent",
+      "stress_tags": [
+        "compact_baseline",
+        "oem_turning_ambiguity"
+      ]
+    },
+    {
+      "priority": 17,
+      "category": "compact_ev",
+      "target": "BYD Dolphin Extended Range",
+      "stress_tags": [
+        "laden_unladen_clearance",
+        "ev"
+      ]
+    },
+    {
+      "priority": 18,
+      "category": "ev_crossover",
+      "target": "BYD ATTO 3 Extended",
+      "stress_tags": [
+        "laden_unladen_clearance",
+        "undefined_track",
+        "undefined_turning_reference"
+      ]
+    },
+    {
+      "priority": 19,
+      "category": "ev_sedan",
+      "target": "BYD Seal AWD Performance",
+      "stress_tags": [
+        "low_clearance",
+        "underfloor_battery"
+      ]
+    },
+    {
+      "priority": 20,
+      "category": "ev_sedan",
+      "target": "GWM ORA 07 Performance",
+      "stress_tags": [
+        "gwm_source_pattern",
+        "ev"
+      ]
+    },
+    {
+      "priority": 21,
+      "category": "four_wheel_steer_ev",
+      "target": "MG IM6 Long Range/current Thai 4WS grade",
+      "stress_tags": [
+        "rear_steering",
+        "four_wheel_steering",
+        "turning_reference_ambiguity"
+      ]
+    },
+    {
+      "priority": 22,
+      "category": "ev_sedan",
+      "target": "Tesla Model 3 current Long Range target",
+      "stress_tags": [
+        "owner_manual",
+        "market_identity"
+      ]
+    },
+    {
+      "priority": 23,
+      "category": "ev_suv",
+      "target": "Tesla Model Y current Thailand 5-seat Long Range target",
+      "stress_tags": [
+        "explicit_curb_to_curb",
+        "steering_ltl",
+        "owner_manual"
+      ]
+    },
+    {
+      "priority": 24,
+      "category": "ev_suv",
+      "target": "Kia EV5 Earth Long Range",
+      "stress_tags": [
+        "direct_front_rear_overhang",
+        "ev"
+      ]
+    },
+    {
+      "priority": 25,
+      "category": "ev_sedan",
+      "target": "Hyundai IONIQ 6 current long-range target",
+      "stress_tags": [
+        "hyundai_source_pattern",
+        "wheel_fitment"
+      ]
+    },
+    {
+      "priority": 26,
+      "category": "compact_ev",
+      "target": "Volvo EX30 current Thai configuration",
+      "stress_tags": [
+        "mirror_open_folded_width",
+        "track",
+        "load_qualified_clearance"
+      ]
+    },
+    {
+      "priority": 27,
+      "category": "luxury_sedan",
+      "target": "Mercedes-Benz E 350 e AMG Dynamic W214",
+      "stress_tags": [
+        "option_dependent_rear_steering",
+        "owner_manual"
+      ]
+    },
+    {
+      "priority": 28,
+      "category": "very_long_luxury",
+      "target": "Mercedes-Maybach S 580 e Z223",
+      "stress_tags": [
+        "long_wheelbase",
+        "rear_steering",
+        "porte_cochere"
+      ]
+    },
+    {
+      "priority": 29,
+      "category": "executive_sedan",
+      "target": "BMW 520d M Sport Pro G60",
+      "stress_tags": [
+        "exact_thai_technical_data",
+        "mirror_width"
+      ]
+    },
+    {
+      "priority": 30,
+      "category": "long_luxury_sedan",
+      "target": "BMW 740d M Sport G70",
+      "stress_tags": [
+        "extreme_length",
+        "long_wheelbase",
+        "luxury_design_vehicle"
+      ]
+    }
+  ]
+}
