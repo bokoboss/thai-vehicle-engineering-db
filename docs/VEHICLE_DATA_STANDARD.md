@@ -314,6 +314,7 @@ Each source has:
 
 - REGULATORY_OFFICIAL
 - OEM_THAILAND
+- OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER
 - OEM_REGIONAL_GLOBAL
 - OEM_SERVICE_TECHNICAL
 - OEM_HOMOLOGATION_CERTIFICATION
@@ -404,7 +405,7 @@ A human-readable grade may be generated, but underlying dimensions must remain s
 
 Suggested display grades:
 
-- A1 — primary/official, exact configuration, published/regulatory
+- A1 — primary/official, exact configuration, published/regulatory (including an official local importer/distributor where it is the authoritative Thai-market publisher)
 - A2 — OEM/official, same geometry confirmed
 - A3 — strong technical/homologation/service evidence with confirmed applicability
 - B — controlled engineering derivation from A-grade inputs
