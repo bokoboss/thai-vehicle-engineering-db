@@ -1,183 +1,236 @@
 # Architecture Proposal v1.0
 
-Status: Draft for foundation review  
-Date: 2026-08-29
+Status: Foundation candidate after Deep Research amendment  
+Date: 2026-08-30
 
 ## 1. Architectural objective
 
-Support an engineering-grade web application whose core asset is a traceable vehicle-data model, not a UI-specific table.
+Build a deliberately small web application around a rigorous engineering evidence model.
+
+The product is a **data project with a thin web interface**, not a large software platform.
 
 ## 2. Logical architecture
 
 ```text
-Source discovery / research
+Research / source discovery
         |
         v
-Source documents + metadata
+Source documents + source metadata
         |
         v
 Raw observations
         |
-        v
-Normalization / identity resolution
+        +--> parameter assessments (unknown / not found)
         |
         v
-Controlled derivations + QA
+Identity resolution + semantic normalization
         |
         v
-Curated engineering database
+Controlled derivations + conflict decisions + QA
         |
-        +--> Web app search/detail/compare
-        +--> Excel/CSV engineering exports
-        +--> AVT preparation/export layer
-        +--> Data-quality dashboard
+        v
+Curated engineering domain
+        |
+        +--> simple web search/detail/compare
+        +--> CSV/Excel engineering exports
+        +--> AVT preparation adapter
+        +--> data-quality/issues view
 ```
 
-## 3. Persistence
+## 3. Product-scope rule
 
-### Initial implementation
-Use a relational domain model. SQLite is acceptable for development, tests and an initial single-instance deployment.
+Keep the MVP thin.
 
-### Shared deployment
-The application must isolate persistence behind a repository/data-access layer so production can move to PostgreSQL or another managed relational service without changing engineering semantics.
+Required application surfaces:
+- search/filter;
+- vehicle detail;
+- compare;
+- source/evidence drill-down;
+- data issue/readiness view;
+- CSV/Excel export.
 
-Do not embed domain rules in database-specific SQL where avoidable.
+Do not add dashboards, 3D viewers, AI chat, complex user administration, advanced charting or simulation engines unless a later use case justifies them.
 
-## 4. Proposed domain entities
+## 4. Persistence
 
-- manufacturers
-- vehicle_models
-- vehicle_configurations
-- market_applicability
-- source_documents
-- source_observations
-- parameter_definitions
-- normalized_values
-- derivation_rules
-- derivation_runs
-- evidence_links
-- conflict_decisions
-- readiness_results
-- qa_findings
-- body_outline_assets
-- source_snapshot_metadata
+SQLite is acceptable for Phase 0/local development.
 
-The exact physical schema is deferred to the implementation design after review of `VEHICLE_DATA_STANDARD.md`.
+The domain must remain portable to PostgreSQL or another conventional relational service for shared deployment. Persistence-specific details must not define engineering semantics.
 
-## 5. Application modules
+Use a repository/data-access boundary rather than allowing UI code to query physical tables directly.
 
-### Catalog
-Search/filter and vehicle identity navigation.
+## 5. Core domain entities
 
-### Vehicle engineering sheet
-Dimensions, axle/tyre geometry, turning/steering, vertical geometry, evidence and readiness.
+The physical schema may refine names, but must support:
+- manufacturers;
+- vehicle models;
+- exact vehicle configurations;
+- equipment/wheel fitments;
+- market applicability;
+- source documents;
+- source observations;
+- parameter definitions;
+- parameter assessments;
+- normalized values;
+- evidence links;
+- orthogonal evidence/resolution/verification/availability states;
+- derivation rules/runs;
+- conflict/preferred-value decisions;
+- structured load conditions;
+- axle/steering relationships;
+- readiness results;
+- QA findings;
+- geometry assets with role/datum/fidelity/uncertainty;
+- source snapshot metadata;
+- AVT mapping/adapter results.
 
-### Compare
-Side-by-side comparison with explicit unavailable/conflicting states.
+The implementation must support multiple observations per parameter and must not collapse this into one naked vehicle-spec table.
 
-### Evidence explorer
-Parameter -> normalized value -> raw observation -> source document.
+## 6. Geometry architecture
 
-### Data curation
-Controlled entry/import/review. No public anonymous edits.
+Store geometry independently from scalar specifications.
 
-### QA dashboard
-Missing values, conflicts, stale sources, failed validators, readiness regression.
+Geometry roles include:
+- plan body envelope;
+- AVT plan profile;
+- side silhouette;
+- longitudinal lower envelope;
+- underbody low points;
+- tyre circles;
+- axle/datum geometry.
 
-### Engineering tools
-Initially limited to deterministic derived fields and screening checks. Detailed ramp and swept-path tools should be added only after methods are validated.
+A visual side silhouette and an engineering interference envelope are different roles even when they originate from the same drawing.
 
-### Export
-Excel/CSV first. AVT preparation sheet first; ATL/ATX automation only after feasibility is proven.
+All normalized geometry uses the project vehicle-fixed datum defined in `VEHICLE_DATA_STANDARD.md`.
 
-## 6. API boundary
+## 7. Load/state architecture
 
-UI must consume typed domain/API contracts rather than query tables directly.
+Clearance, static-loaded tyre radius and ramp-relevant geometry can depend on:
+- mass/load basis;
+- occupants/payload;
+- tyre pressure;
+- suspension mode;
+- ride height.
 
-Recommended endpoint/domain shapes include:
-- vehicle search
-- vehicle detail
-- evidence detail
-- comparison
-- data-quality findings
-- import/curation operations
-- export generation
+Represent those conditions as reusable structured records rather than free text embedded in numeric values.
 
-## 7. Source-document storage
+## 8. Steering architecture
 
-Do not store large PDF/image archives in Git.
+Represent:
+- primary steering;
+- actual wheel angles;
+- virtual-center/AVT steering quantities;
+- steering transition time;
+- secondary/rear steering linkage.
 
-Store in Git:
-- source metadata;
-- small structured observations;
-- schema/migrations;
-- derivation rules;
-- tests;
-- curated seed/pilot data where licensing permits.
+Do not design the domain around conventional front-steer-only vehicles. The pilot deliberately includes rear/four-wheel-steering cases.
 
-Store large snapshots in a separate object/file store when retention is appropriate. Keep hashes/references in the database.
+## 9. AVT integration boundary
 
-## 8. Data ingestion strategy
+AVT is an external consumer, not the master schema.
+
+Supported foundation levels:
+- Level 0 — evidence-backed engineering data sheet;
+- Level 1 — AVT input preparation sheet;
+- Level 2 — assisted/manual Vehicle Wizard/library workflow.
+
+Deferred research/experiment:
+- Level 3 — automated ATL/ATX or equivalent exchange;
+- Level 4 — automated company-library management.
+
+No public official serialization/API contract sufficient for a production external ATL/ATX writer has been established by the current research. Do not make it a Phase 0 dependency.
+
+AVT adapter results should carry adapter/mapping-rule version; target AVT product version may be added when needed.
+
+## 10. Ramp-analysis boundary
+
+No ramp solver is part of Phase 0.
+
+The architecture must only be able to store future required inputs:
+- axle positions;
+- static-loaded tyre radii;
+- structured load condition;
+- longitudinal lower envelope;
+- geometry fidelity/uncertainty;
+- road/ramp profile in a later analysis module.
+
+A future 2D quasi-static longitudinal collision method can be built as a separate engineering module without redefining the vehicle evidence model.
+
+## 11. Source-document storage
+
+Do not commit large PDF/image archives to Git by default.
+
+Git stores metadata, schema/migrations, small curated structured records where licensing permits, derivation rules, tests and decision/audit records.
+
+Large snapshots belong in separate object/file storage when retention is appropriate, with hashes/references in the database.
+
+## 12. Data ingestion strategy
 
 Do not begin with autonomous scraping.
 
-Phase order:
-1. manual/assisted curated pilot;
+Sequence:
+1. curated pilot;
 2. structured import helpers;
 3. parsers for recurring OEM formats;
-4. controlled automation with review queue;
-5. periodic source monitoring only after identity/provenance QA is mature.
+4. controlled automation producing reviewable raw observations;
+5. periodic source monitoring only after QA/identity workflows mature.
 
-Automated extraction creates observations, not verified engineering values.
+Automated extraction creates observations, not verified engineering facts.
 
-## 9. Security / access
+## 13. API/UI boundary
 
-Initial shared application may be read-only for ordinary users with curated write access for maintainers.
+UI consumes typed domain/API contracts.
+
+Minimum read operations:
+- search vehicles;
+- vehicle engineering detail;
+- evidence/source detail;
+- compare vehicles;
+- readiness/data-quality findings;
+- export.
+
+Curation/write operations may initially be maintainer-only and minimal.
+
+## 14. Security/access
+
+Shared application may be read-only for ordinary users.
 
 Do not expose credentials, private source archives or licensed documents through public endpoints.
 
-## 10. Technology-selection guidance for Codex
+## 15. Technology-selection guidance
 
-The implementation stack should optimize for:
-- reliable typed schema/model validation;
-- strong automated tests;
+Choose the smallest established stack supporting:
+- typed domain validation;
+- relational migrations;
+- deterministic tests;
 - simple browser deployment;
-- maintainable relational data access;
-- deterministic Excel/CSV export;
-- future PostgreSQL migration.
+- SQLite locally with practical PostgreSQL migration;
+- CSV/Excel export.
 
-No specific frontend/backend framework is normative yet. The Phase 0 Codex task should propose the smallest stack meeting these constraints, with preference for established technologies and minimal infrastructure.
+Avoid microservices and infrastructure complexity.
 
-## 11. Deployment stages
+## 16. Deployment stages
 
 ### Stage A — local development
-Local web app + SQLite.
+Web app + SQLite.
 
-### Stage B — internal/shared pilot
-Single hosted application, authenticated if necessary, using persistent relational storage.
+### Stage B — shared pilot
+Single hosted app + persistent relational database.
 
-### Stage C — production/shared engineering service
-Managed relational database, source snapshot storage, backups, audit controls and scheduled data-quality checks.
+### Stage C — mature internal engineering service
+Managed relational storage, backups, source-snapshot storage and scheduled QA.
 
-## 12. AVT integration boundary
+## 17. Architecture acceptance questions
 
-AVT is an external engineering consumer.
+Before implementation acceptance:
 
-The master database must preserve richer semantics than AVT requires. An AVT adapter maps only records that meet explicit AVT readiness rules.
-
-Current official Autodesk documentation confirms user-created vehicle libraries and supports AVT library/import workflows, but direct automated production of a reliable custom library remains an implementation-stage feasibility item rather than an assumed capability.
-
-References:
-- https://help.autodesk.com/cloudhelp/2024/ENU/Autodesk-VehicleTracking-Help/files/GUID-6F7BD13F-9363-40EC-AF22-A56D2270C410.htm
-- https://help.autodesk.com/cloudhelp/2022/ENU/Autodesk-VehicleTracking-Help/files/GUID-C67846CE-ACA1-4123-879D-7AD4C6BED5B9.htm
-- https://help.autodesk.com/view/CIV3D/2026/ENU/?caas=caas%2Fsfdcarticles%2Fsfdcarticles%2FHow-to-import-a-DWG-model-of-a-car-in-Autodesk-Vehicle-Tracking-for-AutoCAD.html
-
-## 13. Architecture acceptance questions
-
-Before implementation:
-1. Is raw evidence sufficiently separated from normalized data?
-2. Can one vehicle parameter retain multiple conflicting observations?
-3. Can persistence move away from SQLite without redefining the domain?
-4. Can AVT mapping evolve independently of the source data?
-5. Can the system fail closed when evidence is insufficient?
-6. Can a value shown to a client be traced to its evidence chain?
+1. Can multiple observations/conflicts coexist for one parameter?
+2. Are method/conflict/review/availability states independent?
+3. Can OEM track/tread remain separate from AVT outer-face track?
+4. Can clearance/load semantics be represented without free-text ambiguity?
+5. Can rear steering be represented without pretending it is a fixed rear axle?
+6. Can side silhouette and lower interference envelope coexist?
+7. Can persistence move from SQLite without redefining the domain?
+8. Can the system fail closed when evidence is insufficient?
+9. Can every client-visible value be traced to evidence/derivation?
+10. Is the MVP still simple enough that data acquisition remains the dominant project effort?
