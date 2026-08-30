@@ -1,0 +1,312 @@
+{
+  "registry_version": "1.0.0",
+  "canonical_units": {
+    "length": "mm",
+    "turning_radius": "m",
+    "angle": "deg",
+    "mass": "kg",
+    "time": "s"
+  },
+  "parameters": [
+    {
+      "code": "overall_length_mm",
+      "family": "body_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "overall_height_mm",
+      "family": "body_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "overall_width_reported_mm",
+      "family": "body_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "overall_width_body_mm",
+      "family": "body_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "overall_width_including_mirrors_mm",
+      "family": "body_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "overall_width_mirrors_folded_mm",
+      "family": "body_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "wheelbase_actual_mm",
+      "family": "axle_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "front_overhang_mm",
+      "family": "axle_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "rear_overhang_mm",
+      "family": "axle_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "oem_front_tread_or_track_mm",
+      "family": "lateral_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "oem_rear_tread_or_track_mm",
+      "family": "lateral_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "avt_front_outer_face_track_mm",
+      "family": "avt_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "avt_rear_outer_face_track_mm",
+      "family": "avt_geometry",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "front_tyre_size_text",
+      "family": "wheel_tyre",
+      "data_type": "TEXT",
+      "unit": null
+    },
+    {
+      "code": "rear_tyre_size_text",
+      "family": "wheel_tyre",
+      "data_type": "TEXT",
+      "unit": null
+    },
+    {
+      "code": "front_nominal_section_width_mm",
+      "family": "wheel_tyre",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "rear_nominal_section_width_mm",
+      "family": "wheel_tyre",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "nominal_unloaded_tyre_radius_front_mm",
+      "family": "wheel_tyre",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "nominal_unloaded_tyre_radius_rear_mm",
+      "family": "wheel_tyre",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "static_loaded_tyre_radius_front_mm",
+      "family": "wheel_tyre",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "static_loaded_tyre_radius_rear_mm",
+      "family": "wheel_tyre",
+      "data_type": "NUMBER",
+      "unit": "mm"
+    },
+    {
+      "code": "front_wheel_rim_text",
+      "family": "wheel_tyre",
+      "data_type": "TEXT",
+      "unit": null
+    },
+    {
+      "code": "rear_wheel_rim_text",
+      "family": "wheel_tyre",
+      "data_type": "TEXT",
+      "unit": null
+    },
+    {
+      "code": "turning_radius_normalized_m",
+      "family": "turning",
+      "data_type": "NUMBER",
+      "unit": "m"
+    },
+    {
+      "code": "oem_turning_value_text",
+      "family": "turning",
+      "data_type": "TEXT",
+      "unit": null
+    },
+    {
+      "code": "steering_ratio_value",
+      "family": "steering",
+      "data_type": "NUMBER",
+      "unit": null
+    },
+    {
+      "code": "steering_wheel_lock_to_lock_turns",
+      "family": "steering",
+      "data_type": "NUMBER",
+      "unit": "turns"
+    },
+    {
+      "code": "maximum_inner_road_wheel_angle_deg",
+      "family": "steering",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "maximum_outer_road_wheel_angle_deg",
+      "family": "steering",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "virtual_center_steering_angle_deg",
+      "family": "steering",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "avt_maximum_steering_angle_deg",
+      "family": "avt_steering",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "avt_lock_to_lock_time_forward_s",
+      "family": "avt_steering",
+      "data_type": "NUMBER",
+      "unit": "s"
+    },
+    {
+      "code": "avt_lock_to_lock_time_reverse_s",
+      "family": "avt_steering",
+      "data_type": "NUMBER",
+      "unit": "s"
+    },
+    {
+      "code": "clearance_value_mm",
+      "family": "clearance",
+      "data_type": "NUMBER",
+      "unit": "mm",
+      "requires_attributes": [
+        "clearance_type",
+        "load_condition"
+      ]
+    },
+    {
+      "code": "oem_published_approach_angle_deg",
+      "family": "ramp_oem",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "oem_published_departure_angle_deg",
+      "family": "ramp_oem",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "oem_published_breakover_angle_deg",
+      "family": "ramp_oem",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "geometry_derived_approach_angle_deg",
+      "family": "ramp_physical",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "geometry_derived_departure_angle_deg",
+      "family": "ramp_physical",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "geometry_derived_breakover_angle_deg",
+      "family": "ramp_physical",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "screening_front_contact_angle_deg",
+      "family": "ramp_screening",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "screening_rear_contact_angle_deg",
+      "family": "ramp_screening",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "screening_breakover_angle_deg",
+      "family": "ramp_screening",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "screening_breakover_symmetric_angle_deg",
+      "family": "ramp_screening",
+      "data_type": "NUMBER",
+      "unit": "deg"
+    },
+    {
+      "code": "kerb_mass_kg",
+      "family": "mass",
+      "data_type": "NUMBER",
+      "unit": "kg"
+    },
+    {
+      "code": "gross_vehicle_mass_kg",
+      "family": "mass",
+      "data_type": "NUMBER",
+      "unit": "kg"
+    },
+    {
+      "code": "front_axle_load_kg",
+      "family": "mass",
+      "data_type": "NUMBER",
+      "unit": "kg"
+    },
+    {
+      "code": "rear_axle_load_kg",
+      "family": "mass",
+      "data_type": "NUMBER",
+      "unit": "kg"
+    }
+  ],
+  "forbidden_ambiguous_codes": [
+    "track_mm",
+    "width_mm",
+    "turning_radius_m",
+    "ground_clearance_mm",
+    "steering_angle_deg",
+    "breakover_angle_deg"
+  ]
+}
