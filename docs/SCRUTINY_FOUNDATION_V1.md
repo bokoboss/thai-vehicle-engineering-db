@@ -1,72 +1,126 @@
 # Foundation v1 Scrutiny
 
-Date: 2026-08-29  
-Decision: **GO WITH CONDITIONS**  
+Date: 2026-08-29, updated 2026-08-30  
+Decision: **GO WITH CONDITIONS -> CONDITIONS INCORPORATED INTO FOUNDATION CANDIDATE**  
 Scope reviewed: product framing, data semantics, architecture direction and pilot acceptance strategy.
 
 ## Decision under review
 
 Is the project sufficiently framed to begin a bounded Phase 0 software foundation without prematurely scaling vehicle-data collection or encoding unsupported engineering assumptions?
 
-## What is strong enough
+## Initial scrutiny findings
 
-- The product is correctly framed as an engineering evidence system, not a generic car-spec catalog.
-- Raw observations are separated from normalized and derived values.
-- Exact vehicle configuration identity is protected.
-- Missing/ambiguous values can remain unknown.
-- Conflicting evidence is retained.
-- AVT-specific fields are treated as mappings rather than OEM synonyms.
-- Persistence is not irreversibly tied to SQLite.
-- Bulk scraping/population is deferred until the pilot proves the schema.
+The original foundation was directionally correct, but required protection around:
 
-## Issues found and resolved during scrutiny
+- geometry datum/reference frame;
+- steering-wheel lock-to-lock turns vs AVT lock-to-lock time;
+- precision/uncertainty;
+- ATL/ATX automation;
+- bulk data scale-up;
+- turning semantics;
+- persistence portability;
+- provenance/conflict integrity.
 
-### Geometry reference frame
-Initial draft lacked a canonical datum/coordinate system for body and underbody geometry.
+These conditions were carried into the initial draft.
 
-Resolution: v1 now defines a vehicle-fixed coordinate convention and requires transformation metadata for source geometries using other datums.
+## Deep Research follow-up — 2026-08-30
 
-### Steering turns vs AVT steering time
-Initial draft stored steering-wheel turns lock-to-lock but did not separately model AVT lock-to-lock time.
+A dedicated Foundation Research Gate returned:
 
-Resolution: v1 now stores/labels them separately and prohibits unsupported conversion from turns to seconds.
+**GO WITH CONDITIONS — High confidence.**
 
-### Precision / uncertainty
-Initial draft could allow image-scaled or measured values to appear numerically as precise as primary OEM dimensions.
+The product concept, evidence-first architecture, source hierarchy and bounded Phase 0 direction were confirmed. The research did **not** justify REPLAN or NO-GO.
 
-Resolution: source observations and normalized values now carry precision/uncertainty metadata where applicable.
+It did identify nine foundation-level semantic corrections required before schema implementation.
 
-## Conditions carried into Phase 0
+## Research conditions now incorporated
 
-1. **Do not implement production ATL/ATX generation yet.** Implement an AVT mapping/preparation layer only. Automated library generation remains a separate feasibility gate.
-2. **Do not bulk-populate hundreds of vehicles.** Phase 0 uses deterministic fixtures; pilot curation follows after schema/API foundation.
-3. **Do not freeze a physical database schema that bypasses the evidence model.** The implementation must support multiple observations per parameter and auditable preferred/conflict decisions.
-4. **Do not convert OEM turning labels into AVT semantics by convention.** Unknown remains unknown.
-5. **Do not treat SQLite as a permanent product constraint.** Persistence access must remain portable to shared hosted storage.
-6. **Schema/data-contract changes remain protected.** Any material simplification requires explicit review against the data standard.
+### 1. Orthogonal evidence/value state
+Evidence method, conflict/resolution, verification and availability are no longer represented by one mutually exclusive status enum.
+
+The data model must support states such as:
+
+> PUBLISHED + CONFLICTING + REVIEWED + AVAILABLE
+
+without information loss.
+
+### 2. Exact AVT turning semantics
+Turning data now preserves:
+
+- radius vs diameter;
+- curb vs wall vs other/unknown envelope;
+- curb axle scope;
+- wall body-only vs body+loads envelope scope.
+
+Unknown scope fails closed for AVT readiness.
+
+### 3. Steering-angle semantics
+Actual inner/outer road-wheel angles remain distinct from a virtual-center steering angle and the AVT Maximum Steering Angle adapter output.
+
+Steering-wheel turns remain separate.
+
+### 4. Stricter AVT outer-face track rule
+OEM tread/track remains semantically separate from AVT outer-face tyre track.
+
+A centerline/tread value plus nominal tyre section width may only create an estimated/screening result and cannot alone pass AVT_READY.
+
+### 5. Structured clearance semantics
+Clearance now has controlled type semantics such as between-axles, running, axle, battery/component-specific or OEM-unspecified minimum.
+
+### 6. Load condition + static-loaded tyre radius
+Physical ramp/contact geometry can require structured load state, tyre pressure/ride-height applicability and static-loaded tyre radius.
+
+### 7. Lower-envelope and screening-angle semantics
+Side silhouette is distinct from longitudinal lower interference geometry.
+
+OEM-published, geometry-derived physical and engineering-screening ramp angles use distinct parameter codes.
+
+### 8. Rear/secondary steering
+Rear steering is represented by axle, linkage/relationship, phase/mode/speed behaviour and evidence—not a simple boolean.
+
+### 9. Width/mirror semantics
+A source-reported generic width remains semantically unspecified until body/mirror inclusion is established.
+
+## Conditions that still remain after foundation merge
+
+These are not blockers to Phase 0, but remain explicit project boundaries:
+
+1. Do not implement production ATL/ATX generation; only AVT preparation/mapping.
+2. Do not bulk-populate hundreds of vehicles during Phase 0.
+3. Do not bypass raw observation/provenance/conflict semantics in the physical schema.
+4. Do not infer AVT or ramp semantics by convention.
+5. Do not hard-couple the product to SQLite.
+6. Material data-contract simplification requires explicit review.
+7. Detailed ramp solver remains deferred.
+8. Automated source ingestion must create reviewable observations, not self-certified engineering facts.
+
+## Phase 0 evidence requirement
+
+The first schema/migrations must prove, using deterministic fixtures, that:
+
+- published and conflicting states coexist;
+- unknown turning scope fails closed;
+- actual wheel angle, virtual-center angle, steering-wheel turns and lock-to-lock time remain distinct;
+- nominal-width AVT-track approximation fails AVT_READY;
+- clearance/load/static-loaded-radius semantics remain distinct;
+- rear steering is representable;
+- side silhouette and lower interference envelope are separate;
+- screening ramp values cannot populate physical/OEM angle codes.
+
+A fresh-context independent semantic review is required after the first implementation.
 
 ## Residual risks
 
-- OEM naming and Thai variant resolution will be labor-intensive for some models.
-- Many manufacturers do not publish overhang, wall-to-wall turning circle, road-wheel angle or vertical profile geometry.
-- Actual tyre mounted section width can differ from nominal tyre size, limiting accuracy of outer-face-track derivations.
-- Detailed ramp clearance ultimately needs profile geometry, load/ride-height state and possibly physical measurement.
-- AVT library file automation still requires empirical verification with the installed Autodesk environment.
+- OEM naming and Thai exact-variant resolution will remain labor intensive for some models.
+- Public retail specifications are often adequate for basic dimensions but weak for true AVT steering geometry, wall-to-wall radius, overhang and underbody profiles.
+- Mounted tyre outer-face position may require engineering drawings or measurement.
+- Detailed ramp clearance may require lower-envelope geometry and physical measurement.
+- AVT automated library-file generation remains an installed-environment experiment/research gate.
 
-## Success gates strengthened
+## Final scrutiny verdict for PR #1
 
-Phase 0 must include fixtures for:
-- published exact value;
-- OEM-ambiguous turning value;
-- derived AVT track with explicit derivation;
-- conflicting source observations;
-- unknown value;
-- measured/estimated value with uncertainty;
-- separate steering-wheel turns and AVT lock-to-lock time;
-- coordinate-geometry asset metadata.
+The amended foundation candidate is **suitable to proceed to review/merge**.
 
-## Verdict rationale
+The research conditions have been translated into the normative data standard, architecture, pilot acceptance gates and Phase 0 Issue #2.
 
-The remaining uncertainties do not block building the data/evidence foundation. They do block claiming full AVT automation or scaling the vehicle catalog.
-
-Proceed with a bounded Phase 0 implementation only under the conditions above.
+No unresolved research blocker requires a re-plan before bounded Phase 0 implementation.
