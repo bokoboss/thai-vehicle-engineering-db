@@ -1,0 +1,414 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-FORD-RANGER-WILDTRAK-BITURBO-4X4-NEXTGEN-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-ford-ranger-wildtrak-20-biturbo-4x4-nextgen",
+    "manufacturer_name": "Ford",
+    "manufacturer_display_name": "Ford",
+    "canonical_model_name": "ranger",
+    "display_model_name": "Ranger",
+    "market_code": "TH",
+    "generation_name": "Next-Generation Ranger",
+    "body_style": "Double Cab pickup",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "MULTIPLE",
+    "identity_time_label_raw": "Next-Generation Ranger Thailand launch 21 Mar 2022 + exact Wildtrak 2.0L Bi-Turbo 4x4 10AT official 2023 brochure",
+    "sale_period_from": "2022-03-21",
+    "sale_period_to": null,
+    "variant_trim": "Double Cab Wildtrak 2.0L Bi-Turbo 4x4 10AT",
+    "powertrain": "2.0L Bi-Turbo diesel / 10AT",
+    "drivetrain": "4x4",
+    "body_configuration": "Double Cab",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Historical exact configuration. Current 2026 Wildtrak 4x4 uses a different 2.0L Turbo powertrain; this record must not be overwritten with current specs."
+  },
+  "sources": [
+    {
+      "source_code": "FORD_TH_NEXTGEN_RANGER_LAUNCH_20220321",
+      "publisher": "Ford Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_NEWS",
+      "title": "Ford debuts next-generation Ranger in Thailand",
+      "url": "https://www.ford.co.th/en/about-ford/newsroom/2022/ford-debuts-ford-ranger-everest-ranger-raptor-and-a-host-of-always-on-customer-experience-initiatives-at-bangkok-motor-show-2022/",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2022,
+      "page_section_default": "Official launch",
+      "applicability_notes": "Next-generation Ranger launch and 2.0L Bi-Turbo family",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "FORD_TH_RANGER_WILDTRAK_BROCHURE_2023",
+      "publisher": "Ford Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+      "title": "Ford Ranger Wildtrak technical brochure 2023",
+      "url": "https://www.ford.co.th/content/dam/ecomm/Release-3/EN_TH/brochure/P703/wildtrak/aw-brochure-ranger-12p-th-2023-web.pdf",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2023,
+      "page_section_default": "Exact Wildtrak 2.0L Bi-Turbo 4x4 10AT technical column — visually verified",
+      "applicability_notes": "Exact historical configuration",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "FORD_TH_RANGER_WILDTRAK_CURRENT_20260831",
+      "publisher": "Ford Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_PRODUCT_PAGE",
+      "title": "Current Ford Ranger Wildtrak",
+      "url": "https://www.ford.co.th/en/trucks/ford-ranger/wildtrak/",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Current product",
+      "applicability_notes": "Comparison evidence only: current Wildtrak powertrain differs",
+      "archival_status": "URL_ONLY",
+      "notes": "Do not use current geometry to overwrite historical configuration."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "FORD_TH_RANGER_WILDTRAK_BROCHURE_2023",
+      "raw_oem_wording": "Ground clearance measured from lowest point; load state not stated",
+      "notes": "Structured unknown load state."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "WHEEL20",
+      "description": "Exact historical Wildtrak 4x4 20-inch fitment",
+      "wheel_package": "20-inch alloy / 255/55 R20",
+      "equipment_package": "Wildtrak 2.0L Bi-Turbo 4x4",
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact 2023 brochure column."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_LAUNCH",
+      "source_code": "FORD_TH_NEXTGEN_RANGER_LAUNCH_20220321",
+      "vehicle_identity_claim": "Next-Generation Ranger",
+      "raw_label": "Official launch",
+      "raw_value": "Next-Generation Ranger Thailand launch 21 Mar 2022",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Official launch",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_EXACT_CONFIG",
+      "source_code": "FORD_TH_RANGER_WILDTRAK_BROCHURE_2023",
+      "vehicle_identity_claim": "Wildtrak 2.0L Bi-Turbo 4x4 10AT",
+      "raw_label": "Exact brochure column",
+      "raw_value": "Double Cab Wildtrak 2.0L Bi-Turbo 4x4 10AT",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical brochure",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIM",
+      "source_code": "FORD_TH_RANGER_WILDTRAK_BROCHURE_2023",
+      "vehicle_identity_claim": "Wildtrak 2.0L Bi-Turbo 4x4 10AT",
+      "raw_label": "Overall width x length x height",
+      "raw_value": "1918 x 5370 x 1884",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical brochure",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "FORD_TH_RANGER_WILDTRAK_BROCHURE_2023",
+      "vehicle_identity_claim": "Wildtrak 2.0L Bi-Turbo 4x4 10AT",
+      "raw_label": "Wheelbase",
+      "raw_value": "3270",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "FORD_TH_RANGER_WILDTRAK_BROCHURE_2023",
+      "vehicle_identity_claim": "Wildtrak 2.0L Bi-Turbo 4x4 10AT",
+      "raw_label": "Ground clearance — measured from lowest point of vehicle",
+      "raw_value": "235",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Load state not stated"
+    },
+    {
+      "observation_code": "OBS_FITMENT",
+      "source_code": "FORD_TH_RANGER_WILDTRAK_BROCHURE_2023",
+      "vehicle_identity_claim": "Wildtrak 2.0L Bi-Turbo 4x4 10AT",
+      "raw_label": "Wheel/Tyre",
+      "raw_value": "20-inch alloy / 255/55 R20",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_CURRENT_DIFF",
+      "source_code": "FORD_TH_RANGER_WILDTRAK_CURRENT_20260831",
+      "vehicle_identity_claim": "Current Wildtrak 4x4",
+      "raw_label": "Current powertrain",
+      "raw_value": "2.0L Turbo 4x4",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Current product",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Current product differs from historical Bi-Turbo target"
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5370,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1918,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1884,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3270,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 235,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED",
+        "clearance_component_or_reference": "lowest point of vehicle"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "255/55 R20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_FITMENT"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "255/55 R20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_FITMENT"
+      ]
+    },
+    {
+      "value_code": "VAL_FWHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "20-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_FITMENT"
+      ]
+    },
+    {
+      "value_code": "VAL_RWHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "20-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_FITMENT"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact Ford Thailand turning-radius value located for this historical configuration.",
+      "source_families_searched": [
+        "Ford Thailand 2023 Wildtrak brochure",
+        "Ford Thailand official product sources"
+      ],
+      "search_notes": "Do not substitute turning data from another market.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek exact Thai technical/body-builder source."
+    },
+    {
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "Exact Thai track/tread not located in reviewed source set.",
+      "source_families_searched": [
+        "Ford Thailand 2023 Wildtrak brochure"
+      ],
+      "search_notes": "Unknown is retained.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek body-builder or homologation source."
+    },
+    {
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "Exact Thai track/tread not located in reviewed source set.",
+      "source_families_searched": [
+        "Ford Thailand 2023 Wildtrak brochure"
+      ],
+      "search_notes": "Unknown is retained.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek body-builder or homologation source."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
