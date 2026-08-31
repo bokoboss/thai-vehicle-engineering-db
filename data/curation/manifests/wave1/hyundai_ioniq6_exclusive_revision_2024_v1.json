@@ -1,0 +1,607 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-HYUNDAI-IONIQ6-EXCLUSIVE-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-hyundai-ioniq6-exclusive-revision-2024",
+    "manufacturer_name": "Hyundai",
+    "manufacturer_display_name": "Hyundai",
+    "canonical_model_name": "ioniq-6",
+    "display_model_name": "IONIQ 6",
+    "market_code": "TH",
+    "generation_name": "IONIQ 6 Thailand product labelled 2024",
+    "body_style": "Battery-electric sedan",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "OEM_REVISION_LABEL",
+    "identity_time_label_raw": "2024 IONIQ 6",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Exclusive",
+    "powertrain": "77.4 kWh battery electric / 225 HP",
+    "drivetrain": "RWD",
+    "body_configuration": "4-door sedan",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Hyundai Thailand's current site labels IONIQ 6 as '2024 IONIQ 6'. This is preserved as an OEM revision/product-year label, not converted to model year. Exact Exclusive engineering specification is from the official leaflet printed Oct 2025, and the product remains listed for sale in 2026."
+  },
+  "sources": [
+    {
+      "source_code": "HYUNDAI_TH_HOME_IONIQ6_2024_LABEL_20260831",
+      "publisher": "Hyundai Mobility Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "OFFICIAL_MODEL_INDEX",
+      "title": "Hyundai Mobility Thailand — current vehicle index",
+      "url": "https://www.hyundai.com/th/th",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Current vehicle model index",
+      "applicability_notes": "Official current model index labels IONIQ 6 as '2024 IONIQ 6'",
+      "archival_status": "URL_ONLY",
+      "notes": "The raw 2024 label is preserved as OEM revision/product-year wording; it is not promoted to MODEL_YEAR."
+    },
+    {
+      "source_code": "HYUNDAI_TH_IONIQ6_CURRENT_20260831",
+      "publisher": "Hyundai Mobility Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_PRODUCT_PAGE",
+      "title": "IONIQ 6 Thailand current product",
+      "url": "https://www.hyundai.com/th/th/find-a-car/ioniq6/highlights",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Current product",
+      "applicability_notes": "Current IONIQ 6 product; Hyundai Thailand home/catalog navigation labels IONIQ 6 as 2024",
+      "archival_status": "URL_ONLY",
+      "notes": "The 2024 site label is treated as OEM revision/product-year wording, not formal MODEL_YEAR semantics."
+    },
+    {
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "publisher": "Hyundai Mobility Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+      "title": "IONIQ 6 Exclusive leaflet — Printed Oct 2025",
+      "url": "https://www.hyundai.com/content/dam/hyundai/th/en/data/marketing/brochure/product/ioniq6/IONIQ6-A4%20LEAFLET_OCT2025.pdf",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2025,
+      "page_section_default": "Specifications and dimension drawing — visually verified page 2",
+      "applicability_notes": "Exact Exclusive grade",
+      "archival_status": "URL_ONLY",
+      "notes": "Original PDF page visually reviewed; includes exact spec table and dimension drawing."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "raw_oem_wording": "Minimum ground clearance; load/reference state not stated",
+      "notes": "Structured unknown state only."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "WHEEL20",
+      "description": "IONIQ 6 Exclusive exact 20-inch fitment",
+      "wheel_package": "20 x 8.5J / 245/40 R20",
+      "equipment_package": "Exclusive",
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact leaflet fitment."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_LABEL",
+      "source_code": "HYUNDAI_TH_HOME_IONIQ6_2024_LABEL_20260831",
+      "vehicle_identity_claim": "IONIQ 6 Thailand product",
+      "raw_label": "OEM product-year/revision label",
+      "raw_value": "2024 IONIQ 6",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Current vehicle model index",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Not treated as formal model year"
+    },
+    {
+      "observation_code": "OBS_GRADE",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Grade",
+      "raw_value": "Exclusive",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Specifications",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIM",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Overall length x width x height",
+      "raw_value": "4855 x 1880 x 1495",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Specifications",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Wheelbase",
+      "raw_value": "2950",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Specifications",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Minimum ground clearance",
+      "raw_value": "141",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Specifications",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Load/reference state not stated"
+    },
+    {
+      "observation_code": "OBS_KERB",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Kerb weight",
+      "raw_value": "1986",
+      "raw_unit": "kg",
+      "raw_qualifier": null,
+      "page_section_locator": "Specifications",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TURN",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Minimum turning radius",
+      "raw_value": "5.91",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Specifications",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated"
+    },
+    {
+      "observation_code": "OBS_WHEEL",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Alloy wheel size",
+      "raw_value": "20 x 8.5J",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Specifications",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TYRE",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Tyre size",
+      "raw_value": "245/40 R20",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Specifications",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TRACK_FRONT",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Dimension drawing front track",
+      "raw_value": "1630",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimension drawing",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Track reference definition not explicitly stated"
+    },
+    {
+      "observation_code": "OBS_TRACK_REAR",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Dimension drawing rear track",
+      "raw_value": "1639",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimension drawing",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Track reference definition not explicitly stated"
+    },
+    {
+      "observation_code": "OBS_FRONT_OH",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Front overhang",
+      "raw_value": "850",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimension drawing",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_REAR_OH",
+      "source_code": "HYUNDAI_TH_IONIQ6_LEAFLET_202510",
+      "vehicle_identity_claim": "IONIQ 6 Exclusive",
+      "raw_label": "Rear overhang",
+      "raw_value": "1055",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimension drawing",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4855,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1880,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1495,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2950,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_OH",
+      "parameter_code": "front_overhang_mm",
+      "value": 850,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_FRONT_OH"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_OH",
+      "parameter_code": "rear_overhang_mm",
+      "value": 1055,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_REAR_OH"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1630,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED",
+        "source_qualifier": "dimension drawing"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_FRONT"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1639,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED",
+        "source_qualifier": "dimension drawing"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_REAR"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 141,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 1986,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_KERB"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.91,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "245/40 R20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "245/40 R20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FWHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "20 x 8.5J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    },
+    {
+      "value_code": "VAL_RWHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "20 x 8.5J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Dimension drawing publishes front track but does not establish AVT outer tyre-face definition.",
+      "source_families_searched": [
+        "Hyundai Thailand exact-grade leaflet"
+      ],
+      "search_notes": "Keep OEM/drawing track separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Dimension drawing publishes rear track but does not establish AVT outer tyre-face definition.",
+      "source_families_searched": [
+        "Hyundai Thailand exact-grade leaflet"
+      ],
+      "search_notes": "Keep OEM/drawing track separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}

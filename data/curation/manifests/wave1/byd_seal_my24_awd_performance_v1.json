@@ -1,0 +1,509 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-BYD-SEAL-MY24-AWD-PERFORMANCE-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-byd-seal-my24-awd-performance",
+    "manufacturer_name": "BYD",
+    "manufacturer_display_name": "BYD",
+    "canonical_model_name": "seal",
+    "display_model_name": "SEAL",
+    "market_code": "TH",
+    "generation_name": "BYD SEAL MY24 Thailand",
+    "body_style": "Battery-electric sedan",
+    "model_year_from": 2024,
+    "model_year_to": 2024,
+    "identity_time_basis": "MODEL_YEAR",
+    "identity_time_label_raw": "BYD SEAL MY 24 AWD Performance",
+    "sale_period_from": "2025-07-05",
+    "sale_period_to": "2025-07-31",
+    "variant_trim": "AWD Performance",
+    "powertrain": "Battery electric",
+    "drivetrain": "AWD",
+    "body_configuration": "4-door sedan",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "RÊVER official campaign explicitly names BYD SEAL MY 24 AWD Performance. The bounded July 2025 campaign proves exact MY24/grade applicability; model year is source-explicit, not inferred."
+  },
+  "sources": [
+    {
+      "source_code": "REVER_TH_SEAL_MY24_AWD_CAMPAIGN_202507",
+      "publisher": "RÊVER Automotive",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_CAMPAIGN_TERMS",
+      "title": "SUPERMAN x BYD SUPERCHARGED — BYD SEAL MY 24 campaign",
+      "url": "https://www.reverautomotive.com/news/ContentBydSealMy24July2025Campaign",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2025,
+      "model_year_from": 2024,
+      "model_year_to": 2024,
+      "page_section_default": "Campaign terms",
+      "applicability_notes": "Exact BYD SEAL MY24 AWD Performance identity; campaign 5–31 Jul 2025",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "publisher": "RÊVER Automotive",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "BYD SEAL Technical Information",
+      "url": "https://www.reverautomotive.com/en/model/seal/tech-spec",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "AWD Performance exact column",
+      "applicability_notes": "AWD Performance engineering specification used in accepted Phase 1 research baseline",
+      "archival_status": "URL_ONLY",
+      "notes": "Temporal identity is independently bounded by the MY24 campaign source."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "UNLADEN_OEM",
+      "name": "OEM unladen",
+      "mass_basis": "UNLADEN",
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "raw_oem_wording": "Ground Clearance Unladen",
+      "notes": "Do not treat as battery-pack clearance or loaded ramp clearance."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "WHEEL19",
+      "description": "AWD Performance exact 19-inch fitment",
+      "wheel_package": "19-inch / 235/45 R19",
+      "equipment_package": "AWD Performance",
+      "model_year_from": 2024,
+      "model_year_to": 2024,
+      "default_for_configuration": true,
+      "notes": "Exact published AWD Performance fitment."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_MY24",
+      "source_code": "REVER_TH_SEAL_MY24_AWD_CAMPAIGN_202507",
+      "vehicle_identity_claim": "BYD SEAL MY24 AWD Performance",
+      "raw_label": "Campaign model designation",
+      "raw_value": "BYD SEAL MY 24 AWD Performance",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Campaign terms",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "BYD SEAL AWD Performance",
+      "raw_label": "Overall Length",
+      "raw_value": "4800",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH",
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "BYD SEAL AWD Performance",
+      "raw_label": "Overall Width",
+      "raw_value": "1875",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Mirror/body inclusion not stated"
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "BYD SEAL AWD Performance",
+      "raw_label": "Overall Height",
+      "raw_value": "1460",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TRACK",
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "BYD SEAL AWD Performance",
+      "raw_label": "Wheel Track Front / Rear",
+      "raw_value": "1620 / 1625",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM track definition not stated"
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "BYD SEAL AWD Performance",
+      "raw_label": "Wheelbase",
+      "raw_value": "2920",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TURN",
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "BYD SEAL AWD Performance",
+      "raw_label": "Minimum Turning Radius",
+      "raw_value": "5.7",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated"
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "BYD SEAL AWD Performance",
+      "raw_label": "Ground Clearance Unladen",
+      "raw_value": "120",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Limiting underbody component not stated"
+    },
+    {
+      "observation_code": "OBS_KERB",
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "BYD SEAL AWD Performance",
+      "raw_label": "Kerb Weight",
+      "raw_value": "2185",
+      "raw_unit": "kg",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GVM",
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "BYD SEAL AWD Performance",
+      "raw_label": "Gross Vehicle Mass",
+      "raw_value": "2631",
+      "raw_unit": "kg",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TYRE",
+      "source_code": "REVER_TH_SEAL_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "BYD SEAL AWD Performance",
+      "raw_label": "Tyre",
+      "raw_value": "235/45 R19",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4800,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1875,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1460,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2920,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1620,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1625,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 120,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "UNLADEN_OEM",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.7,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 2185,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_KERB"
+      ]
+    },
+    {
+      "value_code": "VAL_GVM",
+      "parameter_code": "gross_vehicle_mass_kg",
+      "value": 2631,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GVM"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "235/45 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL19",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "235/45 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL19",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published OEM track reference is unspecified and cannot be treated as AVT outer tyre faces.",
+      "source_families_searched": [
+        "RÊVER Thailand technical specification"
+      ],
+      "search_notes": "Keep OEM track separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published OEM track reference is unspecified and cannot be treated as AVT outer tyre faces.",
+      "source_families_searched": [
+        "RÊVER Thailand technical specification"
+      ],
+      "search_notes": "Keep OEM track separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}

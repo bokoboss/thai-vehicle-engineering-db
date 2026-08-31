@@ -1,0 +1,628 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-TESLA-MODELY-PREMIUM-LR-RWD-19-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-tesla-modely-premium-lr-rwd-19-2025plus",
+    "manufacturer_name": "Tesla",
+    "manufacturer_display_name": "Tesla",
+    "canonical_model_name": "model-y",
+    "display_model_name": "Model Y",
+    "market_code": "TH",
+    "generation_name": "2025+ Model Y",
+    "body_style": "Battery-electric crossover/SUV",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "OEM_REVISION_LABEL",
+    "identity_time_label_raw": "Model Y Owner's Manual — Thailand — 2025+",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Premium Long Range Rear-Wheel Drive",
+    "powertrain": "Battery electric",
+    "drivetrain": "RWD",
+    "body_configuration": "5-seat crossover/SUV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Current Thailand product page resolves Long Range RWD with 19-inch fitment; Thailand owner's manual explicitly identifies the 2025+ Model Y Premium 5-Seater geometry family. The 2025+ label is preserved as OEM revision wording, not silently treated as formal model year."
+  },
+  "sources": [
+    {
+      "source_code": "TESLA_TH_MODELY_PRODUCT_CURRENT",
+      "publisher": "Tesla",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "Model Y Premium — Thailand",
+      "url": "https://www.tesla.com/en_th/modely",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Current product specification",
+      "applicability_notes": "Exact current Thailand Long Range RWD sales variant and 19-inch fitment",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "publisher": "Tesla",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OWNER_MANUAL",
+      "source_subtype_raw": "OWNER_MANUAL_DIMENSIONS",
+      "title": "Model Y Owner's Manual — Thailand — 2025+",
+      "url": "https://www.tesla.com/ownersmanual/modely/en_th/GUID-1E76B638-7B12-4D9A-8767-94B7F1E92A0E.html",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Dimensions",
+      "applicability_notes": "2025+ Model Y Premium 5-Seater geometry family",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "TESLA_TH_MODELY_SUBSYSTEMS_2025PLUS",
+      "publisher": "Tesla",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OWNER_MANUAL",
+      "source_subtype_raw": "OWNER_MANUAL_STEERING",
+      "title": "Model Y Owner's Manual — Subsystems",
+      "url": "https://www.tesla.com/ownersmanual/modely/en_th/GUID-E414862C-CFA1-4A0B-9548-BE21C32CAA58.html",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Steering/turning subsystem data",
+      "applicability_notes": "2025+ 5-Seater steering and turning",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "LADEN_OEM",
+      "name": "OEM laden",
+      "mass_basis": "OEM_LADEN",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "raw_oem_wording": "Laden",
+      "notes": "No payload or tyre-pressure assumptions added."
+    },
+    {
+      "load_condition_code": "UNLADEN_OEM",
+      "name": "OEM unladen",
+      "mass_basis": "UNLADEN",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "raw_oem_wording": "Unladen",
+      "notes": "No payload or tyre-pressure assumptions added."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "WHEEL19",
+      "description": "Current Thailand 19-inch wheel fitment",
+      "wheel_package": "19-inch wheels",
+      "equipment_package": null,
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact current product fitment; no tyre dimensions are inferred in this manifest."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_PRODUCT",
+      "source_code": "TESLA_TH_MODELY_PRODUCT_CURRENT",
+      "vehicle_identity_claim": "Model Y Premium Long Range Rear-Wheel Drive, 19-inch, 5 seats",
+      "raw_label": "Current Thailand product configuration",
+      "raw_value": "Long Range Rear-Wheel Drive / 19-inch wheels",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Product page",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "vehicle_identity_claim": "2025+ Model Y Premium 5-Seater",
+      "raw_label": "Overall Length — excluding license plate bracket",
+      "raw_value": "4790",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Length excludes license plate bracket"
+    },
+    {
+      "observation_code": "OBS_WIDTH_BODY",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "vehicle_identity_claim": "2025+ Model Y Premium 5-Seater",
+      "raw_label": "Overall Width — excluding mirrors",
+      "raw_value": "1920",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH_OPEN",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "vehicle_identity_claim": "2025+ Model Y Premium 5-Seater",
+      "raw_label": "Overall Width — including mirrors",
+      "raw_value": "2129",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH_FOLDED",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "vehicle_identity_claim": "2025+ Model Y Premium 5-Seater",
+      "raw_label": "Overall Width — folded mirrors",
+      "raw_value": "1982",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "vehicle_identity_claim": "2025+ Model Y Premium 5-Seater",
+      "raw_label": "Overall Height",
+      "raw_value": "1624",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "vehicle_identity_claim": "2025+ Model Y Premium 5-Seater",
+      "raw_label": "Wheelbase",
+      "raw_value": "2890",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_FRONT_OH",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "vehicle_identity_claim": "2025+ Model Y Premium 5-Seater",
+      "raw_label": "Overhang — Front",
+      "raw_value": "889",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_REAR_OH",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "vehicle_identity_claim": "2025+ Model Y Premium 5-Seater",
+      "raw_label": "Overhang — Rear",
+      "raw_value": "1011",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC_LADEN",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "vehicle_identity_claim": "2025+ Model Y Premium 5-Seater",
+      "raw_label": "Ground Clearance — Laden",
+      "raw_value": "122",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Limiting component not stated"
+    },
+    {
+      "observation_code": "OBS_GC_UNLADEN",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "vehicle_identity_claim": "2025+ Model Y Premium 5-Seater",
+      "raw_label": "Ground Clearance — Unladen",
+      "raw_value": "167",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Limiting component not stated"
+    },
+    {
+      "observation_code": "OBS_TRACK",
+      "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+      "vehicle_identity_claim": "2025+ Model Y Premium 5-Seater",
+      "raw_label": "Track — Front and Rear",
+      "raw_value": "1636",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Dimensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM explicitly defines track as measured at wheel center"
+    },
+    {
+      "observation_code": "OBS_LTL",
+      "source_code": "TESLA_TH_MODELY_SUBSYSTEMS_2025PLUS",
+      "vehicle_identity_claim": "Model Y 5-Seater",
+      "raw_label": "Number of turns lock to lock",
+      "raw_value": "2.4",
+      "raw_unit": "turns",
+      "raw_qualifier": null,
+      "page_section_locator": "Subsystems",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TURNING_CIRCLE",
+      "source_code": "TESLA_TH_MODELY_SUBSYSTEMS_2025PLUS",
+      "vehicle_identity_claim": "Model Y 5-Seater",
+      "raw_label": "Turning Circle (curb to curb)",
+      "raw_value": "12.13",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Subsystems",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Source reports a circle/diameter; controlled radius derivation is intentionally not hand-entered"
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4790,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "source_qualifier": "excluding license plate bracket"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_BODY",
+      "parameter_code": "overall_width_body_mm",
+      "value": 1920,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_BODY"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_OPEN",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 2129,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_OPEN"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_FOLDED",
+      "parameter_code": "overall_width_mirrors_folded_mm",
+      "value": 1982,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_FOLDED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_FOLDED"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1624,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2890,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_OH",
+      "parameter_code": "front_overhang_mm",
+      "value": 889,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_FRONT_OH"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_OH",
+      "parameter_code": "rear_overhang_mm",
+      "value": 1011,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_REAR_OH"
+      ]
+    },
+    {
+      "value_code": "VAL_GC_LADEN",
+      "parameter_code": "clearance_value_mm",
+      "value": 122,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "LADEN_OEM",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC_LADEN"
+      ]
+    },
+    {
+      "value_code": "VAL_GC_UNLADEN",
+      "parameter_code": "clearance_value_mm",
+      "value": 167,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "UNLADEN_OEM",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC_UNLADEN"
+      ]
+    },
+    {
+      "value_code": "VAL_TRACK_FRONT",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1636,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "WHEEL_CENTERLINE"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_TRACK_REAR",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1636,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "WHEEL_CENTERLINE"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_LTL",
+      "parameter_code": "steering_wheel_lock_to_lock_turns",
+      "value": 2.4,
+      "canonical_unit": "turns",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LTL"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING_TEXT",
+      "parameter_code": "oem_turning_value_text",
+      "value": "12.13 m curb-to-curb turning circle",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "source_reported_shape": "DIAMETER/CIRCLE",
+        "turning_reference": "CURB_TO_CURB"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING_CIRCLE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Source reports a 12.13 m curb-to-curb turning circle. Manifest v1 forbids hand-entered DERIVED values and no registered circle-to-radius derivation is invoked here.",
+      "source_families_searched": [
+        "Tesla Thailand 2025+ owner's manual"
+      ],
+      "search_notes": "Retain raw circle as oem_turning_value_text.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Run a registered turning-circle diameter-to-radius derivation after import if/when implemented."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published track is explicitly wheel-center based, not AVT outer tyre faces.",
+      "source_families_searched": [
+        "Tesla Thailand owner's manual"
+      ],
+      "search_notes": "Do not convert centerline track to AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted tyre/wheel geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published track is explicitly wheel-center based, not AVT outer tyre faces.",
+      "source_families_searched": [
+        "Tesla Thailand owner's manual"
+      ],
+      "search_notes": "Do not convert centerline track to AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted tyre/wheel geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}

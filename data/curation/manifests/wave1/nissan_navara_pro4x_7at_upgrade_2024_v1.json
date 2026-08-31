@@ -1,0 +1,525 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-NISSAN-NAVARA-PRO4X-7AT-2024-UPGRADE-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-nissan-navara-pro4x-7at-upgrade-2024",
+    "manufacturer_name": "Nissan",
+    "manufacturer_display_name": "Nissan",
+    "canonical_model_name": "navara",
+    "display_model_name": "Navara",
+    "market_code": "TH",
+    "generation_name": "Navara upgraded interior / Euro 5 Thailand release",
+    "body_style": "Double Cab pickup",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "Upgraded Nissan Navara with new interior design — launched 15 Aug 2024",
+    "sale_period_from": "2024-08-15",
+    "sale_period_to": null,
+    "variant_trim": "DC PRO-4X 7AT",
+    "powertrain": "Diesel / 7AT",
+    "drivetrain": "4WD",
+    "body_configuration": "Double Cab",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Official Nissan Thailand 15 Aug 2024 upgraded-product release explicitly includes PRO-4X 4WD 7AT; current Nissan Thailand specification retains an exact DC PRO-4X 7AT column with matching engineering values."
+  },
+  "sources": [
+    {
+      "source_code": "NISSAN_TH_NAVARA_UPGRADE_LAUNCH_20240815",
+      "publisher": "Nissan Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_NEWS",
+      "title": "Nissan Navara with new interior design",
+      "url": "https://en.nissan.co.th/news/nissan-navara-new-interior-design-enhances-driving-experience-with-more-premium-and-sporty.html",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2024,
+      "page_section_default": "Official release",
+      "applicability_notes": "Exact upgraded line-up including PRO-4X 4WD 7AT",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "publisher": "Nissan Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "Nissan Navara PRO-4X / PRO-2X specifications",
+      "url": "https://en.nissan.co.th/vehicles/new-vehicles/navara-pro-4x-and-pro-2x/specifications.html",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "DC PRO-4X 7AT exact column",
+      "applicability_notes": "Exact current DC PRO-4X 7AT configuration",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "raw_oem_wording": "Ground clearance; load/reference state not stated",
+      "notes": "Structured unknown state only."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "PRO4X17",
+      "description": "PRO-4X exact 17-inch all-terrain fitment",
+      "wheel_package": "17-inch off-road alloy / 255/65R17 All-Terrain",
+      "equipment_package": "PRO-4X",
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact current PRO-4X column."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "NISSAN_TH_NAVARA_UPGRADE_LAUNCH_20240815",
+      "vehicle_identity_claim": "Navara PRO-4X 4WD 7AT",
+      "raw_label": "Official upgraded-product release",
+      "raw_value": "PRO-4X 4WD 7AT included in upgraded Navara line-up launched 15 Aug 2024",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Official release",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "DC PRO-4X 7AT",
+      "raw_label": "Overall length",
+      "raw_value": "5260",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "PRO-4X specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH",
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "DC PRO-4X 7AT",
+      "raw_label": "Overall width",
+      "raw_value": "1875",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "PRO-4X specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Mirror/body inclusion not stated"
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "DC PRO-4X 7AT",
+      "raw_label": "Overall height",
+      "raw_value": "1840",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "PRO-4X specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "DC PRO-4X 7AT",
+      "raw_label": "Wheelbase",
+      "raw_value": "3150",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "PRO-4X specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TRACK",
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "DC PRO-4X 7AT",
+      "raw_label": "Tread front/rear",
+      "raw_value": "1570 / 1570",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "PRO-4X specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM track definition not stated"
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "DC PRO-4X 7AT",
+      "raw_label": "Ground clearance",
+      "raw_value": "225",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "PRO-4X specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Load/reference state not stated"
+    },
+    {
+      "observation_code": "OBS_KERB",
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "DC PRO-4X 7AT",
+      "raw_label": "Curb weight",
+      "raw_value": "2091",
+      "raw_unit": "kg",
+      "raw_qualifier": null,
+      "page_section_locator": "PRO-4X specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WHEEL",
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "DC PRO-4X 7AT",
+      "raw_label": "Wheel",
+      "raw_value": "17-inch black off-road alloy",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "PRO-4X specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TYRE",
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "DC PRO-4X 7AT",
+      "raw_label": "Tyre",
+      "raw_value": "255/65R17 All-Terrain",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "PRO-4X specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TURN",
+      "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "DC PRO-4X 7AT",
+      "raw_label": "Turning Radius",
+      "raw_value": "6.3",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "PRO-4X specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated"
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5260,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1875,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1840,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3150,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1570,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1570,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 225,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 2091,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_KERB"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 6.3,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "255/65R17 All-Terrain",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "PRO4X17",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "255/65R17 All-Terrain",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "PRO4X17",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FWHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "17-inch off-road alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "PRO4X17",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    },
+    {
+      "value_code": "VAL_RWHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "17-inch off-road alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "PRO4X17",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM tread/track definition is unspecified and cannot be treated as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Nissan Thailand PRO-4X specification"
+      ],
+      "search_notes": "Keep OEM tread separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM tread/track definition is unspecified and cannot be treated as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Nissan Thailand PRO-4X specification"
+      ],
+      "search_notes": "Keep OEM tread separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}

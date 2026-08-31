@@ -1,0 +1,333 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-TOYOTA-COMMUTER-28-AT-HIGHROOF-15S-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-toyota-commuter-28-at-highroof-revision-2568",
+    "manufacturer_name": "Toyota",
+    "manufacturer_display_name": "Toyota",
+    "canonical_model_name": "commuter",
+    "display_model_name": "Commuter",
+    "market_code": "TH",
+    "generation_name": "Current high-roof Commuter",
+    "body_style": "High-roof passenger van",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "OEM_REVISION_LABEL",
+    "identity_time_label_raw": "ไฮเอซและคอมมิวเตอร์หลังคาสูง รุ่นปรับปรุง ปี 2568",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Diesel 2.8 AT",
+    "powertrain": "1GD-FTV 2.8 diesel / 6AT",
+    "drivetrain": "RWD",
+    "body_configuration": "High roof / 15 seats",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Toyota official accessory/download index supplies the raw revision label; current grade page and screenshot-verified 2025 catalog resolve the 2.8 AT high-roof 15-seat configuration. Revision year is not converted to model year."
+  },
+  "sources": [
+    {
+      "source_code": "TOYOTA_TH_COMMUTER_REVISION_LABEL_2568",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_ACCESSORY_DOWNLOAD_INDEX",
+      "title": "Toyota Accessories download index — Hiace and Commuter high-roof revision 2568",
+      "url": "https://www.toyota.co.th/accessories/download",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Download listing",
+      "applicability_notes": "Temporal revision-label evidence",
+      "archival_status": "URL_ONLY",
+      "notes": "Raw label preserved; Buddhist-calendar revision year is not model year."
+    },
+    {
+      "source_code": "TOYOTA_TH_COMMUTER_CURRENT_20260831",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_GRADE_LIST",
+      "title": "Toyota Commuter current grade",
+      "url": "https://www.toyota.co.th/model/commuter",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Current grade",
+      "applicability_notes": "Diesel 2.8 AT / 15-seat current grade",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "TOYOTA_TH_COMMUTER_CATALOG_2025",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+      "title": "Toyota Commuter Catalogue 2025",
+      "url": "https://www.toyota.co.th/media/product/series/download/COMMUTER_CATALOGUE_2025.pdf",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Technical table — screenshot-verified page 6",
+      "applicability_notes": "2.8 AT high-roof 15-seat configuration",
+      "archival_status": "URL_ONLY",
+      "notes": "Technical page visually verified during Phase 1 research."
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_REVISION",
+      "source_code": "TOYOTA_TH_COMMUTER_REVISION_LABEL_2568",
+      "vehicle_identity_claim": "Commuter high-roof revision",
+      "raw_label": "Revision label",
+      "raw_value": "ไฮเอซและคอมมิวเตอร์หลังคาสูง รุ่นปรับปรุง ปี 2568",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Download listing",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_IDENTITY_GRADE",
+      "source_code": "TOYOTA_TH_COMMUTER_CURRENT_20260831",
+      "vehicle_identity_claim": "Toyota Commuter Diesel 2.8 AT high roof 15 seats",
+      "raw_label": "Current grade",
+      "raw_value": "Diesel 2.8 AT / 15 seats",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Current grade",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "TOYOTA_TH_COMMUTER_CATALOG_2025",
+      "vehicle_identity_claim": "Toyota Commuter Diesel 2.8 AT",
+      "raw_label": "Overall length x width x height",
+      "raw_value": "5915 x 1950 x 2280",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "TOYOTA_TH_COMMUTER_CATALOG_2025",
+      "vehicle_identity_claim": "Toyota Commuter Diesel 2.8 AT",
+      "raw_label": "Wheelbase",
+      "raw_value": "3860",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TRACK",
+      "source_code": "TOYOTA_TH_COMMUTER_CATALOG_2025",
+      "vehicle_identity_claim": "Toyota Commuter Diesel 2.8 AT",
+      "raw_label": "Front/Rear tread",
+      "raw_value": "1675 / 1670",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM tread/track reference definition not stated"
+    },
+    {
+      "observation_code": "OBS_TURN",
+      "source_code": "TOYOTA_TH_COMMUTER_CATALOG_2025",
+      "vehicle_identity_claim": "Toyota Commuter Diesel 2.8 AT",
+      "raw_label": "Minimum turning radius",
+      "raw_value": "6.4",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated"
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5915,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1950,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 2280,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3860,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1675,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1670,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 6.4,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota tread/track definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalog"
+      ],
+      "search_notes": "Keep OEM tread separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota tread/track definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalog"
+      ],
+      "search_notes": "Keep OEM tread separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
