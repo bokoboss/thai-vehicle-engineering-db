@@ -14,20 +14,43 @@ from app.db.models import (
     VehicleConfiguration,
 )
 from app.domain.avt_mapping import build_avt_mapping
-from app.domain.derivations import derive_avt_track_estimate, derive_nominal_tyre_radius
+from app.domain.derivations import derive_avt_track_estimate, derive_nominal_tyre_radius, register_derivation_rule
 from app.domain.enums import (
     AvailabilityState,
     DecisionState,
     EvidenceMethod,
+    GeometryFidelity,
+    GeometryMethod,
+    GeometryRole,
+    LinkageType,
+    MassBasis,
+    PhaseBehavior,
     ReadinessStatus,
     ReadinessType,
     ResolutionState,
+    SteeringRole,
     VerificationState,
 )
 from app.domain.readiness import evaluate_readiness
-from app.domain.schemas import EvidenceLinkCreate, NormalizedValueCreate
+from app.domain.schemas import (
+    EvidenceLinkCreate,
+    GeometryAssetCreate,
+    LoadConditionCreate,
+    NormalizedValueCreate,
+    ParameterAssessmentCreate,
+    SourceObservationCreate,
+    SteeringRelationCreate,
+)
 from app.domain.validation import ContractViolation
-from app.services.foundation import create_fitment, create_normalized_value
+from app.services.foundation import (
+    create_fitment,
+    create_geometry_asset,
+    create_load_condition,
+    create_normalized_value,
+    create_parameter_assessment,
+    create_source_observation,
+    create_steering_relation,
+)
 
 
 FIXTURE_TIME = datetime(2026, 8, 31, tzinfo=timezone.utc)
@@ -357,3 +380,327 @@ def test_fitment_specific_derivations_preserve_scope_and_reject_mixing(session):
             nominal_section_width_value=nominal_width_b,
             output_parameter_code="avt_front_outer_face_track_mm",
         )
+
+
+@pytest.mark.parametrize(
+    "parameter_code",
+    [
+        "static_loaded_tyre_radius_front_mm",
+        "static_loaded_tyre_radius_rear_mm",
+    ],
+)
+def test_static_loaded_tyre_radius_requires_load_condition(session, parameter_code):
+    vehicle = config(session, "FIXTURE-STATIC-LOADED-RADIUS")
+    observation = source_observation_for(session, vehicle)
+    payload = NormalizedValueCreate(
+        parameter_code=parameter_code,
+        numeric_value=321,
+        canonical_unit="mm",
+        evidence_method=EvidenceMethod.MEASURED,
+        semantic_metadata={"radius_kind": "STATIC_LOADED"},
+    )
+    with pytest.raises(ContractViolation):
+        create_normalized_value(
+            session,
+            vehicle,
+            payload,
+            evidence_links=[EvidenceLinkCreate(source_observation_id=observation.id)],
+        )
+
+
+def test_static_loaded_tyre_radius_rejects_foreign_load_condition(session):
+    vehicle = config(session, "FIXTURE-STATIC-LOADED-RADIUS")
+    foreign_vehicle = config(session, "FIXTURE-CLEARANCE-LOADS")
+    observation = source_observation_for(session, vehicle)
+    payload = NormalizedValueCreate(
+        parameter_code="static_loaded_tyre_radius_front_mm",
+        numeric_value=321,
+        canonical_unit="mm",
+        load_condition_id=foreign_vehicle.load_conditions[0].id,
+        evidence_method=EvidenceMethod.MEASURED,
+        semantic_metadata={"radius_kind": "STATIC_LOADED"},
+    )
+    with pytest.raises(ContractViolation):
+        create_normalized_value(
+            session,
+            vehicle,
+            payload,
+            evidence_links=[EvidenceLinkCreate(source_observation_id=observation.id)],
+        )
+
+
+def test_static_loaded_tyre_radius_does_not_require_published_tyre_pressure(session):
+    vehicle = config(session, "FIXTURE-STATIC-LOADED-RADIUS")
+    observation = source_observation_for(session, vehicle)
+    load = create_load_condition(
+        session,
+        vehicle,
+        LoadConditionCreate(name="Unknown-pressure measured condition", mass_basis=MassBasis.KERB),
+    )
+    value = create_normalized_value(
+        session,
+        vehicle,
+        NormalizedValueCreate(
+            parameter_code="static_loaded_tyre_radius_front_mm",
+            numeric_value=321,
+            canonical_unit="mm",
+            load_condition_id=load.id,
+            evidence_method=EvidenceMethod.MEASURED,
+            semantic_metadata={"radius_kind": "STATIC_LOADED"},
+        ),
+        evidence_links=[EvidenceLinkCreate(source_observation_id=observation.id)],
+    )
+    assert value.load_condition_id == load.id
+    assert load.front_tyre_pressure is None
+    assert load.rear_tyre_pressure is None
+
+
+def test_cross_configuration_evidence_is_rejected(session):
+    vehicle = config(session, "FIXTURE-PRIMARY-PUBLISHED")
+    foreign_observation = source_observation_for(session, config(session, "FIXTURE-AVT-TRACK-SCREENING"))
+    payload = NormalizedValueCreate(
+        parameter_code="overall_length_mm",
+        numeric_value=4500,
+        canonical_unit="mm",
+        evidence_method=EvidenceMethod.PUBLISHED,
+    )
+    with pytest.raises(ContractViolation):
+        create_normalized_value(
+            session,
+            vehicle,
+            payload,
+            evidence_links=[EvidenceLinkCreate(source_observation_id=foreign_observation.id)],
+        )
+
+
+def test_unresolved_evidence_cannot_qualify_an_exact_configuration_value(session):
+    vehicle = config(session, "FIXTURE-PRIMARY-PUBLISHED")
+    existing_observation = source_observation_for(session, vehicle)
+
+    unresolved = create_source_observation(
+        session,
+        None,
+        SourceObservationCreate(
+            vehicle_identity_claim="unresolved fixture identity",
+            source_document_id=existing_observation.source_document_id,
+            raw_label="Overall length",
+            raw_value="4500",
+            raw_unit="mm",
+            extracted_at=FIXTURE_TIME,
+        ),
+    )
+    with pytest.raises(ContractViolation):
+        create_normalized_value(
+            session,
+            vehicle,
+            NormalizedValueCreate(
+                parameter_code="overall_length_mm",
+                numeric_value=4500,
+                canonical_unit="mm",
+                evidence_method=EvidenceMethod.PUBLISHED,
+            ),
+            evidence_links=[EvidenceLinkCreate(source_observation_id=unresolved.id)],
+        )
+
+
+def test_steering_relation_rejects_axle_from_another_configuration(session):
+    vehicle = config(session, "FIXTURE-REAR-STEERING")
+    foreign_axle = config(session, "FIXTURE-AVT-TRACK-DIRECT").axles[0]
+    with pytest.raises(ContractViolation):
+        create_steering_relation(
+            session,
+            vehicle,
+            SteeringRelationCreate(
+                axle_id=foreign_axle.id,
+                steering_role=SteeringRole.PRIMARY,
+                linkage_type=LinkageType.FIXED_RATIO,
+                phase_behavior=PhaseBehavior.SAME_PHASE,
+            ),
+        )
+
+
+def test_steering_relation_rejects_foreign_source_observation(session):
+    vehicle = config(session, "FIXTURE-REAR-STEERING")
+    axle = vehicle.axles[0]
+    foreign_observation = source_observation_for(session, config(session, "FIXTURE-AVT-TRACK-SCREENING"))
+    with pytest.raises(ContractViolation):
+        create_steering_relation(
+            session,
+            vehicle,
+            SteeringRelationCreate(
+                axle_id=axle.id,
+                steering_role=SteeringRole.PRIMARY,
+                linkage_type=LinkageType.FIXED_RATIO,
+                phase_behavior=PhaseBehavior.SAME_PHASE,
+                source_observation_id=foreign_observation.id,
+            ),
+        )
+
+
+def _geometry_payload(**overrides) -> GeometryAssetCreate:
+    data = {
+        "geometry_role": GeometryRole.SIDE_SILHOUETTE,
+        "representation_type": "POLYLINE",
+        "geometry_data": {"points": [[0, 0], [1, 1]]},
+        "unit": "mm",
+        "coordinate_system_version": "vehicle-fixed-v1",
+        "geometry_method": GeometryMethod.SCALED_DRAWING,
+        "geometry_fidelity": GeometryFidelity.LOW,
+    }
+    data.update(overrides)
+    return GeometryAssetCreate(**data)
+
+
+def test_geometry_asset_rejects_foreign_fitment_and_load_condition(session):
+    vehicle = config(session, "FIXTURE-PRIMARY-PUBLISHED")
+    foreign_vehicle = config(session, "FIXTURE-CLEARANCE-LOADS")
+    foreign_fitment = create_fitment(session, foreign_vehicle, "FOREIGN-FITMENT")
+    with pytest.raises(ContractViolation):
+        create_geometry_asset(session, vehicle, _geometry_payload(), fitment=foreign_fitment)
+
+    with pytest.raises(ContractViolation):
+        create_geometry_asset(
+            session,
+            vehicle,
+            _geometry_payload(load_condition_id=foreign_vehicle.load_conditions[0].id),
+        )
+
+
+def test_geometry_asset_rejects_foreign_derivation_run(session):
+    vehicle = config(session, "FIXTURE-PRIMARY-PUBLISHED")
+    foreign_value = value_for(
+        session,
+        config(session, "FIXTURE-AVT-TRACK-SCREENING"),
+        "avt_front_outer_face_track_mm",
+    )
+    assert foreign_value.derivation_run is not None
+    with pytest.raises(ContractViolation):
+        create_geometry_asset(
+            session,
+            vehicle,
+            _geometry_payload(derivation_run_id=foreign_value.derivation_run.id),
+        )
+
+
+def test_parameter_assessment_rejects_foreign_fitment(session):
+    vehicle = config(session, "FIXTURE-PRIMARY-PUBLISHED")
+    foreign_fitment = create_fitment(session, config(session, "FIXTURE-AVT-TRACK-SCREENING"), "FOREIGN-FITMENT")
+    payload = ParameterAssessmentCreate(
+        parameter_code="overall_length_mm",
+        availability_state=AvailabilityState.UNKNOWN,
+        unknown_reason="Scope test",
+        assessed_at=FIXTURE_TIME,
+    )
+    with pytest.raises(ContractViolation):
+        create_parameter_assessment(session, vehicle, payload, fitment=foreign_fitment)
+
+
+def test_readiness_and_avt_mapping_reject_foreign_fitment_scope(session):
+    vehicle = config(session, "FIXTURE-AVT-TRACK-DIRECT")
+    foreign_fitment = create_fitment(session, config(session, "FIXTURE-AVT-TRACK-SCREENING"), "FOREIGN-FITMENT")
+    with pytest.raises(ContractViolation):
+        evaluate_readiness(session, vehicle, fitment=foreign_fitment)
+    with pytest.raises(ContractViolation):
+        build_avt_mapping(session, vehicle, fitment=foreign_fitment)
+
+
+@pytest.mark.parametrize(
+    "parameter_code",
+    [
+        "geometry_derived_approach_angle_deg",
+        "geometry_derived_departure_angle_deg",
+        "geometry_derived_breakover_angle_deg",
+    ],
+)
+def test_phase0_rejects_arbitrary_derived_physical_ramp_angles(session, parameter_code):
+    vehicle = config(session, "FIXTURE-PRIMARY-PUBLISHED")
+    input_value = value_for(session, vehicle, "wheelbase_actual_mm")
+    rule = register_derivation_rule(
+        session,
+        rule_code=f"arbitrary-physical-ramp-{parameter_code}",
+        version="1",
+        name="Invalid arbitrary physical ramp derivation",
+        output_parameter_code=parameter_code,
+        formula_description="not a physical ramp solver",
+        validity_conditions="invalid Phase 0 test rule",
+        uncertainty_method="invalid Phase 0 test rule",
+        reference_basis="test",
+        input_parameter_codes=["wheelbase_actual_mm"],
+    )
+    with pytest.raises(ContractViolation):
+        create_normalized_value(
+            session,
+            vehicle,
+            NormalizedValueCreate(
+                parameter_code=parameter_code,
+                numeric_value=12,
+                canonical_unit="deg",
+                evidence_method=EvidenceMethod.DERIVED,
+                normalization_rule_version=f"{rule.rule_code}:{rule.version}",
+                semantic_metadata={"ramp_result_class": "PHYSICAL"},
+            ),
+            derivation_rule=rule,
+            derivation_inputs=[(input_value, "test_input")],
+        )
+
+
+@pytest.mark.parametrize(
+    "parameter_code",
+    ["oem_published_approach_angle_deg", "geometry_derived_breakover_angle_deg"],
+)
+def test_screening_result_cannot_populate_oem_or_physical_ramp_namespace(session, parameter_code):
+    vehicle = config(session, "FIXTURE-PRIMARY-PUBLISHED")
+    input_value = value_for(session, vehicle, "wheelbase_actual_mm")
+    rule = register_derivation_rule(
+        session,
+        rule_code=f"ramp_screening-invalid-{parameter_code}",
+        version="1",
+        name="Invalid screening namespace promotion",
+        output_parameter_code=parameter_code,
+        formula_description="screening test rule",
+        validity_conditions="screening test only",
+        uncertainty_method="screening test only",
+        reference_basis="test",
+        input_parameter_codes=["wheelbase_actual_mm"],
+    )
+    with pytest.raises(ContractViolation):
+        create_normalized_value(
+            session,
+            vehicle,
+            NormalizedValueCreate(
+                parameter_code=parameter_code,
+                numeric_value=12,
+                canonical_unit="deg",
+                evidence_method=EvidenceMethod.DERIVED,
+                normalization_rule_version=f"{rule.rule_code}:{rule.version}",
+                semantic_metadata={"ramp_result_class": "SCREENING"},
+            ),
+            derivation_rule=rule,
+            derivation_inputs=[(input_value, "test_input")],
+        )
+
+
+def test_existing_screening_derivation_and_oem_published_ramp_value_remain_valid(session):
+    screening = value_for(
+        session,
+        config(session, "FIXTURE-RAMP-SCREENING"),
+        "screening_breakover_symmetric_angle_deg",
+    )
+    assert screening.derivation_run is not None
+    assert screening.semantic_metadata["ramp_result_class"] == "SCREENING"
+
+    vehicle = config(session, "FIXTURE-PRIMARY-PUBLISHED")
+    observation = source_observation_for(session, vehicle)
+    value = create_normalized_value(
+        session,
+        vehicle,
+        NormalizedValueCreate(
+            parameter_code="oem_published_breakover_angle_deg",
+            numeric_value=12,
+            canonical_unit="deg",
+            evidence_method=EvidenceMethod.PUBLISHED,
+            semantic_metadata={"ramp_result_class": "OEM_PUBLISHED"},
+        ),
+        evidence_links=[EvidenceLinkCreate(source_observation_id=observation.id)],
+    )
+    assert value.numeric_value == 12

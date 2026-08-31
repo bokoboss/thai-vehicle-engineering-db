@@ -1,6 +1,6 @@
 # Phase 0 Implementation Notes
 
-Status: implementation plus bounded control-plane remediation on `codex/phase-0-data-foundation`
+Status: implementation plus bounded R1–R5 and S1–S3 control-plane remediation on `codex/phase-0-data-foundation`
 Date: 2026-08-31
 
 ## Bootstrap
@@ -28,6 +28,7 @@ app/
 ├─ domain/
 │  ├─ enums.py                     controlled semantic vocabulary
 │  ├─ schemas.py                    Pydantic 2 typed contracts
+│  ├─ scope.py                      exact-configuration reference validators
 │  ├─ validation.py                 fail-closed semantic validators
 │  ├─ readiness.py                  rule-based readiness results
 │  ├─ avt_mapping.py                Level 0/1 AVT preparation adapter
@@ -76,6 +77,9 @@ The direct AVT fixture additionally contains the complete set of explicit fields
 - `AVAILABLE + NONE` is rejected. `PUBLISHED`/`MEASURED` values require source-observation links, while `ESTIMATED` values require source evidence or controlled derivation lineage plus method/limitation metadata.
 - Readiness and AVT mapping use one auditable candidate resolver. Unresolved, superseded or rejected candidates cannot be selected; conflicting candidates require a non-superseded `ConflictDecision` selecting the exact value in the applicable scope.
 - Derivations propagate a single input fitment scope and reject mixed fitments before creating an output.
+- Static-loaded front/rear tyre-radius parameters declare a registry-required structured load condition. The write boundary accepts only a generic or target-configuration condition, preserves unknown tyre pressure, and rejects nominal/unloaded radius metadata.
+- Shared configuration-scope validators reject cross-configuration evidence, steering axles/observations, geometry fitments/load conditions/derivation runs, parameter-assessment fitments and readiness/AVT fitment requests. Unresolved source observations cannot qualify an exact target value.
+- Phase 0 rejects every `geometry_derived_*` physical ramp-angle normalized value until a dedicated physical-geometry derivation/validator exists. Screening derivations remain in the `screening_*` namespace and OEM-published values still require their own source evidence.
 
 ## Read surfaces and exports
 
@@ -104,4 +108,4 @@ The test suite includes a fresh migration upgrade/downgrade/re-upgrade cycle, or
 
 ## Explicit Phase 0 boundaries
 
-This implementation does not populate production vehicles, scrape sources, solve ramps, model 3D underbody collision, reverse-engineer ATL/ATX or write production ATL/ATX files. The checked-in `data/pilot/source_pack_01.json` remains reference material for semantic curation.
+This implementation does not populate production vehicles, scrape sources, solve ramps, persist Phase 0 geometry-derived physical ramp angles, model 3D underbody collision, reverse-engineer ATL/ATX or write production ATL/ATX files. The checked-in `data/pilot/source_pack_01.json` remains reference material for semantic curation.

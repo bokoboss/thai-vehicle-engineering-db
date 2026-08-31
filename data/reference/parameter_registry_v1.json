@@ -126,13 +126,19 @@
       "code": "static_loaded_tyre_radius_front_mm",
       "family": "wheel_tyre",
       "data_type": "NUMBER",
-      "unit": "mm"
+      "unit": "mm",
+      "requires_attributes": [
+        "load_condition"
+      ]
     },
     {
       "code": "static_loaded_tyre_radius_rear_mm",
       "family": "wheel_tyre",
       "data_type": "NUMBER",
-      "unit": "mm"
+      "unit": "mm",
+      "requires_attributes": [
+        "load_condition"
+      ]
     },
     {
       "code": "front_wheel_rim_text",

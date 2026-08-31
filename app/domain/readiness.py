@@ -23,6 +23,7 @@ from app.domain.enums import (
     ReadinessType,
 )
 from app.domain.candidate_resolution import resolve_engineering_candidate
+from app.domain.scope import validate_fitment_scope
 from app.domain.validation import (
     is_avt_track_ready,
     is_turning_avt_ready,
@@ -89,6 +90,7 @@ def evaluate_readiness(
     *,
     fitment: VehicleFitment | None = None,
 ) -> list[ReadinessEvaluation]:
+    fitment = validate_fitment_scope(session, config, fitment)
     values = _values(session, config, fitment)
     results: list[ReadinessEvaluation] = []
 

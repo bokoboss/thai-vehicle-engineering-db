@@ -31,6 +31,10 @@ TYPED_FIELDS = ("numeric_value", "text_value", "boolean_value", "enum_value", "j
 SCREENING_PARAMETER_PREFIX = "screening_"
 OEM_RAMP_PARAMETER_PREFIX = "oem_published_"
 PHYSICAL_RAMP_PARAMETER_PREFIX = "geometry_derived_"
+STATIC_LOADED_TYRE_RADIUS_CODES = {
+    "static_loaded_tyre_radius_front_mm",
+    "static_loaded_tyre_radius_rear_mm",
+}
 
 
 def typed_value_count(value: Any) -> int:
@@ -98,6 +102,11 @@ def validate_registered_semantics(parameter_definition: Any, value: Any) -> None
         validate_turning_metadata(metadata)
     elif parameter_code == "clearance_value_mm":
         validate_clearance_metadata(metadata)
+    elif parameter_code in STATIC_LOADED_TYRE_RADIUS_CODES:
+        if enum_text(metadata.get("radius_kind")) not in {None, "STATIC_LOADED"}:
+            raise ContractViolation(
+                f"{parameter_code} cannot use nominal or unloaded tyre-radius semantics"
+            )
 
 
 def validate_clearance_metadata(metadata: Mapping[str, Any] | None) -> None:
@@ -151,6 +160,15 @@ def validate_persisted_value_contract(session: Any, value: Any) -> None:
 
     validate_typed_value_shape(value.parameter_definition, value)
     validate_registered_semantics(value.parameter_definition, value)
+    derivation_rule_code = None
+    if value.derivation_run is not None and value.derivation_run.derivation_rule is not None:
+        derivation_rule_code = value.derivation_run.derivation_rule.rule_code
+    validate_ramp_namespace(
+        value.parameter_definition.parameter_code,
+        requested_class=(value.semantic_metadata or {}).get("ramp_result_class"),
+        evidence_method=value.evidence_method,
+        derivation_rule_code=derivation_rule_code,
+    )
     method = enum_text(value.evidence_method)
     if method == EvidenceMethod.DERIVED.value:
         if not value.normalization_rule_version:
@@ -349,6 +367,10 @@ def validate_ramp_namespace(
     }
     method = getattr(evidence_method, "value", evidence_method)
     is_screening_derivation = bool(derivation_rule_code and derivation_rule_code.startswith("ramp_screening"))
+    if parameter_code.startswith(PHYSICAL_RAMP_PARAMETER_PREFIX):
+        raise ContractViolation(
+            "Phase 0 rejects geometry-derived physical ramp angles until a dedicated physical-geometry validator exists"
+        )
     if parameter_code in screening_codes:
         if requested_class != "SCREENING" or method != EvidenceMethod.DERIVED.value:
             raise ContractViolation("screening angle values require SCREENING metadata and DERIVED evidence")

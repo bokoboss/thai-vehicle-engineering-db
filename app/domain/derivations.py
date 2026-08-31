@@ -13,6 +13,7 @@ from app.domain.enums import (
     ResolutionState,
     VerificationState,
 )
+from app.domain.scope import validate_fitment_scope
 from app.domain.schemas import NormalizedValueCreate
 from app.domain.validation import ContractViolation, screening_breakover_symmetric_angle_deg
 from app.services.foundation import create_normalized_value
@@ -94,9 +95,9 @@ def _fitment_scope_for_inputs(
     if not fitment_ids:
         return None
     fitment = session.get(VehicleFitment, next(iter(fitment_ids)))
-    if fitment is None or fitment.vehicle_configuration_id != config.id:
+    if fitment is None:
         raise ContractViolation("derivation input fitment cannot be resolved in the target configuration")
-    return fitment
+    return validate_fitment_scope(session, config, fitment)
 
 
 def derive_nominal_tyre_radius(

@@ -10,6 +10,7 @@ from app.db.models import AVTMappingResult, GeometryAsset, NormalizedValue, Vehi
 from app.domain.candidate_resolution import resolve_engineering_candidate
 from app.domain.enums import AVTMappingStatus, ReadinessType
 from app.domain.readiness import evaluate_readiness
+from app.domain.scope import validate_fitment_scope
 from app.domain.validation import is_avt_track_ready, is_turning_avt_ready
 
 
@@ -47,6 +48,7 @@ def build_avt_mapping(
     adapter_version: str = ADAPTER_VERSION,
     target_avt_version: str | None = None,
 ) -> dict[str, Any]:
+    fitment = validate_fitment_scope(session, config, fitment)
     values = _values(session, config, fitment)
     blockers: list[str] = []
     payload: dict[str, Any] = {}

@@ -30,7 +30,7 @@ The web application should remain simple.
 
 ## Current state
 
-**Phase 0 implementation plus bounded control-plane remediation is on the review branch; production curation remains deferred pending PR review.**
+**Phase 0 implementation plus bounded R1–R5/S1–S3 control-plane remediation is on the review branch; production curation remains deferred pending PR review.**
 
 Foundation research returned **GO WITH CONDITIONS — High confidence** and the required data-contract amendments have been incorporated on PR #1.
 

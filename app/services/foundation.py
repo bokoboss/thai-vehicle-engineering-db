@@ -24,6 +24,13 @@ from app.db.models import (
     VehicleFitment,
 )
 from app.domain.enums import EvidenceMethod
+from app.domain.scope import (
+    validate_axle_scope,
+    validate_fitment_scope,
+    validate_geometry_references,
+    validate_load_condition_scope,
+    validate_source_observation_scope,
+)
 from app.domain.schemas import (
     AxleCreate,
     EvidenceLinkCreate,
@@ -144,6 +151,14 @@ def create_axle(session: Session, config: VehicleConfiguration, payload: AxleCre
 
 def create_steering_relation(session: Session, config: VehicleConfiguration, payload: SteeringRelationCreate) -> SteeringRelation:
     validate_secondary_steering(payload)
+    validate_axle_scope(session, config, payload.axle_id)
+    if payload.source_observation_id is not None:
+        validate_source_observation_scope(
+            session,
+            config,
+            payload.source_observation_id,
+            context="steering relation source observation",
+        )
     relation = SteeringRelation(
         vehicle_configuration_id=config.id,
         axle_id=payload.axle_id,
@@ -239,8 +254,7 @@ def _resolve_fitment_scope(
 ) -> VehicleFitment | None:
     """Propagate one input fitment scope and reject mixed/incompatible scopes."""
 
-    if fitment is not None and fitment.vehicle_configuration_id != config.id:
-        raise ContractViolation("fitment scope does not belong to the target configuration")
+    fitment = validate_fitment_scope(session, config, fitment)
     input_values = [input_value for input_value, _ in derivation_inputs or []]
     for input_value in input_values:
         if input_value.vehicle_configuration_id != config.id:
@@ -253,19 +267,10 @@ def _resolve_fitment_scope(
         if fitment is not None and fitment.id != input_fitment_id:
             raise ContractViolation("derived output fitment does not match its input fitment scope")
         fitment = fitment or session.get(VehicleFitment, input_fitment_id)
-        if fitment is None or fitment.vehicle_configuration_id != config.id:
+        fitment = validate_fitment_scope(session, config, fitment)
+        if fitment is None:
             raise ContractViolation("derivation input fitment cannot be resolved in the target configuration")
     return fitment
-
-
-def _validate_load_condition_scope(session: Session, config: VehicleConfiguration, load_condition_id: str | None) -> None:
-    if load_condition_id is None:
-        return
-    condition = session.get(LoadCondition, load_condition_id)
-    if condition is None:
-        raise ContractViolation("normalized value load_condition_id does not reference a known load condition")
-    if condition.vehicle_configuration_id not in {None, config.id}:
-        raise ContractViolation("load condition does not belong to the target configuration")
 
 
 def create_normalized_value(
@@ -283,7 +288,7 @@ def create_normalized_value(
     definition = _parameter_definition(session, payload.parameter_code)
     validate_typed_value_shape(definition, payload)
     validate_registered_semantics(definition, payload)
-    _validate_load_condition_scope(session, config, payload.load_condition_id)
+    validate_load_condition_scope(session, config, payload.load_condition_id)
     validate_width_promotion(payload.parameter_code, payload.semantic_metadata)
     validate_avt_track_candidate(payload.parameter_code, payload.semantic_metadata, payload.evidence_method)
     requested_class = (payload.semantic_metadata or {}).get("ramp_result_class")
@@ -301,6 +306,13 @@ def create_normalized_value(
         derivation_rule=derivation_rule,
         derivation_inputs=derivation_inputs,
     )
+    for link_payload in evidence_links or []:
+        validate_source_observation_scope(
+            session,
+            config,
+            link_payload.source_observation_id,
+            context="evidence link source observation",
+        )
     if derivation_rule and derivation_rule.output_parameter_definition_id != definition.id:
         raise ContractViolation("derivation rule output parameter does not match normalized value")
     if derivation_rule and payload.normalization_rule_version != f"{derivation_rule.rule_code}:{derivation_rule.version}":
@@ -366,6 +378,7 @@ def create_parameter_assessment(
 ) -> ParameterAssessment:
     definition = _parameter_definition(session, payload.parameter_code)
     validate_parameter_assessment(payload)
+    fitment = validate_fitment_scope(session, config, fitment)
     assessment = ParameterAssessment(
         vehicle_configuration_id=config.id,
         vehicle_fitment_id=fitment.id if fitment else None,
@@ -391,6 +404,15 @@ def create_geometry_asset(
     fitment: VehicleFitment | None = None,
 ) -> GeometryAsset:
     validate_geometry_asset_role(payload.geometry_role, payload.coordinate_system_version, payload.geometry_fidelity)
+    fitment = validate_fitment_scope(session, config, fitment)
+    validate_geometry_references(
+        session,
+        config,
+        fitment=fitment,
+        load_condition_id=payload.load_condition_id,
+        source_document_id=payload.source_document_id,
+        derivation_run_id=payload.derivation_run_id,
+    )
     data = payload.model_dump()
     data["geometry_role"] = enum_value(data["geometry_role"])
     data["representation_type"] = enum_value(data["representation_type"])
