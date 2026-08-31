@@ -1,0 +1,1369 @@
+{
+  "packet_id": "phase1-batch-b-curation-v1",
+  "retrieval_date": "2026-08-31",
+  "branch": "chatgpt/phase-1-batch-b",
+  "status": "CURATION_REVIEW_PACKET",
+  "contract_note": "Identity-time contract PR #6 is pending. Records that need a non-MY temporal basis are marked as candidates and are not final production vehicle_configuration rows.",
+  "records": [
+    {
+      "record_id": "batch-b-01-honda-city-ehev-rs-2026-release",
+      "target": "Honda City e:HEV RS — New Honda City release launched 2026-06-26 (Thailand)",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Honda",
+        "commercial_model": "City",
+        "variant_trim": "e:HEV RS",
+        "powertrain": "e:HEV",
+        "identity_state": "TEMPORAL_IDENTITY_CANDIDATE_UNDER_PR6",
+        "proposed_identity_time_basis": "EDITION_RELEASE",
+        "identity_time_label_raw": "Honda City ใหม่ — official launch 26 มิถุนายน 2569",
+        "source_note": "Official launch article identifies the new 2026 Thailand City line-up including e:HEV RS."
+      },
+      "sources": [
+        {
+          "source_code": "HONDA_TH_CITY_SPEC_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Honda City Technical Specifications",
+          "url": "https://www.honda.co.th/city/specification",
+          "retrieved_at": "2026-08-31"
+        },
+        {
+          "source_code": "HONDA_TH_CITY_NEW_LAUNCH_20260626",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_NEWS",
+          "title": "Honda City ใหม่ — official launch",
+          "url": "https://www.honda.co.th/news/newhondacityofficiallaunch2026",
+          "retrieved_at": "2026-08-31",
+          "publication_date": "2026-06-25",
+          "release_date": "2026-06-26"
+        }
+      ],
+      "shared_observations_safe_to_normalize": [
+        [
+          "Steering type",
+          "Rack & Pinion with Electric Power Steering (EPS)",
+          null
+        ],
+        [
+          "Steering wheel lock-to-lock",
+          "2.81",
+          "turns"
+        ],
+        [
+          "Turning radius",
+          "5",
+          "m"
+        ],
+        [
+          "Overall width",
+          "1748",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2589",
+          "mm"
+        ],
+        [
+          "Front tread",
+          "1497",
+          "mm"
+        ]
+      ],
+      "grouped_observations_hold_column_mapping": [
+        [
+          "Overall length",
+          [
+            "4577",
+            "4594"
+          ],
+          "mm"
+        ],
+        [
+          "Overall height",
+          [
+            "1467",
+            "1480"
+          ],
+          "mm"
+        ],
+        [
+          "Rear tread",
+          [
+            "1483",
+            "1485"
+          ],
+          "mm"
+        ],
+        [
+          "Ground clearance",
+          [
+            "135",
+            "149"
+          ],
+          "mm"
+        ],
+        [
+          "Vehicle mass",
+          [
+            "1144",
+            "1224",
+            "1232"
+          ],
+          "kg"
+        ],
+        [
+          "Wheel size",
+          [
+            "15 x 6J",
+            "16 x 6J"
+          ],
+          null
+        ],
+        [
+          "Tyre size",
+          [
+            "185/60 R15",
+            "185/60 R16"
+          ],
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1748,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2589,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1497,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "steering_wheel_lock_to_lock_turns",
+          "value": 2.81,
+          "unit": "turns",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 5,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        }
+      ],
+      "hold_reason": "Honda HTML extraction exposes grouped row values but not robust grade-column association for all multi-valued fields. Do not assign grouped values to RS until exact column mapping is verified."
+    },
+    {
+      "record_id": "batch-b-02-honda-civic-ehev-rs-2026-release",
+      "target": "Honda Civic e:HEV RS — New Honda Civic e:HEV release launched 2026-07-23 (Thailand)",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Honda",
+        "commercial_model": "Civic",
+        "variant_trim": "e:HEV RS",
+        "powertrain": "e:HEV",
+        "identity_state": "TEMPORAL_IDENTITY_CANDIDATE_UNDER_PR6",
+        "proposed_identity_time_basis": "EDITION_RELEASE",
+        "identity_time_label_raw": "Honda Civic e:HEV ใหม่ — official launch 23 กรกฎาคม 2569"
+      },
+      "sources": [
+        {
+          "source_code": "HONDA_TH_CIVIC_SPEC_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Honda Civic e:HEV Technical Specifications",
+          "url": "https://www.honda.co.th/civic/specification",
+          "retrieved_at": "2026-08-31"
+        },
+        {
+          "source_code": "HONDA_TH_CIVIC_NEW_LAUNCH_20260723",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_NEWS",
+          "title": "Honda Civic e:HEV ใหม่ — Honda S+ Shift launch",
+          "url": "https://www.honda.co.th/news/newhondacivicehevs%2Bshift",
+          "retrieved_at": "2026-08-31",
+          "publication_date": "2026-07-22",
+          "release_date": "2026-07-23"
+        }
+      ],
+      "shared_observations_safe_to_normalize": [
+        [
+          "Overall length",
+          "4681",
+          "mm"
+        ],
+        [
+          "Overall width",
+          "1802",
+          "mm"
+        ],
+        [
+          "Overall height",
+          "1415",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2734",
+          "mm"
+        ],
+        [
+          "Ground clearance",
+          "128",
+          "mm"
+        ]
+      ],
+      "grouped_observations_hold_column_mapping": [
+        [
+          "Steering wheel lock-to-lock",
+          [
+            "2.29",
+            "2.2"
+          ],
+          "turns"
+        ],
+        [
+          "Turning radius",
+          [
+            "5.4",
+            "5.7"
+          ],
+          "m"
+        ],
+        [
+          "Front tread",
+          [
+            "1547",
+            "1537"
+          ],
+          "mm"
+        ],
+        [
+          "Rear tread",
+          [
+            "1586",
+            "1576"
+          ],
+          "mm"
+        ],
+        [
+          "Vehicle mass",
+          [
+            "1404",
+            "1412",
+            "1429"
+          ],
+          "kg"
+        ],
+        [
+          "Wheel size",
+          [
+            "17 x 7J",
+            "18 x 8J"
+          ],
+          null
+        ],
+        [
+          "Tyre size",
+          [
+            "215/50 R17",
+            "235/40 ZR18"
+          ],
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 4681,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1802,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1415,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2734,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 128,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "OTHER",
+            "raw_oem_wording": "Ground clearance; load state not stated"
+          }
+        }
+      ],
+      "hold_reason": "Exact e:HEV RS column association for multi-valued steering/turning/tread/wheel rows is not sufficiently preserved by the extracted HTML."
+    },
+    {
+      "record_id": "batch-b-03-honda-accord-ehev-rs-2025-release",
+      "target": "Honda Accord e:HEV RS — New Honda Accord e:HEV release launched 2025-08-22 (Thailand)",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Honda",
+        "commercial_model": "Accord",
+        "variant_trim": "e:HEV RS",
+        "powertrain": "e:HEV",
+        "identity_state": "TEMPORAL_IDENTITY_CANDIDATE_UNDER_PR6",
+        "proposed_identity_time_basis": "EDITION_RELEASE",
+        "identity_time_label_raw": "Honda Accord e:HEV ใหม่ — official launch 22 สิงหาคม 2568"
+      },
+      "sources": [
+        {
+          "source_code": "HONDA_TH_ACCORD_SPEC_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Honda Accord e:HEV Technical Specifications",
+          "url": "https://www.honda.co.th/accordehev/specification",
+          "retrieved_at": "2026-08-31"
+        },
+        {
+          "source_code": "HONDA_TH_ACCORD_NEW_LAUNCH_20250822",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_NEWS",
+          "title": "New Honda Accord e:HEV launch 2025",
+          "url": "https://www.honda.co.th/news/NewHondaAccordLaunch2025",
+          "retrieved_at": "2026-08-31",
+          "publication_date": "2025-08-21",
+          "release_date": "2025-08-22"
+        }
+      ],
+      "shared_observations_safe_to_normalize": [
+        [
+          "Steering type",
+          "Rack & Pinion with Electric Power Assisted (EPS)",
+          null
+        ],
+        [
+          "Steering wheel lock-to-lock",
+          "2.7",
+          "turns"
+        ],
+        [
+          "Turning radius",
+          "6.1",
+          "m"
+        ],
+        [
+          "Overall length",
+          "4962",
+          "mm"
+        ],
+        [
+          "Overall width",
+          "1862",
+          "mm"
+        ],
+        [
+          "Overall height",
+          "1449",
+          "mm"
+        ],
+        [
+          "Ground clearance",
+          "134",
+          "mm"
+        ]
+      ],
+      "grouped_observations_hold_column_mapping": [
+        [
+          "Wheelbase",
+          [
+            "2828",
+            "2827"
+          ],
+          "mm"
+        ],
+        [
+          "Front tread",
+          [
+            "1600",
+            "1590"
+          ],
+          "mm"
+        ],
+        [
+          "Rear tread",
+          [
+            "1633",
+            "1624"
+          ],
+          "mm"
+        ],
+        [
+          "Vehicle mass",
+          [
+            "1560",
+            "1571",
+            "1606"
+          ],
+          "kg"
+        ],
+        [
+          "Wheel size",
+          [
+            "17 x 7.5J",
+            "18 x 8J"
+          ],
+          null
+        ],
+        [
+          "Tyre size",
+          [
+            "225/50 R17",
+            "235/45 R18"
+          ],
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 4962,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1862,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1449,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "steering_wheel_lock_to_lock_turns",
+          "value": 2.7,
+          "unit": "turns",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 6.1,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 134,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "OTHER",
+            "raw_oem_wording": "Ground clearance; load state not stated"
+          }
+        }
+      ],
+      "hold_reason": "Multi-valued wheelbase/tread/wheel rows require grade-column proof before assignment to RS."
+    },
+    {
+      "record_id": "batch-b-04-toyota-yaris-ativ-premium-luxury-current",
+      "target": "Toyota Yaris ATIV Premium Luxury — current Thailand grade as of 2026-08-31",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Toyota",
+        "commercial_model": "Yaris ATIV",
+        "variant_trim": "Premium Luxury",
+        "identity_state": "PARTIAL",
+        "proposed_identity_time_basis": "OEM_REVISION_LABEL_LEAD",
+        "temporal_lead": "Toyota accessories listing names YARIS ATIV ปี 2567, but the large PDF could not be screenshot-validated in this research pass; therefore not promoted to decisive identity evidence."
+      },
+      "sources": [
+        {
+          "source_code": "TOYOTA_TH_YARIS_ATIV_SPEC_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Toyota Yaris ATIV Specification",
+          "url": "https://www.toyota.co.th/model/yarisativ/specification/",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Current Premium Luxury grade"
+        },
+        {
+          "source_code": "TOYOTA_TH_YARIS_ATIV_GRADE_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_GRADE_LIST",
+          "title": "Toyota Yaris ATIV Grade",
+          "url": "https://www.toyota.co.th/model/yarisativ/grade",
+          "retrieved_at": "2026-08-31"
+        }
+      ],
+      "observations": [
+        [
+          "Overall length x width x height",
+          "4425 x 1740 x 1480",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2620",
+          "mm"
+        ],
+        [
+          "Minimum ground clearance",
+          "160",
+          "mm"
+        ],
+        [
+          "Minimum turning radius",
+          "4.8",
+          "m"
+        ],
+        [
+          "Wheel/Tyre",
+          "16-inch alloy / 195/60 R16",
+          null
+        ],
+        [
+          "Steering",
+          "Electric Power Steering EPS",
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 4425,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1740,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1480,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2620,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 160,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "OTHER",
+            "raw_oem_wording": "Min. Ground Clearance; load state not stated"
+          }
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 4.8,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "195/60 R16",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "195/60 R16",
+          "method": "PUBLISHED"
+        }
+      ]
+    },
+    {
+      "record_id": "batch-b-05-toyota-fortuner-leader-v-4wd-2025-catalog",
+      "target": "Toyota Fortuner 2.4 Leader V 4WD — current five-grade Leader family / 2025 catalog evidence",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Toyota",
+        "commercial_model": "Fortuner Leader",
+        "variant_trim": "2.4 Leader V 4WD",
+        "drivetrain": "4WD",
+        "identity_state": "TEMPORAL_IDENTITY_CANDIDATE_UNDER_PR6",
+        "proposed_identity_time_basis": "OEM_REVISION_LABEL_LEAD",
+        "temporal_lead": "Toyota accessory download listing explicitly names FORTUNER รุ่นปรับปรุงปี 2568, but the accessory PDF itself was not screenshot-validated. Technical 2025 catalog and current grade page confirm the same five-grade line-up."
+      },
+      "sources": [
+        {
+          "source_code": "TOYOTA_TH_FORTUNER_LEADER_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_GRADE_LIST",
+          "title": "Toyota Fortuner Leader current grade page",
+          "url": "https://www.toyota.co.th/model/fortuner_leader",
+          "retrieved_at": "2026-08-31"
+        },
+        {
+          "source_code": "TOYOTA_TH_FORTUNER_LEADER_CATALOG_2025",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+          "title": "Fortuner Leader Catalog 2025",
+          "url": "https://www.toyota.co.th/media/product/series/download/Fortuner_Leader_Catalog_2025.pdf",
+          "retrieved_at": "2026-08-31",
+          "screenshot_verified_page": 0,
+          "applicability": "2.4 Leader V 4WD and same five-grade line-up"
+        }
+      ],
+      "observations": [
+        [
+          "Overall length x width x height",
+          "4795 x 1855 x 1835",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2750",
+          "mm"
+        ],
+        [
+          "Front tread",
+          "1540",
+          "mm"
+        ],
+        [
+          "Rear tread",
+          "1555",
+          "mm"
+        ],
+        [
+          "Minimum ground clearance (measured from lowest point of vehicle)",
+          "193",
+          "mm"
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 4795,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1855,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1835,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2750,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1540,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "oem_rear_tread_or_track_mm",
+          "value": 1555,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 193,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED",
+            "clearance_component_or_reference": "lowest point of vehicle"
+          },
+          "load_condition": {
+            "mass_basis": "OTHER",
+            "raw_oem_wording": "load state not stated"
+          }
+        }
+      ]
+    },
+    {
+      "record_id": "batch-b-06-toyota-alphard-25-hev-current",
+      "target": "Toyota Alphard 2.5 HEV — current Thailand grade",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Toyota",
+        "commercial_model": "Alphard",
+        "variant_trim": "2.5 HEV",
+        "drivetrain": "E-Four AWD",
+        "identity_state": "PARTIAL",
+        "blocker": "Current official HTML and 2025 official catalog disagree on height and ground clearance for the same grade. Temporal revision must be resolved before a single exact geometry record is promoted."
+      },
+      "sources": [
+        {
+          "source_code": "TOYOTA_TH_ALPHARD_SPEC_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Toyota Alphard current specification",
+          "url": "https://www.toyota.co.th/en/model/alphard/specification/",
+          "retrieved_at": "2026-08-31"
+        },
+        {
+          "source_code": "TOYOTA_TH_ALPHARD_CATALOG_2025",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+          "title": "Alphard Catalog 2025",
+          "url": "https://www.toyota.co.th/media/product/series/download/Alphard_Catalog_2025.pdf",
+          "retrieved_at": "2026-08-31",
+          "screenshot_verified_page": 12
+        }
+      ],
+      "current_html_observations": [
+        [
+          "Overall length x width x height",
+          "5010 x 1850 x 1950",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "3000",
+          "mm"
+        ],
+        [
+          "Front/Rear tread",
+          "1605 / 1625",
+          "mm"
+        ],
+        [
+          "Minimum ground clearance",
+          "161",
+          "mm"
+        ],
+        [
+          "Minimum turning radius",
+          "5.9",
+          "m"
+        ]
+      ],
+      "catalog_2025_observations": [
+        [
+          "Overall length x width x height — Alphard 2.5 HEV",
+          "5010 x 1850 x 1945",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "3000",
+          "mm"
+        ],
+        [
+          "Front/Rear tread",
+          "1605 / 1625",
+          "mm"
+        ],
+        [
+          "Minimum ground clearance",
+          "150",
+          "mm"
+        ],
+        [
+          "Minimum turning radius",
+          "5.9",
+          "m"
+        ]
+      ],
+      "conflicts": [
+        {
+          "parameter": "overall_height_mm",
+          "values": [
+            1950,
+            1945
+          ],
+          "resolution_state": "TEMPORAL_APPLICABILITY_UNRESOLVED",
+          "note": "Current official HTML vs 2025 official catalog."
+        },
+        {
+          "parameter": "clearance_value_mm",
+          "values": [
+            161,
+            150
+          ],
+          "resolution_state": "TEMPORAL_APPLICABILITY_UNRESOLVED",
+          "note": "Current official HTML vs 2025 official catalog; load/reference semantics also unspecified."
+        }
+      ],
+      "safe_shared_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 5010,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1850,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 3000,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1605,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "oem_rear_tread_or_track_mm",
+          "value": 1625,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 5.9,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        }
+      ]
+    },
+    {
+      "record_id": "batch-b-07-toyota-commuter-28-at-2025-catalog",
+      "target": "Toyota Commuter Diesel 2.8 AT, high roof, 15 seats — Thailand",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Toyota",
+        "commercial_model": "Commuter",
+        "variant_trim": "Diesel 2.8 AT",
+        "body_configuration": "High roof / 15 seats",
+        "identity_state": "TEMPORAL_IDENTITY_CANDIDATE_UNDER_PR6",
+        "proposed_identity_time_basis": "OEM_REVISION_LABEL_LEAD",
+        "temporal_lead": "Toyota accessories listing names ไฮเอซและคอมมิวเตอร์หลังคาสูง รุ่นปรับปรุง ปี 2568; technical 2025 catalog screenshot confirms current 2.8 AT geometry."
+      },
+      "sources": [
+        {
+          "source_code": "TOYOTA_TH_COMMUTER_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_GRADE_LIST",
+          "title": "Toyota Commuter current grade",
+          "url": "https://www.toyota.co.th/model/commuter",
+          "retrieved_at": "2026-08-31"
+        },
+        {
+          "source_code": "TOYOTA_TH_COMMUTER_CATALOG_2025",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+          "title": "Toyota Commuter Catalogue 2025",
+          "url": "https://www.toyota.co.th/media/product/series/download/COMMUTER_CATALOGUE_2025.pdf",
+          "retrieved_at": "2026-08-31",
+          "screenshot_verified_page": 5
+        }
+      ],
+      "observations": [
+        [
+          "Overall length x width x height",
+          "5915 x 1950 x 2280",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "3860",
+          "mm"
+        ],
+        [
+          "Front/Rear tread",
+          "1675 / 1670",
+          "mm"
+        ],
+        [
+          "Minimum turning radius",
+          "6.4",
+          "m"
+        ],
+        [
+          "Engine",
+          "1GD-FTV 2755 cc",
+          null
+        ],
+        [
+          "Transmission",
+          "6-speed automatic with Sequential Shift",
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 5915,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1950,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 2280,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 3860,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1675,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "oem_rear_tread_or_track_mm",
+          "value": 1670,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 6.4,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        }
+      ]
+    },
+    {
+      "record_id": "batch-b-08-isuzu-vcross-22-z-4door-at-4x4-2026",
+      "target": "New Isuzu V-CROSS 4x4 2.2 Ddi Z 4-door A/T — 2026 Thailand release",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Isuzu",
+        "commercial_model": "D-Max V-CROSS",
+        "variant_trim": "2.2 Ddi Z 4-door A/T",
+        "drivetrain": "4x4",
+        "identity_state": "TEMPORAL_IDENTITY_CANDIDATE_UNDER_PR6",
+        "proposed_identity_time_basis": "EDITION_RELEASE",
+        "identity_time_label_raw": "New! ISUZU V-CROSS 4x4 “THE ONE & ONLY” — 2.2 Ddi MAXFORCE launched 27 Feb 2026"
+      },
+      "sources": [
+        {
+          "source_code": "ISUZU_TH_VCROSS_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "New Isuzu V-CROSS 4x4",
+          "url": "https://www.isuzu-tis.com/isuzu-v-cross",
+          "retrieved_at": "2026-08-31"
+        },
+        {
+          "source_code": "ISUZU_TH_VCROSS_BROCHURE_2026",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+          "title": "V-CROSS brochure 2026",
+          "url": "https://assets.isuzu-tis.com/v_cross_brochure_2026_23a52b3f0d.pdf",
+          "retrieved_at": "2026-08-31",
+          "screenshot_verified_page": 5
+        },
+        {
+          "source_code": "ISUZU_TH_22_4WD_LAUNCH_20260227",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_NEWS",
+          "title": "Isuzu expands 4x4 line-up with 2.2 Ddi MAXFORCE",
+          "url": "https://www.isuzu-tis.com/news-activities/public-relations/isuzu-expands-4x4-lineup-with-new-2-2-ddi-maxforce-engine",
+          "retrieved_at": "2026-08-31",
+          "publication_date": "2026-02-27"
+        }
+      ],
+      "observations": [
+        [
+          "Minimum turning radius",
+          "6.1",
+          "m"
+        ],
+        [
+          "Tyre",
+          "265/60R18",
+          null
+        ],
+        [
+          "Overall length x width x height",
+          "5280 x 1870 x 1810",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "3125",
+          "mm"
+        ],
+        [
+          "Front/Rear tread",
+          "1570 / 1570",
+          "mm"
+        ],
+        [
+          "Ground clearance at rear axle housing",
+          "240",
+          "mm"
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 5280,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1870,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1810,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 3125,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1570,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "oem_rear_tread_or_track_mm",
+          "value": 1570,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 240,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "REAR_AXLE",
+            "clearance_component_or_reference": "rear axle housing"
+          },
+          "load_condition": {
+            "mass_basis": "OTHER",
+            "raw_oem_wording": "load state not stated"
+          }
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 6.1,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "265/60R18",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "265/60R18",
+          "method": "PUBLISHED"
+        }
+      ]
+    },
+    {
+      "record_id": "batch-b-09-isuzu-mux-22-ultimate-4wd-2026",
+      "target": "Isuzu MU-X “THE NEXT PEAK” 4WD 2.2 Ddi MAXFORCE ULTIMATE — 2026 Thailand release",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Isuzu",
+        "commercial_model": "MU-X",
+        "variant_trim": "2.2 Ddi ULTIMATE A/T",
+        "drivetrain": "4WD",
+        "identity_state": "TEMPORAL_IDENTITY_CANDIDATE_UNDER_PR6",
+        "proposed_identity_time_basis": "EDITION_RELEASE",
+        "identity_time_label_raw": "MU-X “THE NEXT PEAK” 4WD 2.2 Ddi MAXFORCE — launched 27 Feb 2026"
+      },
+      "sources": [
+        {
+          "source_code": "ISUZU_TH_MUX_ULTIMATE_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "MU-X THE NEXT PEAK — Ultimate",
+          "url": "https://www.isuzu-tis.com/isuzu-mu-x/ultimate",
+          "retrieved_at": "2026-08-31"
+        },
+        {
+          "source_code": "ISUZU_TH_MUX_BROCHURE_2026",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+          "title": "MU-X brochure 2026",
+          "url": "https://assets.isuzu-tis.com/mu_x_brochure_2026_5d17d1513d.pdf",
+          "retrieved_at": "2026-08-31",
+          "screenshot_verified_page": 7
+        },
+        {
+          "source_code": "ISUZU_TH_22_4WD_LAUNCH_20260227",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_NEWS",
+          "title": "Isuzu expands 4x4 line-up with 2.2 Ddi MAXFORCE",
+          "url": "https://www.isuzu-tis.com/news-activities/public-relations/isuzu-expands-4x4-lineup-with-new-2-2-ddi-maxforce-engine",
+          "retrieved_at": "2026-08-31",
+          "publication_date": "2026-02-27"
+        }
+      ],
+      "shared_observations_safe_to_normalize": [
+        [
+          "Minimum turning radius",
+          "5.6",
+          "m"
+        ],
+        [
+          "Wheelbase",
+          "2855",
+          "mm"
+        ],
+        [
+          "Front/Rear tread",
+          "1570 / 1570",
+          "mm"
+        ]
+      ],
+      "exact_grade_observations": [
+        [
+          "Powertrain",
+          "2.2 Ddi MAXFORCE / 8-speed A/T / 4WD",
+          null
+        ],
+        [
+          "Grade",
+          "ULTIMATE",
+          null
+        ]
+      ],
+      "grouped_geometry_hold_column_mapping": [
+        [
+          "Overall dimensions",
+          [
+            "4860 x 1870 x 1815",
+            "4860 x 1870 x 1875",
+            "4860 x 1885 x 1875"
+          ],
+          "mm"
+        ],
+        [
+          "Ground clearance",
+          [
+            "230",
+            "235"
+          ],
+          "mm"
+        ],
+        [
+          "Wheel/Tyre",
+          [
+            "17-inch 255/65R17",
+            "18-inch 265/60R18",
+            "20-inch 265/50R20"
+          ],
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2855,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1570,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "oem_rear_tread_or_track_mm",
+          "value": 1570,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 5.6,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        }
+      ],
+      "hold_reason": "The screenshot proves the multi-column technical table but exact column-to-dimension/clearance/wheel mapping is retained as grouped evidence until a second review maps the 4WD 2.2 Ultimate column without ambiguity."
+    }
+  ],
+  "batch_findings": {
+    "records_researched": 9,
+    "no_schema_geometry_gap_detected": true,
+    "identity_contract_gap_already_opened_as_pr6_issue7": true,
+    "useful_turning_observations_added": [
+      "Honda City 5.0 m",
+      "Honda Accord 6.1 m",
+      "Toyota Yaris ATIV 4.8 m",
+      "Toyota Alphard 5.9 m",
+      "Toyota Commuter 6.4 m",
+      "Isuzu V-CROSS 6.1 m",
+      "Isuzu MU-X 5.6 m"
+    ],
+    "grouped_turning_hold": "Honda Civic 5.4 / 5.7 m requires exact RS column association",
+    "structured_clearance_examples": [
+      "Toyota Fortuner 193 mm measured from vehicle lowest point",
+      "Isuzu V-CROSS 240 mm at rear axle housing"
+    ],
+    "new_temporal_geometry_conflict": "Toyota Alphard 2.5 HEV current HTML vs 2025 catalog: height 1950 vs 1945 mm; ground clearance 161 vs 150 mm",
+    "pdf_decisive_evidence_screenshot_verified": [
+      "Toyota Fortuner Leader Catalog 2025 page 0",
+      "Toyota Alphard Catalog 2025 page 12",
+      "Toyota Commuter Catalogue 2025 page 5",
+      "Isuzu V-CROSS brochure 2026 page 5",
+      "Isuzu MU-X brochure 2026 page 7"
+    ],
+    "software_change_required": "Identity-time basis only, already isolated in PR #6 / Issue #7. No geometry/evidence schema change requested."
+  }
+}
