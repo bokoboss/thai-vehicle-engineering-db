@@ -150,7 +150,12 @@
       "code": "turning_radius_normalized_m",
       "family": "turning",
       "data_type": "NUMBER",
-      "unit": "m"
+      "unit": "m",
+      "requires_attributes": [
+        "turning_radius_or_diameter",
+        "turning_reference",
+        "turning_axle_scope"
+      ]
     },
     {
       "code": "oem_turning_value_text",

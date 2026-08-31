@@ -1,6 +1,6 @@
 # Phase 0 Implementation Notes
 
-Status: implementation on `codex/phase-0-data-foundation`
+Status: implementation plus bounded control-plane remediation on `codex/phase-0-data-foundation`
 Date: 2026-08-31
 
 ## Bootstrap
@@ -68,6 +68,14 @@ The seed builder creates `FIXTURE-*` records only. The 17 required cases are rep
 | Screening ramp namespace and lineage | `FIXTURE-RAMP-SCREENING` |
 
 The direct AVT fixture additionally contains the complete set of explicit fields needed for a positive `AVT_READY` result. The screening track fixture retains its estimated value and derivation lineage but remains `NOT_READY`.
+
+## Control-plane remediation controls
+
+- Alembic revision `0001_phase0_foundation` is a frozen, self-contained set of explicit table, constraint, index and reverse-order downgrade operations; it does not execute live ORM metadata.
+- The normalized-value write service applies the parameter registry's `requires_attributes`, including controlled turning semantics and clearance type/load-condition scope.
+- `AVAILABLE + NONE` is rejected. `PUBLISHED`/`MEASURED` values require source-observation links, while `ESTIMATED` values require source evidence or controlled derivation lineage plus method/limitation metadata.
+- Readiness and AVT mapping use one auditable candidate resolver. Unresolved, superseded or rejected candidates cannot be selected; conflicting candidates require a non-superseded `ConflictDecision` selecting the exact value in the applicable scope.
+- Derivations propagate a single input fitment scope and reject mixed fitments before creating an output.
 
 ## Read surfaces and exports
 

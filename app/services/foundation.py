@@ -42,6 +42,8 @@ from app.domain.validation import (
     validate_geometry_asset_role,
     validate_parameter_assessment,
     validate_persisted_value_contract,
+    validate_provenance_payload,
+    validate_registered_semantics,
     validate_ramp_namespace,
     validate_secondary_steering,
     validate_typed_value_shape,
@@ -229,6 +231,43 @@ def _parameter_definition(session: Session, parameter_code: str) -> ParameterDef
     return definition
 
 
+def _resolve_fitment_scope(
+    session: Session,
+    config: VehicleConfiguration,
+    fitment: VehicleFitment | None,
+    derivation_inputs: list[tuple[NormalizedValue, str]] | None,
+) -> VehicleFitment | None:
+    """Propagate one input fitment scope and reject mixed/incompatible scopes."""
+
+    if fitment is not None and fitment.vehicle_configuration_id != config.id:
+        raise ContractViolation("fitment scope does not belong to the target configuration")
+    input_values = [input_value for input_value, _ in derivation_inputs or []]
+    for input_value in input_values:
+        if input_value.vehicle_configuration_id != config.id:
+            raise ContractViolation("derivation input does not belong to the target configuration")
+    input_fitment_ids = {input_value.vehicle_fitment_id for input_value in input_values if input_value.vehicle_fitment_id is not None}
+    if len(input_fitment_ids) > 1:
+        raise ContractViolation("derivation inputs belong to incompatible fitments")
+    if input_fitment_ids:
+        input_fitment_id = next(iter(input_fitment_ids))
+        if fitment is not None and fitment.id != input_fitment_id:
+            raise ContractViolation("derived output fitment does not match its input fitment scope")
+        fitment = fitment or session.get(VehicleFitment, input_fitment_id)
+        if fitment is None or fitment.vehicle_configuration_id != config.id:
+            raise ContractViolation("derivation input fitment cannot be resolved in the target configuration")
+    return fitment
+
+
+def _validate_load_condition_scope(session: Session, config: VehicleConfiguration, load_condition_id: str | None) -> None:
+    if load_condition_id is None:
+        return
+    condition = session.get(LoadCondition, load_condition_id)
+    if condition is None:
+        raise ContractViolation("normalized value load_condition_id does not reference a known load condition")
+    if condition.vehicle_configuration_id not in {None, config.id}:
+        raise ContractViolation("load condition does not belong to the target configuration")
+
+
 def create_normalized_value(
     session: Session,
     config: VehicleConfiguration,
@@ -243,6 +282,8 @@ def create_normalized_value(
 ) -> NormalizedValue:
     definition = _parameter_definition(session, payload.parameter_code)
     validate_typed_value_shape(definition, payload)
+    validate_registered_semantics(definition, payload)
+    _validate_load_condition_scope(session, config, payload.load_condition_id)
     validate_width_promotion(payload.parameter_code, payload.semantic_metadata)
     validate_avt_track_candidate(payload.parameter_code, payload.semantic_metadata, payload.evidence_method)
     requested_class = (payload.semantic_metadata or {}).get("ramp_result_class")
@@ -254,11 +295,18 @@ def create_normalized_value(
     )
     if payload.evidence_method == EvidenceMethod.DERIVED and derivation_rule is None:
         raise ContractViolation("DERIVED values must be created with a derivation rule and input lineage")
+    validate_provenance_payload(
+        payload,
+        evidence_links=evidence_links,
+        derivation_rule=derivation_rule,
+        derivation_inputs=derivation_inputs,
+    )
     if derivation_rule and derivation_rule.output_parameter_definition_id != definition.id:
         raise ContractViolation("derivation rule output parameter does not match normalized value")
     if derivation_rule and payload.normalization_rule_version != f"{derivation_rule.rule_code}:{derivation_rule.version}":
         raise ContractViolation("normalized value rule version must match the derivation rule identity")
 
+    fitment = _resolve_fitment_scope(session, config, fitment, derivation_inputs)
     dumped = payload.model_dump()
     dumped.pop("parameter_code")
     dumped["evidence_method"] = enum_value(dumped["evidence_method"])

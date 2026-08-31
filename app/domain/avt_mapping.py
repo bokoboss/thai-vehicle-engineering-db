@@ -7,7 +7,8 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.db.models import AVTMappingResult, GeometryAsset, NormalizedValue, VehicleConfiguration, VehicleFitment
-from app.domain.enums import AVTMappingStatus, AvailabilityState, ReadinessType
+from app.domain.candidate_resolution import resolve_engineering_candidate
+from app.domain.enums import AVTMappingStatus, ReadinessType
 from app.domain.readiness import evaluate_readiness
 from app.domain.validation import is_avt_track_ready, is_turning_avt_ready
 
@@ -26,14 +27,16 @@ def _values(session: Session, config: VehicleConfiguration, fitment: VehicleFitm
     return list(session.scalars(statement).all())
 
 
-def _candidate(values: list[NormalizedValue], code: str) -> NormalizedValue | None:
-    available = [
-        item
-        for item in values
-        if item.parameter_definition.parameter_code == code and item.availability_state == AvailabilityState.AVAILABLE.value
-    ]
-    preferred = [item for item in available if item.preferred]
-    return (preferred or available or [None])[0]
+def _candidate(
+    session: Session,
+    config: VehicleConfiguration,
+    values: list[NormalizedValue],
+    code: str,
+    *,
+    fitment: VehicleFitment | None,
+) -> tuple[NormalizedValue | None, str | None]:
+    resolution = resolve_engineering_candidate(session, config, values, code, fitment=fitment)
+    return resolution.value, resolution.conflict_decision_id if resolution.value is not None else resolution.reason
 
 
 def build_avt_mapping(
@@ -53,16 +56,16 @@ def build_avt_mapping(
         ("avt_front_outer_face_track_mm", "front_outer_face_track_mm"),
         ("avt_rear_outer_face_track_mm", "rear_outer_face_track_mm"),
     ):
-        candidate = _candidate(values, code)
-        ready, reason = is_avt_track_ready(candidate)
+        candidate, conflict_decision_id = _candidate(session, config, values, code, fitment=fitment)
+        ready, reason = is_avt_track_ready(candidate, conflict_resolution_id=conflict_decision_id)
         if not ready:
             blockers.append(f"{code}: {reason}")
         elif candidate is not None:
             payload[output_key] = float(candidate.numeric_value)
             source_value_ids.append(candidate.id)
 
-    turning = _candidate(values, "turning_radius_normalized_m")
-    turning_ready, turning_reason = is_turning_avt_ready(turning)
+    turning, conflict_decision_id = _candidate(session, config, values, "turning_radius_normalized_m", fitment=fitment)
+    turning_ready, turning_reason = is_turning_avt_ready(turning, conflict_resolution_id=conflict_decision_id)
     if not turning_ready:
         blockers.append(f"turning: {turning_reason}")
     elif turning is not None:
@@ -75,7 +78,7 @@ def build_avt_mapping(
         }
         source_value_ids.append(turning.id)
 
-    steering = _candidate(values, "avt_maximum_steering_angle_deg")
+    steering, _ = _candidate(session, config, values, "avt_maximum_steering_angle_deg", fitment=fitment)
     if steering is None:
         blockers.append("steering: missing explicit AVT Maximum Steering Angle")
     else:
@@ -86,7 +89,7 @@ def build_avt_mapping(
         ("avt_lock_to_lock_time_forward_s", "lock_to_lock_time_forward_s"),
         ("avt_lock_to_lock_time_reverse_s", "lock_to_lock_time_reverse_s"),
     ):
-        candidate = _candidate(values, code)
+        candidate, _ = _candidate(session, config, values, code, fitment=fitment)
         if candidate is None:
             blockers.append(f"steering: missing explicit {code}")
         else:

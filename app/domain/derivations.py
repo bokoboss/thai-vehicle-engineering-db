@@ -6,7 +6,7 @@ from typing import Iterable
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.db.models import DerivationRule, NormalizedValue, ParameterDefinition, VehicleConfiguration
+from app.db.models import DerivationRule, NormalizedValue, ParameterDefinition, VehicleConfiguration, VehicleFitment
 from app.domain.enums import (
     ApplicabilityGrade,
     EvidenceMethod,
@@ -78,6 +78,27 @@ def register_derivation_rule(
     return rule
 
 
+def _fitment_scope_for_inputs(
+    session: Session,
+    config: VehicleConfiguration,
+    inputs: Iterable[NormalizedValue],
+) -> VehicleFitment | None:
+    """Resolve one compatible fitment scope before registering a derivation."""
+
+    input_values = list(inputs)
+    if any(value.vehicle_configuration_id != config.id for value in input_values):
+        raise ContractViolation("derivation input does not belong to the target configuration")
+    fitment_ids = {value.vehicle_fitment_id for value in input_values if value.vehicle_fitment_id is not None}
+    if len(fitment_ids) > 1:
+        raise ContractViolation("derivation inputs belong to incompatible fitments")
+    if not fitment_ids:
+        return None
+    fitment = session.get(VehicleFitment, next(iter(fitment_ids)))
+    if fitment is None or fitment.vehicle_configuration_id != config.id:
+        raise ContractViolation("derivation input fitment cannot be resolved in the target configuration")
+    return fitment
+
+
 def derive_nominal_tyre_radius(
     session: Session,
     config: VehicleConfiguration,
@@ -88,6 +109,7 @@ def derive_nominal_tyre_radius(
 ) -> NormalizedValue:
     if tyre_size_value.text_value is None:
         raise ContractViolation("tyre radius derivation requires a tyre-size text value")
+    fitment = _fitment_scope_for_inputs(session, config, [tyre_size_value])
     section, aspect, rim = parse_tyre_size(tyre_size_value.text_value)
     result = nominal_unloaded_tyre_radius_mm(section, aspect, rim)
     rule = register_derivation_rule(
@@ -122,6 +144,7 @@ def derive_nominal_tyre_radius(
         payload,
         derivation_rule=rule,
         derivation_inputs=[(tyre_size_value, "tyre_size_notation")],
+        fitment=fitment,
         result_notes="Nominal notation-derived radius; do not use as static-loaded radius.",
     )
 
@@ -136,6 +159,7 @@ def derive_avt_track_estimate(
 ) -> NormalizedValue:
     if centerline_value.numeric_value is None or nominal_section_width_value.numeric_value is None:
         raise ContractViolation("AVT screening track estimate requires numeric centerline and nominal-width inputs")
+    fitment = _fitment_scope_for_inputs(session, config, [centerline_value, nominal_section_width_value])
     result = float(centerline_value.numeric_value) + float(nominal_section_width_value.numeric_value)
     rule = register_derivation_rule(
         session,
@@ -165,6 +189,8 @@ def derive_avt_track_estimate(
             "track_definition": "OUTER_TYRE_FACES",
             "source_basis": "CENTERLINE_PLUS_NOMINAL_WIDTH",
             "screening_only": True,
+            "estimation_method": "CENTERLINE_PLUS_NOMINAL_WIDTH",
+            "limitations": "Nominal section width is not mounted tyre/wheel outer-face geometry; screening only.",
             "assumption": "nominal section width is treated as mounted outer-face addition for screening only",
         },
     )
@@ -177,6 +203,7 @@ def derive_avt_track_estimate(
             (centerline_value, "oem_centerline_track"),
             (nominal_section_width_value, "nominal_section_width"),
         ],
+        fitment=fitment,
         result_notes="Rejected as AVT-ready because this is a nominal-width screening approximation.",
     )
 
@@ -190,6 +217,7 @@ def derive_screening_breakover(
 ) -> NormalizedValue:
     if clearance_value.numeric_value is None or wheelbase_value.numeric_value is None:
         raise ContractViolation("screening breakover requires numeric clearance and wheelbase values")
+    fitment = _fitment_scope_for_inputs(session, config, [clearance_value, wheelbase_value])
     clearance_metadata = clearance_value.semantic_metadata or {}
     if clearance_metadata.get("clearance_type") != "BETWEEN_AXLES":
         raise ContractViolation("screening breakover requires explicitly between-axles clearance")
@@ -240,5 +268,6 @@ def derive_screening_breakover(
             (clearance_value, "between_axles_clearance"),
             (wheelbase_value, "wheelbase"),
         ],
+        fitment=fitment,
         result_notes="Screening namespace only; no physical/OEM angle promotion.",
     )

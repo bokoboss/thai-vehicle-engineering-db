@@ -169,6 +169,8 @@ class NormalizedValueCreate(DomainModel):
         if self.availability_state == AvailabilityState.AVAILABLE:
             if typed_count != 1:
                 raise ValueError("AVAILABLE normalized values require exactly one typed value")
+            if self.evidence_method == EvidenceMethod.NONE:
+                raise ValueError("AVAILABLE normalized values require evidence or derivation provenance")
         elif typed_count:
             raise ValueError("non-available normalized values must not contain a numeric or typed value")
         if self.evidence_method == EvidenceMethod.DERIVED and not self.normalization_rule_version:

@@ -127,6 +127,12 @@ def seed_registry(session: Session, path: Path | None = None) -> dict[str, Param
                 created_version=document.registry_version,
             )
             session.add(definition)
+        else:
+            # The reference registry is authoritative for semantic requirements;
+            # keep an existing local seed aligned when the registry is amended.
+            definition.requires_attributes = entry.requires_attributes
+            definition.data_type = entry.data_type.value
+            definition.canonical_unit = entry.unit
         result[entry.code] = definition
     session.flush()
     return result

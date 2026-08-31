@@ -17,14 +17,12 @@ from app.db.models import (
     VehicleFitment,
 )
 from app.domain.enums import (
-    AvailabilityState,
     EvidenceMethod,
     GeometryRole,
     ReadinessStatus,
     ReadinessType,
-    ResolutionState,
-    VerificationState,
 )
+from app.domain.candidate_resolution import resolve_engineering_candidate
 from app.domain.validation import (
     is_avt_track_ready,
     is_turning_avt_ready,
@@ -54,23 +52,30 @@ def _values(session: Session, config: VehicleConfiguration, fitment: VehicleFitm
     return list(session.scalars(statement).all())
 
 
-def _candidate(values: list[NormalizedValue], code: str) -> NormalizedValue | None:
-    matches = [value for value in values if value.parameter_definition.parameter_code == code]
-    matches = [value for value in matches if value.availability_state == AvailabilityState.AVAILABLE.value]
-    if not matches:
-        return None
-    preferred = [value for value in matches if value.preferred]
-    if preferred:
-        return preferred[0]
-    uncontested = [value for value in matches if value.resolution_state not in {ResolutionState.CONFLICTING.value, ResolutionState.SUPERSEDED.value}]
-    return uncontested[0] if uncontested else matches[0]
+def _candidate(
+    session: Session,
+    config: VehicleConfiguration,
+    values: list[NormalizedValue],
+    code: str,
+    *,
+    fitment: VehicleFitment | None,
+) -> tuple[NormalizedValue | None, str | None]:
+    resolution = resolve_engineering_candidate(session, config, values, code, fitment=fitment)
+    return resolution.value, resolution.conflict_decision_id if resolution.value is not None else resolution.reason
 
 
-def _required_values(values: list[NormalizedValue], codes: list[str]) -> tuple[list[str], list[str]]:
+def _required_values(
+    session: Session,
+    config: VehicleConfiguration,
+    values: list[NormalizedValue],
+    codes: list[str],
+    *,
+    fitment: VehicleFitment | None,
+) -> tuple[list[str], list[str]]:
     blockers: list[str] = []
     supporting: list[str] = []
     for code in codes:
-        candidate = _candidate(values, code)
+        candidate, _ = _candidate(session, config, values, code, fitment=fitment)
         if candidate is None:
             blockers.append(f"missing available value: {code}")
         else:
@@ -98,8 +103,11 @@ def evaluate_readiness(
     )
 
     dimension_blockers, dimension_supporting = _required_values(
+        session,
+        config,
         values,
         ["overall_length_mm", "overall_height_mm", "overall_width_reported_mm", "wheelbase_actual_mm"],
+        fitment=fitment,
     )
     results.append(
         ReadinessEvaluation(
@@ -113,28 +121,28 @@ def evaluate_readiness(
     avt_blockers: list[str] = []
     avt_supporting: list[str] = []
     for code in ("avt_front_outer_face_track_mm", "avt_rear_outer_face_track_mm"):
-        candidate = _candidate(values, code)
-        ready, reason = is_avt_track_ready(candidate)
+        candidate, conflict_decision_id = _candidate(session, config, values, code, fitment=fitment)
+        ready, reason = is_avt_track_ready(candidate, conflict_resolution_id=conflict_decision_id)
         if not ready:
             avt_blockers.append(f"{code}: {reason}")
         elif candidate is not None:
             avt_supporting.append(candidate.id)
 
-    turning = _candidate(values, "turning_radius_normalized_m")
-    turning_ready, turning_reason = is_turning_avt_ready(turning)
+    turning, conflict_decision_id = _candidate(session, config, values, "turning_radius_normalized_m", fitment=fitment)
+    turning_ready, turning_reason = is_turning_avt_ready(turning, conflict_resolution_id=conflict_decision_id)
     if not turning_ready:
         avt_blockers.append(f"turning: {turning_reason}")
     elif turning is not None:
         avt_supporting.append(turning.id)
 
-    steering = _candidate(values, "avt_maximum_steering_angle_deg")
+    steering, _ = _candidate(session, config, values, "avt_maximum_steering_angle_deg", fitment=fitment)
     if steering is None:
         avt_blockers.append("steering: missing explicit AVT Maximum Steering Angle")
     else:
         avt_supporting.append(steering.id)
 
     for code in ("avt_lock_to_lock_time_forward_s", "avt_lock_to_lock_time_reverse_s"):
-        candidate = _candidate(values, code)
+        candidate, _ = _candidate(session, config, values, code, fitment=fitment)
         if candidate is None:
             avt_blockers.append(f"steering: missing explicit {code}")
         else:
@@ -165,12 +173,18 @@ def evaluate_readiness(
         )
     )
 
-    screening_candidates = [
-        value
-        for value in values
-        if value.parameter_definition.parameter_code.startswith("screening_")
-        and value.availability_state == AvailabilityState.AVAILABLE.value
-    ]
+    screening_candidates = []
+    screening_codes = sorted(
+        {
+            value.parameter_definition.parameter_code
+            for value in values
+            if value.parameter_definition.parameter_code.startswith("screening_")
+        }
+    )
+    for code in screening_codes:
+        candidate, _ = _candidate(session, config, values, code, fitment=fitment)
+        if candidate is not None:
+            screening_candidates.append(candidate)
     ramp_blockers: list[str] = []
     ramp_supporting: list[str] = []
     for value in screening_candidates:
