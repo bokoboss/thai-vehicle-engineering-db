@@ -11,7 +11,9 @@
 - Phase 0 implementation PR #3 squash merge: `fbdc5bcd60b1e560a3151d33b907e5e812a8909a`
 - Phase 0 final CI: run `33379240873`, 65/65 tests passed
 - Phase 0 acceptance: PASS after R1–R5 and S1–S3 remediation
-- Current work: Phase 1 pilot data curation
+- Identity Time Basis v1 PR #6 squash merge: `112dd67deab4c4832a4645d5127ebfe7165213ed`
+- Identity-time methodology: ACCEPTED; implementation Issue #7 ready
+- Current work: Phase 1 pilot data curation + bounded identity-time schema remediation
 
 ## Product purpose
 Create an engineering-grade, traceable database and intentionally small web application for vehicle geometry and maneuverability relevant to vehicles used in Thailand.
@@ -69,6 +71,7 @@ The software foundation is implemented. The main project effort now moves to:
 - Raw source observations and normalized values are separate.
 - Every publishable engineering parameter has parameter-level provenance.
 - Exact vehicle identity matters.
+- Model year is optional unless the source explicitly supports MODEL_YEAR semantics; non-MY exact identity may use an evidence-backed revision label, edition release, bounded sale period, or approved combination.
 - Unknown values remain unknown.
 - Conflicts are retained and resolved audibly.
 - OEM tread/track is not AVT outer-face track by default.
@@ -110,4 +113,4 @@ The software foundation is implemented. The main project effort now moves to:
 
 ## Current next objective
 
-Run Phase 1 as ChatGPT-led pilot curation of approximately 30 exact Thai-market configurations. Use Codex only for bounded code/schema/tooling changes discovered through evidence.
+Continue Phase 1 as ChatGPT-led pilot curation while implementing Issue #7 as a bounded Codex migration/domain update for Identity Time Basis v1. Do not pause research while the schema remediation is underway.
