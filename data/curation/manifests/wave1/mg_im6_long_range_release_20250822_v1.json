@@ -1,0 +1,526 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-MG-IM6-LONG-RANGE-RELEASE-20250822-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-mg-im6-long-range-release-2025-08-22",
+    "manufacturer_name": "MG",
+    "manufacturer_display_name": "MG",
+    "canonical_model_name": "im6",
+    "display_model_name": "IM6",
+    "market_code": "TH",
+    "generation_name": "MG IM6 Thailand current generation",
+    "body_style": "Battery-electric SUV/crossover",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "NEW MG IM6 LONG RANGE — launch 22 August 2025",
+    "sale_period_from": "2025-08-22",
+    "sale_period_to": null,
+    "variant_trim": "Long Range",
+    "powertrain": "Battery electric, 100 kWh",
+    "drivetrain": "Four-wheel steering equipped; propulsion drivetrain as published by MG technical page",
+    "body_configuration": "5-door SUV/crossover",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Current MG Thailand technical table identifies the Long Range engineering grade. Dated 22 Aug 2025 release evidence comes from multiple reputable Thai automotive publications reproducing MG Sales Thailand announcement and remains authority B. Current promotional alias Premium Long Range is not silently collapsed into the engineering grade name."
+  },
+  "sources": [
+    {
+      "source_code": "MG_TH_IM6_SPEC_CURRENT",
+      "publisher": "MG Sales Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "MG IM6 — Thailand technical specification",
+      "url": "https://www.mgcars.com/th/cars/mg-im6",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Long Range exact technical column",
+      "applicability_notes": "Exact engineering grade",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "MG_TH_IM6_LONGRANGE_CURRENT",
+      "publisher": "MG Sales Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_PRODUCT_PAGE",
+      "title": "MG IM6 Long Range",
+      "url": "https://www.mgcars.com/th/cars/mg-im6-longrange",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Current product identity",
+      "applicability_notes": "Long Range product identity",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "MOTORWORLD_TH_MG_IM6_LR_LAUNCH_20250822",
+      "publisher": "Motor World Thailand",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "source_type": "OTHER",
+      "source_subtype_raw": "AUTOMOTIVE_NEWS",
+      "title": "2025 MG IM6 Long Range teaser / launch announcement",
+      "url": "https://www.motorworldthailand.com/17468296/2025-mg-mg-im6-long-range-teaser",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2025,
+      "page_section_default": "Launch announcement",
+      "applicability_notes": "B-level dated release evidence",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "GRANDPRIX_TH_MG_IM6_LR_LAUNCH_20250822",
+      "publisher": "Grand Prix Online",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "source_type": "OTHER",
+      "source_subtype_raw": "AUTOMOTIVE_NEWS",
+      "title": "NEW MG IM6 Long Range — ready to launch August 22",
+      "url": "https://www.grandprix.co.th/new-mg-im6-long-range-up-to-750-km-ready-to-launch-on-august-22/",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2025,
+      "page_section_default": "Launch announcement",
+      "applicability_notes": "Corroborating B-level dated release evidence",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "MG_TH_IM6_PROMO_202608",
+      "publisher": "MG Sales Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_PROMOTION",
+      "title": "MG IM6 Promotion",
+      "url": "https://www.mgcars.com/th/promotions/MG-IM6-Promotion",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2026,
+      "page_section_default": "Promotion",
+      "applicability_notes": "Current promotional nomenclature uses Premium Long Range; retained as alias evidence",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "MG_TH_IM6_SPEC_CURRENT",
+      "raw_oem_wording": "Ground Clearance; load state not stated",
+      "notes": "Structured unknown load state."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "WHEEL20",
+      "description": "MG IM6 Long Range exact 20-inch staggered tyre fitment",
+      "wheel_package": "20-inch alloy; front 235/50 R20; rear 255/45 R20",
+      "equipment_package": "Long Range",
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact OEM technical column."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_OEM",
+      "source_code": "MG_TH_IM6_LONGRANGE_CURRENT",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Current product identity",
+      "raw_value": "MG IM6 Long Range",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Current product",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LAUNCH_B1",
+      "source_code": "MOTORWORLD_TH_MG_IM6_LR_LAUNCH_20250822",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Dated launch evidence",
+      "raw_value": "NEW MG IM6 LONG RANGE — launch 22 August 2025",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Launch news",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Reputable secondary; not OEM authority"
+    },
+    {
+      "observation_code": "OBS_LAUNCH_B2",
+      "source_code": "GRANDPRIX_TH_MG_IM6_LR_LAUNCH_20250822",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Corroborating dated launch evidence",
+      "raw_value": "NEW MG IM6 Long Range — launch 22 August 2025",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Launch news",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Reputable secondary; not OEM authority"
+    },
+    {
+      "observation_code": "OBS_ALIAS",
+      "source_code": "MG_TH_IM6_PROMO_202608",
+      "vehicle_identity_claim": "MG IM6 promotion",
+      "raw_label": "Promotional alias",
+      "raw_value": "Premium Long Range",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Promotion",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Alias evidence only; do not silently rename Long Range engineering grade"
+    },
+    {
+      "observation_code": "OBS_DIM",
+      "source_code": "MG_TH_IM6_SPEC_CURRENT",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Length x Width x Height",
+      "raw_value": "4904 x 1988 x 1669",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "MG_TH_IM6_SPEC_CURRENT",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Wheelbase",
+      "raw_value": "2950",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "MG_TH_IM6_SPEC_CURRENT",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Ground Clearance",
+      "raw_value": "166",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Load state not stated"
+    },
+    {
+      "observation_code": "OBS_TURN",
+      "source_code": "MG_TH_IM6_SPEC_CURRENT",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Minimum turning radius",
+      "raw_value": "5.1",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated"
+    },
+    {
+      "observation_code": "OBS_FTYRE",
+      "source_code": "MG_TH_IM6_SPEC_CURRENT",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Front tyre",
+      "raw_value": "235/50 R20",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_RTYRE",
+      "source_code": "MG_TH_IM6_SPEC_CURRENT",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Rear tyre",
+      "raw_value": "255/45 R20",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_REAR_STEER",
+      "source_code": "MG_TH_IM6_SPEC_CURRENT",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Drive System",
+      "raw_value": "Intelligent Four-wheel Steering System (with Crab Mode)",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "System presence proven; rear angle/linkage/phase behavior not published"
+    },
+    {
+      "observation_code": "OBS_WHEEL",
+      "source_code": "MG_TH_IM6_SPEC_CURRENT",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Wheel",
+      "raw_value": "20-inch alloy",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Long Range exact technical column",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4904,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1988,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1669,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2950,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 166,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.1,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "235/50 R20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_FTYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "255/45 R20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_RTYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FWHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "20-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    },
+    {
+      "value_code": "VAL_RWHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "20-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "No AVT outer-face track evidence located in current Thailand source set.",
+      "source_families_searched": [
+        "MG Thailand current technical/product pages"
+      ],
+      "search_notes": "Do not synthesize from width/tyre nominal data.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct track evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "No AVT outer-face track evidence located in current Thailand source set.",
+      "source_families_searched": [
+        "MG Thailand current technical/product pages"
+      ],
+      "search_notes": "Do not synthesize from width/tyre nominal data.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct track evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}

@@ -1,0 +1,559 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-HONDA-ACCORD-EHEV-RS-RELEASE-20250822-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-honda-accord-ehev-rs-release-2025-08-22",
+    "manufacturer_name": "Honda",
+    "manufacturer_display_name": "Honda",
+    "canonical_model_name": "accord",
+    "display_model_name": "Accord",
+    "market_code": "TH",
+    "generation_name": "New Accord e:HEV Thailand 2025 release",
+    "body_style": "Sedan",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "Honda Accord e:HEV ใหม่ — official launch 22 August 2025",
+    "sale_period_from": "2025-08-22",
+    "sale_period_to": null,
+    "variant_trim": "e:HEV RS",
+    "powertrain": "e:HEV",
+    "drivetrain": null,
+    "body_configuration": "4-door sedan",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Official Honda Thailand release resolves exact e:HEV RS identity and a 2026 Honda campaign supports current continuity. Shared OEM values remain A1; exact grouped-row mappings from a reputable secondary exact-grade page remain B."
+  },
+  "sources": [
+    {
+      "source_code": "HONDA_TH_ACCORD_NEW_LAUNCH_20250822",
+      "publisher": "Honda Automobile Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_NEWS",
+      "title": "New Honda Accord e:HEV launch 2025",
+      "url": "https://www.honda.co.th/news/NewHondaAccordLaunch2025",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2025,
+      "page_section_default": "Official launch",
+      "applicability_notes": "Exact e:HEV RS release identity",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "HONDA_TH_ACCORD_CURRENT_PROMO_2026",
+      "publisher": "Honda Automobile Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_CAMPAIGN",
+      "title": "New Accord e:HEV promotion 2026",
+      "url": "https://www.honda.co.th/promotions/detail/promotion-newaccordehev-jul2026",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2026,
+      "page_section_default": "Current campaign",
+      "applicability_notes": "Current continuity evidence for New Accord e:HEV",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "HONDA_TH_ACCORD_SPEC_CURRENT_20260831",
+      "publisher": "Honda Automobile Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION_GROUPED_TABLE",
+      "title": "Honda Accord e:HEV Technical Specifications",
+      "url": "https://www.honda.co.th/accordehev/specification",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Technical specification table",
+      "applicability_notes": "Shared values and grouped grade candidates",
+      "archival_status": "URL_ONLY",
+      "notes": "Grouped rows are not assigned by row order."
+    },
+    {
+      "source_code": "ZIGWHEELS_TH_ACCORD_EHEV_RS_20260831",
+      "publisher": "ZigWheels Thailand",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "EXACT_GRADE_SPECIFICATION",
+      "title": "Honda Accord e:HEV RS specifications",
+      "url": "https://www.zigwheels.co.th/new-cars/honda/accord-ehev/rs",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Exact e:HEV RS specification",
+      "applicability_notes": "B-level exact-grade mapping",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "HONDA_TH_ACCORD_SPEC_CURRENT_20260831",
+      "raw_oem_wording": "Ground clearance; load state not stated",
+      "notes": "Structured unknown load state."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "RS18",
+      "description": "Accord e:HEV RS exact 18-inch fitment",
+      "wheel_package": "18-inch / 235/45 R18",
+      "equipment_package": "e:HEV RS",
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact grade mapping is B-level. Do not infer 18 x 8J rim width unless independently resolved."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "HONDA_TH_ACCORD_NEW_LAUNCH_20250822",
+      "vehicle_identity_claim": "Accord e:HEV RS",
+      "raw_label": "Official release",
+      "raw_value": "New Honda Accord e:HEV RS — 22 Aug 2025",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Official launch",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_CONTINUITY",
+      "source_code": "HONDA_TH_ACCORD_CURRENT_PROMO_2026",
+      "vehicle_identity_claim": "New Accord e:HEV",
+      "raw_label": "Current continuity",
+      "raw_value": "New Accord e:HEV current campaign 2026",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Official campaign",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "HONDA_TH_ACCORD_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Accord e:HEV family",
+      "raw_label": "Overall length",
+      "raw_value": "4962",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Shared OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH",
+      "source_code": "HONDA_TH_ACCORD_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Accord e:HEV family",
+      "raw_label": "Overall width",
+      "raw_value": "1862",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Shared OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Mirror/body inclusion not stated"
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "HONDA_TH_ACCORD_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Accord e:HEV family",
+      "raw_label": "Overall height",
+      "raw_value": "1449",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Shared OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LTL",
+      "source_code": "HONDA_TH_ACCORD_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Accord e:HEV family",
+      "raw_label": "Steering wheel lock-to-lock",
+      "raw_value": "2.7",
+      "raw_unit": "turns",
+      "raw_qualifier": null,
+      "page_section_locator": "Shared OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TURN",
+      "source_code": "HONDA_TH_ACCORD_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Accord e:HEV family",
+      "raw_label": "Turning radius",
+      "raw_value": "6.1",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Shared OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated"
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "HONDA_TH_ACCORD_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Accord e:HEV family",
+      "raw_label": "Ground clearance",
+      "raw_value": "134",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Shared OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Load state not stated"
+    },
+    {
+      "observation_code": "OBS_GROUPED",
+      "source_code": "HONDA_TH_ACCORD_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Accord e:HEV grouped grades",
+      "raw_label": "Grouped wheelbase/tread/mass/wheel/tyre candidates",
+      "raw_value": "WB 2828/2827; tread F 1600/1590; R 1633/1624; mass 1560/1571/1606; wheels 17x7.5J/18x8J; tyres 225/50R17/235/45R18",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Grouped OEM rows",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Exact RS members resolved only by separate B-level source"
+    },
+    {
+      "observation_code": "OBS_RS_EXACT",
+      "source_code": "ZIGWHEELS_TH_ACCORD_EHEV_RS_20260831",
+      "vehicle_identity_claim": "Accord e:HEV RS",
+      "raw_label": "Exact RS engineering values",
+      "raw_value": "Kerb 1606 kg; WB 2827 mm; tread 1590/1624 mm; 18-inch; 235/45 R18; turning radius 6.1 m",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Exact grade",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Authority B exact-grade mapping"
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4962,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1862,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1449,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_LTL",
+      "parameter_code": "steering_wheel_lock_to_lock_turns",
+      "value": 2.7,
+      "canonical_unit": "turns",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LTL"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 6.1,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 134,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 1606,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2827,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1590,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1624,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_FWHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "18-inch",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "RS18",
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_RWHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "18-inch",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "RS18",
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "235/45 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "RS18",
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "235/45 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "RS18",
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Exact RS tread definition remains unspecified and is not AVT outer-face evidence.",
+      "source_families_searched": [
+        "Honda Thailand",
+        "ZigWheels exact grade"
+      ],
+      "search_notes": "Do not convert tread to AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Exact RS tread definition remains unspecified and is not AVT outer-face evidence.",
+      "source_families_searched": [
+        "Honda Thailand",
+        "ZigWheels exact grade"
+      ],
+      "search_notes": "Do not convert tread to AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
