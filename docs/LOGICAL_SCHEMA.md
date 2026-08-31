@@ -95,8 +95,10 @@ Fields:
 - generation_name
 - chassis_platform_code
 - body_style
-- model_year_from
+- model_year_from nullable
 - model_year_to nullable
+- identity_time_basis
+- identity_time_label_raw nullable
 - sale_period_from/to nullable
 - variant_trim
 - powertrain
@@ -109,6 +111,10 @@ Fields:
 Rules:
 - `stable_vehicle_code` unique and never recycled.
 - record creation requires market + commercial model + sufficient configuration resolution.
+- `model_year_from` is nullable; do not fabricate a model year to satisfy the schema.
+- an exact configuration must have an evidence-backed temporal discriminator represented by model year, OEM revision label, edition release, bounded sale period, or an approved combination.
+- `identity_time_basis=UNKNOWN` cannot support `RESOLVED_EXACT`.
+- raw OEM temporal/revision wording is preserved in `identity_time_label_raw` and identity evidence.
 - unresolved DLT model names do not become exact configurations.
 
 ### 4.4 `vehicle_fitment`

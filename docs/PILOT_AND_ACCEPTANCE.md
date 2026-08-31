@@ -17,7 +17,7 @@ Success is the database being able to represent, explain and preserve why some r
 
 ## 3. Recommended pilot set
 
-Use approximately 30 exact Thai-market configurations/targets, with exact model year/sales grade/wheel package locked at ingestion:
+Use approximately 30 exact Thai-market configurations/targets, with exact temporal applicability (model year **or another approved OEM identity-time basis**), sales grade and material wheel package locked at ingestion:
 
 1. Honda City e:HEV RS
 2. Honda Civic e:HEV RS
@@ -50,7 +50,7 @@ Use approximately 30 exact Thai-market configurations/targets, with exact model 
 29. BMW 520d M Sport Pro G60
 30. BMW 740d M Sport G70
 
-The exact configuration is not created until the curation record resolves market, generation/chassis, model year and material wheel/equipment package.
+The exact configuration is not created until the curation record resolves market, generation/chassis, material variant/wheel/equipment package and an evidence-backed temporal discriminator. Do not invent a model year when the OEM identifies the configuration through a revision label, named edition/release or bounded sale period instead.
 
 ## 4. Why this set is deliberately difficult
 
