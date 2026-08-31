@@ -20,7 +20,9 @@
 - Curation Ingestion Contract v1 PR #14 squash merge: `15bd1256e35c69b81fb6d43171dfaca0a32dbc6a`
 - Sentinel manifest contract/QA: ACCEPTED
 - Wave 2 second-review PR #16 squash merge: `5466e16350c4c9c982be581f14ff5a46e3b3d3b9`
-- Current research readiness: Wave 1 = 17, Wave 2 = 8, HOLD = 5
+- Wave 2 closure PR #17 squash merge: `62a502f196e98077327519a38fa9da3c3867d942`
+- Wave 2 review: CLOSED
+- Current research readiness: Wave 1 = 21, Wave 2 = 0, HOLD = 9
 - Current work: Issue #15 create-only importer implementation and sentinel proof
 
 ## Product purpose
@@ -125,4 +127,4 @@ The software foundation is implemented. The main project effort now moves to:
 
 ## Current next objective
 
-Execute Issue #15 to implement the accepted create-only curation importer and prove it with the three sentinel vehicles before expanding Wave 1. Wave 1 has 17 research-clean candidates; Wave 2 has 8 second-review records; 5 records remain HOLD. Production ingestion must not bypass provenance/conflict/identity validation.
+Execute Issue #15 to implement the accepted create-only curation importer and prove it with the three sentinel vehicles before expanding Wave 1. Wave 1 has 21 research-clean candidates; Wave 2 review is closed; 9 records remain HOLD pending genuinely new source/temporal/semantic evidence. Production ingestion must not bypass provenance/conflict/identity validation.
