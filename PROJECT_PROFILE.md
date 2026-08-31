@@ -12,10 +12,12 @@
 - Phase 0 final CI: run `33379240873`, 65/65 tests passed
 - Phase 0 acceptance: PASS after R1–R5 and S1–S3 remediation
 - Identity Time Basis v1 PR #6 squash merge: `112dd67deab4c4832a4645d5127ebfe7165213ed`
-- Identity-time methodology: ACCEPTED; implementation Issue #7 ready
+- Identity-time methodology: ACCEPTED
+- Identity Time Basis v1 implementation PR #13 squash merge: `f2e311578694479a8bce52ecdcb46dc18fdc4c28`
+- Identity-time implementation: ACCEPTED; final CI 78 tests passed
 - Phase 1 30-vehicle research baseline PR #12 squash merge: `4aa268bb65b36347e077a3e4d5ddaedf24605633`
 - Phase 1 research coverage: PASS WITH INGESTION CONDITIONS
-- Current work: actual pilot ingestion preparation + bounded identity-time schema remediation
+- Current work: controlled pilot ingestion preparation and sentinel proof
 
 ## Product purpose
 Create an engineering-grade, traceable database and intentionally small web application for vehicle geometry and maneuverability relevant to vehicles used in Thailand.
@@ -119,4 +121,4 @@ The software foundation is implemented. The main project effort now moves to:
 
 ## Current next objective
 
-Complete Issue #7, then ingest the accepted pilot research in controlled waves using the existing service validation boundary. Wave 1 has 14 research-clean candidates; Wave 2 has 11 second-review records; 5 records remain HOLD. Production ingestion must not bypass provenance/conflict/identity validation.
+Implement and validate the bounded create-only curation ingestion path, then prove it with three sentinel vehicles before expanding Wave 1. Wave 1 has 14 research-clean candidates; Wave 2 has 11 second-review records; 5 records remain HOLD. Production ingestion must not bypass provenance/conflict/identity validation.
