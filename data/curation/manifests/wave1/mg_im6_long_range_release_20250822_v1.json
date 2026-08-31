@@ -287,6 +287,21 @@
       "extracted_at": "2026-08-31T00:00:00+07:00",
       "extracted_by": "ChatGPT Phase 1 curation",
       "ambiguity_note": "System presence proven; rear angle/linkage/phase behavior not published"
+    },
+    {
+      "observation_code": "OBS_WHEEL",
+      "source_code": "MG_TH_IM6_SPEC_CURRENT",
+      "vehicle_identity_claim": "MG IM6 Long Range",
+      "raw_label": "Wheel",
+      "raw_value": "20-inch alloy",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Long Range exact technical column",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
     }
   ],
   "values": [
@@ -457,7 +472,7 @@
       "load_condition_code": null,
       "fitment_code": "WHEEL20",
       "evidence_observation_codes": [
-        "OBS_FTYRE"
+        "OBS_WHEEL"
       ]
     },
     {
@@ -475,7 +490,7 @@
       "load_condition_code": null,
       "fitment_code": "WHEEL20",
       "evidence_observation_codes": [
-        "OBS_RTYRE"
+        "OBS_WHEEL"
       ]
     }
   ],
