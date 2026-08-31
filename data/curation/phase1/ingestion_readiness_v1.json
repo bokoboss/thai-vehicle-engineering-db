@@ -19,28 +19,16 @@
     "batch-e-04-bmw-740d-m-sport-g70-current-2026",
     "batch-a-01-mazda-mx5-35ae-rf-at",
     "batch-b-05-toyota-fortuner-leader-v-4wd-2025-catalog",
-    "batch-d-02-byd-dolphin-extended-current"
+    "batch-d-02-byd-dolphin-extended-current",
+    "batch-b-09-isuzu-mux-22-ultimate-4wd-2026",
+    "batch-b-02-honda-civic-ehev-rs-2026-release",
+    "batch-b-03-honda-accord-ehev-rs-2025-release",
+    "batch-a-06-mg-im6-long-range"
   ],
   "wave_2_second_review": [
     {
-      "id": "batch-a-06-mg-im6-long-range",
-      "reason": "Temporal identity confirmation; four-wheel-steering linkage remains intentionally incomplete."
-    },
-    {
       "id": "batch-b-01-honda-city-ehev-rs-2026-release",
       "reason": "Resolve grade-column mapping for multi-valued dimensions/fitment rows."
-    },
-    {
-      "id": "batch-b-02-honda-civic-ehev-rs-2026-release",
-      "reason": "Resolve exact RS column mapping for turning/steering/tread/wheel rows."
-    },
-    {
-      "id": "batch-b-03-honda-accord-ehev-rs-2025-release",
-      "reason": "Resolve exact RS wheelbase/tread/wheel column mapping."
-    },
-    {
-      "id": "batch-b-09-isuzu-mux-22-ultimate-4wd-2026",
-      "reason": "Second-review exact 2.2 4WD ULTIMATE technical-table column mapping."
     },
     {
       "id": "batch-c-02-ford-everest-platinum-30-v6-current",
@@ -77,5 +65,5 @@
       "reason": "Exact primary Thailand PERFORMANCE sales geometry not recovered."
     }
   ],
-  "note": "Wave assignment concerns research/identity/semantic readiness only. It does not imply AVT_READY or physical ramp readiness. Wave 1 expansion remains blocked until Issue #15 sentinel proof passes."
+  "note": "Wave assignment concerns research/identity/semantic readiness only. It does not imply AVT_READY or physical ramp readiness. Wave 1 physical ingestion remains blocked until Issue #15 three-sentinel clean-DB proof passes. Some promoted records intentionally use REPUTABLE_SECONDARY exact-grade or temporal evidence; authority grades must remain explicit during ingestion."
 }
