@@ -1,0 +1,415 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-BMW-520D-MSPORTPRO-G60-EFF20250324-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-bmw-520d-m-sport-pro-g60-effective-2025-03-24",
+    "manufacturer_name": "BMW",
+    "manufacturer_display_name": "BMW",
+    "canonical_model_name": "5-series",
+    "display_model_name": "5 Series",
+    "market_code": "TH",
+    "generation_name": "G60",
+    "body_style": "Executive sedan",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "OEM_REVISION_LABEL",
+    "identity_time_label_raw": "BMW 520d M Sport Pro specification effective 24 March 2025",
+    "sale_period_from": "2025-03-24",
+    "sale_period_to": null,
+    "variant_trim": "520d M Sport Pro",
+    "powertrain": "2.0 diesel mild hybrid",
+    "drivetrain": "RWD",
+    "body_configuration": "4-door sedan",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Exact BMW Thailand technical sheet is effective from 24 Mar 2025; current technical/price-list evidence confirms continued 520d M Sport Pro presence. Effective-date wording is preserved as OEM revision applicability, not model year."
+  },
+  "sources": [
+    {
+      "source_code": "BMW_TH_520D_MSPORTPRO_SPEC_20250324",
+      "publisher": "BMW Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_SPECIFICATION_PDF_SCREENSHOT_VERIFIED",
+      "title": "BMW 520d M Sport Pro specification — effective 24 March 2025",
+      "url": "https://www.bmw.co.th/content/dam/bmw/marketTH/bmw_co_th/Topics/Specs/2025/5-20250318-01_EN.pdf.coredownload.pdf",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2025,
+      "page_section_default": "Technical data — visually verified page 1",
+      "applicability_notes": "Exact 520d M Sport Pro revision effective 24 Mar 2025",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "BMW_TH_5SERIES_520D_TECH_CURRENT_20260831",
+      "publisher": "BMW Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_TECHNICAL_DATA",
+      "title": "BMW 5 Series Sedan technical data — 520d M Sport Pro",
+      "url": "https://www.bmw.co.th/en/all-models/5-series/sedan/bmw-5-series-sedan-technical-data.html",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "520d M Sport Pro technical data",
+      "applicability_notes": "Current G60 520d technical dimensions",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "BMW_TH_PRICE_LIST_CURRENT_520D_MSPORTPRO",
+      "publisher": "BMW Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_PRICE_LIST",
+      "title": "BMW Thailand current price list",
+      "url": "https://www.bmw.co.th/en/topics/offers-and-services/pricelist.html",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Current price list",
+      "applicability_notes": "Confirms 520d M Sport Pro current grade presence",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [
+    {
+      "fitment_code": "WHEEL20",
+      "description": "520d M Sport Pro exact 20-inch staggered fitment",
+      "wheel_package": "Front 8.5J x 20 / 245/40 R20; Rear 10J x 20 / 275/35 R20",
+      "equipment_package": "M Sport Pro",
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact effective-24-Mar-2025 BMW Thailand sheet."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_REVISION",
+      "source_code": "BMW_TH_520D_MSPORTPRO_SPEC_20250324",
+      "vehicle_identity_claim": "520d M Sport Pro",
+      "raw_label": "Effective revision",
+      "raw_value": "Effective from 24 March 2025",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical data",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIM",
+      "source_code": "BMW_TH_520D_MSPORTPRO_SPEC_20250324",
+      "vehicle_identity_claim": "520d M Sport Pro",
+      "raw_label": "Length / width / height",
+      "raw_value": "5060 / 1900 / 1515",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical data",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_KERB",
+      "source_code": "BMW_TH_520D_MSPORTPRO_SPEC_20250324",
+      "vehicle_identity_claim": "520d M Sport Pro",
+      "raw_label": "Curb weight",
+      "raw_value": "1850",
+      "raw_unit": "kg",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical data",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_FITMENT",
+      "source_code": "BMW_TH_520D_MSPORTPRO_SPEC_20250324",
+      "vehicle_identity_claim": "520d M Sport Pro",
+      "raw_label": "Tyre size",
+      "raw_value": "Front 8.5J x 20 / 245/40 R20; Rear 10J x 20 / 275/35 R20",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical data",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH_MIRRORS",
+      "source_code": "BMW_TH_5SERIES_520D_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "520d M Sport Pro",
+      "raw_label": "Width including mirrors",
+      "raw_value": "2156",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Current technical data",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "BMW_TH_5SERIES_520D_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "520d M Sport Pro",
+      "raw_label": "Wheelbase",
+      "raw_value": "2995",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Current technical data",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GVM",
+      "source_code": "BMW_TH_5SERIES_520D_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "520d M Sport Pro",
+      "raw_label": "Gross vehicle weight",
+      "raw_value": "2405",
+      "raw_unit": "kg",
+      "raw_qualifier": null,
+      "page_section_locator": "Current technical data",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5060,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_BODY",
+      "parameter_code": "overall_width_body_mm",
+      "value": 1900,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_MIRRORS",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 2156,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_MIRRORS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1515,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2995,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 1850,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_KERB"
+      ]
+    },
+    {
+      "value_code": "VAL_GVM",
+      "parameter_code": "gross_vehicle_mass_kg",
+      "value": 2405,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GVM"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "245/40 R20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_FITMENT"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "275/35 R20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_FITMENT"
+      ]
+    },
+    {
+      "value_code": "VAL_FWHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "8.5J x 20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_FITMENT"
+      ]
+    },
+    {
+      "value_code": "VAL_RWHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "10J x 20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_FITMENT"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact Thailand turning value located in reviewed BMW Thailand exact/current sources.",
+      "source_families_searched": [
+        "BMW Thailand exact specification",
+        "BMW Thailand current technical data"
+      ],
+      "search_notes": "No turning number promoted from another market.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek exact BMW Thailand technical/owner geometry source."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
