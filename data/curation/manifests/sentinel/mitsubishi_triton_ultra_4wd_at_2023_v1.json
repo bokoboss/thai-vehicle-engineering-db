@@ -1,0 +1,429 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-MITSUBISHI-TRITON-ULTRA-4WD-AT-2023-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-mitsubishi-triton-ultra-4wd-at-release-2023",
+    "manufacturer_name": "Mitsubishi",
+    "manufacturer_display_name": "Mitsubishi Motors",
+    "canonical_model_name": "triton",
+    "display_model_name": "Triton",
+    "market_code": "TH",
+    "generation_name": "All-New Triton / new Mega Frame generation",
+    "body_style": "Double Cab pickup",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "All-New Mitsubishi Triton Double Cab ULTRA 4WD AT — officially unveiled 10 Nov 2023",
+    "sale_period_from": "2023-11-10",
+    "sale_period_to": null,
+    "variant_trim": "Double Cab 2.4 ULTRA 4WD AT",
+    "powertrain": "2.4 Hyper Power diesel / 6AT",
+    "drivetrain": "Super Select 4WD II",
+    "body_configuration": "Double Cab",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Exact Thailand product release and exact technical brochure column."
+  },
+  "sources": [
+    {
+      "source_code": "MITSUBISHI_TH_TRITON_ULTRA_4WD_LAUNCH_20231110",
+      "publisher": "Mitsubishi Motors Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_NEWS",
+      "title": "Mitsubishi Motors Thailand unveils All-New Triton Double Cab ULTRA 4WD AT",
+      "url": "https://www.mitsubishi-motors.co.th/en/news-activity/news/unveil-spec-prices-of-athlete-and-dc-4wd-ultra",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Product launch",
+      "applicability_notes": "Exact edition/release identity",
+      "archival_status": "URL_ONLY"
+    },
+    {
+      "source_code": "MITSUBISHI_TH_TRITON_DOUBLECAB_BROCHURE_202311",
+      "publisher": "Mitsubishi Motors Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+      "title": "All-New Triton Double Cab November 2023 brochure",
+      "url": "https://www.mitsubishi-motors.co.th/content/dam/mitsubishi-motors-th/images/documents/brochure/all-brochure/vehicle-name%20all-new%20triton%20double-cab-2023-nov.pdf",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Technical specification table — screenshot-verified page 11",
+      "applicability_notes": "Double Cab 4WD ULTRA AT exact column; common geometry table",
+      "archival_status": "URL_ONLY",
+      "notes": "PDF technical page visually verified during Phase 1 research."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "MITSUBISHI_TH_TRITON_DOUBLECAB_BROCHURE_202311",
+      "raw_oem_wording": "Ground clearance; load/reference state not stated",
+      "notes": "Structured unknown state; not source evidence of a specific load."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_RELEASE",
+      "source_code": "MITSUBISHI_TH_TRITON_ULTRA_4WD_LAUNCH_20231110",
+      "vehicle_identity_claim": "All-New Mitsubishi Triton Double Cab ULTRA 4WD AT",
+      "raw_label": "Product release",
+      "raw_value": "All-New Mitsubishi Triton Double Cab ULTRA 4WD AT — unveiled 10 Nov 2023",
+      "raw_unit": null,
+      "page_section_locator": "Product launch",
+      "reported_precision": "release date as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "MITSUBISHI_TH_TRITON_DOUBLECAB_BROCHURE_202311",
+      "vehicle_identity_claim": "Double Cab 2.4 ULTRA 4WD AT",
+      "raw_label": "Overall dimension with rear bumper",
+      "raw_value": "5320 x 1865 x 1795",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical specification table — screenshot-verified page 11",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Length explicitly includes rear bumper."
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "MITSUBISHI_TH_TRITON_DOUBLECAB_BROCHURE_202311",
+      "vehicle_identity_claim": "Double Cab 2.4 ULTRA 4WD AT",
+      "raw_label": "Wheelbase",
+      "raw_value": "3130",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical specification table — screenshot-verified page 11",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TRACK",
+      "source_code": "MITSUBISHI_TH_TRITON_DOUBLECAB_BROCHURE_202311",
+      "vehicle_identity_claim": "Double Cab 2.4 ULTRA 4WD AT",
+      "raw_label": "Front/Rear track",
+      "raw_value": "1570 / 1565",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical specification table — screenshot-verified page 11",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM track definition not stated."
+    },
+    {
+      "observation_code": "OBS_CLEARANCE",
+      "source_code": "MITSUBISHI_TH_TRITON_DOUBLECAB_BROCHURE_202311",
+      "vehicle_identity_claim": "Double Cab 2.4 ULTRA 4WD AT",
+      "raw_label": "Ground clearance",
+      "raw_value": "222",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical specification table — screenshot-verified page 11",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Load state and limiting component not stated."
+    },
+    {
+      "observation_code": "OBS_TURNING",
+      "source_code": "MITSUBISHI_TH_TRITON_DOUBLECAB_BROCHURE_202311",
+      "vehicle_identity_claim": "Double Cab 2.4 ULTRA 4WD AT",
+      "raw_label": "Minimum turning radius",
+      "raw_value": "6.2",
+      "raw_unit": "m",
+      "page_section_locator": "Technical specification table — screenshot-verified page 11",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated."
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE",
+      "source_code": "MITSUBISHI_TH_TRITON_DOUBLECAB_BROCHURE_202311",
+      "vehicle_identity_claim": "Double Cab 2.4 ULTRA 4WD AT",
+      "raw_label": "Wheel / Tyre — ULTRA 4WD AT",
+      "raw_value": "18 x 7.5J / 265/60 R18",
+      "raw_unit": null,
+      "page_section_locator": "Technical specification table — screenshot-verified page 11",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5320,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "source_qualifier": "with rear bumper"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1865,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1795,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3130,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1570,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1565,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_CLEARANCE",
+      "parameter_code": "clearance_value_mm",
+      "value": 222,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_CLEARANCE"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 6.2,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "265/60 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "265/60 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "18 x 7.5J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "18 x 7.5J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM track definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "OEM Thailand brochure"
+      ],
+      "search_notes": "Keep OEM track separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM track definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "OEM Thailand brochure"
+      ],
+      "search_notes": "Keep OEM track separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
