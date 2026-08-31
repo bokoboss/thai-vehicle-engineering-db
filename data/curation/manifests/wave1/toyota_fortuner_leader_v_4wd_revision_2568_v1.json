@@ -1,0 +1,357 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-TOYOTA-FORTUNER-LEADER-V-4WD-REV2568-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-toyota-fortuner-leader-v-4wd-revision-2568",
+    "manufacturer_name": "Toyota",
+    "manufacturer_display_name": "Toyota",
+    "canonical_model_name": "fortuner-leader",
+    "display_model_name": "Fortuner Leader",
+    "market_code": "TH",
+    "generation_name": "Fortuner Leader revision 2568",
+    "body_style": "PPV/SUV",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "OEM_REVISION_LABEL",
+    "identity_time_label_raw": "FORTUNER รุ่นปรับปรุงปี 2568",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "2.4 Leader V 4WD",
+    "powertrain": "2.4 diesel",
+    "drivetrain": "4WD",
+    "body_configuration": "5-door PPV/SUV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Toyota Accessories explicitly labels the product family FORTUNER รุ่นปรับปรุงปี 2568; current grade page confirms 2.4 Leader V 4WD; screenshot-verified 2025 Leader catalog supplies engineering geometry. Thai revision year is not converted to model year."
+  },
+  "sources": [
+    {
+      "source_code": "TOYOTA_TH_FORTUNER_REVISION_LABEL_2568",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_ACCESSORY_DOWNLOAD_INDEX",
+      "title": "Toyota Accessories — FORTUNER รุ่นปรับปรุงปี 2568",
+      "url": "https://www.toyota.co.th/accessories/download",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Download listing",
+      "applicability_notes": "Temporal revision label",
+      "archival_status": "URL_ONLY",
+      "notes": "Raw Thai revision label retained."
+    },
+    {
+      "source_code": "TOYOTA_TH_FORTUNER_LEADER_CURRENT_20260831",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_GRADE_LIST",
+      "title": "Toyota Fortuner Leader current grade page",
+      "url": "https://www.toyota.co.th/model/fortuner_leader",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Current grade line-up",
+      "applicability_notes": "Exact 2.4 Leader V 4WD grade presence",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "TOYOTA_TH_FORTUNER_LEADER_CATALOG_2025",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+      "title": "Fortuner Leader Catalog 2025",
+      "url": "https://www.toyota.co.th/media/product/series/download/Fortuner_Leader_Catalog_2025.pdf",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2025,
+      "page_section_default": "Technical specification — visually verified",
+      "applicability_notes": "2.4 Leader V 4WD and same five-grade line-up",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "TOYOTA_TH_FORTUNER_LEADER_CATALOG_2025",
+      "raw_oem_wording": "Minimum ground clearance measured from lowest point; load state not stated",
+      "notes": "Structured unknown load state."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_REVISION",
+      "source_code": "TOYOTA_TH_FORTUNER_REVISION_LABEL_2568",
+      "vehicle_identity_claim": "Fortuner revision family",
+      "raw_label": "Revision label",
+      "raw_value": "FORTUNER รุ่นปรับปรุงปี 2568",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Download listing",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GRADE",
+      "source_code": "TOYOTA_TH_FORTUNER_LEADER_CURRENT_20260831",
+      "vehicle_identity_claim": "Fortuner Leader",
+      "raw_label": "Exact grade",
+      "raw_value": "2.4 Leader V 4WD",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Current grade line-up",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIM",
+      "source_code": "TOYOTA_TH_FORTUNER_LEADER_CATALOG_2025",
+      "vehicle_identity_claim": "Fortuner Leader 2.4 Leader V 4WD",
+      "raw_label": "Overall length x width x height",
+      "raw_value": "4795 x 1855 x 1835",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "TOYOTA_TH_FORTUNER_LEADER_CATALOG_2025",
+      "vehicle_identity_claim": "Fortuner Leader 2.4 Leader V 4WD",
+      "raw_label": "Wheelbase",
+      "raw_value": "2750",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_FTRACK",
+      "source_code": "TOYOTA_TH_FORTUNER_LEADER_CATALOG_2025",
+      "vehicle_identity_claim": "Fortuner Leader 2.4 Leader V 4WD",
+      "raw_label": "Front tread",
+      "raw_value": "1540",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM tread definition not stated"
+    },
+    {
+      "observation_code": "OBS_RTRACK",
+      "source_code": "TOYOTA_TH_FORTUNER_LEADER_CATALOG_2025",
+      "vehicle_identity_claim": "Fortuner Leader 2.4 Leader V 4WD",
+      "raw_label": "Rear tread",
+      "raw_value": "1555",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM tread definition not stated"
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "TOYOTA_TH_FORTUNER_LEADER_CATALOG_2025",
+      "vehicle_identity_claim": "Fortuner Leader 2.4 Leader V 4WD",
+      "raw_label": "Minimum ground clearance (measured from lowest point of vehicle)",
+      "raw_value": "193",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Load state not stated"
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4795,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1855,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1835,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2750,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1540,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_FTRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1555,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RTRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 193,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED",
+        "clearance_component_or_reference": "lowest point of vehicle"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota tread definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Toyota Fortuner Leader catalog"
+      ],
+      "search_notes": "Keep OEM tread separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota tread definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Toyota Fortuner Leader catalog"
+      ],
+      "search_notes": "Keep OEM tread separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
