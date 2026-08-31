@@ -1,0 +1,388 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-BMW-740D-MSPORT-G70-CURRENT-202603-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-bmw-740d-m-sport-g70-current-2026-03",
+    "manufacturer_name": "BMW",
+    "manufacturer_display_name": "BMW",
+    "canonical_model_name": "7-series",
+    "display_model_name": "7 Series",
+    "market_code": "TH",
+    "generation_name": "G70",
+    "body_style": "Long-wheelbase luxury sedan",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "OEM_REVISION_LABEL",
+    "identity_time_label_raw": "BMW 740d M Sport current technical page — Available 03/2026",
+    "sale_period_from": "2026-03-01",
+    "sale_period_to": null,
+    "variant_trim": "740d M Sport",
+    "powertrain": "3.0 diesel mild hybrid",
+    "drivetrain": "RWD",
+    "body_configuration": "4-door long-wheelbase sedan",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Current BMW Thailand 740d M Sport page is explicitly version-labelled Available 03/2026. Current revision has Integral Active Steering. 2025 wheel/tyre fitment is intentionally not copied into this current revision."
+  },
+  "sources": [
+    {
+      "source_code": "BMW_TH_740D_MSPORT_CURRENT_202603",
+      "publisher": "BMW Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_PRODUCT_TECHNICAL_DATA",
+      "title": "BMW 7 Series Sedan 740d M Sport technical data/current product",
+      "url": "https://www.bmw.co.th/en/all-models/7-series/sedan/bmw-7-series-sedan.html",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "740d M Sport current technical data",
+      "applicability_notes": "Current revision; source version label Available 03/2026",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "BMW_TH_740D_MSPORT_SPEC_20250227",
+      "publisher": "BMW Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_SPECIFICATION_PDF_SCREENSHOT_VERIFIED",
+      "title": "BMW 740d M Sport specification — effective 27 February 2025",
+      "url": "https://www.bmw.co.th/content/dam/bmw/marketTH/common/Brochure/2024/7-20250130-01_EN_WLTP.pdf.asset.1740723701308.pdf",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2025,
+      "page_section_default": "Technical data — visually verified page 1",
+      "applicability_notes": "Historical exact 740d M Sport revision; used only as temporal comparison evidence",
+      "archival_status": "URL_ONLY",
+      "notes": "Do not copy 2025 fitment/equipment backward or forward without applicability proof."
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_REVISION",
+      "source_code": "BMW_TH_740D_MSPORT_CURRENT_202603",
+      "vehicle_identity_claim": "740d M Sport current revision",
+      "raw_label": "Source version label",
+      "raw_value": "Available 03/2026",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Current technical data",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "BMW_TH_740D_MSPORT_CURRENT_202603",
+      "vehicle_identity_claim": "740d M Sport current revision",
+      "raw_label": "Overall length",
+      "raw_value": "5391",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH_BODY",
+      "source_code": "BMW_TH_740D_MSPORT_CURRENT_202603",
+      "vehicle_identity_claim": "740d M Sport current revision",
+      "raw_label": "Overall width",
+      "raw_value": "1950",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "BMW technical context distinguishes mirror-inclusive width separately"
+    },
+    {
+      "observation_code": "OBS_WIDTH_MIRRORS",
+      "source_code": "BMW_TH_740D_MSPORT_CURRENT_202603",
+      "vehicle_identity_claim": "740d M Sport current revision",
+      "raw_label": "Width including mirrors",
+      "raw_value": "2192",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "BMW_TH_740D_MSPORT_CURRENT_202603",
+      "vehicle_identity_claim": "740d M Sport current revision",
+      "raw_label": "Overall height",
+      "raw_value": "1544",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "BMW_TH_740D_MSPORT_CURRENT_202603",
+      "vehicle_identity_claim": "740d M Sport current revision",
+      "raw_label": "Wheelbase",
+      "raw_value": "3215",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_KERB",
+      "source_code": "BMW_TH_740D_MSPORT_CURRENT_202603",
+      "vehicle_identity_claim": "740d M Sport current revision",
+      "raw_label": "Kerb weight",
+      "raw_value": "2205",
+      "raw_unit": "kg",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GVM",
+      "source_code": "BMW_TH_740D_MSPORT_CURRENT_202603",
+      "vehicle_identity_claim": "740d M Sport current revision",
+      "raw_label": "Gross vehicle weight",
+      "raw_value": "2845",
+      "raw_unit": "kg",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_REAR_STEER",
+      "source_code": "BMW_TH_740D_MSPORT_CURRENT_202603",
+      "vehicle_identity_claim": "740d M Sport current revision",
+      "raw_label": "Integral Active Steering",
+      "raw_value": "present — four-wheel active steering",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Current equipment",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "System presence proven; rear angle/phase/function not published in reviewed source"
+    },
+    {
+      "observation_code": "OBS_2025_NO_IAS",
+      "source_code": "BMW_TH_740D_MSPORT_SPEC_20250227",
+      "vehicle_identity_claim": "740d M Sport effective 27 Feb 2025",
+      "raw_label": "Integral Active Steering",
+      "raw_value": "not listed in reviewed exact 2025 equipment sheet",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Historical exact specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Absence from equipment list is not treated as proof the hardware did not exist; retained only as temporal comparison observation"
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5391,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_BODY",
+      "parameter_code": "overall_width_body_mm",
+      "value": 1950,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_BODY"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_MIRRORS",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 2192,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_MIRRORS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1544,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3215,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 2205,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_KERB"
+      ]
+    },
+    {
+      "value_code": "VAL_GVM",
+      "parameter_code": "gross_vehicle_mass_kg",
+      "value": 2845,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GVM"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact Thailand turning value located for current 03/2026 740d revision.",
+      "source_families_searched": [
+        "BMW Thailand current 740d technical page"
+      ],
+      "search_notes": "Do not import turning data from other markets.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek exact Thailand owner/technical geometry."
+    },
+    {
+      "parameter_code": "front_tyre_size_text",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Exact 2025 tyre fitment is known but unchanged applicability to current 03/2026 revision has not been proven.",
+      "source_families_searched": [
+        "BMW Thailand 2025 exact spec",
+        "BMW Thailand current 03/2026 page"
+      ],
+      "search_notes": "Do not copy historical fitment into current revision.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Obtain current exact fitment evidence."
+    },
+    {
+      "parameter_code": "rear_tyre_size_text",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Exact 2025 tyre fitment is known but unchanged applicability to current 03/2026 revision has not been proven.",
+      "source_families_searched": [
+        "BMW Thailand 2025 exact spec",
+        "BMW Thailand current 03/2026 page"
+      ],
+      "search_notes": "Do not copy historical fitment into current revision.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Obtain current exact fitment evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
