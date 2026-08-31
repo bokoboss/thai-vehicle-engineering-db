@@ -396,34 +396,39 @@
       "rationale": "Temporal identity can use reputable secondary evidence under the accepted source hierarchy when transparently graded. Engineering parameters remain OEM-sourced."
     }
   ],
-  "remain_wave_2": [
-    {
-      "id": "batch-b-01-honda-city-ehev-rs-2026-release",
-      "decision": "KEEP_WAVE_2",
-      "reason": "Official current table still loses exact e:HEV RS association for several multi-valued geometry/fitment rows in extracted form. Available secondary exact-grade material is inconsistent on overall length, so it cannot safely resolve the mapping."
-    },
-    {
-      "id": "batch-c-02-ford-everest-platinum-30-v6-current",
-      "decision": "KEEP_WAVE_2",
-      "reason": "Current official 2026 Platinum identity is strong, but engineering applicability is not cleanly closed: the June-2025 exact brochure reports 227 mm clearance while another official Everest product source reports 226 mm. Do not bridge 2025 and current 2026 geometry without temporal resolution."
-    },
-    {
-      "id": "batch-e-01-mercedes-e350e-amg-dynamic-w214-current",
-      "decision": "KEEP_WAVE_2",
-      "reason": "Current exact grade is still sold, but Thailand raw width label remains semantically suspect and current temporal revision/equipment continuity is not sufficiently bounded for clean ingestion. Historical 2024/MY2024 secondary evidence must not silently define the current record."
-    },
-    {
-      "id": "batch-e-02-mercedes-maybach-s580e-premium-z223-current",
-      "decision": "KEEP_WAVE_2",
-      "reason": "Current exact S 580 e Premium exists, but Thailand mirror-width label remains semantically suspect and MY2025 secondary evidence does not prove unchanged current 2026 applicability."
-    }
-  ],
   "summary": {
     "previous_wave_1": 17,
     "promoted_this_review": 4,
     "new_wave_1": 21,
     "previous_wave_2": 8,
-    "new_wave_2": 4,
-    "hold": 5
-  }
+    "new_wave_2": 0,
+    "hold": 5,
+    "new_hold": 9
+  },
+  "hold_after_second_review": [
+    {
+      "id": "batch-b-01-honda-city-ehev-rs-2026-release",
+      "decision": "MOVE_TO_HOLD_AFTER_SECOND_REVIEW",
+      "reason": "Official current table still loses exact e:HEV RS association for several multi-valued geometry/fitment rows in extracted form. Available secondary exact-grade material is inconsistent on overall length, so it cannot safely resolve the mapping.",
+      "next_action": "Obtain an original Honda table export/image or another reliable exact-grade source that resolves RS dimensions/fitment without conflict."
+    },
+    {
+      "id": "batch-c-02-ford-everest-platinum-30-v6-current",
+      "decision": "MOVE_TO_HOLD_AFTER_SECOND_REVIEW",
+      "reason": "Current official 2026 Platinum identity is strong, but engineering applicability is not cleanly closed: the June-2025 exact brochure reports 227 mm clearance while another official Everest product source reports 226 mm. Do not bridge 2025 and current 2026 geometry without temporal resolution.",
+      "next_action": "Obtain an exact current 2026 technical sheet/drawing and resolve the 226/227 mm official clearance applicability before curating current geometry."
+    },
+    {
+      "id": "batch-e-01-mercedes-e350e-amg-dynamic-w214-current",
+      "decision": "MOVE_TO_HOLD_AFTER_SECOND_REVIEW",
+      "reason": "Current exact grade is still sold, but Thailand raw width label remains semantically suspect and current temporal revision/equipment continuity is not sufficiently bounded for clean ingestion. Historical 2024/MY2024 secondary evidence must not silently define the current record.",
+      "next_action": "Resolve current W214 Thailand temporal revision and the suspicious width-with-mirrors label using exact OEM technical/owner documentation."
+    },
+    {
+      "id": "batch-e-02-mercedes-maybach-s580e-premium-z223-current",
+      "decision": "MOVE_TO_HOLD_AFTER_SECOND_REVIEW",
+      "reason": "Current exact S 580 e Premium exists, but Thailand mirror-width label remains semantically suspect and MY2025 secondary evidence does not prove unchanged current 2026 applicability.",
+      "next_action": "Resolve current Z223 Thailand temporal applicability and mirror/body width semantics using exact OEM technical/owner documentation."
+    }
+  ]
 }
