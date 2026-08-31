@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 
 from app.db.models import (
     Axle,
+    ConflictDecision,
     DerivationInput,
     DerivationRule,
     DerivationRun,
@@ -23,7 +24,7 @@ from app.db.models import (
     VehicleConfiguration,
     VehicleFitment,
 )
-from app.domain.enums import EvidenceMethod
+from app.domain.enums import EvidenceMethod, ResolutionState
 from app.domain.scope import (
     validate_axle_scope,
     validate_fitment_scope,
@@ -33,6 +34,7 @@ from app.domain.scope import (
 )
 from app.domain.schemas import (
     AxleCreate,
+    ConflictDecisionCreate,
     EvidenceLinkCreate,
     GeometryAssetCreate,
     LoadConditionCreate,
@@ -72,6 +74,7 @@ def create_vehicle_configuration(
     payload: VehicleConfigurationCreate,
     *,
     manufacturer_name: str,
+    manufacturer_display_name: str | None = None,
     display_model_name: str | None = None,
     canonical_model_name: str | None = None,
     country_of_origin: str | None = None,
@@ -92,7 +95,7 @@ def create_vehicle_configuration(
     if manufacturer is None:
         manufacturer = Manufacturer(
             canonical_name=manufacturer_name,
-            display_name=manufacturer_name,
+            display_name=manufacturer_display_name or manufacturer_name,
             country_of_origin=country_of_origin,
         )
         session.add(manufacturer)
@@ -135,6 +138,61 @@ def create_vehicle_configuration(
     session.add(config)
     session.flush()
     return config
+
+
+def create_conflict_decision(
+    session: Session,
+    config: VehicleConfiguration,
+    payload: ConflictDecisionCreate,
+) -> ConflictDecision:
+    """Create one explicit, auditable conflict selection for a configuration."""
+
+    definition = _parameter_definition(session, payload.parameter_code)
+    has_conflicting_value = session.scalar(
+        select(NormalizedValue.id).where(
+            NormalizedValue.vehicle_configuration_id == config.id,
+            NormalizedValue.parameter_definition_id == definition.id,
+            NormalizedValue.resolution_state.in_(
+                {
+                    ResolutionState.CONFLICTING.value,
+                    ResolutionState.PREFERRED_WITH_CONFLICT.value,
+                }
+            ),
+        )
+    )
+    if has_conflicting_value is None:
+        raise ContractViolation("conflict decision requires a conflicting normalized value")
+    selected_value = None
+    if payload.selected_normalized_value_id is not None:
+        selected_value = session.get(NormalizedValue, payload.selected_normalized_value_id)
+        if selected_value is None:
+            raise ContractViolation("conflict decision selected value does not reference a known normalized value")
+        if selected_value.vehicle_configuration_id != config.id:
+            raise ContractViolation("conflict decision selected value belongs to another configuration")
+        if selected_value.parameter_definition_id != definition.id:
+            raise ContractViolation("conflict decision selected value belongs to another parameter")
+        if selected_value.resolution_state not in {
+            "CONFLICTING",
+            "PREFERRED_WITH_CONFLICT",
+        }:
+            raise ContractViolation("conflict decision must select a conflicting normalized value")
+    if payload.decision_state.value == "SELECTED" and selected_value is None:
+        raise ContractViolation("SELECTED conflict decisions require a selected normalized value")
+    if payload.decision_state.value != "SELECTED" and selected_value is not None:
+        raise ContractViolation("only SELECTED conflict decisions may select a normalized value")
+
+    decision = ConflictDecision(
+        vehicle_configuration_id=config.id,
+        parameter_definition_id=definition.id,
+        selected_normalized_value_id=selected_value.id if selected_value else None,
+        decision_state=enum_value(payload.decision_state),
+        rationale=payload.rationale,
+        decided_at=payload.decided_at,
+        reviewer=payload.reviewer,
+    )
+    session.add(decision)
+    session.flush()
+    return decision
 
 
 def create_fitment(session: Session, config: VehicleConfiguration, fitment_code: str, **kwargs: Any) -> VehicleFitment:
