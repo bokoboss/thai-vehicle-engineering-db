@@ -113,6 +113,18 @@ def test_compare_is_a_parameter_by_vehicle_matrix_with_four_selectors(client):
     assert 'name="vehicle_1"' in slot_response.text
     assert 'value="FIXTURE-PRIMARY-PUBLISHED" selected' in slot_response.text
 
+    mixed_unit_response = client.get(
+        "/compare",
+        params={"codes": "FIXTURE-UNKNOWN-ASSESSMENT,FIXTURE-STEERING-SEPARATION"},
+    )
+    mixed_unit_row = re.search(
+        r'<tr>\s*<th scope="row">.*?maximum_inner_road_wheel_angle_deg.*?</tr>',
+        mixed_unit_response.text,
+        re.DOTALL,
+    )
+    assert mixed_unit_row is not None
+    assert "<td>deg</td>" in mixed_unit_row.group(0)
+
 
 def test_issues_view_uses_human_labels_and_bounded_filter(client):
     response = client.get("/issues")

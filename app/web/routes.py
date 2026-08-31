@@ -564,6 +564,7 @@ def _assessment_view(assessment: Any, fitments: dict[str, Any]) -> dict[str, Any
             assessment.parameter_definition.display_name,
         ),
         "family": assessment.parameter_definition.family,
+        "unit": assessment.parameter_definition.canonical_unit,
         "availability_state": assessment.availability_state,
         "availability_state_label": AVAILABILITY_LABELS.get(
             assessment.availability_state, _humanize(assessment.availability_state)
@@ -765,16 +766,31 @@ def _comparison_cell(vehicle: dict[str, Any], parameter_code: str) -> dict[str, 
             for value in values
         ]
         tones = {item["state_tone"] for item in items}
+        state_tone = (
+            "conflict"
+            if "conflict" in tones
+            else "unknown"
+            if "unknown" in tones
+            else "rejected"
+            if "rejected" in tones
+            else "scoped"
+            if "scoped" in tones
+            else "normal"
+        )
         return {
             "items": items,
             "status_label": (
                 "Conflicting"
                 if "conflict" in tones
+                else "Unknown"
+                if "unknown" in tones
+                else "Rejected"
+                if "rejected" in tones
                 else "Scoped"
                 if "scoped" in tones
                 else items[0]["state_label"]
             ),
-            "state_tone": "conflict" if "conflict" in tones else "scoped" if "scoped" in tones else "normal",
+            "state_tone": state_tone,
             "unknown": False,
             "unknown_reason": None,
         }
@@ -804,7 +820,7 @@ def _comparison_groups(vehicles: list[dict[str, Any]]) -> tuple[list[dict[str, A
     available: dict[str, dict[str, Any]] = {}
     for vehicle in vehicles:
         for value in vehicle["values"]:
-            available.setdefault(
+            definition = available.setdefault(
                 value["parameter_code"],
                 {
                     "code": value["parameter_code"],
@@ -813,13 +829,15 @@ def _comparison_groups(vehicles: list[dict[str, Any]]) -> tuple[list[dict[str, A
                     "family": value["family"],
                 },
             )
+            if definition["unit"] is None and value["unit"] is not None:
+                definition["unit"] = value["unit"]
         for assessment in vehicle["assessments"]:
             available.setdefault(
                 assessment["parameter_code"],
                 {
                     "code": assessment["parameter_code"],
                     "label": assessment["display_name"],
-                    "unit": None,
+                    "unit": assessment["unit"],
                     "family": assessment["family"],
                 },
             )
