@@ -1,0 +1,1371 @@
+{
+  "packet_id": "phase1-batch-a-curation-v1",
+  "retrieval_date": "2026-08-31",
+  "branch": "chatgpt/phase-1-batch-a",
+  "status": "CURATION_REVIEW_PACKET",
+  "principle": "Unknown is acceptable; unsupported precision is not.",
+  "records": [
+    {
+      "record_id": "batch-a-01-mazda-mx5-35ae-rf-at",
+      "target": "New Mazda MX-5 35th Anniversary Edition 2.0 RF AT (Thailand)",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Mazda",
+        "commercial_model": "MX-5",
+        "generation_name": "ND family",
+        "variant_trim": "35th Anniversary Edition 2.0 RF AT",
+        "body_style": "Roadster / Retractable Fastback",
+        "transmission": "6-speed automatic",
+        "sale_period_from": "2025-03-17",
+        "model_year_from": null,
+        "identity_state": "PARTIAL",
+        "blocker": "Official Thai sources identify the exact limited grade and 2025 launch, but do not explicitly label a model year. Do not infer MY2025 solely from launch date."
+      },
+      "sources": [
+        {
+          "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "New Mazda MX-5 35th Anniversary Edition — Technical Specification",
+          "url": "https://www.mazda.co.th/th/cars/mazda-mx5-35th/spec",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Exact Thai-market grade 2.0 RF AT"
+        },
+        {
+          "source_code": "MAZDA_TH_MX5_35_LAUNCH_20250317",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_NEWS",
+          "title": "New Mazda MX-5 35th Anniversary Edition Thailand launch",
+          "url": "https://www.mazda.co.th/th/news-update/detail/new-mazda-mx5-35th-anniversary",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Thai launch/sale-period evidence"
+        }
+      ],
+      "observations": [
+        [
+          "Overall length (without number-plate holder)",
+          "3915",
+          "mm"
+        ],
+        [
+          "Overall width (without wheel arch mouldings)",
+          "1735",
+          "mm"
+        ],
+        [
+          "Overall height",
+          "1235",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2310",
+          "mm"
+        ],
+        [
+          "Tread: Front",
+          "1495",
+          "mm"
+        ],
+        [
+          "Tread: Rear",
+          "1505",
+          "mm"
+        ],
+        [
+          "Overhang: Front (without number-plate holder)",
+          "760",
+          "mm"
+        ],
+        [
+          "Overhang: Rear",
+          "845",
+          "mm"
+        ],
+        [
+          "Ground clearance (between axles, laden)",
+          "135",
+          "mm"
+        ],
+        [
+          "Minimum turning radius (kerb-to-kerb)",
+          "4.7",
+          "m"
+        ],
+        [
+          "Type size",
+          "205/45R17",
+          null
+        ],
+        [
+          "Wheels size",
+          "17 x 7J",
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 3915,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1735,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OTHER",
+            "source_qualifier": "without wheel arch mouldings"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1235,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2310,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1495,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED",
+            "source_label": "Tread"
+          }
+        },
+        {
+          "parameter_code": "oem_rear_tread_or_track_mm",
+          "value": 1505,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED",
+            "source_label": "Tread"
+          }
+        },
+        {
+          "parameter_code": "front_overhang_mm",
+          "value": 760,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "source_qualifier": "without number-plate holder"
+          }
+        },
+        {
+          "parameter_code": "rear_overhang_mm",
+          "value": 845,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 135,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "BETWEEN_AXLES"
+          },
+          "load_condition": {
+            "mass_basis": "OEM_LADEN",
+            "raw_oem_wording": "laden"
+          }
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 4.7,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "CURB_TO_CURB",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "205/45R17",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "205/45R17",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_wheel_rim_text",
+          "value": "17 x 7J",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_wheel_rim_text",
+          "value": "17 x 7J",
+          "method": "PUBLISHED"
+        }
+      ],
+      "readiness_precheck": {
+        "identity_resolved": false,
+        "dimension_ready_after_identity_resolution": true,
+        "avt_ready": false,
+        "avt_blockers": [
+          "OEM tread semantics are not AVT outer-face track",
+          "curb turning axle scope is unspecified",
+          "AVT maximum steering angle unavailable",
+          "AVT lock-to-lock time unavailable",
+          "AVT plan/body profile unavailable"
+        ],
+        "ramp_screening_ready": false
+      }
+    },
+    {
+      "record_id": "batch-a-02-byd-atto3-my24-extended-local",
+      "target": "New BYD ATTO 3 MY24 Extended (Local Production) (Thailand)",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "BYD",
+        "commercial_model": "ATTO 3",
+        "model_year_from": 2024,
+        "variant_trim": "Extended (Local Production)",
+        "body_style": "Battery-electric crossover/SUV",
+        "identity_state": "RESOLVED_EXACT",
+        "evidence_note": "Official 2026 campaign explicitly names New BYD ATTO 3 MY24 Extended (Local Production)."
+      },
+      "sources": [
+        {
+          "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+          "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "BYD ATTO 3 Technical Information",
+          "url": "https://www.reverautomotive.com/en/model/newatto3/tech-spec",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Extended Thai-market configuration"
+        },
+        {
+          "source_code": "REVER_TH_ATTO3_MY24_CAMPAIGN_20260319",
+          "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+          "source_type": "OFFICIAL_CAMPAIGN_TERMS",
+          "title": "New BYD ATTO 3 MY24 Extended (Local Production) campaign terms",
+          "url": "https://www.reverautomotive.com/news/new-byd-atto3-mar-2026-campaign",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Exact MY/grade/local-production identity"
+        }
+      ],
+      "observations": [
+        [
+          "Overall Length",
+          "4455",
+          "mm"
+        ],
+        [
+          "Overall Width",
+          "1875",
+          "mm"
+        ],
+        [
+          "Overall Height",
+          "1615",
+          "mm"
+        ],
+        [
+          "Wheel Track Front and Rear",
+          "1575 / 1580",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2720",
+          "mm"
+        ],
+        [
+          "Ground Clearance Unladen",
+          "175",
+          "mm"
+        ],
+        [
+          "Ground Clearance Laden",
+          "150",
+          "mm"
+        ],
+        [
+          "Minimum turning radius",
+          "5.35",
+          "m"
+        ],
+        [
+          "Kerb Weight",
+          "1750",
+          "kg"
+        ],
+        [
+          "Gross Vehicle Mass",
+          "2160",
+          "kg"
+        ],
+        [
+          "Tyre Size",
+          "235/50 R18",
+          null
+        ],
+        [
+          "Alloy Wheel",
+          "18-inch",
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 4455,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1875,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1615,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2720,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1575,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "oem_rear_tread_or_track_mm",
+          "value": 1580,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 175,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "UNLADEN",
+            "raw_oem_wording": "Ground Clearance Unladen"
+          }
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 150,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "OEM_LADEN",
+            "raw_oem_wording": "Ground Clearance Laden"
+          }
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 5.35,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "kerb_mass_kg",
+          "value": 1750,
+          "unit": "kg",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "gross_vehicle_mass_kg",
+          "value": 2160,
+          "unit": "kg",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "235/50 R18",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "235/50 R18",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_wheel_rim_text",
+          "value": "18-inch alloy",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_wheel_rim_text",
+          "value": "18-inch alloy",
+          "method": "PUBLISHED"
+        }
+      ],
+      "readiness_precheck": {
+        "identity_resolved": true,
+        "dimension_ready": true,
+        "avt_ready": false,
+        "avt_blockers": [
+          "OEM track definition unspecified",
+          "turning curb/wall reference unspecified",
+          "turning axle scope unspecified",
+          "AVT steering angle/time unavailable",
+          "AVT plan/body profile unavailable"
+        ],
+        "ramp_screening_ready": false
+      }
+    },
+    {
+      "record_id": "batch-a-03-tesla-modely-premium-lr-rwd-19",
+      "target": "Tesla Model Y Premium Long Range Rear-Wheel Drive, 19-inch wheels, 5 seats (Thailand, 2025+)",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Tesla",
+        "commercial_model": "Model Y",
+        "generation_name": "2025+ Model Y",
+        "model_year_from": 2025,
+        "variant_trim": "Premium Long Range Rear-Wheel Drive",
+        "wheel_tyre_package": "19-inch wheels",
+        "body_style": "Battery-electric crossover/SUV",
+        "identity_state": "RESOLVED_EXACT",
+        "evidence_note": "Thailand product page identifies current Long Range RWD 5-seat sales variant with 19-inch wheels; Thailand owner manual is explicitly 2025+ and provides Premium 5-Seater geometry."
+      },
+      "sources": [
+        {
+          "source_code": "TESLA_TH_MODELY_PRODUCT_CURRENT",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Model Y Premium — Thailand",
+          "url": "https://www.tesla.com/en_th/modely",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Exact current Thailand Long Range RWD sales variant and 19-inch fitment"
+        },
+        {
+          "source_code": "TESLA_TH_MODELY_OWNER_2025PLUS",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OWNER_MANUAL",
+          "title": "Model Y Owner's Manual — Thailand — 2025+",
+          "url": "https://www.tesla.com/ownersmanual/modely/en_th/",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Model Y Premium 5-Seater geometry family, 2025+"
+        },
+        {
+          "source_code": "TESLA_TH_MODELY_SUBSYSTEMS_2025PLUS",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OWNER_MANUAL",
+          "title": "Model Y Owner's Manual — Subsystems",
+          "url": "https://www.tesla.com/ownersmanual/modely/en_th/GUID-E414862C-CFA1-4A0B-9548-BE21C32CAA58.html",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Model Y 5-Seater steering/turning data"
+        }
+      ],
+      "observations": [
+        [
+          "Overall Length — excluding license plate bracket",
+          "4790",
+          "mm"
+        ],
+        [
+          "Overall Width — including mirrors",
+          "2129",
+          "mm"
+        ],
+        [
+          "Overall Width — folded mirrors",
+          "1982",
+          "mm"
+        ],
+        [
+          "Overall Width — excluding mirrors",
+          "1920",
+          "mm"
+        ],
+        [
+          "Overall Height",
+          "1624",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2890",
+          "mm"
+        ],
+        [
+          "Overhang — Front",
+          "889",
+          "mm"
+        ],
+        [
+          "Overhang — Rear",
+          "1011",
+          "mm"
+        ],
+        [
+          "Ground Clearance — Laden",
+          "122",
+          "mm"
+        ],
+        [
+          "Ground Clearance — Unladen",
+          "167",
+          "mm"
+        ],
+        [
+          "Track — Front and Rear",
+          "1636",
+          "mm"
+        ],
+        [
+          "Track definition",
+          "based on measurements at the wheel center",
+          null
+        ],
+        [
+          "Number of turns lock to lock",
+          "2.4",
+          "turns"
+        ],
+        [
+          "Turning Circle (curb to curb) (5-Seater)",
+          "12.13",
+          "m"
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 4790,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "source_qualifier": "excluding license plate bracket"
+          }
+        },
+        {
+          "parameter_code": "overall_width_body_mm",
+          "value": 1920,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+          }
+        },
+        {
+          "parameter_code": "overall_width_including_mirrors_mm",
+          "value": 2129,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+          }
+        },
+        {
+          "parameter_code": "overall_width_mirrors_folded_mm",
+          "value": 1982,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "INCLUDING_MIRRORS_FOLDED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1624,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2890,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_overhang_mm",
+          "value": 889,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_overhang_mm",
+          "value": 1011,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 122,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "OEM_LADEN",
+            "raw_oem_wording": "Laden"
+          }
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 167,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "UNLADEN",
+            "raw_oem_wording": "Unladen"
+          }
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1636,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "WHEEL_CENTERLINE"
+          }
+        },
+        {
+          "parameter_code": "oem_rear_tread_or_track_mm",
+          "value": 1636,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "WHEEL_CENTERLINE"
+          }
+        },
+        {
+          "parameter_code": "steering_wheel_lock_to_lock_turns",
+          "value": 2.4,
+          "unit": "turns",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 6.065,
+          "unit": "m",
+          "method": "DERIVED",
+          "derivation": {
+            "rule": "turning_circle_diameter_to_radius",
+            "formula": "12.13 / 2",
+            "source_value": "12.13 m turning circle"
+          },
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "source_reported_shape": "DIAMETER/CIRCLE",
+            "turning_reference": "CURB_TO_CURB",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        }
+      ],
+      "readiness_precheck": {
+        "identity_resolved": true,
+        "dimension_ready": true,
+        "avt_ready": false,
+        "avt_blockers": [
+          "published track is wheel-center track, not AVT outer-face track",
+          "curb turning axle scope unspecified",
+          "steering-wheel turns do not provide AVT maximum steering angle",
+          "AVT lock-to-lock time unavailable",
+          "AVT plan/body profile unavailable"
+        ],
+        "ramp_screening_ready": false
+      }
+    },
+    {
+      "record_id": "batch-a-04-volvo-ex30-ultra-smer-2026",
+      "target": "Volvo EX30 Ultra Single Motor Extended Range, 19-inch, MY2026 (Thailand)",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Volvo",
+        "commercial_model": "EX30",
+        "model_year_from": 2026,
+        "variant_trim": "Ultra Single Motor Extended Range",
+        "drivetrain": "RWD",
+        "wheel_tyre_package": "19-inch / 245/45 R19",
+        "body_style": "Battery-electric crossover/SUV",
+        "identity_state": "RESOLVED_EXACT"
+      },
+      "sources": [
+        {
+          "source_code": "VOLVO_TH_EX30_BUILD_2026_ULTRA_SMER",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "CONFIGURATOR_PRINT",
+          "title": "EX30 Ultra, Single Motor Extended Range, Electric (2026)",
+          "url": "https://www.volvocars.com/th-th/build/print?token=14589768872374347229",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Exact 2026 Thai-market configuration; 19-inch wheel"
+        },
+        {
+          "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OWNER_SUPPORT_TECHNICAL",
+          "title": "EX30 vehicle dimensions",
+          "url": "https://www.volvocars.com/th-th/support/car/ex30/article/47d2c97fd33effd3c0a8cc3718c999b7-cf578f17ce837790c0a8b04a1abf9aaa-8664b2fa77a7e089c0a8296870d1a409/47d2c97fd33effd3c0a8cc3718c999b7-350655bc554de2a7c0a8b097561c9a50-8664b2fa77a7e089c0a8296870d1a409/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/",
+          "retrieved_at": "2026-08-31",
+          "applicability": "EX30 geometry family; load qualifier stated for height/clearance"
+        },
+        {
+          "source_code": "VOLVO_TH_EX30_BROCHURE_20251103",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_BROCHURE_PDF",
+          "title": "Volvo EX30 Ultra Single Motor Extended Range Technical Specifications",
+          "url": "https://www.volvocars.com/files/cs/v3/assets/blt84e01a6904dbd2e8/bltf1b84ccd41679d6c/691c1573b07a443ac1f9c0a9/R1_Volvo_EX30_brochure_20251103.pdf?branch=prod_alias",
+          "retrieved_at": "2026-08-31",
+          "page": "Technical specifications page",
+          "applicability": "Exact Ultra Single Motor Extended Range grade"
+        }
+      ],
+      "observations": [
+        [
+          "Length",
+          "4233",
+          "mm"
+        ],
+        [
+          "Width",
+          "1838",
+          "mm"
+        ],
+        [
+          "Width including folded-out wing mirrors",
+          "2032",
+          "mm"
+        ],
+        [
+          "Width including folded-in wing mirrors",
+          "1940",
+          "mm"
+        ],
+        [
+          "Height — at kerb weight plus one person",
+          "1550",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2650",
+          "mm"
+        ],
+        [
+          "Ground clearance — at kerb weight plus one person",
+          "171",
+          "mm"
+        ],
+        [
+          "Front track",
+          "1590",
+          "mm"
+        ],
+        [
+          "Rear track",
+          "1595",
+          "mm"
+        ],
+        [
+          "Wheel size",
+          "19-inch",
+          null
+        ],
+        [
+          "Tire size",
+          "245/45 R19",
+          null
+        ],
+        [
+          "Min. Turning Circle — exact-grade brochure",
+          "10.7",
+          "m"
+        ],
+        [
+          "Turning circle — exact 2026 configurator",
+          "11",
+          "m"
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 4233,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_body_mm",
+          "value": 1838,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+          }
+        },
+        {
+          "parameter_code": "overall_width_including_mirrors_mm",
+          "value": 2032,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+          }
+        },
+        {
+          "parameter_code": "overall_width_mirrors_folded_mm",
+          "value": 1940,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "INCLUDING_MIRRORS_FOLDED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1550,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "load_condition": {
+            "mass_basis": "KERB",
+            "occupant_count": 1,
+            "raw_oem_wording": "at kerb weight plus one person"
+          }
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2650,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 171,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "KERB",
+            "occupant_count": 1,
+            "raw_oem_wording": "at kerb weight plus one person"
+          }
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1590,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "oem_rear_tread_or_track_mm",
+          "value": 1595,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "245/45 R19",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "245/45 R19",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_wheel_rim_text",
+          "value": "19-inch",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_wheel_rim_text",
+          "value": "19-inch",
+          "method": "PUBLISHED"
+        }
+      ],
+      "conflicts": [
+        {
+          "parameter_family": "turning",
+          "source_a": {
+            "source_code": "VOLVO_TH_EX30_BROCHURE_20251103",
+            "raw_label": "Min. Turning Circle",
+            "raw_value": "10.7 m"
+          },
+          "source_b": {
+            "source_code": "VOLVO_TH_EX30_BUILD_2026_ULTRA_SMER",
+            "raw_label": "Turning circle",
+            "raw_value": "11 m"
+          },
+          "resolution_state": "CONFLICTING",
+          "decision": "NO_PREFERENCE_YET",
+          "rationale": "Both are official Volvo sources applicable to the target family/exact grade. Difference may be document revision, rounding, or configuration applicability. Preserve both and investigate before normalization.",
+          "additional_semantic_blocker": "Neither source explicitly establishes radius-versus-diameter semantics under this project's controlled vocabulary."
+        }
+      ],
+      "readiness_precheck": {
+        "identity_resolved": true,
+        "dimension_ready": true,
+        "avt_ready": false,
+        "avt_blockers": [
+          "track definition not established as AVT outer-face",
+          "turning evidence is conflicting and radius/diameter semantics unresolved",
+          "AVT maximum steering angle unavailable",
+          "AVT lock-to-lock time unavailable",
+          "AVT plan/body profile unavailable"
+        ],
+        "ramp_screening_ready": false
+      }
+    },
+    {
+      "record_id": "batch-a-05-kia-ev5-earth-long-range",
+      "target": "Kia EV5 Earth Long Range (current Thailand configuration as of 2026-08-31)",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Kia",
+        "commercial_model": "EV5",
+        "variant_trim": "Earth Long Range",
+        "drivetrain": "FWD",
+        "wheel_tyre_package": "19-inch / 235/55 R19",
+        "body_style": "Battery-electric midsize SUV",
+        "model_year_from": null,
+        "identity_state": "PARTIAL",
+        "blocker": "Current Thai sales/specification sources confirm the grade and fitment, but the user-visible source does not explicitly state model year. Asset naming suggests 25MY but is not promoted to identity evidence."
+      },
+      "sources": [
+        {
+          "source_code": "KIA_TH_EV5_SPEC_CURRENT",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "The Kia EV5 Specifications",
+          "url": "https://www.kia.com/th/en/cars/ev5/specification.html",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Exact Earth Long Range grade"
+        },
+        {
+          "source_code": "KIA_TH_EV5_PROMO_202608",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OFFICIAL_PROMOTION",
+          "title": "The Kia EV5 Special Offer: 1-31 August 2026",
+          "url": "https://www.kia.com/th/en/util/promotion/thekiaev5-2026.html",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Confirms current sale of Earth Long Range in Thailand"
+        }
+      ],
+      "observations": [
+        [
+          "Overall Length",
+          "4615",
+          "mm"
+        ],
+        [
+          "Overall Width",
+          "1875",
+          "mm"
+        ],
+        [
+          "Overall Height",
+          "1715",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2750",
+          "mm"
+        ],
+        [
+          "Overhang — front / rear",
+          "910 / 955",
+          "mm"
+        ],
+        [
+          "Minimum Ground Clearance",
+          "166",
+          "mm"
+        ],
+        [
+          "Curb Weight",
+          "2142",
+          "kg"
+        ],
+        [
+          "Drive system",
+          "2 Wheels FWD",
+          null
+        ],
+        [
+          "Wheel Type",
+          "19-inch Alloy",
+          null
+        ],
+        [
+          "Tyre size",
+          "235/55 R19",
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 4615,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1875,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1715,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2750,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_overhang_mm",
+          "value": 910,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_overhang_mm",
+          "value": 955,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 166,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "OTHER",
+            "raw_oem_wording": "Minimum Ground Clearance; load state not stated"
+          }
+        },
+        {
+          "parameter_code": "kerb_mass_kg",
+          "value": 2142,
+          "unit": "kg",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "235/55 R19",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "235/55 R19",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_wheel_rim_text",
+          "value": "19-inch alloy",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_wheel_rim_text",
+          "value": "19-inch alloy",
+          "method": "PUBLISHED"
+        }
+      ],
+      "assessments": [
+        {
+          "parameter": "turning",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH",
+          "note": "No Thailand official turning value located in current specification/promotion search. Adjacent-market Kia data exists but is not used as exact Thai evidence without equivalence proof."
+        },
+        {
+          "parameter": "oem_front_tread_or_track_mm",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH"
+        },
+        {
+          "parameter": "oem_rear_tread_or_track_mm",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH"
+        }
+      ],
+      "readiness_precheck": {
+        "identity_resolved": false,
+        "dimension_ready_after_identity_resolution": true,
+        "avt_ready": false,
+        "avt_blockers": [
+          "identity model year unresolved",
+          "no Thai exact turning evidence located",
+          "no tread/track evidence",
+          "no AVT outer-face track",
+          "no AVT steering angle/time",
+          "no AVT body profile"
+        ],
+        "ramp_screening_ready": false
+      }
+    },
+    {
+      "record_id": "batch-a-06-mg-im6-long-range",
+      "target": "MG IM6 Long Range (current Thailand configuration as of 2026-08-31)",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "MG",
+        "commercial_model": "IM6",
+        "variant_trim": "Long Range",
+        "powertrain": "Battery electric, 100 kWh",
+        "drivetrain": "Current Thai page lists Intelligent Four-wheel Steering System with Crab Mode",
+        "wheel_tyre_package": "20-inch; front 235/50 R20, rear 255/45 R20",
+        "body_style": "Battery-electric SUV/crossover",
+        "model_year_from": null,
+        "identity_state": "PARTIAL",
+        "blocker": "Current Thai official page resolves grade and equipment but does not explicitly label model year."
+      },
+      "sources": [
+        {
+          "source_code": "MG_TH_IM6_SPEC_CURRENT",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "MG IM6 — Thailand technical specification",
+          "url": "https://www.mgcars.com/th/cars/mg-im6",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Exact Long Range grade column"
+        },
+        {
+          "source_code": "MG_TH_IM6_LONGRANGE_CURRENT",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "MG IM6 Long Range",
+          "url": "https://www.mgcars.com/th/cars/mg-im6-longrange",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Current Thai Long Range product identity"
+        }
+      ],
+      "observations": [
+        [
+          "Length x Width x Height",
+          "4904 x 1988 x 1669",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2950",
+          "mm"
+        ],
+        [
+          "Ground Clearance",
+          "166",
+          "mm"
+        ],
+        [
+          "Front tyre",
+          "235/50 R20",
+          null
+        ],
+        [
+          "Rear tyre",
+          "255/45 R20",
+          null
+        ],
+        [
+          "Steering",
+          "EPS",
+          null
+        ],
+        [
+          "Minimum turning radius",
+          "5.1",
+          "m"
+        ],
+        [
+          "Drive System",
+          "Intelligent Four-wheel Steering System (with Crab Mode)",
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 4904,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1988,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1669,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2950,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 166,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "OTHER",
+            "raw_oem_wording": "Ground Clearance; load state not stated"
+          }
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "235/50 R20",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "255/45 R20",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_wheel_rim_text",
+          "value": "20-inch alloy",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_wheel_rim_text",
+          "value": "20-inch alloy",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 5.1,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        }
+      ],
+      "steering_structure_candidate": {
+        "rear_steering_present": true,
+        "evidence": "Intelligent Four-wheel Steering System (with Crab Mode)",
+        "readiness_state": "INCOMPLETE",
+        "missing": [
+          "rear axle maximum steering angle",
+          "linkage/angle function",
+          "phase behavior by speed/mode",
+          "mode applicability needed for AVT mapping"
+        ]
+      },
+      "assessments": [
+        {
+          "parameter": "avt_front_outer_face_track_mm",
+          "availability_state": "UNKNOWN"
+        },
+        {
+          "parameter": "avt_rear_outer_face_track_mm",
+          "availability_state": "UNKNOWN"
+        },
+        {
+          "parameter": "rear_steering_linkage",
+          "availability_state": "UNKNOWN",
+          "note": "System presence is official, but linkage function/angles are not published on current Thai retail page."
+        }
+      ],
+      "readiness_precheck": {
+        "identity_resolved": false,
+        "dimension_ready_after_identity_resolution": true,
+        "avt_ready": false,
+        "avt_blockers": [
+          "identity model year unresolved",
+          "four-wheel-steering linkage/angle behavior incomplete",
+          "turning curb/wall reference unspecified",
+          "track/AVT outer-face track unavailable",
+          "AVT lock-to-lock time unavailable",
+          "AVT body profile unavailable"
+        ],
+        "ramp_screening_ready": false
+      }
+    }
+  ],
+  "batch_findings": {
+    "exact_identity_ready_count": 3,
+    "partial_identity_count": 3,
+    "real_conflicts_found": 1,
+    "conflict_case": "Volvo EX30 official turning circle 10.7 m vs 11 m",
+    "explicit_curb_to_curb_case": "Mazda MX-5 35th Anniversary Edition — 4.7 m radius, kerb-to-kerb",
+    "structured_loaded_clearance_cases": [
+      "Mazda MX-5 — 135 mm between axles, laden",
+      "BYD ATTO 3 — 175 mm unladen / 150 mm laden",
+      "Tesla Model Y — 122 mm laden / 167 mm unladen",
+      "Volvo EX30 — 171 mm at kerb weight plus one person"
+    ],
+    "multi_envelope_width_cases": [
+      "Tesla Model Y — body/excluding mirrors, folded mirrors, mirrors open",
+      "Volvo EX30 — body, folded mirrors, mirrors open"
+    ],
+    "rear_steering_case": "MG IM6 — official four-wheel-steering presence but insufficient linkage detail for AVT",
+    "schema_gap_detected": false,
+    "software_change_required": false
+  }
+}
