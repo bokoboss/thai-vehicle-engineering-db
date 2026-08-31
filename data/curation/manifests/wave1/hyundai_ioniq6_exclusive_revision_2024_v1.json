@@ -26,6 +26,20 @@
   },
   "sources": [
     {
+      "source_code": "HYUNDAI_TH_HOME_IONIQ6_2024_LABEL_20260831",
+      "publisher": "Hyundai Mobility Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "OFFICIAL_MODEL_INDEX",
+      "title": "Hyundai Mobility Thailand — current vehicle index",
+      "url": "https://www.hyundai.com/th/th",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Current vehicle model index",
+      "applicability_notes": "Official current model index labels IONIQ 6 as '2024 IONIQ 6'",
+      "archival_status": "URL_ONLY",
+      "notes": "The raw 2024 label is preserved as OEM revision/product-year wording; it is not promoted to MODEL_YEAR."
+    },
+    {
       "source_code": "HYUNDAI_TH_IONIQ6_CURRENT_20260831",
       "publisher": "Hyundai Mobility Thailand",
       "authority_class": "OEM_THAILAND",
@@ -81,13 +95,13 @@
   "observations": [
     {
       "observation_code": "OBS_IDENTITY_LABEL",
-      "source_code": "HYUNDAI_TH_IONIQ6_CURRENT_20260831",
+      "source_code": "HYUNDAI_TH_HOME_IONIQ6_2024_LABEL_20260831",
       "vehicle_identity_claim": "IONIQ 6 Thailand product",
       "raw_label": "OEM product-year/revision label",
       "raw_value": "2024 IONIQ 6",
       "raw_unit": null,
       "raw_qualifier": null,
-      "page_section_locator": "Current product/catalog",
+      "page_section_locator": "Current vehicle model index",
       "reported_precision": "as published",
       "extraction_method": "MANUAL",
       "extracted_at": "2026-08-31T00:00:00+07:00",
