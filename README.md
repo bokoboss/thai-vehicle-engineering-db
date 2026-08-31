@@ -30,7 +30,7 @@ The web application should remain simple.
 
 ## Current state
 
-**Foundation candidate complete; Phase 0 implementation not yet started.**
+**Phase 0 implementation complete on the review branch; production curation remains deferred.**
 
 Foundation research returned **GO WITH CONDITIONS — High confidence** and the required data-contract amendments have been incorporated on PR #1.
 
@@ -47,6 +47,7 @@ The repository now contains:
 - first 7-vehicle real-source semantic pack
 - fixed lean technology stack
 - bounded Codex Phase 0 execution contract/prompt
+- the FastAPI/SQLAlchemy/Alembic Phase 0 foundation, deterministic semantic fixtures, exports and CI
 
 ## Lean application stack
 
@@ -63,6 +64,30 @@ Phase 0 is fixed to:
 - openpyxl
 
 No React SPA or microservices are planned for the MVP.
+
+## Run the Phase 0 application locally
+
+The local database is intentionally disposable and is ignored by Git. From the repository root:
+
+```text
+python -m pip install -e ".[dev]"
+python -m alembic upgrade head
+python -m app.seed
+python -m uvicorn app.main:app --reload
+```
+
+Open `http://127.0.0.1:8000/vehicles`. The seeded records are deterministic semantic fixtures only; they are not production vehicle records.
+
+Run the complete qualification with:
+
+```text
+python -m pytest
+python -m alembic downgrade base
+python -m alembic upgrade head
+python -m app.seed
+```
+
+See [`docs/PHASE_0_IMPLEMENTATION.md`](docs/PHASE_0_IMPLEMENTATION.md) for the physical schema/file layout, fixture matrix and export/API details.
 
 ## Core documents
 

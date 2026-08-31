@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Compare · Vehicle Engineering Database{% endblock %}
+{% block content %}
+<section class="page-intro"><p class="eyebrow">Evidence-aware comparison</p><h1>Compare configurations</h1><p class="lede">Enter up to four stable vehicle codes, separated by commas.</p></section>
+<form class="filter-bar" method="get" action="/compare"><label class="wide">Vehicle codes <input name="codes" value="{{ selected_codes }}" placeholder="FIXTURE-PRIMARY-PUBLISHED,FIXTURE-AVT-TRACK-DIRECT"></label><button type="submit">Compare</button></form>
+{% if vehicles %}<div class="compare-grid">{% for vehicle in vehicles %}<section class="panel"><h2>{{ vehicle.variant }}</h2><p class="muted">{{ vehicle.stable_vehicle_code }}</p><table><tbody>{% for value in vehicle["values"] %}<tr><th>{{ value.parameter_code }}</th><td>{{ value.value }} {{ value.unit or "" }}</td><td><span class="badge">{{ value.evidence_method }}</span></td></tr>{% endfor %}</tbody></table></section>{% endfor %}</div>{% else %}<p class="empty">Choose configurations to compare.</p>{% endif %}
+{% endblock %}

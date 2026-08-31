@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Vehicle Engineering Database{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="/vehicles">Vehicle Engineering Database <span>TH</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="/vehicles">Vehicles</a>
+          <a href="/compare">Compare</a>
+          <a href="/issues">Data Issues</a>
+        </nav>
+      </div>
+    </header>
+    <main class="shell">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="shell footer">Evidence first · Unknown is a valid engineering result.</footer>
+  </body>
+</html>

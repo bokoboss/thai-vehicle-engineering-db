@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Data Issues · Vehicle Engineering Database{% endblock %}
+{% block content %}
+<section class="page-intro"><p class="eyebrow">Maintainer work queue</p><h1>Data issues</h1><p class="lede">Readiness blockers and QA findings are explicit, reviewable states—not hidden confidence scores.</p></section>
+<div class="table-wrap"><table><thead><tr><th>Kind</th><th>Vehicle</th><th>Code</th><th>Severity</th><th>Status</th><th>Message</th></tr></thead><tbody>
+{% for issue in issues %}<tr><td>{{ issue.kind }}</td><td>{% if issue.vehicle %}<a href="/vehicles/{{ issue.vehicle.stable_vehicle_code }}">{{ issue.vehicle.stable_vehicle_code }}</a>{% else %}—{% endif %}</td><td><code>{{ issue.code }}</code></td><td>{{ issue.severity }}</td><td>{{ issue.status }}</td><td>{{ issue.message }}</td></tr>{% else %}<tr><td colspan="6" class="empty">No open issues.</td></tr>{% endfor %}
+</tbody></table></div>
+{% endblock %}

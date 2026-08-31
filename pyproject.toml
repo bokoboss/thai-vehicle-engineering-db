@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thai-vehicle-engineering-db"
+version = "0.1.0"
+description = "Evidence-first vehicle engineering data foundation for Thailand"
+requires-python = ">=3.11"
+dependencies = [
+    "alembic>=1.13,<2",
+    "fastapi>=0.115,<1",
+    "jinja2>=3.1,<4",
+    "openpyxl>=3.1,<4",
+    "pydantic>=2.8,<3",
+    "python-multipart>=0.0.9,<1",
+    "sqlalchemy>=2.0,<3",
+    "uvicorn[standard]>=0.30,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "httpx>=0.27,<1",
+    "pytest>=8,<9",
+]
+
+[project.scripts]
+vehicle-db-seed = "app.seed:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
