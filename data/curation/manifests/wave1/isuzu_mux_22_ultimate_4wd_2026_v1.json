@@ -1,0 +1,463 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-ISUZU-MUX-22-ULTIMATE-4WD-2026-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-isuzu-mux-22-ultimate-4wd-release-2026",
+    "manufacturer_name": "Isuzu",
+    "manufacturer_display_name": "Isuzu",
+    "canonical_model_name": "mu-x",
+    "display_model_name": "MU-X",
+    "market_code": "TH",
+    "generation_name": "MU-X THE NEXT PEAK 2026",
+    "body_style": "PPV/SUV",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "MU-X “THE NEXT PEAK” 4WD 2.2 Ddi MAXFORCE — official launch 27 Feb 2026",
+    "sale_period_from": "2026-02-27",
+    "sale_period_to": null,
+    "variant_trim": "2.2 Ddi ULTIMATE A/T",
+    "powertrain": "2.2 Ddi MAXFORCE / 8AT",
+    "drivetrain": "4WD",
+    "body_configuration": "5-door PPV/SUV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Official Isuzu Thailand 27 Feb 2026 release identifies MU-X 4WD 2.2 Ddi MAXFORCE Ultimate; original 2026 brochure technical table was visually re-reviewed and directly resolves the 2.2 Ultimate A/T 4x4 column."
+  },
+  "sources": [
+    {
+      "source_code": "ISUZU_TH_22_4WD_LAUNCH_20260227",
+      "publisher": "Tri Petch Isuzu Sales",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_NEWS",
+      "title": "Isuzu expands 4x4 line-up with 2.2 Ddi MAXFORCE",
+      "url": "https://www.isuzu-tis.com/news-activities/public-relations/isuzu-expands-4x4-lineup-with-new-2-2-ddi-maxforce-engine",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2026,
+      "page_section_default": "Official release",
+      "applicability_notes": "Exact 2.2 Ddi 4WD Ultimate release identity",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "ISUZU_TH_MUX_BROCHURE_2026",
+      "publisher": "Tri Petch Isuzu Sales",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+      "title": "MU-X brochure 2026",
+      "url": "https://assets.isuzu-tis.com/mu_x_brochure_2026_5d17d1513d.pdf",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Technical table — visually verified exact 2.2 Ultimate A/T 4x4 column",
+      "applicability_notes": "Exact target configuration",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "ISUZU_TH_MUX_BROCHURE_2026",
+      "raw_oem_wording": "Ground clearance at rear axle housing; load state not stated",
+      "notes": "Structured unknown load state."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "WHEEL20",
+      "description": "2.2 Ultimate 4WD exact 20-inch fitment",
+      "wheel_package": "20 x 7.5J / 265/50R20",
+      "equipment_package": "ULTIMATE",
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact visually resolved brochure column."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "ISUZU_TH_22_4WD_LAUNCH_20260227",
+      "vehicle_identity_claim": "MU-X 2.2 Ddi ULTIMATE A/T 4WD",
+      "raw_label": "Official release",
+      "raw_value": "MU-X 4WD 2.2 Ddi MAXFORCE Ultimate — 27 Feb 2026",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Official release",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIM",
+      "source_code": "ISUZU_TH_MUX_BROCHURE_2026",
+      "vehicle_identity_claim": "MU-X 2.2 Ddi ULTIMATE A/T 4WD",
+      "raw_label": "Overall length x width x height",
+      "raw_value": "4860 x 1870 x 1875",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "ISUZU_TH_MUX_BROCHURE_2026",
+      "vehicle_identity_claim": "MU-X 2.2 Ddi ULTIMATE A/T 4WD",
+      "raw_label": "Wheelbase",
+      "raw_value": "2855",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TRACK",
+      "source_code": "ISUZU_TH_MUX_BROCHURE_2026",
+      "vehicle_identity_claim": "MU-X 2.2 Ddi ULTIMATE A/T 4WD",
+      "raw_label": "Front/Rear tread",
+      "raw_value": "1570 / 1570",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM track definition not stated"
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "ISUZU_TH_MUX_BROCHURE_2026",
+      "vehicle_identity_claim": "MU-X 2.2 Ddi ULTIMATE A/T 4WD",
+      "raw_label": "Ground clearance at rear axle housing",
+      "raw_value": "235",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Load state not stated"
+    },
+    {
+      "observation_code": "OBS_TURN",
+      "source_code": "ISUZU_TH_MUX_BROCHURE_2026",
+      "vehicle_identity_claim": "MU-X 2.2 Ddi ULTIMATE A/T 4WD",
+      "raw_label": "Minimum turning radius",
+      "raw_value": "5.6",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated"
+    },
+    {
+      "observation_code": "OBS_WHEEL",
+      "source_code": "ISUZU_TH_MUX_BROCHURE_2026",
+      "vehicle_identity_claim": "MU-X 2.2 Ddi ULTIMATE A/T 4WD",
+      "raw_label": "Wheel",
+      "raw_value": "20 x 7.5J",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TYRE",
+      "source_code": "ISUZU_TH_MUX_BROCHURE_2026",
+      "vehicle_identity_claim": "MU-X 2.2 Ddi ULTIMATE A/T 4WD",
+      "raw_label": "Tyre",
+      "raw_value": "265/50R20",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4860,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1870,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1875,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2855,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1570,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1570,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 235,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "REAR_AXLE",
+        "clearance_component_or_reference": "rear axle housing"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.6,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "265/50R20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "265/50R20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FWHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "20 x 7.5J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    },
+    {
+      "value_code": "VAL_RWHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "20 x 7.5J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL20",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM track definition remains unspecified.",
+      "source_families_searched": [
+        "Isuzu MU-X 2026 brochure"
+      ],
+      "search_notes": "Do not use OEM track as AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM track definition remains unspecified.",
+      "source_families_searched": [
+        "Isuzu MU-X 2026 brochure"
+      ],
+      "search_notes": "Do not use OEM track as AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
