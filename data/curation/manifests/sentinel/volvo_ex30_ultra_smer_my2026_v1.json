@@ -1,0 +1,625 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-VOLVO-EX30-ULTRA-SMER-MY2026-19-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-volvo-ex30-ultra-smer-my2026-19",
+    "manufacturer_name": "Volvo",
+    "manufacturer_display_name": "Volvo Cars",
+    "canonical_model_name": "ex30",
+    "display_model_name": "EX30",
+    "market_code": "TH",
+    "generation_name": "EX30 current generation",
+    "body_style": "Battery-electric crossover/SUV",
+    "model_year_from": 2026,
+    "model_year_to": null,
+    "identity_time_basis": "MODEL_YEAR",
+    "identity_time_label_raw": "2026",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Ultra Single Motor Extended Range",
+    "powertrain": "Battery electric",
+    "drivetrain": "RWD",
+    "body_configuration": "5-door crossover/SUV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Exact 2026 Thailand configurator/build configuration with 19-inch fitment; EX30 technical support dimensions linked as same-geometry evidence."
+  },
+  "sources": [
+    {
+      "source_code": "VOLVO_TH_EX30_BUILD_2026_ULTRA_SMER",
+      "publisher": "Volvo Cars Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CONFIGURATOR_PRINT",
+      "title": "EX30 Ultra, Single Motor Extended Range, Electric (2026)",
+      "url": "https://www.volvocars.com/th-th/build/print?token=14589768872374347229",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "model_year_from": 2026,
+      "page_section_default": "Build/print configuration",
+      "applicability_notes": "Exact 2026 Thailand configuration; 19-inch wheel",
+      "archival_status": "URL_ONLY"
+    },
+    {
+      "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+      "publisher": "Volvo Cars Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "OWNER_SUPPORT_TECHNICAL",
+      "title": "EX30 vehicle dimensions",
+      "url": "https://www.volvocars.com/th-th/support/car/ex30/article/47d2c97fd33effd3c0a8cc3718c999b7-cf578f17ce837790c0a8b04a1abf9aaa-8664b2fa77a7e089c0a8296870d1a409/47d2c97fd33effd3c0a8cc3718c999b7-350655bc554de2a7c0a8b097561c9a50-8664b2fa77a7e089c0a8296870d1a409/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Vehicle dimensions",
+      "applicability_notes": "EX30 geometry family; target exact configuration independently resolved by build source",
+      "archival_status": "URL_ONLY"
+    },
+    {
+      "source_code": "VOLVO_TH_EX30_BROCHURE_20251103",
+      "publisher": "Volvo Cars Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF",
+      "title": "Volvo EX30 Ultra Single Motor Extended Range Technical Specifications",
+      "url": "https://www.volvocars.com/files/cs/v3/assets/blt84e01a6904dbd2e8/bltf1b84ccd41679d6c/691c1573b07a443ac1f9c0a9/R1_Volvo_EX30_brochure_20251103.pdf?branch=prod_alias",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Technical specifications",
+      "applicability_notes": "Exact Ultra Single Motor Extended Range grade",
+      "archival_status": "URL_ONLY"
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "KERB_PLUS_1",
+      "name": "Kerb weight plus one person",
+      "mass_basis": "KERB",
+      "occupant_count": 1,
+      "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+      "raw_oem_wording": "at kerb weight plus one person",
+      "notes": "No tyre pressure or axle-load values inferred."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "WHEEL19",
+      "description": "19-inch / 245/45 R19 exact build fitment",
+      "wheel_package": "19-inch / 245/45 R19",
+      "equipment_package": null,
+      "model_year_from": 2026,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact configurator/build fitment."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_BUILD",
+      "source_code": "VOLVO_TH_EX30_BUILD_2026_ULTRA_SMER",
+      "vehicle_identity_claim": "EX30 Ultra Single Motor Extended Range Electric 2026",
+      "raw_label": "Configuration",
+      "raw_value": "EX30 Ultra, Single Motor Extended Range, Electric (2026)",
+      "raw_unit": null,
+      "page_section_locator": "Build/print configuration",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+      "vehicle_identity_claim": "EX30 geometry family",
+      "raw_label": "Length",
+      "raw_value": "4233",
+      "raw_unit": "mm",
+      "page_section_locator": "Vehicle dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH_BODY",
+      "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+      "vehicle_identity_claim": "EX30 geometry family",
+      "raw_label": "Width",
+      "raw_value": "1838",
+      "raw_unit": "mm",
+      "page_section_locator": "Vehicle dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Normalized as body width based on the same OEM dimensions context that separately publishes mirror-open and mirror-folded widths."
+    },
+    {
+      "observation_code": "OBS_WIDTH_MIRRORS_OPEN",
+      "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+      "vehicle_identity_claim": "EX30 geometry family",
+      "raw_label": "Width including folded-out wing mirrors",
+      "raw_value": "2032",
+      "raw_unit": "mm",
+      "page_section_locator": "Vehicle dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH_MIRRORS_FOLDED",
+      "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+      "vehicle_identity_claim": "EX30 geometry family",
+      "raw_label": "Width including folded-in wing mirrors",
+      "raw_value": "1940",
+      "raw_unit": "mm",
+      "page_section_locator": "Vehicle dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+      "vehicle_identity_claim": "EX30 geometry family",
+      "raw_label": "Height",
+      "raw_value": "1550",
+      "raw_unit": "mm",
+      "raw_qualifier": "at kerb weight plus one person",
+      "page_section_locator": "Vehicle dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+      "vehicle_identity_claim": "EX30 geometry family",
+      "raw_label": "Wheelbase",
+      "raw_value": "2650",
+      "raw_unit": "mm",
+      "page_section_locator": "Vehicle dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_CLEARANCE",
+      "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+      "vehicle_identity_claim": "EX30 geometry family",
+      "raw_label": "Ground clearance",
+      "raw_value": "171",
+      "raw_unit": "mm",
+      "raw_qualifier": "at kerb weight plus one person",
+      "page_section_locator": "Vehicle dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Specific limiting component/reference not stated."
+    },
+    {
+      "observation_code": "OBS_TRACK_FRONT",
+      "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+      "vehicle_identity_claim": "EX30 geometry family",
+      "raw_label": "Front track",
+      "raw_value": "1590",
+      "raw_unit": "mm",
+      "page_section_locator": "Vehicle dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM track definition not stated."
+    },
+    {
+      "observation_code": "OBS_TRACK_REAR",
+      "source_code": "VOLVO_TH_EX30_SUPPORT_DIMENSIONS",
+      "vehicle_identity_claim": "EX30 geometry family",
+      "raw_label": "Rear track",
+      "raw_value": "1595",
+      "raw_unit": "mm",
+      "page_section_locator": "Vehicle dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM track definition not stated."
+    },
+    {
+      "observation_code": "OBS_WHEEL_SIZE",
+      "source_code": "VOLVO_TH_EX30_BUILD_2026_ULTRA_SMER",
+      "vehicle_identity_claim": "EX30 Ultra Single Motor Extended Range 2026",
+      "raw_label": "Wheel size",
+      "raw_value": "19-inch",
+      "raw_unit": null,
+      "page_section_locator": "Build/print configuration",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TYRE_SIZE",
+      "source_code": "VOLVO_TH_EX30_BUILD_2026_ULTRA_SMER",
+      "vehicle_identity_claim": "EX30 Ultra Single Motor Extended Range 2026",
+      "raw_label": "Tire size",
+      "raw_value": "245/45 R19",
+      "raw_unit": null,
+      "page_section_locator": "Build/print configuration",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TURNING_107",
+      "source_code": "VOLVO_TH_EX30_BROCHURE_20251103",
+      "vehicle_identity_claim": "EX30 Ultra Single Motor Extended Range",
+      "raw_label": "Min. Turning Circle",
+      "raw_value": "10.7",
+      "raw_unit": "m",
+      "page_section_locator": "Technical specifications",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Radius-versus-diameter semantics not established under project vocabulary."
+    },
+    {
+      "observation_code": "OBS_TURNING_110",
+      "source_code": "VOLVO_TH_EX30_BUILD_2026_ULTRA_SMER",
+      "vehicle_identity_claim": "EX30 Ultra Single Motor Extended Range 2026",
+      "raw_label": "Turning circle",
+      "raw_value": "11",
+      "raw_unit": "m",
+      "page_section_locator": "Build/print configuration",
+      "reported_precision": "nearest 1 m decimal presentation as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Conflicts with 10.7 m official brochure and radius-versus-diameter semantics remain unresolved."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4233,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A2",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_BODY",
+      "parameter_code": "overall_width_body_mm",
+      "value": 1838,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A2",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_BODY"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_OPEN",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 2032,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A2",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_MIRRORS_OPEN"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_FOLDED",
+      "parameter_code": "overall_width_mirrors_folded_mm",
+      "value": 1940,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A2",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_FOLDED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_MIRRORS_FOLDED"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1550,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A2",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": "KERB_PLUS_1",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2650,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A2",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_CLEARANCE",
+      "parameter_code": "clearance_value_mm",
+      "value": 171,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A2",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "KERB_PLUS_1",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_CLEARANCE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1590,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A2",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_FRONT"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1595,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A2",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_REAR"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "245/45 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL19",
+      "evidence_observation_codes": [
+        "OBS_TYRE_SIZE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "245/45 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL19",
+      "evidence_observation_codes": [
+        "OBS_TYRE_SIZE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "19-inch",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL19",
+      "evidence_observation_codes": [
+        "OBS_WHEEL_SIZE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "19-inch",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL19",
+      "evidence_observation_codes": [
+        "OBS_WHEEL_SIZE"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING_TEXT_107",
+      "parameter_code": "oem_turning_value_text",
+      "value": "10.7 m",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "CONFLICTING",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "source_label": "Min. Turning Circle",
+        "normalization_blocker": "radius_or_diameter_semantics_unresolved"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING_107"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING_TEXT_110",
+      "parameter_code": "oem_turning_value_text",
+      "value": "11 m",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "CONFLICTING",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "source_label": "Turning circle",
+        "normalization_blocker": "conflicting_official_value_and_radius_or_diameter_semantics_unresolved"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING_110"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Two official sources report 10.7 m and 11 m turning-circle values, and the source wording does not establish radius-versus-diameter semantics under the project contract.",
+      "source_families_searched": [
+        "Volvo Thailand exact build/configurator",
+        "Volvo Thailand exact-grade technical brochure"
+      ],
+      "search_notes": "Retain both source claims as conflicting text values; do not normalize radius.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Resolve publication/configuration applicability and exact turning-circle definition."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM front track definition is unspecified and cannot be treated as AVT outer-face tyre track.",
+      "source_families_searched": [
+        "Volvo Thailand support dimensions"
+      ],
+      "search_notes": "Keep OEM track separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM rear track definition is unspecified and cannot be treated as AVT outer-face tyre track.",
+      "source_families_searched": [
+        "Volvo Thailand support dimensions"
+      ],
+      "search_notes": "Keep OEM track separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}

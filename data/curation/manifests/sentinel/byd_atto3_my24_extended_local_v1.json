@@ -1,0 +1,574 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-BYD-ATTO3-MY24-EXT-LOCAL-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-byd-atto3-my24-extended-local",
+    "manufacturer_name": "BYD",
+    "manufacturer_display_name": "BYD",
+    "canonical_model_name": "atto3",
+    "display_model_name": "ATTO 3",
+    "market_code": "TH",
+    "generation_name": "ATTO 3 MY24 Thailand local-production revision",
+    "body_style": "Battery-electric crossover/SUV",
+    "model_year_from": 2024,
+    "model_year_to": null,
+    "identity_time_basis": "MODEL_YEAR",
+    "identity_time_label_raw": "MY24",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Extended (Local Production)",
+    "powertrain": "Battery electric",
+    "drivetrain": "FWD",
+    "body_configuration": "5-door crossover/SUV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Official REVER campaign explicitly identifies New BYD ATTO 3 MY24 Extended (Local Production)."
+  },
+  "sources": [
+    {
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "publisher": "REVER Automotive",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "BYD ATTO 3 Technical Information",
+      "url": "https://www.reverautomotive.com/en/model/newatto3/tech-spec",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Technical Information",
+      "applicability_notes": "Extended Thailand configuration",
+      "archival_status": "URL_ONLY"
+    },
+    {
+      "source_code": "REVER_TH_ATTO3_MY24_CAMPAIGN_20260319",
+      "publisher": "REVER Automotive",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_CAMPAIGN_TERMS",
+      "title": "New BYD ATTO 3 MY24 Extended (Local Production) campaign terms",
+      "url": "https://www.reverautomotive.com/news/new-byd-atto3-mar-2026-campaign",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Campaign/model designation",
+      "applicability_notes": "Exact MY/grade/local-production identity",
+      "archival_status": "URL_ONLY"
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "UNLADEN_OEM",
+      "name": "OEM unladen",
+      "mass_basis": "UNLADEN",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "raw_oem_wording": "Ground Clearance Unladen",
+      "notes": "No tyre pressure or axle-load assumptions added."
+    },
+    {
+      "load_condition_code": "LADEN_OEM",
+      "name": "OEM laden",
+      "mass_basis": "OEM_LADEN",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "raw_oem_wording": "Ground Clearance Laden",
+      "notes": "No payload/occupant details inferred beyond OEM wording."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_MY24_EXT_LOCAL",
+      "source_code": "REVER_TH_ATTO3_MY24_CAMPAIGN_20260319",
+      "vehicle_identity_claim": "New BYD ATTO 3 MY24 Extended (Local Production)",
+      "raw_label": "Campaign model designation",
+      "raw_value": "New BYD ATTO 3 MY24 Extended (Local Production)",
+      "raw_unit": null,
+      "page_section_locator": "Campaign/model designation",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Overall Length",
+      "raw_value": "4455",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Information",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Overall Width",
+      "raw_value": "1875",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Information",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Mirror/body inclusion not stated."
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Overall Height",
+      "raw_value": "1615",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Information",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TRACK_FRONT_REAR",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Wheel Track Front and Rear",
+      "raw_value": "1575 / 1580",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Information",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM track reference definition not stated."
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Wheelbase",
+      "raw_value": "2720",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Information",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC_UNLADEN",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Ground Clearance Unladen",
+      "raw_value": "175",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Information",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Clearance component/reference point not stated."
+    },
+    {
+      "observation_code": "OBS_GC_LADEN",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Ground Clearance Laden",
+      "raw_value": "150",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Information",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Clearance component/reference point not stated."
+    },
+    {
+      "observation_code": "OBS_TURNING",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Minimum turning radius",
+      "raw_value": "5.35",
+      "raw_unit": "m",
+      "page_section_locator": "Technical Information",
+      "reported_precision": "0.01 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated."
+    },
+    {
+      "observation_code": "OBS_KERB",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Kerb Weight",
+      "raw_value": "1750",
+      "raw_unit": "kg",
+      "page_section_locator": "Technical Information",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GVM",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Gross Vehicle Mass",
+      "raw_value": "2160",
+      "raw_unit": "kg",
+      "page_section_locator": "Technical Information",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TYRE",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Tyre Size",
+      "raw_value": "235/50 R18",
+      "raw_unit": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WHEEL",
+      "source_code": "REVER_TH_ATTO3_SPEC_CURRENT",
+      "vehicle_identity_claim": "BYD ATTO 3 Extended",
+      "raw_label": "Alloy Wheel",
+      "raw_value": "18-inch",
+      "raw_unit": null,
+      "page_section_locator": "Technical Information",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4455,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_REPORTED",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1875,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1615,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2720,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1575,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_FRONT_REAR"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1580,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_FRONT_REAR"
+      ]
+    },
+    {
+      "value_code": "VAL_GC_UNLADEN",
+      "parameter_code": "clearance_value_mm",
+      "value": 175,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "UNLADEN_OEM",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC_UNLADEN"
+      ]
+    },
+    {
+      "value_code": "VAL_GC_LADEN",
+      "parameter_code": "clearance_value_mm",
+      "value": 150,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "LADEN_OEM",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC_LADEN"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.35,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 1750,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_KERB"
+      ]
+    },
+    {
+      "value_code": "VAL_GVM",
+      "parameter_code": "gross_vehicle_mass_kg",
+      "value": 2160,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GVM"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "235/50 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "235/50 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "18-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "18-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM track is published but its reference definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "official Thailand distributor specification"
+      ],
+      "search_notes": "Do not convert OEM track to AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM track is published but its reference definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "official Thailand distributor specification"
+      ],
+      "search_notes": "Do not convert OEM track to AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}

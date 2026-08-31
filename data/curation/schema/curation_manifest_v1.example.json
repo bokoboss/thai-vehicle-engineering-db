@@ -1,0 +1,92 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "EXAMPLE_ONLY",
+  "vehicle": {
+    "stable_vehicle_code": "th-example-vehicle",
+    "manufacturer_name": "Example Manufacturer",
+    "manufacturer_display_name": "Example Manufacturer",
+    "canonical_model_name": "example-model",
+    "display_model_name": "Example Model",
+    "market_code": "TH",
+    "generation_name": "Example generation",
+    "body_style": "example",
+    "model_year_from": 2026,
+    "model_year_to": null,
+    "identity_time_basis": "MODEL_YEAR",
+    "identity_time_label_raw": "MY2026",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Example exact grade",
+    "powertrain": null,
+    "drivetrain": null,
+    "body_configuration": null,
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Example only."
+  },
+  "sources": [
+    {
+      "source_code": "EXAMPLE_SOURCE_1",
+      "publisher": "Example Manufacturer",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "Example official specification",
+      "url": "https://example.invalid/spec",
+      "retrieved_at": "2026-08-31T00:00:00Z",
+      "publication_year": null,
+      "model_year_from": null,
+      "model_year_to": null,
+      "page_section_default": "Technical specifications",
+      "applicability_notes": "Exact configuration",
+      "access_licensing_notes": null,
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "EXAMPLE_SOURCE_1",
+      "vehicle_identity_claim": "Example Model exact grade",
+      "raw_label": "Overall Length",
+      "raw_value": "4500",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specifications",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00Z",
+      "extracted_by": "ChatGPT curation review",
+      "reviewer": null,
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4500,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    }
+  ],
+  "assessments": [],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
