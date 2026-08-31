@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "date": "2026-08-31",
-  "dependency": "Issue #7 must merge before non-MY exact records are physically ingested.",
+  "dependency": "Issue #15 create-only curation importer must pass the three-sentinel clean-DB proof before any Wave 1 physical ingestion.",
   "wave_1_clean_candidates": [
     "batch-a-02-byd-atto3-my24-extended-local",
     "batch-a-03-tesla-modely-premium-lr-rwd-19",
@@ -16,13 +16,12 @@
     "batch-d-05-tesla-model3-premium-long-range-rwd-current",
     "batch-d-06-hyundai-ioniq6-exclusive-long-range",
     "batch-e-03-bmw-520d-m-sport-pro-g60-2025",
-    "batch-e-04-bmw-740d-m-sport-g70-current-2026"
+    "batch-e-04-bmw-740d-m-sport-g70-current-2026",
+    "batch-a-01-mazda-mx5-35ae-rf-at",
+    "batch-b-05-toyota-fortuner-leader-v-4wd-2025-catalog",
+    "batch-d-02-byd-dolphin-extended-current"
   ],
   "wave_2_second_review": [
-    {
-      "id": "batch-a-01-mazda-mx5-35ae-rf-at",
-      "reason": "Reclassify under EDITION_RELEASE after Issue #7; otherwise high-quality semantic record."
-    },
     {
       "id": "batch-a-06-mg-im6-long-range",
       "reason": "Temporal identity confirmation; four-wheel-steering linkage remains intentionally incomplete."
@@ -40,20 +39,12 @@
       "reason": "Resolve exact RS wheelbase/tread/wheel column mapping."
     },
     {
-      "id": "batch-b-05-toyota-fortuner-leader-v-4wd-2025-catalog",
-      "reason": "Lock exact revision-label applicability and exact grade-specific fitment where needed."
-    },
-    {
       "id": "batch-b-09-isuzu-mux-22-ultimate-4wd-2026",
       "reason": "Second-review exact 2.2 4WD ULTIMATE technical-table column mapping."
     },
     {
       "id": "batch-c-02-ford-everest-platinum-30-v6-current",
       "reason": "Re-verify official technical PDF visually before promoting lead dimensions."
-    },
-    {
-      "id": "batch-d-02-byd-dolphin-extended-current",
-      "reason": "Lock accepted non-MY temporal basis after Issue #7."
     },
     {
       "id": "batch-e-01-mercedes-e350e-amg-dynamic-w214-current",
@@ -86,5 +77,5 @@
       "reason": "Exact primary Thailand PERFORMANCE sales geometry not recovered."
     }
   ],
-  "note": "Wave assignment concerns research/identity readiness only. It does not imply AVT_READY or ramp physical readiness."
+  "note": "Wave assignment concerns research/identity/semantic readiness only. It does not imply AVT_READY or physical ramp readiness. Wave 1 expansion remains blocked until Issue #15 sentinel proof passes."
 }
