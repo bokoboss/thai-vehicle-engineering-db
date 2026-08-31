@@ -18,6 +18,7 @@ from app.domain.enums import (
     GeometryFidelity,
     GeometryMethod,
     GeometryRole,
+    IdentityTimeBasis,
     IdentityVerificationState,
     LinkageType,
     MassBasis,
@@ -35,6 +36,7 @@ from app.domain.enums import (
     WallEnvelopeScope,
     WidthEnvelopeDefinition,
 )
+from app.domain.validation import validate_identity_time_basis
 
 
 class DomainModel(BaseModel):
@@ -46,8 +48,10 @@ class VehicleConfigurationCreate(DomainModel):
     market_code: str = Field(min_length=1, max_length=8)
     generation_name: str = Field(min_length=1, max_length=160)
     body_style: str = Field(min_length=1, max_length=80)
-    model_year_from: int = Field(ge=1886, le=2200)
+    model_year_from: int | None = Field(default=None, ge=1886, le=2200)
     model_year_to: int | None = Field(default=None, ge=1886, le=2200)
+    identity_time_basis: IdentityTimeBasis = IdentityTimeBasis.MODEL_YEAR
+    identity_time_label_raw: str | None = Field(default=None, max_length=240)
     variant_trim: str = Field(min_length=1, max_length=180)
     chassis_platform_code: str | None = None
     sale_period_from: date | None = None
@@ -60,10 +64,15 @@ class VehicleConfigurationCreate(DomainModel):
 
     @model_validator(mode="after")
     def valid_years(self) -> "VehicleConfigurationCreate":
-        if self.model_year_to is not None and self.model_year_to < self.model_year_from:
-            raise ValueError("model_year_to must not precede model_year_from")
-        if self.sale_period_from and self.sale_period_to and self.sale_period_to < self.sale_period_from:
-            raise ValueError("sale_period_to must not precede sale_period_from")
+        validate_identity_time_basis(
+            identity_verification_state=self.identity_verification_state,
+            identity_time_basis=self.identity_time_basis,
+            model_year_from=self.model_year_from,
+            model_year_to=self.model_year_to,
+            identity_time_label_raw=self.identity_time_label_raw,
+            sale_period_from=self.sale_period_from,
+            sale_period_to=self.sale_period_to,
+        )
         return self
 
 

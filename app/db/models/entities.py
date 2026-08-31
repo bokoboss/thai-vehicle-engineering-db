@@ -75,8 +75,12 @@ class VehicleConfiguration(Base):
     __tablename__ = "vehicle_configuration"
     __table_args__ = (
         CheckConstraint(
-            "model_year_to IS NULL OR model_year_to >= model_year_from",
+            "model_year_from IS NULL OR model_year_to IS NULL OR model_year_to >= model_year_from",
             name="valid_model_year_range",
+        ),
+        CheckConstraint(
+            "identity_time_basis IN ('MODEL_YEAR', 'OEM_REVISION_LABEL', 'EDITION_RELEASE', 'SALE_PERIOD', 'MULTIPLE', 'UNKNOWN')",
+            name="valid_identity_time_basis",
         ),
         Index("ix_vehicle_configuration_identity", "market_code", "generation_name", "variant_trim"),
         Index("ix_vehicle_configuration_stable_code", "stable_vehicle_code"),
@@ -89,8 +93,10 @@ class VehicleConfiguration(Base):
     generation_name: Mapped[str] = mapped_column(String(160), nullable=False)
     chassis_platform_code: Mapped[str | None] = mapped_column(String(120))
     body_style: Mapped[str] = mapped_column(String(80), nullable=False)
-    model_year_from: Mapped[int] = mapped_column(Integer, nullable=False)
+    model_year_from: Mapped[int | None] = mapped_column(Integer, nullable=True)
     model_year_to: Mapped[int | None] = mapped_column(Integer)
+    identity_time_basis: Mapped[str] = mapped_column(String(32), nullable=False, default="MODEL_YEAR")
+    identity_time_label_raw: Mapped[str | None] = mapped_column(String(240))
     sale_period_from: Mapped[date | None] = mapped_column(Date)
     sale_period_to: Mapped[date | None] = mapped_column(Date)
     variant_trim: Mapped[str] = mapped_column(String(180), nullable=False)

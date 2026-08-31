@@ -68,6 +68,10 @@ def _summary(session: Session, config: VehicleConfiguration) -> dict[str, Any]:
         "body_style": config.body_style,
         "model_year_from": config.model_year_from,
         "model_year_to": config.model_year_to,
+        "identity_time_basis": config.identity_time_basis,
+        "identity_time_label_raw": config.identity_time_label_raw,
+        "sale_period_from": config.sale_period_from,
+        "sale_period_to": config.sale_period_to,
         "identity_verification_state": config.identity_verification_state,
         "readiness": readiness,
     }

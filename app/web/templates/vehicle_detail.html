@@ -4,7 +4,7 @@
 <section class="page-intro detail-header">
   <p class="eyebrow">{{ vehicle.stable_vehicle_code }} · {{ vehicle.market }}</p>
   <h1>{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</h1>
-  <p class="lede">{{ vehicle.generation }} · {{ vehicle.variant }} · model year {{ vehicle.model_year_from }}{% if vehicle.model_year_to %}–{{ vehicle.model_year_to }}{% endif %}</p>
+  <p class="lede">{{ vehicle.generation }} · {{ vehicle.variant }} · {{ vehicle.identity_time_basis }}{% if vehicle.model_year_from %} · model year {{ vehicle.model_year_from }}{% if vehicle.model_year_to %}–{{ vehicle.model_year_to }}{% endif %}{% elif vehicle.identity_time_label_raw %} · {{ vehicle.identity_time_label_raw }}{% elif vehicle.sale_period_from %} · sale period from {{ vehicle.sale_period_from }}{% endif %}</p>
   <p class="muted">{{ vehicle.identity_notes }}</p>
   <div class="badges">
     {% for result in vehicle.readiness_results %}<span class="badge badge-{{ result.status|lower }}">{{ result.type }}: {{ result.status }}</span>{% endfor %}
@@ -13,7 +13,7 @@
 
 <section class="callout">
   <strong>Configuration identity</strong>
-  <span>Powertrain: {{ vehicle.powertrain or "Unknown" }} · Drivetrain: {{ vehicle.drivetrain or "Unknown" }} · Body: {{ vehicle.body_configuration or "Unknown" }}</span>
+  <span>Time basis: {{ vehicle.identity_time_basis }}{% if vehicle.identity_time_label_raw %} · Raw label: {{ vehicle.identity_time_label_raw }}{% endif %} · Powertrain: {{ vehicle.powertrain or "Unknown" }} · Drivetrain: {{ vehicle.drivetrain or "Unknown" }} · Body: {{ vehicle.body_configuration or "Unknown" }}</span>
 </section>
 
 <section class="panel">

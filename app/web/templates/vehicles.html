@@ -17,14 +17,14 @@
 
 <div class="table-wrap">
   <table>
-    <thead><tr><th>Make / model</th><th>Generation</th><th>Variant</th><th>Market / year</th><th>Readiness</th></tr></thead>
+    <thead><tr><th>Make / model</th><th>Generation</th><th>Variant</th><th>Market / identity time</th><th>Readiness</th></tr></thead>
     <tbody>
     {% for vehicle in vehicles %}
       <tr>
         <td><a href="/vehicles/{{ vehicle.stable_vehicle_code }}">{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</a><small>{{ vehicle.stable_vehicle_code }}</small></td>
         <td>{{ vehicle.generation }}</td>
         <td>{{ vehicle.variant }}</td>
-        <td>{{ vehicle.market }} · {{ vehicle.model_year_from }}{% if vehicle.model_year_to %}–{{ vehicle.model_year_to }}{% endif %}</td>
+        <td>{{ vehicle.market }} · {{ vehicle.identity_time_basis }}{% if vehicle.model_year_from %} · MY {{ vehicle.model_year_from }}{% if vehicle.model_year_to %}–{{ vehicle.model_year_to }}{% endif %}{% elif vehicle.identity_time_label_raw %} · {{ vehicle.identity_time_label_raw }}{% elif vehicle.sale_period_from %} · from {{ vehicle.sale_period_from }}{% endif %}</td>
         <td class="badges">
           {% for name, result in vehicle.readiness.items() %}
             <span class="badge badge-{{ result.status|lower }}">{{ name }}: {{ result.status }}</span>

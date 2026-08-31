@@ -42,6 +42,7 @@ def list_vehicles(
                 VehicleConfiguration.stable_vehicle_code.ilike(term),
                 VehicleConfiguration.generation_name.ilike(term),
                 VehicleConfiguration.variant_trim.ilike(term),
+                VehicleConfiguration.identity_time_label_raw.ilike(term),
                 VehicleModel.display_model_name.ilike(term),
             )
         )
