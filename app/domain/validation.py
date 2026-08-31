@@ -11,6 +11,8 @@ from app.domain.enums import (
     DataType,
     EvidenceMethod,
     GeometryRole,
+    IdentityTimeBasis,
+    IdentityVerificationState,
     LinkageType,
     PhaseBehavior,
     ResolutionState,
@@ -35,6 +37,63 @@ STATIC_LOADED_TYRE_RADIUS_CODES = {
     "static_loaded_tyre_radius_front_mm",
     "static_loaded_tyre_radius_rear_mm",
 }
+
+
+def validate_identity_time_basis(
+    *,
+    identity_verification_state: Any,
+    identity_time_basis: Any,
+    model_year_from: int | None,
+    model_year_to: int | None,
+    identity_time_label_raw: str | None,
+    sale_period_from: Any | None,
+    sale_period_to: Any | None,
+) -> None:
+    """Enforce the temporal discriminator required for an exact identity.
+
+    This validator checks representation and completeness only. It does not
+    infer model years from labels, release dates, publication dates, or
+    retrieval dates; source semantics and provenance remain the curator's
+    responsibility.
+    """
+
+    state = enum_text(identity_verification_state)
+    basis = enum_text(identity_time_basis)
+    allowed_basis = {item.value for item in IdentityTimeBasis}
+    if basis not in allowed_basis:
+        raise ContractViolation(f"identity_time_basis must be one of: {', '.join(sorted(allowed_basis))}")
+
+    if model_year_to is not None and model_year_from is None:
+        raise ContractViolation("model_year_to requires model_year_from")
+    if model_year_from is not None and model_year_to is not None and model_year_to < model_year_from:
+        raise ContractViolation("model_year_to must not precede model_year_from")
+    if sale_period_from is not None and sale_period_to is not None and sale_period_to < sale_period_from:
+        raise ContractViolation("sale_period_to must not precede sale_period_from")
+
+    if state != IdentityVerificationState.RESOLVED_EXACT.value:
+        return
+
+    if basis == IdentityTimeBasis.MODEL_YEAR.value and model_year_from is None:
+        raise ContractViolation("RESOLVED_EXACT with MODEL_YEAR requires model_year_from")
+    if basis in {IdentityTimeBasis.OEM_REVISION_LABEL.value, IdentityTimeBasis.EDITION_RELEASE.value}:
+        if not _present(identity_time_label_raw):
+            raise ContractViolation(f"RESOLVED_EXACT with {basis} requires identity_time_label_raw")
+    if basis == IdentityTimeBasis.SALE_PERIOD.value and sale_period_from is None:
+        raise ContractViolation("RESOLVED_EXACT with SALE_PERIOD requires sale_period_from")
+    if basis == IdentityTimeBasis.MULTIPLE:
+        supported_discriminators = sum(
+            (
+                model_year_from is not None,
+                _present(identity_time_label_raw),
+                sale_period_from is not None,
+            )
+        )
+        if supported_discriminators < 2:
+            raise ContractViolation(
+                "RESOLVED_EXACT with MULTIPLE requires at least two compatible temporal discriminators"
+            )
+    if basis == IdentityTimeBasis.UNKNOWN.value:
+        raise ContractViolation("identity_time_basis UNKNOWN cannot support RESOLVED_EXACT")
 
 
 def typed_value_count(value: Any) -> int:

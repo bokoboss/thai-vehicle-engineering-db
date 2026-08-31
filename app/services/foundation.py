@@ -47,6 +47,7 @@ from app.domain.validation import (
     ContractViolation,
     validate_avt_track_candidate,
     validate_geometry_asset_role,
+    validate_identity_time_basis,
     validate_parameter_assessment,
     validate_persisted_value_contract,
     validate_provenance_payload,
@@ -76,6 +77,16 @@ def create_vehicle_configuration(
     country_of_origin: str | None = None,
 ) -> VehicleConfiguration:
     from app.db.models import Manufacturer, VehicleModel
+
+    validate_identity_time_basis(
+        identity_verification_state=payload.identity_verification_state,
+        identity_time_basis=payload.identity_time_basis,
+        model_year_from=payload.model_year_from,
+        model_year_to=payload.model_year_to,
+        identity_time_label_raw=payload.identity_time_label_raw,
+        sale_period_from=payload.sale_period_from,
+        sale_period_to=payload.sale_period_to,
+    )
 
     manufacturer = session.scalar(select(Manufacturer).where(Manufacturer.canonical_name == manufacturer_name))
     if manufacturer is None:
@@ -110,6 +121,8 @@ def create_vehicle_configuration(
         body_style=payload.body_style,
         model_year_from=payload.model_year_from,
         model_year_to=payload.model_year_to,
+        identity_time_basis=enum_value(payload.identity_time_basis),
+        identity_time_label_raw=payload.identity_time_label_raw,
         sale_period_from=payload.sale_period_from,
         sale_period_to=payload.sale_period_to,
         variant_trim=payload.variant_trim,

@@ -12,6 +12,15 @@ class IdentityVerificationState(StrEnum):
     UNRESOLVED = "UNRESOLVED"
 
 
+class IdentityTimeBasis(StrEnum):
+    MODEL_YEAR = "MODEL_YEAR"
+    OEM_REVISION_LABEL = "OEM_REVISION_LABEL"
+    EDITION_RELEASE = "EDITION_RELEASE"
+    SALE_PERIOD = "SALE_PERIOD"
+    MULTIPLE = "MULTIPLE"
+    UNKNOWN = "UNKNOWN"
+
+
 class EvidenceMethod(StrEnum):
     PUBLISHED = "PUBLISHED"
     MEASURED = "MEASURED"

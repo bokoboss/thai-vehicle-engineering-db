@@ -25,13 +25,15 @@ from app.domain.enums import (
 from app.domain.candidate_resolution import resolve_engineering_candidate
 from app.domain.scope import validate_fitment_scope
 from app.domain.validation import (
+    ContractViolation,
     is_avt_track_ready,
     is_turning_avt_ready,
     rear_steering_mapping_ready,
+    validate_identity_time_basis,
 )
 
 
-READINESS_RULE_VERSION = "phase-0-readiness-v1"
+READINESS_RULE_VERSION = "phase-0-readiness-v2-identity-time-basis"
 
 
 @dataclass(frozen=True)
@@ -94,12 +96,28 @@ def evaluate_readiness(
     values = _values(session, config, fitment)
     results: list[ReadinessEvaluation] = []
 
-    identity_ready = config.identity_verification_state in {"RESOLVED_EXACT", "RESOLVED_SAME_GEOMETRY_GROUP"}
+    identity_blockers: list[str] = []
+    if config.identity_verification_state not in {"RESOLVED_EXACT", "RESOLVED_SAME_GEOMETRY_GROUP"}:
+        identity_blockers.append(f"identity state is {config.identity_verification_state}")
+    elif config.identity_verification_state == "RESOLVED_EXACT":
+        try:
+            validate_identity_time_basis(
+                identity_verification_state=config.identity_verification_state,
+                identity_time_basis=config.identity_time_basis,
+                model_year_from=config.model_year_from,
+                model_year_to=config.model_year_to,
+                identity_time_label_raw=config.identity_time_label_raw,
+                sale_period_from=config.sale_period_from,
+                sale_period_to=config.sale_period_to,
+            )
+        except ContractViolation as exc:
+            identity_blockers.append(f"identity time: {exc}")
+    identity_ready = not identity_blockers
     results.append(
         ReadinessEvaluation(
             ReadinessType.IDENTITY_RESOLVED,
             ReadinessStatus.READY if identity_ready else ReadinessStatus.NOT_READY,
-            [] if identity_ready else [f"identity state is {config.identity_verification_state}"],
+            identity_blockers,
             [],
         )
     )

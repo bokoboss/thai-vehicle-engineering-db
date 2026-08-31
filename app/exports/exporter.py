@@ -33,6 +33,10 @@ EXPORT_COLUMNS = [
     "market",
     "model_year_from",
     "model_year_to",
+    "identity_time_basis",
+    "identity_time_label_raw",
+    "sale_period_from",
+    "sale_period_to",
     "fitment_code",
     "parameter_code",
     "normalized_value",
@@ -82,6 +86,10 @@ def _base_identity(config: VehicleConfiguration) -> dict[str, Any]:
         "market": config.market_code,
         "model_year_from": config.model_year_from,
         "model_year_to": config.model_year_to,
+        "identity_time_basis": config.identity_time_basis,
+        "identity_time_label_raw": config.identity_time_label_raw or "",
+        "sale_period_from": config.sale_period_from or "",
+        "sale_period_to": config.sale_period_to or "",
     }
 
 
