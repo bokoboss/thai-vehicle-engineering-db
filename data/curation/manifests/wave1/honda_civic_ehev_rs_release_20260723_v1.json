@@ -1,0 +1,539 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-HONDA-CIVIC-EHEV-RS-RELEASE-20260723-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-honda-civic-ehev-rs-release-2026-07-23",
+    "manufacturer_name": "Honda",
+    "manufacturer_display_name": "Honda",
+    "canonical_model_name": "civic",
+    "display_model_name": "Civic",
+    "market_code": "TH",
+    "generation_name": "Current Civic e:HEV Thailand release",
+    "body_style": "Sedan",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "Honda Civic e:HEV ใหม่ — official launch 23 July 2026",
+    "sale_period_from": "2026-07-23",
+    "sale_period_to": null,
+    "variant_trim": "e:HEV RS",
+    "powertrain": "e:HEV",
+    "drivetrain": null,
+    "body_configuration": "4-door sedan",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Official Honda Thailand launch resolves exact e:HEV RS identity. Shared engineering rows come from Honda Thailand. Exact RS mapping for selected grouped rows is supported by a reputable secondary exact-grade page and remains authority grade B."
+  },
+  "sources": [
+    {
+      "source_code": "HONDA_TH_CIVIC_NEW_LAUNCH_20260723",
+      "publisher": "Honda Automobile Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_NEWS",
+      "title": "Honda Civic e:HEV ใหม่ — Honda S+ Shift launch",
+      "url": "https://www.honda.co.th/news/newhondacivicehevs%2Bshift",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2026,
+      "page_section_default": "Official launch",
+      "applicability_notes": "Exact e:HEV RS release identity",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "HONDA_TH_CIVIC_SPEC_CURRENT_20260831",
+      "publisher": "Honda Automobile Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION_GROUPED_TABLE",
+      "title": "Honda Civic e:HEV Technical Specifications",
+      "url": "https://www.honda.co.th/civic/specification",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Technical specification table",
+      "applicability_notes": "Shared values and grouped grade candidates",
+      "archival_status": "URL_ONLY",
+      "notes": "Grouped rows are not assigned to RS by row order."
+    },
+    {
+      "source_code": "ZIGWHEELS_TH_CIVIC_EHEV_RS_20260831",
+      "publisher": "ZigWheels Thailand",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "EXACT_GRADE_SPECIFICATION",
+      "title": "Honda Civic e:HEV RS specifications",
+      "url": "https://www.zigwheels.co.th/new-cars/honda/civic/ehev-rs",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Exact e:HEV RS specification",
+      "applicability_notes": "B-level exact-grade column resolution",
+      "archival_status": "URL_ONLY",
+      "notes": "Used only to resolve selected grade-specific members of Honda grouped values."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "HONDA_TH_CIVIC_SPEC_CURRENT_20260831",
+      "raw_oem_wording": "Ground clearance; load state not stated",
+      "notes": "Structured unknown load state."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "RS18",
+      "description": "Civic e:HEV RS exact 18-inch fitment",
+      "wheel_package": "18 x 8J / 235/40 ZR18",
+      "equipment_package": "e:HEV RS",
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Grade association resolved by reputable secondary exact-grade evidence; authority B."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "HONDA_TH_CIVIC_NEW_LAUNCH_20260723",
+      "vehicle_identity_claim": "Civic e:HEV RS",
+      "raw_label": "Official release",
+      "raw_value": "Honda Civic e:HEV RS — launched 23 Jul 2026",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Official launch",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "HONDA_TH_CIVIC_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Civic e:HEV family",
+      "raw_label": "Overall length",
+      "raw_value": "4681",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Shared OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH",
+      "source_code": "HONDA_TH_CIVIC_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Civic e:HEV family",
+      "raw_label": "Overall width",
+      "raw_value": "1802",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Shared OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Mirror/body inclusion not stated"
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "HONDA_TH_CIVIC_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Civic e:HEV family",
+      "raw_label": "Overall height",
+      "raw_value": "1415",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Shared OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "HONDA_TH_CIVIC_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Civic e:HEV family",
+      "raw_label": "Wheelbase",
+      "raw_value": "2734",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Shared OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "HONDA_TH_CIVIC_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Civic e:HEV family",
+      "raw_label": "Ground clearance",
+      "raw_value": "128",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Shared OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Load state not stated"
+    },
+    {
+      "observation_code": "OBS_LTL_GROUPED",
+      "source_code": "HONDA_TH_CIVIC_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Civic e:HEV grouped grades",
+      "raw_label": "Steering wheel lock-to-lock",
+      "raw_value": "2.29 / 2.2",
+      "raw_unit": "turns",
+      "raw_qualifier": null,
+      "page_section_locator": "Grouped OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Exact RS member unresolved; raw grouped observation only"
+    },
+    {
+      "observation_code": "OBS_TURN_GROUPED",
+      "source_code": "HONDA_TH_CIVIC_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Civic e:HEV grouped grades",
+      "raw_label": "Turning radius",
+      "raw_value": "5.4 / 5.7",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Grouped OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Exact RS member resolved only by separate B-level source"
+    },
+    {
+      "observation_code": "OBS_TRACK_GROUPED",
+      "source_code": "HONDA_TH_CIVIC_SPEC_CURRENT_20260831",
+      "vehicle_identity_claim": "Civic e:HEV grouped grades",
+      "raw_label": "Front / Rear tread",
+      "raw_value": "1547 or 1537 / 1586 or 1576",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Grouped OEM row",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Exact RS member resolved only by separate B-level source"
+    },
+    {
+      "observation_code": "OBS_RS_EXACT",
+      "source_code": "ZIGWHEELS_TH_CIVIC_EHEV_RS_20260831",
+      "vehicle_identity_claim": "Civic e:HEV RS",
+      "raw_label": "Exact RS engineering values",
+      "raw_value": "Kerb 1429 kg; front/rear tread 1537/1576 mm; 18 x 8J; 235/40 ZR18; turning radius 5.7 m",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Exact grade",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Authority B exact-grade mapping"
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4681,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1802,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1415,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2734,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 128,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 1429,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1537,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1576,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.7,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_FWHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "18 x 8J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "RS18",
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_RWHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "18 x 8J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "RS18",
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "235/40 ZR18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "RS18",
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "235/40 ZR18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "RS18",
+      "evidence_observation_codes": [
+        "OBS_RS_EXACT"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "steering_wheel_lock_to_lock_turns",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Honda OEM publishes grouped 2.29 / 2.2 turns; reviewed exact-grade secondary source does not independently resolve the RS value.",
+      "source_families_searched": [
+        "Honda Thailand specification",
+        "ZigWheels exact RS specification"
+      ],
+      "search_notes": "Keep grouped raw OEM observation; do not assign RS LTL by row order.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Obtain exact Honda RS column evidence."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Exact RS OEM tread/track definition remains unspecified and is not AVT outer-face evidence.",
+      "source_families_searched": [
+        "Honda Thailand",
+        "ZigWheels exact grade"
+      ],
+      "search_notes": "Do not convert tread to AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Exact RS OEM tread/track definition remains unspecified and is not AVT outer-face evidence.",
+      "source_families_searched": [
+        "Honda Thailand",
+        "ZigWheels exact grade"
+      ],
+      "search_notes": "Do not convert tread to AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
