@@ -13,7 +13,9 @@
 - Phase 0 acceptance: PASS after R1–R5 and S1–S3 remediation
 - Identity Time Basis v1 PR #6 squash merge: `112dd67deab4c4832a4645d5127ebfe7165213ed`
 - Identity-time methodology: ACCEPTED; implementation Issue #7 ready
-- Current work: Phase 1 pilot data curation + bounded identity-time schema remediation
+- Phase 1 30-vehicle research baseline PR #12 squash merge: `4aa268bb65b36347e077a3e4d5ddaedf24605633`
+- Phase 1 research coverage: PASS WITH INGESTION CONDITIONS
+- Current work: actual pilot ingestion preparation + bounded identity-time schema remediation
 
 ## Product purpose
 Create an engineering-grade, traceable database and intentionally small web application for vehicle geometry and maneuverability relevant to vehicles used in Thailand.
@@ -92,6 +94,10 @@ The software foundation is implemented. The main project effort now moves to:
 - `docs/RAMP_VERTICAL_CLEARANCE_METHOD.md`
 
 ### Curation
+- `docs/PHASE_1_PILOT_COVERAGE_QA.md`
+- `data/curation/phase1/ingestion_readiness_v1.json`
+- `data/curation/phase1/geometry_asset_register_v1.json`
+- `data/curation/phase1/batch_a_v1.json` through `batch_e_v1.json`
 - `docs/SOURCE_CURATION_PROTOCOL.md`
 - `docs/SOURCE_LANDSCAPE.md`
 - `docs/PILOT_AND_ACCEPTANCE.md`
@@ -113,4 +119,4 @@ The software foundation is implemented. The main project effort now moves to:
 
 ## Current next objective
 
-Continue Phase 1 as ChatGPT-led pilot curation while implementing Issue #7 as a bounded Codex migration/domain update for Identity Time Basis v1. Do not pause research while the schema remediation is underway.
+Complete Issue #7, then ingest the accepted pilot research in controlled waves using the existing service validation boundary. Wave 1 has 14 research-clean candidates; Wave 2 has 11 second-review records; 5 records remain HOLD. Production ingestion must not bypass provenance/conflict/identity validation.
