@@ -1,0 +1,580 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-MAZDA-MX5-35AE-RF-AT-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-mazda-mx5-35ae-rf-at-release-2025",
+    "manufacturer_name": "Mazda",
+    "manufacturer_display_name": "Mazda",
+    "canonical_model_name": "mx-5",
+    "display_model_name": "MX-5",
+    "market_code": "TH",
+    "generation_name": "ND family",
+    "body_style": "Roadster / Retractable Fastback",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "New Mazda MX-5 35th Anniversary Edition — launched 17 Mar 2025",
+    "sale_period_from": "2025-03-17",
+    "sale_period_to": null,
+    "variant_trim": "35th Anniversary Edition 2.0 RF AT",
+    "powertrain": "SKYACTIV-G 2.0 petrol / 6AT",
+    "drivetrain": "RWD",
+    "body_configuration": "Retractable Fastback",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Mazda Thailand officially launched the uniquely named limited 35th Anniversary Edition on 17 Mar 2025. Exact technical specification is published on Mazda Thailand. No model year is inferred."
+  },
+  "sources": [
+    {
+      "source_code": "MAZDA_TH_MX5_35_LAUNCH_20250317",
+      "publisher": "Mazda Sales Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_NEWS",
+      "title": "New Mazda MX-5 35th Anniversary Edition Thailand launch",
+      "url": "https://www.mazda.co.th/th/news-update/detail/new-mazda-mx5-35th-anniversary",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2025,
+      "page_section_default": "Official launch",
+      "applicability_notes": "Exact edition/release identity",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "publisher": "Mazda Sales Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "New Mazda MX-5 35th Anniversary Edition — Technical Specification",
+      "url": "https://www.mazda.co.th/th/cars/mazda-mx5-35th/spec",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Technical specification",
+      "applicability_notes": "Exact 35th Anniversary Edition 2.0 RF AT",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "LADEN_OEM",
+      "name": "OEM laden",
+      "mass_basis": "OEM_LADEN",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "raw_oem_wording": "Ground clearance (between axles, laden)",
+      "notes": "No payload/tyre-pressure assumptions added."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "WHEEL17",
+      "description": "35th Anniversary exact 17-inch fitment",
+      "wheel_package": "17 x 7J / 205/45R17",
+      "equipment_package": "35th Anniversary Edition",
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact published fitment."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "MAZDA_TH_MX5_35_LAUNCH_20250317",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition",
+      "raw_label": "Official limited-edition launch",
+      "raw_value": "New Mazda MX-5 35th Anniversary Edition",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Official launch",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Overall length (without number-plate holder)",
+      "raw_value": "3915",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Excludes number-plate holder"
+    },
+    {
+      "observation_code": "OBS_WIDTH",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Overall width (without wheel arch mouldings)",
+      "raw_value": "1735",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Excludes wheel arch mouldings"
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Overall height",
+      "raw_value": "1235",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Wheelbase",
+      "raw_value": "2310",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TRACK_FRONT",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Tread: Front",
+      "raw_value": "1495",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM tread definition not stated"
+    },
+    {
+      "observation_code": "OBS_TRACK_REAR",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Tread: Rear",
+      "raw_value": "1505",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM tread definition not stated"
+    },
+    {
+      "observation_code": "OBS_FRONT_OH",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Overhang: Front (without number-plate holder)",
+      "raw_value": "760",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Excludes number-plate holder"
+    },
+    {
+      "observation_code": "OBS_REAR_OH",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Overhang: Rear",
+      "raw_value": "845",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Ground clearance (between axles, laden)",
+      "raw_value": "135",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Between axles; laden"
+    },
+    {
+      "observation_code": "OBS_TURN",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Minimum turning radius (kerb-to-kerb)",
+      "raw_value": "4.7",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Axle scope not stated"
+    },
+    {
+      "observation_code": "OBS_TYRE",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Tyre size",
+      "raw_value": "205/45R17",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WHEEL",
+      "source_code": "MAZDA_TH_MX5_35_SPEC_CURRENT",
+      "vehicle_identity_claim": "MX-5 35th Anniversary Edition 2.0 RF AT",
+      "raw_label": "Wheel size",
+      "raw_value": "17 x 7J",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 3915,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "source_qualifier": "without number-plate holder"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1735,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OTHER",
+        "source_qualifier": "without wheel arch mouldings"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1235,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2310,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1495,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED",
+        "source_label": "Tread"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_FRONT"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1505,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED",
+        "source_label": "Tread"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_REAR"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_OH",
+      "parameter_code": "front_overhang_mm",
+      "value": 760,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "source_qualifier": "without number-plate holder"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_FRONT_OH"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_OH",
+      "parameter_code": "rear_overhang_mm",
+      "value": 845,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_REAR_OH"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 135,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "BETWEEN_AXLES"
+      },
+      "load_condition_code": "LADEN_OEM",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 4.7,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "CURB_TO_CURB",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "205/45R17",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL17",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "205/45R17",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL17",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FWHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "17 x 7J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL17",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    },
+    {
+      "value_code": "VAL_RWHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "17 x 7J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL17",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM tread semantics are not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Mazda Thailand exact technical specification"
+      ],
+      "search_notes": "Keep OEM tread separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face or mounted wheel geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM tread semantics are not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Mazda Thailand exact technical specification"
+      ],
+      "search_notes": "Keep OEM tread separate.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face or mounted wheel geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
