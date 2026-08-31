@@ -36,8 +36,15 @@ A source observation is never overwritten by normalization, derivation or confli
 - `chassis_platform_code` where known
 - `market` — e.g. TH
 - `body_style`
-- `model_year_from`
-- `model_year_to`
+- `model_year_from/to` only when the OEM/source explicitly supports model-year semantics
+- `identity_time_basis`:
+  - MODEL_YEAR
+  - OEM_REVISION_LABEL
+  - EDITION_RELEASE
+  - SALE_PERIOD
+  - MULTIPLE
+  - UNKNOWN
+- `identity_time_label_raw` where an OEM uses wording such as “MY24”, “รุ่นปรับปรุงปี 2568”, or a named limited edition/release
 - `sale_period_from/to` where known
 - `variant_trim`
 - `powertrain`
@@ -52,6 +59,18 @@ A source observation is never overwritten by normalization, derivation or confli
 Two records must be separate when geometry, tyre fitment, ride height, steering, turning behaviour or body configuration relevant to engineering use differs materially.
 
 Commercial model name alone is never a sufficient engineering identity.
+
+**Model year is not mandatory when the exact engineering configuration is temporally bounded by another evidence-backed OEM identity mechanism.** Thai-market OEMs may identify a configuration by a revision label, named edition/release, or sale-period version without using formal model-year terminology.
+
+Rules:
+
+1. Never convert launch year, registration year, brochure publication year, or Thai wording such as “ปี 2568” into `model_year_from` unless the source explicitly establishes model-year semantics.
+2. `MODEL_YEAR` is used only for explicit MY/model-year evidence.
+3. `OEM_REVISION_LABEL` preserves an OEM revision/year label whose semantics are not proven to be model year.
+4. `EDITION_RELEASE` may resolve a uniquely identified limited/special edition when the grade/edition and release applicability are sufficient to distinguish its engineering configuration.
+5. `SALE_PERIOD` may resolve a configuration only when the applicable product revision is bounded well enough that the same commercial grade cannot silently refer to materially different geometry.
+6. `UNKNOWN` temporal basis cannot by itself support `RESOLVED_EXACT`.
+7. Identity evidence must retain the raw OEM time/revision wording and source provenance.
 
 Shared platform/family evidence may be referenced through explicit relationships; it must not be copied as if it were exact-configuration evidence unless equivalence is demonstrated.
 
