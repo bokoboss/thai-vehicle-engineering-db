@@ -21,7 +21,7 @@ Before normalizing engineering values, establish:
 - commercial model;
 - market;
 - generation/chassis/platform where known;
-- model-year/sale-period applicability;
+- temporal applicability: explicit model year **or**, where OEM model-year semantics are absent, revision label / named edition-release / bounded sale period;
 - exact grade/variant;
 - powertrain/drivetrain where material;
 - wheel/tyre package;
@@ -35,6 +35,22 @@ Before normalizing engineering values, establish:
 - UNRESOLVED
 
 Only the first two may support an exact engineering configuration, and SAME_GEOMETRY_GROUP requires evidence of equivalence.
+
+### Temporal identity rule
+
+Do not require a fabricated model year.
+
+Record:
+
+- `MODEL_YEAR` only when the source explicitly uses MY/model-year semantics;
+- `OEM_REVISION_LABEL` for wording such as “รุ่นปรับปรุงปี 2568” or other OEM revision-year terminology that is not proven to mean model year;
+- `EDITION_RELEASE` for a uniquely identified edition/release whose engineering configuration is distinguishable;
+- `SALE_PERIOD` only when the product revision is sufficiently bounded;
+- the raw identity-time wording and source evidence.
+
+Launch/publication/retrieval year alone is not model-year evidence.
+
+A current grade with no model year, revision label, edition release, or bounded sale-period evidence remains PARTIAL if the same grade name could span materially different configurations.
 
 ## 4. Stage 2 — Source registration
 
