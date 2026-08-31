@@ -1,0 +1,86 @@
+{
+  "registry_version": "1.0.0",
+  "date": "2026-08-31",
+  "status": "PILOT_GEOMETRY_ASSET_CANDIDATES",
+  "assets": [
+    {
+      "asset_code": "GEO-HYUNDAI-IONIQ6-EXCLUSIVE-TH-202510",
+      "vehicle_record_id": "batch-d-06-hyundai-ioniq6-exclusive-long-range",
+      "geometry_role": "AXLE_DATUM_GEOMETRY",
+      "source_authority": "OEM_THAILAND",
+      "source": "Hyundai Thailand IONIQ 6 Exclusive official leaflet, printed Oct 2025",
+      "applicability": "EXACT_CONFIGURATION",
+      "source_format": "PDF",
+      "verification": "SCREENSHOT_VERIFIED",
+      "geometry_content": [
+        "overall length",
+        "overall width",
+        "overall height",
+        "wheelbase",
+        "front overhang",
+        "rear overhang",
+        "front track",
+        "rear track",
+        "ground clearance"
+      ],
+      "fidelity": "OEM_DIMENSION_DRAWING",
+      "avt_plan_profile_ready": false,
+      "notes": "Useful datum/dimension drawing; not a traced body polygon or lower envelope."
+    },
+    {
+      "asset_code": "GEO-TESLA-MODELY-PREMIUM5-TH-2025PLUS",
+      "vehicle_record_id": "batch-a-03-tesla-modely-premium-lr-rwd-19",
+      "geometry_role": "AXLE_DATUM_GEOMETRY",
+      "source_authority": "OEM_THAILAND",
+      "source": "Tesla Thailand Model Y Owner's Manual — Dimensions",
+      "source_url": "https://www.tesla.com/ownersmanual/modely/en_th/GUID-1E76B638-7B12-4D9A-8767-94B7F1E92A0E.html",
+      "applicability": "EXACT_GEOMETRY_FAMILY_PREMIUM_5_SEATER",
+      "source_format": "HTML_WITH_OEM_DIMENSION_IMAGE",
+      "verification": "VISUAL_IMAGE_VERIFIED",
+      "geometry_content": [
+        "overall length",
+        "body/mirror widths",
+        "overall height",
+        "wheelbase",
+        "front overhang",
+        "rear overhang",
+        "loaded/unloaded clearance",
+        "wheel-center track"
+      ],
+      "fidelity": "OEM_DIMENSION_DRAWING",
+      "avt_plan_profile_ready": false,
+      "notes": "Track is explicitly measured at wheel center and is not AVT outer-face track."
+    },
+    {
+      "asset_code": "GEO-TESLA-MODEL3-2024PLUS-RWD-LR",
+      "vehicle_record_id": "batch-d-05-tesla-model3-premium-long-range-rwd-current",
+      "geometry_role": "AXLE_DATUM_GEOMETRY",
+      "source_authority": "OEM_REGIONAL_GLOBAL",
+      "source": "Tesla 2024+ Model 3 Owner's Manual exterior-dimensions diagram",
+      "applicability": "SAME_GEOMETRY_CONFIRMED_RWD_LONG_RANGE_FAMILY",
+      "source_format": "OEM_OWNER_MANUAL_DIMENSION_DIAGRAM",
+      "verification": "OEM_VISUAL_ELEMENT_AND_VALUES_MATCH_THAILAND_SOURCE_SET",
+      "geometry_content": [
+        "overall length",
+        "body/mirror widths",
+        "overall height",
+        "wheelbase",
+        "front overhang",
+        "rear overhang",
+        "ground clearance",
+        "wheel-center track"
+      ],
+      "fidelity": "OEM_DIMENSION_DRAWING",
+      "avt_plan_profile_ready": false,
+      "notes": "Retain exact source-market applicability. Use the Thailand owner-manual observations as the exact parameter evidence; this asset supports geometry visualization/datum structure."
+    }
+  ],
+  "leads_not_counted": [
+    {
+      "source": "Ford Ranger P703 Body and Equipment Mounting Manual 2022",
+      "value": "High-value body-builder geometry including wheelhouse/frame/body dimensions",
+      "status": "PENDING_VISUAL_VERIFICATION",
+      "reason": "Official PDF was too large for successful screenshot verification in this research pass."
+    }
+  ]
+}

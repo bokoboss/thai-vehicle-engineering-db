@@ -1,0 +1,762 @@
+{
+  "packet_id": "phase1-batch-e-curation-v1",
+  "retrieval_date": "2026-08-31",
+  "branch": "chatgpt/phase-1-batch-e",
+  "status": "CURATION_REVIEW_PACKET",
+  "contract_note": "Identity Time Basis v1 is accepted; Issue #7 implementation is pending. Batch E preserves temporal equipment revisions and source-label conflicts instead of collapsing them.",
+  "records": [
+    {
+      "record_id": "batch-e-01-mercedes-e350e-amg-dynamic-w214-current",
+      "target": "Mercedes-Benz E 350 e AMG Dynamic (W214) — current Thailand configuration",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Mercedes-Benz",
+        "commercial_model": "E-Class",
+        "generation_name": "W214",
+        "variant_trim": "E 350 e AMG Dynamic",
+        "powertrain": "Plug-in hybrid",
+        "body_style": "Executive sedan",
+        "identity_state": "TEMPORAL_IDENTITY_CANDIDATE_AFTER_ISSUE7",
+        "proposed_identity_time_basis": "SALE_PERIOD_OR_MULTIPLE",
+        "note": "Current Mercedes-Benz Thailand product/offer pages explicitly identify E 350 e AMG Dynamic. No model year is inferred."
+      },
+      "sources": [
+        {
+          "source_code": "MB_TH_ECLASS_E350E_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Mercedes-Benz E-Class / E 350 e Thailand",
+          "url": "https://www.mercedes-benz.co.th/passengercars/models/saloon/e-class/overview.html",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Current E 350 e / AMG Dynamic Thailand product"
+        },
+        {
+          "source_code": "MB_GLOBAL_W214_OWNER_DIMENSIONS",
+          "authority_class": "OEM_REGIONAL_GLOBAL",
+          "source_type": "OWNER_MANUAL_TECHNICAL",
+          "title": "Mercedes-Benz W214 owner/manual dimensional reference",
+          "url": "https://www.mercedes-benz.co.uk/passengercars/services/manuals.html",
+          "retrieved_at": "2026-08-31",
+          "applicability": "W214 family diagnostic/reference evidence; not exact Thai-market grade evidence"
+        }
+      ],
+      "thailand_observations": [
+        [
+          "Overall length",
+          "4950",
+          "mm"
+        ],
+        [
+          "Width (with mirrors)",
+          "1880",
+          "mm"
+        ],
+        [
+          "Overall height",
+          "1461",
+          "mm"
+        ],
+        [
+          "Engine displacement",
+          "1999",
+          "cc"
+        ],
+        [
+          "Output",
+          "150 kW / 204 hp",
+          null
+        ],
+        [
+          "Transmission",
+          "9G-TRONIC",
+          null
+        ],
+        [
+          "0-100 km/h",
+          "6.4",
+          "s"
+        ],
+        [
+          "Top speed",
+          "236",
+          "km/h"
+        ]
+      ],
+      "semantic_conflicts": [
+        {
+          "parameter_family": "width_envelope",
+          "raw_thailand_observation": "Width (with mirrors) = 1880 mm",
+          "diagnostic_reference": "Official W214 family manual gives mirrors-open width about 2065 mm for E-Class family, while ~1880 mm aligns with body-width scale.",
+          "resolution_state": "SOURCE_LABEL_SEMANTICALLY_SUSPECT",
+          "decision": "DO_NOT_NORMALIZE_AS_MIRRORS_OPEN",
+          "note": "Preserve the Thai raw label/value. Do not silently correct the OEM Thailand page using another-market family data."
+        }
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 4950,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1880,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED",
+            "source_label": "Width (with mirrors)",
+            "qa_flag": "SEMANTICALLY_SUSPECT"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1461,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        }
+      ],
+      "assessments": [
+        {
+          "parameter": "wheelbase_actual_mm",
+          "availability_state": "REVIEW_REQUIRED",
+          "note": "W214 family wheelbase evidence exists globally, but exact Thailand applicability should be explicitly linked before normalization."
+        },
+        {
+          "parameter": "turning",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH",
+          "note": "No exact Thailand E 350 e turning value located in current official source pass."
+        },
+        {
+          "parameter": "rear_steering_linkage",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH",
+          "note": "No exact Thai E 350 e AMG Dynamic rear-steering equipment evidence located."
+        }
+      ],
+      "readiness_precheck": {
+        "identity_resolved": false,
+        "avt_ready": false,
+        "ramp_screening_ready": false
+      }
+    },
+    {
+      "record_id": "batch-e-02-mercedes-maybach-s580e-premium-z223-current",
+      "target": "Mercedes-Maybach S 580 e Premium (Z223) — current Thailand configuration",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Mercedes-Benz",
+        "commercial_model": "Mercedes-Maybach S-Class",
+        "generation_name": "Z223",
+        "variant_trim": "S 580 e Premium",
+        "powertrain": "Plug-in hybrid",
+        "body_style": "Long-wheelbase luxury sedan",
+        "identity_state": "TEMPORAL_IDENTITY_CANDIDATE_AFTER_ISSUE7",
+        "proposed_identity_time_basis": "SALE_PERIOD_OR_MULTIPLE",
+        "note": "Mercedes-Benz Thailand current store/product pages explicitly identify S 580 e Premium and the Z223 model family."
+      },
+      "sources": [
+        {
+          "source_code": "MB_TH_MAYBACH_S580E_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Mercedes-Maybach S 580 e Thailand",
+          "url": "https://www.mercedes-benz.co.th/passengercars/models/saloon/mercedes-maybach-s-class/overview.html",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Current Thailand S 580 e Premium"
+        },
+        {
+          "source_code": "MB_TH_STORE_S580E_PREMIUM_Z223_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OFFICIAL_STORE_CONFIGURATION",
+          "title": "Mercedes-Maybach S 580 e Premium Z223 Thailand store configuration",
+          "url": "https://shop.mercedes-benz.co.th/",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Exact grade and Z223 family identity"
+        },
+        {
+          "source_code": "MB_GLOBAL_Z223_DIMENSION_REFERENCE",
+          "authority_class": "OEM_REGIONAL_GLOBAL",
+          "source_type": "OEM_TECHNICAL_MEDIA",
+          "title": "Mercedes-Maybach Z223 dimensional reference",
+          "url": "https://media.mercedes-benz.com/",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Same Z223 geometry family reference"
+        }
+      ],
+      "thailand_observations": [
+        [
+          "Overall length",
+          "5469",
+          "mm"
+        ],
+        [
+          "Width (with mirrors)",
+          "1921",
+          "mm"
+        ],
+        [
+          "Overall height",
+          "1510",
+          "mm"
+        ],
+        [
+          "Engine displacement",
+          "2999",
+          "cc"
+        ],
+        [
+          "Output",
+          "270 kW / 367 hp",
+          null
+        ],
+        [
+          "Transmission",
+          "9G-TRONIC",
+          null
+        ],
+        [
+          "0-100 km/h",
+          "5.7",
+          "s"
+        ],
+        [
+          "Top speed",
+          "250",
+          "km/h"
+        ],
+        [
+          "Seats",
+          "4",
+          null
+        ]
+      ],
+      "same_geometry_reference_observations": [
+        [
+          "Wheelbase — Z223 family",
+          "3396",
+          "mm"
+        ],
+        [
+          "Body width excluding mirrors — Z223 family",
+          "1921",
+          "mm"
+        ],
+        [
+          "Width including mirrors — Z223 owner-manual family reference",
+          "2109",
+          "mm"
+        ]
+      ],
+      "semantic_conflicts": [
+        {
+          "parameter_family": "width_envelope",
+          "raw_thailand_observation": "Width (with mirrors) = 1921 mm",
+          "diagnostic_reference": "Official Z223 family sources distinguish ~1921 mm body width from ~2109 mm mirrors-open width.",
+          "resolution_state": "SOURCE_LABEL_SEMANTICALLY_SUSPECT",
+          "decision": "PRESERVE_RAW_AND_DO_NOT_NORMALIZE_AS_MIRRORS_OPEN",
+          "note": "Because the Thailand page label conflicts with the OEM Z223 dimensional semantics, keep the raw observation and use cross-market family data only as diagnostic/applicability evidence."
+        }
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 5469,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1921,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED",
+            "source_label": "Width (with mirrors)",
+            "qa_flag": "SEMANTICALLY_SUSPECT"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1510,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 3396,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "applicability": "SAME_GEOMETRY_CONFIRMED",
+          "evidence_note": "Exact Thai store identifies Z223; OEM global Z223 geometry gives wheelbase."
+        }
+      ],
+      "assessments": [
+        {
+          "parameter": "turning",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH",
+          "note": "No exact Thailand S 580 e turning value located."
+        },
+        {
+          "parameter": "rear_steering_linkage",
+          "availability_state": "REVIEW_REQUIRED",
+          "note": "S-Class family rear-axle-steering documentation exists, but exact S 580 e Premium Thailand equipment/angle function was not established in this pass."
+        }
+      ],
+      "readiness_precheck": {
+        "identity_resolved": false,
+        "avt_ready": false,
+        "ramp_screening_ready": false
+      }
+    },
+    {
+      "record_id": "batch-e-03-bmw-520d-m-sport-pro-g60-2025",
+      "target": "BMW 520d M Sport Pro (G60) — Thailand, specification effective 24 Mar 2025",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "BMW",
+        "commercial_model": "5 Series",
+        "generation_name": "G60",
+        "variant_trim": "520d M Sport Pro",
+        "powertrain": "Diesel mild hybrid",
+        "drivetrain": "RWD",
+        "body_style": "Executive sedan",
+        "identity_state": "EXACT_CANDIDATE_AFTER_ISSUE7",
+        "proposed_identity_time_basis": "MULTIPLE",
+        "identity_time_label_raw": "BMW 520d M Sport Pro specification effective 24 March 2025 + current Thailand price-list presence"
+      },
+      "sources": [
+        {
+          "source_code": "BMW_TH_520D_MSPORTPRO_SPEC_20250324",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_SPECIFICATION_PDF_SCREENSHOT_VERIFIED",
+          "title": "BMW 520d M Sport Pro specification — effective 24 March 2025",
+          "url": "https://www.bmw.co.th/content/dam/bmw/marketTH/bmw_co_th/specifications/",
+          "retrieved_at": "2026-08-31",
+          "screenshot_verified_page": 0,
+          "applicability": "Exact 520d M Sport Pro"
+        },
+        {
+          "source_code": "BMW_TH_5SERIES_520D_TECH_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "BMW 5 Series Sedan technical data — 520d M Sport Pro",
+          "url": "https://www.bmw.co.th/en/all-models/5-series/sedan/bmw-5-series-sedan-technical-data.html",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Current 520d/G60 technical data"
+        },
+        {
+          "source_code": "BMW_TH_PRICE_LIST_CURRENT_520D_MSPORTPRO",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OFFICIAL_PRICE_LIST",
+          "title": "BMW Thailand current price list",
+          "url": "https://www.bmw.co.th/en/topics/offers-and-services/pricelist.html",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Confirms 520d M Sport Pro grade presence"
+        }
+      ],
+      "observations": [
+        [
+          "Overall length",
+          "5060",
+          "mm"
+        ],
+        [
+          "Overall width",
+          "1900",
+          "mm"
+        ],
+        [
+          "Overall height",
+          "1515",
+          "mm"
+        ],
+        [
+          "Width including mirrors — current technical page",
+          "2156",
+          "mm"
+        ],
+        [
+          "Wheelbase — current technical page",
+          "2995",
+          "mm"
+        ],
+        [
+          "Kerb weight — exact 2025 spec",
+          "1850",
+          "kg"
+        ],
+        [
+          "Gross vehicle weight — current technical page",
+          "2405",
+          "kg"
+        ],
+        [
+          "Front wheel / tyre",
+          "8.5J x 20 / 245/40 R20",
+          null
+        ],
+        [
+          "Rear wheel / tyre",
+          "10J x 20 / 275/35 R20",
+          null
+        ],
+        [
+          "Engine",
+          "1995 cc diesel mild hybrid",
+          null
+        ],
+        [
+          "System output",
+          "145 kW / 197 hp",
+          null
+        ],
+        [
+          "Torque",
+          "400 Nm engine + 25 Nm electric motor",
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 5060,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_body_mm",
+          "value": 1900,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+          }
+        },
+        {
+          "parameter_code": "overall_width_including_mirrors_mm",
+          "value": 2156,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1515,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2995,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "kerb_mass_kg",
+          "value": 1850,
+          "unit": "kg",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "gross_vehicle_mass_kg",
+          "value": 2405,
+          "unit": "kg",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "245/40 R20",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "275/35 R20",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_wheel_rim_text",
+          "value": "8.5J x 20",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_wheel_rim_text",
+          "value": "10J x 20",
+          "method": "PUBLISHED"
+        }
+      ],
+      "assessments": [
+        {
+          "parameter": "turning",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH",
+          "note": "No exact Thailand turning value located in current BMW technical/specification sources."
+        },
+        {
+          "parameter": "rear_steering_linkage",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH",
+          "note": "No Integral Active Steering equipment evidence found for the exact 520d M Sport Pro source set."
+        }
+      ],
+      "geometry_asset_candidate": {
+        "geometry_role": "PLAN_BODY_ENVELOPE_OR_DIMENSION_REFERENCE",
+        "status": "PARTIAL_DIMENSION_ASSET",
+        "note": "BMW technical data provides structured vehicle dimensions but not a complete AVT-ready plan profile."
+      },
+      "readiness_precheck": {
+        "avt_ready": false,
+        "ramp_screening_ready": false
+      }
+    },
+    {
+      "record_id": "batch-e-04-bmw-740d-m-sport-g70-current-2026",
+      "target": "BMW 740d M Sport (G70) — current Thailand configuration, page available 03/2026",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "BMW",
+        "commercial_model": "7 Series",
+        "generation_name": "G70",
+        "variant_trim": "740d M Sport",
+        "powertrain": "Diesel mild hybrid",
+        "drivetrain": "RWD",
+        "body_style": "Long-wheelbase luxury sedan",
+        "identity_state": "EXACT_CANDIDATE_AFTER_ISSUE7",
+        "proposed_identity_time_basis": "MULTIPLE",
+        "identity_time_label_raw": "Current BMW 740d M Sport technical page available 03/2026 + exact specification effective 27 Feb 2025",
+        "temporal_equipment_warning": "2025 exact specification does not list Integral Active Steering, while current 03/2026 BMW Thailand page explicitly lists the four-wheel active steering system. Treat as equipment revision, not timeless G70 fact."
+      },
+      "sources": [
+        {
+          "source_code": "BMW_TH_740D_MSPORT_SPEC_20250227",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_SPECIFICATION_PDF_SCREENSHOT_VERIFIED",
+          "title": "BMW 740d M Sport specification — effective 27 February 2025",
+          "url": "https://www.bmw.co.th/content/dam/bmw/marketTH/bmw_co_th/specifications/",
+          "retrieved_at": "2026-08-31",
+          "screenshot_verified_pages": [
+            0,
+            1
+          ],
+          "applicability": "Exact 740d M Sport 2025 revision"
+        },
+        {
+          "source_code": "BMW_TH_740D_MSPORT_CURRENT_202603",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "BMW 7 Series Sedan 740d M Sport technical data/current product",
+          "url": "https://www.bmw.co.th/en/all-models/7-series/sedan/bmw-7-series-sedan.html",
+          "retrieved_at": "2026-08-31",
+          "source_version_label": "Available 03/2026",
+          "applicability": "Current 740d M Sport revision"
+        }
+      ],
+      "observations_current_2026": [
+        [
+          "Overall length",
+          "5391",
+          "mm"
+        ],
+        [
+          "Overall width",
+          "1950",
+          "mm"
+        ],
+        [
+          "Overall height",
+          "1544",
+          "mm"
+        ],
+        [
+          "Width including mirrors",
+          "2192",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "3215",
+          "mm"
+        ],
+        [
+          "Kerb weight",
+          "2205",
+          "kg"
+        ],
+        [
+          "Gross vehicle weight",
+          "2845",
+          "kg"
+        ],
+        [
+          "System output",
+          "220 kW / 299 hp",
+          null
+        ],
+        [
+          "Torque",
+          "670",
+          "Nm"
+        ],
+        [
+          "Drivetrain",
+          "Rear-wheel drive",
+          null
+        ],
+        [
+          "Integral Active Steering",
+          "present — four-wheel active steering",
+          null
+        ]
+      ],
+      "observations_exact_2025_spec": [
+        [
+          "Overall length x width x height",
+          "5391 x 1950 x 1544",
+          "mm"
+        ],
+        [
+          "Kerb weight",
+          "2205",
+          "kg"
+        ],
+        [
+          "Front wheel / tyre",
+          "9J x 20 / 255/45 R20",
+          null
+        ],
+        [
+          "Rear wheel / tyre",
+          "10.5J x 20 / 285/40 R20",
+          null
+        ],
+        [
+          "Suspension",
+          "Adaptive 2-axle air suspension",
+          null
+        ],
+        [
+          "Integral Active Steering",
+          "not listed in reviewed exact 2025 equipment sheet",
+          null
+        ]
+      ],
+      "normalization_candidates_current_revision": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 5391,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_body_mm",
+          "value": 1950,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+          }
+        },
+        {
+          "parameter_code": "overall_width_including_mirrors_mm",
+          "value": 2192,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1544,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 3215,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "kerb_mass_kg",
+          "value": 2205,
+          "unit": "kg",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "gross_vehicle_mass_kg",
+          "value": 2845,
+          "unit": "kg",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "255/45 R20",
+          "method": "PUBLISHED",
+          "applicability": "2025 exact fitment; verify unchanged if assigning to 2026 current revision"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "285/40 R20",
+          "method": "PUBLISHED",
+          "applicability": "2025 exact fitment; verify unchanged if assigning to 2026 current revision"
+        }
+      ],
+      "rear_steering_structure_candidate": {
+        "rear_steering_present": true,
+        "source_scope": "Current Thailand 740d M Sport page, available 03/2026",
+        "steering_role": "SECONDARY/LINKED",
+        "evidence": "Integral Active Steering / four-wheel active steering explicitly listed",
+        "readiness_state": "INCOMPLETE",
+        "missing": [
+          "maximum rear steering angle",
+          "phase behavior by speed/mode",
+          "front-to-rear angle relation/function",
+          "AVT-specific linkage mapping"
+        ]
+      },
+      "temporal_conflicts": [
+        {
+          "parameter_family": "rear_steering_equipment",
+          "revision_a": "Exact 740d M Sport spec effective 27 Feb 2025 — Integral Active Steering not listed",
+          "revision_b": "Current BMW Thailand 740d M Sport page available 03/2026 — Integral Active Steering explicitly listed",
+          "interpretation": "LIKELY_TEMPORAL_EQUIPMENT_REVISION",
+          "action": "Do not copy 2026 rear-steering presence backward into the 2025 exact configuration."
+        }
+      ],
+      "assessments": [
+        {
+          "parameter": "turning",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH"
+        },
+        {
+          "parameter": "rear_steering_linkage",
+          "availability_state": "PARTIAL",
+          "note": "System presence proven for current revision, but kinematic details insufficient for AVT mapping."
+        }
+      ],
+      "readiness_precheck": {
+        "avt_ready": false,
+        "ramp_screening_ready": false
+      }
+    }
+  ],
+  "batch_findings": {
+    "records_researched": 4,
+    "long_wheelbase_cases": [
+      "Mercedes-Maybach S 580 e Premium Z223 — wheelbase 3396 mm same-geometry OEM reference",
+      "BMW 740d M Sport G70 — wheelbase 3215 mm"
+    ],
+    "rear_steering_case": "BMW 740d M Sport current 03/2026 page explicitly lists Integral Active Steering; exact 2025 spec did not.",
+    "temporal_equipment_revision_case": "BMW 740d M Sport rear-steering equipment differs between exact 2025 sheet and current 03/2026 page.",
+    "source_label_semantic_conflicts": [
+      "Mercedes E 350 e Thailand: 'Width (with mirrors) 1880 mm' conflicts with W214 OEM family mirror-open geometry.",
+      "Mercedes-Maybach S 580 e Thailand: 'Width (with mirrors) 1921 mm' conflicts with Z223 OEM family mirror-open geometry and matches body-width scale."
+    ],
+    "geometry_asset_progress": [
+      "BMW structured dimensional technical data adds another geometry-reference source but not an AVT-ready plan profile."
+    ],
+    "schema_gap_detected": false,
+    "software_change_required": "Issue #7 only; no additional geometry/evidence/AVT/ramp schema remediation."
+  }
+}

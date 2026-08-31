@@ -1,0 +1,856 @@
+{
+  "packet_id": "phase1-batch-c-curation-v1",
+  "retrieval_date": "2026-08-31",
+  "branch": "chatgpt/phase-1-batch-c",
+  "status": "CURATION_REVIEW_PACKET",
+  "contract_note": "Identity Time Basis v1 is accepted; physical migration Issue #7 is pending. Records are research/curation packets, not production database rows yet.",
+  "records": [
+    {
+      "record_id": "batch-c-01-ford-ranger-wildtrak-20-biturbo-4x4-nextgen",
+      "target": "Ford Ranger Double Cab Wildtrak 2.0L Bi-Turbo 4x4 10AT — Next-Generation Thailand configuration",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Ford",
+        "commercial_model": "Ranger",
+        "generation_name": "Next-Generation Ranger",
+        "variant_trim": "Double Cab Wildtrak 2.0L Bi-Turbo 4x4 10AT",
+        "drivetrain": "4x4",
+        "powertrain": "2.0L Bi-Turbo diesel / 10AT",
+        "identity_state": "EXACT_CANDIDATE_AFTER_ISSUE7",
+        "proposed_identity_time_basis": "MULTIPLE",
+        "identity_time_label_raw": "Next-Generation Ford Ranger Thailand launch 21 Mar 2022 + official 2023 Wildtrak technical brochure",
+        "historical_state": "HISTORICAL_NOT_CURRENT_2026",
+        "note": "Current 2026 Wildtrak 4x4 is 2.0L Turbo single-turbo, so the pilot target must remain a historical configuration rather than being refreshed in place."
+      },
+      "sources": [
+        {
+          "source_code": "FORD_TH_NEXTGEN_RANGER_LAUNCH_20220321",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_NEWS",
+          "title": "Ford debuts next-generation Ranger in Thailand",
+          "url": "https://www.ford.co.th/en/about-ford/newsroom/2022/ford-debuts-ford-ranger-everest-ranger-raptor-and-a-host-of-always-on-customer-experience-initiatives-at-bangkok-motor-show-2022/",
+          "retrieved_at": "2026-08-31",
+          "release_date": "2022-03-21"
+        },
+        {
+          "source_code": "FORD_TH_RANGER_WILDTRAK_BROCHURE_2023",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+          "title": "Ford Ranger Wildtrak technical brochure 2023",
+          "url": "https://www.ford.co.th/content/dam/ecomm/Release-3/EN_TH/brochure/P703/wildtrak/aw-brochure-ranger-12p-th-2023-web.pdf",
+          "retrieved_at": "2026-08-31",
+          "screenshot_verified_page": 4,
+          "applicability": "Exact Double Cab Wildtrak 2.0L Bi-Turbo 4x4 10AT column"
+        },
+        {
+          "source_code": "FORD_TH_RANGER_WILDTRAK_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Current Ford Ranger Wildtrak",
+          "url": "https://www.ford.co.th/en/trucks/ford-ranger/wildtrak/",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Used only to establish that current Wildtrak powertrain differs from historical pilot target"
+        }
+      ],
+      "observations": [
+        [
+          "Overall width x length x height",
+          "1918 x 5370 x 1884",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "3270",
+          "mm"
+        ],
+        [
+          "Ground clearance — measured from lowest point of vehicle",
+          "235",
+          "mm"
+        ],
+        [
+          "Cargo box width x length x height",
+          "1420 x 1564 x 540",
+          "mm"
+        ],
+        [
+          "Water wading",
+          "800",
+          "mm"
+        ],
+        [
+          "Engine",
+          "2.0L Bi-Turbo diesel",
+          ""
+        ],
+        [
+          "Maximum power",
+          "210",
+          "PS"
+        ],
+        [
+          "Maximum torque",
+          "500",
+          "Nm"
+        ],
+        [
+          "Wheel/Tyre — exact 4x4 Wildtrak column",
+          "20-inch alloy / 255/55 R20",
+          null
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1918,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 5370,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1884,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 3270,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 235,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED",
+            "clearance_component_or_reference": "lowest point of vehicle"
+          },
+          "load_condition": {
+            "mass_basis": "OTHER",
+            "raw_oem_wording": "load state not stated"
+          }
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "255/55 R20",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "255/55 R20",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_wheel_rim_text",
+          "value": "20-inch alloy",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_wheel_rim_text",
+          "value": "20-inch alloy",
+          "method": "PUBLISHED"
+        }
+      ],
+      "assessments": [
+        {
+          "parameter": "turning",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH",
+          "note": "No exact Ford Thailand turning-radius value located in the reviewed Wildtrak technical brochure/current official search."
+        },
+        {
+          "parameter": "oem_front_tread_or_track_mm",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH"
+        },
+        {
+          "parameter": "oem_rear_tread_or_track_mm",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH"
+        }
+      ],
+      "readiness_precheck": {
+        "avt_ready": false,
+        "ramp_screening_ready": false
+      }
+    },
+    {
+      "record_id": "batch-c-02-ford-everest-platinum-30-v6-current",
+      "target": "Ford Everest Platinum 3.0L Turbo V6 4WD 10AT — current Thailand configuration",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Ford",
+        "commercial_model": "Everest",
+        "variant_trim": "Platinum 3.0L Turbo V6 4WD 10AT",
+        "drivetrain": "4WD",
+        "powertrain": "3.0L V6 Turbo diesel / 10AT",
+        "wheel_tyre_package": "21-inch / 275/45 R21",
+        "identity_state": "TEMPORAL_IDENTITY_CANDIDATE_AFTER_ISSUE7",
+        "proposed_identity_time_basis": "MULTIPLE",
+        "note": "Current 2026 product/offer pages plus official June 2025 Platinum brochure identify the configuration. Final temporal applicability should be set only after Issue #7 domain support is available."
+      },
+      "sources": [
+        {
+          "source_code": "FORD_TH_EVEREST_PLATINUM_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Ford Everest Platinum current Thailand page",
+          "url": "https://www.ford.co.th/en/showroom/ppvs/ford-everest/platinum/",
+          "retrieved_at": "2026-08-31"
+        },
+        {
+          "source_code": "FORD_TH_EVEREST_PLATINUM_OFFER_202608",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OFFICIAL_PROMOTION",
+          "title": "New Ford Everest Platinum 3.0L Turbo V6 offer",
+          "url": "https://www.ford.co.th/en/showroom/all-offers/new-ford-everest-platinum/",
+          "retrieved_at": "2026-08-31",
+          "sale_period_from": "2026-08-01",
+          "sale_period_to": "2026-09-30"
+        },
+        {
+          "source_code": "FORD_TH_EVEREST_PLATINUM_BROCHURE_202506",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_BROCHURE_PDF_LEAD_PENDING_VISUAL_REVERIFY",
+          "title": "Ford Everest Platinum June 2025 brochure",
+          "url": "https://www.ford.co.th/content/dam/Ford/th/th-th/nameplate/everest/brochure/everest-platinum/ford-everest-platinum-june-2025.pdf",
+          "retrieved_at": "2026-08-31",
+          "note": "Parsed technical table was located, but screenshot fetch was unstable in this research pass; values below are not promoted solely from this PDF until visual re-verification."
+        }
+      ],
+      "observations_safe_from_web": [
+        [
+          "Powertrain",
+          "3.0L V6 Turbo diesel",
+          ""
+        ],
+        [
+          "Maximum power",
+          "250",
+          "PS"
+        ],
+        [
+          "Maximum torque",
+          "600",
+          "Nm"
+        ],
+        [
+          "Transmission",
+          "10-speed automatic e-Shifter",
+          ""
+        ],
+        [
+          "Drivetrain",
+          "4WD Terrain Management System",
+          ""
+        ],
+        [
+          "Wheel/Tyre",
+          "21-inch alloy / 275/45 R21",
+          null
+        ]
+      ],
+      "pdf_lead_not_normalized": [
+        [
+          "Width x Length x Height",
+          "1923 x 4914 x 1842",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2900",
+          "mm"
+        ],
+        [
+          "Front/Rear track",
+          "1620 / 1620",
+          "mm"
+        ],
+        [
+          "Ground clearance",
+          "227",
+          "mm"
+        ]
+      ],
+      "assessments": [
+        {
+          "parameter": "turning",
+          "availability_state": "NOT_FOUND_AFTER_SEARCH"
+        },
+        {
+          "parameter": "dimension_pdf_values",
+          "availability_state": "REVIEW_REQUIRED",
+          "note": "Re-verify technical PDF visually before final normalization."
+        }
+      ]
+    },
+    {
+      "record_id": "batch-c-03-mitsubishi-triton-ultra-4wd-at-2023",
+      "target": "All-New Mitsubishi Triton Double Cab 2.4 ULTRA 4WD AT — Thailand 2023 release",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Mitsubishi",
+        "commercial_model": "Triton",
+        "generation_name": "All-New Triton / new Mega Frame generation",
+        "variant_trim": "Double Cab 2.4 ULTRA 4WD AT",
+        "drivetrain": "Super Select 4WD II",
+        "powertrain": "2.4 Hyper Power diesel / 6AT",
+        "identity_state": "EXACT_CANDIDATE_AFTER_ISSUE7",
+        "proposed_identity_time_basis": "EDITION_RELEASE",
+        "identity_time_label_raw": "All-New Mitsubishi Triton Double Cab ULTRA 4WD AT — officially unveiled 10 Nov 2023",
+        "historical_state": "HISTORICAL_CONFIGURATION"
+      },
+      "sources": [
+        {
+          "source_code": "MITSUBISHI_TH_TRITON_ULTRA_4WD_LAUNCH_20231110",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_NEWS",
+          "title": "Mitsubishi Motors Thailand unveils All-New Triton Double Cab ULTRA 4WD AT",
+          "url": "https://www.mitsubishi-motors.co.th/en/news-activity/news/unveil-spec-prices-of-athlete-and-dc-4wd-ultra",
+          "retrieved_at": "2026-08-31",
+          "release_date": "2023-11-10"
+        },
+        {
+          "source_code": "MITSUBISHI_TH_TRITON_DOUBLECAB_BROCHURE_202311",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+          "title": "All-New Triton Double Cab November 2023 brochure",
+          "url": "https://www.mitsubishi-motors.co.th/content/dam/mitsubishi-motors-th/images/documents/brochure/all-brochure/vehicle-name%20all-new%20triton%20double-cab-2023-nov.pdf",
+          "retrieved_at": "2026-08-31",
+          "screenshot_verified_page": 11,
+          "applicability": "Double Cab 4WD ULTRA AT exact column; shared geometry table"
+        }
+      ],
+      "observations": [
+        [
+          "Overall dimension with rear bumper",
+          "5320 x 1865 x 1795",
+          "mm"
+        ],
+        [
+          "Cargo bed dimension",
+          "1555 x 1545 x 525",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "3130",
+          "mm"
+        ],
+        [
+          "Front/Rear track",
+          "1570 / 1565",
+          "mm"
+        ],
+        [
+          "Ground clearance",
+          "222",
+          "mm"
+        ],
+        [
+          "Minimum turning radius",
+          "6.2",
+          "m"
+        ],
+        [
+          "Wheel/Tyre — ULTRA 4WD AT",
+          "18 x 7.5J / 265/60 R18",
+          null
+        ],
+        [
+          "Steering",
+          "Rack and Pinion with Power Steering",
+          ""
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 5320,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "source_qualifier": "with rear bumper"
+          }
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1865,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1795,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 3130,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1570,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "oem_rear_tread_or_track_mm",
+          "value": 1565,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 222,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "OTHER",
+            "raw_oem_wording": "load/reference state not stated"
+          }
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 6.2,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "265/60 R18",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "265/60 R18",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_wheel_rim_text",
+          "value": "18 x 7.5J",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_wheel_rim_text",
+          "value": "18 x 7.5J",
+          "method": "PUBLISHED"
+        }
+      ],
+      "readiness_precheck": {
+        "avt_ready": false,
+        "ramp_screening_ready": false
+      }
+    },
+    {
+      "record_id": "batch-c-04-nissan-navara-pro4x-upgraded-2024",
+      "target": "Nissan Navara PRO-4X 4WD 7AT — upgraded interior / Euro 5 Thailand release from 15 Aug 2024",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Nissan",
+        "commercial_model": "Navara",
+        "variant_trim": "DC PRO-4X 7AT",
+        "drivetrain": "4WD",
+        "body_style": "Double Cab pickup",
+        "identity_state": "EXACT_CANDIDATE_AFTER_ISSUE7",
+        "proposed_identity_time_basis": "EDITION_RELEASE",
+        "identity_time_label_raw": "Upgraded Nissan Navara with new interior design — launched 15 Aug 2024"
+      },
+      "sources": [
+        {
+          "source_code": "NISSAN_TH_NAVARA_UPGRADE_LAUNCH_20240815",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_NEWS",
+          "title": "Nissan Navara with new interior design",
+          "url": "https://en.nissan.co.th/news/nissan-navara-new-interior-design-enhances-driving-experience-with-more-premium-and-sporty.html",
+          "retrieved_at": "2026-08-31",
+          "release_date": "2024-08-15",
+          "applicability": "PRO-4X 4WD 7AT included in official upgraded line-up"
+        },
+        {
+          "source_code": "NISSAN_TH_NAVARA_PRO4X_SPEC_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Nissan Navara PRO-4X / PRO-2X specifications",
+          "url": "https://en.nissan.co.th/vehicles/new-vehicles/navara-pro-4x-and-pro-2x/specifications.html",
+          "retrieved_at": "2026-08-31",
+          "applicability": "DC PRO-4X 7AT exact current column"
+        }
+      ],
+      "observations": [
+        [
+          "Overall length",
+          "5260",
+          "mm"
+        ],
+        [
+          "Overall width",
+          "1875",
+          "mm"
+        ],
+        [
+          "Overall height",
+          "1840",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "3150",
+          "mm"
+        ],
+        [
+          "Tread front/rear",
+          "1570 / 1570",
+          "mm"
+        ],
+        [
+          "Ground clearance",
+          "225",
+          "mm"
+        ],
+        [
+          "Curb weight",
+          "2091",
+          "kg"
+        ],
+        [
+          "Wheel",
+          "17-inch black off-road alloy",
+          null
+        ],
+        [
+          "Tyre",
+          "255/65R17 All-Terrain",
+          null
+        ],
+        [
+          "Steering type",
+          "Rack and Pinion",
+          null
+        ],
+        [
+          "Turning Radius",
+          "6.3",
+          "m"
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 5260,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1875,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1840,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 3150,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "oem_front_tread_or_track_mm",
+          "value": 1570,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "oem_rear_tread_or_track_mm",
+          "value": 1570,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "track_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 225,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "OTHER",
+            "raw_oem_wording": "load/reference state not stated"
+          }
+        },
+        {
+          "parameter_code": "kerb_mass_kg",
+          "value": 2091,
+          "unit": "kg",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 6.3,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "front_tyre_size_text",
+          "value": "255/65R17 All-Terrain",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_tyre_size_text",
+          "value": "255/65R17 All-Terrain",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "front_wheel_rim_text",
+          "value": "17-inch off-road alloy",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "rear_wheel_rim_text",
+          "value": "17-inch off-road alloy",
+          "method": "PUBLISHED"
+        }
+      ],
+      "readiness_precheck": {
+        "avt_ready": false,
+        "ramp_screening_ready": false
+      }
+    },
+    {
+      "record_id": "batch-c-05-suzuki-swift-glx-2021-release-current",
+      "target": "New Suzuki Swift GLX CVT — Thailand 2021 release / current same-name grade",
+      "identity": {
+        "market": "TH",
+        "manufacturer": "Suzuki",
+        "commercial_model": "Swift",
+        "variant_trim": "GLX CVT",
+        "body_style": "Hatchback",
+        "identity_state": "SAME_GEOMETRY_GROUP_CANDIDATE",
+        "proposed_identity_time_basis": "EDITION_RELEASE",
+        "identity_time_label_raw": "NEW SUZUKI SWIFT GLX — showroom launch 6 Feb 2021",
+        "note": "Current Thailand page still sells GLX and publishes the same basic dimensions. Final exact temporal scope should verify no material geometry revision occurred under the same grade name."
+      },
+      "sources": [
+        {
+          "source_code": "SUZUKI_TH_SWIFT_NEW_LAUNCH_20210206",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "OEM_NEWS",
+          "title": "Suzuki to launch the NEW SUZUKI SWIFT",
+          "url": "https://www.suzuki.co.th/en/news/articles/news-75",
+          "retrieved_at": "2026-08-31",
+          "release_date": "2021-02-06",
+          "applicability": "GLX exact named release"
+        },
+        {
+          "source_code": "SUZUKI_TH_SWIFT_SPEC_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_SPECIFICATION",
+          "title": "Suzuki Swift specification",
+          "url": "https://www.suzuki.co.th/en/model/swift/specification",
+          "retrieved_at": "2026-08-31"
+        },
+        {
+          "source_code": "SUZUKI_TH_SWIFT_CURRENT_20260831",
+          "authority_class": "OEM_THAILAND",
+          "source_type": "WEB_GRADE_LIST",
+          "title": "Suzuki Swift current grade page",
+          "url": "https://www.suzuki.co.th/en/model/swift",
+          "retrieved_at": "2026-08-31",
+          "applicability": "Confirms GLX remains a current grade"
+        }
+      ],
+      "shared_observations_safe_to_normalize": [
+        [
+          "Overall length",
+          "3845",
+          "mm"
+        ],
+        [
+          "Overall width",
+          "1735",
+          "mm"
+        ],
+        [
+          "Overall height",
+          "1495",
+          "mm"
+        ],
+        [
+          "Wheelbase",
+          "2450",
+          "mm"
+        ],
+        [
+          "Minimum turning radius",
+          "4.8",
+          "m"
+        ],
+        [
+          "Minimum ground clearance",
+          "120",
+          "mm"
+        ],
+        [
+          "Steering",
+          "Rack and Pinion",
+          null
+        ]
+      ],
+      "grouped_observations_hold_column_mapping": [
+        [
+          "Front tread",
+          [
+            "1530",
+            "1525"
+          ],
+          "mm"
+        ],
+        [
+          "Rear tread",
+          [
+            "1530",
+            "1525"
+          ],
+          "mm"
+        ],
+        [
+          "Wheel/Tyre",
+          [
+            "175/65 R15",
+            "185/55 R16"
+          ],
+          null
+        ],
+        [
+          "Kerb weight",
+          "875 - 910",
+          "kg"
+        ]
+      ],
+      "normalization_candidates": [
+        {
+          "parameter_code": "overall_length_mm",
+          "value": 3845,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "overall_width_reported_mm",
+          "value": 1735,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "width_envelope_definition": "OEM_UNSPECIFIED"
+          }
+        },
+        {
+          "parameter_code": "overall_height_mm",
+          "value": 1495,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "wheelbase_actual_mm",
+          "value": 2450,
+          "unit": "mm",
+          "method": "PUBLISHED"
+        },
+        {
+          "parameter_code": "clearance_value_mm",
+          "value": 120,
+          "unit": "mm",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+          },
+          "load_condition": {
+            "mass_basis": "OTHER",
+            "raw_oem_wording": "load/reference state not stated"
+          }
+        },
+        {
+          "parameter_code": "turning_radius_normalized_m",
+          "value": 4.8,
+          "unit": "m",
+          "method": "PUBLISHED",
+          "semantic_metadata": {
+            "turning_radius_or_diameter": "RADIUS",
+            "turning_reference": "OEM_UNSPECIFIED",
+            "turning_axle_scope": "OEM_UNSPECIFIED"
+          }
+        }
+      ],
+      "hold_reason": "Current page exposes multiple tread/wheel values without sufficiently robust grade-column mapping in extracted text. Keep GLX-specific tread/wheel assignment pending second review."
+    }
+  ],
+  "batch_findings": {
+    "records_researched": 5,
+    "historical_configuration_case": "Ford Ranger Wildtrak 2.0L Bi-Turbo 4x4 is supported by official 2022/2023 sources but is no longer the current 2026 Wildtrak 4x4 powertrain.",
+    "exact_release_candidates": [
+      "Mitsubishi Triton Double Cab ULTRA 4WD AT — 10 Nov 2023",
+      "Nissan Navara PRO-4X upgraded release — 15 Aug 2024"
+    ],
+    "same_grade_temporal_caution": "Suzuki Swift GLX remains current after a 2021 named release; exact temporal geometry continuity still requires confirmation.",
+    "strong_turning_observations": [
+      "Mitsubishi Triton ULTRA 4WD AT — 6.2 m",
+      "Nissan Navara PRO-4X — 6.3 m",
+      "Suzuki Swift — 4.8 m"
+    ],
+    "source_pattern_notes": [
+      "Ford official pickup brochures can strongly resolve exact historical columns but may omit turning radius.",
+      "Mitsubishi 2023 Double Cab brochure provides exact model columns plus shared engineering geometry.",
+      "Nissan current web specification cleanly exposes PRO-4X exact column and turning radius.",
+      "Suzuki compact-car table has multi-grade grouped rows requiring column-mapping caution."
+    ],
+    "schema_gap_detected": false,
+    "software_change_required": "Issue #7 identity-time implementation only; no additional schema remediation."
+  }
+}

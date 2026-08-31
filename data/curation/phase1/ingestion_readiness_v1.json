@@ -1,0 +1,90 @@
+{
+  "version": "1.0.0",
+  "date": "2026-08-31",
+  "dependency": "Issue #7 must merge before non-MY exact records are physically ingested.",
+  "wave_1_clean_candidates": [
+    "batch-a-02-byd-atto3-my24-extended-local",
+    "batch-a-03-tesla-modely-premium-lr-rwd-19",
+    "batch-a-04-volvo-ex30-ultra-smer-2026",
+    "batch-b-07-toyota-commuter-28-at-2025-catalog",
+    "batch-b-08-isuzu-vcross-22-z-4door-at-4x4-2026",
+    "batch-c-01-ford-ranger-wildtrak-20-biturbo-4x4-nextgen",
+    "batch-c-03-mitsubishi-triton-ultra-4wd-at-2023",
+    "batch-c-04-nissan-navara-pro4x-upgraded-2024",
+    "batch-d-01-toyota-bz4x-fwd-current-2026",
+    "batch-d-03-byd-seal-my24-awd-performance",
+    "batch-d-05-tesla-model3-premium-long-range-rwd-current",
+    "batch-d-06-hyundai-ioniq6-exclusive-long-range",
+    "batch-e-03-bmw-520d-m-sport-pro-g60-2025",
+    "batch-e-04-bmw-740d-m-sport-g70-current-2026"
+  ],
+  "wave_2_second_review": [
+    {
+      "id": "batch-a-01-mazda-mx5-35ae-rf-at",
+      "reason": "Reclassify under EDITION_RELEASE after Issue #7; otherwise high-quality semantic record."
+    },
+    {
+      "id": "batch-a-06-mg-im6-long-range",
+      "reason": "Temporal identity confirmation; four-wheel-steering linkage remains intentionally incomplete."
+    },
+    {
+      "id": "batch-b-01-honda-city-ehev-rs-2026-release",
+      "reason": "Resolve grade-column mapping for multi-valued dimensions/fitment rows."
+    },
+    {
+      "id": "batch-b-02-honda-civic-ehev-rs-2026-release",
+      "reason": "Resolve exact RS column mapping for turning/steering/tread/wheel rows."
+    },
+    {
+      "id": "batch-b-03-honda-accord-ehev-rs-2025-release",
+      "reason": "Resolve exact RS wheelbase/tread/wheel column mapping."
+    },
+    {
+      "id": "batch-b-05-toyota-fortuner-leader-v-4wd-2025-catalog",
+      "reason": "Lock exact revision-label applicability and exact grade-specific fitment where needed."
+    },
+    {
+      "id": "batch-b-09-isuzu-mux-22-ultimate-4wd-2026",
+      "reason": "Second-review exact 2.2 4WD ULTIMATE technical-table column mapping."
+    },
+    {
+      "id": "batch-c-02-ford-everest-platinum-30-v6-current",
+      "reason": "Re-verify official technical PDF visually before promoting lead dimensions."
+    },
+    {
+      "id": "batch-d-02-byd-dolphin-extended-current",
+      "reason": "Lock accepted non-MY temporal basis after Issue #7."
+    },
+    {
+      "id": "batch-e-01-mercedes-e350e-amg-dynamic-w214-current",
+      "reason": "Ingest raw suspicious width label but do not normalize mirror envelope; lock temporal identity."
+    },
+    {
+      "id": "batch-e-02-mercedes-maybach-s580e-premium-z223-current",
+      "reason": "Ingest raw suspicious width label; review same-geometry Z223 parameter applicability."
+    }
+  ],
+  "hold": [
+    {
+      "id": "batch-a-05-kia-ev5-earth-long-range",
+      "reason": "Temporal applicability insufficient for exact identity."
+    },
+    {
+      "id": "batch-b-04-toyota-yaris-ativ-premium-luxury-current",
+      "reason": "Current grade resolved but temporal revision evidence remains weak."
+    },
+    {
+      "id": "batch-b-06-toyota-alphard-25-hev-current",
+      "reason": "Official current vs 2025 geometry conflict requires temporal split/decision before exact ingestion."
+    },
+    {
+      "id": "batch-c-05-suzuki-swift-glx-2021-release-current",
+      "reason": "Need proof that current same-name GLX retains 2021 engineering geometry/fitment."
+    },
+    {
+      "id": "batch-d-04-gwm-ora07-performance-historical",
+      "reason": "Exact primary Thailand PERFORMANCE sales geometry not recovered."
+    }
+  ],
+  "note": "Wave assignment concerns research/identity readiness only. It does not imply AVT_READY or ramp physical readiness."
+}
