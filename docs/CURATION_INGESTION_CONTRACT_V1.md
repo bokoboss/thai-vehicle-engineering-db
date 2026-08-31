@@ -1,6 +1,6 @@
 # Curation Ingestion Contract v1
 
-Status: control-plane candidate  
+Status: **READY FOR IMPLEMENTATION REVIEW**  
 Date: 2026-08-31  
 Purpose: safely convert accepted Phase 1 research evidence into production-like curated database records without bypassing the existing evidence-first service boundary.
 
@@ -187,6 +187,8 @@ remain in a separate manifest field such as `source_subtype_raw` and/or are pres
 
 Do not silently discard the richer research subtype.
 
+The current physical `source_document` table has no dedicated `source_subtype_raw` column. Importer v1 must therefore append/preserve the manifest subtype in `SourceDocument.notes` (or another already-existing lossless notes field) when it is not represented by the canonical `source_type`. Do not add a schema column solely for this importer.
+
 ## 9. Raw observations
 
 Every observation has a local stable `observation_code` and explicitly references exactly one `source_code`.
@@ -265,6 +267,20 @@ For imported source-backed values:
 - verification_state = REVIEWED by default
 - not VERIFIED merely because the importer succeeded
 - resolution_state = UNCONTESTED unless conflict evidence exists
+
+### Typed-value routing
+
+Manifest v1 uses one JSON field named `value` for curator readability.
+
+The importer must resolve `parameter_code` against the accepted parameter registry and route the JSON primitive into the existing Pydantic payload field:
+
+- NUMBER -> `numeric_value`
+- TEXT -> `text_value`
+- BOOLEAN -> `boolean_value`
+- ENUM -> `enum_value`
+- JSON -> `json_value`
+
+The manifest primitive must match the registry data type. Do not coerce a numeric-looking string to a number or vice versa merely to make import succeed.
 
 ### Provenance
 
