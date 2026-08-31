@@ -84,6 +84,9 @@ def _detail(session: Session, config: VehicleConfiguration) -> dict[str, Any]:
             {
                 "id": link.source_observation.id,
                 "source_code": link.source_observation.source_document.source_code,
+                "source_title": link.source_observation.source_document.title,
+                "source_publisher": link.source_observation.source_document.publisher,
+                "source_url": link.source_observation.source_document.url,
                 "raw_label": link.source_observation.raw_label,
                 "raw_value": link.source_observation.raw_value,
                 "raw_unit": link.source_observation.raw_unit,
@@ -104,6 +107,20 @@ def _detail(session: Session, config: VehicleConfiguration) -> dict[str, Any]:
                 "verification_state": value.verification_state,
                 "availability_state": value.availability_state,
                 "preferred": value.preferred,
+                "fitment_code": value.vehicle_fitment.fitment_code if value.vehicle_fitment else None,
+                "fitment_description": value.vehicle_fitment.description if value.vehicle_fitment else None,
+                "load_condition_id": value.load_condition_id,
+                "load_condition": (
+                    {
+                        "name": value.load_condition.name,
+                        "mass_basis": value.load_condition.mass_basis,
+                        "total_mass_kg": value.load_condition.total_mass_kg,
+                        "occupant_count": value.load_condition.occupant_count,
+                        "raw_oem_wording": value.load_condition.raw_oem_wording,
+                    }
+                    if value.load_condition
+                    else None
+                ),
                 "uncertainty_value": float(value.uncertainty_value) if value.uncertainty_value is not None else None,
                 "uncertainty_unit": value.uncertainty_unit,
                 "semantic_metadata": value.semantic_metadata or {},
