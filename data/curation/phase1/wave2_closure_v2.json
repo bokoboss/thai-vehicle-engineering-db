@@ -1,0 +1,434 @@
+{
+  "review_version": "2.0.0",
+  "date": "2026-08-31",
+  "branch": "chatgpt/phase-1-wave2-closure-v2",
+  "policy_note": "Second-review decisions supplement, not rewrite, the accepted Batch A-E research baseline. Lower-authority exact-grade evidence remains explicitly graded and does not become OEM evidence.",
+  "promoted": [
+    {
+      "id": "batch-b-09-isuzu-mux-22-ultimate-4wd-2026",
+      "decision": "PROMOTE_TO_WAVE_1",
+      "identity": {
+        "basis": "EDITION_RELEASE",
+        "raw_label": "MU-X “THE NEXT PEAK” 4WD 2.2 Ddi MAXFORCE — official launch 27 Feb 2026",
+        "source_authority": "OEM_THAILAND"
+      },
+      "exact_configuration": "MU-X “THE NEXT PEAK” 2.2 Ddi MAXFORCE ULTIMATE A/T 4WD",
+      "evidence": [
+        {
+          "authority_class": "OEM_THAILAND",
+          "url": "https://www.isuzu-tis.com/news-activities/public-relations/isuzu-expands-4x4-lineup-with-new-2-2-ddi-maxforce-engine",
+          "role": "identity/release",
+          "note": "Official Isuzu Thailand release dated 27 Feb 2026 explicitly introduces MU-X 4WD 2.2 Ddi MAXFORCE in RS and Ultimate."
+        },
+        {
+          "authority_class": "OEM_THAILAND",
+          "url": "https://assets.isuzu-tis.com/mu_x_brochure_2026_5d17d1513d.pdf",
+          "role": "exact engineering table",
+          "verification": "VISUAL_SCREENSHOT_VERIFIED_PAGE_8",
+          "note": "Original table visually verifies the 2.2 Ultimate A/T 4x4 column; parser is not used to guess column association."
+        }
+      ],
+      "exact_engineering_observations": [
+        [
+          "overall_length_mm",
+          4860,
+          "mm"
+        ],
+        [
+          "overall_width_reported_mm",
+          1870,
+          "mm"
+        ],
+        [
+          "overall_height_mm",
+          1875,
+          "mm"
+        ],
+        [
+          "wheelbase_actual_mm",
+          2855,
+          "mm"
+        ],
+        [
+          "oem_front_tread_or_track_mm",
+          1570,
+          "mm"
+        ],
+        [
+          "oem_rear_tread_or_track_mm",
+          1570,
+          "mm"
+        ],
+        [
+          "clearance_value_mm",
+          235,
+          "mm"
+        ],
+        [
+          "turning_radius_normalized_m",
+          5.6,
+          "m"
+        ],
+        [
+          "front_wheel_rim_text",
+          "20 x 7.5J",
+          null
+        ],
+        [
+          "rear_wheel_rim_text",
+          "20 x 7.5J",
+          null
+        ],
+        [
+          "front_tyre_size_text",
+          "265/50R20",
+          null
+        ],
+        [
+          "rear_tyre_size_text",
+          "265/50R20",
+          null
+        ]
+      ],
+      "semantic_notes": {
+        "clearance": "235 mm is published at rear axle housing; preserve REAR_AXLE/component reference and unknown load state.",
+        "turning": "Published minimum turning radius; curb/wall reference and axle scope remain OEM_UNSPECIFIED.",
+        "track": "OEM track definition remains OEM_UNSPECIFIED, not AVT outer-face track."
+      },
+      "rationale": "The previous blocker was exact multi-column mapping. Original official brochure visual review now closes that blocker."
+    },
+    {
+      "id": "batch-b-02-honda-civic-ehev-rs-2026-release",
+      "decision": "PROMOTE_TO_WAVE_1",
+      "identity": {
+        "basis": "EDITION_RELEASE",
+        "raw_label": "Honda Civic e:HEV ใหม่ — official launch 23 July 2026",
+        "source_authority": "OEM_THAILAND"
+      },
+      "exact_configuration": "Honda Civic e:HEV RS — 2026-07-23 release",
+      "evidence": [
+        {
+          "authority_class": "OEM_THAILAND",
+          "url": "https://www.honda.co.th/news/newhondacivicehevs%2Bshift",
+          "role": "exact identity/release",
+          "note": "Official Honda Thailand launch names e:HEV RS and starts the new Civic e:HEV sale campaign on 23 Jul 2026."
+        },
+        {
+          "authority_class": "OEM_THAILAND",
+          "url": "https://www.honda.co.th/civic/specification",
+          "role": "primary grouped engineering evidence",
+          "note": "Official table supplies shared values and grouped RS/non-RS candidates. Grouped rows remain raw OEM observations."
+        },
+        {
+          "authority_class": "REPUTABLE_SECONDARY",
+          "url": "https://www.zigwheels.co.th/new-cars/honda/civic/ehev-rs",
+          "role": "exact-grade column-resolution evidence",
+          "note": "Current exact RS page independently resolves the RS member of the OEM grouped values. These grade-specific mappings remain B-level evidence, not reclassified as OEM observations."
+        }
+      ],
+      "exact_grade_mappings_from_secondary": [
+        [
+          "kerb_mass_kg",
+          1429,
+          "kg"
+        ],
+        [
+          "oem_front_tread_or_track_mm",
+          1537,
+          "mm"
+        ],
+        [
+          "oem_rear_tread_or_track_mm",
+          1576,
+          "mm"
+        ],
+        [
+          "front_wheel_rim_text",
+          "18 x 8J",
+          null
+        ],
+        [
+          "rear_wheel_rim_text",
+          "18 x 8J",
+          null
+        ],
+        [
+          "front_tyre_size_text",
+          "235/40 ZR18",
+          null
+        ],
+        [
+          "rear_tyre_size_text",
+          "235/40 ZR18",
+          null
+        ],
+        [
+          "turning_radius_normalized_m",
+          5.7,
+          "m"
+        ]
+      ],
+      "primary_shared_oem_values": [
+        [
+          "overall_length_mm",
+          4681,
+          "mm"
+        ],
+        [
+          "overall_width_reported_mm",
+          1802,
+          "mm"
+        ],
+        [
+          "overall_height_mm",
+          1415,
+          "mm"
+        ],
+        [
+          "wheelbase_actual_mm",
+          2734,
+          "mm"
+        ],
+        [
+          "clearance_value_mm",
+          128,
+          "mm"
+        ]
+      ],
+      "hold_inside_record": [
+        {
+          "parameter": "steering_wheel_lock_to_lock_turns",
+          "reason": "Official table publishes 2.29 / 2.2, but the selected reputable-secondary source does not independently resolve the RS lock-to-lock value. Keep grouped raw observation; do not normalize RS LTL turns yet."
+        }
+      ],
+      "rationale": "Accepted source hierarchy allows reputable secondary exact-grade evidence when OEM table extraction loses column association. No value is assigned by row-order inference."
+    },
+    {
+      "id": "batch-b-03-honda-accord-ehev-rs-2025-release",
+      "decision": "PROMOTE_TO_WAVE_1",
+      "identity": {
+        "basis": "EDITION_RELEASE",
+        "raw_label": "Honda Accord e:HEV ใหม่ — official launch 22 August 2025",
+        "source_authority": "OEM_THAILAND"
+      },
+      "exact_configuration": "Honda Accord e:HEV RS — 2025-08-22 release/current continuing grade",
+      "evidence": [
+        {
+          "authority_class": "OEM_THAILAND",
+          "url": "https://www.honda.co.th/news/NewHondaAccordLaunch2025",
+          "role": "identity/release",
+          "note": "Official Honda Thailand release dated 22 Aug 2025 identifies the new Accord e:HEV and e:HEV RS grade."
+        },
+        {
+          "authority_class": "OEM_THAILAND",
+          "url": "https://www.honda.co.th/promotions/detail/promotion-newaccordehev-jul2026",
+          "role": "current applicability continuity",
+          "note": "Official 2026 campaign continues New Accord e:HEV during the current curation window."
+        },
+        {
+          "authority_class": "OEM_THAILAND",
+          "url": "https://www.honda.co.th/accordehev/specification",
+          "role": "primary grouped engineering evidence",
+          "note": "Official table supplies shared values and grouped grade candidates."
+        },
+        {
+          "authority_class": "REPUTABLE_SECONDARY",
+          "url": "https://www.zigwheels.co.th/new-cars/honda/accord-ehev/rs",
+          "role": "exact-grade column-resolution evidence",
+          "note": "Current exact RS page resolves RS values from the official grouped set. Grade-specific values retain B-level authority."
+        }
+      ],
+      "exact_grade_mappings_from_secondary": [
+        [
+          "kerb_mass_kg",
+          1606,
+          "kg"
+        ],
+        [
+          "wheelbase_actual_mm",
+          2827,
+          "mm"
+        ],
+        [
+          "oem_front_tread_or_track_mm",
+          1590,
+          "mm"
+        ],
+        [
+          "oem_rear_tread_or_track_mm",
+          1624,
+          "mm"
+        ],
+        [
+          "front_wheel_rim_text",
+          "18-inch",
+          null
+        ],
+        [
+          "rear_wheel_rim_text",
+          "18-inch",
+          null
+        ],
+        [
+          "front_tyre_size_text",
+          "235/45 R18",
+          null
+        ],
+        [
+          "rear_tyre_size_text",
+          "235/45 R18",
+          null
+        ],
+        [
+          "turning_radius_normalized_m",
+          6.1,
+          "m"
+        ]
+      ],
+      "primary_shared_oem_values": [
+        [
+          "overall_length_mm",
+          4962,
+          "mm"
+        ],
+        [
+          "overall_width_reported_mm",
+          1862,
+          "mm"
+        ],
+        [
+          "overall_height_mm",
+          1449,
+          "mm"
+        ],
+        [
+          "clearance_value_mm",
+          134,
+          "mm"
+        ]
+      ],
+      "rationale": "Exact release identity is primary OEM; current exact-grade secondary evidence resolves the grouped technical rows without pretending that the parser preserved OEM column structure."
+    },
+    {
+      "id": "batch-a-06-mg-im6-long-range",
+      "decision": "PROMOTE_TO_WAVE_1",
+      "identity": {
+        "basis": "EDITION_RELEASE",
+        "raw_label": "NEW MG IM6 LONG RANGE — launch 22 August 2025",
+        "source_authority": "REPUTABLE_SECONDARY",
+        "evidence_quality_note": "No dated MG Thailand primary release page was recovered. Multiple reputable Thai automotive publications reproduce the MG Sales Thailand announcement; current MG Thailand technical table independently identifies the Long Range grade and matching technical fingerprint."
+      },
+      "exact_configuration": "MG IM6 Long Range — Thailand 2025-08-22 release",
+      "evidence": [
+        {
+          "authority_class": "OEM_THAILAND",
+          "url": "https://www.mgcars.com/th/cars/mg-im6",
+          "role": "current exact engineering specification",
+          "note": "Current MG Thailand technical table has distinct Premium / Long Range / Performance columns and exact Long Range engineering data."
+        },
+        {
+          "authority_class": "REPUTABLE_SECONDARY",
+          "url": "https://www.motorworldthailand.com/17468296/2025-mg-mg-im6-long-range-teaser",
+          "role": "dated release evidence",
+          "note": "Reports MG Sales Thailand announcement of NEW MG IM6 LONG RANGE and official launch date 22 Aug 2025."
+        },
+        {
+          "authority_class": "REPUTABLE_SECONDARY",
+          "url": "https://www.grandprix.co.th/new-mg-im6-long-range-up-to-750-km-ready-to-launch-on-august-22/",
+          "role": "corroborating dated release evidence",
+          "note": "Independent Thai automotive publication repeats the same MG announcement and launch date."
+        }
+      ],
+      "exact_oem_values": [
+        [
+          "overall_length_mm",
+          4904,
+          "mm"
+        ],
+        [
+          "overall_width_reported_mm",
+          1988,
+          "mm"
+        ],
+        [
+          "overall_height_mm",
+          1669,
+          "mm"
+        ],
+        [
+          "wheelbase_actual_mm",
+          2950,
+          "mm"
+        ],
+        [
+          "clearance_value_mm",
+          166,
+          "mm"
+        ],
+        [
+          "front_tyre_size_text",
+          "235/50 R20",
+          null
+        ],
+        [
+          "rear_tyre_size_text",
+          "255/45 R20",
+          null
+        ],
+        [
+          "turning_radius_normalized_m",
+          5.1,
+          "m"
+        ]
+      ],
+      "rear_steering": {
+        "present": true,
+        "source": "OEM_THAILAND current technical table",
+        "description": "Intelligent Four-wheel Steering System with Crab Mode",
+        "mapping_state": "NOT_AVT_READY",
+        "missing": [
+          "maximum rear steering angle",
+          "phase/speed behavior",
+          "front-to-rear relation/function"
+        ]
+      },
+      "nomenclature_note": "Current MG ecosystem also uses 'Premium Long Range' in some promotional wording. The official technical table still identifies the engineering grade as 'MG IM6 Long Range'. Keep raw aliases linked; do not collapse marketing names without evidence.",
+      "rationale": "Temporal identity can use reputable secondary evidence under the accepted source hierarchy when transparently graded. Engineering parameters remain OEM-sourced."
+    }
+  ],
+  "summary": {
+    "previous_wave_1": 17,
+    "promoted_this_review": 4,
+    "new_wave_1": 21,
+    "previous_wave_2": 8,
+    "new_wave_2": 0,
+    "hold": 5,
+    "new_hold": 9
+  },
+  "hold_after_second_review": [
+    {
+      "id": "batch-b-01-honda-city-ehev-rs-2026-release",
+      "decision": "MOVE_TO_HOLD_AFTER_SECOND_REVIEW",
+      "reason": "Official current table still loses exact e:HEV RS association for several multi-valued geometry/fitment rows in extracted form. Available secondary exact-grade material is inconsistent on overall length, so it cannot safely resolve the mapping.",
+      "next_action": "Obtain an original Honda table export/image or another reliable exact-grade source that resolves RS dimensions/fitment without conflict."
+    },
+    {
+      "id": "batch-c-02-ford-everest-platinum-30-v6-current",
+      "decision": "MOVE_TO_HOLD_AFTER_SECOND_REVIEW",
+      "reason": "Current official 2026 Platinum identity is strong, but engineering applicability is not cleanly closed: the June-2025 exact brochure reports 227 mm clearance while another official Everest product source reports 226 mm. Do not bridge 2025 and current 2026 geometry without temporal resolution.",
+      "next_action": "Obtain an exact current 2026 technical sheet/drawing and resolve the 226/227 mm official clearance applicability before curating current geometry."
+    },
+    {
+      "id": "batch-e-01-mercedes-e350e-amg-dynamic-w214-current",
+      "decision": "MOVE_TO_HOLD_AFTER_SECOND_REVIEW",
+      "reason": "Current exact grade is still sold, but Thailand raw width label remains semantically suspect and current temporal revision/equipment continuity is not sufficiently bounded for clean ingestion. Historical 2024/MY2024 secondary evidence must not silently define the current record.",
+      "next_action": "Resolve current W214 Thailand temporal revision and the suspicious width-with-mirrors label using exact OEM technical/owner documentation."
+    },
+    {
+      "id": "batch-e-02-mercedes-maybach-s580e-premium-z223-current",
+      "decision": "MOVE_TO_HOLD_AFTER_SECOND_REVIEW",
+      "reason": "Current exact S 580 e Premium exists, but Thailand mirror-width label remains semantically suspect and MY2025 secondary evidence does not prove unchanged current 2026 applicability.",
+      "next_action": "Resolve current Z223 Thailand temporal applicability and mirror/body width semantics using exact OEM technical/owner documentation."
+    }
+  ]
+}

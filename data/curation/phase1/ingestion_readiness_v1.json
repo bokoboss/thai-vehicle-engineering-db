@@ -19,42 +19,13 @@
     "batch-e-04-bmw-740d-m-sport-g70-current-2026",
     "batch-a-01-mazda-mx5-35ae-rf-at",
     "batch-b-05-toyota-fortuner-leader-v-4wd-2025-catalog",
-    "batch-d-02-byd-dolphin-extended-current"
+    "batch-d-02-byd-dolphin-extended-current",
+    "batch-b-09-isuzu-mux-22-ultimate-4wd-2026",
+    "batch-b-02-honda-civic-ehev-rs-2026-release",
+    "batch-b-03-honda-accord-ehev-rs-2025-release",
+    "batch-a-06-mg-im6-long-range"
   ],
-  "wave_2_second_review": [
-    {
-      "id": "batch-a-06-mg-im6-long-range",
-      "reason": "Temporal identity confirmation; four-wheel-steering linkage remains intentionally incomplete."
-    },
-    {
-      "id": "batch-b-01-honda-city-ehev-rs-2026-release",
-      "reason": "Resolve grade-column mapping for multi-valued dimensions/fitment rows."
-    },
-    {
-      "id": "batch-b-02-honda-civic-ehev-rs-2026-release",
-      "reason": "Resolve exact RS column mapping for turning/steering/tread/wheel rows."
-    },
-    {
-      "id": "batch-b-03-honda-accord-ehev-rs-2025-release",
-      "reason": "Resolve exact RS wheelbase/tread/wheel column mapping."
-    },
-    {
-      "id": "batch-b-09-isuzu-mux-22-ultimate-4wd-2026",
-      "reason": "Second-review exact 2.2 4WD ULTIMATE technical-table column mapping."
-    },
-    {
-      "id": "batch-c-02-ford-everest-platinum-30-v6-current",
-      "reason": "Re-verify official technical PDF visually before promoting lead dimensions."
-    },
-    {
-      "id": "batch-e-01-mercedes-e350e-amg-dynamic-w214-current",
-      "reason": "Ingest raw suspicious width label but do not normalize mirror envelope; lock temporal identity."
-    },
-    {
-      "id": "batch-e-02-mercedes-maybach-s580e-premium-z223-current",
-      "reason": "Ingest raw suspicious width label; review same-geometry Z223 parameter applicability."
-    }
-  ],
+  "wave_2_second_review": [],
   "hold": [
     {
       "id": "batch-a-05-kia-ev5-earth-long-range",
@@ -75,7 +46,23 @@
     {
       "id": "batch-d-04-gwm-ora07-performance-historical",
       "reason": "Exact primary Thailand PERFORMANCE sales geometry not recovered."
+    },
+    {
+      "id": "batch-b-01-honda-city-ehev-rs-2026-release",
+      "reason": "Second review completed without sufficient closure: Resolve grade-column mapping for multi-valued dimensions/fitment rows."
+    },
+    {
+      "id": "batch-c-02-ford-everest-platinum-30-v6-current",
+      "reason": "Second review completed without sufficient closure: Re-verify official technical PDF visually before promoting lead dimensions."
+    },
+    {
+      "id": "batch-e-01-mercedes-e350e-amg-dynamic-w214-current",
+      "reason": "Second review completed without sufficient closure: Ingest raw suspicious width label but do not normalize mirror envelope; lock temporal identity."
+    },
+    {
+      "id": "batch-e-02-mercedes-maybach-s580e-premium-z223-current",
+      "reason": "Second review completed without sufficient closure: Ingest raw suspicious width label; review same-geometry Z223 parameter applicability."
     }
   ],
-  "note": "Wave assignment concerns research/identity/semantic readiness only. It does not imply AVT_READY or physical ramp readiness. Wave 1 expansion remains blocked until Issue #15 sentinel proof passes."
+  "note": "Wave 2 second review is closed. Current partition: Wave 1 research-clean candidates = 21; Wave 2 = 0; HOLD = 9. HOLD records require new source evidence or temporal/semantic resolution, not merely another pass over the same evidence. Wave 1 does not imply AVT_READY or physical ramp readiness, and physical ingestion remains blocked until Issue #15 sentinel proof passes."
 }
