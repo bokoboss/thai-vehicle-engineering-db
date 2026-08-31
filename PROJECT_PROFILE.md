@@ -17,7 +17,9 @@
 - Identity-time implementation: ACCEPTED; final CI 78 tests passed
 - Phase 1 30-vehicle research baseline PR #12 squash merge: `4aa268bb65b36347e077a3e4d5ddaedf24605633`
 - Phase 1 research coverage: PASS WITH INGESTION CONDITIONS
-- Current work: controlled pilot ingestion preparation and sentinel proof
+- Curation Ingestion Contract v1 PR #14 squash merge: `15bd1256e35c69b81fb6d43171dfaca0a32dbc6a`
+- Sentinel manifest contract/QA: ACCEPTED
+- Current work: Issue #15 create-only importer implementation and sentinel proof
 
 ## Product purpose
 Create an engineering-grade, traceable database and intentionally small web application for vehicle geometry and maneuverability relevant to vehicles used in Thailand.
@@ -121,4 +123,4 @@ The software foundation is implemented. The main project effort now moves to:
 
 ## Current next objective
 
-Implement and validate the bounded create-only curation ingestion path, then prove it with three sentinel vehicles before expanding Wave 1. Wave 1 has 14 research-clean candidates; Wave 2 has 11 second-review records; 5 records remain HOLD. Production ingestion must not bypass provenance/conflict/identity validation.
+Execute Issue #15 to implement the accepted create-only curation importer and prove it with the three sentinel vehicles before expanding Wave 1. Wave 1 has 14 research-clean candidates; Wave 2 has 11 second-review records; 5 records remain HOLD. Production ingestion must not bypass provenance/conflict/identity validation.
