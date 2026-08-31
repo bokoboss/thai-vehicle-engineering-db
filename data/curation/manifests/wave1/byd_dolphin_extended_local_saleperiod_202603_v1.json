@@ -1,0 +1,571 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-BYD-DOLPHIN-EXTENDED-LOCAL-202603-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-byd-dolphin-extended-local-saleperiod-2026-03",
+    "manufacturer_name": "BYD",
+    "manufacturer_display_name": "BYD",
+    "canonical_model_name": "dolphin",
+    "display_model_name": "DOLPHIN",
+    "market_code": "TH",
+    "generation_name": "New BYD DOLPHIN Local Production",
+    "body_style": "Battery-electric hatchback",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "SALE_PERIOD",
+    "identity_time_label_raw": "New BYD DOLPHIN Extended Range (Local Production)",
+    "sale_period_from": "2026-03-01",
+    "sale_period_to": "2026-04-05",
+    "variant_trim": "Extended Range",
+    "powertrain": "Battery electric",
+    "drivetrain": "FWD",
+    "body_configuration": "5-door hatchback",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Official RÊVER campaign explicitly identifies New BYD DOLPHIN Extended Range (Local Production) for a bounded 1 Mar–5 Apr 2026 sale period; no model year is inferred."
+  },
+  "sources": [
+    {
+      "source_code": "REVER_TH_DOLPHIN_LOCAL_CAMPAIGN_202603",
+      "publisher": "RÊVER Automotive",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_CAMPAIGN_TERMS",
+      "title": "New BYD DOLPHIN March 2026 campaign",
+      "url": "https://www.reverautomotive.com/en/news/new-byd-dolphin-mar-2026-campaign",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2026,
+      "page_section_default": "Campaign terms",
+      "applicability_notes": "Exact Extended Range Local Production; 1 Mar–5 Apr 2026",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "publisher": "RÊVER Automotive",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "BYD DOLPHIN Technical Information",
+      "url": "https://www.reverautomotive.com/en/model/new-dolphin/tech-spec",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Extended Range exact column",
+      "applicability_notes": "Exact engineering specification",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "UNLADEN_OEM",
+      "name": "OEM unladen",
+      "mass_basis": "UNLADEN",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "raw_oem_wording": "Ground Clearance Unladen",
+      "notes": null
+    },
+    {
+      "load_condition_code": "LADEN_OEM",
+      "name": "OEM laden",
+      "mass_basis": "OEM_LADEN",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "raw_oem_wording": "Ground Clearance Laden",
+      "notes": null
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "WHEEL17",
+      "description": "Extended Range exact 17-inch fitment",
+      "wheel_package": "17-inch alloy / 205/50 R17",
+      "equipment_package": "Extended Range",
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact technical column."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "REVER_TH_DOLPHIN_LOCAL_CAMPAIGN_202603",
+      "vehicle_identity_claim": "New BYD DOLPHIN Extended Range Local Production",
+      "raw_label": "Campaign model designation",
+      "raw_value": "New BYD DOLPHIN Extended Range (Local Production)",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Campaign terms",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIM",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "DOLPHIN Extended Range",
+      "raw_label": "Overall Length / Width / Height",
+      "raw_value": "4290 / 1770 / 1570",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TRACK",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "DOLPHIN Extended Range",
+      "raw_label": "Wheel Track Front / Rear",
+      "raw_value": "1530 / 1530",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM track definition not stated"
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "DOLPHIN Extended Range",
+      "raw_label": "Wheelbase",
+      "raw_value": "2700",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC_UNLADEN",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "DOLPHIN Extended Range",
+      "raw_label": "Ground Clearance Unladen",
+      "raw_value": "155",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC_LADEN",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "DOLPHIN Extended Range",
+      "raw_label": "Ground Clearance Laden",
+      "raw_value": "130",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TURN",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "DOLPHIN Extended Range",
+      "raw_label": "Minimum Turning Radius",
+      "raw_value": "5.25",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated"
+    },
+    {
+      "observation_code": "OBS_KERB",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "DOLPHIN Extended Range",
+      "raw_label": "Kerb Weight",
+      "raw_value": "1658",
+      "raw_unit": "kg",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GVM",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "DOLPHIN Extended Range",
+      "raw_label": "Gross Vehicle Weight",
+      "raw_value": "2068",
+      "raw_unit": "kg",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TYRE",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "DOLPHIN Extended Range",
+      "raw_label": "Tyre Size",
+      "raw_value": "205/50 R17",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WHEEL",
+      "source_code": "REVER_TH_DOLPHIN_TECH_CURRENT_20260831",
+      "vehicle_identity_claim": "DOLPHIN Extended Range",
+      "raw_label": "Wheel",
+      "raw_value": "17-inch alloy",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4290,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1770,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1570,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2700,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1530,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1530,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_GC_UNLADEN",
+      "parameter_code": "clearance_value_mm",
+      "value": 155,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "UNLADEN_OEM",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC_UNLADEN"
+      ]
+    },
+    {
+      "value_code": "VAL_GC_LADEN",
+      "parameter_code": "clearance_value_mm",
+      "value": 130,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "LADEN_OEM",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC_LADEN"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.25,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 1658,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_KERB"
+      ]
+    },
+    {
+      "value_code": "VAL_GVM",
+      "parameter_code": "gross_vehicle_mass_kg",
+      "value": 2068,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GVM"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "205/50 R17",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL17",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "205/50 R17",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL17",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FWHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "17-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL17",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    },
+    {
+      "value_code": "VAL_RWHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "17-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL17",
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM track definition is unspecified.",
+      "source_families_searched": [
+        "RÊVER technical specification"
+      ],
+      "search_notes": "Do not treat as AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM track definition is unspecified.",
+      "source_families_searched": [
+        "RÊVER technical specification"
+      ],
+      "search_notes": "Do not treat as AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
