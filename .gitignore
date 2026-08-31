@@ -9,6 +9,12 @@ venv/
 env/
 vehicle_engineering.db
 vehicle_engineering.db-*
+vehicle_engineering_curated.db
+vehicle_engineering_curated.db-*
+vehicle_engineering_curated.staging.db
+vehicle_engineering_curated.staging.db-*
+vehicle_engineering_curated.wave1.csv
+vehicle_engineering_curated.wave1.xlsx
 *.sqlite
 *.sqlite3
 .env

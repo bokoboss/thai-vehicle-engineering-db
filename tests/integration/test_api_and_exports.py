@@ -31,6 +31,27 @@ def test_detail_api_and_html_expose_state_and_evidence(client):
     assert "Overall Width" in html.text
 
 
+def test_detail_exposes_load_scope_and_source_document_identity(client):
+    response = client.get("/api/vehicles/FIXTURE-STATIC-LOADED-RADIUS")
+    assert response.status_code == 200
+    body = response.json()
+    radius = next(
+        item for item in body["values"] if item["parameter_code"] == "static_loaded_tyre_radius_front_mm"
+    )
+    assert radius["load_condition"]["name"] == "Measured static-loaded radius condition"
+    assert radius["load_condition"]["mass_basis"] == "KERB"
+    assert radius["observations"][0]["source_title"] == "Static-loaded tyre radius fixture"
+    assert radius["observations"][0]["source_publisher"] == "Phase 0 deterministic fixture author"
+    assert radius["observations"][0]["source_url"] == (
+        "https://example.invalid/thai-vehicle-engineering-db/fixtures/fixture-static-loaded-radius"
+    )
+    html = client.get("/vehicles/FIXTURE-STATIC-LOADED-RADIUS")
+    assert html.status_code == 200
+    assert "Measured static-loaded radius condition" in html.text
+    assert "Static-loaded tyre radius fixture" in html.text
+    assert "https://example.invalid/thai-vehicle-engineering-db/fixtures/fixture-static-loaded-radius" in html.text
+
+
 def test_issues_and_compare_pages_are_available(client):
     issues = client.get("/api/issues")
     assert issues.status_code == 200

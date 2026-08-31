@@ -72,6 +72,8 @@ def get_vehicle(session: Session, stable_vehicle_code: str) -> VehicleConfigurat
             selectinload(VehicleConfiguration.load_conditions),
             selectinload(VehicleConfiguration.source_observations).joinedload(SourceObservation.source_document),
             selectinload(VehicleConfiguration.normalized_values).joinedload(NormalizedValue.parameter_definition),
+            selectinload(VehicleConfiguration.normalized_values).joinedload(NormalizedValue.vehicle_fitment),
+            selectinload(VehicleConfiguration.normalized_values).joinedload(NormalizedValue.load_condition),
             selectinload(VehicleConfiguration.normalized_values)
             .selectinload(NormalizedValue.evidence_links)
             .joinedload(EvidenceLink.source_observation)

@@ -23,7 +23,7 @@
 - Wave 2 closure PR #17 squash merge: `62a502f196e98077327519a38fa9da3c3867d942`
 - Wave 2 review: CLOSED
 - Current research readiness: Wave 1 = 21, Wave 2 = 0, HOLD = 9
-- Current work: Issue #15 create-only importer implementation and sentinel proof
+- Current work: Issue #22 controlled Wave 1 ingestion and real-data web UI smoke review; 21 exact configurations accepted for local curation and 9 HOLD records excluded
 
 ## Product purpose
 Create an engineering-grade, traceable database and intentionally small web application for vehicle geometry and maneuverability relevant to vehicles used in Thailand.
@@ -103,6 +103,7 @@ The software foundation is implemented. The main project effort now moves to:
 
 ### Curation
 - `docs/PHASE_1_PILOT_COVERAGE_QA.md`
+- `docs/PHASE_1_WAVE1_INGESTION_QA.md`
 - `data/curation/phase1/ingestion_readiness_v1.json`
 - `data/curation/phase1/geometry_asset_register_v1.json`
 - `data/curation/phase1/batch_a_v1.json` through `batch_e_v1.json`
@@ -114,6 +115,7 @@ The software foundation is implemented. The main project effort now moves to:
 
 ### Software
 - `docs/PHASE_0_IMPLEMENTATION.md`
+- `scripts/build_wave1_curated_db.py`
 - `app/`
 - `alembic/`
 - `tests/`
@@ -127,4 +129,4 @@ The software foundation is implemented. The main project effort now moves to:
 
 ## Current next objective
 
-Execute Issue #15 to implement the accepted create-only curation importer and prove it with the three sentinel vehicles before expanding Wave 1. Wave 1 has 21 research-clean candidates; Wave 2 review is closed; 9 records remain HOLD pending genuinely new source/temporal/semantic evidence. Production ingestion must not bypass provenance/conflict/identity validation.
+Maintain the accepted 21-record Wave 1 local curation, preserve its provenance/conflict/identity gates, and resolve explicit AVT/ramp blockers before any later geometry work. Wave 2 review is closed; 9 records remain HOLD pending genuinely new source/temporal/semantic evidence. Production ingestion must not bypass the create-only importer or these QA rules.

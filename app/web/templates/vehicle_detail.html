@@ -25,10 +25,11 @@
       <p class="value-number">{{ value.value }}{% if value.unit %} <span>{{ value.unit }}</span>{% endif %}</p>
       {% if value.uncertainty_value %}<p class="uncertainty">± {{ value.uncertainty_value }} {{ value.uncertainty_unit or value.unit }}</p>{% endif %}
       <div class="badges"><span class="badge">{{ value.evidence_method }}</span><span class="badge">{{ value.resolution_state }}</span><span class="badge">{{ value.verification_state }}</span><span class="badge">{{ value.availability_state }}</span></div>
+      {% if value.fitment_code or value.load_condition %}<p class="muted"><strong>Scope:</strong>{% if value.fitment_code %} fitment {{ value.fitment_code }}{% if value.fitment_description %} ({{ value.fitment_description }}){% endif %}{% endif %}{% if value.load_condition %}{% if value.fitment_code %};{% endif %} load {{ value.load_condition.name }} ({{ value.load_condition.mass_basis }}){% endif %}</p>{% endif %}
       {% if value.semantic_metadata %}<details><summary>Semantics</summary><pre>{{ value.semantic_metadata }}</pre></details>{% endif %}
       {% if value.derivation_rule %}<p class="lineage">Derived by {{ value.derivation_rule.code }} · v{{ value.derivation_rule.version }}</p>{% endif %}
       <details><summary>Evidence ({{ value.observations|length }})</summary>
-        {% for observation in value.observations %}<div class="evidence"><code>{{ observation.source_code }}</code><strong>{{ observation.raw_label }}</strong><span>{{ observation.raw_value }}{% if observation.raw_unit %} {{ observation.raw_unit }}{% endif %}</span><small>{{ observation.evidence_role }}</small></div>{% else %}<p class="muted">No raw observation link; inspect derivation lineage.</p>{% endfor %}
+        {% for observation in value.observations %}<div class="evidence"><a href="{{ observation.source_url }}" target="_blank" rel="noopener noreferrer"><code>{{ observation.source_code }}</code></a><strong>{{ observation.raw_label }}</strong><span>{{ observation.raw_value }}{% if observation.raw_unit %} {{ observation.raw_unit }}{% endif %}</span><small>{{ observation.evidence_role }} · {{ observation.source_publisher }} · {{ observation.source_title }}</small></div>{% else %}<p class="muted">No raw observation link; inspect derivation lineage.</p>{% endfor %}
       </details>
     </article>
   {% else %}<p class="empty">No normalized values.</p>{% endfor %}

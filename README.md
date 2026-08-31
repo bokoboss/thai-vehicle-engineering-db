@@ -30,7 +30,7 @@ The web application should remain simple.
 
 ## Current state
 
-**Phase 0 implementation plus bounded R1–R5/S1–S3 control-plane remediation is on the review branch; production curation remains deferred pending PR review.**
+**Phase 1 Wave 1 curation is accepted for controlled local ingestion.** The repository contains 21 reviewed manifests; the curated SQLite database and export proofs are generated locally and remain ignored by Git.
 
 Foundation research returned **GO WITH CONDITIONS — High confidence** and the required data-contract amendments have been incorporated on PR #1.
 
@@ -89,6 +89,21 @@ python -m app.seed
 
 See [`docs/PHASE_0_IMPLEMENTATION.md`](docs/PHASE_0_IMPLEMENTATION.md) for the physical schema/file layout, fixture matrix and export/API details.
 
+## Run the real curated Wave 1 application locally
+
+The real-data workflow is separate from the synthetic Phase 0 fixture workflow. From a clean clone, install the project dependencies, then run the bounded staging build:
+
+```text
+python -m pip install -e ".[dev]"
+python scripts/build_wave1_curated_db.py
+$env:DATABASE_URL="sqlite:///./vehicle_engineering_curated.db"
+python -m uvicorn app.main:app --reload
+```
+
+The build script performs Alembic upgrade, registry-only curation initialization, validation and create-only import of the three sentinels plus all 18 Wave 1 manifests, database-level QA, CSV/XLSX export proof, and final promotion. It refuses an existing staging database and does not replace an existing final database unless `--replace-final` is supplied after a successful staging run. If a run stops, inspect and remove only the disposable `vehicle_engineering_curated.staging.db` (and any matching SQLite sidecar files) before retrying. Do not run `python -m app.seed` against the curated database.
+
+The application then serves the accepted real-data catalog at `http://127.0.0.1:8000/vehicles`; the database, generated export proofs, and staging artifacts are local/ignored files.
+
 ## Core documents
 
 Start with:
@@ -105,6 +120,8 @@ Start with:
 10. `docs/SOURCE_LANDSCAPE.md`
 11. `docs/PILOT_AND_ACCEPTANCE.md`
 12. `docs/PHASE_0_EXECUTION_CONTRACT.md`
+13. `docs/CURATION_INGESTION_CONTRACT_V1.md`
+14. `docs/PHASE_1_WAVE1_INGESTION_QA.md`
 
 Machine-readable/reference material:
 - `data/reference/parameter_registry_v1.json`
