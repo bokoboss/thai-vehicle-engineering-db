@@ -1,0 +1,412 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-ISUZU-VCROSS-22-Z-4DOOR-AT-4X4-2026-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-isuzu-vcross-22-z-4door-at-4x4-release-2026",
+    "manufacturer_name": "Isuzu",
+    "manufacturer_display_name": "Isuzu",
+    "canonical_model_name": "d-max-v-cross",
+    "display_model_name": "D-Max V-CROSS",
+    "market_code": "TH",
+    "generation_name": "New Isuzu V-CROSS 4x4 2026 release",
+    "body_style": "Double Cab pickup",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "New! ISUZU V-CROSS 4x4 “THE ONE & ONLY” — 2.2 Ddi MAXFORCE launched 27 Feb 2026",
+    "sale_period_from": "2026-02-27",
+    "sale_period_to": null,
+    "variant_trim": "2.2 Ddi Z 4-door A/T",
+    "powertrain": "2.2 Ddi MAXFORCE diesel / A/T",
+    "drivetrain": "4x4",
+    "body_configuration": "4-door Double Cab",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Official Isuzu Thailand 27 Feb 2026 release plus screenshot-verified 2026 V-CROSS brochure resolve the exact 2.2 Ddi Z 4-door A/T 4x4 configuration."
+  },
+  "sources": [
+    {
+      "source_code": "ISUZU_TH_22_4WD_LAUNCH_20260227",
+      "publisher": "Tri Petch Isuzu Sales",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_NEWS",
+      "title": "Isuzu expands 4x4 line-up with 2.2 Ddi MAXFORCE",
+      "url": "https://www.isuzu-tis.com/news-activities/public-relations/isuzu-expands-4x4-lineup-with-new-2-2-ddi-maxforce-engine",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "publication_year": 2026,
+      "page_section_default": "Official release",
+      "applicability_notes": "Exact 2026 release identity",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "ISUZU_TH_VCROSS_BROCHURE_2026",
+      "publisher": "Tri Petch Isuzu Sales",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_SCREENSHOT_VERIFIED",
+      "title": "V-CROSS brochure 2026",
+      "url": "https://assets.isuzu-tis.com/v_cross_brochure_2026_23a52b3f0d.pdf",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Technical table — screenshot-verified page 6",
+      "applicability_notes": "Exact 2.2 Ddi Z 4-door A/T 4x4 column",
+      "archival_status": "URL_ONLY",
+      "notes": "Original brochure technical table visually verified."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "ISUZU_TH_VCROSS_BROCHURE_2026",
+      "raw_oem_wording": "load state not stated",
+      "notes": "Structured unknown; not evidence of a defined laden/unladen state."
+    }
+  ],
+  "fitments": [
+    {
+      "fitment_code": "WHEEL18",
+      "description": "Exact V-CROSS 2.2 Z 4-door A/T fitment",
+      "wheel_package": "18-inch / 265/60R18",
+      "equipment_package": null,
+      "model_year_from": null,
+      "model_year_to": null,
+      "default_for_configuration": true,
+      "notes": "Exact brochure fitment."
+    }
+  ],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "ISUZU_TH_22_4WD_LAUNCH_20260227",
+      "vehicle_identity_claim": "V-CROSS 4x4 2.2 Ddi MAXFORCE Z 4-door A/T",
+      "raw_label": "Release identity",
+      "raw_value": "2.2 Ddi MAXFORCE 4x4 launch 27 Feb 2026",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Official release",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIM",
+      "source_code": "ISUZU_TH_VCROSS_BROCHURE_2026",
+      "vehicle_identity_claim": "V-CROSS 2.2 Ddi Z 4-door A/T 4x4",
+      "raw_label": "Overall length x width x height",
+      "raw_value": "5280 x 1870 x 1810",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "ISUZU_TH_VCROSS_BROCHURE_2026",
+      "vehicle_identity_claim": "V-CROSS 2.2 Ddi Z 4-door A/T 4x4",
+      "raw_label": "Wheelbase",
+      "raw_value": "3125",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TRACK",
+      "source_code": "ISUZU_TH_VCROSS_BROCHURE_2026",
+      "vehicle_identity_claim": "V-CROSS 2.2 Ddi Z 4-door A/T 4x4",
+      "raw_label": "Front/Rear tread",
+      "raw_value": "1570 / 1570",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM track definition not stated"
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "ISUZU_TH_VCROSS_BROCHURE_2026",
+      "vehicle_identity_claim": "V-CROSS 2.2 Ddi Z 4-door A/T 4x4",
+      "raw_label": "Ground clearance at rear axle housing",
+      "raw_value": "240",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Load state not stated"
+    },
+    {
+      "observation_code": "OBS_TURN",
+      "source_code": "ISUZU_TH_VCROSS_BROCHURE_2026",
+      "vehicle_identity_claim": "V-CROSS 2.2 Ddi Z 4-door A/T 4x4",
+      "raw_label": "Minimum turning radius",
+      "raw_value": "6.1",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated"
+    },
+    {
+      "observation_code": "OBS_TYRE",
+      "source_code": "ISUZU_TH_VCROSS_BROCHURE_2026",
+      "vehicle_identity_claim": "V-CROSS 2.2 Ddi Z 4-door A/T 4x4",
+      "raw_label": "Tyre",
+      "raw_value": "265/60R18",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Technical table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5280,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1870,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1810,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIM"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3125,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1570,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1570,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 240,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "REAR_AXLE",
+        "clearance_component_or_reference": "rear axle housing"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 6.1,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "265/60R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL18",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "265/60R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": "WHEEL18",
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM tread/track definition is unspecified.",
+      "source_families_searched": [
+        "Isuzu Thailand 2026 brochure"
+      ],
+      "search_notes": "Do not use OEM tread as AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face or mounted wheel geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM tread/track definition is unspecified.",
+      "source_families_searched": [
+        "Isuzu Thailand 2026 brochure"
+      ],
+      "search_notes": "Do not use OEM tread as AVT outer-face track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek direct outer-face or mounted wheel geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
