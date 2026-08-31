@@ -1,0 +1,591 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-TESLA-MODEL3-PREMIUM-LR-RWD-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-tesla-model3-premium-long-range-rwd-2024plus",
+    "manufacturer_name": "Tesla",
+    "manufacturer_display_name": "Tesla",
+    "canonical_model_name": "model-3",
+    "display_model_name": "Model 3",
+    "market_code": "TH",
+    "generation_name": "2024+ Model 3",
+    "body_style": "Battery-electric sedan",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "OEM_REVISION_LABEL",
+    "identity_time_label_raw": "Model 3 Owner's Manual — Thailand — 2024+",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Premium Long Range Rear-Wheel Drive",
+    "powertrain": "Battery electric",
+    "drivetrain": "RWD",
+    "body_configuration": "4-door sedan",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Current Thailand product page explicitly resolves Premium Long Range RWD. The 2024+ owner-manual label is preserved as OEM revision wording, not promoted to formal MODEL_YEAR."
+  },
+  "sources": [
+    {
+      "source_code": "TESLA_TH_MODEL3_PRODUCT_CURRENT_20260831",
+      "publisher": "Tesla",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_PRODUCT_PAGE",
+      "title": "Model 3 Premium — Thailand",
+      "url": "https://www.tesla.com/en_th/model3",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Premium Long Range Rear-Wheel Drive",
+      "applicability_notes": "Exact current product identity and weight/wheel options",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "publisher": "Tesla",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OWNER_MANUAL",
+      "source_subtype_raw": "OWNER_MANUAL_DIMENSIONS_AND_STEERING",
+      "title": "Model 3 Owner's Manual — Thailand — 2024+",
+      "url": "https://www.tesla.com/ownersmanual/model3/en_th/",
+      "retrieved_at": "2026-08-31T00:00:00+07:00",
+      "page_section_default": "Exterior dimensions / steering",
+      "applicability_notes": "2024+ RWD/Long Range geometry family",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "raw_oem_wording": "Ground Clearance; load state not stated",
+      "notes": "Structured unknown load state."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "TESLA_TH_MODEL3_PRODUCT_CURRENT_20260831",
+      "vehicle_identity_claim": "Model 3 Premium Long Range RWD",
+      "raw_label": "Current product",
+      "raw_value": "Premium Long Range Rear-Wheel Drive",
+      "raw_unit": null,
+      "raw_qualifier": null,
+      "page_section_locator": "Product page",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Overall Length",
+      "raw_value": "4720",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH_BODY",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Overall Width — excluding mirrors",
+      "raw_value": "1850",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH_OPEN",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Overall Width — including mirrors",
+      "raw_value": "2089",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH_FOLDED",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Overall Width — folded mirrors",
+      "raw_value": "1933",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Overall Height",
+      "raw_value": "1440",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Wheelbase",
+      "raw_value": "2875",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_FRONT_OH",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Front overhang",
+      "raw_value": "868",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_REAR_OH",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Rear overhang",
+      "raw_value": "977",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Ground Clearance",
+      "raw_value": "138",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Load state not stated"
+    },
+    {
+      "observation_code": "OBS_TRACK",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Front / Rear track",
+      "raw_value": "1584 / 1584",
+      "raw_unit": "mm",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "OEM explicitly defines track at wheel center"
+    },
+    {
+      "observation_code": "OBS_LTL",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Steering wheel lock-to-lock",
+      "raw_value": "2.14",
+      "raw_unit": "turns",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TURN_CIRCLE",
+      "source_code": "TESLA_TH_MODEL3_OWNER_2024PLUS",
+      "vehicle_identity_claim": "2024+ Model 3 RWD/Long Range",
+      "raw_label": "Turning Circle (curb to curb)",
+      "raw_value": "11.7",
+      "raw_unit": "m",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": "Source reports circle/diameter; radius derivation intentionally not hand-entered"
+    },
+    {
+      "observation_code": "OBS_KERB",
+      "source_code": "TESLA_TH_MODEL3_PRODUCT_CURRENT_20260831",
+      "vehicle_identity_claim": "Model 3 Premium Long Range RWD",
+      "raw_label": "Current Premium weight",
+      "raw_value": "1765",
+      "raw_unit": "kg",
+      "raw_qualifier": null,
+      "page_section_locator": "Technical specification",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-08-31T00:00:00+07:00",
+      "extracted_by": "ChatGPT Phase 1 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4720,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_BODY",
+      "parameter_code": "overall_width_body_mm",
+      "value": 1850,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_BODY"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_OPEN",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 2089,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_OPEN"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_FOLDED",
+      "parameter_code": "overall_width_mirrors_folded_mm",
+      "value": 1933,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_FOLDED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH_FOLDED"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1440,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2875,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_OH",
+      "parameter_code": "front_overhang_mm",
+      "value": 868,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_FRONT_OH"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_OH",
+      "parameter_code": "rear_overhang_mm",
+      "value": 977,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_REAR_OH"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 138,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_FTRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1584,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "WHEEL_CENTERLINE"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_RTRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1584,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "WHEEL_CENTERLINE"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_LTL",
+      "parameter_code": "steering_wheel_lock_to_lock_turns",
+      "value": 2.14,
+      "canonical_unit": "turns",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LTL"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN_TEXT",
+      "parameter_code": "oem_turning_value_text",
+      "value": "11.7 m curb-to-curb turning circle",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "source_reported_shape": "DIAMETER/CIRCLE",
+        "turning_reference": "CURB_TO_CURB"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN_CIRCLE"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 1765,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_KERB"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Source reports 11.7 m curb-to-curb turning circle. Manifest v1 forbids hand-entered DERIVED values.",
+      "source_families_searched": [
+        "Tesla Thailand 2024+ owner manual"
+      ],
+      "search_notes": "Retain raw circle text.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Use registered circle-to-radius derivation when available."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published track is wheel-center based, not AVT outer tyre faces.",
+      "source_families_searched": [
+        "Tesla Thailand 2024+ owner manual"
+      ],
+      "search_notes": "Do not convert centerline track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted tyre/wheel geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published track is wheel-center based, not AVT outer tyre faces.",
+      "source_families_searched": [
+        "Tesla Thailand 2024+ owner manual"
+      ],
+      "search_notes": "Do not convert centerline track.",
+      "assessed_at": "2026-08-31T00:00:00+07:00",
+      "reviewer": "ChatGPT Phase 1 curation",
+      "next_action": "Seek mounted tyre/wheel geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
