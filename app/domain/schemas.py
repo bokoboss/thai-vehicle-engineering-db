@@ -253,6 +253,15 @@ class SteeringRelationCreate(DomainModel):
     notes: str | None = None
 
 
+class ConflictDecisionCreate(DomainModel):
+    parameter_code: str = Field(min_length=1, max_length=160)
+    selected_normalized_value_id: str | None = None
+    decision_state: DecisionState
+    rationale: str = Field(min_length=1)
+    decided_at: datetime
+    reviewer: str | None = None
+
+
 class ReadinessView(DomainModel):
     readiness_type: ReadinessType
     status: ReadinessStatus
