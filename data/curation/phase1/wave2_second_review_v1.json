@@ -1,0 +1,149 @@
+{
+  "review_version": "1.0.0",
+  "date": "2026-08-31",
+  "branch": "chatgpt/phase-1-wave2-second-review-v1",
+  "decisions": [
+    {
+      "id": "batch-a-01-mazda-mx5-35ae-rf-at",
+      "decision": "PROMOTE_TO_WAVE_1",
+      "identity_time_basis": "EDITION_RELEASE",
+      "identity_time_label_raw": "New Mazda MX-5 35th Anniversary Edition",
+      "evidence": [
+        {
+          "source": "Mazda Sales Thailand official launch",
+          "url": "https://www.mazda.co.th/th/news-update/detail/new-mazda-mx5-35th-anniversary",
+          "note": "Official launch 17 March 2025; uniquely named limited 35th Anniversary Edition with serial number and Thailand sale."
+        },
+        {
+          "source": "Mazda Thailand exact technical specification",
+          "url": "https://www.mazda.co.th/th/cars/mazda-mx5-35th/spec",
+          "note": "Exact 35th Anniversary Edition technical specification including 2.0 RF AT geometry/tyre/turning data."
+        }
+      ],
+      "rationale": "The edition/release itself is a unique evidence-backed temporal discriminator. A fabricated MY2025 is unnecessary."
+    },
+    {
+      "id": "batch-b-05-toyota-fortuner-leader-v-4wd-2025-catalog",
+      "decision": "PROMOTE_TO_WAVE_1",
+      "identity_time_basis": "OEM_REVISION_LABEL",
+      "identity_time_label_raw": "FORTUNER รุ่นปรับปรุงปี 2568",
+      "evidence": [
+        {
+          "source": "Toyota Accessories official download index",
+          "url": "https://www.toyota.co.th/accessories/download",
+          "note": "Official Toyota index explicitly labels FORTUNER รุ่นปรับปรุงปี 2568."
+        },
+        {
+          "source": "Toyota Fortuner Leader official current grade page",
+          "url": "https://www.toyota.co.th/model/fortuner_leader/grade",
+          "note": "Exact grade 2.4 Leader V 4WD is present in the five-grade line-up."
+        },
+        {
+          "source": "Toyota Fortuner Leader Catalog 2025",
+          "url": "https://www.toyota.co.th/media/product/series/download/Fortuner_Leader_Catalog_2025.pdf",
+          "note": "Already screenshot-verified in Batch B; engineering geometry retained as published."
+        }
+      ],
+      "rationale": "Raw Thai revision-year wording is preserved as OEM_REVISION_LABEL and is not converted to a model year."
+    },
+    {
+      "id": "batch-d-02-byd-dolphin-extended-current",
+      "decision": "PROMOTE_TO_WAVE_1",
+      "identity_time_basis": "SALE_PERIOD",
+      "sale_period_from": "2026-03-01",
+      "sale_period_to": "2026-04-05",
+      "identity_time_label_raw": "New BYD DOLPHIN Extended Range (Local Production)",
+      "evidence": [
+        {
+          "source": "REVER official campaign terms",
+          "url": "https://www.reverautomotive.com/en/news/new-byd-dolphin-mar-2026-campaign",
+          "note": "Explicitly identifies New BYD DOLPHIN Extended Range (Local Production) and a bounded 1 Mar–5 Apr 2026 campaign period."
+        },
+        {
+          "source": "REVER current technical specification",
+          "url": "https://www.reverautomotive.com/en/model/new-dolphin/tech-spec",
+          "note": "Exact Extended Range engineering values."
+        }
+      ],
+      "rationale": "The configuration is definitely applicable inside the bounded official campaign interval; no model-year inference is required."
+    },
+    {
+      "id": "batch-b-09-isuzu-mux-22-ultimate-4wd-2026",
+      "decision": "KEEP_WAVE_2",
+      "evidence": [
+        {
+          "source": "Isuzu official 27 Feb 2026 release",
+          "url": "https://www.isuzu-tis.com/news-activities/public-relations/isuzu-expands-4x4-lineup-with-new-2-2-ddi-maxforce-engine",
+          "note": "Exact 2.2 Ddi MAXFORCE 4WD line-up including Ultimate is identity-resolved."
+        },
+        {
+          "source": "Isuzu official 2026 brochure",
+          "url": "https://assets.isuzu-tis.com/mu_x_brochure_2026_5d17d1513d.pdf",
+          "note": "Technical page visually reviewed; some exact grade-column geometry/clearance/wheel association remains insufficiently machine-resolved for clean ingestion."
+        }
+      ],
+      "rationale": "Identity is strong, but second-review was requested specifically to close exact technical-table column association. Keep fail-closed until mapping is recorded unambiguously."
+    },
+    {
+      "id": "batch-c-02-ford-everest-platinum-30-v6-current",
+      "decision": "KEEP_WAVE_2",
+      "evidence": [
+        {
+          "source": "Ford Everest Platinum June 2025 official brochure",
+          "url": "https://www.ford.co.th/content/dam/Ford/th/th-th/nameplate/everest/brochure/everest-platinum/ford-everest-platinum-june-2025.pdf",
+          "note": "Parsed PDF clearly exposes exact 3.0L V6 Platinum 4WD 10AT dimensions, track, clearance and tyre fitment, but screenshot verification repeatedly failed with cache miss in this review pass."
+        }
+      ],
+      "rationale": "Do not weaken the established decisive-PDF visual verification rule just because parsed text is excellent."
+    },
+    {
+      "id": "batch-a-06-mg-im6-long-range",
+      "decision": "KEEP_WAVE_2",
+      "evidence": [
+        {
+          "source": "MG Thailand current Long Range page",
+          "url": "https://www.mgcars.com/th/cars/mg-im6-longrange",
+          "note": "Current product family is explicit."
+        },
+        {
+          "source": "MG Thailand Aug 2026 promotion",
+          "url": "https://www.mgcars.com/th/promotions/MG-IM6-Promotion",
+          "note": "Promotion uses Premium Long Range terminology while the research target used Long Range; potential temporal/nomenclature change must be reconciled before exact promotion."
+        }
+      ],
+      "rationale": "Current official nomenclature indicates a possible grade-name/revision change. Do not collapse Long Range and Premium Long Range silently."
+    },
+    {
+      "id": "batch-b-01-honda-city-ehev-rs-2026-release",
+      "decision": "KEEP_WAVE_2",
+      "rationale": "Exact release/grade identity is strong, but multi-valued geometry/fitment rows still lack proven RS column association in extracted evidence."
+    },
+    {
+      "id": "batch-b-02-honda-civic-ehev-rs-2026-release",
+      "decision": "KEEP_WAVE_2",
+      "rationale": "Official page confirms e:HEV RS and values, but steering/turning/tread/wheel rows remain multi-valued without sufficient exact RS column association."
+    },
+    {
+      "id": "batch-b-03-honda-accord-ehev-rs-2025-release",
+      "decision": "KEEP_WAVE_2",
+      "rationale": "Exact release identity is strong; wheelbase/tread/wheel multi-column association remains unresolved."
+    },
+    {
+      "id": "batch-e-01-mercedes-e350e-amg-dynamic-w214-current",
+      "decision": "KEEP_WAVE_2",
+      "rationale": "Official Thailand width label is semantically suspect relative to OEM W214 family mirror-open geometry; ingest raw evidence only after dedicated applicability review."
+    },
+    {
+      "id": "batch-e-02-mercedes-maybach-s580e-premium-z223-current",
+      "decision": "KEEP_WAVE_2",
+      "rationale": "Official Thailand width label is semantically suspect and same-geometry Z223 cross-market applicability still requires explicit review before clean ingestion."
+    }
+  ],
+  "summary": {
+    "promoted_to_wave_1": 3,
+    "remain_wave_2": 8,
+    "new_wave_1_total": 17,
+    "new_wave_2_total": 8,
+    "hold_total": 5
+  }
+}
