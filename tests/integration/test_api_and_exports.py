@@ -1,0 +1,67 @@
+from __future__ import annotations
+
+import csv
+import io
+
+from openpyxl import load_workbook
+
+
+def test_health_and_vehicle_search(client):
+    assert client.get("/healthz").json() == {"status": "ok"}
+    response = client.get("/api/vehicles", params={"q": "nominal-width"})
+    assert response.status_code == 200
+    assert response.json()["count"] == 1
+    assert response.json()["items"][0]["stable_vehicle_code"] == "FIXTURE-AVT-TRACK-SCREENING"
+    filtered = client.get("/api/vehicles", params={"manufacturer": "Phase 0 Contract Fixtures"})
+    assert filtered.status_code == 200
+    assert filtered.json()["count"] == 16
+
+
+def test_detail_api_and_html_expose_state_and_evidence(client):
+    response = client.get("/api/vehicles/FIXTURE-WIDTH-UNSPECIFIED")
+    assert response.status_code == 200
+    body = response.json()
+    width = next(item for item in body["values"] if item["parameter_code"] == "overall_width_reported_mm")
+    assert width["availability_state"] == "AVAILABLE"
+    assert width["semantic_metadata"]["width_envelope_definition"] == "OEM_UNSPECIFIED"
+    assert body["assessments"][0]["parameter_code"] == "overall_width_body_mm"
+    html = client.get("/vehicles/FIXTURE-WIDTH-UNSPECIFIED")
+    assert html.status_code == 200
+    assert "Unknown / research assessments" in html.text
+    assert "Overall Width" in html.text
+
+
+def test_issues_and_compare_pages_are_available(client):
+    issues = client.get("/api/issues")
+    assert issues.status_code == 200
+    assert any(item["code"] == "AVT_READY" for item in issues.json()["items"])
+    compare = client.get("/compare", params={"codes": "FIXTURE-PRIMARY-PUBLISHED,FIXTURE-AVT-TRACK-DIRECT"})
+    assert compare.status_code == 200
+    assert "Direct AVT outer-face track" in compare.text
+
+
+def test_csv_export_preserves_states_sources_and_assessments(client):
+    response = client.get("/exports/vehicles.csv", params={"codes": "FIXTURE-CONFLICTING-VALUE,FIXTURE-UNKNOWN-ASSESSMENT"})
+    assert response.status_code == 200
+    rows = list(csv.DictReader(io.StringIO(response.content.decode("utf-8-sig"))))
+    conflict = [row for row in rows if row["parameter_code"] == "overall_length_mm"]
+    assert len(conflict) == 2
+    assert all(row["resolution_state"] == "CONFLICTING" for row in conflict)
+    unknown = next(row for row in rows if row["value_kind"] == "assessment")
+    assert unknown["availability_state"] == "NOT_FOUND_AFTER_SEARCH"
+    assert unknown["normalized_value"] == ""
+    assert unknown["assessment_reason"]
+    assert all(row["source_observation_ids"] for row in conflict)
+
+
+def test_xlsx_export_is_readable_and_has_evidence_aware_headers(client):
+    response = client.get("/exports/vehicles.xlsx", params={"codes": "FIXTURE-AVT-TRACK-DIRECT"})
+    assert response.status_code == 200
+    workbook = load_workbook(io.BytesIO(response.content), read_only=True)
+    sheet = workbook["Engineering Data"]
+    headers = [cell.value for cell in next(sheet.iter_rows(max_row=1))]
+    assert "source_observation_ids" in headers
+    assert "resolution_state" in headers
+    assert "derivation_rule_version" in headers
+    stable_code_index = headers.index("stable_vehicle_code")
+    assert any(row[stable_code_index].value == "FIXTURE-AVT-TRACK-DIRECT" for row in sheet.iter_rows(min_row=2))

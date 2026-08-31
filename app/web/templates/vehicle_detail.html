@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ vehicle.manufacturer }} · {{ vehicle.variant }}{% endblock %}
+{% block content %}
+<section class="page-intro detail-header">
+  <p class="eyebrow">{{ vehicle.stable_vehicle_code }} · {{ vehicle.market }}</p>
+  <h1>{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</h1>
+  <p class="lede">{{ vehicle.generation }} · {{ vehicle.variant }} · model year {{ vehicle.model_year_from }}{% if vehicle.model_year_to %}–{{ vehicle.model_year_to }}{% endif %}</p>
+  <p class="muted">{{ vehicle.identity_notes }}</p>
+  <div class="badges">
+    {% for result in vehicle.readiness_results %}<span class="badge badge-{{ result.status|lower }}">{{ result.type }}: {{ result.status }}</span>{% endfor %}
+  </div>
+</section>
+
+<section class="callout">
+  <strong>Configuration identity</strong>
+  <span>Powertrain: {{ vehicle.powertrain or "Unknown" }} · Drivetrain: {{ vehicle.drivetrain or "Unknown" }} · Body: {{ vehicle.body_configuration or "Unknown" }}</span>
+</section>
+
+<section class="panel">
+  <div class="section-heading"><h2>Normalized engineering values</h2><span class="muted">Raw evidence remains below each value.</span></div>
+  <div class="value-grid">
+  {% for value in vehicle["values"] %}
+    <article class="value-card">
+      <div class="value-topline"><h3>{{ value.display_name }}</h3><code>{{ value.parameter_code }}</code></div>
+      <p class="value-number">{{ value.value }}{% if value.unit %} <span>{{ value.unit }}</span>{% endif %}</p>
+      {% if value.uncertainty_value %}<p class="uncertainty">± {{ value.uncertainty_value }} {{ value.uncertainty_unit or value.unit }}</p>{% endif %}
+      <div class="badges"><span class="badge">{{ value.evidence_method }}</span><span class="badge">{{ value.resolution_state }}</span><span class="badge">{{ value.verification_state }}</span><span class="badge">{{ value.availability_state }}</span></div>
+      {% if value.semantic_metadata %}<details><summary>Semantics</summary><pre>{{ value.semantic_metadata }}</pre></details>{% endif %}
+      {% if value.derivation_rule %}<p class="lineage">Derived by {{ value.derivation_rule.code }} · v{{ value.derivation_rule.version }}</p>{% endif %}
+      <details><summary>Evidence ({{ value.observations|length }})</summary>
+        {% for observation in value.observations %}<div class="evidence"><code>{{ observation.source_code }}</code><strong>{{ observation.raw_label }}</strong><span>{{ observation.raw_value }}{% if observation.raw_unit %} {{ observation.raw_unit }}{% endif %}</span><small>{{ observation.evidence_role }}</small></div>{% else %}<p class="muted">No raw observation link; inspect derivation lineage.</p>{% endfor %}
+      </details>
+    </article>
+  {% else %}<p class="empty">No normalized values.</p>{% endfor %}
+  </div>
+</section>
+
+{% if vehicle.assessments %}<section class="panel"><div class="section-heading"><h2>Unknown / research assessments</h2><span class="muted">No fake numeric placeholders are used.</span></div>
+  <div class="assessment-list">{% for assessment in vehicle.assessments %}<div class="assessment"><code>{{ assessment.parameter_code }}</code><span class="badge">{{ assessment.availability_state }}</span><p>{{ assessment.unknown_reason }}</p><small>Searched: {{ assessment.source_families_searched|join(", ") }}</small></div>{% endfor %}</div>
+</section>{% endif %}
+
+{% if vehicle.geometry_assets %}<section class="panel"><div class="section-heading"><h2>Geometry assets</h2><span class="muted">Roles are intentionally distinct.</span></div><div class="table-wrap"><table><thead><tr><th>Role</th><th>Representation</th><th>Datum</th><th>Fidelity</th><th>Uncertainty</th></tr></thead><tbody>{% for asset in vehicle.geometry_assets %}<tr><td><code>{{ asset.role }}</code></td><td>{{ asset.representation_type }}</td><td>{{ asset.datum }}</td><td>{{ asset.fidelity }}</td><td>{{ asset.uncertainty or "Not stated" }}</td></tr>{% endfor %}</tbody></table></div></section>{% endif %}
+
+<p class="actions"><a class="button" href="/exports/vehicles.csv?codes={{ vehicle.stable_vehicle_code }}">Export CSV</a><a class="button secondary" href="/exports/vehicles.xlsx?codes={{ vehicle.stable_vehicle_code }}">Export XLSX</a></p>
+{% endblock %}
