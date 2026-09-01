@@ -1,0 +1,104 @@
+{
+  "registry_version": "1.0",
+  "wave_id": "wave2b",
+  "baseline_release": "release_2026_09_a",
+  "baseline_vehicle_count": 27,
+  "created_at": "2026-09-01T19:26:00+07:00",
+  "targets": [
+    {
+      "target_id": "wave2b-hyundai-staria-premium",
+      "manufacturer": "Hyundai",
+      "model": "STARIA",
+      "configuration": "Premium",
+      "category": "large_passenger_van_mpv",
+      "research_status": "RESEARCH_ACTIVE",
+      "issue": 37
+    },
+    {
+      "target_id": "wave2b-byd-m6-extended-7seat",
+      "manufacturer": "BYD",
+      "model": "M6",
+      "configuration": "Extended 7 Seats",
+      "category": "electric_mpv",
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "BYD M6 7-seat Extended sales campaign commencing 28 November 2024",
+      "manifest_path": "data/curation/manifests/wave2b/byd_m6_extended_7seat_release_20241128_v1.json",
+      "issue": 37
+    },
+    {
+      "target_id": "wave2b-denza-d9-performance-awd",
+      "manufacturer": "DENZA",
+      "model": "D9",
+      "configuration": "Performance AWD",
+      "category": "premium_electric_mpv",
+      "research_status": "RESEARCH_ACTIVE",
+      "issue": 37
+    },
+    {
+      "target_id": "wave2b-toyota-yaris-cross-hev-premium-luxury",
+      "manufacturer": "Toyota",
+      "model": "Yaris Cross",
+      "configuration": "HEV Premium Luxury",
+      "category": "compact_crossover",
+      "research_status": "RESEARCH_ACTIVE",
+      "issue": 37
+    },
+    {
+      "target_id": "wave2b-honda-hrv-ehev-rs",
+      "manufacturer": "Honda",
+      "model": "HR-V",
+      "configuration": "e:HEV RS",
+      "category": "compact_crossover",
+      "research_status": "RESEARCH_ACTIVE",
+      "issue": 37
+    },
+    {
+      "target_id": "wave2b-toyota-camry-hev-premium-luxury",
+      "manufacturer": "Toyota",
+      "model": "Camry",
+      "configuration": "HEV Premium Luxury",
+      "category": "executive_sedan",
+      "research_status": "RESEARCH_ACTIVE",
+      "issue": 37
+    },
+    {
+      "target_id": "wave2bs-porsche-911-carrera-gts-my2027",
+      "manufacturer": "Porsche",
+      "model": "911",
+      "configuration": "Carrera GTS MY2027 Thailand",
+      "category": "supercar_sports_car",
+      "research_status": "RESEARCH_ACTIVE_HIGH_CONFIDENCE",
+      "identity_time_basis_candidate": "MODEL_YEAR",
+      "identity_time_label_raw": "2027",
+      "issue": 38
+    },
+    {
+      "target_id": "wave2bs-lamborghini-revuelto",
+      "manufacturer": "Lamborghini",
+      "model": "Revuelto",
+      "configuration": "Thailand applicability TBD",
+      "category": "supercar",
+      "research_status": "RESEARCH_ACTIVE",
+      "issue": 38
+    },
+    {
+      "target_id": "wave2bs-ferrari-296-gtb-thailand-delivered",
+      "manufacturer": "Ferrari",
+      "model": "296 GTB",
+      "configuration": "Thailand-delivered official-dealer configuration",
+      "category": "supercar",
+      "research_status": "RESEARCH_ACTIVE",
+      "issue": 38
+    },
+    {
+      "target_id": "wave2bs-mclaren-artura-coupe",
+      "manufacturer": "McLaren",
+      "model": "Artura",
+      "configuration": "Coupe Thailand/APAC applicability TBD",
+      "category": "supercar",
+      "research_status": "RESEARCH_ACTIVE",
+      "issue": 38
+    }
+  ]
+}
