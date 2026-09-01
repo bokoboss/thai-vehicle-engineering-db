@@ -1,0 +1,544 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-LEXUS-LM350H-EXECUTIVE-7SEAT-ALLNEW-2023-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-lexus-lm350h-executive-7seat-allnew-2023",
+    "manufacturer_name": "Lexus",
+    "manufacturer_display_name": "Lexus",
+    "canonical_model_name": "lm",
+    "display_model_name": "LM 350h",
+    "market_code": "TH",
+    "generation_name": "All-New Lexus LM Thailand 2023 generation",
+    "body_style": "Luxury 7-seat MPV",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "THE ALL-NEW LEXUS LM — LM 350h Executive 7-Seater, official Thailand 2023 release configuration",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Executive 7-Seater",
+    "powertrain": "2.5L hybrid / E-CVT",
+    "drivetrain": "E-Four",
+    "body_configuration": "7-seat luxury MPV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Official Lexus Thailand 2023 price list identifies THE ALL-NEW LEXUS LM and exact LM 350h Executive 7-Seater as of 30 August 2023. The 2023 exact-grade catalogue geometry matches the 2025 exact-grade catalogue and current Lexus Thailand specification page, supporting same engineering configuration continuity without inventing a model year."
+  },
+  "sources": [
+    {
+      "source_code": "LEXUS_TH_LM_ALLNEW_PRICELIST_20230830",
+      "publisher": "Lexus Thailand / Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_PRICE_LIST",
+      "title": "THE ALL-NEW LEXUS LM — official Thailand price list",
+      "url": "https://www.lexus.co.th/content/dam/thailand/website-v3/price-list/Lexus%20LM_Pricelist_2023.pdf",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2023,
+      "page_section_default": "LM 350h Executive 7-Seater; price information as of 30 Aug 2023",
+      "applicability_notes": "Exact Thailand all-new release identity",
+      "archival_status": "URL_ONLY",
+      "notes": "Official price-list text states THE ALL-NEW LEXUS LM, exact Executive 7-Seater grade, and data date 30 Aug 2566."
+    },
+    {
+      "source_code": "LEXUS_TH_LM_CATALOG_2023",
+      "publisher": "Lexus Thailand / Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF",
+      "title": "Lexus LM Thailand Catalogue 2023",
+      "url": "https://www.lexus.co.th/content/dam/thailand/website-v3/borchures/catalog/2023/Catalog_2023Lexus_lm.pdf",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2023,
+      "page_section_default": "Specifications — LM350h Executive 7-Seater, PDF page 16",
+      "applicability_notes": "Exact 2023 all-new LM350h Executive 7-Seater technical column",
+      "archival_status": "URL_ONLY",
+      "notes": "Text layer explicitly separates LM350h Executive 4-Seater and 7-Seater values."
+    },
+    {
+      "source_code": "LEXUS_TH_LM_CATALOG_2025",
+      "publisher": "Lexus Thailand / Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_VISUALLY_VERIFIED",
+      "title": "Lexus LM Thailand Catalogue 2025",
+      "url": "https://www.lexus.co.th/content/dam/thailand/website-v3/borchures/catalog/2025/Lexus_LM_Catalog_Thai_2025_LM.pdf",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2025,
+      "page_section_default": "Specifications — LM350h Executive 7-Seater, PDF page 16",
+      "applicability_notes": "Exact-grade engineering continuity evidence",
+      "archival_status": "URL_ONLY",
+      "notes": "Specification page visually verified. Core 7-Seater geometry and mass values match the 2023 catalogue."
+    },
+    {
+      "source_code": "LEXUS_TH_LM350H_7SEAT_CURRENT_20260901",
+      "publisher": "Lexus Thailand / Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "Lexus LM 350h 7-seater — current Thailand specification",
+      "url": "https://www.lexus.co.th/en/models/lm/lm-350h-7-seater.html",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "page_section_default": "Specifications",
+      "applicability_notes": "Current exact LM 350h 7-seater continuity",
+      "archival_status": "URL_ONLY",
+      "notes": "Current page repeats 5125/1890/1940/3000/1615/1620, curb 2345, GVW 2880, turning radius Tire 5.9, and 225/55 R19."
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_RELEASE",
+      "source_code": "LEXUS_TH_LM_ALLNEW_PRICELIST_20230830",
+      "vehicle_identity_claim": "THE ALL-NEW LEXUS LM — LM 350h Executive 7-Seater",
+      "raw_label": "All-new Thailand release configuration",
+      "raw_value": "LM 350h Executive 7-Seater; price information as of 30 Aug 2566",
+      "raw_unit": null,
+      "page_section_locator": "Official price list",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "LEXUS_TH_LM_CATALOG_2023",
+      "vehicle_identity_claim": "LM350h Executive 7-Seater",
+      "raw_label": "Length / Width / Height",
+      "raw_value": "5125 / 1890 / 1940",
+      "raw_unit": "mm",
+      "page_section_locator": "Specifications — LM350h Executive 7-Seater, PDF page 16",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Generic overall width does not state mirror inclusion."
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "LEXUS_TH_LM_CATALOG_2023",
+      "vehicle_identity_claim": "LM350h Executive 7-Seater",
+      "raw_label": "Wheelbase",
+      "raw_value": "3000",
+      "raw_unit": "mm",
+      "page_section_locator": "Specifications — PDF page 16",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TREAD",
+      "source_code": "LEXUS_TH_LM_CATALOG_2023",
+      "vehicle_identity_claim": "LM350h Executive 7-Seater",
+      "raw_label": "Tread Front / Rear",
+      "raw_value": "1615 / 1620",
+      "raw_unit": "mm",
+      "page_section_locator": "Specifications — PDF page 16",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "OEM tread reference is not established as AVT outer tyre faces."
+    },
+    {
+      "observation_code": "OBS_MASS",
+      "source_code": "LEXUS_TH_LM_CATALOG_2023",
+      "vehicle_identity_claim": "LM350h Executive 7-Seater",
+      "raw_label": "Curb Weight / Gross Vehicle Weight",
+      "raw_value": "2345 / 2880",
+      "raw_unit": "kg",
+      "page_section_locator": "Specifications — PDF page 16",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TURNING",
+      "source_code": "LEXUS_TH_LM_CATALOG_2023",
+      "vehicle_identity_claim": "LM350h Executive 7-Seater",
+      "raw_label": "Minimum Turning Radius (Tire)",
+      "raw_value": "5.9",
+      "raw_unit": "m",
+      "page_section_locator": "Specifications — PDF page 16",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Source explicitly identifies Tire reference; curb/wall semantics do not apply and axle scope is not stated."
+    },
+    {
+      "observation_code": "OBS_TYRE",
+      "source_code": "LEXUS_TH_LM_CATALOG_2023",
+      "vehicle_identity_claim": "LM350h Executive 7-Seater",
+      "raw_label": "Tires",
+      "raw_value": "225/55 R19",
+      "raw_unit": null,
+      "page_section_locator": "Specifications — PDF page 16",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WHEEL",
+      "source_code": "LEXUS_TH_LM_CATALOG_2025",
+      "vehicle_identity_claim": "LM350h Executive 7-Seater",
+      "raw_label": "Wheel Design",
+      "raw_value": "19-inch forged aluminum wheels",
+      "raw_unit": null,
+      "page_section_locator": "Exterior and interior colors / wheel design",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_CURRENT_CONTINUITY",
+      "source_code": "LEXUS_TH_LM350H_7SEAT_CURRENT_20260901",
+      "vehicle_identity_claim": "LM 350h 7-seater",
+      "raw_label": "Current specification continuity",
+      "raw_value": "5125 / 1890 / 1940 / 3000 / 1615 / 1620; curb 2345; GVW 2880; turning Tire 5.9",
+      "raw_unit": null,
+      "page_section_locator": "Current specifications",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Continuity evidence only; individual normalized values remain linked to exact source observations."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5125,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_REPORTED",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1890,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1940,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3000,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TREAD",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1615,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TREAD",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1620,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 2345,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_MASS"
+      ]
+    },
+    {
+      "value_code": "VAL_GVW",
+      "parameter_code": "gross_vehicle_mass_kg",
+      "value": 2880,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_MASS"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.9,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "WHEEL_PATH_OTHER",
+        "turning_axle_scope": "OEM_UNSPECIFIED",
+        "source_label": "Minimum Turning Radius (Tire)"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "225/55 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "225/55 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "19-inch forged aluminum wheels",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "19-inch forged aluminum wheels",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Lexus Thailand publishes overall width 1,890 mm but does not establish body-excluding-mirrors semantics.",
+      "source_families_searched": [
+        "Lexus Thailand 2023 catalogue",
+        "Lexus Thailand 2025 catalogue",
+        "current Lexus Thailand specification"
+      ],
+      "search_notes": "Generic overall width is not promoted to body width.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek explicit body/mirror envelope documentation."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open overall width was located in the reviewed exact Lexus Thailand sources.",
+      "source_families_searched": [
+        "Lexus Thailand 2023 catalogue",
+        "Lexus Thailand 2025 catalogue",
+        "current Lexus Thailand specification"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek official body dimension documentation."
+    },
+    {
+      "parameter_code": "clearance_value_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact minimum ground-clearance value was located in the reviewed Lexus Thailand catalogues/current specification for LM 350h Executive 7-Seater.",
+      "source_families_searched": [
+        "Lexus Thailand 2023 catalogue",
+        "Lexus Thailand 2025 catalogue",
+        "current Lexus Thailand specification"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek homologation or technical body data."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published front tread is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Lexus Thailand 2023 catalogue",
+        "Lexus Thailand 2025 catalogue"
+      ],
+      "search_notes": "Do not infer from tread plus nominal tyre width.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published rear tread is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Lexus Thailand 2023 catalogue",
+        "Lexus Thailand 2025 catalogue"
+      ],
+      "search_notes": "Do not infer from tread plus nominal tyre width.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
