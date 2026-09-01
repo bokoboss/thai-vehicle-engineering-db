@@ -353,6 +353,63 @@ def test_multiple_scoped_values_are_not_silently_reduced_to_a_favourable_value()
     assert "across scopes" in result.reason
 
 
+def test_preferred_flag_alone_does_not_break_same_scope_ordinary_tie():
+    result = evaluate_length_constraint(
+        vehicle(
+            numeric_value("overall_length_mm", 4400, "mm", preferred=True),
+            numeric_value("overall_length_mm", 5200, "mm"),
+        ),
+        DesignCheckInputs(maximum_vehicle_length_mm=5000),
+    )
+
+    assert result.state == DesignCheckState.INDETERMINATE
+    assert "auditable selection" in result.reason.lower()
+
+
+def test_multiple_ordinary_values_remain_indeterminate_without_selection():
+    result = evaluate_height_constraint(
+        vehicle(
+            numeric_value("overall_height_mm", 1800, "mm"),
+            numeric_value("overall_height_mm", 2200, "mm"),
+        ),
+        DesignCheckInputs(available_clear_height_mm=2100),
+    )
+
+    assert result.state == DesignCheckState.INDETERMINATE
+    assert "multiple applicable" in result.reason.lower()
+
+
+def test_active_conflict_decision_candidate_can_still_be_evaluated():
+    result = evaluate_length_constraint(
+        vehicle(
+            numeric_value(
+                "overall_length_mm",
+                4500,
+                "mm",
+                resolution_state="CONFLICTING",
+                conflict_decision_id="decision-1",
+            )
+        ),
+        DesignCheckInputs(maximum_vehicle_length_mm=5000),
+    )
+
+    assert result.state == DesignCheckState.PASS
+    assert "Selected conflict retained" in result.evidence_state
+
+
+def test_unresolved_conflicting_values_remain_indeterminate():
+    result = evaluate_length_constraint(
+        vehicle(
+            numeric_value("overall_length_mm", 4400, "mm", resolution_state="CONFLICTING"),
+            numeric_value("overall_length_mm", 5200, "mm", resolution_state="CONFLICTING"),
+        ),
+        DesignCheckInputs(maximum_vehicle_length_mm=5000),
+    )
+
+    assert result.state == DesignCheckState.INDETERMINATE
+    assert "conflicting" in result.reason.lower()
+
+
 def test_semantic_cue_keeps_same_named_unspecified_values_in_their_namespace():
     result = evaluate_turning_constraint(
         vehicle(

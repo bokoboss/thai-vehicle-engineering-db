@@ -458,12 +458,9 @@ def resolve_parameter_candidate(vehicle: DesignVehicle, parameter_code: str) -> 
             f"multiple applicable {parameter_code} values remain across scopes; scope/value is not uniquely selected ({scopes})",
         )
 
-    preferred = [item for item in ordinary if item.preferred]
-    if len(preferred) == 1:
-        return CandidateResolution(preferred[0], "one explicit preferred value")
     return CandidateResolution(
         None,
-        f"multiple applicable {parameter_code} values remain; scope/value is not uniquely selected ({scopes})",
+        f"multiple applicable {parameter_code} values remain; no auditable selection is represented ({scopes})",
     )
 
 

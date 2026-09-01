@@ -163,6 +163,8 @@ The service maps only exact configuration values from the existing database into
 
 An active, non-superseded curation conflict decision may select one conflicting normalized value. The result exposes “Selected conflict retained” so that the selection is not silent. If conflicting values have no active auditable selection, the result is `INDETERMINATE`. Multiple applicable values with no unique selection are also `INDETERMINATE`.
 
+`preferred` is display/curation metadata only. The preferred flag alone is not sufficient decision authority for `DESIGN_CHECK_V1`; it does not by itself represent the decision record or rule that selected the value. When multiple eligible ordinary values remain, the evaluator returns `INDETERMINATE` regardless of preferred flags. Selection from competing values requires an auditable decision mechanism represented to the evaluator, such as an active, non-superseded conflict decision selecting that exact value.
+
 Fitment and load-condition scope are preserved in the candidate snapshot and result. A single uniquely scoped value may be evaluated with that scope displayed. Multiple competing scopes are not reduced to the most favourable value.
 
 ## 6. Explainability and controlling information
