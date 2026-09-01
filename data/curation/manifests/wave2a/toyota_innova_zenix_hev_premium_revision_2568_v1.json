@@ -1,0 +1,515 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-TOYOTA-INNOVA-ZENIX-HEV-PREMIUM-REVISION-2568-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-toyota-innova-zenix-hev-premium-revision-2568",
+    "manufacturer_name": "Toyota",
+    "manufacturer_display_name": "Toyota",
+    "canonical_model_name": "innova-zenix",
+    "display_model_name": "Innova Zenix",
+    "market_code": "TH",
+    "generation_name": "Current Innova Zenix Thailand revision 2568",
+    "body_style": "7-seat hybrid MPV",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "OEM_REVISION_LABEL",
+    "identity_time_label_raw": "โตโยต้า อินโนว่า ซีนิกซ์ รุ่นปรับปรุงใหม่ ปี 2568",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "HEV Premium",
+    "powertrain": "2.0L gasoline hybrid / E-CVT",
+    "drivetrain": "FWD",
+    "body_configuration": "7-seat MPV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Toyota Thailand accessory material explicitly labels Innova Zenix as รุ่นปรับปรุงใหม่ ปี 2568 and lists HEV Premium/HEV Smart. The current Toyota grade page continues to list HEV Premium, and the official 2025 catalogue technical page visually resolves the exact HEV Premium specification column. Revision year is not converted to model year."
+  },
+  "sources": [
+    {
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_REVISION_LABEL_2568",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_ACCESSORY_BROCHURE",
+      "title": "Toyota Innova Zenix Accessories — รุ่นปรับปรุงใหม่ ปี 2568",
+      "url": "https://www.toyota.co.th/media/accessories/files/brochure/68b95caa9a7be.pdf",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2025,
+      "page_section_default": "Model applicability / revision label",
+      "applicability_notes": "Temporal revision-label evidence for HEV Premium and HEV Smart",
+      "archival_status": "URL_ONLY",
+      "notes": "PDF text layer explicitly states โตโยต้า อินโนว่า ซีนิกซ์ รุ่นปรับปรุงใหม่ ปี 2568 and identifies HEV Premium / HEV Smart. Revision year is not treated as model year."
+    },
+    {
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_GRADE_CURRENT_20260901",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_GRADE_LIST",
+      "title": "Toyota Innova Zenix — current grades and prices",
+      "url": "https://www.toyota.co.th/model/innovazenix/grade",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "page_section_default": "MODEL LINE-UP",
+      "applicability_notes": "Current HEV Premium / HEV Smart grade continuity",
+      "archival_status": "URL_ONLY",
+      "notes": "Current page lists exactly two grades and a Jul-Aug 2026 promotion."
+    },
+    {
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_CATALOG_2025",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_VISUALLY_VERIFIED",
+      "title": "Toyota Innova Zenix Catalogue 2025",
+      "url": "https://www.toyota.co.th/media/product/series/download/INNOVA_ZENIX_CATALOG2025.pdf",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2025,
+      "page_section_default": "Specification — HEV Premium / HEV Smart table, PDF page 7",
+      "applicability_notes": "Exact HEV Premium technical column visually verified",
+      "archival_status": "URL_ONLY",
+      "notes": "Specification page visually checked during Wave 2A curation. HEV Premium and HEV Smart columns are explicit."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_CATALOG_2025",
+      "raw_oem_wording": "ระยะต่ำสุดจากพื้น; load/reference state not stated",
+      "notes": "Structured unknown load/reference state only."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_REVISION_LABEL",
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_REVISION_LABEL_2568",
+      "vehicle_identity_claim": "Toyota Innova Zenix HEV Premium",
+      "raw_label": "Revision label",
+      "raw_value": "โตโยต้า อินโนว่า ซีนิกซ์ รุ่นปรับปรุงใหม่ ปี 2568",
+      "raw_unit": null,
+      "page_section_locator": "Model applicability / revision label",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_CURRENT_GRADE",
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_GRADE_CURRENT_20260901",
+      "vehicle_identity_claim": "Toyota Innova Zenix HEV Premium",
+      "raw_label": "Current grade",
+      "raw_value": "HEV Premium",
+      "raw_unit": null,
+      "page_section_locator": "MODEL LINE-UP",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium",
+      "raw_label": "มิติภายนอก ยาว x กว้าง x สูง",
+      "raw_value": "4,799 x 1,850 x 1,790",
+      "raw_unit": "mm",
+      "page_section_locator": "Specification — HEV Premium column, PDF page 7",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Overall width mirror/body inclusion is not stated."
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium",
+      "raw_label": "ความยาวช่วงล้อ",
+      "raw_value": "2850",
+      "raw_unit": "mm",
+      "page_section_locator": "Specification — shared HEV Premium / HEV Smart row, PDF page 7",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TREAD",
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium",
+      "raw_label": "ความกว้างช่วงล้อ หน้า / หลัง",
+      "raw_value": "1,550 / 1,571",
+      "raw_unit": "mm",
+      "page_section_locator": "Specification — shared HEV Premium / HEV Smart row, PDF page 7",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Toyota tread/track reference definition is not established as AVT outer tyre faces."
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium",
+      "raw_label": "ระยะต่ำสุดจากพื้น",
+      "raw_value": "160",
+      "raw_unit": "mm",
+      "page_section_locator": "Specification — shared HEV Premium / HEV Smart row, PDF page 7",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Load state and limiting component/reference point are not stated."
+    },
+    {
+      "observation_code": "OBS_TURNING",
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium",
+      "raw_label": "รัศมีวงเลี้ยวแคบสุด",
+      "raw_value": "5.7",
+      "raw_unit": "m",
+      "page_section_locator": "Specification — shared HEV Premium / HEV Smart row, PDF page 7",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Curb/wall reference and axle scope are not stated."
+    },
+    {
+      "observation_code": "OBS_DRIVETRAIN",
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium",
+      "raw_label": "ระบบขับเคลื่อน",
+      "raw_value": "ขับเคลื่อนล้อหน้า",
+      "raw_unit": null,
+      "page_section_locator": "Specification — shared HEV Premium / HEV Smart row, PDF page 7",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE",
+      "source_code": "TOYOTA_TH_INNOVA_ZENIX_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium",
+      "raw_label": "ล้อและยาง",
+      "raw_value": "ล้ออัลลอย 18 นิ้ว 225/50 R18",
+      "raw_unit": null,
+      "page_section_locator": "Specification — shared HEV Premium / HEV Smart row, PDF page 7",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4799,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_REPORTED",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1850,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1790,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2850,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TREAD",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1550,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TREAD",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1571,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 160,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.7,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "18-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "18-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "225/50 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "225/50 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota Thailand catalogue publishes overall width but does not establish body-excluding-mirrors semantics for HEV Premium.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalogue",
+        "Toyota Thailand current grade page"
+      ],
+      "search_notes": "Do not promote generic overall width to body width.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek explicit body/mirror envelope documentation."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open overall width was located in the reviewed Toyota Thailand sources for this exact configuration.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalogue",
+        "Toyota Thailand current grade page"
+      ],
+      "search_notes": "Generic overall width is not substituted.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek official body/dimension drawing with mirror envelope."
+    },
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact HEV Premium kerb-mass value was located on the reviewed Toyota Thailand specification page.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalogue",
+        "Toyota Thailand current grade page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek homologation, certification or exact technical documentation."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota front tread/track value is published but its reference definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalogue"
+      ],
+      "search_notes": "Keep OEM tread separate from AVT track.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota rear tread/track value is published but its reference definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalogue"
+      ],
+      "search_notes": "Keep OEM tread separate from AVT track.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}

@@ -1,0 +1,559 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-HONDA-CRV-EHEV-RS4WD-MINORCHANGE-20251128-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-honda-crv-ehev-rs4wd-minorchange-release-2025-11-28",
+    "manufacturer_name": "Honda",
+    "manufacturer_display_name": "Honda",
+    "canonical_model_name": "cr-v",
+    "display_model_name": "CR-V e:HEV",
+    "market_code": "TH",
+    "generation_name": "CR-V e:HEV minor-change Thailand late-2025 line-up",
+    "body_style": "Mid-size hybrid SUV",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "Honda CR-V e:HEV ใหม่ รุ่นไมเนอร์เชนจ์ — official Thailand price launch 28 November 2025",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "e:HEV RS 4WD",
+    "powertrain": "2.0L full hybrid e:HEV / E-CVT",
+    "drivetrain": "Real Time AWD",
+    "body_configuration": "5-seat SUV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Honda Thailand pre-booking release dated 6 Nov 2025 identifies the minor-change full-e:HEV line-up and exact e:HEV RS 4WD grade, with official price launch scheduled for 28 Nov 2025. Honda Motor Expo 2025 release and current CR-V page continue the exact e:HEV RS 4WD grade."
+  },
+  "sources": [
+    {
+      "source_code": "HONDA_TH_CRV_EHEV_MINORCHANGE_PREBOOK_20251106",
+      "publisher": "Honda Automobile (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_PREBOOKING_RELEASE",
+      "title": "Honda introduces the new CR-V e:HEV minor-change full-hybrid line-up",
+      "url": "https://www.honda.co.th/news/NewCRVeHEV_Prebooking",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2025,
+      "page_section_default": "Minor-change identity / grade line-up / official price-launch date",
+      "applicability_notes": "Exact e:HEV RS 4WD late-2025 minor-change identity",
+      "archival_status": "URL_ONLY",
+      "notes": "Official corporate release dated 06.11.2025; body text states official price announcement on 28 Nov 2025."
+    },
+    {
+      "source_code": "HONDA_TH_CRV_EHEV_MOTOREXPO_20251128",
+      "publisher": "Honda Automobile (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_LAUNCH_RELEASE",
+      "title": "Honda strengthens e:HEV line-up at Motor Expo 2025",
+      "url": "https://www.honda.co.th/en/news/Motorexpo2025",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2025,
+      "page_section_default": "CR-V e:HEV new line-up and official launch",
+      "applicability_notes": "Late-2025 minor-change launch continuity",
+      "archival_status": "URL_ONLY",
+      "notes": "Corporate article dated 27.11.2025 with Bangkok dateline 28 Nov 2025."
+    },
+    {
+      "source_code": "HONDA_TH_CRV_EHEV_SPEC_CURRENT_20260901",
+      "publisher": "Honda Automobile (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "Honda CR-V e:HEV technical specification",
+      "url": "https://www.honda.co.th/crv/specification",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "page_section_default": "CR-V e:HEV technical specification — five-grade table",
+      "applicability_notes": "Current exact grade set: e:HEV E, ES, HuNT, RS, RS 4WD",
+      "archival_status": "URL_ONLY",
+      "notes": "Current web table is retained conservatively where grouped values do not expose a fully reliable exact column association in flattened text."
+    },
+    {
+      "source_code": "HONDA_TH_CRV_EHEV_CATALOG_2025",
+      "publisher": "Honda Automobile (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_STRUCTURED_TABLE",
+      "title": "New CR-V e:HEV Catalog",
+      "url": "https://assets.honda.co.th/www-assets/model/2025/12/25/ycdwpoFhimYEx6xP8b6svBr0uqVZM6Sb.pdf?response-content-disposition=attachment%3B+filename%3DNew+CR-V+e%3AHEV+Catalog.pdf",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2025,
+      "page_section_default": "SPECIFICATIONS — five-grade technical table",
+      "applicability_notes": "Exact late-2025 e:HEV line-up; only rows with unambiguous grade grouping are normalized",
+      "archival_status": "URL_ONLY",
+      "notes": "PDF structured extraction exposes explicit five-grade header and grouped technical rows. Visual screenshot retrieval was unavailable during this curation pass; ambiguous row grouping is therefore kept out of normalized values."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "HONDA_TH_CRV_EHEV_SPEC_CURRENT_20260901",
+      "raw_oem_wording": "ความสูงใต้ท้องรถ; load/reference state not stated",
+      "notes": "Structured unknown load/reference state only."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_MINORCHANGE",
+      "source_code": "HONDA_TH_CRV_EHEV_MINORCHANGE_PREBOOK_20251106",
+      "vehicle_identity_claim": "Honda CR-V e:HEV ใหม่ e:HEV RS 4WD",
+      "raw_label": "Minor-change line-up",
+      "raw_value": "CR-V e:HEV ใหม่ รุ่นไมเนอร์เชนจ์; e:HEV RS 4WD; official price announcement 28 November 2025",
+      "raw_unit": null,
+      "page_section_locator": "Corporate release / grade line-up",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DRIVETRAIN",
+      "source_code": "HONDA_TH_CRV_EHEV_MINORCHANGE_PREBOOK_20251106",
+      "vehicle_identity_claim": "e:HEV RS 4WD",
+      "raw_label": "Drive system",
+      "raw_value": "ระบบขับเคลื่อน 4 ล้ออัตโนมัติ (Real Time™ AWD)",
+      "raw_unit": null,
+      "page_section_locator": "e:HEV RS 4WD grade description",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH_WIDTH",
+      "source_code": "HONDA_TH_CRV_EHEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "All current CR-V e:HEV grades including e:HEV RS 4WD",
+      "raw_label": "ความยาว / ความกว้าง",
+      "raw_value": "4691 / 1866",
+      "raw_unit": "mm",
+      "page_section_locator": "มิติ — values displayed as shared current e:HEV specifications",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Overall width mirror/body inclusion is not stated."
+    },
+    {
+      "observation_code": "OBS_HEIGHT_GROUPED",
+      "source_code": "HONDA_TH_CRV_EHEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Current CR-V e:HEV five-grade table",
+      "raw_label": "ความสูง",
+      "raw_value": "1681 / 1691",
+      "raw_unit": "mm",
+      "page_section_locator": "มิติ — grouped values in current web table",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Flattened current web/PDF extraction does not preserve a sufficiently robust exact RS 4WD member mapping for publication-grade normalization in this pass."
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "HONDA_TH_CRV_EHEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "All current CR-V e:HEV grades including e:HEV RS 4WD",
+      "raw_label": "ฐานล้อ",
+      "raw_value": "2700",
+      "raw_unit": "mm",
+      "page_section_locator": "มิติ — shared value",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TREAD_RS_GROUP",
+      "source_code": "HONDA_TH_CRV_EHEV_CATALOG_2025",
+      "vehicle_identity_claim": "e:HEV HuNT / e:HEV RS / e:HEV RS 4WD grouped row",
+      "raw_label": "ระยะห่างระหว่างล้อคู่หน้า / คู่หลัง",
+      "raw_value": "1612 / 1638",
+      "raw_unit": "mm",
+      "page_section_locator": "SPECIFICATIONS — last three e:HEV grade columns",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "OEM tread/track reference definition is not established as AVT outer tyre faces."
+    },
+    {
+      "observation_code": "OBS_GC_RS_GROUP",
+      "source_code": "HONDA_TH_CRV_EHEV_CATALOG_2025",
+      "vehicle_identity_claim": "e:HEV HuNT / e:HEV RS / e:HEV RS 4WD grouped row",
+      "raw_label": "ความสูงใต้ท้องรถ",
+      "raw_value": "208",
+      "raw_unit": "mm",
+      "page_section_locator": "SPECIFICATIONS — last three e:HEV grade columns",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Load state and limiting component/reference point are not stated."
+    },
+    {
+      "observation_code": "OBS_MASS_FIVE_VALUES",
+      "source_code": "HONDA_TH_CRV_EHEV_CATALOG_2025",
+      "vehicle_identity_claim": "CR-V e:HEV five-grade table in header order",
+      "raw_label": "น้ำหนักรถ (กิโลกรัม)",
+      "raw_value": "1715 / 1744 / 1764 / 1764 / 1815",
+      "raw_unit": "kg",
+      "page_section_locator": "SPECIFICATIONS — five grade columns",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Exact RS 4WD member is 1815 by five-column table order, but the Thai label 'น้ำหนักรถ' is not promoted to kerb-mass semantics in this manifest."
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE_RS_GROUP",
+      "source_code": "HONDA_TH_CRV_EHEV_CATALOG_2025",
+      "vehicle_identity_claim": "e:HEV RS / e:HEV RS 4WD grouped rows",
+      "raw_label": "ขนาดล้อ / ขนาดยาง",
+      "raw_value": "19 x 7.5J / 235/55 R19",
+      "raw_unit": null,
+      "page_section_locator": "SPECIFICATIONS — last two e:HEV grade columns",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LTL_TURN",
+      "source_code": "HONDA_TH_CRV_EHEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Current CR-V e:HEV specification including e:HEV RS 4WD",
+      "raw_label": "พวงมาลัยหมุนสุด (รอบ) / รัศมีวงเลี้ยว (เมตร)",
+      "raw_value": "2.4 / 5.5",
+      "raw_unit": null,
+      "page_section_locator": "ระบบพวงมาลัย",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Turning curb/wall reference and axle scope are not stated."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4691,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH_WIDTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_REPORTED",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1866,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH_WIDTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2700,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TREAD",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1612,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD_RS_GROUP"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TREAD",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1638,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD_RS_GROUP"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 208,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC_RS_GROUP"
+      ]
+    },
+    {
+      "value_code": "VAL_LTL",
+      "parameter_code": "steering_wheel_lock_to_lock_turns",
+      "value": 2.4,
+      "canonical_unit": "turns",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LTL_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.5,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LTL_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "19 x 7.5J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE_RS_GROUP"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "19 x 7.5J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE_RS_GROUP"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "235/55 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE_RS_GROUP"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "235/55 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE_RS_GROUP"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_height_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Honda Thailand publishes grouped height values 1,681 / 1,691 mm for the five-grade current e:HEV table, but the flattened web/PDF extraction did not preserve a sufficiently robust exact RS 4WD member mapping for this curation pass.",
+      "source_families_searched": [
+        "Honda Thailand current specification",
+        "Honda Thailand late-2025 catalogue",
+        "Honda Thailand launch material"
+      ],
+      "search_notes": "Do not silently assign 1,691 mm despite secondary sources being consistent; exact grade-column evidence should be independently recovered.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Visually verify the exact five-grade technical table or recover a first-party exact-grade comparison page."
+    },
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Honda Thailand's exact five-grade table places 1,815 kg in the RS 4WD column but labels the row only as 'น้ำหนักรถ'; this manifest does not silently reinterpret that wording as kerb mass.",
+      "source_families_searched": [
+        "Honda Thailand late-2025 catalogue",
+        "Honda Thailand current specification"
+      ],
+      "search_notes": "The raw 1,815 kg observation is retained. Exact secondary sources describe 1,815 kg as curb/kerb weight, but first-party mass semantics remain preferred for engineering normalization.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek Honda homologation/technical documentation explicitly defining the mass basis."
+    },
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Honda Thailand publishes overall width 1,866 mm but does not establish body-excluding-mirrors semantics.",
+      "source_families_searched": [
+        "Honda Thailand current specification",
+        "Honda Thailand late-2025 catalogue"
+      ],
+      "search_notes": "Generic width is not promoted to body width.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek explicit body/mirror envelope documentation."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open overall width was located in the reviewed Honda Thailand sources.",
+      "source_families_searched": [
+        "Honda Thailand current specification",
+        "Honda Thailand late-2025 catalogue"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek body repair/dimension drawing."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published front tread/track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Honda Thailand late-2025 catalogue"
+      ],
+      "search_notes": "Do not convert OEM tread to AVT track.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published rear tread/track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Honda Thailand late-2025 catalogue"
+      ],
+      "search_notes": "Do not convert OEM tread to AVT track.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}

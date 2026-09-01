@@ -1,0 +1,121 @@
+{
+  "version": "1.0.0",
+  "date": "2026-09-01",
+  "purpose": "Wave 2A engineering-use expansion beyond the accepted 21-vehicle curated baseline",
+  "policy": "Promote only research-clean exact Thai-market configurations; unresolved candidates remain HOLD rather than being forced into ingestion.",
+  "targets": [
+    {
+      "priority": 1,
+      "target_id": "wave2a-kia-carnival-hev-7seat-luxury-release-20251003",
+      "manufacturer": "Kia",
+      "target": "The new Kia Carnival HEV 7-seat Luxury",
+      "engineering_role": [
+        "large_family_mpv",
+        "porte_cochere",
+        "large_vehicle_envelope"
+      ],
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "The new Kia Carnival HEV 7-seater Thailand launch 3 October 2025",
+      "primary_sources": [
+        "https://www.kia.com/th/en/util/news/the-new-kia-carnival-hev-7-seater-launch.html",
+        "https://www.kia.com/th/en/cars/carnival-hev/specification.html",
+        "https://www.kia.com/th/en/util/promotion/thekiacarnival-hev-2026.html"
+      ]
+    },
+    {
+      "priority": 2,
+      "target_id": "wave2a-nissan-serena-epower-highway-star-release-20250324",
+      "manufacturer": "Nissan",
+      "target": "All-New Nissan Serena e-POWER Highway Star",
+      "engineering_role": [
+        "family_mpv",
+        "urban_maneuverability",
+        "height_clearance"
+      ],
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "All-New Nissan Serena e-POWER Thailand launch 24 March 2025",
+      "primary_sources": [
+        "https://en.nissan.co.th/news/nissan-launches-all-new-serena-epower-mid-size-mpv.html",
+        "https://www.nissan.co.th/vehicles/new-vehicles/serena-epower/specifications.html"
+      ]
+    },
+    {
+      "priority": 3,
+      "target_id": "wave2a-honda-crv-ehev-rs4wd-minorchange-20251128",
+      "manufacturer": "Honda",
+      "target": "Honda CR-V e:HEV RS 4WD — 2025 minor-change Thailand line-up",
+      "engineering_role": [
+        "midsize_suv",
+        "parking_design",
+        "family_suv"
+      ],
+      "research_status": "MANIFEST_DRAFT_READY_WITH_EXPLICIT_HEIGHT_MASS_GAPS",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "Honda CR-V e:HEV ใหม่ รุ่นไมเนอร์เชนจ์ — official Thailand price launch 28 November 2025",
+      "primary_sources": [
+        "https://www.honda.co.th/news/NewCRVeHEV_Prebooking",
+        "https://www.honda.co.th/en/news/Motorexpo2025",
+        "https://www.honda.co.th/crv/specification",
+        "https://assets.honda.co.th/www-assets/model/2025/12/25/ycdwpoFhimYEx6xP8b6svBr0uqVZM6Sb.pdf?response-content-disposition=attachment%3B+filename%3DNew+CR-V+e%3AHEV+Catalog.pdf"
+      ]
+    },
+    {
+      "priority": 4,
+      "target_id": "wave2a-lexus-lm350h-executive-7seat-current",
+      "manufacturer": "Lexus",
+      "target": "Lexus LM 350h Executive 7-Seater",
+      "engineering_role": [
+        "luxury_mpv",
+        "porte_cochere",
+        "large_vehicle_envelope"
+      ],
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "THE ALL-NEW LEXUS LM — LM 350h Executive 7-Seater, official Thailand 2023 release configuration",
+      "primary_sources": [
+        "https://www.lexus.co.th/content/dam/thailand/website-v3/price-list/Lexus%20LM_Pricelist_2023.pdf",
+        "https://www.lexus.co.th/content/dam/thailand/website-v3/borchures/catalog/2023/Catalog_2023Lexus_lm.pdf",
+        "https://www.lexus.co.th/content/dam/thailand/website-v3/borchures/catalog/2025/Lexus_LM_Catalog_Thai_2025_LM.pdf",
+        "https://www.lexus.co.th/en/models/lm/lm-350h-7-seater.html"
+      ]
+    },
+    {
+      "priority": 5,
+      "target_id": "wave2a-toyota-innova-zenix-hev-premium-current",
+      "manufacturer": "Toyota",
+      "target": "Toyota Innova Zenix HEV Premium",
+      "engineering_role": [
+        "family_mpv",
+        "parking_design",
+        "turning_screening"
+      ],
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "OEM_REVISION_LABEL",
+      "identity_time_label_raw": "โตโยต้า อินโนว่า ซีนิกซ์ รุ่นปรับปรุงใหม่ ปี 2568",
+      "primary_sources": [
+        "https://www.toyota.co.th/media/product/series/download/INNOVA_ZENIX_CATALOG2025.pdf"
+      ]
+    },
+    {
+      "priority": 6,
+      "target_id": "wave2a-toyota-corolla-cross-hev-premium-luxury-2026",
+      "manufacturer": "Toyota",
+      "target": "Toyota Corolla Cross HEV Premium Luxury",
+      "engineering_role": [
+        "mainstream_crossover",
+        "parking_design",
+        "design_vehicle_benchmark"
+      ],
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "OEM_REVISION_LABEL",
+      "identity_time_label_raw": "โตโยต้า โคโรลล่า ครอส รุ่นปรับปรุงใหม่ ปี 2569",
+      "primary_sources": [
+        "https://www.toyota.co.th/media/accessories/files/brochure/69a000dce2330.pdf",
+        "https://www.toyota.co.th/model/corollacross/grade",
+        "https://www.toyota.co.th/media/product/series/download/CorollaCross_Catalog_2026.pdf"
+      ]
+    }
+  ]
+}

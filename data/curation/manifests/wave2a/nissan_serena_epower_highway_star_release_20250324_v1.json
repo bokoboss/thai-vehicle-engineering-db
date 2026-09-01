@@ -1,0 +1,516 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-NISSAN-SERENA-EPOWER-HIGHWAYSTAR-RELEASE-20250324-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-nissan-serena-epower-highway-star-release-2025-03-24",
+    "manufacturer_name": "Nissan",
+    "manufacturer_display_name": "Nissan",
+    "canonical_model_name": "serena",
+    "display_model_name": "Serena e-POWER",
+    "market_code": "TH",
+    "generation_name": "All-New Nissan Serena e-POWER Thailand 2025 release",
+    "body_style": "7-seat family MPV",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "All-New Nissan Serena e-POWER officially launched in Thailand on 24 March 2025",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Highway Star",
+    "powertrain": "e-POWER / HR14DDe generator engine / EM57 drive motor",
+    "drivetrain": null,
+    "body_configuration": "7-seat MPV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Nissan Motor Thailand launch release states the All-New Serena e-POWER was launched on 24 March 2025 and comes in one grade, Highway Star. Current Thailand specification and 2026 official communications confirm continuing Serena e-POWER market presence."
+  },
+  "sources": [
+    {
+      "source_code": "NISSAN_TH_SERENA_EPOWER_LAUNCH_20250324",
+      "publisher": "Nissan Motor (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_LAUNCH_RELEASE",
+      "title": "Nissan launches All-New Serena e-POWER Mid-Size MPV",
+      "url": "https://en.nissan.co.th/news/nissan-launches-all-new-serena-epower-mid-size-mpv.html",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2025,
+      "page_section_default": "Thailand launch and grade identity",
+      "applicability_notes": "Exact All-New Serena e-POWER Highway Star Thailand release",
+      "archival_status": "URL_ONLY",
+      "notes": "Official release states one Thailand grade, Highway Star, launched 24 March 2025."
+    },
+    {
+      "source_code": "NISSAN_TH_SERENA_EPOWER_SPEC_CURRENT_20260901",
+      "publisher": "Nissan Motor (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "The All-New Nissan Serena e-POWER — Specifications",
+      "url": "https://www.nissan.co.th/vehicles/new-vehicles/serena-epower/specifications.html",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "page_section_default": "Highway Star detailed specification",
+      "applicability_notes": "Exact current Highway Star configuration",
+      "archival_status": "URL_ONLY",
+      "notes": "Generic overall width, ground-clearance and turning labels retain source-defined semantics."
+    },
+    {
+      "source_code": "NISSAN_TH_SERENA_EPOWER_CONTINUITY_20260306",
+      "publisher": "Nissan Motor (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_NEWS_RELEASE",
+      "title": "Nissan to Bring Excitement to the 47th Bangkok International Motor Show with Full Core Models Display",
+      "url": "https://en.nissan.co.th/news/nissan-bangkok-motorshow47-core-models-and-special-deals.html",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "Serena e-POWER current market presence",
+      "applicability_notes": "2026 continuity evidence for Serena e-POWER",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "NISSAN_TH_SERENA_EPOWER_SPEC_CURRENT_20260901",
+      "raw_oem_wording": "Ground Clearance; load/reference state not stated",
+      "notes": "Structured unknown load state only."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_LAUNCH",
+      "source_code": "NISSAN_TH_SERENA_EPOWER_LAUNCH_20250324",
+      "vehicle_identity_claim": "All-New Nissan Serena e-POWER Highway Star",
+      "raw_label": "Thailand launch and grade",
+      "raw_value": "All-New Nissan Serena e-POWER; one grade, Highway Star; launched 24 March 2025",
+      "raw_unit": null,
+      "page_section_locator": "Launch release / grade identity",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "NISSAN_TH_SERENA_EPOWER_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Highway Star",
+      "raw_label": "Overall Length",
+      "raw_value": "4765",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions and weight",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH",
+      "source_code": "NISSAN_TH_SERENA_EPOWER_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Highway Star",
+      "raw_label": "Overall Width",
+      "raw_value": "1715",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions and weight",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Mirror/body inclusion is not stated."
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "NISSAN_TH_SERENA_EPOWER_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Highway Star",
+      "raw_label": "Overall Height",
+      "raw_value": "1870",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions and weight",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "NISSAN_TH_SERENA_EPOWER_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Highway Star",
+      "raw_label": "Wheelbase",
+      "raw_value": "2870",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions and weight",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "NISSAN_TH_SERENA_EPOWER_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Highway Star",
+      "raw_label": "Ground Clearance",
+      "raw_value": "135",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions and weight",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Load state and limiting component/reference point are not stated."
+    },
+    {
+      "observation_code": "OBS_WEIGHT_APPROX",
+      "source_code": "NISSAN_TH_SERENA_EPOWER_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Highway Star",
+      "raw_label": "Approximate vehicle weight",
+      "raw_value": "1797",
+      "raw_unit": "kg",
+      "page_section_locator": "Dimensions and weight",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Source label does not establish kerb-mass or GVW semantics; retained raw only."
+    },
+    {
+      "observation_code": "OBS_TURNING",
+      "source_code": "NISSAN_TH_SERENA_EPOWER_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Highway Star",
+      "raw_label": "Minimum Turning Radius",
+      "raw_value": "5.7",
+      "raw_unit": "m",
+      "page_section_locator": "Steering system",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Curb/wall reference and axle scope are not stated."
+    },
+    {
+      "observation_code": "OBS_WHEEL",
+      "source_code": "NISSAN_TH_SERENA_EPOWER_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Highway Star",
+      "raw_label": "Wheel size",
+      "raw_value": "16-inch x 6J alloy",
+      "raw_unit": null,
+      "page_section_locator": "Wheels and tyres",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TYRE",
+      "source_code": "NISSAN_TH_SERENA_EPOWER_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Highway Star",
+      "raw_label": "Tyre size",
+      "raw_value": "205/65 R16",
+      "raw_unit": null,
+      "page_section_locator": "Wheels and tyres",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4765,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_REPORTED",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1715,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1870,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2870,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 135,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.7,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "16-inch x 6J alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "16-inch x 6J alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "205/65 R16",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "205/65 R16",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Nissan Thailand publishes an approximate vehicle weight of 1,797 kg, but the reviewed label does not establish kerb-mass semantics.",
+      "source_families_searched": [
+        "Nissan Thailand current specification"
+      ],
+      "search_notes": "Retain 1,797 kg as a raw observation only; do not promote it to kerb mass or GVW.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek official mass definition, homologation or owner/technical documentation."
+    },
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Nissan Thailand publishes Overall Width but does not establish body-excluding-mirrors semantics for the reviewed Highway Star configuration.",
+      "source_families_searched": [
+        "Nissan Thailand launch release",
+        "Nissan Thailand current specification"
+      ],
+      "search_notes": "Generic overall width is not substituted for body width.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek explicit body/mirror envelope documentation."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open overall width was located in the reviewed Nissan Thailand launch/current specification sources.",
+      "source_families_searched": [
+        "Nissan Thailand launch release",
+        "Nissan Thailand current specification"
+      ],
+      "search_notes": "Generic overall width is not substituted.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek dimension drawing or technical body documentation."
+    },
+    {
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No front tread/track value was located in the reviewed exact Thailand launch/current specification sources.",
+      "source_families_searched": [
+        "Nissan Thailand launch release",
+        "Nissan Thailand current specification"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek Nissan technical/dimension drawing."
+    },
+    {
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No rear tread/track value was located in the reviewed exact Thailand launch/current specification sources.",
+      "source_families_searched": [
+        "Nissan Thailand launch release",
+        "Nissan Thailand current specification"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek Nissan technical/dimension drawing."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No AVT-semantic front outer-tyre-face track was located for the exact Highway Star configuration.",
+      "source_families_searched": [
+        "Nissan Thailand launch release",
+        "Nissan Thailand current specification"
+      ],
+      "search_notes": "Do not infer from nominal tyre section width.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No AVT-semantic rear outer-tyre-face track was located for the exact Highway Star configuration.",
+      "source_families_searched": [
+        "Nissan Thailand launch release",
+        "Nissan Thailand current specification"
+      ],
+      "search_notes": "Do not infer from nominal tyre section width.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
