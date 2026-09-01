@@ -1,0 +1,458 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-LAMBORGHINI-REVUELTO-TH-LAUNCH-20230725",
+  "vehicle": {
+    "stable_vehicle_code": "th-lamborghini-revuelto-launch-2023-07-25",
+    "manufacturer_name": "Lamborghini",
+    "manufacturer_display_name": "Lamborghini",
+    "canonical_model_name": "revuelto",
+    "display_model_name": "Revuelto",
+    "market_code": "TH",
+    "generation_name": "Revuelto LB744 Thailand launch",
+    "body_style": "Plug-in hybrid supercar coupe",
+    "chassis_platform_code": "LB744",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "Lamborghini Revuelto official Thailand launch — 25 July 2023 — Lamborghini Bangkok / Renazzo Motor",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Revuelto",
+    "powertrain": "6.5L V12 plug-in hybrid / 8-speed DCT",
+    "drivetrain": "AWD",
+    "body_configuration": "2-seat supercar coupé",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Lamborghini's official dealer locator establishes Lamborghini Bangkok / Renazzo Motor as the authorized Bangkok dealer. Contemporaneous reputable Thailand launch coverage documents the exact Revuelto launch and local dimensions. Lamborghini's official Revuelto brochure publishes the same structural geometry; those geometry values are therefore recorded with SAME_GEOMETRY_CONFIRMED applicability rather than silently assuming market equivalence."
+  },
+  "sources": [
+    {
+      "source_code": "LAMBORGHINI_GLOBAL_REVUELTO_BROCHURE_2024",
+      "publisher": "Automobili Lamborghini S.p.A.",
+      "authority_class": "OEM_GLOBAL",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_DIGITAL_BROCHURE_PDF",
+      "title": "Revuelto Digital Brochure 2024",
+      "url": "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/revuelto/2024/brochure/07_23/REVUELTO_DIGITAL_BROCHURE_EN_2024.pdf",
+      "retrieved_at": "2026-09-01T20:30:00+07:00",
+      "publication_year": 2024,
+      "page_section_default": "Technical Specifications — Wheels / Dimension",
+      "applicability_notes": "Global OEM Revuelto structural geometry corroborated against Thailand launch dimensions",
+      "archival_status": "URL_ONLY",
+      "notes": "Dry weight remains raw evidence only because current registry has no dry-mass parameter."
+    },
+    {
+      "source_code": "LAMBORGHINI_BANGKOK_DEALER_CURRENT_20260901",
+      "publisher": "Automobili Lamborghini S.p.A.",
+      "authority_class": "OEM_GLOBAL",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_AUTHORIZED_DEALER_PAGE",
+      "title": "Lamborghini Bangkok: authorized dealer and showroom",
+      "url": "https://www.lamborghini.com/en-en/dealerships/lamborghini-bangkok",
+      "retrieved_at": "2026-09-01T20:30:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "Dealer identity / contacts",
+      "applicability_notes": "Establishes official Lamborghini Bangkok / Renazzo Motor Thailand dealer identity",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "AUTOLIFE_TH_REVUELTO_LAUNCH_20230725",
+      "publisher": "AutoLifeThailand",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "source_type": "OTHER",
+      "source_subtype_raw": "THAILAND_LAUNCH_REPORT",
+      "title": "Official price Lamborghini Revuelto Thailand — 25 July 2023",
+      "url": "https://autolifethailand.tv/official-price-lamborghini-revuelto-thailand/",
+      "retrieved_at": "2026-09-01T20:30:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2023,
+      "page_section_default": "Thailand launch / dimensions",
+      "applicability_notes": "Exact Thailand Revuelto launch; local dimensions match Lamborghini official brochure",
+      "archival_status": "URL_ONLY",
+      "notes": "Used for Thailand launch identity and same-geometry corroboration, not as primary technical authority."
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_TH",
+      "source_code": "AUTOLIFE_TH_REVUELTO_LAUNCH_20230725",
+      "vehicle_identity_claim": "Lamborghini Revuelto Thailand",
+      "raw_label": "Thailand official launch",
+      "raw_value": "Lamborghini Revuelto; official Thailand price/launch 25 July 2023; distributed by Renazzo Motor / Lamborghini Bangkok",
+      "raw_unit": null,
+      "page_section_locator": "Thailand launch",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:30:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIMENSIONS_OEM",
+      "source_code": "LAMBORGHINI_GLOBAL_REVUELTO_BROCHURE_2024",
+      "vehicle_identity_claim": "Revuelto — same structural geometry as Thailand launch",
+      "raw_label": "Overall length / width excluding mirrors / width including mirrors / height / wheelbase",
+      "raw_value": "4947 / 2033 / 2266 / 1160 / 2779",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Specifications — Dimension",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:30:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "Applied as SAME_GEOMETRY_CONFIRMED based on matching Thailand launch dimensions/model identity."
+    },
+    {
+      "observation_code": "OBS_TREAD_OEM",
+      "source_code": "LAMBORGHINI_GLOBAL_REVUELTO_BROCHURE_2024",
+      "vehicle_identity_claim": "Revuelto — same structural geometry as Thailand launch",
+      "raw_label": "Front track / Rear track",
+      "raw_value": "1720 / 1701",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Specifications — Dimension",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:30:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "OEM track definition is not AVT outer tyre-face track."
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE_OEM",
+      "source_code": "LAMBORGHINI_GLOBAL_REVUELTO_BROCHURE_2024",
+      "vehicle_identity_claim": "Revuelto standard wheel/tyre configuration",
+      "raw_label": "Front / Rear rims and tyres",
+      "raw_value": "20 x 9.5J with 265/35 ZR20 / 21 x 12J with 345/30 ZR21",
+      "raw_unit": null,
+      "page_section_locator": "Technical Specifications — Wheels",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:30:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "Optional 21/22-inch package is not normalized into this standard-fitment record."
+    },
+    {
+      "observation_code": "OBS_DRY_WEIGHT",
+      "source_code": "LAMBORGHINI_GLOBAL_REVUELTO_BROCHURE_2024",
+      "vehicle_identity_claim": "Revuelto",
+      "raw_label": "Dry Weight",
+      "raw_value": "1772",
+      "raw_unit": "kg",
+      "page_section_locator": "Technical Specifications — Dimension",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:30:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "Dry weight is not kerb/curb mass and is retained raw only."
+    },
+    {
+      "observation_code": "OBS_TH_DIMENSION_CORROBORATION",
+      "source_code": "AUTOLIFE_TH_REVUELTO_LAUNCH_20230725",
+      "vehicle_identity_claim": "Thailand Revuelto launch",
+      "raw_label": "Dimension",
+      "raw_value": "Length 4947 / Width 2266 / Height 1160 / Wheelbase 2779",
+      "raw_unit": "mm",
+      "page_section_locator": "Thailand launch dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:30:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "Thailand report's 2266 mm width corresponds to OEM mirrors-included width; used only to corroborate same geometry."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4947,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS_OEM",
+        "OBS_TH_DIMENSION_CORROBORATION"
+      ]
+    },
+    {
+      "value_code": "VAL_BODY_WIDTH",
+      "parameter_code": "overall_width_body_mm",
+      "value": 2033,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_MIRROR_WIDTH",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 2266,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS_OEM",
+        "OBS_TH_DIMENSION_CORROBORATION"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1160,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS_OEM",
+        "OBS_TH_DIMENSION_CORROBORATION"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2779,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS_OEM",
+        "OBS_TH_DIMENSION_CORROBORATION"
+      ]
+    },
+    {
+      "value_code": "VAL_FT",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1720,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_RT",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1701,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_FW",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "20 x 9.5J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_RW",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "21 x 12J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "265/35 ZR20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "345/30 ZR21",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE_OEM"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Lamborghini publishes Dry Weight 1,772 kg, not kerb/curb mass.",
+      "source_families_searched": [
+        "Lamborghini official Revuelto brochure",
+        "Thailand launch coverage"
+      ],
+      "search_notes": "Do not convert dry weight to kerb mass.",
+      "assessed_at": "2026-09-01T20:30:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Seek official homologation/technical data explicitly labelled curb/kerb."
+    },
+    {
+      "parameter_code": "clearance_value_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No OEM ground-clearance value was located in the reviewed official Revuelto brochure/model material.",
+      "source_families_searched": [
+        "Lamborghini official Revuelto brochure",
+        "Lamborghini current model page"
+      ],
+      "search_notes": "Do not infer from overall height or photographs.",
+      "assessed_at": "2026-09-01T20:30:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Seek owner/workshop/homologation geometry data."
+    },
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM turning radius/circle value was located in reviewed Lamborghini Revuelto sources.",
+      "source_families_searched": [
+        "Lamborghini official Revuelto brochure",
+        "Lamborghini current model page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T20:30:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Seek homologation/technical documentation."
+    },
+    {
+      "parameter_code": "overall_width_mirrors_folded_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "Official brochure publishes mirrors-excluded and mirrors-included width, not folded-mirror width.",
+      "source_families_searched": [
+        "Lamborghini official Revuelto brochure"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T20:30:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Seek explicit folded mirror envelope."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM front track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Lamborghini official Revuelto brochure"
+      ],
+      "search_notes": "Do not convert OEM track.",
+      "assessed_at": "2026-09-01T20:30:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Seek wheel offset/mounted geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM rear track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Lamborghini official Revuelto brochure"
+      ],
+      "search_notes": "Do not convert OEM track.",
+      "assessed_at": "2026-09-01T20:30:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Seek wheel offset/mounted geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
