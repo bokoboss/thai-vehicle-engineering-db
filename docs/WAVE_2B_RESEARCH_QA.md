@@ -152,3 +152,60 @@ Manifest:
 `data/curation/manifests/wave2b/porsche_911_carrera_gts_992ii_delivered_2025_v1.json`
 
 Static registry/reference contract: **PASS — 9 values + 6 assessments**.
+
+
+## Toyota Yaris Cross HEV Premium Luxury — 2026 catalogue edition
+
+Research state: **MANIFEST DRAFT READY**
+
+Identity basis: `EDITION_RELEASE`; the 2026 catalogue year is explicitly not treated as model year.
+
+Normalized: 4,310 x 1,770 x 1,615 mm; wheelbase 2,620 mm; OEM tread 1,525 / 1,520 mm; clearance 210 mm with unspecified load/reference; turning radius 5.2 m with OEM_UNSPECIFIED reference/axle scope; 18-inch alloy / 215/55 R18.
+
+Body/mirror width, kerb mass and AVT outer-face tracks remain unresolved.
+
+Static contract: **PASS — 12 values + 5 assessments**.
+
+Manifest: `data/curation/manifests/wave2b/toyota_yaris_cross_hev_premium_luxury_catalog_2026_v1.json`
+
+## Honda HR-V e:HEV RS — New HR-V late-2024 release
+
+Research state: **MANIFEST DRAFT READY**
+
+Identity basis: `EDITION_RELEASE`. Honda Thailand documents the New HR-V e:HEV RS launch/customer-delivery period from 28 November 2567 and the exact RS grade remains current.
+
+Normalized: 4,385 x 1,790 x 1,590 mm; wheelbase 2,610 mm; OEM tread 1,542 / 1,543 mm; clearance 196 mm with unspecified load/reference; turning radius 5.5 m with OEM_UNSPECIFIED reference/axle scope; steering lock-to-lock 2.44 turns; 18 x 7.5J / 225/50 R18.
+
+Honda publishes raw `น้ำหนักรถ / Weight = 1,404 kg`, but the label does not explicitly establish curb/kerb semantics. The value is retained as a raw observation and `kerb_mass_kg` remains UNKNOWN.
+
+Static contract: **PASS — 13 values + 5 assessments**.
+
+Manifest: `data/curation/manifests/wave2b/honda_hrv_ehev_rs_new_release_20241128_v1.json`
+
+## Toyota Camry HEV Premium Luxury — new hybrid October 2567 release
+
+Research state: **MANIFEST DRAFT READY**
+
+Identity basis: `EDITION_RELEASE`. Toyota's own aftersales applicability language identifies `รถยนต์คัมรี ไฮบริดรุ่นใหม่ตุลาคม 2567`; the Buddhist year is retained as a release label, not model year.
+
+Normalized: 4,920 x 1,840 x 1,445 mm; wheelbase 2,825 mm; OEM tread 1,580 / 1,590 mm; clearance 135 mm with unspecified load/reference; turning radius 5.7 m with OEM_UNSPECIFIED reference/axle scope; 18-inch alloy / 235/45 R18.
+
+Body/mirror width, kerb mass and AVT outer-face tracks remain unresolved.
+
+Static contract: **PASS — 12 values + 5 assessments**.
+
+Manifest: `data/curation/manifests/wave2b/toyota_camry_hev_premium_luxury_new_release_2567_v1.json`
+
+## Mainstream tranche status
+
+Five of the six initial mainstream targets are manifest-draft ready:
+
+- BYD M6 Extended 7 Seats
+- Hyundai STARIA Premium MY25
+- Toyota Yaris Cross HEV Premium Luxury
+- Honda HR-V e:HEV RS
+- Toyota Camry HEV Premium Luxury
+
+Current mainstream draft total: **66 normalized values + 24 explicit assessments**.
+
+DENZA D9 Performance AWD remains RESEARCH_ACTIVE because exact Thailand Performance AWD technical geometry/mass documentation has not yet been recovered from a first-party Thailand source. Global/other-market D9 dimensions are not being promoted as Thailand data without same-geometry proof.
