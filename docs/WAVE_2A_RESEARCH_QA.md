@@ -154,22 +154,42 @@ However, the flattened HTML contains grouped multi-grade values. Exact e:HEV RS 
 
 ### Lexus LM 350h Executive 7-Seater
 
-Official Thailand page provides strong exact-grade geometry:
+Research state: **MANIFEST DRAFT READY**
+
+Temporal identity and engineering continuity are now supported by multiple official Lexus Thailand sources:
+
+- 2023 official price list is headed “THE ALL-NEW LEXUS LM”, lists exact LM 350h Executive 7-Seater, and states price/finance information as of 30 August 2566;
+- 2023 official catalogue has a dedicated LM350h Executive 7-Seater specification column;
+- 2025 catalogue repeats the same core geometry/mass/turning values and its specification page was visually verified;
+- current Lexus Thailand model page continues to list LM 350h 7-seater and repeats the same engineering values.
+
+Exact values:
 
 - length 5,125 mm;
-- width 1,890 mm;
+- reported width 1,890 mm;
 - height 1,940 mm;
 - wheelbase 3,000 mm;
 - front/rear tread 1,615 / 1,620 mm;
-- body/vehicle mass values published.
+- curb weight 2,345 kg;
+- gross vehicle weight 2,880 kg;
+- minimum turning radius (Tire) 5.9 m;
+- E-Four;
+- tyre 225/55 R19;
+- 19-inch forged aluminum wheel evidence from the later same-geometry catalogue.
 
-Source:
-https://www.lexus.co.th/th/models/lm/lm-350h-7-seater.html
+Identity basis: `EDITION_RELEASE`, raw label “THE ALL-NEW LEXUS LM — LM 350h Executive 7-Seater, official Thailand 2023 release configuration”.
 
-A 2024 official brochure identifies LM 350h Executive 7-Seater:
-https://www.lexus.co.th/content/dam/thailand/website-v3/borchures/catalog/2024/2024_LM.pdf
+Semantic limits: overall width remains OEM_UNSPECIFIED for mirror/body envelope; tread is not AVT outer-face track; the turning reference is retained as tire/wheel-path rather than curb-to-curb or wall-to-wall, with axle scope unresolved.
 
-Remaining gate: exact Thailand temporal identity/continuity for the current geometry package must be locked before manifest promotion.
+Sources:
+
+https://www.lexus.co.th/content/dam/thailand/website-v3/price-list/Lexus%20LM_Pricelist_2023.pdf
+
+https://www.lexus.co.th/content/dam/thailand/website-v3/borchures/catalog/2023/Catalog_2023Lexus_lm.pdf
+
+https://www.lexus.co.th/content/dam/thailand/website-v3/borchures/catalog/2025/Lexus_LM_Catalog_Thai_2025_LM.pdf
+
+https://www.lexus.co.th/en/models/lm/lm-350h-7-seater.html
 
 ### Toyota Innova Zenix HEV Premium
 
@@ -237,11 +257,11 @@ Remaining gates:
 - Kia Carnival HEV 7-seat Luxury
 - Nissan Serena e-POWER Highway Star
 - Toyota Innova Zenix HEV Premium
+- Lexus LM 350h Executive 7-Seater
 
 ### Research active
 
 - Honda CR-V e:HEV RS 4WD
-- Lexus LM 350h Executive 7-Seater
 - Toyota Corolla Cross HEV Premium Luxury
 
 ### Existing HOLD records
