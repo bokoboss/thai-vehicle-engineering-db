@@ -14,6 +14,7 @@ import json
 import os
 import re
 import shutil
+import sqlite3
 import subprocess
 import sys
 from collections import Counter
@@ -938,6 +939,30 @@ def _write_json(path: Path, document: Mapping[str, Any]) -> None:
     )
 
 
+def _accepted_database_snapshot(path: Path, root: Path) -> dict[str, Any] | None:
+    """Capture the accepted file before a replacement is attempted."""
+
+    if not path.is_file():
+        return None
+    snapshot: dict[str, Any] = {
+        "path": _relative(path, root),
+        "bytes": path.stat().st_size,
+        "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        "vehicles": None,
+    }
+    try:
+        read_only_uri = f"{path.resolve().as_uri()}?mode=ro"
+        with sqlite3.connect(read_only_uri, uri=True) as connection:
+            snapshot["vehicles"] = connection.execute(
+                "SELECT count(*) FROM vehicle_configuration"
+            ).fetchone()[0]
+    except (OSError, sqlite3.Error):
+        # The file hash remains useful even when an older accepted file cannot
+        # be opened by the snapshot reader; replacement still remains atomic.
+        pass
+    return snapshot
+
+
 def _qualification_record(
     *,
     inventory: ManifestInventory,
@@ -945,6 +970,7 @@ def _qualification_record(
     staging_path: Path,
     promoted_path: Path | None,
     previous_path: Path | None,
+    previous_accepted: dict[str, Any] | None,
     registry_only: dict[str, int],
     qa: dict[str, Any],
     exports: dict[str, Any],
@@ -973,6 +999,7 @@ def _qualification_record(
             "database": _relative(promoted_path, root) if promoted_path is not None else None,
             "previous_database": _relative(previous_path, root) if previous_path is not None else None,
         },
+        "previous_accepted_database": previous_accepted,
         "qa_result": "PASS",
         "build_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
     }
@@ -1028,6 +1055,7 @@ def build(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
 
     if staging_path == final_path:
         raise BuildError("staging and final database paths must differ")
+    previous_accepted = _accepted_database_snapshot(final_path, root)
     if staging_path.exists():
         raise BuildError(
             f"staging database already exists: {staging_path}; remove the failed/disposable staging file before retrying"
@@ -1078,6 +1106,7 @@ def build(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
         staging_path=staging_path,
         promoted_path=promoted_to,
         previous_path=previous_database,
+        previous_accepted=previous_accepted,
         registry_only=registry_only,
         qa=qa,
         exports=exports,
