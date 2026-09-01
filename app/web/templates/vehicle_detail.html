@@ -1,46 +1,230 @@
 {% extends "base.html" %}
-{% block title %}{{ vehicle.manufacturer }} · {{ vehicle.variant }}{% endblock %}
+{% block title %}{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }} · Vehicle Engineering Database{% endblock %}
 {% block content %}
+<p class="back-link"><a href="/vehicles">← Vehicles</a></p>
+
 <section class="page-intro detail-header">
-  <p class="eyebrow">{{ vehicle.stable_vehicle_code }} · {{ vehicle.market }}</p>
+  <p class="eyebrow">{{ vehicle.market }} market · {{ vehicle.body_style }}</p>
   <h1>{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</h1>
-  <p class="lede">{{ vehicle.generation }} · {{ vehicle.variant }} · {{ vehicle.identity_time_basis }}{% if vehicle.model_year_from %} · model year {{ vehicle.model_year_from }}{% if vehicle.model_year_to %}–{{ vehicle.model_year_to }}{% endif %}{% elif vehicle.identity_time_label_raw %} · {{ vehicle.identity_time_label_raw }}{% elif vehicle.sale_period_from %} · sale period from {{ vehicle.sale_period_from }}{% endif %}</p>
-  <p class="muted">{{ vehicle.identity_notes }}</p>
-  <div class="badges">
-    {% for result in vehicle.readiness_results %}<span class="badge badge-{{ result.status|lower }}">{{ result.type }}: {{ result.status }}</span>{% endfor %}
+  <p class="detail-variant">{{ vehicle.variant }}</p>
+  <p class="detail-meta">{{ vehicle.generation }} · {{ vehicle.identity_time_label }} · {{ vehicle.body_style }} · {{ vehicle.powertrain or "Powertrain unknown" }} · {{ vehicle.drivetrain or "Drivetrain unknown" }}</p>
+  <p class="stable-code">Exact configuration code: <code>{{ vehicle.stable_vehicle_code }}</code></p>
+  {% if vehicle.identity_notes %}
+  <details class="identity-notes"{% if vehicle.identity_notes_problematic %} open{% endif %}>
+    <summary>Identity notes{% if vehicle.identity_notes_problematic %} · review needed{% endif %}</summary>
+    <p>{{ vehicle.identity_notes }}</p>
+  </details>
+  {% endif %}
+</section>
+
+<section class="panel readiness-summary" aria-labelledby="readiness-heading">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">Decision support</p>
+      <h2 id="readiness-heading">Readiness</h2>
+    </div>
+    <p class="muted">Use-case status is separate from evidence state.</p>
+  </div>
+  <div class="table-wrap table-wrap-plain">
+    <table class="readiness-table">
+      <caption class="sr-only">Readiness by engineering use case</caption>
+      <thead><tr><th scope="col">Use case</th><th scope="col">Status</th><th scope="col">Blockers</th></tr></thead>
+      <tbody>
+      {% for result in vehicle.readiness_view %}
+        <tr>
+          <th scope="row">{{ result.label }}</th>
+          <td><span class="status status-{{ result.status_tone }}">{{ result.status_label }}</span></td>
+          <td>
+            {% if result.blocker_count %}
+              <span class="blocker-summary">{{ result.blocker_count }} blocker{% if result.blocker_count != 1 %}s{% endif %}{% if result.first_reason %} · {{ result.first_reason }}{% endif %}</span>
+              <details class="inline-disclosure">
+                <summary>View all blockers</summary>
+                <ul class="compact-list">
+                {% for blocker in result.blockers %}
+                  <li>{{ blocker.friendly }} <small>Technical reason: <code>{{ blocker.raw }}</code></small></li>
+                {% endfor %}
+                </ul>
+              </details>
+            {% else %}
+              <span class="muted">No blockers recorded.</span>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
-<section class="callout">
-  <strong>Configuration identity</strong>
-  <span>Time basis: {{ vehicle.identity_time_basis }}{% if vehicle.identity_time_label_raw %} · Raw label: {{ vehicle.identity_time_label_raw }}{% endif %} · Powertrain: {{ vehicle.powertrain or "Unknown" }} · Drivetrain: {{ vehicle.drivetrain or "Unknown" }} · Body: {{ vehicle.body_configuration or "Unknown" }}</span>
-</section>
+<dl class="identity-facts">
+  <div><dt>Identity time basis</dt><dd>{{ vehicle.identity_time_label }}{% if vehicle.identity_time_label_raw %}<small>Raw: {{ vehicle.identity_time_label_raw }}</small>{% endif %}</dd></div>
+  <div><dt>Powertrain</dt><dd>{{ vehicle.powertrain or "Unknown" }}</dd></div>
+  <div><dt>Drivetrain</dt><dd>{{ vehicle.drivetrain or "Unknown" }}</dd></div>
+  <div><dt>Body configuration</dt><dd>{{ vehicle.body_configuration or "Unknown" }}</dd></div>
+  <div><dt>Fitments</dt><dd>{% if vehicle.fitments %}{% for fitment in vehicle.fitments %}<span class="scope-label">{{ fitment.code }}</span>{% if not loop.last %}, {% endif %}{% endfor %}{% else %}<span class="muted">Configuration-wide</span>{% endif %}</dd></div>
+</dl>
 
-<section class="panel">
-  <div class="section-heading"><h2>Normalized engineering values</h2><span class="muted">Raw evidence remains below each value.</span></div>
-  <div class="value-grid">
-  {% for value in vehicle["values"] %}
-    <article class="value-card">
-      <div class="value-topline"><h3>{{ value.display_name }}</h3><code>{{ value.parameter_code }}</code></div>
-      <p class="value-number">{{ value.value }}{% if value.unit %} <span>{{ value.unit }}</span>{% endif %}</p>
-      {% if value.uncertainty_value %}<p class="uncertainty">± {{ value.uncertainty_value }} {{ value.uncertainty_unit or value.unit }}</p>{% endif %}
-      <div class="badges"><span class="badge">{{ value.evidence_method }}</span><span class="badge">{{ value.resolution_state }}</span><span class="badge">{{ value.verification_state }}</span><span class="badge">{{ value.availability_state }}</span></div>
-      {% if value.fitment_code or value.load_condition %}<p class="muted"><strong>Scope:</strong>{% if value.fitment_code %} fitment {{ value.fitment_code }}{% if value.fitment_description %} ({{ value.fitment_description }}){% endif %}{% endif %}{% if value.load_condition %}{% if value.fitment_code %};{% endif %} load {{ value.load_condition.name }} ({{ value.load_condition.mass_basis }}){% endif %}</p>{% endif %}
-      {% if value.semantic_metadata %}<details><summary>Semantics</summary><pre>{{ value.semantic_metadata }}</pre></details>{% endif %}
-      {% if value.derivation_rule %}<p class="lineage">Derived by {{ value.derivation_rule.code }} · v{{ value.derivation_rule.version }}</p>{% endif %}
-      <details><summary>Evidence ({{ value.observations|length }})</summary>
-        {% for observation in value.observations %}<div class="evidence"><a href="{{ observation.source_url }}" target="_blank" rel="noopener noreferrer"><code>{{ observation.source_code }}</code></a><strong>{{ observation.raw_label }}</strong><span>{{ observation.raw_value }}{% if observation.raw_unit %} {{ observation.raw_unit }}{% endif %}</span><small>{{ observation.evidence_role }} · {{ observation.source_publisher }} · {{ observation.source_title }}</small></div>{% else %}<p class="muted">No raw observation link; inspect derivation lineage.</p>{% endfor %}
-      </details>
-    </article>
+{% if vehicle.summary_groups %}
+<section class="panel" aria-labelledby="summary-heading">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">Scan first</p>
+      <h2 id="summary-heading">Engineering summary</h2>
+    </div>
+    <p class="muted">Primary dimensions, maneuverability, clearance, tyre and mass values.</p>
+  </div>
+  {% for group in vehicle.summary_groups %}
+  <section class="summary-group" aria-labelledby="summary-{{ group.key }}">
+    <h3 id="summary-{{ group.key }}">{{ group.label }}</h3>
+    <div class="table-wrap table-wrap-plain">
+      <table class="data-table compact-table">
+        <caption class="sr-only">{{ group.label }} summary</caption>
+        <thead><tr><th scope="col">Parameter</th><th scope="col">Value</th><th scope="col">Scope</th><th scope="col">State</th></tr></thead>
+        <tbody>
+        {% for value in group["values"] %}
+          <tr>
+            <th scope="row"><a href="#value-{{ value.id }}">{{ value.display_name }}</a>{% if value.semantic_cue %}<small class="semantic-cue">{{ value.semantic_cue }}</small>{% endif %}</th>
+            <td class="{% if value.is_numeric %}numeric{% endif %}"><span>{{ value.display_value }}</span>{% if value.unit %} <span class="unit">{{ value.unit }}</span>{% endif %}{% if value.uncertainty_value is not none %}<small class="uncertainty">± {{ value.uncertainty_value }} {{ value.uncertainty_unit or value.unit }}</small>{% endif %}</td>
+            <td><span class="scope-label">{{ value.scope_text }}</span></td>
+            <td><span class="status status-{{ value.state_tone }}">{{ value.state_label }}</span><small><a href="#value-{{ value.id }}">Details</a></small></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {% endfor %}
+</section>
+{% endif %}
+
+<section class="panel" id="normalized-values" aria-labelledby="values-heading">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">Evidence-aware record</p>
+      <h2 id="values-heading">All engineering data</h2>
+    </div>
+    <p class="muted">Common state is compact; expand evidence or scope when verification is needed.</p>
+  </div>
+  {% for group in vehicle.groups %}
+  <section class="engineering-group" id="group-{{ group.key }}" aria-labelledby="group-heading-{{ group.key }}">
+    <h3 id="group-heading-{{ group.key }}">{{ group.label }}</h3>
+    <div class="table-wrap table-wrap-plain">
+      <table class="data-table engineering-table">
+        <caption class="sr-only">{{ group.label }} engineering values</caption>
+        <thead><tr><th scope="col">Parameter</th><th scope="col">Value</th><th scope="col">Scope</th><th scope="col">State</th><th scope="col">Evidence</th></tr></thead>
+        <tbody>
+        {% for value in group["values"] %}
+          <tr id="value-{{ value.id }}" class="{% if value.is_exception %}exception-row{% endif %}">
+            <th scope="row">
+              <span>{{ value.display_name }}</span>
+              <small class="technical-code"><code>{{ value.parameter_code }}</code></small>
+              {% if value.semantic_cue %}<small class="semantic-cue">{{ value.semantic_cue }}</small>{% endif %}
+            </th>
+            <td class="{% if value.is_numeric %}numeric{% endif %}"><span>{{ value.display_value }}</span>{% if value.unit %} <span class="unit">{{ value.unit }}</span>{% endif %}{% if value.uncertainty_value is not none %}<small class="uncertainty">± {{ value.uncertainty_value }} {{ value.uncertainty_unit or value.unit }}</small>{% endif %}{% if value.derivation_rule %}<small class="lineage">Derived by {{ value.derivation_rule.code }} · v{{ value.derivation_rule.version }}</small>{% endif %}</td>
+            <td>
+              <span class="scope-label">{{ value.scope_text }}</span>
+              {% if value.scope.fitment or value.scope.load_condition %}
+              <details class="inline-disclosure scope-disclosure">
+                <summary>Scope detail</summary>
+                <dl class="mini-definition-list">
+                  {% if value.scope.fitment %}<dt>Fitment</dt><dd><code>{{ value.scope.fitment.code }}</code> · {{ value.scope.fitment.description or "Description not stated" }}{% if value.scope.fitment.wheel_package %}<small>Wheel package: {{ value.scope.fitment.wheel_package }}</small>{% endif %}</dd>{% endif %}
+                  {% if value.scope.load_condition %}<dt>Load condition</dt><dd>{{ value.scope.load_condition.name }} · {{ value.scope.load_condition.mass_basis }}{% if value.scope.load_condition.raw_oem_wording %}<small>Raw OEM wording: {{ value.scope.load_condition.raw_oem_wording }}</small>{% endif %}</dd>{% endif %}
+                </dl>
+              </details>
+              {% endif %}
+            </td>
+            <td><span class="status status-{{ value.state_tone }}">{{ value.state_label }}</span>{% if value.preferred %}<small>Preferred candidate</small>{% endif %}</td>
+            <td>
+              <details class="evidence-details">
+                <summary>{{ value.evidence_label }}</summary>
+                <div class="evidence-body">
+                  <dl class="mini-definition-list">
+                    <dt>Parameter code</dt><dd><code>{{ value.parameter_code }}</code></dd>
+                    <dt>Evidence method</dt><dd>{{ value.evidence_method_label }} <code>{{ value.evidence_method }}</code></dd>
+                    <dt>Resolution</dt><dd>{{ value.resolution_state_label }} <code>{{ value.resolution_state }}</code></dd>
+                    <dt>Verification</dt><dd>{{ value.verification_state_label }} <code>{{ value.verification_state }}</code></dd>
+                    <dt>Availability</dt><dd>{{ value.availability_state_label }} <code>{{ value.availability_state }}</code></dd>
+                    <dt>Authority grade</dt><dd>{{ value.authority_grade or "Not recorded" }}</dd>
+                    <dt>Applicability grade</dt><dd>{{ value.applicability_grade or "Not recorded" }}</dd>
+                    {% if value.precision %}<dt>Precision</dt><dd>{{ value.precision }}</dd>{% endif %}
+                    <dt>Scope</dt><dd>{{ value.scope_text }}</dd>
+                    {% if value.scope.fitment %}<dt>Fitment detail</dt><dd><code>{{ value.scope.fitment.code }}</code> · {{ value.scope.fitment.description or "Description not stated" }}{% if value.scope.fitment.wheel_package %}<small>Wheel package: {{ value.scope.fitment.wheel_package }}</small>{% endif %}{% if value.scope.fitment.equipment_package %}<small>Equipment package: {{ value.scope.fitment.equipment_package }}</small>{% endif %}</dd>{% endif %}
+                    {% if value.scope.load_condition %}<dt>Load detail</dt><dd>{{ value.scope.load_condition.name }} · {{ value.scope.load_condition.mass_basis }}{% if value.scope.load_condition.total_mass_kg is not none %}<small>Total mass: {{ value.scope.load_condition.total_mass_kg }} kg</small>{% endif %}{% if value.scope.load_condition.occupant_count is not none %}<small>Occupants: {{ value.scope.load_condition.occupant_count }}</small>{% endif %}{% if value.scope.load_condition.payload_kg is not none %}<small>Payload: {{ value.scope.load_condition.payload_kg }} kg</small>{% endif %}{% if value.scope.load_condition.tyre_pressure %}<small>Tyre pressure: {{ value.scope.load_condition.tyre_pressure }}</small>{% endif %}{% if value.scope.load_condition.suspension_mode %}<small>Suspension: {{ value.scope.load_condition.suspension_mode }}</small>{% endif %}{% if value.scope.load_condition.ride_height_mode %}<small>Ride height: {{ value.scope.load_condition.ride_height_mode }}</small>{% endif %}{% if value.scope.load_condition.raw_oem_wording %}<small>Raw OEM wording: {{ value.scope.load_condition.raw_oem_wording }}</small>{% endif %}{% if value.scope.load_condition.notes %}<small>{{ value.scope.load_condition.notes }}</small>{% endif %}</dd>{% endif %}
+                  </dl>
+                  {% if value.semantic_metadata %}<h4>Semantic metadata</h4><pre>{{ value.semantic_metadata }}</pre>{% endif %}
+                  {% if value.derivation_rule %}<h4>Derivation lineage</h4><p>{{ value.derivation_rule.code }} · version {{ value.derivation_rule.version }}</p>{% endif %}
+                  {% if value.observations %}
+                    <h4>Source observations</h4>
+                    {% for observation in value.observations %}
+                    <article class="source-record">
+                      <h5>{% if observation.source_url %}<a href="{{ observation.source_url }}" target="_blank" rel="noreferrer">{{ observation.source_title }}</a>{% else %}{{ observation.source_title }}{% endif %}</h5>
+                      <p class="source-publisher">{{ observation.publisher }} · {{ observation.authority_class }}</p>
+                      <dl class="mini-definition-list">
+                        <dt>Source code</dt><dd><code>{{ observation.source_code }}</code></dd>
+                        <dt>Evidence role</dt><dd>{{ observation.evidence_role }}</dd>
+                        <dt>Raw label</dt><dd>{{ observation.raw_label }}</dd>
+                        <dt>Raw value / unit</dt><dd>{{ observation.raw_value }}{% if observation.raw_unit %} {{ observation.raw_unit }}{% endif %}</dd>
+                        {% if observation.raw_qualifier %}<dt>Raw qualifier</dt><dd>{{ observation.raw_qualifier }}</dd>{% endif %}
+                        {% if observation.page_section_locator %}<dt>Page / section</dt><dd>{{ observation.page_section_locator }}</dd>{% endif %}
+                        {% if observation.retrieved_at %}<dt>Retrieved</dt><dd>{{ observation.retrieved_at }}</dd>{% endif %}
+                      </dl>
+                    </article>
+                    {% endfor %}
+                  {% else %}<p class="muted">No raw observation link; inspect derivation lineage.</p>{% endif %}
+                </div>
+              </details>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
   {% else %}<p class="empty">No normalized values.</p>{% endfor %}
-  </div>
 </section>
 
-{% if vehicle.assessments %}<section class="panel"><div class="section-heading"><h2>Unknown / research assessments</h2><span class="muted">No fake numeric placeholders are used.</span></div>
-  <div class="assessment-list">{% for assessment in vehicle.assessments %}<div class="assessment"><code>{{ assessment.parameter_code }}</code><span class="badge">{{ assessment.availability_state }}</span><p>{{ assessment.unknown_reason }}</p><small>Searched: {{ assessment.source_families_searched|join(", ") }}</small></div>{% endfor %}</div>
-</section>{% endif %}
+{% if vehicle.assessment_groups %}
+<section class="panel" id="data-gaps" aria-labelledby="gaps-heading">
+  <div class="section-heading">
+    <div><p class="section-kicker">No placeholders</p><h2 id="gaps-heading">Data gaps</h2></div>
+    <p class="muted">Unknown / research assessments remain grouped and explicit.</p>
+  </div>
+  {% for group in vehicle.assessment_groups %}
+  <section class="engineering-group" aria-labelledby="gap-heading-{{ group.key }}">
+    <h3 id="gap-heading-{{ group.key }}">{{ group.label }}</h3>
+    <div class="table-wrap table-wrap-plain">
+      <table class="data-table data-gaps-table">
+        <caption class="sr-only">{{ group.label }} data gaps</caption>
+        <thead><tr><th scope="col">Parameter</th><th scope="col">State</th><th scope="col">Scope</th><th scope="col">Reason / next evidence</th></tr></thead>
+        <tbody>
+        {% for assessment in group["values"] %}
+          <tr>
+            <th scope="row"><span>{{ assessment.display_name }}</span><small class="technical-code"><code>{{ assessment.parameter_code }}</code></small></th>
+            <td><span class="status status-unknown">{{ assessment.availability_state_label }}</span></td>
+            <td>{{ assessment.scope_text }}</td>
+            <td><p>{{ assessment.unknown_reason }}</p>{% if assessment.source_families_searched %}<small>Searched: {{ assessment.source_families_searched|join(", ") }}</small>{% endif %}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {% endfor %}
+</section>
+{% endif %}
 
-{% if vehicle.geometry_assets %}<section class="panel"><div class="section-heading"><h2>Geometry assets</h2><span class="muted">Roles are intentionally distinct.</span></div><div class="table-wrap"><table><thead><tr><th>Role</th><th>Representation</th><th>Datum</th><th>Fidelity</th><th>Uncertainty</th></tr></thead><tbody>{% for asset in vehicle.geometry_assets %}<tr><td><code>{{ asset.role }}</code></td><td>{{ asset.representation_type }}</td><td>{{ asset.datum }}</td><td>{{ asset.fidelity }}</td><td>{{ asset.uncertainty or "Not stated" }}</td></tr>{% endfor %}</tbody></table></div></section>{% endif %}
+{% if vehicle.geometry_assets %}
+<section class="panel" id="geometry-assets" aria-labelledby="geometry-heading">
+  <div class="section-heading"><div><p class="section-kicker">Supporting geometry</p><h2 id="geometry-heading">Geometry assets</h2></div><p class="muted">Roles, datum and fidelity remain distinct.</p></div>
+  <div class="table-wrap table-wrap-plain">
+    <table class="data-table">
+      <caption class="sr-only">Geometry assets and their engineering metadata</caption>
+      <thead><tr><th scope="col">Role</th><th scope="col">Representation</th><th scope="col">Method / datum</th><th scope="col">Fidelity</th><th scope="col">Uncertainty</th></tr></thead>
+      <tbody>{% for asset in vehicle.geometry_assets %}<tr><th scope="row"><code>{{ asset.role }}</code></th><td>{{ asset.representation_type }}</td><td>{{ asset.method }} · {{ asset.datum }}{% if asset.body_mirror_inclusion %}<small>{{ asset.body_mirror_inclusion }}</small>{% endif %}</td><td>{{ asset.fidelity }}</td><td>{{ asset.uncertainty or "Not stated" }}</td></tr>{% endfor %}</tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
 
 <p class="actions"><a class="button" href="/exports/vehicles.csv?codes={{ vehicle.stable_vehicle_code }}">Export CSV</a><a class="button secondary" href="/exports/vehicles.xlsx?codes={{ vehicle.stable_vehicle_code }}">Export XLSX</a></p>
 {% endblock %}

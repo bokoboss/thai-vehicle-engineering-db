@@ -1,7 +1,105 @@
 {% extends "base.html" %}
 {% block title %}Compare · Vehicle Engineering Database{% endblock %}
 {% block content %}
-<section class="page-intro"><p class="eyebrow">Evidence-aware comparison</p><h1>Compare configurations</h1><p class="lede">Enter up to four stable vehicle codes, separated by commas.</p></section>
-<form class="filter-bar" method="get" action="/compare"><label class="wide">Vehicle codes <input name="codes" value="{{ selected_codes }}" placeholder="FIXTURE-PRIMARY-PUBLISHED,FIXTURE-AVT-TRACK-DIRECT"></label><button type="submit">Compare</button></form>
-{% if vehicles %}<div class="compare-grid">{% for vehicle in vehicles %}<section class="panel"><h2>{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</h2><p class="muted">{{ vehicle.variant }} · {{ vehicle.stable_vehicle_code }}</p><table><tbody>{% for value in vehicle["values"] %}<tr><th>{{ value.parameter_code }}</th><td>{{ value.value }} {{ value.unit or "" }}</td><td><span class="badge">{{ value.evidence_method }}</span></td></tr>{% endfor %}</tbody></table></section>{% endfor %}</div>{% else %}<p class="empty">Choose configurations to compare.</p>{% endif %}
+<section class="page-intro">
+  <p class="eyebrow">Evidence-aware comparison</p>
+  <h1>Compare configurations</h1>
+  <p class="lede">Select up to four exact configurations. Rows are grouped by engineering family; stable vehicle codes remain the submitted values.</p>
+</section>
+
+<form class="compare-selector" method="get" action="/compare" aria-label="Select vehicle configurations to compare">
+  <div class="compare-select-grid">
+  {% for slot in range(4) %}
+    <div>
+      <label for="vehicle-{{ slot + 1 }}">Vehicle {{ slot + 1 }}</label>
+      <select id="vehicle-{{ slot + 1 }}" name="vehicle_{{ slot + 1 }}">
+        <option value="">Choose a configuration</option>
+        {% for option in catalog_options %}
+          <option value="{{ option.code }}"{% if selected_codes_list|length > slot and selected_codes_list[slot] == option.code %} selected{% endif %}>{{ option.label }} — {{ option.secondary }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endfor %}
+  </div>
+  <div class="filter-actions">
+    <button type="submit">Compare</button>
+    <a class="button secondary" href="/compare">Clear</a>
+  </div>
+  <p class="field-help">Existing <code>/compare?codes=CODE_A,CODE_B</code> links remain supported.</p>
+</form>
+
+{% if vehicles %}
+<section class="panel comparison-panel" aria-labelledby="comparison-heading">
+  <div class="section-heading">
+    <div><p class="section-kicker">{{ vehicles|length }} selected</p><h2 id="comparison-heading">Engineering comparison matrix</h2></div>
+    <p class="muted">— means no value is recorded; Unknown means an assessment remains unresolved.</p>
+  </div>
+  <div class="table-wrap comparison-wrap">
+    <table class="comparison-matrix">
+      <caption class="sr-only">Vehicle comparison matrix with parameters as rows</caption>
+      <thead>
+        <tr>
+          <th scope="col">Parameter</th>
+          <th scope="col">Unit</th>
+          {% for vehicle in vehicles %}<th scope="col"><a href="/vehicles/{{ vehicle.stable_vehicle_code }}">{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</a><small>{{ vehicle.variant }}</small><small class="stable-code"><code>{{ vehicle.stable_vehicle_code }}</code></small></th>{% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+      {% for group in comparison_core_groups %}
+        <tr class="matrix-group"><th scope="rowgroup" colspan="{{ vehicles|length + 2 }}">{{ group.label }}</th></tr>
+        {% for row in group.rows %}
+        <tr>
+          <th scope="row"><span>{{ row.label }}</span>{% if row.semantic_cues %}<small class="semantic-cue">Semantics retained in each cell</small>{% endif %}<small class="technical-code"><code>{{ row.code }}</code></small></th>
+          <td>{{ row.unit or "—" }}</td>
+          {% for cell in row.cells %}
+          <td class="compare-cell compare-cell-{{ cell.state_tone }}">
+            {% if cell["items"] %}
+              {% for item in cell["items"] %}
+                <div class="compare-value{% if item.is_numeric %} numeric{% endif %}"><span>{{ item.display_value }}</span>{% if item.unit and not row.unit %} <span class="unit">{{ item.unit }}</span>{% endif %}</div>
+                <small class="compare-state status-{{ item.state_tone }}">{{ item.state_label }}</small>
+                {% if item.scope_text != "Configuration-wide" %}<small class="compare-scope">{{ item.scope_text }}</small>{% endif %}
+                {% if item.semantic_cue %}<small class="semantic-cue">{{ item.semantic_cue }}</small>{% endif %}
+                <small><a href="{{ item.detail_url }}">Details</a></small>
+              {% endfor %}
+            {% elif cell.unknown %}
+              <span class="status status-unknown">{{ cell.status_label }}</span>
+              {% if cell.unknown_reason %}<small>{{ cell.unknown_reason }}</small>{% endif %}
+            {% elif cell.status_label != "—" %}
+              <span class="status status-{{ cell.state_tone }}">{{ cell.status_label }}</span>
+              {% if cell.unknown_reason %}<small>{{ cell.unknown_reason }}</small>{% endif %}
+            {% else %}
+              <span class="muted">—</span>
+            {% endif %}
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% if comparison_technical_groups %}
+<details class="panel technical-fields">
+  <summary>Show all technical fields</summary>
+  <div class="table-wrap comparison-wrap">
+    <table class="comparison-matrix">
+      <caption class="sr-only">Additional technical vehicle comparison fields</caption>
+      <thead><tr><th scope="col">Parameter</th><th scope="col">Unit</th>{% for vehicle in vehicles %}<th scope="col">{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}<small>{{ vehicle.variant }}</small></th>{% endfor %}</tr></thead>
+      <tbody>
+      {% for group in comparison_technical_groups %}
+        <tr class="matrix-group"><th scope="rowgroup" colspan="{{ vehicles|length + 2 }}">{{ group.label }}</th></tr>
+        {% for row in group.rows %}
+        <tr><th scope="row"><span>{{ row.label }}</span><small class="technical-code"><code>{{ row.code }}</code></small></th><td>{{ row.unit or "—" }}</td>{% for cell in row.cells %}<td class="compare-cell compare-cell-{{ cell.state_tone }}">{% if cell["items"] %}{% for item in cell["items"] %}<div class="compare-value{% if item.is_numeric %} numeric{% endif %}">{{ item.display_value }}</div><small class="compare-state status-{{ item.state_tone }}">{{ item.state_label }}</small>{% if item.scope_text != "Configuration-wide" %}<small class="compare-scope">{{ item.scope_text }}</small>{% endif %}<small><a href="{{ item.detail_url }}">Details</a></small>{% endfor %}{% elif cell.unknown %}<span class="status status-unknown">{{ cell.status_label }}</span>{% else %}<span class="muted">—</span>{% endif %}</td>{% endfor %}</tr>
+        {% endfor %}
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</details>
+{% endif %}
+{% else %}
+<section class="empty-state"><h2>Choose configurations to compare</h2><p>Select at least two vehicles above to build a parameter-by-vehicle matrix.</p></section>
+{% endif %}
 {% endblock %}

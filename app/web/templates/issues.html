@@ -1,8 +1,42 @@
 {% extends "base.html" %}
 {% block title %}Data Issues · Vehicle Engineering Database{% endblock %}
 {% block content %}
-<section class="page-intro"><p class="eyebrow">Maintainer work queue</p><h1>Data issues</h1><p class="lede">Readiness blockers and QA findings are explicit, reviewable states—not hidden confidence scores.</p></section>
-<div class="table-wrap"><table><thead><tr><th>Kind</th><th>Vehicle</th><th>Code</th><th>Severity</th><th>Status</th><th>Message</th></tr></thead><tbody>
-{% for issue in issues %}<tr><td>{{ issue.kind }}</td><td>{% if issue.vehicle %}<a href="/vehicles/{{ issue.vehicle.stable_vehicle_code }}">{{ issue.vehicle.stable_vehicle_code }}</a>{% else %}—{% endif %}</td><td><code>{{ issue.code }}</code></td><td>{{ issue.severity }}</td><td>{{ issue.status }}</td><td>{{ issue.message }}</td></tr>{% else %}<tr><td colspan="6" class="empty">No open issues.</td></tr>{% endfor %}
-</tbody></table></div>
+<section class="page-intro">
+  <p class="eyebrow">Maintainer work queue</p>
+  <h1>Data issues</h1>
+  <p class="lede">Readiness blockers and QA findings are explicit, reviewable states—not hidden confidence scores.</p>
+</section>
+
+<form class="filter-bar issue-filter" method="get" action="/issues" aria-label="Filter data issues">
+  <div>
+    <label for="issue-kind-filter">Issue type</label>
+    <select id="issue-kind-filter" name="kind">
+      <option value="">All issue types</option>
+      <option value="READINESS"{% if issue_kind == "READINESS" %} selected{% endif %}>Readiness</option>
+      <option value="QA"{% if issue_kind == "QA" %} selected{% endif %}>QA finding</option>
+    </select>
+  </div>
+  <div class="filter-actions"><button type="submit">Apply filter</button><a class="button secondary" href="/issues">Reset</a></div>
+</form>
+
+<div class="table-wrap">
+  <table class="issues-table">
+    <caption class="sr-only">Open data issues</caption>
+    <thead><tr><th scope="col">Issue</th><th scope="col">Vehicle</th><th scope="col">Severity</th><th scope="col">Status</th><th scope="col">Detail</th></tr></thead>
+    <tbody>
+    {% for issue in issues %}
+      <tr>
+        <th scope="row"><span>{{ issue.code_label }}</span><small>{{ issue.kind_label }} · <code>{{ issue.code }}</code></small></th>
+        <td>{% if issue.vehicle_code %}<a class="vehicle-link" href="/vehicles/{{ issue.vehicle_code }}">{{ issue.vehicle_label }}</a><small class="stable-code"><code>{{ issue.vehicle_code }}</code></small>{% else %}{{ issue.vehicle_label }}{% endif %}</td>
+        <td>{{ issue.severity_label }}</td>
+        <td><span class="status status-{{ issue.status|lower }}">{{ issue.status_label }}</span></td>
+        <td>{{ issue.message }}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="5" class="empty">No open issues match this filter. <a href="/issues">Show all issue types</a>.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+<p class="muted result-count">{{ issues|length }} issue{% if issues|length != 1 %}s{% endif %} shown.</p>
 {% endblock %}

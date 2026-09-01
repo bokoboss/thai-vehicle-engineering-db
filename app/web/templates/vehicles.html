@@ -4,38 +4,92 @@
 <section class="page-intro">
   <p class="eyebrow">Evidence-aware vehicle catalog</p>
   <h1>Vehicles</h1>
-  <p class="lede">Find an exact configuration, then inspect the evidence behind every engineering value.</p>
+  <p class="lede">Find an exact Thailand configuration, then inspect the engineering evidence behind its values.</p>
 </section>
 
-<form class="filter-bar" method="get" action="/vehicles">
-  <label>Search <input name="q" value="{{ q }}" placeholder="model, generation, variant"></label>
-  <label>Manufacturer <input name="manufacturer" value="{{ manufacturer }}" placeholder="e.g. Toyota"></label>
-  <label>Body style <input name="body_style" value="{{ body_style }}" placeholder="e.g. SUV"></label>
-  <label>Ready for <input name="readiness" value="{{ readiness }}" placeholder="AVT_READY"></label>
-  <button type="submit">Filter</button>
+<form class="filter-bar" method="get" action="/vehicles" aria-label="Filter vehicle catalog">
+  <div class="search-field">
+    <label for="vehicle-search">Search</label>
+    <input id="vehicle-search" type="search" name="q" value="{{ q }}" placeholder="Model, generation, or variant" aria-describedby="vehicle-search-help">
+    <span id="vehicle-search-help" class="field-help">Search uses the exact configuration catalog.</span>
+  </div>
+  <div>
+    <label for="manufacturer-filter">Manufacturer</label>
+    <select id="manufacturer-filter" name="manufacturer">
+      <option value="">All manufacturers</option>
+      {% for option in filter_options.manufacturers %}
+        <option value="{{ option.value }}"{% if manufacturer == option.value %} selected{% endif %}>{{ option.label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div>
+    <label for="body-style-filter">Body style</label>
+    <select id="body-style-filter" name="body_style">
+      <option value="">All body styles</option>
+      {% for option in filter_options.body_styles %}
+        <option value="{{ option.value }}"{% if body_style == option.value %} selected{% endif %}>{{ option.label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div>
+    <label for="readiness-filter">Ready for</label>
+    <select id="readiness-filter" name="readiness">
+      <option value="">Any readiness</option>
+      {% for option in filter_options.readiness %}
+        <option value="{{ option.value }}"{% if readiness == option.value %} selected{% endif %}>{{ option.label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="filter-actions">
+    <button type="submit">Apply filters</button>
+    <a class="button secondary" href="/vehicles">Reset</a>
+  </div>
 </form>
 
 <div class="table-wrap">
-  <table>
-    <thead><tr><th>Make / model</th><th>Generation</th><th>Variant</th><th>Market / identity time</th><th>Readiness</th></tr></thead>
+  <table class="catalog-table">
+    <caption class="sr-only">Exact vehicle configurations</caption>
+    <thead>
+      <tr>
+        <th scope="col">Vehicle / configuration</th>
+        <th scope="col">Generation / body</th>
+        <th scope="col">Identity time</th>
+        <th scope="col">Readiness</th>
+      </tr>
+    </thead>
     <tbody>
     {% for vehicle in vehicles %}
       <tr>
-        <td><a href="/vehicles/{{ vehicle.stable_vehicle_code }}">{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</a><small>{{ vehicle.stable_vehicle_code }}</small></td>
-        <td>{{ vehicle.generation }}</td>
-        <td>{{ vehicle.variant }}</td>
-        <td>{{ vehicle.market }} · {{ vehicle.identity_time_basis }}{% if vehicle.model_year_from %} · MY {{ vehicle.model_year_from }}{% if vehicle.model_year_to %}–{{ vehicle.model_year_to }}{% endif %}{% elif vehicle.identity_time_label_raw %} · {{ vehicle.identity_time_label_raw }}{% elif vehicle.sale_period_from %} · from {{ vehicle.sale_period_from }}{% endif %}</td>
-        <td class="badges">
-          {% for name, result in vehicle.readiness.items() %}
-            <span class="badge badge-{{ result.status|lower }}">{{ name }}: {{ result.status }}</span>
+        <th scope="row">
+          <a class="vehicle-link" href="/vehicles/{{ vehicle.stable_vehicle_code }}">{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</a>
+          <span class="row-primary">{{ vehicle.variant }}</span>
+          <small class="stable-code">Configuration code: <code>{{ vehicle.stable_vehicle_code }}</code></small>
+        </th>
+        <td>
+          <span>{{ vehicle.generation }}</span>
+          <small>{{ vehicle.body_style }}</small>
+        </td>
+        <td>
+          <span>{{ vehicle.identity_time_label }}</span>
+          <small>{{ vehicle.market }} market{% if vehicle.identity_time_label_raw and vehicle.identity_time_basis != "MODEL_YEAR" %} · raw: {{ vehicle.identity_time_label_raw }}{% endif %}</small>
+        </td>
+        <td>
+          <div class="readiness-compact">
+          {% for result in vehicle.readiness_view %}
+            <span class="status status-{{ result.status_tone }}">
+              <span class="status-label">{{ result.label }}</span>
+              <span>{{ result.status_label }}</span>
+              {% if result.blocker_count %}<small>{{ result.blocker_count }} blocker{% if result.blocker_count != 1 %}s{% endif %}</small>{% endif %}
+            </span>
           {% endfor %}
+          </div>
         </td>
       </tr>
     {% else %}
-      <tr><td colspan="5" class="empty">No configurations match this filter.</td></tr>
+      <tr><td colspan="4" class="empty">No configurations match these filters. <a href="/vehicles">Reset the catalog filters</a>.</td></tr>
     {% endfor %}
     </tbody>
   </table>
 </div>
-<p class="muted">{{ vehicles|length }} exact configuration(s) shown.</p>
+<p class="muted result-count">{{ vehicles|length }} exact configuration{% if vehicles|length != 1 %}s{% endif %} shown.</p>
 {% endblock %}
