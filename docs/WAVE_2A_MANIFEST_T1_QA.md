@@ -6,13 +6,14 @@ Issue: #32
 
 ## Scope
 
-This tranche contains five new exact Thai-market engineering-use vehicle manifest drafts:
+This tranche contains six new exact Thai-market engineering-use vehicle manifest drafts:
 
 1. Kia Carnival HEV 7-seat Luxury — Thailand 2025 release
 2. Nissan Serena e-POWER Highway Star — Thailand 2025 release
 3. Toyota Innova Zenix HEV Premium — revision label 2568
 4. Lexus LM 350h Executive 7-Seater — All-New Thailand 2023 release configuration
 5. Honda CR-V e:HEV RS 4WD — late-2025 minor-change release
+6. Toyota Corolla Cross HEV Premium Luxury — revision label 2569
 
 These records are not yet part of the accepted curated database. Physical ingestion remains blocked until importer validation and independent acceptance review pass.
 
@@ -27,6 +28,7 @@ All five records satisfy the current research gate for exact identity and explic
 | Toyota Innova Zenix HEV Premium | OEM_REVISION_LABEL | PASS |
 | Lexus LM 350h Executive 7-Seater | EDITION_RELEASE | PASS |
 | Honda CR-V e:HEV RS 4WD | EDITION_RELEASE | PASS with explicit unresolved height/mass assessments |
+| Toyota Corolla Cross HEV Premium Luxury | OEM_REVISION_LABEL | PASS |
 
 No model year was invented from publication, launch, brochure, retrieval or Buddhist-calendar revision year.
 
@@ -55,7 +57,8 @@ Result:
 | Toyota Innova Zenix HEV Premium | 12 | 5 | PASS |
 | Lexus LM 350h Executive 7-Seater | 13 | 5 | PASS |
 | Honda CR-V e:HEV RS 4WD | 12 | 6 | PASS |
-| **Total** | **60** | **28** | **PASS** |
+| Toyota Corolla Cross HEV Premium Luxury | 12 | 5 | PASS |
+| **Total** | **72** | **33** | **PASS** |
 
 This static check does not replace `python -m app.curate validate`.
 
@@ -105,6 +108,14 @@ No physical approach/departure/breakover claim is derived.
 - Nissan Serena approximate vehicle weight 1,797 kg remains raw only; no kerb-mass normalization.
 - Honda CR-V official 1,815 kg “น้ำหนักรถ” remains raw only in this tranche; no silent kerb-mass interpretation.
 
+### Toyota Corolla Cross current-revision semantics
+
+- current revision label is `OEM_REVISION_LABEL`, not model year;
+- reported width remains OEM_UNSPECIFIED for body/mirror envelope;
+- OEM tread remains separate from AVT outer-face track;
+- ground-clearance load/reference state remains unspecified;
+- turning radius 5.2 m remains OEM_UNSPECIFIED for curb/wall and axle scope.
+
 ### Honda CR-V explicit gaps
 
 The exact RS 4WD record deliberately leaves:
@@ -118,7 +129,7 @@ This is intentional and not a data-entry omission.
 
 Before merge/ingestion:
 
-1. run `python -m app.curate validate` on all five manifests against an initialized clean database;
+1. run `python -m app.curate validate` on all six manifests against an initialized clean database;
 2. verify no source-code collision or incompatible source reuse;
 3. import all five into a disposable staging database;
 4. confirm transaction/rollback behavior and readiness outputs;
@@ -127,4 +138,4 @@ Before merge/ingestion:
 7. run web smoke for Vehicles / Compare / Design Check;
 8. independently review the resulting PR and qualification output.
 
-Only after these gates pass should the production-like curated inventory increase from 21 to 26 configurations.
+Only after these gates pass should the production-like curated inventory increase from 21 to 27 configurations.
