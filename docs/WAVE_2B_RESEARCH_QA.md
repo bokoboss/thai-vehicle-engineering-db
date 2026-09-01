@@ -94,3 +94,61 @@ Research active. McLaren provides APAC/Thailand program evidence and official Ar
 - Lift amount alone does not create approach/departure/breakover angles.
 - Cross-market geometry requires evidence-backed same-geometry applicability.
 - No application source change is required merely because accepted release membership grows.
+
+
+## Hyundai STARIA Premium MY25
+
+Research state: **MANIFEST DRAFT READY**
+
+Identity basis: `MODEL_YEAR`.
+
+The official Hyundai Thailand brochure explicitly identifies MY25 in the source designation and provides the exact Premium engineering table.
+
+Normalized draft values include:
+
+- 5,253 x 1,997 x 1,990 mm;
+- wheelbase 3,273 mm;
+- front/rear overhang 910 / 1,070 mm;
+- OEM 18-inch tread 1,721 / 1,732 mm with SAME_GEOMETRY_CONFIRMED applicability from the Thailand US4 owner manual;
+- minimum ground clearance 186 mm, load/reference unspecified;
+- minimum turning radius 5.97 m with OEM_UNSPECIFIED reference/axle scope;
+- 18 x 7.0J wheels / 235/55 R18 tyres.
+
+Body/mirror width, exact kerb mass and AVT outer-face tracks remain fail-closed.
+
+Manifest:
+
+`data/curation/manifests/wave2b/hyundai_staria_premium_my2025_v1.json`
+
+Static registry/reference contract: **PASS — 14 values + 5 assessments**.
+
+## Porsche 911 Carrera GTS 992 II — Thailand-delivered 2025
+
+Research state: **MANIFEST DRAFT READY**
+
+Identity basis: `EDITION_RELEASE`.
+
+A bounded exact Porsche Finder Thailand vehicle from Porsche Centre Bangkok is used instead of carrying current MY2027 geometry backwards/forwards across model years.
+
+Exact local evidence supports:
+
+- length 4,553 mm;
+- body width 1,852 mm;
+- mirrors-open width 2,033 mm;
+- wheelbase 2,450 mm;
+- turning circle diameter 10.9 m retained as raw OEM turning text;
+- curb weight 1,604 kg;
+- permissible gross weight 2,045 kg;
+- 20-inch front / 21-inch rear Carrera GTS wheels;
+- installed rear-axle steering;
+- installed front-axle lift.
+
+The current Porsche Thailand GTS model page corroborates the lift-system behaviour: approximately +40 mm at the front, usable to approximately 35 km/h. This is retained as raw evidence only; it is not added to ground clearance and no ramp angle is derived.
+
+No normalized turning radius is created because dividing the published 10.9 m diameter would be a derivation and the reference path remains unspecified. Exact height, base ground clearance and AVT outer-face tracks remain assessment-only.
+
+Manifest:
+
+`data/curation/manifests/wave2b/porsche_911_carrera_gts_992ii_delivered_2025_v1.json`
+
+Static registry/reference contract: **PASS — 9 values + 6 assessments**.
