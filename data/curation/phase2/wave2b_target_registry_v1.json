@@ -44,8 +44,11 @@
       "model": "Yaris Cross",
       "configuration": "HEV Premium Luxury",
       "category": "compact_crossover",
-      "research_status": "RESEARCH_ACTIVE",
-      "issue": 37
+      "research_status": "MANIFEST_DRAFT_READY",
+      "issue": 37,
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "Toyota Yaris Cross 2026 official catalogue — HEV Premium Luxury",
+      "manifest_path": "data/curation/manifests/wave2b/toyota_yaris_cross_hev_premium_luxury_catalog_2026_v1.json"
     },
     {
       "target_id": "wave2b-honda-hrv-ehev-rs",
@@ -53,8 +56,11 @@
       "model": "HR-V",
       "configuration": "e:HEV RS",
       "category": "compact_crossover",
-      "research_status": "RESEARCH_ACTIVE",
-      "issue": 37
+      "research_status": "MANIFEST_DRAFT_READY",
+      "issue": 37,
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "ฮอนด้า เอชอาร์-วี อี:เอชอีวี ใหม่ — e:HEV RS; customer delivery from 28 พฤศจิกายน 2567",
+      "manifest_path": "data/curation/manifests/wave2b/honda_hrv_ehev_rs_new_release_20241128_v1.json"
     },
     {
       "target_id": "wave2b-toyota-camry-hev-premium-luxury",
@@ -62,8 +68,11 @@
       "model": "Camry",
       "configuration": "HEV Premium Luxury",
       "category": "executive_sedan",
-      "research_status": "RESEARCH_ACTIVE",
-      "issue": 37
+      "research_status": "MANIFEST_DRAFT_READY",
+      "issue": 37,
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "รถยนต์คัมรี ไฮบริดรุ่นใหม่ตุลาคม 2567 — HEV Premium Luxury",
+      "manifest_path": "data/curation/manifests/wave2b/toyota_camry_hev_premium_luxury_new_release_2567_v1.json"
     },
     {
       "target_id": "wave2bs-porsche-911-carrera-gts-992ii-delivered-2025",
