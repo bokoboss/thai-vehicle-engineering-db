@@ -1,0 +1,180 @@
+{
+  "build_utc": "2026-09-01T10:55:31+00:00",
+  "database_counts": {
+    "assessments": 80,
+    "axles": 0,
+    "conflict_decisions": 0,
+    "fitments": 14,
+    "geometry_assets": 0,
+    "loads": 26,
+    "manufacturers": 15,
+    "models": 27,
+    "observations": 268,
+    "parameters": 48,
+    "readiness_results": 164,
+    "sources": 74,
+    "steering_relations": 0,
+    "values": 319,
+    "vehicles": 27
+  },
+  "expected_manifest_counts": {
+    "assessments": 80,
+    "axles": 0,
+    "conflict_decisions": 0,
+    "conflicting_values": 2,
+    "fitments": 14,
+    "geometry_assets": 0,
+    "loads": 26,
+    "observations": 268,
+    "source_entries": 75,
+    "sources": 74,
+    "steering_relations": 0,
+    "values": 319,
+    "vehicles": 27
+  },
+  "exports": {
+    "conflict_state_present": true,
+    "credentials_exposed": false,
+    "csv_bytes": 195671,
+    "csv_path": "vehicle_engineering_curated.release_2026_09_a.csv",
+    "csv_rows": 399,
+    "fitment_scope_present": true,
+    "headers_match": true,
+    "load_scope_present": true,
+    "provenance_present": true,
+    "vehicles": 27,
+    "xlsx_bytes": 75514,
+    "xlsx_path": "vehicle_engineering_curated.release_2026_09_a.xlsx"
+  },
+  "manifest_count": 27,
+  "promotion": {
+    "database": "vehicle_engineering_curated.db",
+    "previous_database": "vehicle_engineering_curated.db.previous",
+    "requested": true,
+    "result": "PROMOTED"
+  },
+  "previous_accepted_database": {
+    "bytes": 770048,
+    "path": "vehicle_engineering_curated.db",
+    "sha256": "F166000F9504E1E39E0B4A2A0C189BB9B70258818DB1F0863332FA4A57BFE063",
+    "vehicles": 21
+  },
+  "qa_result": "PASS",
+  "qualification_schema_version": "1.0",
+  "readiness_status": {
+    "AVT_READY:NOT_READY": 41,
+    "DIMENSION_READY:NOT_READY": 9,
+    "DIMENSION_READY:READY": 32,
+    "IDENTITY_RESOLVED:READY": 41,
+    "RAMP_SCREENING_READY:NOT_READY": 41
+  },
+  "registry_only": {
+    "parameters": 48,
+    "vehicles": 0
+  },
+  "release_date": "2026-09-01",
+  "release_definition": "data\\curation\\releases\\release_2026_09_a.json",
+  "release_id": "release_2026_09_a",
+  "release_status": "ACCEPTED",
+  "repository_sha": "2b25c6cabeac65ca6f38b3397e7f3ef2e04a6336",
+  "representative_proofs": {
+    "BYD ATTO 3": {
+      "clearance_load_basis": [
+        "OEM_LADEN",
+        "UNLADEN"
+      ],
+      "clearance_mm": [
+        150,
+        175
+      ]
+    },
+    "Honda CR-V": {
+      "height_unknown": true,
+      "height_values": 0
+    },
+    "Lexus LM": {
+      "turning_radius_m": 5.9,
+      "turning_reference": "WHEEL_PATH_OTHER"
+    },
+    "MG IM6": {
+      "four_wheel_steering_observation": "Intelligent Four-wheel Steering System (with Crab Mode)",
+      "steering_relations": 0
+    },
+    "Mitsubishi Triton": {
+      "identity_time_basis": "EDITION_RELEASE",
+      "model_year_from": null,
+      "turning_radius_m": 6.2,
+      "turning_reference": "OEM_UNSPECIFIED"
+    },
+    "Nissan Serena": {
+      "approximate_weight_raw": "1797",
+      "kerb_mass_values": 0
+    },
+    "Volvo EX30": {
+      "conflict_decisions": 0,
+      "fitment_codes": [
+        "WHEEL19"
+      ],
+      "turning_radius_normalized": false,
+      "turning_text_values": [
+        "10.7 m",
+        "11 m"
+      ]
+    },
+    "th-honda-accord-ehev-rs-release-2025-08-22": {
+      "authority_B_values": 8,
+      "source_authority": "REPUTABLE_SECONDARY"
+    },
+    "th-honda-civic-ehev-rs-release-2026-07-23": {
+      "authority_B_values": 8,
+      "source_authority": "REPUTABLE_SECONDARY"
+    },
+    "th-tesla-model3-premium-long-range-rwd-2024plus": {
+      "normalized_radius": false,
+      "raw_turning_text": [
+        "11.7 m curb-to-curb turning circle"
+      ]
+    },
+    "th-tesla-modely-premium-lr-rwd-19-2025plus": {
+      "normalized_radius": false,
+      "raw_turning_text": [
+        "12.13 m curb-to-curb turning circle"
+      ]
+    }
+  },
+  "source_reuse": {
+    "manifest_entries": 75,
+    "unique_source_codes": 74
+  },
+  "stable_vehicle_codes": [
+    "th-byd-atto3-my24-extended-local",
+    "th-mitsubishi-triton-ultra-4wd-at-release-2023",
+    "th-volvo-ex30-ultra-smer-my2026-19",
+    "th-bmw-520d-m-sport-pro-g60-effective-2025-03-24",
+    "th-bmw-740d-m-sport-g70-current-2026-03",
+    "th-byd-dolphin-extended-local-saleperiod-2026-03",
+    "th-byd-seal-my24-awd-performance",
+    "th-ford-ranger-wildtrak-20-biturbo-4x4-nextgen",
+    "th-honda-accord-ehev-rs-release-2025-08-22",
+    "th-honda-civic-ehev-rs-release-2026-07-23",
+    "th-hyundai-ioniq6-exclusive-revision-2024",
+    "th-isuzu-mux-22-ultimate-4wd-release-2026",
+    "th-isuzu-vcross-22-z-4door-at-4x4-release-2026",
+    "th-mazda-mx5-35ae-rf-at-release-2025",
+    "th-mg-im6-long-range-release-2025-08-22",
+    "th-nissan-navara-pro4x-7at-upgrade-2024",
+    "th-tesla-model3-premium-long-range-rwd-2024plus",
+    "th-tesla-modely-premium-lr-rwd-19-2025plus",
+    "th-toyota-bz4x-fwd-revision-2568",
+    "th-toyota-commuter-28-at-highroof-revision-2568",
+    "th-toyota-fortuner-leader-v-4wd-revision-2568",
+    "th-honda-crv-ehev-rs4wd-minorchange-release-2025-11-28",
+    "th-kia-carnival-hev-7seat-luxury-release-2025-10-03",
+    "th-lexus-lm350h-executive-7seat-allnew-2023",
+    "th-nissan-serena-epower-highway-star-release-2025-03-24",
+    "th-toyota-corolla-cross-hev-premium-luxury-revision-2569",
+    "th-toyota-innova-zenix-hev-premium-revision-2568"
+  ],
+  "stable_vehicle_digest_sha256": "0b644d3f10fd7f70a631612c87ecfc03e94a4ab59a37d5fd51278b1f6e560446",
+  "staging_database": "vehicle_engineering_curated.staging.db"
+}

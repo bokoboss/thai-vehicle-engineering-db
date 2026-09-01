@@ -1,0 +1,43 @@
+{
+  "release_schema_version": "1.0",
+  "release_id": "release_2026_09_a",
+  "release_date": "2026-09-01",
+  "release_status": "ACCEPTED",
+  "data_standard_version": "1.0",
+  "methodology_versions": {
+    "avt_mapping": "1.0",
+    "curation_ingestion_contract": "1.0",
+    "identity_time_basis": "1.0",
+    "parameter_registry": "1.0"
+  },
+  "manifest_paths": [
+    "data/curation/manifests/sentinel/byd_atto3_my24_extended_local_v1.json",
+    "data/curation/manifests/sentinel/mitsubishi_triton_ultra_4wd_at_2023_v1.json",
+    "data/curation/manifests/sentinel/volvo_ex30_ultra_smer_my2026_v1.json",
+    "data/curation/manifests/wave1/bmw_520d_m_sport_pro_g60_effective_20250324_v1.json",
+    "data/curation/manifests/wave1/bmw_740d_m_sport_g70_current_202603_v1.json",
+    "data/curation/manifests/wave1/byd_dolphin_extended_local_saleperiod_202603_v1.json",
+    "data/curation/manifests/wave1/byd_seal_my24_awd_performance_v1.json",
+    "data/curation/manifests/wave1/ford_ranger_wildtrak_biturbo_4x4_nextgen_v1.json",
+    "data/curation/manifests/wave1/honda_accord_ehev_rs_release_20250822_v1.json",
+    "data/curation/manifests/wave1/honda_civic_ehev_rs_release_20260723_v1.json",
+    "data/curation/manifests/wave1/hyundai_ioniq6_exclusive_revision_2024_v1.json",
+    "data/curation/manifests/wave1/isuzu_mux_22_ultimate_4wd_2026_v1.json",
+    "data/curation/manifests/wave1/isuzu_vcross_22_z_4door_at_4x4_2026_v1.json",
+    "data/curation/manifests/wave1/mazda_mx5_35ae_rf_at_release_2025_v1.json",
+    "data/curation/manifests/wave1/mg_im6_long_range_release_20250822_v1.json",
+    "data/curation/manifests/wave1/nissan_navara_pro4x_7at_upgrade_2024_v1.json",
+    "data/curation/manifests/wave1/tesla_model3_premium_lr_rwd_2024plus_v1.json",
+    "data/curation/manifests/wave1/tesla_model_y_premium_lr_rwd_19_2025plus_v1.json",
+    "data/curation/manifests/wave1/toyota_bz4x_fwd_revision_2568_v1.json",
+    "data/curation/manifests/wave1/toyota_commuter_28_at_highroof_revision_2568_v1.json",
+    "data/curation/manifests/wave1/toyota_fortuner_leader_v_4wd_revision_2568_v1.json",
+    "data/curation/manifests/wave2a/honda_crv_ehev_rs4wd_minorchange_release_20251128_v1.json",
+    "data/curation/manifests/wave2a/kia_carnival_hev_7seat_luxury_release_20251003_v1.json",
+    "data/curation/manifests/wave2a/lexus_lm350h_executive_7seat_allnew_2023_v1.json",
+    "data/curation/manifests/wave2a/nissan_serena_epower_highway_star_release_20250324_v1.json",
+    "data/curation/manifests/wave2a/toyota_corolla_cross_hev_premium_luxury_revision_2569_v1.json",
+    "data/curation/manifests/wave2a/toyota_innova_zenix_hev_premium_revision_2568_v1.json"
+  ],
+  "notes": "The accepted 3-sentinel, 18 Wave 1, and 6 Wave 2A manifests. File presence outside this list is not production acceptance."
+}

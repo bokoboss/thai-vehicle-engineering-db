@@ -22,8 +22,8 @@
 - Wave 2 second-review PR #16 squash merge: `5466e16350c4c9c982be581f14ff5a46e3b3d3b9`
 - Wave 2 closure PR #17 squash merge: `62a502f196e98077327519a38fa9da3c3867d942`
 - Wave 2 review: CLOSED
-- Current research readiness: Wave 1 = 21, Wave 2 = 0, HOLD = 9
-- Current work: Issue #22 controlled Wave 1 ingestion and real-data web UI smoke review; 21 exact configurations accepted for local curation and 9 HOLD records excluded
+- Current research readiness: accepted release `release_2026_09_a` = 27 (3 sentinel + 18 Wave 1 + 6 Wave 2A), Wave 2 = 0, HOLD = 9
+- Current work: Issue #35 generic release/build pipeline; accepted vehicle growth is release-data driven and the application remains catalog-generic
 
 ## Product purpose
 Create an engineering-grade, traceable database and intentionally small web application for vehicle geometry and maneuverability relevant to vehicles used in Thailand.
@@ -115,7 +115,11 @@ The software foundation is implemented. The main project effort now moves to:
 
 ### Software
 - `docs/PHASE_0_IMPLEMENTATION.md`
-- `scripts/build_wave1_curated_db.py`
+- `scripts/build_curated_db.py`
+- `scripts/build_wave1_curated_db.py` (historical compatibility wrapper)
+- `data/curation/releases/release_2026_09_a.json`
+- `data/curation/releases/current_release.json`
+- `docs/RELEASE_PIPELINE_V1.md`
 - `app/`
 - `alembic/`
 - `tests/`
@@ -129,4 +133,4 @@ The software foundation is implemented. The main project effort now moves to:
 
 ## Current next objective
 
-Maintain the accepted 21-record Wave 1 local curation, preserve its provenance/conflict/identity gates, and resolve explicit AVT/ramp blockers before any later geometry work. Wave 2 review is closed; 9 records remain HOLD pending genuinely new source/temporal/semantic evidence. Production ingestion must not bypass the create-only importer or these QA rules.
+Maintain the accepted 27-record release through explicit release membership, preserve its provenance/conflict/identity gates, and resolve explicit AVT/ramp blockers before any later geometry work. Wave 2 review is closed; 9 records remain HOLD pending genuinely new source/temporal/semantic evidence. Production ingestion must not bypass the create-only importer or these QA rules.
