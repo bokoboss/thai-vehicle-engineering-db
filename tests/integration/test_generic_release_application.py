@@ -62,7 +62,7 @@ def generic_release_client(generic_release_session):
         app.dependency_overrides.clear()
 
 
-def test_generic_27_release_is_visible_without_application_catalog_edits(
+def test_current_release_is_visible_without_application_catalog_edits(
     generic_release_client: TestClient,
     generic_release_session,
 ):
@@ -71,7 +71,7 @@ def test_generic_27_release_is_visible_without_application_catalog_edits(
 
     assert response.status_code == 200
     payload = response.json()
-    assert payload["count"] == 27
+    assert payload["count"] == len(inventory.stable_vehicle_codes)
     assert {item["stable_vehicle_code"] for item in payload["items"]} == set(inventory.stable_vehicle_codes)
     assert NEW_RELEASE_CODES.issubset({item["stable_vehicle_code"] for item in payload["items"]})
     assert generic_release_client.get("/", follow_redirects=False).status_code == 307
