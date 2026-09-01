@@ -11,6 +11,9 @@ from scripts.build_curated_db import BuildError, collect_inventory
 ROOT = Path(__file__).resolve().parents[2]
 BYD_MANIFEST = ROOT / "data/curation/manifests/sentinel/byd_atto3_my24_extended_local_v1.json"
 TRITON_MANIFEST = ROOT / "data/curation/manifests/sentinel/mitsubishi_triton_ultra_4wd_at_2023_v1.json"
+FIRST_ACCEPTED_RELEASE = ROOT / "data/curation/releases/release_2026_09_a.json"
+
+
 def _release_document(paths: list[str], *, release_id: str = "test_release") -> dict:
     return {
         "release_schema_version": "1.0",
@@ -45,7 +48,7 @@ def _write_local_release(tmp_path: Path, manifest_paths: list[Path | str]) -> Pa
 
 
 def test_first_release_explicitly_derives_27_vehicle_inventory():
-    inventory = collect_inventory()
+    inventory = collect_inventory(FIRST_ACCEPTED_RELEASE)
 
     assert inventory.release.release_id == "release_2026_09_a"
     assert len(inventory.release.manifest_paths) == 27
