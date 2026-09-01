@@ -1,0 +1,508 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-HYUNDAI-STARIA-PREMIUM-MY25-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-hyundai-staria-premium-my2025",
+    "manufacturer_name": "Hyundai",
+    "manufacturer_display_name": "Hyundai",
+    "canonical_model_name": "staria",
+    "display_model_name": "STARIA",
+    "market_code": "TH",
+    "generation_name": "STARIA Thailand MY25",
+    "body_style": "Large diesel passenger van/MPV",
+    "chassis_platform_code": "US4",
+    "model_year_from": 2025,
+    "model_year_to": null,
+    "identity_time_basis": "MODEL_YEAR",
+    "identity_time_label_raw": "STARIA_MY25-BROCHURE_4pages_Nov2024 / Premium",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Premium",
+    "powertrain": "2.2 CRDi diesel / 8-speed automatic",
+    "drivetrain": "FWD",
+    "body_configuration": "Passenger wagon/MPV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Hyundai Mobility Thailand's official MY25 brochure explicitly lists the Premium grade and its engineering table. Model year is supported by the official brochure filename/designation; no retrieval/publication year inference is used."
+  },
+  "sources": [
+    {
+      "source_code": "HYUNDAI_TH_STARIA_MY25_BROCHURE",
+      "publisher": "Hyundai Mobility (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_STRUCTURED_TABLE",
+      "title": "STARIA MY25 Brochure",
+      "url": "https://www.hyundai.com/content/dam/hyundai/th/en/data/marketing/brochure/product/staria/STARIA_MY25-BROCHURE_4pages_Nov2024.pdf",
+      "retrieved_at": "2026-09-01T19:55:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2024,
+      "page_section_default": "Specifications — Premium / Premium with Sunroof",
+      "applicability_notes": "Exact Thailand MY25 Premium grade; dimensions/turning/wheel/tyre table applies to Premium.",
+      "archival_status": "URL_ONLY",
+      "notes": "Official filename explicitly carries MY25."
+    },
+    {
+      "source_code": "HYUNDAI_TH_STARIA_OWNER_MANUAL_2024",
+      "publisher": "Hyundai Mobility (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_OWNER_MANUAL_PDF",
+      "title": "Hyundai STARIA Owner Manual 2024 — dimensions and tread by tyre size",
+      "url": "https://www.hyundai.com/content/dam/hyundai/th/en/data/marketing/manual/2024_STARIA.pdf",
+      "retrieved_at": "2026-09-01T19:55:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2024,
+      "page_section_default": "Vehicle information — dimensions",
+      "applicability_notes": "Thailand US4 platform tread table; 18-inch tread values align with the MY25 Premium 18-inch fitment and unchanged published body dimensions.",
+      "archival_status": "URL_ONLY",
+      "notes": "Used only for 18-inch OEM tread values; applicability grade SAME_GEOMETRY_CONFIRMED."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "HYUNDAI_TH_STARIA_MY25_BROCHURE",
+      "raw_oem_wording": "ระดับต่ำสุดจากพื้น / Minimum ground clearance; load state not stated",
+      "notes": "No occupant/payload state inferred."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "HYUNDAI_TH_STARIA_MY25_BROCHURE",
+      "vehicle_identity_claim": "STARIA Premium MY25",
+      "raw_label": "ความยาว / ความกว้าง / ความสูง",
+      "raw_value": "5253 / 1997 / 1990",
+      "raw_unit": "mm",
+      "page_section_locator": "Specifications — dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Overall width does not state body/mirror inclusion."
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "HYUNDAI_TH_STARIA_MY25_BROCHURE",
+      "vehicle_identity_claim": "STARIA Premium MY25",
+      "raw_label": "ความยาวฐานล้อ",
+      "raw_value": "3273",
+      "raw_unit": "mm",
+      "page_section_locator": "Specifications — dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_OVERHANG",
+      "source_code": "HYUNDAI_TH_STARIA_MY25_BROCHURE",
+      "vehicle_identity_claim": "STARIA Premium MY25",
+      "raw_label": "Dimension drawing front/rear overhang",
+      "raw_value": "910 / 1070",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimension drawing",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "HYUNDAI_TH_STARIA_MY25_BROCHURE",
+      "vehicle_identity_claim": "STARIA Premium MY25",
+      "raw_label": "ระดับต่ำสุดจากพื้น",
+      "raw_value": "186",
+      "raw_unit": "mm",
+      "page_section_locator": "Specifications — dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Load state and limiting component/reference point are not stated."
+    },
+    {
+      "observation_code": "OBS_TURNING",
+      "source_code": "HYUNDAI_TH_STARIA_MY25_BROCHURE",
+      "vehicle_identity_claim": "STARIA Premium MY25",
+      "raw_label": "รัศมีวงเลี้ยวแคบสุด",
+      "raw_value": "5.97",
+      "raw_unit": "m",
+      "page_section_locator": "Specifications — dimensions",
+      "reported_precision": "0.01 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated."
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE",
+      "source_code": "HYUNDAI_TH_STARIA_MY25_BROCHURE",
+      "vehicle_identity_claim": "STARIA Premium MY25",
+      "raw_label": "ขนาดล้ออัลลอย / ขนาดยาง",
+      "raw_value": "18 x 7.0J / 235/55 R18",
+      "raw_unit": null,
+      "page_section_locator": "Specifications — wheels and tyres",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TREAD_18",
+      "source_code": "HYUNDAI_TH_STARIA_OWNER_MANUAL_2024",
+      "vehicle_identity_claim": "STARIA wagon with 18-inch tyres; same US4 geometry as MY25 Premium",
+      "raw_label": "Tread — 18 in — Front / Rear",
+      "raw_value": "1721 / 1732",
+      "raw_unit": "mm",
+      "page_section_locator": "Vehicle information — dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "OEM tread reference is not AVT outer tyre-face track; source is generic Thailand US4 owner manual rather than MY25 grade table."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5253,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_REPORTED",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1997,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1990,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3273,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_OVERHANG",
+      "parameter_code": "front_overhang_mm",
+      "value": 910,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_OVERHANG"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_OVERHANG",
+      "parameter_code": "rear_overhang_mm",
+      "value": 1070,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_OVERHANG"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TREAD",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1721,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD_18"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TREAD",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1732,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD_18"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 186,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.97,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "18 x 7.0J alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "18 x 7.0J alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "235/55 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "235/55 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Hyundai Thailand publishes overall width 1,997 mm but does not establish body-excluding-mirrors semantics.",
+      "source_families_searched": [
+        "Hyundai Thailand MY25 brochure",
+        "Hyundai Thailand owner manual"
+      ],
+      "search_notes": "Do not promote generic overall width to body width.",
+      "assessed_at": "2026-09-01T19:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek body repair/dimension documentation."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open overall width was located in reviewed Hyundai Thailand sources.",
+      "source_families_searched": [
+        "Hyundai Thailand MY25 brochure",
+        "Hyundai Thailand owner manual"
+      ],
+      "search_notes": "Generic width is not substituted.",
+      "assessed_at": "2026-09-01T19:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek explicit mirror-envelope data."
+    },
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact MY25 Premium kerb mass was located in the reviewed Thailand brochure/manual.",
+      "source_families_searched": [
+        "Hyundai Thailand MY25 brochure",
+        "Hyundai Thailand owner manual"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T19:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek homologation or exact grade technical documentation."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published OEM tread is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Hyundai Thailand owner manual"
+      ],
+      "search_notes": "Do not convert tread to AVT track.",
+      "assessed_at": "2026-09-01T19:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek mounted-wheel geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published OEM tread is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Hyundai Thailand owner manual"
+      ],
+      "search_notes": "Do not convert tread to AVT track.",
+      "assessed_at": "2026-09-01T19:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek mounted-wheel geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
