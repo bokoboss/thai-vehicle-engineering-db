@@ -88,6 +88,7 @@ def get_vehicle(session: Session, stable_vehicle_code: str) -> VehicleConfigurat
             .joinedload(EvidenceLink.source_observation)
             .joinedload(SourceObservation.source_document),
             selectinload(VehicleConfiguration.parameter_assessments).joinedload(ParameterAssessment.parameter_definition),
+            selectinload(VehicleConfiguration.conflict_decisions),
             selectinload(VehicleConfiguration.geometry_assets),
             selectinload(VehicleConfiguration.readiness_results),
             selectinload(VehicleConfiguration.qa_findings),
