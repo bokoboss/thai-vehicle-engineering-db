@@ -88,9 +88,9 @@
         "parking_design",
         "turning_screening"
       ],
-      "research_status": "RESEARCH_ACTIVE_TEMPORAL_IDENTITY",
-      "identity_time_basis_candidate": null,
-      "identity_time_label_raw": null,
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "OEM_REVISION_LABEL",
+      "identity_time_label_raw": "โตโยต้า อินโนว่า ซีนิกซ์ รุ่นปรับปรุงใหม่ ปี 2568",
       "primary_sources": [
         "https://www.toyota.co.th/media/product/series/download/INNOVA_ZENIX_CATALOG2025.pdf"
       ]
