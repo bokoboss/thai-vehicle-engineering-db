@@ -234,27 +234,36 @@ Semantic limits remain fail-closed: generic width is OEM_UNSPECIFIED, tread is n
 
 ### Toyota Corolla Cross HEV Premium Luxury
 
-Current Toyota Thailand grade page explicitly lists HEV Premium Luxury.
+Research state: **MANIFEST DRAFT READY**
 
-Current 2026 official catalogue provides a dimension drawing including:
+Official Toyota Thailand evidence closes temporal identity and exact current grade:
 
-- length/overall geometry to be extracted from the technical page;
-- overall width 1,825 mm;
-- overall height 1,620 mm;
+- accessories material identifies “โตโยต้า โคโรลล่า ครอส รุ่นปรับปรุงใหม่ ปี 2569” and includes HEV Premium Luxury applicability;
+- the current grade page lists HEV Premium Luxury as an active grade;
+- the current 2026 catalogue provides the four-grade engineering table and supports exact/current Premium Luxury mapping.
+
+Normalized current values:
+
+- length 4,460 mm;
+- reported width 1,825 mm;
+- height 1,620 mm;
 - wheelbase 2,640 mm;
-- front/rear tread 1,559 / 1,571 mm.
+- front/rear OEM tread 1,559 / 1,571 mm;
+- minimum ground clearance 161 mm;
+- minimum turning radius 5.2 m;
+- 18-inch alloy / 225/50 R18.
+
+Identity basis: `OEM_REVISION_LABEL`, raw label “โตโยต้า โคโรลล่า ครอส รุ่นปรับปรุงใหม่ ปี 2569”. The Buddhist-calendar revision year is not converted to model year.
+
+Semantic limits remain fail-closed: generic width is OEM_UNSPECIFIED, tread is not AVT outer-face track, ground-clearance load/reference state is unstated, and the 5.2 m turning radius remains OEM_UNSPECIFIED for curb/wall and axle scope.
 
 Sources:
 
+https://www.toyota.co.th/media/accessories/files/brochure/69a000dce2330.pdf
+
 https://www.toyota.co.th/model/corollacross/grade
 
-https://www.toyota.co.th/media/product/series/download/Corolla_Cross_Catalog_2026.pdf
-
-Remaining gates:
-
-- exact temporal identity basis;
-- full grade-specific technical table extraction;
-- do not assume generic overall width is body width.
+https://www.toyota.co.th/media/product/series/download/CorollaCross_Catalog_2026.pdf
 
 ## 6. Current Wave 2A partition
 
@@ -265,10 +274,11 @@ Remaining gates:
 - Toyota Innova Zenix HEV Premium
 - Lexus LM 350h Executive 7-Seater
 - Honda CR-V e:HEV RS 4WD
+- Toyota Corolla Cross HEV Premium Luxury
 
 ### Research active
 
-- Toyota Corolla Cross HEV Premium Luxury
+- None in the initial Wave 2A six-vehicle set
 
 ### Existing HOLD records
 
