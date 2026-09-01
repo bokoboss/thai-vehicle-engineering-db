@@ -102,6 +102,7 @@ def test_update_launcher_is_data_only_and_never_seeds_phase0():
     launcher = (ROOT / "Update Vehicle Database.cmd").read_text(encoding="utf-8").lower()
 
     assert "build_curated_db.py" in launcher
-    assert "release_2026_09_a.json" in launcher
+    assert "--release" not in launcher
+    assert "release_2026_09_a.json" not in launcher
     assert "--replace-final" in launcher
     assert "app.seed" not in launcher

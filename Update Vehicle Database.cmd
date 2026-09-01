@@ -3,7 +3,6 @@ setlocal EnableExtensions
 cd /d "%~dp0"
 
 set "BUILDER=%~dp0scripts\build_curated_db.py"
-set "RELEASE=%~dp0data\curation\releases\release_2026_09_a.json"
 set "VENV_PYTHON=%~dp0.venv\Scripts\python.exe"
 set "EXIT_CODE=1"
 
@@ -29,17 +28,17 @@ echo Install Python 3.11+ or create the repository .venv, then try again.
 goto :failed
 
 :run_venv
-"%VENV_PYTHON%" "%BUILDER%" --release "%RELEASE%" --replace-final
+"%VENV_PYTHON%" "%BUILDER%" --replace-final
 set "EXIT_CODE=%ERRORLEVEL%"
 goto :finish
 
 :run_py_launcher
-py -3 "%BUILDER%" --release "%RELEASE%" --replace-final
+py -3 "%BUILDER%" --replace-final
 set "EXIT_CODE=%ERRORLEVEL%"
 goto :finish
 
 :run_python
-python "%BUILDER%" --release "%RELEASE%" --replace-final
+python "%BUILDER%" --replace-final
 set "EXIT_CODE=%ERRORLEVEL%"
 goto :finish
 

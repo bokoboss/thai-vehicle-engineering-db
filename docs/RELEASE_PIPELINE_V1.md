@@ -5,7 +5,9 @@ Date: 2026-09-01
 
 ## Release membership
 
-`data/curation/releases/release_2026_09_a.json` is the source of truth for the first generic release. It explicitly lists the 27 accepted manifest paths: 3 sentinel manifests, 18 Wave 1 manifests, and 6 Wave 2A manifests.
+`data/curation/releases/current_release.json` is the stable selector for normal updates. It currently points to the immutable versioned definition `release_2026_09_a.json`, which explicitly lists the 27 accepted manifest paths: 3 sentinel manifests, 18 Wave 1 manifests, and 6 Wave 2A manifests.
+
+Versioned release definitions such as `release_2026_08_wave1.json` and `release_2026_09_a.json` remain immutable/reproducible. The pointer accepts only a schema-1 direct `release_*.json` target in this directory and revalidates that target with the normal release contract. Publishing a later accepted release requires adding that definition and updating only `current_release.json`; the builder and Windows updater do not change because the catalog grew.
 
 The builder does not scan manifest directories. A manifest that is present in the repository but absent from the release definition is not production input.
 
@@ -23,8 +25,13 @@ Or run the generic builder directly:
 
 ```powershell
 .venv\Scripts\python.exe scripts/build_curated_db.py `
-  --release data/curation/releases/release_2026_09_a.json `
   --replace-final
+```
+
+For historical/reproducible builds, pass a versioned definition explicitly:
+
+```powershell
+python scripts/build_curated_db.py --release data/curation/releases/release_2026_08_wave1.json
 ```
 
 The builder creates a new disposable SQLite database, upgrades it with Alembic, initializes only the accepted parameter registry, validates every listed manifest, imports through `app.curate`, evaluates readiness, runs provenance/data-integrity and semantic regression QA, proves CSV/XLSX exports, and only then atomically replaces `vehicle_engineering_curated.db`. When a previous accepted database exists, a single `.previous` copy is retained after successful replacement.
@@ -48,8 +55,9 @@ Each successful build writes a release qualification JSON record, including the 
 For an additional research-clean vehicle using existing registered parameters:
 
 1. research and review its manifest;
-2. add its exact path to an accepted release definition;
-3. run the generic build/update workflow;
-4. open the existing application.
+2. add its exact path to a new immutable accepted release definition;
+3. update `data/curation/releases/current_release.json` to select that definition;
+4. run `Update Vehicle Database.cmd`;
+5. open the existing application.
 
 This does not require vehicle-count constants, FastAPI route changes, template changes, Compare changes, or Design Check changes. Software/methodology work remains appropriate for new parameter families, constraints, AVT methods, ramp solvers, or geometry models.

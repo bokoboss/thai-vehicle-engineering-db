@@ -30,7 +30,7 @@ The web application should remain simple.
 
 ## Current state
 
-**Release `release_2026_09_a` is accepted for controlled local ingestion.** It explicitly contains 27 reviewed manifests: 3 sentinels, 18 Wave 1 records, and 6 Wave 2A records. The curated SQLite database and export proofs are generated locally and remain ignored by Git.
+**Release `release_2026_09_a` is accepted for controlled local ingestion.** The stable [`current_release.json`](data/curation/releases/current_release.json) pointer currently selects it. It explicitly contains 27 reviewed manifests: 3 sentinels, 18 Wave 1 records, and 6 Wave 2A records. The curated SQLite database and export proofs are generated locally and remain ignored by Git.
 
 Foundation research returned **GO WITH CONDITIONS — High confidence** and the required data-contract amendments have been incorporated on PR #1.
 
@@ -76,7 +76,7 @@ From the repository folder, run the following once if the project environment or
 ```text
 py -3.11 -m venv .venv
 .venv\Scripts\python.exe -m pip install -e ".[dev]"
-.venv\Scripts\python.exe scripts\build_curated_db.py --release data\curation\releases\release_2026_09_a.json --replace-final
+.venv\Scripts\python.exe scripts\build_curated_db.py --replace-final
 ```
 
 The controlled build creates the accepted curated database after its staging and QA steps. It refuses to replace an existing final database unless `--replace-final` is supplied after the release has been reviewed. If an accepted `vehicle_engineering_curated.db` is already present, install dependencies and do not run the build again.
@@ -88,10 +88,10 @@ Double-click [`Update Vehicle Database.cmd`](Update%20Vehicle%20Database.cmd) to
 The equivalent manual command is:
 
 ```text
-.venv\Scripts\python.exe scripts\build_curated_db.py --release data\curation\releases\release_2026_09_a.json --replace-final
+.venv\Scripts\python.exe scripts\build_curated_db.py --replace-final
 ```
 
-The release definition is the source of truth for membership. A JSON file merely present in a manifest directory is not included unless its repository-relative path is listed in the release definition. The generic builder derives vehicle and evidence counts from that membership and writes a qualification record under `data/curation/releases/`.
+The updater invokes the generic builder without a version-specific filename. The builder resolves [`data/curation/releases/current_release.json`](data/curation/releases/current_release.json), validates its target, and then uses that immutable accepted release definition as the membership source of truth. A JSON file merely present in a manifest directory is not included unless its repository-relative path is listed in the selected release definition. The generic builder derives vehicle and evidence counts from that membership and writes a qualification record under `data/curation/releases/`.
 
 ### Windows normal daily launch
 
@@ -123,11 +123,17 @@ Do not run `python -m app.seed` against `vehicle_engineering_curated.db`; that c
 
 ### Controlled curated database build details
 
-The primary command is `scripts/build_curated_db.py`. It loads one explicit accepted release definition, resolves exactly its listed manifests, runs Alembic upgrade, registry-only curation initialization, validation and create-only import, database-level readiness/provenance QA, CSV/XLSX export proof, and final promotion. It refuses an existing staging database and does not replace an existing final database unless `--replace-final` is supplied after a successful staging run. If a run stops, inspect and remove only the disposable staging database and matching SQLite sidecar files named in the error before retrying. The database and generated export proofs are local/ignored files.
+The primary command is `scripts/build_curated_db.py`. With no `--release`, it resolves and validates the current accepted-release pointer, then resolves exactly the selected versioned definition's manifests. It runs Alembic upgrade, registry-only curation initialization, validation and create-only import, database-level readiness/provenance QA, CSV/XLSX export proof, and final promotion. It refuses an existing staging database and does not replace an existing final database unless `--replace-final` is supplied after a successful staging run. If a run stops, inspect and remove only the disposable staging database and matching SQLite sidecar files named in the error before retrying. The database and generated export proofs are local/ignored files.
+
+For historical/reproducible builds, pass the versioned definition explicitly, for example:
+
+```text
+.venv\Scripts\python.exe scripts\build_curated_db.py --release data\curation\releases\release_2026_08_wave1.json --replace-final
+```
 
 `scripts/build_wave1_curated_db.py` remains as a compatibility/reproducibility wrapper for the explicit historical 21-record release. It is not a second build implementation.
 
-See [`data/curation/releases/release_2026_09_a.json`](data/curation/releases/release_2026_09_a.json) for accepted membership and [`data/curation/releases/release_2026_09_a.qualification.json`](data/curation/releases/release_2026_09_a.qualification.json) for the release qualification record.
+See [`data/curation/releases/current_release.json`](data/curation/releases/current_release.json) for the current selector, [`data/curation/releases/release_2026_09_a.json`](data/curation/releases/release_2026_09_a.json) for the current immutable membership, and [`data/curation/releases/release_2026_09_a.qualification.json`](data/curation/releases/release_2026_09_a.qualification.json) for its qualification record.
 
 ### Data-only versus software/methodology changes
 

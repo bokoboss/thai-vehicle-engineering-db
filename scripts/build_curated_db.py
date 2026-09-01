@@ -59,10 +59,17 @@ from app.exports.exporter import EXPORT_COLUMNS, csv_bytes, export_rows, xlsx_by
 from app.seed.registry import load_registry
 
 
-DEFAULT_RELEASE_PATH = Path("data/curation/releases/release_2026_09_a.json")
+CURRENT_RELEASE_POINTER_PATH = Path("data/curation/releases/current_release.json")
+CURRENT_RELEASE_POINTER_SCHEMA_VERSION = "1.0"
+# Compatibility name for callers that imported the old default constant.  The
+# value is now the stable selector, never a versioned release definition.
+DEFAULT_RELEASE_PATH = CURRENT_RELEASE_POINTER_PATH
 READINESS_TYPES_PER_SCOPE = 4
 RELEASE_SCHEMA_VERSION = "1.0"
 _RELEASE_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]*$")
+_VERSIONED_RELEASE_FILENAME_RE = re.compile(
+    r"^release_[A-Za-z0-9][A-Za-z0-9_.-]*\.json$"
+)
 
 
 class BuildError(RuntimeError):
@@ -128,14 +135,10 @@ def _load_json_object(path: Path) -> dict[str, Any]:
     return value
 
 
-def load_release_definition(
-    release_path: str | Path = DEFAULT_RELEASE_PATH,
-    *,
-    root: Path = ROOT,
-) -> ReleaseDefinition:
-    """Load and validate the explicit release membership definition."""
+def _load_release_definition_file(path: Path, *, root: Path) -> ReleaseDefinition:
+    """Load and validate one explicit, versioned release definition file."""
 
-    path = _resolved_path(Path(release_path), root).resolve()
+    path = path.resolve()
     if not path.is_file():
         raise BuildError(f"release definition was not found: {_relative(path, root)}")
     document = _load_json_object(path)
@@ -245,12 +248,122 @@ def load_release_definition(
     )
 
 
+def resolve_current_release_path(*, root: Path = ROOT) -> Path:
+    """Resolve and validate the repository's stable current-release pointer."""
+
+    root = root.resolve()
+    pointer_path = (root / CURRENT_RELEASE_POINTER_PATH).resolve()
+    if not pointer_path.is_file():
+        raise BuildError(
+            f"current release pointer was not found: {_relative(pointer_path, root)}"
+        )
+
+    try:
+        document = _load_json_object(pointer_path)
+    except BuildError as exc:
+        raise BuildError(
+            f"invalid current release pointer {_relative(pointer_path, root)}: {exc}"
+        ) from exc
+
+    allowed = {"pointer_schema_version", "release"}
+    unknown = sorted(set(document) - allowed)
+    if unknown:
+        raise BuildError(
+            "current release pointer has unknown fields: " + ", ".join(unknown)
+        )
+    missing = sorted(allowed - set(document))
+    if missing:
+        raise BuildError(
+            "current release pointer is missing fields: " + ", ".join(missing)
+        )
+
+    schema_version = document["pointer_schema_version"]
+    if schema_version != CURRENT_RELEASE_POINTER_SCHEMA_VERSION:
+        raise BuildError(
+            "unsupported current release pointer schema version "
+            f"{schema_version!r}; expected {CURRENT_RELEASE_POINTER_SCHEMA_VERSION!r}"
+        )
+
+    target_name = document["release"]
+    if not isinstance(target_name, str) or not target_name or target_name != target_name.strip():
+        raise BuildError(
+            "current release pointer release must be a non-empty filename string"
+        )
+    if "\\" in target_name:
+        raise BuildError(
+            "current release pointer target must use a direct filename with '/' semantics"
+        )
+
+    target = Path(target_name)
+    releases_dir = (root / CURRENT_RELEASE_POINTER_PATH).parent.resolve()
+    if target.is_absolute() or target.parent != Path("."):
+        raise BuildError(
+            "current release pointer target must be a versioned release filename "
+            "inside data/curation/releases"
+        )
+    if target.name.casefold() == pointer_path.name.casefold():
+        raise BuildError("current release pointer cannot target itself")
+    if not _VERSIONED_RELEASE_FILENAME_RE.fullmatch(target_name):
+        raise BuildError(
+            "current release pointer target must match release_*.json"
+        )
+
+    target_path = (releases_dir / target).resolve()
+    try:
+        target_path.relative_to(releases_dir)
+    except ValueError as exc:
+        raise BuildError(
+            "current release pointer target escapes data/curation/releases"
+        ) from exc
+    if not target_path.is_file():
+        raise BuildError(
+            "current release pointer target was not found: "
+            f"{_relative(target_path, root)}"
+        )
+
+    # Validate the target itself before returning it.  This keeps an accepted
+    # pointer from bypassing the existing release-definition contract.
+    _load_release_definition_file(target_path, root=root)
+    return target_path
+
+
+def resolve_release_path(
+    release_path: str | Path | None = None,
+    *,
+    root: Path = ROOT,
+) -> Path:
+    """Resolve an explicit release or the validated current-release pointer."""
+
+    root = root.resolve()
+    if release_path is None:
+        return resolve_current_release_path(root=root)
+
+    path = _resolved_path(Path(release_path), root).resolve()
+    pointer_path = (root / CURRENT_RELEASE_POINTER_PATH).resolve()
+    if path == pointer_path:
+        return resolve_current_release_path(root=root)
+    return path
+
+
+def load_release_definition(
+    release_path: str | Path | None = None,
+    *,
+    root: Path = ROOT,
+) -> ReleaseDefinition:
+    """Load an explicit release or the validated current-release target."""
+
+    return _load_release_definition_file(
+        resolve_release_path(release_path, root=root),
+        root=root,
+    )
+
+
 def _source_signature(source: Any) -> dict[str, Any]:
     return source.model_dump(mode="json")
 
 
 def collect_inventory(
-    release_path: str | Path = DEFAULT_RELEASE_PATH,
+    release_path: str | Path | None = None,
     *,
     root: Path = ROOT,
 ) -> ManifestInventory:
@@ -1030,7 +1143,7 @@ def _promote_staging(staging_path: Path, final_path: Path) -> Path | None:
 
 def build(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
     root = root.resolve()
-    release_path = getattr(args, "release", DEFAULT_RELEASE_PATH)
+    release_path = getattr(args, "release", None)
     inventory = collect_inventory(release_path, root=root)
     staging_path = _resolved_path(Path(args.staging), root).resolve()
     final_path = _resolved_path(Path(args.final), root).resolve()
@@ -1145,8 +1258,11 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--release",
         type=Path,
-        default=DEFAULT_RELEASE_PATH,
-        help="accepted release definition (default: data/curation/releases/release_2026_09_a.json)",
+        default=None,
+        help=(
+            "versioned accepted release definition; when omitted, resolve "
+            "data/curation/releases/current_release.json"
+        ),
     )
     parser.add_argument(
         "--staging",

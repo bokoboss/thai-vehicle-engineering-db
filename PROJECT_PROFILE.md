@@ -118,6 +118,7 @@ The software foundation is implemented. The main project effort now moves to:
 - `scripts/build_curated_db.py`
 - `scripts/build_wave1_curated_db.py` (historical compatibility wrapper)
 - `data/curation/releases/release_2026_09_a.json`
+- `data/curation/releases/current_release.json`
 - `docs/RELEASE_PIPELINE_V1.md`
 - `app/`
 - `alembic/`
