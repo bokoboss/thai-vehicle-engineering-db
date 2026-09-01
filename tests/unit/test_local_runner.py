@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import ast
 import json
 import os
 import sqlite3
@@ -139,6 +140,38 @@ def test_curated_database_validation_rejects_phase0_fixture_rows(tmp_path: Path)
 def test_browser_open_failure_is_best_effort(capsys):
     assert not run_local_app.open_browser_best_effort("http://127.0.0.1:8000/", lambda url: False)
     assert "did not accept" in capsys.readouterr().err
+
+
+def test_missing_dependency_returns_nonzero_with_actionable_setup_message(monkeypatch, capsys):
+    missing = ModuleNotFoundError("No module named 'fastapi'", name="fastapi")
+
+    def fail_to_load(**kwargs):
+        del kwargs
+        raise missing
+
+    monkeypatch.setattr(run_local_app, "run_local_app", fail_to_load)
+
+    assert run_local_app.main(["--no-browser"]) == 1
+    error = capsys.readouterr().err
+    assert "fastapi" in error
+    assert "py -3.11 -m venv .venv" in error
+    assert '.venv\\Scripts\\python.exe -m pip install -e ".[dev]"' in error
+    assert "No packages were installed automatically" in error
+    assert "Traceback" not in error
+
+
+def test_missing_dependency_handling_has_no_automatic_setup_calls():
+    repository_root = Path(run_local_app.__file__).resolve().parents[1]
+    source = (repository_root / "scripts" / "run_local_app.py").read_text(encoding="utf-8")
+    tree = ast.parse(source)
+    called_functions = {ast.unparse(node.func) for node in ast.walk(tree) if isinstance(node, ast.Call)}
+
+    assert "subprocess" not in source
+    assert "os.system" not in source
+    assert not any(
+        function in {"subprocess.run", "subprocess.call", "subprocess.Popen", "os.system", "os.startfile"}
+        for function in called_functions
+    )
 
 
 def test_server_configuration_disables_reload_and_opens_after_readiness(monkeypatch):

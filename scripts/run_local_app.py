@@ -292,6 +292,17 @@ def open_browser_best_effort(url: str, browser_opener: Callable[[str], object] |
     return opened
 
 
+def dependency_error_message(error: ModuleNotFoundError) -> str:
+    missing_module = error.name or "a required application module"
+    return (
+        f"ERROR: required Python module '{missing_module}' is not installed.\n"
+        "Install the project environment/dependencies once, then try again:\n"
+        "  py -3.11 -m venv .venv\n"
+        '  .venv\\Scripts\\python.exe -m pip install -e ".[dev]"\n\n'
+        "No packages were installed automatically."
+    )
+
+
 def _open_browser_when_ready(
     browser_url: str,
     ready_url: str,
@@ -432,6 +443,9 @@ def main(argv: Iterable[str] | None = None) -> int:
             open_browser=not args.no_browser,
             ready_timeout=args.ready_timeout,
         )
+    except ModuleNotFoundError as error:
+        print(dependency_error_message(error), file=sys.stderr)
+        return 1
     except LauncherError as error:
         print(f"ERROR: {error}", file=sys.stderr)
         return 1
