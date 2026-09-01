@@ -65,20 +65,21 @@
 </dl>
 
 {% if vehicle.summary_groups %}
-<section class="panel" aria-labelledby="summary-heading">
+<section class="panel detail-section scan-section" aria-labelledby="summary-heading">
   <div class="section-heading">
     <div>
       <p class="section-kicker">Scan first</p>
       <h2 id="summary-heading">Engineering summary</h2>
     </div>
-    <p class="muted">Primary dimensions, maneuverability, clearance, tyre and mass values.</p>
+    <p class="muted">High-value scan set · {{ vehicle.summary_value_count }} of {{ vehicle.normalized_value_count }} normalized values.</p>
   </div>
   {% for group in vehicle.summary_groups %}
   <section class="summary-group" aria-labelledby="summary-{{ group.key }}">
     <h3 id="summary-{{ group.key }}">{{ group.label }}</h3>
     <div class="table-wrap table-wrap-plain">
-      <table class="data-table compact-table">
+      <table class="data-table compact-table summary-table">
         <caption class="sr-only">{{ group.label }} summary</caption>
+        <colgroup><col class="column-parameter"><col class="column-value"><col class="column-scope"><col class="column-state"></colgroup>
         <thead><tr><th scope="col">Parameter</th><th scope="col">Value</th><th scope="col">Scope</th><th scope="col">State</th></tr></thead>
         <tbody>
         {% for value in group["values"] %}
@@ -97,13 +98,13 @@
 </section>
 {% endif %}
 
-<section class="panel" id="normalized-values" aria-labelledby="values-heading">
+<section class="panel detail-section full-record-section" id="normalized-values" aria-labelledby="values-heading">
   <div class="section-heading">
     <div>
       <p class="section-kicker">Evidence-aware record</p>
       <h2 id="values-heading">All engineering data</h2>
     </div>
-    <p class="muted">Common state is compact; expand evidence or scope when verification is needed.</p>
+    <p class="muted">Full record · {{ vehicle.normalized_value_count }} normalized values with evidence and scope disclosure.</p>
   </div>
   {% for group in vehicle.groups %}
   <section class="engineering-group" id="group-{{ group.key }}" aria-labelledby="group-heading-{{ group.key }}">
@@ -111,6 +112,7 @@
     <div class="table-wrap table-wrap-plain">
       <table class="data-table engineering-table">
         <caption class="sr-only">{{ group.label }} engineering values</caption>
+        <colgroup><col class="column-parameter"><col class="column-value"><col class="column-scope"><col class="column-state"><col class="column-evidence"></colgroup>
         <thead><tr><th scope="col">Parameter</th><th scope="col">Value</th><th scope="col">Scope</th><th scope="col">State</th><th scope="col">Evidence</th></tr></thead>
         <tbody>
         {% for value in group["values"] %}

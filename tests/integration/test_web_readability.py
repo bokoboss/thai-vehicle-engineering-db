@@ -126,6 +126,101 @@ def test_compare_is_a_parameter_by_vehicle_matrix_with_four_selectors(client):
     assert "<td>deg</td>" in mixed_unit_row.group(0)
 
 
+def test_compare_shared_filters_keep_selected_configurations_visible(client):
+    response = client.get(
+        "/compare",
+        params={
+            "manufacturer": "does-not-match",
+            "vehicle_1": "FIXTURE-PRIMARY-PUBLISHED",
+            "vehicle_2": "FIXTURE-CLEARANCE-LOADS",
+        },
+    )
+
+    assert response.status_code == 200
+    html = response.text
+    assert "Shared candidate filters" in html
+    assert "Selected exact configuration" in html
+    assert html.count("Selected ·") == 2
+    assert 'value="FIXTURE-PRIMARY-PUBLISHED" selected' in html
+    assert 'value="FIXTURE-CLEARANCE-LOADS" selected' in html
+    assert 'name="slot_1_q"' in html
+    assert 'name="slot_4_identity_time"' in html
+
+    typed_filters = client.get(
+        "/compare",
+        params={"powertrain": "semantic test configuration", "identity_time": "MODEL_YEAR"},
+    )
+    assert typed_filters.status_code == 200
+    assert 'value="semantic test configuration" selected' in typed_filters.text
+    assert 'value="MODEL_YEAR" selected' in typed_filters.text
+
+
+def test_compare_slots_keep_positions_and_slot_filters_override_shared_filters(client):
+    response = client.get(
+        "/compare",
+        params={
+            "body_style": "not-the-fixture-body-style",
+            "vehicle_1": "",
+            "vehicle_2": "",
+            "vehicle_3": "FIXTURE-PRIMARY-PUBLISHED",
+            "slot_3_body_style": "fixture",
+        },
+    )
+
+    assert response.status_code == 200
+    html = response.text
+    slot_1 = re.search(r'<select id="vehicle-1".*?</select>', html, re.DOTALL)
+    slot_2 = re.search(r'<select id="vehicle-2".*?</select>', html, re.DOTALL)
+    slot_3 = re.search(r'<select id="vehicle-3".*?</select>', html, re.DOTALL)
+    assert slot_1 and slot_2 and slot_3
+    assert ' selected>' not in slot_1.group(0)
+    assert ' selected>' not in slot_2.group(0)
+    assert 'value="FIXTURE-PRIMARY-PUBLISHED" selected' in slot_3.group(0)
+    assert 'value="fixture" selected' in html
+    assert "Uses slot filters plus shared defaults" in html
+    assert "Advanced filters for Vehicle 3" in html
+
+
+def test_compare_search_all_action_and_duplicate_selection_are_explicit(client):
+    search_all = client.get(
+        "/compare",
+        params={
+            "body_style": "fixture",
+            "vehicle_1": "FIXTURE-PRIMARY-PUBLISHED",
+            "slot_action": "search_all:2",
+        },
+    )
+    assert search_all.status_code == 200
+    assert "Searches all vehicles" in search_all.text
+    assert 'name="slot_2_scope" value="all"' in search_all.text
+    assert "Search all vehicles ignores every shared filter" in search_all.text
+
+    duplicate = client.get(
+        "/compare",
+        params={
+            "vehicle_1": "FIXTURE-PRIMARY-PUBLISHED",
+            "vehicle_2": "FIXTURE-PRIMARY-PUBLISHED",
+        },
+    )
+    assert duplicate.status_code == 200
+    assert "already selected in another slot" in duplicate.text
+    slot_2 = re.search(r'<select id="vehicle-2".*?</select>', duplicate.text, re.DOTALL)
+    assert slot_2 and 'value="FIXTURE-PRIMARY-PUBLISHED" selected' not in slot_2.group(0)
+
+
+def test_engineering_summary_is_a_short_scan_set_before_full_record(client):
+    response = client.get("/vehicles/FIXTURE-AVT-TRACK-DIRECT")
+
+    assert response.status_code == 200
+    html = response.text
+    summary = html.split('id="normalized-values"', 1)[0]
+    full_record = html.split('id="normalized-values"', 1)[1]
+    assert "High-value scan set" in summary
+    assert "AVT maximum steering angle" not in summary
+    assert "AVT maximum steering angle" in full_record
+    assert "All engineering data" in html
+
+
 def test_issues_view_uses_human_labels_and_bounded_filter(client):
     response = client.get("/issues")
 

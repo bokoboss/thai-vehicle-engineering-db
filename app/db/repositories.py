@@ -27,7 +27,10 @@ def list_vehicles(
     search: str | None = None,
     manufacturer: str | None = None,
     body_style: str | None = None,
+    powertrain: str | None = None,
+    identity_time: str | None = None,
     readiness: str | None = None,
+    limit: int | None = None,
 ) -> list[VehicleConfiguration]:
     statement = (
         select(VehicleConfiguration)
@@ -50,6 +53,10 @@ def list_vehicles(
         statement = statement.join(Manufacturer).where(Manufacturer.canonical_name == manufacturer)
     if body_style:
         statement = statement.where(VehicleConfiguration.body_style == body_style)
+    if powertrain:
+        statement = statement.where(VehicleConfiguration.powertrain == powertrain)
+    if identity_time:
+        statement = statement.where(VehicleConfiguration.identity_time_basis == identity_time)
     if readiness:
         statement = statement.join(
             ReadinessResult,
@@ -57,6 +64,8 @@ def list_vehicles(
             & (ReadinessResult.vehicle_fitment_id.is_(None))
             & (ReadinessResult.readiness_type == readiness),
         ).where(ReadinessResult.status == "READY")
+    if limit is not None:
+        statement = statement.limit(limit)
     return list(session.scalars(statement).unique().all())
 
 
