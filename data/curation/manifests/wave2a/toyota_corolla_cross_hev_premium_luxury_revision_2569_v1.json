@@ -1,0 +1,501 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-TOYOTA-COROLLA-CROSS-HEV-PREMIUM-LUXURY-REVISION-2569-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-toyota-corolla-cross-hev-premium-luxury-revision-2569",
+    "manufacturer_name": "Toyota",
+    "manufacturer_display_name": "Toyota",
+    "canonical_model_name": "corolla-cross",
+    "display_model_name": "Corolla Cross",
+    "market_code": "TH",
+    "generation_name": "Corolla Cross Thailand revision 2569",
+    "body_style": "Hybrid crossover/SUV",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "OEM_REVISION_LABEL",
+    "identity_time_label_raw": "โตโยต้า โคโรลล่า ครอส รุ่นปรับปรุงใหม่ ปี 2569",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "HEV Premium Luxury",
+    "powertrain": "1.8L gasoline hybrid / E-CVT",
+    "drivetrain": "2WD",
+    "body_configuration": "5-seat crossover/SUV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Toyota Thailand accessories material explicitly identifies Corolla Cross รุ่นปรับปรุงใหม่ ปี 2569 and exact HEV Premium Luxury applicability. Current Toyota grade page lists HEV Premium Luxury, and the official 2026 catalogue provides the current multi-grade specification table. The Buddhist-calendar revision year is not converted to model year."
+  },
+  "sources": [
+    {
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_REVISION_LABEL_2569",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_ACCESSORY_BROCHURE",
+      "title": "Toyota Corolla Cross Accessories — รุ่นปรับปรุงใหม่ ปี 2569",
+      "url": "https://www.toyota.co.th/media/accessories/files/brochure/69a000dce2330.pdf",
+      "retrieved_at": "2026-09-01T16:11:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "Model applicability / revision label",
+      "applicability_notes": "Temporal revision-label evidence including HEV Premium Luxury",
+      "archival_status": "URL_ONLY",
+      "notes": "Raw Buddhist-calendar revision label retained; not treated as model year."
+    },
+    {
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_GRADE_CURRENT_20260901",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_GRADE_LIST",
+      "title": "Toyota Corolla Cross — current grades and prices",
+      "url": "https://www.toyota.co.th/model/corollacross/grade",
+      "retrieved_at": "2026-09-01T16:11:00+07:00",
+      "market_code": "TH",
+      "page_section_default": "MODEL LINE-UP",
+      "applicability_notes": "Current exact HEV Premium Luxury grade",
+      "archival_status": "URL_ONLY",
+      "notes": "Current page lists HEV Premium Luxury, HEV Premium and HEV Smart."
+    },
+    {
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_CATALOG_2026",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_STRUCTURED_TABLE",
+      "title": "Toyota Corolla Cross Catalogue 2026",
+      "url": "https://www.toyota.co.th/media/product/series/download/CorollaCross_Catalog_2026.pdf",
+      "retrieved_at": "2026-09-01T16:11:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "SPECIFICATIONS — HEV GR SPORT / HEV PREMIUM LUXURY / HEV PREMIUM / HEV SMART",
+      "applicability_notes": "Current exact HEV Premium Luxury technical column/group",
+      "archival_status": "URL_ONLY",
+      "notes": "Current catalogue table separates four grades. Generic width/tread/turning labels retain source semantics."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_CATALOG_2026",
+      "raw_oem_wording": "ระยะต่ำสุดจากพื้น; load/reference state not stated",
+      "notes": "Structured unknown load/reference state only."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_REVISION_LABEL",
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_REVISION_LABEL_2569",
+      "vehicle_identity_claim": "Toyota Corolla Cross HEV Premium Luxury",
+      "raw_label": "Revision label",
+      "raw_value": "โตโยต้า โคโรลล่า ครอส รุ่นปรับปรุงใหม่ ปี 2569",
+      "raw_unit": null,
+      "page_section_locator": "Model applicability / revision label",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T16:11:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_CURRENT_GRADE",
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_GRADE_CURRENT_20260901",
+      "vehicle_identity_claim": "Toyota Corolla Cross HEV Premium Luxury",
+      "raw_label": "Current grade",
+      "raw_value": "HEV Premium Luxury",
+      "raw_unit": null,
+      "page_section_locator": "MODEL LINE-UP",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T16:11:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_CATALOG_2026",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "มิติภายนอก ยาว x กว้าง x สูง",
+      "raw_value": "4,460 x 1,825 x 1,620",
+      "raw_unit": "mm",
+      "page_section_locator": "SPECIFICATIONS — HEV Premium Luxury current grade group",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T16:11:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Overall width mirror/body inclusion is not stated."
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_CATALOG_2026",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "ความยาวช่วงล้อ",
+      "raw_value": "2640",
+      "raw_unit": "mm",
+      "page_section_locator": "SPECIFICATIONS — shared current grade row",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T16:11:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TREAD",
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_CATALOG_2026",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "ความกว้างช่วงล้อ หน้า / หลัง",
+      "raw_value": "1559 / 1571",
+      "raw_unit": "mm",
+      "page_section_locator": "SPECIFICATIONS — HEV GR Sport / HEV Premium Luxury grouped row",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T16:11:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "OEM tread/track reference definition is not established as AVT outer tyre faces."
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_CATALOG_2026",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "ระยะต่ำสุดจากพื้น",
+      "raw_value": "161",
+      "raw_unit": "mm",
+      "page_section_locator": "SPECIFICATIONS — shared current grade row",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T16:11:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Load state and limiting component/reference point are not stated."
+    },
+    {
+      "observation_code": "OBS_TURNING",
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_CATALOG_2026",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "รัศมีวงเลี้ยวแคบสุด",
+      "raw_value": "5.2",
+      "raw_unit": "m",
+      "page_section_locator": "SPECIFICATIONS — shared current grade row",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T16:11:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Curb/wall reference and axle scope are not stated."
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE",
+      "source_code": "TOYOTA_TH_COROLLA_CROSS_CATALOG_2026",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "ล้อและยาง",
+      "raw_value": "18-inch alloy / 225/50 R18",
+      "raw_unit": null,
+      "page_section_locator": "SPECIFICATIONS — HEV Premium Luxury",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T16:11:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4460,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_REPORTED",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1825,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1620,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2640,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TREAD",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1559,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TREAD",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1571,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 161,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.2,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "18-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "18-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "225/50 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "225/50 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota Thailand publishes overall width 1,825 mm but does not establish body-excluding-mirrors semantics for the exact HEV Premium Luxury revision.",
+      "source_families_searched": [
+        "Toyota Thailand 2026 catalogue",
+        "Toyota Thailand current grade page"
+      ],
+      "search_notes": "Do not promote generic overall width to body width.",
+      "assessed_at": "2026-09-01T16:11:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek explicit body/mirror envelope documentation."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open overall width was located in the reviewed exact Toyota Thailand sources.",
+      "source_families_searched": [
+        "Toyota Thailand 2026 catalogue",
+        "Toyota Thailand current grade page"
+      ],
+      "search_notes": "Generic width is not substituted.",
+      "assessed_at": "2026-09-01T16:11:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek official body/dimension drawing with mirror envelope."
+    },
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact HEV Premium Luxury kerb-mass value was located in the reviewed Toyota Thailand current catalogue/grade sources.",
+      "source_families_searched": [
+        "Toyota Thailand 2026 catalogue",
+        "Toyota Thailand current grade page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T16:11:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek homologation, certification or exact technical documentation."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota front tread/track value is published but its reference definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Toyota Thailand 2026 catalogue"
+      ],
+      "search_notes": "Keep OEM tread separate from AVT track.",
+      "assessed_at": "2026-09-01T16:11:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota rear tread/track value is published but its reference definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Toyota Thailand 2026 catalogue"
+      ],
+      "search_notes": "Keep OEM tread separate from AVT track.",
+      "assessed_at": "2026-09-01T16:11:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
