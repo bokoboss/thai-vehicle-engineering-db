@@ -31,6 +31,8 @@ READINESS_ORDER = tuple(READINESS_LABELS)
 READINESS_OPTIONS = tuple(
     {"value": value, "label": label} for value, label in READINESS_LABELS.items()
 )
+COMPARE_FILTER_KEYS = ("q", "manufacturer", "body_style", "powertrain", "identity_time")
+COMPARE_CANDIDATE_LIMIT = 100
 IDENTITY_TIME_LABELS = {
     "MODEL_YEAR": "Model year",
     "OEM_REVISION_LABEL": "OEM revision",
@@ -150,36 +152,15 @@ SUMMARY_PARAMETER_CODES = frozenset(
         "rear_overhang_mm",
         "oem_front_tread_or_track_mm",
         "oem_rear_tread_or_track_mm",
-        "avt_front_outer_face_track_mm",
-        "avt_rear_outer_face_track_mm",
         "front_tyre_size_text",
         "rear_tyre_size_text",
         "front_wheel_rim_text",
         "rear_wheel_rim_text",
         "turning_radius_normalized_m",
         "oem_turning_value_text",
-        "steering_wheel_lock_to_lock_turns",
-        "maximum_inner_road_wheel_angle_deg",
-        "maximum_outer_road_wheel_angle_deg",
-        "virtual_center_steering_angle_deg",
-        "avt_maximum_steering_angle_deg",
-        "avt_lock_to_lock_time_forward_s",
-        "avt_lock_to_lock_time_reverse_s",
         "clearance_value_mm",
-        "oem_published_approach_angle_deg",
-        "oem_published_departure_angle_deg",
-        "oem_published_breakover_angle_deg",
-        "geometry_derived_approach_angle_deg",
-        "geometry_derived_departure_angle_deg",
-        "geometry_derived_breakover_angle_deg",
-        "screening_front_contact_angle_deg",
-        "screening_rear_contact_angle_deg",
-        "screening_breakover_angle_deg",
-        "screening_breakover_symmetric_angle_deg",
         "kerb_mass_kg",
         "gross_vehicle_mass_kg",
-        "front_axle_load_kg",
-        "rear_axle_load_kg",
     }
 )
 SEMANTIC_VALUE_LABELS = {
@@ -527,13 +508,44 @@ def _readiness_view(results: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     return views
 
 
-def _catalog_option(summary: dict[str, Any]) -> dict[str, str]:
+def _catalog_option(
+    summary: dict[str, Any], *, selected: bool = False, outside_filters: bool = False
+) -> dict[str, Any]:
     identity = summary["identity_time_label"]
     return {
         "code": summary["stable_vehicle_code"],
         "label": f"{summary['manufacturer']} · {summary['commercial_model']} · {summary['variant']}",
         "secondary": f"{summary['generation']} · {summary['body_style']} · {identity}",
+        "vehicle_label": f"{summary['manufacturer']} · {summary['commercial_model']}",
+        "variant": summary["variant"],
+        "identity_time": identity,
+        "selected": selected,
+        "outside_filters": outside_filters,
     }
+
+
+def _catalog_option_from_config(
+    config: VehicleConfiguration, *, selected: bool = False, outside_filters: bool = False
+) -> dict[str, Any]:
+    identity = _identity_time_label(
+        config.identity_time_basis,
+        config.identity_time_label_raw,
+        config.model_year_from,
+        config.model_year_to,
+    )
+    return _catalog_option(
+        {
+            "stable_vehicle_code": config.stable_vehicle_code,
+            "manufacturer": config.vehicle_model.manufacturer.display_name,
+            "commercial_model": config.vehicle_model.display_model_name,
+            "variant": config.variant_trim,
+            "generation": config.generation_name,
+            "body_style": config.body_style,
+            "identity_time_label": identity,
+        },
+        selected=selected,
+        outside_filters=outside_filters,
+    )
 
 
 def _catalog_filters(catalog: list[dict[str, Any]]) -> dict[str, list[dict[str, str]]]:
@@ -541,6 +553,8 @@ def _catalog_filters(catalog: list[dict[str, Any]]) -> dict[str, list[dict[str, 
         (item["manufacturer_code"], item["manufacturer"])
         for item in catalog
     }
+    powertrains = {item["powertrain"] for item in catalog if item.get("powertrain")}
+    identity_times = {item["identity_time_basis"] for item in catalog if item.get("identity_time_basis")}
     return {
         "manufacturers": [
             {"value": code, "label": label}
@@ -550,8 +564,132 @@ def _catalog_filters(catalog: list[dict[str, Any]]) -> dict[str, list[dict[str, 
             {"value": value, "label": value}
             for value in sorted({item["body_style"] for item in catalog}, key=str.lower)
         ],
+        "powertrains": [
+            {"value": value, "label": value}
+            for value in sorted(powertrains, key=str.lower)
+        ],
+        "identity_times": [
+            {"value": value, "label": IDENTITY_TIME_LABELS.get(value, _humanize(value))}
+            for value in sorted(identity_times, key=lambda item: IDENTITY_TIME_LABELS.get(item, item).lower())
+        ],
         "readiness": list(READINESS_OPTIONS),
     }
+
+
+def _clean_query_value(value: Any) -> str:
+    return str(value).strip() if value is not None else ""
+
+
+def _query_value(params: Any, *names: str) -> str:
+    for name in names:
+        if name in params:
+            return _clean_query_value(params.get(name))
+    return ""
+
+
+def _compare_filter_state(request: Request) -> tuple[dict[str, str], list[dict[str, Any]]]:
+    params = request.query_params
+    shared = {
+        "q": _query_value(params, "q", "search"),
+        "manufacturer": _query_value(params, "manufacturer"),
+        "body_style": _query_value(params, "body_style"),
+        "powertrain": _query_value(params, "powertrain"),
+        "identity_time": _query_value(params, "identity_time", "identity_basis"),
+    }
+    slots = []
+    for number in range(1, 5):
+        filters = {
+            "q": _query_value(
+                params,
+                f"slot_{number}_q",
+                f"slot_{number}_search",
+                f"vehicle_{number}_q",
+                f"vehicle_{number}_search",
+            ),
+            "manufacturer": _query_value(
+                params,
+                f"slot_{number}_manufacturer",
+                f"vehicle_{number}_manufacturer",
+            ),
+            "body_style": _query_value(
+                params,
+                f"slot_{number}_body_style",
+                f"vehicle_{number}_body_style",
+            ),
+            "powertrain": _query_value(
+                params,
+                f"slot_{number}_powertrain",
+                f"vehicle_{number}_powertrain",
+            ),
+            "identity_time": _query_value(
+                params,
+                f"slot_{number}_identity_time",
+                f"slot_{number}_identity_basis",
+                f"vehicle_{number}_identity_time",
+                f"vehicle_{number}_identity_basis",
+            ),
+        }
+        scope = _query_value(params, f"slot_{number}_scope", f"vehicle_{number}_scope") or "shared"
+        if scope not in {"shared", "all"}:
+            scope = "shared"
+        slots.append(
+            {
+                "number": number,
+                "filters": filters,
+                "scope": scope,
+                "has_override": any(filters.values()),
+            }
+        )
+    return shared, slots
+
+
+def _effective_compare_filters(shared: dict[str, str], slot: dict[str, Any]) -> dict[str, str]:
+    if slot["scope"] == "all":
+        return dict(slot["filters"])
+    return {
+        key: slot["filters"][key] or shared[key]
+        for key in COMPARE_FILTER_KEYS
+    }
+
+
+def _slot_action(request: Request) -> tuple[str, int] | None:
+    raw_action = _clean_query_value(request.query_params.get("slot_action"))
+    action, separator, raw_number = raw_action.partition(":")
+    if not separator or action not in {"clear_slot", "search_all", "use_shared"}:
+        return None
+    try:
+        number = int(raw_number)
+    except ValueError:
+        return None
+    return (action, number) if 1 <= number <= 4 else None
+
+
+def _compare_candidates(
+    session: Session,
+    filters: dict[str, str],
+    *,
+    selected_code: str,
+    selected_summary: dict[str, Any] | None,
+) -> tuple[list[dict[str, Any]], int, bool]:
+    candidates = list_vehicles(
+        session,
+        search=filters["q"] or None,
+        manufacturer=filters["manufacturer"] or None,
+        body_style=filters["body_style"] or None,
+        powertrain=filters["powertrain"] or None,
+        identity_time=filters["identity_time"] or None,
+        limit=COMPARE_CANDIDATE_LIMIT + 1,
+    )
+    truncated = len(candidates) > COMPARE_CANDIDATE_LIMIT
+    candidates = candidates[:COMPARE_CANDIDATE_LIMIT]
+    candidate_codes = {config.stable_vehicle_code for config in candidates}
+    options = [
+        _catalog_option_from_config(config, selected=config.stable_vehicle_code == selected_code)
+        for config in candidates
+    ]
+    if selected_summary is not None and selected_code not in candidate_codes:
+        options.insert(0, _catalog_option(selected_summary, selected=True, outside_filters=True))
+    return options, len(candidates), truncated
 
 
 def _assessment_view(assessment: Any, fitments: dict[str, Any]) -> dict[str, Any]:
@@ -647,6 +785,7 @@ def _summary(session: Session, config: VehicleConfiguration) -> dict[str, Any]:
         "generation": config.generation_name,
         "variant": config.variant_trim,
         "market": config.market_code,
+        "powertrain": config.powertrain,
         "body_style": config.body_style,
         "model_year_from": config.model_year_from,
         "model_year_to": config.model_year_to,
@@ -728,6 +867,8 @@ def _detail(session: Session, config: VehicleConfiguration) -> dict[str, Any]:
         "assessments": assessments,
         "groups": groups,
         "summary_groups": summary_groups,
+        "normalized_value_count": len(values),
+        "summary_value_count": len(summary_values),
         "assessment_groups": assessment_groups,
         "geometry_assets": [
             {
@@ -1030,27 +1171,118 @@ def compare_page(
     vehicle_3: str | None = Query(default=None),
     vehicle_4: str | None = Query(default=None),
 ) -> HTMLResponse:
-    slot_codes = [vehicle_1, vehicle_2, vehicle_3, vehicle_4]
-    selected_codes = [code.strip() for code in slot_codes if code and code.strip()]
-    if not selected_codes:
-        selected_codes = [code.strip() for code in (codes or "").split(",") if code.strip()][:4]
-    selected_codes = list(dict.fromkeys(selected_codes))[:4]
-    configs = [get_vehicle(session, code) for code in selected_codes]
-    configs = [config for config in configs if config is not None]
-    vehicles = [_detail(session, config) for config in configs]
-    catalog = [_summary(session, item) for item in list_vehicles(session)]
-    selected_codes = [vehicle["stable_vehicle_code"] for vehicle in vehicles]
+    requested_slots = [vehicle_1, vehicle_2, vehicle_3, vehicle_4]
+    explicit_slots = any(f"vehicle_{number}" in request.query_params for number in range(1, 5))
+    if not explicit_slots:
+        legacy_codes = [code.strip() for code in (codes or "").split(",") if code.strip()][:4]
+        requested_slots = legacy_codes + [None] * (4 - len(legacy_codes))
+
+    shared_filters, slot_filters = _compare_filter_state(request)
+    action = _slot_action(request)
+    if action is not None:
+        action_name, slot_number = action
+        slot = slot_filters[slot_number - 1]
+        if action_name == "search_all":
+            slot["filters"] = {key: "" for key in COMPARE_FILTER_KEYS}
+            slot["scope"] = "all"
+        else:
+            slot["filters"] = {key: "" for key in COMPARE_FILTER_KEYS}
+            slot["scope"] = "shared"
+        slot["has_override"] = False
+
+    selection_messages: list[str] = []
+    selected_slot_codes: list[str] = []
+    configs_by_slot: list[VehicleConfiguration | None] = []
+    seen_codes: set[str] = set()
+    for number, raw_code in enumerate(requested_slots, start=1):
+        code = _clean_query_value(raw_code)
+        if not code:
+            selected_slot_codes.append("")
+            configs_by_slot.append(None)
+            continue
+        if code in seen_codes:
+            selection_messages.append(
+                f"Vehicle {number} was cleared because {code} is already selected in another slot."
+            )
+            selected_slot_codes.append("")
+            configs_by_slot.append(None)
+            continue
+        config = get_vehicle(session, code)
+        if config is None:
+            selection_messages.append(f"Vehicle {number} was cleared because {code} is not an exact catalog configuration.")
+            selected_slot_codes.append("")
+            configs_by_slot.append(None)
+            continue
+        seen_codes.add(code)
+        selected_slot_codes.append(code)
+        configs_by_slot.append(config)
+
+    vehicles = []
+    for number, config in enumerate(configs_by_slot, start=1):
+        if config is None:
+            continue
+        vehicle = _detail(session, config)
+        vehicle["comparison_slot"] = number
+        vehicles.append(vehicle)
+
+    catalog = list_vehicles(session)
+    catalog_filter_records = [
+        {
+            "manufacturer_code": item.vehicle_model.manufacturer.canonical_name,
+            "manufacturer": item.vehicle_model.manufacturer.display_name,
+            "body_style": item.body_style,
+            "powertrain": item.powertrain,
+            "identity_time_basis": item.identity_time_basis,
+        }
+        for item in catalog
+    ]
+    filter_options = _catalog_filters(catalog_filter_records)
+    selected_by_code = {vehicle["stable_vehicle_code"]: vehicle for vehicle in vehicles}
+    compare_slots = []
+    for slot, selected_code in zip(slot_filters, selected_slot_codes):
+        effective_filters = _effective_compare_filters(shared_filters, slot)
+        options, candidate_count, candidate_truncated = _compare_candidates(
+            session,
+            effective_filters,
+            selected_code=selected_code,
+            selected_summary=selected_by_code.get(selected_code),
+        )
+        compare_slots.append(
+            {
+                **slot,
+                "selected_code": selected_code,
+                "selected_vehicle": selected_by_code.get(selected_code),
+                "effective_filters": effective_filters,
+                "candidate_options": options,
+                "candidate_count": candidate_count,
+                "candidate_truncated": candidate_truncated,
+                "scope_label": (
+                    "Searches all vehicles"
+                    if slot["scope"] == "all"
+                    else "Uses slot filters plus shared defaults"
+                    if slot["has_override"]
+                    else "Uses shared filters"
+                ),
+            }
+        )
     core_groups, technical_groups = _comparison_groups(vehicles)
     return templates.TemplateResponse(
         request=request,
         name="compare.html",
         context={
             "vehicles": vehicles,
-            "catalog_options": [_catalog_option(item) for item in catalog],
-            "selected_codes": ",".join(selected_codes),
-            "selected_codes_list": selected_codes,
+            "shared_filters": shared_filters,
+            "filter_options": filter_options,
+            "compare_slots": compare_slots,
+            "selected_codes": ",".join(selected_slot_codes),
+            "selected_codes_list": [code for code in selected_slot_codes if code],
+            "selected_slot_codes": selected_slot_codes,
+            "selection_messages": selection_messages,
+            "compare_ready": len(vehicles) >= 2,
+            "candidate_limit": COMPARE_CANDIDATE_LIMIT,
             "comparison_core_groups": core_groups,
             "comparison_technical_groups": technical_groups,
+            "technical_field_count": sum(len(group["rows"]) for group in technical_groups),
         },
     )
 

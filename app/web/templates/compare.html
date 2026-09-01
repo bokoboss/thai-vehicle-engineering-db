@@ -1,105 +1,253 @@
 {% extends "base.html" %}
 {% block title %}Compare · Vehicle Engineering Database{% endblock %}
+
+{% macro matrix_vehicle_header(vehicle) -%}
+<th scope="col">
+  <span class="matrix-slot">Vehicle {{ vehicle.comparison_slot }}</span>
+  <a class="matrix-vehicle" href="/vehicles/{{ vehicle.stable_vehicle_code }}">{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</a>
+  <span class="matrix-variant">{{ vehicle.variant }}</span>
+  <span class="matrix-time">{{ vehicle.identity_time_label }}</span>
+  <small class="stable-code"><code>{{ vehicle.stable_vehicle_code }}</code></small>
+</th>
+{%- endmacro %}
+
+{% macro matrix_cell(cell, row) -%}
+<td class="compare-cell compare-cell-{{ cell.state_tone }}">
+  {% if cell["items"] %}
+    {% for item in cell["items"] %}
+    <div class="compare-item">
+      <div class="compare-value{% if item.is_numeric %} numeric{% endif %}">
+        <span>{{ item.display_value }}</span>{% if item.unit and item.unit != row.unit %} <span class="unit">{{ item.unit }}</span>{% endif %}
+      </div>
+      <span class="status status-{{ item.state_tone }} compare-state">{{ item.state_label }}</span>
+      {% if item.scope_text != "Configuration-wide" %}<span class="compare-scope">{{ item.scope_text }}</span>{% endif %}
+      {% if item.semantic_cue %}<small class="semantic-cue">{{ item.semantic_cue }}</small>{% endif %}
+      <a class="compare-detail" href="{{ item.detail_url }}">Details</a>
+    </div>
+    {% endfor %}
+  {% elif cell.unknown %}
+    <span class="status status-unknown">{{ cell.status_label }}</span>
+    {% if cell.unknown_reason %}<small class="compare-reason">{{ cell.unknown_reason }}</small>{% endif %}
+  {% elif cell.status_label != "—" %}
+    <span class="status status-{{ cell.state_tone }}">{{ cell.status_label }}</span>
+    {% if cell.unknown_reason %}<small class="compare-reason">{{ cell.unknown_reason }}</small>{% endif %}
+  {% else %}
+    <span class="muted">—</span>
+  {% endif %}
+</td>
+{%- endmacro %}
+
+{% macro comparison_table(vehicles, groups, caption) -%}
+<div class="table-wrap comparison-wrap">
+  <table class="comparison-matrix">
+    <caption class="sr-only">{{ caption }}</caption>
+    <colgroup>
+      <col class="matrix-parameter">
+      <col class="matrix-unit">
+      {% for vehicle in vehicles %}<col class="matrix-vehicle-column">{% endfor %}
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">Parameter</th>
+        <th scope="col">Unit</th>
+        {% for vehicle in vehicles %}{{ matrix_vehicle_header(vehicle) }}{% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+    {% for group in groups %}
+      <tr class="matrix-group"><th scope="rowgroup" colspan="{{ vehicles|length + 2 }}">{{ group.label }}</th></tr>
+      {% for row in group.rows %}
+      <tr>
+        <th scope="row">
+          <span>{{ row.label }}</span>
+          {% if row.semantic_cues %}<small class="semantic-cue">Semantics retained in each cell</small>{% endif %}
+          <small class="technical-code"><code>{{ row.code }}</code></small>
+        </th>
+        <td>{{ row.unit or "—" }}</td>
+        {% for cell in row.cells %}{{ matrix_cell(cell, row) }}{% endfor %}
+      </tr>
+      {% endfor %}
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{%- endmacro %}
+
 {% block content %}
-<section class="page-intro">
+<section class="page-intro compare-intro">
   <p class="eyebrow">Evidence-aware comparison</p>
   <h1>Compare configurations</h1>
-  <p class="lede">Select up to four exact configurations. Rows are grouped by engineering family; stable vehicle codes remain the submitted values.</p>
+  <p class="lede">Select two to four exact configurations. Shared filters help narrow the catalog; each slot can refine or escape them independently.</p>
 </section>
 
 <form class="compare-selector" method="get" action="/compare" aria-label="Select vehicle configurations to compare">
-  <div class="compare-select-grid">
-  {% for slot in range(4) %}
-    <div>
-      <label for="vehicle-{{ slot + 1 }}">Vehicle {{ slot + 1 }}</label>
-      <select id="vehicle-{{ slot + 1 }}" name="vehicle_{{ slot + 1 }}">
-        <option value="">Choose a configuration</option>
-        {% for option in catalog_options %}
-          <option value="{{ option.code }}"{% if selected_codes_list|length > slot and selected_codes_list[slot] == option.code %} selected{% endif %}>{{ option.label }} — {{ option.secondary }}</option>
-        {% endfor %}
-      </select>
+  <fieldset class="compare-shared-filters" aria-describedby="shared-filter-help">
+    <legend>Shared candidate filters</legend>
+    <p id="shared-filter-help" class="field-help">Convenience filters only. Selected exact configurations stay in their slots even when they fall outside these results.</p>
+    <div class="compare-filter-grid">
+      <div class="search-field">
+        <label for="compare-search">Search <span class="field-help">Model, code, generation, or variant</span></label>
+        <input id="compare-search" type="search" name="q" value="{{ shared_filters.q }}" placeholder="Start typing a model or code">
+      </div>
+      <div>
+        <label for="compare-manufacturer">Manufacturer</label>
+        <select id="compare-manufacturer" name="manufacturer">
+          <option value="">All manufacturers</option>
+          {% for option in filter_options.manufacturers %}
+            <option value="{{ option.value }}"{% if shared_filters.manufacturer == option.value %} selected{% endif %}>{{ option.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div>
+        <label for="compare-body-style">Body style / class</label>
+        <select id="compare-body-style" name="body_style">
+          <option value="">All body styles</option>
+          {% for option in filter_options.body_styles %}
+            <option value="{{ option.value }}"{% if shared_filters.body_style == option.value %} selected{% endif %}>{{ option.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div>
+        <label for="compare-powertrain">Powertrain</label>
+        <select id="compare-powertrain" name="powertrain">
+          <option value="">All powertrains</option>
+          {% for option in filter_options.powertrains %}
+            <option value="{{ option.value }}"{% if shared_filters.powertrain == option.value %} selected{% endif %}>{{ option.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div>
+        <label for="compare-identity-time">Identity time</label>
+        <select id="compare-identity-time" name="identity_time">
+          <option value="">Any identity time</option>
+          {% for option in filter_options.identity_times %}
+            <option value="{{ option.value }}"{% if shared_filters.identity_time == option.value %} selected{% endif %}>{{ option.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
     </div>
+  </fieldset>
+
+  <div class="compare-slot-grid">
+  {% for slot in compare_slots %}
+    <fieldset class="compare-slot">
+      <legend>Vehicle {{ slot.number }}</legend>
+      <div class="slot-current" id="slot-{{ slot.number }}-current">
+        {% if slot.selected_vehicle %}
+          <span class="slot-current-label">Selected exact configuration</span>
+          <a href="/vehicles/{{ slot.selected_vehicle.stable_vehicle_code }}">{{ slot.selected_vehicle.manufacturer }} · {{ slot.selected_vehicle.commercial_model }}</a>
+          <span>{{ slot.selected_vehicle.variant }} · {{ slot.selected_vehicle.identity_time_label }}</span>
+          <small class="stable-code"><code>{{ slot.selected_vehicle.stable_vehicle_code }}</code></small>
+        {% else %}
+          <span class="muted">No exact configuration selected.</span>
+        {% endif %}
+      </div>
+      <div class="slot-choice">
+        <label for="vehicle-{{ slot.number }}">Choose exact configuration <span class="field-help">{{ slot.scope_label }}</span></label>
+        <select id="vehicle-{{ slot.number }}" name="vehicle_{{ slot.number }}" aria-describedby="slot-{{ slot.number }}-help">
+          <option value="">No vehicle selected</option>
+          {% for option in slot.candidate_options %}
+            <option value="{{ option.code }}"{% if option.selected %} selected{% endif %}>{% if option.outside_filters %}Selected · {% endif %}{{ option.label }} — {{ option.secondary }} · {{ option.code }}</option>
+          {% endfor %}
+        </select>
+        <p id="slot-{{ slot.number }}-help" class="slot-help">
+          {% if slot.candidate_count %}{{ slot.candidate_count }} candidate{% if slot.candidate_count != 1 %}s{% endif %}{% if slot.candidate_truncated %} · showing the first {{ candidate_limit }}; refine filters for more{% endif %}{% elif slot.selected_vehicle %}No candidate matches the active filters; the selected exact configuration is retained.{% else %}No candidates match the active filters.{% endif %}
+        </p>
+      </div>
+
+      <details class="slot-advanced"{% if slot.has_override or slot.scope == "all" %} open{% endif %}>
+        <summary>Advanced filters for Vehicle {{ slot.number }}</summary>
+        <p class="field-help">Blank fields inherit shared values. A value here overrides that field for this slot; Search all vehicles ignores every shared filter.</p>
+        <div class="slot-filter-grid">
+          <div class="search-field">
+            <label for="slot-{{ slot.number }}-search">Search this slot</label>
+            <input id="slot-{{ slot.number }}-search" type="search" name="slot_{{ slot.number }}_q" value="{{ slot.filters.q }}" placeholder="Model, code, or variant">
+          </div>
+          <div>
+            <label for="slot-{{ slot.number }}-manufacturer">Manufacturer</label>
+            <select id="slot-{{ slot.number }}-manufacturer" name="slot_{{ slot.number }}_manufacturer">
+              <option value="">Inherit shared</option>
+              {% for option in filter_options.manufacturers %}
+                <option value="{{ option.value }}"{% if slot.filters.manufacturer == option.value %} selected{% endif %}>{{ option.label }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <label for="slot-{{ slot.number }}-body-style">Body style / class</label>
+            <select id="slot-{{ slot.number }}-body-style" name="slot_{{ slot.number }}_body_style">
+              <option value="">Inherit shared</option>
+              {% for option in filter_options.body_styles %}
+                <option value="{{ option.value }}"{% if slot.filters.body_style == option.value %} selected{% endif %}>{{ option.label }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <label for="slot-{{ slot.number }}-powertrain">Powertrain</label>
+            <select id="slot-{{ slot.number }}-powertrain" name="slot_{{ slot.number }}_powertrain">
+              <option value="">Inherit shared</option>
+              {% for option in filter_options.powertrains %}
+                <option value="{{ option.value }}"{% if slot.filters.powertrain == option.value %} selected{% endif %}>{{ option.label }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <label for="slot-{{ slot.number }}-identity-time">Identity time</label>
+            <select id="slot-{{ slot.number }}-identity-time" name="slot_{{ slot.number }}_identity_time">
+              <option value="">Inherit shared</option>
+              {% for option in filter_options.identity_times %}
+                <option value="{{ option.value }}"{% if slot.filters.identity_time == option.value %} selected{% endif %}>{{ option.label }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="filter-actions slot-actions">
+          {% if slot.scope == "all" %}
+            <button type="submit" class="button secondary" name="slot_action" value="use_shared:{{ slot.number }}">Use shared filters</button>
+          {% else %}
+            <button type="submit" class="button secondary" name="slot_action" value="search_all:{{ slot.number }}">Search all vehicles</button>
+          {% endif %}
+          <button type="submit" class="button secondary" name="slot_action" value="clear_slot:{{ slot.number }}">Clear slot filters</button>
+        </div>
+        <input type="hidden" name="slot_{{ slot.number }}_scope" value="{{ slot.scope }}">
+      </details>
+    </fieldset>
   {% endfor %}
   </div>
-  <div class="filter-actions">
-    <button type="submit">Compare</button>
-    <a class="button secondary" href="/compare">Clear</a>
+
+  <div class="compare-form-actions">
+    <button type="submit">Update comparison</button>
+    <a class="button secondary" href="/compare">Clear selections and filters</a>
   </div>
-  <p class="field-help">Existing <code>/compare?codes=CODE_A,CODE_B</code> links remain supported.</p>
+  <p class="field-help compare-form-help">Existing <code>/compare?codes=CODE_A,CODE_B</code> deep links remain supported. Empty slots stay independent.</p>
 </form>
 
-{% if vehicles %}
+{% if selection_messages %}
+<aside class="selection-notice" role="status" aria-live="polite">
+  <strong>Selection updated</strong>
+  <ul>
+  {% for message in selection_messages %}<li>{{ message }}</li>{% endfor %}
+  </ul>
+</aside>
+{% endif %}
+
+{% if compare_ready %}
 <section class="panel comparison-panel" aria-labelledby="comparison-heading">
   <div class="section-heading">
     <div><p class="section-kicker">{{ vehicles|length }} selected</p><h2 id="comparison-heading">Engineering comparison matrix</h2></div>
     <p class="muted">— means no value is recorded; Unknown means an assessment remains unresolved.</p>
   </div>
-  <div class="table-wrap comparison-wrap">
-    <table class="comparison-matrix">
-      <caption class="sr-only">Vehicle comparison matrix with parameters as rows</caption>
-      <thead>
-        <tr>
-          <th scope="col">Parameter</th>
-          <th scope="col">Unit</th>
-          {% for vehicle in vehicles %}<th scope="col"><a href="/vehicles/{{ vehicle.stable_vehicle_code }}">{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</a><small>{{ vehicle.variant }}</small><small class="stable-code"><code>{{ vehicle.stable_vehicle_code }}</code></small></th>{% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-      {% for group in comparison_core_groups %}
-        <tr class="matrix-group"><th scope="rowgroup" colspan="{{ vehicles|length + 2 }}">{{ group.label }}</th></tr>
-        {% for row in group.rows %}
-        <tr>
-          <th scope="row"><span>{{ row.label }}</span>{% if row.semantic_cues %}<small class="semantic-cue">Semantics retained in each cell</small>{% endif %}<small class="technical-code"><code>{{ row.code }}</code></small></th>
-          <td>{{ row.unit or "—" }}</td>
-          {% for cell in row.cells %}
-          <td class="compare-cell compare-cell-{{ cell.state_tone }}">
-            {% if cell["items"] %}
-              {% for item in cell["items"] %}
-                <div class="compare-value{% if item.is_numeric %} numeric{% endif %}"><span>{{ item.display_value }}</span>{% if item.unit and not row.unit %} <span class="unit">{{ item.unit }}</span>{% endif %}</div>
-                <small class="compare-state status-{{ item.state_tone }}">{{ item.state_label }}</small>
-                {% if item.scope_text != "Configuration-wide" %}<small class="compare-scope">{{ item.scope_text }}</small>{% endif %}
-                {% if item.semantic_cue %}<small class="semantic-cue">{{ item.semantic_cue }}</small>{% endif %}
-                <small><a href="{{ item.detail_url }}">Details</a></small>
-              {% endfor %}
-            {% elif cell.unknown %}
-              <span class="status status-unknown">{{ cell.status_label }}</span>
-              {% if cell.unknown_reason %}<small>{{ cell.unknown_reason }}</small>{% endif %}
-            {% elif cell.status_label != "—" %}
-              <span class="status status-{{ cell.state_tone }}">{{ cell.status_label }}</span>
-              {% if cell.unknown_reason %}<small>{{ cell.unknown_reason }}</small>{% endif %}
-            {% else %}
-              <span class="muted">—</span>
-            {% endif %}
-          </td>
-          {% endfor %}
-        </tr>
-        {% endfor %}
-      {% endfor %}
-      </tbody>
-    </table>
-  </div>
+  {{ comparison_table(vehicles, comparison_core_groups, "Vehicle comparison matrix with parameters as rows") }}
 </section>
 
 {% if comparison_technical_groups %}
-<details class="panel technical-fields">
-  <summary>Show all technical fields</summary>
-  <div class="table-wrap comparison-wrap">
-    <table class="comparison-matrix">
-      <caption class="sr-only">Additional technical vehicle comparison fields</caption>
-      <thead><tr><th scope="col">Parameter</th><th scope="col">Unit</th>{% for vehicle in vehicles %}<th scope="col">{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}<small>{{ vehicle.variant }}</small></th>{% endfor %}</tr></thead>
-      <tbody>
-      {% for group in comparison_technical_groups %}
-        <tr class="matrix-group"><th scope="rowgroup" colspan="{{ vehicles|length + 2 }}">{{ group.label }}</th></tr>
-        {% for row in group.rows %}
-        <tr><th scope="row"><span>{{ row.label }}</span><small class="technical-code"><code>{{ row.code }}</code></small></th><td>{{ row.unit or "—" }}</td>{% for cell in row.cells %}<td class="compare-cell compare-cell-{{ cell.state_tone }}">{% if cell["items"] %}{% for item in cell["items"] %}<div class="compare-value{% if item.is_numeric %} numeric{% endif %}">{{ item.display_value }}</div><small class="compare-state status-{{ item.state_tone }}">{{ item.state_label }}</small>{% if item.scope_text != "Configuration-wide" %}<small class="compare-scope">{{ item.scope_text }}</small>{% endif %}<small><a href="{{ item.detail_url }}">Details</a></small>{% endfor %}{% elif cell.unknown %}<span class="status status-unknown">{{ cell.status_label }}</span>{% else %}<span class="muted">—</span>{% endif %}</td>{% endfor %}</tr>
-        {% endfor %}
-      {% endfor %}
-      </tbody>
-    </table>
-  </div>
+<details class="technical-fields">
+  <summary>Show all technical fields ({{ technical_field_count }})</summary>
+  {{ comparison_table(vehicles, comparison_technical_groups, "Additional technical vehicle comparison fields") }}
 </details>
 {% endif %}
+{% elif vehicles %}
+<section class="empty-state"><h2>{{ vehicles|length }} selected — choose one more</h2><p>Select at least two exact configurations to build a parameter-by-vehicle matrix.</p></section>
 {% else %}
-<section class="empty-state"><h2>Choose configurations to compare</h2><p>Select at least two vehicles above to build a parameter-by-vehicle matrix.</p></section>
+<section class="empty-state"><h2>Choose configurations to compare</h2><p>Select at least two exact configurations above to build a parameter-by-vehicle matrix.</p></section>
 {% endif %}
 {% endblock %}
