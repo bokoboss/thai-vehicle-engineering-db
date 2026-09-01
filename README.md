@@ -30,7 +30,7 @@ The web application should remain simple.
 
 ## Current state
 
-**Phase 1 Wave 1 curation is accepted for controlled local ingestion.** The repository contains 21 reviewed manifests; the curated SQLite database and export proofs are generated locally and remain ignored by Git.
+**Release `release_2026_09_a` is accepted for controlled local ingestion.** It explicitly contains 27 reviewed manifests: 3 sentinels, 18 Wave 1 records, and 6 Wave 2A records. The curated SQLite database and export proofs are generated locally and remain ignored by Git.
 
 Foundation research returned **GO WITH CONDITIONS — High confidence** and the required data-contract amendments have been incorporated on PR #1.
 
@@ -67,7 +67,7 @@ No React SPA or microservices are planned for the MVP.
 
 ## Run the accepted curated application locally
 
-The current local-use workflow is the accepted Wave 1 curated application, backed only by the ignored file `vehicle_engineering_curated.db`. This is a FastAPI/Jinja server-rendered web application: pages are rendered by the server, no static `index.html` is required, and `/` is the application start URL that redirects to the vehicle catalog at `/vehicles`.
+The current local-use workflow is the accepted 27-vehicle release application, backed only by the ignored file `vehicle_engineering_curated.db`. This is a FastAPI/Jinja server-rendered web application: pages are rendered by the server, no static `index.html` is required, and `/` is the application start URL that redirects to the vehicle catalog at `/vehicles`.
 
 ### Windows first-time setup
 
@@ -76,10 +76,22 @@ From the repository folder, run the following once if the project environment or
 ```text
 py -3.11 -m venv .venv
 .venv\Scripts\python.exe -m pip install -e ".[dev]"
-.venv\Scripts\python.exe scripts\build_wave1_curated_db.py
+.venv\Scripts\python.exe scripts\build_curated_db.py --release data\curation\releases\release_2026_09_a.json --replace-final
 ```
 
-The controlled build creates the accepted curated database after its staging and QA steps. It refuses an existing final database by default; do not use `--replace-final` unless an intentional, reviewed rebuild is required. If an accepted `vehicle_engineering_curated.db` is already present, install dependencies and do not run the build again.
+The controlled build creates the accepted curated database after its staging and QA steps. It refuses to replace an existing final database unless `--replace-final` is supplied after the release has been reviewed. If an accepted `vehicle_engineering_curated.db` is already present, install dependencies and do not run the build again.
+
+### Windows accepted-data update
+
+Double-click [`Update Vehicle Database.cmd`](Update%20Vehicle%20Database.cmd) to build the current accepted release into a disposable staging database, run migrations, registry-only initialization, manifest validation/import, readiness, provenance/data-integrity QA, export proof, and permanent semantic assertions. Only a passing staging build can replace `vehicle_engineering_curated.db`; a failed update leaves the previous accepted database in place.
+
+The equivalent manual command is:
+
+```text
+.venv\Scripts\python.exe scripts\build_curated_db.py --release data\curation\releases\release_2026_09_a.json --replace-final
+```
+
+The release definition is the source of truth for membership. A JSON file merely present in a manifest directory is not included unless its repository-relative path is listed in the release definition. The generic builder derives vehicle and evidence counts from that membership and writes a qualification record under `data/curation/releases/`.
 
 ### Windows normal daily launch
 
@@ -111,9 +123,17 @@ Do not run `python -m app.seed` against `vehicle_engineering_curated.db`; that c
 
 ### Controlled curated database build details
 
-The build script performs Alembic upgrade, registry-only curation initialization, validation and create-only import of the three sentinels plus all 18 Wave 1 manifests, database-level QA, CSV/XLSX export proof, and final promotion. It refuses an existing staging database and does not replace an existing final database unless `--replace-final` is supplied after a successful staging run. If a run stops, inspect and remove only the disposable `vehicle_engineering_curated.staging.db` (and any matching SQLite sidecar files) before retrying. The database, generated export proofs, and staging artifacts are local/ignored files.
+The primary command is `scripts/build_curated_db.py`. It loads one explicit accepted release definition, resolves exactly its listed manifests, runs Alembic upgrade, registry-only curation initialization, validation and create-only import, database-level readiness/provenance QA, CSV/XLSX export proof, and final promotion. It refuses an existing staging database and does not replace an existing final database unless `--replace-final` is supplied after a successful staging run. If a run stops, inspect and remove only the disposable staging database and matching SQLite sidecar files named in the error before retrying. The database and generated export proofs are local/ignored files.
 
-See [`docs/PHASE_1_WAVE1_INGESTION_QA.md`](docs/PHASE_1_WAVE1_INGESTION_QA.md) for the accepted curation and verification record.
+`scripts/build_wave1_curated_db.py` remains as a compatibility/reproducibility wrapper for the explicit historical 21-record release. It is not a second build implementation.
+
+See [`data/curation/releases/release_2026_09_a.json`](data/curation/releases/release_2026_09_a.json) for accepted membership and [`data/curation/releases/release_2026_09_a.qualification.json`](data/curation/releases/release_2026_09_a.qualification.json) for the release qualification record.
+
+### Data-only versus software/methodology changes
+
+Adding a research-clean vehicle with existing registered parameters is normally a data-only change: research or update the manifest, review it into an accepted release set, rebuild, and open the existing application. No FastAPI route, template, Compare, or Design Check change is required for catalog growth.
+
+Software or methodology changes may still require code and review—for example a new parameter family, a new Design Check constraint, an AVT mapping method, a ramp solver, or a new geometry model.
 
 ## Historical Phase 0 fixture workflow
 
@@ -155,6 +175,7 @@ Start with:
 12. `docs/PHASE_0_EXECUTION_CONTRACT.md`
 13. `docs/CURATION_INGESTION_CONTRACT_V1.md`
 14. `docs/PHASE_1_WAVE1_INGESTION_QA.md`
+15. `docs/RELEASE_PIPELINE_V1.md`
 
 Machine-readable/reference material:
 - `data/reference/parameter_registry_v1.json`

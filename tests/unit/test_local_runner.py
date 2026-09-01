@@ -21,7 +21,7 @@ def test_missing_curated_database_refuses_safely(tmp_path: Path):
 
     message = str(error.value)
     assert str(database_path) in message
-    assert "build_wave1_curated_db.py" in message
+    assert "build_curated_db.py" in message
     assert "vehicle_engineering.db" in message
 
 

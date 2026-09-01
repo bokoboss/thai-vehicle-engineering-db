@@ -79,7 +79,7 @@ def ensure_curated_database(database_path: Path) -> Path:
         f"Accepted curated database is unavailable: {database_path}\n"
         f"{detail}\n\n"
         "Run the one-time controlled build from the repository root, then launch again:\n"
-        "  python scripts/build_wave1_curated_db.py\n\n"
+        "  python scripts/build_curated_db.py\n\n"
         "This launcher never creates, seeds, migrates, rebuilds, or replaces a database, "
         "and it will not fall back to vehicle_engineering.db."
     )

@@ -11,10 +11,13 @@ vehicle_engineering.db
 vehicle_engineering.db-*
 vehicle_engineering_curated.db
 vehicle_engineering_curated.db-*
+vehicle_engineering_curated.db.previous
 vehicle_engineering_curated.staging.db
 vehicle_engineering_curated.staging.db-*
 vehicle_engineering_curated.wave1.csv
 vehicle_engineering_curated.wave1.xlsx
+vehicle_engineering_curated.*.csv
+vehicle_engineering_curated.*.xlsx
 *.sqlite
 *.sqlite3
 .env
