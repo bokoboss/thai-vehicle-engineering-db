@@ -1,0 +1,414 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-PORSCHE-911-CARRERA-GTS-992II-TH-DELIVERED-2025",
+  "vehicle": {
+    "stable_vehicle_code": "th-porsche-911-carrera-gts-992ii-delivered-2025",
+    "manufacturer_name": "Porsche",
+    "manufacturer_display_name": "Porsche",
+    "canonical_model_name": "911",
+    "display_model_name": "911",
+    "market_code": "TH",
+    "generation_name": "911 Carrera GTS 992 II T-Hybrid",
+    "body_style": "Sports car / supercar coupe",
+    "chassis_platform_code": "992 II",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "2025 Porsche 911 Carrera GTS (992 II), Porsche Centre Bangkok, first registration 06/2025",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Carrera GTS",
+    "powertrain": "3.6L flat-six T-Hybrid / 8-speed PDK",
+    "drivetrain": "RWD",
+    "body_configuration": "2+2 coupé",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Porsche Finder Thailand documents an exact right-hand-drive Thailand-delivered 911 Carrera GTS (992 II) at Porsche Centre Bangkok with VIN, first registration 06/2025, local technical data and equipment. This bounded delivered configuration is used instead of silently carrying current MY2027 geometry across model years."
+  },
+  "sources": [
+    {
+      "source_code": "PORSCHE_TH_911_GTS_992II_FINDER_DM49",
+      "publisher": "Porsche",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "OEM_THAILAND_VEHICLE_FINDER_INVENTORY",
+      "title": "2025 Porsche 911 Carrera GTS (992 II) — Porsche Centre Bangkok — Stock DM49",
+      "url": "https://finder.porsche.com/th/en-TH/details/porsche-911-carrera-gts-preowned-M7WWD8",
+      "retrieved_at": "2026-09-01T19:55:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2025,
+      "page_section_default": "Vehicle identity / equipment / technical data",
+      "applicability_notes": "Exact Thailand-delivered RHD 911 Carrera GTS (992 II), VIN WP0ZZZ99ZSS211362, first registration 06/2025.",
+      "archival_status": "URL_ONLY",
+      "notes": "Primary exact local evidence for geometry/mass/turning and installed front lift/rear-axle steering."
+    },
+    {
+      "source_code": "PORSCHE_TH_911_GTS_CURRENT_2027",
+      "publisher": "Porsche",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "OEM_MODEL_PAGE",
+      "title": "911 Carrera GTS — Porsche Thailand",
+      "url": "https://www.porsche.com/pap/_thailand_/models/911/carrera-models/911-carrera-gts/",
+      "retrieved_at": "2026-09-01T19:55:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "Current model identity / chassis / lift system",
+      "applicability_notes": "Current Thailand 911 Carrera GTS model-page corroboration for T-Hybrid, RWD, GTS rear-axle steering and optional front lift behaviour.",
+      "archival_status": "URL_ONLY",
+      "notes": "Current page labels MY2027; not used to relabel the bounded 2025 delivered geometry as MY2027."
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_LOCAL",
+      "source_code": "PORSCHE_TH_911_GTS_992II_FINDER_DM49",
+      "vehicle_identity_claim": "2025 Porsche 911 Carrera GTS (992 II), Thailand delivered",
+      "raw_label": "Finder identity",
+      "raw_value": "2025 Porsche 911 Carrera GTS (992 II); First Registration 06/2025; VIN WP0ZZZ99ZSS211362; RHD; RWD; T-Hybrid",
+      "raw_unit": null,
+      "page_section_locator": "Vehicle identity",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "Calendar/model descriptor is retained raw; database identity uses bounded EDITION_RELEASE rather than inferring formal model-year semantics."
+    },
+    {
+      "observation_code": "OBS_BODY_DIMENSIONS",
+      "source_code": "PORSCHE_TH_911_GTS_992II_FINDER_DM49",
+      "vehicle_identity_claim": "Exact Thailand delivered 911 Carrera GTS 992 II",
+      "raw_label": "Length / Overall Width / Width (with mirrors) / Wheelbase",
+      "raw_value": "4553 / 1852 / 2033 / 2450",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Data — Body - Dimensions and Weights",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "Because Porsche publishes a separate Width (with mirrors), Overall Width is treated as the body/non-mirror envelope."
+    },
+    {
+      "observation_code": "OBS_TURNING_DIAMETER",
+      "source_code": "PORSCHE_TH_911_GTS_992II_FINDER_DM49",
+      "vehicle_identity_claim": "Exact Thailand delivered 911 Carrera GTS 992 II",
+      "raw_label": "Turning circle diameter",
+      "raw_value": "10.9",
+      "raw_unit": "m",
+      "page_section_locator": "Technical Data — Body - Dimensions and Weights",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "Reference path (curb/wall/tyre/body) is not stated. Direct normalized radius is intentionally not created because 5.45 m would be a derived value."
+    },
+    {
+      "observation_code": "OBS_MASS",
+      "source_code": "PORSCHE_TH_911_GTS_992II_FINDER_DM49",
+      "vehicle_identity_claim": "Exact Thailand delivered 911 Carrera GTS 992 II",
+      "raw_label": "Unladen weight (curb weight) / Unladen weight (DIN) / Unladen weight (EC) / Permissible gross weight",
+      "raw_value": "1604 / 1595 / 1670 / 2045",
+      "raw_unit": "kg",
+      "page_section_locator": "Technical Data — Body - Dimensions and Weights",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "Only explicitly labelled curb weight and permissible gross weight are normalized. DIN/EC remain raw evidence because registry has no separate mass semantics."
+    },
+    {
+      "observation_code": "OBS_WHEELS",
+      "source_code": "PORSCHE_TH_911_GTS_992II_FINDER_DM49",
+      "vehicle_identity_claim": "Exact Thailand delivered 911 Carrera GTS 992 II",
+      "raw_label": "Wheels",
+      "raw_value": "20-/21-inch Carrera GTS wheels",
+      "raw_unit": null,
+      "page_section_locator": "Vehicle Equipment — Wheels",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "Front/rear stagger is expressed by Porsche as 20-/21-inch."
+    },
+    {
+      "observation_code": "OBS_FRONT_LIFT",
+      "source_code": "PORSCHE_TH_911_GTS_CURRENT_2027",
+      "vehicle_identity_claim": "911 Carrera GTS current Thailand model family",
+      "raw_label": "Lift system",
+      "raw_value": "Optionally available hydraulic lift system raises the chassis at the front by approximately 40 mm; usable up to approximately 35 km/h",
+      "raw_unit": null,
+      "page_section_locator": "Lift system",
+      "reported_precision": "approximately as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "Lift amount is retained as raw evidence only. It is not added to clearance and no approach angle is derived."
+    },
+    {
+      "observation_code": "OBS_REAR_STEER",
+      "source_code": "PORSCHE_TH_911_GTS_992II_FINDER_DM49",
+      "vehicle_identity_claim": "Exact Thailand delivered 911 Carrera GTS 992 II",
+      "raw_label": "Rear-Axle Steering",
+      "raw_value": "Rear-Axle Steering",
+      "raw_unit": null,
+      "page_section_locator": "Vehicle Equipment — Transmission / Chassis",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B-S curation",
+      "ambiguity_note": "Presence is preserved; no steering relation/angle is inferred."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4553,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_BODY_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_BODY_WIDTH",
+      "parameter_code": "overall_width_body_mm",
+      "value": 1852,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_BODY_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_MIRROR_WIDTH",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 2033,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_BODY_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2450,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_BODY_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING_TEXT",
+      "parameter_code": "oem_turning_value_text",
+      "value": "10.9 m turning circle diameter",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING_DIAMETER"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 1604,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_MASS"
+      ]
+    },
+    {
+      "value_code": "VAL_GVM",
+      "parameter_code": "gross_vehicle_mass_kg",
+      "value": 2045,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_MASS"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "20-inch Carrera GTS wheel",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELS"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "21-inch Carrera GTS wheel",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELS"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_height_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "The exact Thailand Finder record reviewed did not publish height in the accessible technical-data extract; current global/current-family height is not silently carried into this bounded delivered configuration.",
+      "source_families_searched": [
+        "Porsche Finder Thailand exact DM49 vehicle",
+        "Porsche Thailand current 911 Carrera GTS page"
+      ],
+      "search_notes": "Keep exact-delivered record bounded to local published geometry.",
+      "assessed_at": "2026-09-01T19:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Seek exact local VIN/configurator technical certificate or a Finder extract publishing height."
+    },
+    {
+      "parameter_code": "clearance_value_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact normal-state ground-clearance value for the bounded Thailand-delivered GTS was published in the reviewed local sources.",
+      "source_families_searched": [
+        "Porsche Finder Thailand exact DM49 vehicle",
+        "Porsche Thailand current model page"
+      ],
+      "search_notes": "Front lift +40 mm is not added to an unknown base clearance.",
+      "assessed_at": "2026-09-01T19:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Seek exact VIN/configuration technical data including PASM-10 clearance."
+    },
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Porsche publishes a 10.9 m turning circle diameter but not the reference path; a normalized radius would also be a derived value rather than directly published evidence under the current create-only manifest policy.",
+      "source_families_searched": [
+        "Porsche Finder Thailand exact DM49 vehicle"
+      ],
+      "search_notes": "Preserve raw diameter text; do not silently divide by two in a PUBLISHED manifest value.",
+      "assessed_at": "2026-09-01T19:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Use approved derivation workflow later if shape-only normalization is accepted while preserving OEM_UNSPECIFIED reference."
+    },
+    {
+      "parameter_code": "overall_width_mirrors_folded_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "Exact Thailand DM49 Finder extract reviewed publishes body and mirrors-open widths but not mirrors-folded width.",
+      "source_families_searched": [
+        "Porsche Finder Thailand exact DM49 vehicle"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T19:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Seek exact local configurator/Finder extended technical data."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact local mounted outer tyre-face track was published for this configuration.",
+      "source_families_searched": [
+        "Porsche Finder Thailand exact DM49 vehicle",
+        "Porsche Thailand current model page"
+      ],
+      "search_notes": "Do not infer from wheel size or global track.",
+      "assessed_at": "2026-09-01T19:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Seek exact wheel/tyre offset geometry or direct measurement."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact local mounted outer tyre-face track was published for this configuration.",
+      "source_families_searched": [
+        "Porsche Finder Thailand exact DM49 vehicle",
+        "Porsche Thailand current model page"
+      ],
+      "search_notes": "Do not infer from wheel size or global track.",
+      "assessed_at": "2026-09-01T19:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2B-S curation",
+      "next_action": "Seek exact wheel/tyre offset geometry or direct measurement."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
