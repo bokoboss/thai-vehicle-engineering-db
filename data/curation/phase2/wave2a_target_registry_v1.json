@@ -51,13 +51,14 @@
         "parking_design",
         "family_suv"
       ],
-      "research_status": "RESEARCH_ACTIVE_GRADE_MAPPING_REQUIRED",
+      "research_status": "MANIFEST_DRAFT_READY_WITH_EXPLICIT_HEIGHT_MASS_GAPS",
       "identity_time_basis_candidate": "EDITION_RELEASE",
-      "identity_time_label_raw": "Honda CR-V e:HEV new/minor-change official Thailand line-up announced 28 November 2025",
+      "identity_time_label_raw": "Honda CR-V e:HEV ใหม่ รุ่นไมเนอร์เชนจ์ — official Thailand price launch 28 November 2025",
       "primary_sources": [
         "https://www.honda.co.th/news/NewCRVeHEV_Prebooking",
         "https://www.honda.co.th/en/news/Motorexpo2025",
-        "https://www.honda.co.th/crv/specification"
+        "https://www.honda.co.th/crv/specification",
+        "https://assets.honda.co.th/www-assets/model/2025/12/25/ycdwpoFhimYEx6xP8b6svBr0uqVZM6Sb.pdf?response-content-disposition=attachment%3B+filename%3DNew+CR-V+e%3AHEV+Catalog.pdf"
       ]
     },
     {
