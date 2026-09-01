@@ -119,7 +119,7 @@ Turning:
 
 ### 4.3 Honda CR-V e:HEV RS 4WD — late-2025 minor-change
 
-Research state: **ACTIVE — GRADE MAPPING REQUIRED**
+Research state: **MANIFEST DRAFT READY WITH EXPLICIT HEIGHT / MASS GAPS**
 
 Identity evidence is strong:
 
@@ -135,20 +135,26 @@ Sources:
 - Current specification page:  
   https://www.honda.co.th/crv/specification
 
-The current specification page publishes:
+The official current specification and late-2025 catalogue together provide a five-grade header: e:HEV E, e:HEV ES, e:HEV HuNT, e:HEV RS and e:HEV RS 4WD.
 
-- turning radius 5.5 m;
-- steering-wheel lock-to-lock 2.4 turns;
+Rows with sufficiently explicit grouping for the exact RS 4WD configuration are normalized:
+
 - length 4,691 mm;
-- width 1,866 mm;
-- height values 1,681 / 1,691 mm;
+- reported width 1,866 mm;
 - wheelbase 2,700 mm;
-- multiple front/rear tread values;
-- ground-clearance values 198 / 208 mm;
-- multiple masses;
-- 18- and 19-inch wheel/tyre packages.
+- front/rear OEM tread 1,612 / 1,638 mm (last three grades);
+- minimum ground clearance 208 mm (last three grades; load/reference state unstated);
+- 19 x 7.5J wheels and 235/55 R19 tyres (last two RS grades);
+- steering-wheel lock-to-lock 2.4 turns;
+- turning radius 5.5 m with curb/wall and axle scope unresolved;
+- exact RS 4WD drivetrain is Real Time AWD from the official minor-change release.
 
-However, the flattened HTML contains grouped multi-grade values. Exact e:HEV RS 4WD column mapping must be independently verified before normalization. This target must not repeat the previous Honda City grade-column failure mode.
+Two values remain deliberately unnormalized:
+
+- **height**: Honda publishes 1,681 / 1,691 mm, but the flattened first-party extraction did not preserve a sufficiently robust exact member association for this pass;
+- **mass**: the five-grade table places 1,815 kg in the RS 4WD column, but Honda labels the row only as “น้ำหนักรถ”; the manifest retains the raw observation but does not silently promote it to `kerb_mass_kg`.
+
+This conservative treatment avoids repeating the previous Honda City grade-column failure mode while still adding the exact clean parameters.
 
 ## 5. Active research targets
 
@@ -258,10 +264,10 @@ Remaining gates:
 - Nissan Serena e-POWER Highway Star
 - Toyota Innova Zenix HEV Premium
 - Lexus LM 350h Executive 7-Seater
+- Honda CR-V e:HEV RS 4WD
 
 ### Research active
 
-- Honda CR-V e:HEV RS 4WD
 - Toyota Corolla Cross HEV Premium Luxury
 
 ### Existing HOLD records
