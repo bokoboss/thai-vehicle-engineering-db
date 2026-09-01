@@ -173,20 +173,38 @@ Remaining gate: exact Thailand temporal identity/continuity for the current geom
 
 ### Toyota Innova Zenix HEV Premium
 
-Official 2025 Toyota Thailand catalogue publishes:
+Research state: **MANIFEST DRAFT READY**
 
-- length 4,799 mm for HEV Premium;
-- width 1,850 mm;
+Official Toyota Thailand evidence now closes both exact grade mapping and temporal identity:
+
+- current grade page lists exactly HEV Premium and HEV Smart and confirms current 2026 sale continuity;
+- official accessories material explicitly identifies “โตโยต้า อินโนว่า ซีนิกซ์ รุ่นปรับปรุงใหม่ ปี 2568” and the HEV Premium / HEV Smart applicability columns;
+- the official 2025 catalogue specification page was visually checked and clearly separates HEV Premium from HEV Smart.
+
+HEV Premium specification:
+
+- length 4,799 mm;
+- reported width 1,850 mm;
 - height 1,790 mm;
 - wheelbase 2,850 mm;
 - front/rear tread 1,550 / 1,571 mm;
 - minimum ground clearance 160 mm;
-- minimum turning radius 5.7 m.
+- minimum turning radius 5.7 m;
+- FWD;
+- 18-inch alloy / 225/50 R18;
+- seven seats.
 
-Source:
+Sources:
+
+https://www.toyota.co.th/model/innovazenix/grade
+
+https://www.toyota.co.th/media/accessories/files/brochure/68b95caa9a7be.pdf
+
 https://www.toyota.co.th/media/product/series/download/INNOVA_ZENIX_CATALOG2025.pdf
 
-Remaining gate: establish a supported identity-time basis rather than treating the brochure filename/year as model year.
+Identity basis: `OEM_REVISION_LABEL`, raw label “โตโยต้า อินโนว่า ซีนิกซ์ รุ่นปรับปรุงใหม่ ปี 2568”. The Buddhist-calendar revision year is not converted to model year.
+
+Semantic limits remain fail-closed: generic width is OEM_UNSPECIFIED, tread is not AVT outer-face track, ground-clearance load/reference state is unstated, and the 5.7 m turning radius has OEM_UNSPECIFIED curb/wall and axle scope.
 
 ### Toyota Corolla Cross HEV Premium Luxury
 
@@ -218,12 +236,12 @@ Remaining gates:
 
 - Kia Carnival HEV 7-seat Luxury
 - Nissan Serena e-POWER Highway Star
+- Toyota Innova Zenix HEV Premium
 
 ### Research active
 
 - Honda CR-V e:HEV RS 4WD
 - Lexus LM 350h Executive 7-Seater
-- Toyota Innova Zenix HEV Premium
 - Toyota Corolla Cross HEV Premium Luxury
 
 ### Existing HOLD records
