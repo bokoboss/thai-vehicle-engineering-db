@@ -1,0 +1,563 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-BYD-M6-EXTENDED-7SEAT-RELEASE-20241128-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-byd-m6-extended-7seat-release-2024-11-28",
+    "manufacturer_name": "BYD",
+    "manufacturer_display_name": "BYD",
+    "canonical_model_name": "m6",
+    "display_model_name": "M6",
+    "market_code": "TH",
+    "generation_name": "BYD M6 Thailand 7-seat release",
+    "body_style": "Battery-electric MPV",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "BYD M6 7-seat Extended sales campaign commencing 28 November 2024",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Extended 7 Seats",
+    "powertrain": "Battery electric",
+    "drivetrain": "FWD",
+    "body_configuration": "7-seat MPV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Rêver Automotive's official 28 November 2024 BYD M6 7-seat campaign explicitly identifies the Extended 7-seat configuration. The current Rêver technical page separately lists Extended 7 seats and provides exact grade-column engineering data. No model year is inferred from the release or retrieval date."
+  },
+  "sources": [
+    {
+      "source_code": "REVER_TH_BYD_M6_7SEAT_RELEASE_20241128",
+      "publisher": "Rêver Automotive",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_CAMPAIGN_TERMS",
+      "title": "BYD M6 7-seat Extended sales campaign",
+      "url": "https://www.reverautomotive.com/news/byd-m6-7-seat-price-announcement",
+      "retrieved_at": "2026-09-01T19:26:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2024,
+      "page_section_default": "Campaign/model designation",
+      "applicability_notes": "Exact Thailand BYD M6 7-seat Extended release identity beginning 28 November 2024",
+      "archival_status": "URL_ONLY",
+      "notes": "Used as non-model-year EDITION_RELEASE identity evidence."
+    },
+    {
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "publisher": "Rêver Automotive",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "BYD M6 Technical Information",
+      "url": "https://www.reverautomotive.com/en/model/m6/overview",
+      "retrieved_at": "2026-09-01T19:26:00+07:00",
+      "market_code": "TH",
+      "page_section_default": "Technical information — Extended 7 seats",
+      "applicability_notes": "Current exact Extended 7 Seats specification column",
+      "archival_status": "URL_ONLY",
+      "notes": "Generic overall width, OEM wheel track and turning reference retain source-defined semantics. Published 8.5 m minimum turning radius is retained exactly without correction."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "UNLADEN_OEM",
+      "name": "OEM unladen",
+      "mass_basis": "UNLADEN",
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "raw_oem_wording": "Ground Clearance",
+      "notes": "Current English Rêver table distinguishes Ground Clearance from Ground Clearance Maximum Loaded; no other load assumptions added."
+    },
+    {
+      "load_condition_code": "MAX_LOADED_OEM",
+      "name": "OEM maximum loaded",
+      "mass_basis": "OEM_LADEN",
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "raw_oem_wording": "Ground Clearance Maximum Loaded",
+      "notes": "Maximum-loaded state retained exactly; no payload distribution or axle-load assumptions inferred."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_7SEAT_RELEASE",
+      "source_code": "REVER_TH_BYD_M6_7SEAT_RELEASE_20241128",
+      "vehicle_identity_claim": "BYD M6 7-seat Extended",
+      "raw_label": "Campaign model designation",
+      "raw_value": "BYD M6 7-seat รุ่น Extended; campaign from 28 November 2024",
+      "raw_unit": null,
+      "page_section_locator": "Campaign and period",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:26:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Extended 7 Seats",
+      "raw_label": "Overall Length / Overall Width / Overall Height",
+      "raw_value": "4710 / 1810 / 1690",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical information — Dimensions — Extended 7 seats",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:26:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Overall Width does not state body/mirror inclusion."
+    },
+    {
+      "observation_code": "OBS_TRACK",
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Extended 7 Seats",
+      "raw_label": "Wheel Track - Front / Rear",
+      "raw_value": "1540 / 1530",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical information — Dimensions — Extended 7 seats",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:26:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "OEM wheel-track reference is not established as AVT outer tyre-face track."
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Extended 7 Seats",
+      "raw_label": "Wheelbase",
+      "raw_value": "2800",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical information — Dimensions — Extended 7 seats",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:26:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_KERB",
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Extended 7 Seats",
+      "raw_label": "Kerb Weight",
+      "raw_value": "1915",
+      "raw_unit": "kg",
+      "page_section_locator": "Technical information — Dimensions — Extended 7 seats",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:26:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GVW",
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Extended 7 Seats",
+      "raw_label": "Gross Vehicle Weight",
+      "raw_value": "2489",
+      "raw_unit": "kg",
+      "page_section_locator": "Technical information — Dimensions — Extended 7 seats",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:26:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC_UNLADEN",
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Extended 7 Seats",
+      "raw_label": "Ground Clearance",
+      "raw_value": "170",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical information — Dimensions — Extended 7 seats",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:26:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Limiting component/reference point not stated."
+    },
+    {
+      "observation_code": "OBS_GC_MAX_LOADED",
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Extended 7 Seats",
+      "raw_label": "Ground Clearance Maximum Loaded",
+      "raw_value": "140",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical information — Dimensions — Extended 7 seats",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:26:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Limiting component/reference point and exact payload distribution not stated."
+    },
+    {
+      "observation_code": "OBS_TURNING",
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Extended 7 Seats",
+      "raw_label": "Minimum Turning Radius",
+      "raw_value": "8.5",
+      "raw_unit": "m",
+      "page_section_locator": "Technical information — Dimensions — Extended 7 seats",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:26:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Published value is unusually large for this vehicle class but the source explicitly labels it Minimum Turning Radius. Retained exactly; no typo correction, halving/doubling, curb/wall reference, or axle scope inferred."
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE",
+      "source_code": "REVER_TH_BYD_M6_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "Extended 7 Seats",
+      "raw_label": "Alloy Wheels / Tyre Size",
+      "raw_value": "17-inch / 225/55 R17",
+      "raw_unit": null,
+      "page_section_locator": "Technical information — Wheel & Tyre — Extended 7 seats",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T19:26:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4710,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_REPORTED",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1810,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1690,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2800,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TRACK",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1540,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TRACK",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1530,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_GC_UNLADEN",
+      "parameter_code": "clearance_value_mm",
+      "value": 170,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "UNLADEN_OEM",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC_UNLADEN"
+      ]
+    },
+    {
+      "value_code": "VAL_GC_MAX_LOADED",
+      "parameter_code": "clearance_value_mm",
+      "value": 140,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "MAX_LOADED_OEM",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC_MAX_LOADED"
+      ]
+    },
+    {
+      "value_code": "VAL_TURNING",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 8.5,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 1915,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_KERB"
+      ]
+    },
+    {
+      "value_code": "VAL_GVM",
+      "parameter_code": "gross_vehicle_mass_kg",
+      "value": 2489,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GVW"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "17-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "17-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "225/55 R17",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "225/55 R17",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Rêver publishes Overall Width 1,810 mm but does not establish body-excluding-mirrors semantics.",
+      "source_families_searched": [
+        "Rêver current BYD M6 technical information"
+      ],
+      "search_notes": "Do not promote generic overall width to body width.",
+      "assessed_at": "2026-09-01T19:26:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek official body/dimension drawing with explicit body-width definition."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open overall width was located in the reviewed official Rêver sources.",
+      "source_families_searched": [
+        "Rêver current BYD M6 technical information",
+        "Rêver BYD M6 7-seat release campaign"
+      ],
+      "search_notes": "Generic Overall Width is not substituted.",
+      "assessed_at": "2026-09-01T19:26:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek official body repair/dimension documentation."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published front wheel track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Rêver current BYD M6 technical information"
+      ],
+      "search_notes": "Keep OEM wheel track separate from AVT track.",
+      "assessed_at": "2026-09-01T19:26:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Published rear wheel track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Rêver current BYD M6 technical information"
+      ],
+      "search_notes": "Keep OEM wheel track separate from AVT track.",
+      "assessed_at": "2026-09-01T19:26:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
