@@ -17,6 +17,13 @@ def test_health_and_vehicle_search(client):
     assert filtered.json()["count"] == 16
 
 
+def test_root_redirects_to_catalog_start_page(client):
+    response = client.get("/", follow_redirects=False)
+
+    assert response.status_code == 307
+    assert response.headers["location"] == "/vehicles"
+
+
 def test_detail_api_and_html_expose_state_and_evidence(client):
     response = client.get("/api/vehicles/FIXTURE-WIDTH-UNSPECIFIED")
     assert response.status_code == 200
