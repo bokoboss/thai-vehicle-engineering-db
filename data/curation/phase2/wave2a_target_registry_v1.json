@@ -70,12 +70,14 @@
         "porte_cochere",
         "large_vehicle_envelope"
       ],
-      "research_status": "RESEARCH_ACTIVE_TEMPORAL_IDENTITY",
-      "identity_time_basis_candidate": null,
-      "identity_time_label_raw": null,
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "THE ALL-NEW LEXUS LM — LM 350h Executive 7-Seater, official Thailand 2023 release configuration",
       "primary_sources": [
-        "https://www.lexus.co.th/th/models/lm/lm-350h-7-seater.html",
-        "https://www.lexus.co.th/content/dam/thailand/website-v3/borchures/catalog/2024/2024_LM.pdf"
+        "https://www.lexus.co.th/content/dam/thailand/website-v3/price-list/Lexus%20LM_Pricelist_2023.pdf",
+        "https://www.lexus.co.th/content/dam/thailand/website-v3/borchures/catalog/2023/Catalog_2023Lexus_lm.pdf",
+        "https://www.lexus.co.th/content/dam/thailand/website-v3/borchures/catalog/2025/Lexus_LM_Catalog_Thai_2025_LM.pdf",
+        "https://www.lexus.co.th/en/models/lm/lm-350h-7-seater.html"
       ]
     },
     {
