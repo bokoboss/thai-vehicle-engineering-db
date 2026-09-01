@@ -1,0 +1,491 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-HONDA-HRV-EHEV-RS-NEW-RELEASE-20241128-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-honda-hrv-ehev-rs-new-release-2024-11-28",
+    "manufacturer_name": "Honda",
+    "manufacturer_display_name": "Honda",
+    "canonical_model_name": "hr-v",
+    "display_model_name": "HR-V e:HEV",
+    "market_code": "TH",
+    "generation_name": "New Honda HR-V e:HEV Thailand late-2024 release",
+    "body_style": "Hybrid compact crossover/SUV",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "ฮอนด้า เอชอาร์-วี อี:เอชอีวี ใหม่ — e:HEV RS; customer delivery from 28 พฤศจิกายน 2567",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "e:HEV RS",
+    "powertrain": "1.5L gasoline hybrid / E-CVT",
+    "drivetrain": "FWD",
+    "body_configuration": "5-seat crossover/SUV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Honda Thailand's late-2024 New HR-V e:HEV launch explicitly lists e:HEV RS and customer delivery from 28 November 2567. Current 2026 Honda pages continue the exact e:HEV RS grade. The Buddhist-calendar launch date is not treated as a model year."
+  },
+  "sources": [
+    {
+      "source_code": "HONDA_TH_HRV_NEW_LAUNCH_20241128",
+      "publisher": "Honda Automobile (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_LAUNCH_RELEASE",
+      "title": "New Honda HR-V e:HEV media test drive / launch-period release",
+      "url": "https://www.honda.co.th/en/news/NewHondaHRVeHEV_Mediatestdrive",
+      "retrieved_at": "2026-09-01T20:10:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2024,
+      "page_section_default": "Grade lineup and launch/customer-delivery period",
+      "applicability_notes": "Exact New HR-V e:HEV RS Thailand edition-release identity",
+      "archival_status": "URL_ONLY",
+      "notes": "Launch-period date retained; no MY inference."
+    },
+    {
+      "source_code": "HONDA_TH_HRV_SPEC_CURRENT_20260901",
+      "publisher": "Honda Automobile (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION_STRUCTURED_TABLE",
+      "title": "Honda HR-V e:HEV current technical specifications",
+      "url": "https://www.honda.co.th/hrvehev/specification",
+      "retrieved_at": "2026-09-01T20:10:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "e:HEV RS technical specification",
+      "applicability_notes": "Current exact e:HEV RS grade",
+      "archival_status": "URL_ONLY",
+      "notes": "Grouped table mapping retained conservatively; raw 'น้ำหนักรถ' is not promoted to kerb mass."
+    },
+    {
+      "source_code": "HONDA_TH_HRV_CURRENT_20260901",
+      "publisher": "Honda Automobile (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_MODEL_PAGE",
+      "title": "New Honda HR-V e:HEV current Thailand model page",
+      "url": "https://www.honda.co.th/hrvehev",
+      "retrieved_at": "2026-09-01T20:10:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "Current grade levels",
+      "applicability_notes": "Current-sale continuity of e:HEV RS in September 2026",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "HONDA_TH_HRV_SPEC_CURRENT_20260901",
+      "raw_oem_wording": "ความสูงใต้ท้องรถ; load/reference state not stated",
+      "notes": "No occupant/payload state inferred."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "HONDA_TH_HRV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "e:HEV RS",
+      "raw_label": "Length / Width / Height / Wheelbase",
+      "raw_value": "4385 / 1790 / 1590 / 2610",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimension — e:HEV RS",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Generic width does not state body/mirror inclusion."
+    },
+    {
+      "observation_code": "OBS_TREAD",
+      "source_code": "HONDA_TH_HRV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "e:HEV RS",
+      "raw_label": "Tread Front / Rear",
+      "raw_value": "1542 / 1543",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimension — e:HEV RS grouped column",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "OEM tread reference is not AVT outer tyre-face track."
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "HONDA_TH_HRV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "e:HEV RS",
+      "raw_label": "Ground Clearance / ความสูงใต้ท้องรถ",
+      "raw_value": "196",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimension",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Load state and limiting reference not stated."
+    },
+    {
+      "observation_code": "OBS_TURN_STEER",
+      "source_code": "HONDA_TH_HRV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "e:HEV RS",
+      "raw_label": "Lock to Lock / Turning Radius",
+      "raw_value": "2.44 / 5.5",
+      "raw_unit": null,
+      "page_section_locator": "Steering system — e:HEV RS",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Turning curb/wall reference and axle scope not stated."
+    },
+    {
+      "observation_code": "OBS_RAW_WEIGHT",
+      "source_code": "HONDA_TH_HRV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "e:HEV RS",
+      "raw_label": "น้ำหนักรถ (กิโลกรัม) / Weight (kg)",
+      "raw_value": "1404",
+      "raw_unit": "kg",
+      "page_section_locator": "Dimension — e:HEV RS",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Source label is generic vehicle Weight/น้ำหนักรถ and does not explicitly establish kerb/curb semantics; retained raw only."
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE",
+      "source_code": "HONDA_TH_HRV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "e:HEV RS",
+      "raw_label": "Wheel Size / Tire Size",
+      "raw_value": "18 x 7.5J / 225/50 R18",
+      "raw_unit": null,
+      "page_section_locator": "Dimension — e:HEV RS",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4385,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1790,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1590,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2610,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_FT",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1542,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_RT",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1543,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 196,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.5,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN_STEER"
+      ]
+    },
+    {
+      "value_code": "VAL_STEER_TURNS",
+      "parameter_code": "steering_wheel_lock_to_lock_turns",
+      "value": 2.44,
+      "canonical_unit": "turns",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN_STEER"
+      ]
+    },
+    {
+      "value_code": "VAL_FW",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "18 x 7.5J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RW",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "18 x 7.5J",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "225/50 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "225/50 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Honda publishes e:HEV RS vehicle Weight/น้ำหนักรถ = 1,404 kg but the first-party row does not explicitly establish kerb/curb semantics.",
+      "source_families_searched": [
+        "Honda Thailand current specification",
+        "Honda Thailand launch-period materials"
+      ],
+      "search_notes": "Raw 1,404 kg observation retained; not promoted to kerb mass.",
+      "assessed_at": "2026-09-01T20:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek homologation/technical documentation explicitly labelled curb/kerb."
+    },
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Honda publishes width 1,790 mm without body-excluding-mirrors semantics.",
+      "source_families_searched": [
+        "Honda Thailand current specification"
+      ],
+      "search_notes": "Do not promote generic width.",
+      "assessed_at": "2026-09-01T20:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek body repair/dimension drawing."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open width found in reviewed Honda Thailand sources.",
+      "source_families_searched": [
+        "Honda Thailand current specification",
+        "Honda Thailand current model page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T20:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek explicit mirror-envelope source."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Honda OEM front tread is not AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Honda Thailand current specification"
+      ],
+      "search_notes": "Do not convert OEM tread.",
+      "assessed_at": "2026-09-01T20:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek mounted geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Honda OEM rear tread is not AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Honda Thailand current specification"
+      ],
+      "search_notes": "Do not convert OEM tread.",
+      "assessed_at": "2026-09-01T20:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek mounted geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
