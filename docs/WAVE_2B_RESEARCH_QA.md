@@ -209,3 +209,63 @@ Five of the six initial mainstream targets are manifest-draft ready:
 Current mainstream draft total: **66 normalized values + 24 explicit assessments**.
 
 DENZA D9 Performance AWD remains RESEARCH_ACTIVE because exact Thailand Performance AWD technical geometry/mass documentation has not yet been recovered from a first-party Thailand source. Global/other-market D9 dimensions are not being promoted as Thailand data without same-geometry proof.
+
+
+## Lamborghini Revuelto — Thailand launch 25 July 2023
+
+Research state: **MANIFEST DRAFT READY**
+
+Identity basis: `EDITION_RELEASE`.
+
+Lamborghini's official dealer locator establishes Lamborghini Bangkok / Renazzo Motor as the authorized Bangkok dealer. Reputable contemporaneous Thailand launch coverage records the exact Revuelto launch, price and local dimensions. Lamborghini's official 2024 digital brochure provides structural geometry that matches the Thailand launch dimensions.
+
+Normalized with `SAME_GEOMETRY_CONFIRMED` applicability:
+
+- length 4,947 mm;
+- body width excluding mirrors 2,033 mm;
+- width including mirrors 2,266 mm;
+- height 1,160 mm;
+- wheelbase 2,779 mm;
+- OEM front/rear track 1,720 / 1,701 mm;
+- standard front wheel/tyre 20 x 9.5J / 265/35 ZR20;
+- standard rear wheel/tyre 21 x 12J / 345/30 ZR21.
+
+Lamborghini's published 1,772 kg value is explicitly Dry Weight and is retained only as raw evidence. It is not normalized as kerb mass. Ground clearance, turning value, folded-mirror width and AVT outer-face tracks remain unresolved.
+
+Static contract: **PASS — 11 values + 6 assessments**.
+
+Manifest: `data/curation/manifests/wave2b/lamborghini_revuelto_th_launch_20230725_v1.json`
+
+## Ferrari 296 GTB
+
+Research state: **RESEARCH ACTIVE — GEOMETRY APPLICABILITY GATE**
+
+Ferrari Approved Thailand records a 2024 296 GTB at Cavallino Motors Co. Ltd, and Ferrari's official 296 GTB technical sheet publishes model-level dimensions and track. A manifest is intentionally deferred because the exact Thailand Approved car's option/geometry relationship to the global technical sheet has not yet been established to the project's SAME_GEOMETRY_CONFIRMED standard.
+
+Do not normalize Ferrari's 1,470 kg Dry Weight as kerb mass.
+
+## McLaren Artura Coupe
+
+Research state: **RESEARCH ACTIVE — GEOMETRY APPLICABILITY GATE**
+
+McLaren's official Qualified programme exposes Thailand as a supported APAC country and lists Artura in the programme, but no exact Thailand stock/detail record with technical dimensions was recovered in this pass. Other-market McLaren Qualified Artura dimensions are therefore not promoted into a Thailand manifest.
+
+## Wave 2B tranche 1 candidate set
+
+Research-clean manifest drafts now available:
+
+1. BYD M6 Extended 7 Seats
+2. Hyundai STARIA Premium MY25
+3. Toyota Yaris Cross HEV Premium Luxury
+4. Honda HR-V e:HEV RS
+5. Toyota Camry HEV Premium Luxury
+6. Porsche 911 Carrera GTS 992 II — Thailand-delivered 2025
+7. Lamborghini Revuelto — Thailand launch 2023
+
+Static draft totals:
+
+- mainstream: 66 normalized values + 24 assessments;
+- supercar: 20 normalized values + 12 assessments;
+- **total: 86 normalized values + 36 explicit assessments**.
+
+DENZA D9 Performance AWD, Ferrari 296 GTB and McLaren Artura Coupe remain research-active and are not forced into tranche 1.
