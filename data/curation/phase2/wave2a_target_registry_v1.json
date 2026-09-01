@@ -108,12 +108,13 @@
         "parking_design",
         "design_vehicle_benchmark"
       ],
-      "research_status": "RESEARCH_ACTIVE_TEMPORAL_IDENTITY",
-      "identity_time_basis_candidate": null,
-      "identity_time_label_raw": null,
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "OEM_REVISION_LABEL",
+      "identity_time_label_raw": "โตโยต้า โคโรลล่า ครอส รุ่นปรับปรุงใหม่ ปี 2569",
       "primary_sources": [
+        "https://www.toyota.co.th/media/accessories/files/brochure/69a000dce2330.pdf",
         "https://www.toyota.co.th/model/corollacross/grade",
-        "https://www.toyota.co.th/media/product/series/download/Corolla_Cross_Catalog_2026.pdf"
+        "https://www.toyota.co.th/media/product/series/download/CorollaCross_Catalog_2026.pdf"
       ]
     }
   ]
