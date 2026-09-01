@@ -1,0 +1,559 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-KIA-CARNIVAL-HEV-7SEAT-LUXURY-RELEASE-20251003-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-kia-carnival-hev-7seat-luxury-release-2025-10-03",
+    "manufacturer_name": "Kia",
+    "manufacturer_display_name": "Kia",
+    "canonical_model_name": "carnival",
+    "display_model_name": "Carnival",
+    "market_code": "TH",
+    "generation_name": "The new Kia Carnival HEV 7-seater Thailand 2025 release",
+    "body_style": "Large hybrid MPV",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "The new Kia Carnival HEV 7-seater officially launched in Thailand on 3 October 2025",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "HEV 7-seat Luxury",
+    "powertrain": "1.6L turbo gasoline hybrid / 6-speed automatic",
+    "drivetrain": null,
+    "body_configuration": "7-seat MPV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Kia Sales (Thailand) launch release explicitly lists HEV 7-seat Luxury and HEV 7-seat Premium at the 3 October 2025 Thailand launch; August 2026 official promotion confirms continued sale of the same two HEV grades."
+  },
+  "sources": [
+    {
+      "source_code": "KIA_TH_CARNIVAL_HEV_LAUNCH_20251003",
+      "publisher": "Kia Sales (Thailand) Co., Ltd.",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_LAUNCH_RELEASE",
+      "title": "Kia Sales (Thailand) Launches The new Kia Carnival HEV 7-seater",
+      "url": "https://www.kia.com/th/en/util/news/the-new-kia-carnival-hev-7-seater-launch.html",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2025,
+      "page_section_default": "Thailand launch and grade line-up",
+      "applicability_notes": "Exact 2025 Thailand HEV 7-seat Luxury release identity",
+      "archival_status": "URL_ONLY",
+      "notes": "Release states official Thailand launch on 3 October 2025 and explicitly lists Luxury and Premium grades."
+    },
+    {
+      "source_code": "KIA_TH_CARNIVAL_HEV_SPEC_CURRENT_20260901",
+      "publisher": "Kia Sales (Thailand) Co., Ltd.",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_SPECIFICATION",
+      "title": "Carnival HEV Specifications — Kia Thailand",
+      "url": "https://www.kia.com/th/en/cars/carnival-hev/specification.html",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "page_section_default": "Dimensions and chassis tables",
+      "applicability_notes": "HEV 7-seat Premium and HEV 7-seat Luxury specification table; values used here are published for the exact Luxury grade.",
+      "archival_status": "URL_ONLY",
+      "notes": "Generic overall width/tread/ground-clearance labels retain source-defined semantics."
+    },
+    {
+      "source_code": "KIA_TH_CARNIVAL_HEV_PROMO_202608",
+      "publisher": "Kia Sales (Thailand) Co., Ltd.",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_PROMOTION",
+      "title": "Special Offer: The new Kia Carnival HEV in August 2026",
+      "url": "https://www.kia.com/th/en/util/promotion/thekiacarnival-hev-2026.html",
+      "retrieved_at": "2026-09-01T13:27:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "August 2026 grade offer",
+      "applicability_notes": "Current-sale continuity evidence for Premium and Luxury grades",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "KIA_TH_CARNIVAL_HEV_SPEC_CURRENT_20260901",
+      "raw_oem_wording": "Minimum Ground Clearance; load/reference state not stated",
+      "notes": "Structured unknown load state only."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY_LAUNCH",
+      "source_code": "KIA_TH_CARNIVAL_HEV_LAUNCH_20251003",
+      "vehicle_identity_claim": "The new Kia Carnival HEV 7-seat Luxury",
+      "raw_label": "Thailand launch grade",
+      "raw_value": "The new Kia Carnival HEV 7-seat Luxury; official Thailand launch 3 October 2025",
+      "raw_unit": null,
+      "page_section_locator": "Launch release / grade line-up",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_CURRENT_CONTINUITY",
+      "source_code": "KIA_TH_CARNIVAL_HEV_PROMO_202608",
+      "vehicle_identity_claim": "The new Kia Carnival HEV 7-seat Luxury",
+      "raw_label": "Current August 2026 offer",
+      "raw_value": "new Carnival Luxury",
+      "raw_unit": null,
+      "page_section_locator": "August 2026 promotion",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_LENGTH",
+      "source_code": "KIA_TH_CARNIVAL_HEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "HEV 7-seat Luxury",
+      "raw_label": "Overall Length",
+      "raw_value": "5155",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions table",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WIDTH",
+      "source_code": "KIA_TH_CARNIVAL_HEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "HEV 7-seat Luxury",
+      "raw_label": "Overall Width",
+      "raw_value": "1995",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions table",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Mirror/body inclusion is not stated."
+    },
+    {
+      "observation_code": "OBS_HEIGHT",
+      "source_code": "KIA_TH_CARNIVAL_HEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "HEV 7-seat Luxury",
+      "raw_label": "Overall Height",
+      "raw_value": "1785",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions table",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_WHEELBASE",
+      "source_code": "KIA_TH_CARNIVAL_HEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "HEV 7-seat Luxury",
+      "raw_label": "Wheelbase",
+      "raw_value": "3090",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions table",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TREAD",
+      "source_code": "KIA_TH_CARNIVAL_HEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "HEV 7-seat Luxury",
+      "raw_label": "Wheel tread (FR/RR)",
+      "raw_value": "1739 / 1738",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions table",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "OEM tread reference definition is not established as AVT outer tyre faces."
+    },
+    {
+      "observation_code": "OBS_OVERHANG",
+      "source_code": "KIA_TH_CARNIVAL_HEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "HEV 7-seat Luxury",
+      "raw_label": "Overhang (FR/RR)",
+      "raw_value": "935 / 1130",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions table",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "KIA_TH_CARNIVAL_HEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "HEV 7-seat Luxury",
+      "raw_label": "Minimum Ground Clearance",
+      "raw_value": "172",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions table",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": "Load state and limiting component/reference point are not stated."
+    },
+    {
+      "observation_code": "OBS_WHEEL",
+      "source_code": "KIA_TH_CARNIVAL_HEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "HEV 7-seat Luxury",
+      "raw_label": "Wheel Type",
+      "raw_value": "19-inch alloy",
+      "raw_unit": null,
+      "page_section_locator": "Chassis table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TYRE",
+      "source_code": "KIA_TH_CARNIVAL_HEV_SPEC_CURRENT_20260901",
+      "vehicle_identity_claim": "HEV 7-seat Luxury",
+      "raw_label": "Tyre size",
+      "raw_value": "235/55 R19",
+      "raw_unit": null,
+      "page_section_locator": "Chassis table",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T13:27:00+07:00",
+      "extracted_by": "ChatGPT Wave 2A curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5155,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_LENGTH"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_REPORTED",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1995,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WIDTH"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1785,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_HEIGHT"
+      ]
+    },
+    {
+      "value_code": "VAL_WHEELBASE",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3090,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELBASE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TREAD",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1739,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TREAD",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1738,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_OVERHANG",
+      "parameter_code": "front_overhang_mm",
+      "value": 935,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_OVERHANG"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_OVERHANG",
+      "parameter_code": "rear_overhang_mm",
+      "value": 1130,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_OVERHANG"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 172,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_TYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "235/55 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_TYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "235/55 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FRONT_WHEEL",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "19-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    },
+    {
+      "value_code": "VAL_REAR_WHEEL",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "19-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Kia Thailand publishes Overall Width but does not establish body-excluding-mirrors semantics for the reviewed exact configuration.",
+      "source_families_searched": [
+        "Kia Thailand launch release",
+        "Kia Thailand current specification",
+        "Kia Thailand current promotion"
+      ],
+      "search_notes": "Do not promote generic overall width to body width.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek an explicit body-width or mirror-envelope definition."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open overall width was located in the reviewed Kia Thailand sources.",
+      "source_families_searched": [
+        "Kia Thailand launch release",
+        "Kia Thailand current specification"
+      ],
+      "search_notes": "Generic overall width is not substituted.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek official dimension drawing or technical body data."
+    },
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No defensible turning value was located in the reviewed exact Thailand launch/specification/current-sale sources.",
+      "source_families_searched": [
+        "Kia Thailand launch release",
+        "Kia Thailand current specification",
+        "Kia Thailand 2026 promotion"
+      ],
+      "search_notes": "Do not import a turning value from another market without demonstrated same-geometry applicability.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek exact Thailand owner/technical documentation or confirmed same-geometry OEM source."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM front wheel tread is published but its reference definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Kia Thailand current specification"
+      ],
+      "search_notes": "Keep OEM tread separate from AVT track.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM rear wheel tread is published but its reference definition is not established as AVT outer tyre faces.",
+      "source_families_searched": [
+        "Kia Thailand current specification"
+      ],
+      "search_notes": "Keep OEM tread separate from AVT track.",
+      "assessed_at": "2026-09-01T13:27:00+07:00",
+      "reviewer": "ChatGPT Wave 2A curation",
+      "next_action": "Seek mounted wheel/tyre geometry or direct outer-face evidence."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
