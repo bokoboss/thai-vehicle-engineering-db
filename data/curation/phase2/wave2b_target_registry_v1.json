@@ -35,8 +35,9 @@
       "model": "D9",
       "configuration": "Performance AWD",
       "category": "premium_electric_mpv",
-      "research_status": "RESEARCH_ACTIVE",
-      "issue": 37
+      "research_status": "RESEARCH_ACTIVE_SOURCE_GAP",
+      "issue": 37,
+      "research_note": "Thailand Performance AWD identity/current sale confirmed, but exact first-party Thailand technical geometry/mass source not yet recovered."
     },
     {
       "target_id": "wave2b-toyota-yaris-cross-hev-premium-luxury",
@@ -90,10 +91,13 @@
       "target_id": "wave2bs-lamborghini-revuelto",
       "manufacturer": "Lamborghini",
       "model": "Revuelto",
-      "configuration": "Thailand applicability TBD",
+      "configuration": "Revuelto — Thailand launch 25 July 2023",
       "category": "supercar",
-      "research_status": "RESEARCH_ACTIVE",
-      "issue": 38
+      "research_status": "MANIFEST_DRAFT_READY",
+      "issue": 38,
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "Lamborghini Revuelto official Thailand launch — 25 July 2023 — Lamborghini Bangkok / Renazzo Motor",
+      "manifest_path": "data/curation/manifests/wave2b/lamborghini_revuelto_th_launch_20230725_v1.json"
     },
     {
       "target_id": "wave2bs-ferrari-296-gtb-thailand-delivered",
@@ -101,8 +105,9 @@
       "model": "296 GTB",
       "configuration": "Thailand-delivered official-dealer configuration",
       "category": "supercar",
-      "research_status": "RESEARCH_ACTIVE",
-      "issue": 38
+      "research_status": "RESEARCH_ACTIVE_GEOMETRY_APPLICABILITY",
+      "issue": 38,
+      "research_note": "Ferrari Approved Thailand exact 2024 296 GTB identity exists at Cavallino Motors; global Ferrari technical sheet recovered, but exact Thailand-to-global geometry/option applicability not yet promoted."
     },
     {
       "target_id": "wave2bs-mclaren-artura-coupe",
@@ -110,8 +115,9 @@
       "model": "Artura",
       "configuration": "Coupe Thailand/APAC applicability TBD",
       "category": "supercar",
-      "research_status": "RESEARCH_ACTIVE",
-      "issue": 38
+      "research_status": "RESEARCH_ACTIVE_GEOMETRY_APPLICABILITY",
+      "issue": 38,
+      "research_note": "Official McLaren Thailand/APAC programme and Artura model support exist; exact Thailand-delivered Coupe technical record not yet recovered."
     }
   ]
 }
