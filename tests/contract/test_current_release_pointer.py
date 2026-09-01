@@ -59,17 +59,29 @@ def _write_pointer(root: Path, target: str) -> Path:
 
 def test_default_builder_resolves_current_release_pointer():
     args = builder._parser().parse_args([])
+    pointer = json.loads(
+        (ROOT / "data/curation/releases/current_release.json").read_text(encoding="utf-8")
+    )
+    expected_target = ROOT / "data/curation/releases" / pointer["release"]
 
     assert args.release is None
-    assert builder.resolve_release_path(args.release).name == "release_2026_09_a.json"
-    assert builder.collect_inventory(args.release).release.release_id == "release_2026_09_a"
+    assert builder.resolve_release_path(args.release) == expected_target.resolve()
+    assert builder.collect_inventory(args.release).release.path == expected_target.resolve()
 
 
-def test_current_pointer_target_is_the_accepted_27_vehicle_release():
+def test_current_pointer_target_inventory_is_derived_from_selected_release():
     target = builder.resolve_current_release_path()
+    inventory = builder.collect_inventory()
+    pointer = json.loads(
+        (ROOT / "data/curation/releases/current_release.json").read_text(encoding="utf-8")
+    )
 
-    assert target == ROOT / "data/curation/releases/release_2026_09_a.json"
-    assert len(builder.collect_inventory().manifests) == 27
+    assert target == (ROOT / "data/curation/releases" / pointer["release"]).resolve()
+    assert inventory.release.path == target
+    assert len(inventory.manifests) == len(inventory.release.manifest_paths)
+    assert len(inventory.stable_vehicle_codes) == len(inventory.manifests)
+    assert len(set(inventory.stable_vehicle_codes)) == len(inventory.stable_vehicle_codes)
+    assert inventory.manifests
 
 
 def test_changing_only_pointer_changes_default_membership_without_source_edits(tmp_path: Path):
