@@ -1,8 +1,11 @@
 # Wave 2B tranche 1 import qualification
 
-Status: **PASS — Issue #40 qualification completed**  
-Date: 2026-09-01  
-PR: #39 — Wave 2B tranche 1: add mainstream and supercar engineering manifests  
+Status: **PASS — Issue #40 qualification completed**
+
+Date: 2026-09-01
+
+PR: #39 — Wave 2B tranche 1: add mainstream and supercar engineering manifests
+
 Branch: `chatgpt/wave2b-data-expansion`
 
 ## Revision qualified
