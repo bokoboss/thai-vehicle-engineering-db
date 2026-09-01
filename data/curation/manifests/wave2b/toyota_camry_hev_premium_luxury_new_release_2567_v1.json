@@ -1,0 +1,473 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-TOYOTA-CAMRY-HEV-PREMIUM-LUXURY-NEW-RELEASE-2567-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-toyota-camry-hev-premium-luxury-new-release-2567",
+    "manufacturer_name": "Toyota",
+    "manufacturer_display_name": "Toyota",
+    "canonical_model_name": "camry",
+    "display_model_name": "Camry",
+    "market_code": "TH",
+    "generation_name": "All-New Camry Thailand October 2567 release",
+    "body_style": "Hybrid executive sedan",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "รถยนต์คัมรี ไฮบริดรุ่นใหม่ตุลาคม 2567 — HEV Premium Luxury",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "HEV Premium Luxury",
+    "powertrain": "2.5L gasoline hybrid / E-CVT",
+    "drivetrain": "FWD",
+    "body_configuration": "5-seat sedan",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Toyota Thailand aftersales documentation explicitly refers to the new Camry Hybrid released in October 2567. The current grade page and 2025 official catalogue retain HEV Premium Luxury. The Buddhist year is retained as an edition-release label and not converted into model-year semantics."
+  },
+  "sources": [
+    {
+      "source_code": "TOYOTA_TH_CAMRY_NEW_RELEASE_2567",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_AFTERSALES_APPLICABILITY",
+      "title": "Toyota TCFR Plus+ — new Camry Hybrid October 2567 applicability",
+      "url": "https://aftersales.toyota.co.th/tcfrplus/",
+      "retrieved_at": "2026-09-01T20:10:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "Hybrid battery warranty eligible vehicle generations",
+      "applicability_notes": "Explicit temporal identity: รถยนต์คัมรี ไฮบริดรุ่นใหม่ตุลาคม 2567",
+      "archival_status": "URL_ONLY",
+      "notes": "Used for non-MY edition-release identity."
+    },
+    {
+      "source_code": "TOYOTA_TH_CAMRY_CATALOG_2025",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_BROCHURE_PDF_STRUCTURED_TABLE",
+      "title": "Toyota Camry Catalogue 2025",
+      "url": "https://www.toyota.co.th/media/product/series/download/CAMRY_Catalog2025.pdf",
+      "retrieved_at": "2026-09-01T20:10:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2025,
+      "page_section_default": "SPECIFICATIONS — HEV Premium Luxury / HEV Premium / HEV Smart",
+      "applicability_notes": "Exact HEV Premium Luxury technical column/shared rows for the current generation",
+      "archival_status": "URL_ONLY",
+      "notes": "Catalogue publication year is not treated as model year."
+    },
+    {
+      "source_code": "TOYOTA_TH_CAMRY_GRADE_CURRENT_20260901",
+      "publisher": "Toyota Motor Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "WEB_GRADE_LIST",
+      "title": "Toyota Camry current grades and prices",
+      "url": "https://www.toyota.co.th/model/camry/grade",
+      "retrieved_at": "2026-09-01T20:10:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "MODEL LINE-UP",
+      "applicability_notes": "Current exact HEV Premium Luxury grade",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "name": "OEM load state unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "TOYOTA_TH_CAMRY_CATALOG_2025",
+      "raw_oem_wording": "ระยะต่ำสุดจากพื้น; load/reference state not stated",
+      "notes": "No occupant/payload state inferred."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "TOYOTA_TH_CAMRY_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "ยาว x กว้าง x สูง",
+      "raw_value": "4920 x 1840 x 1445",
+      "raw_unit": "mm",
+      "page_section_locator": "SPECIFICATIONS",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Generic overall width does not state body/mirror inclusion."
+    },
+    {
+      "observation_code": "OBS_WB",
+      "source_code": "TOYOTA_TH_CAMRY_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "ความยาวช่วงล้อ",
+      "raw_value": "2825",
+      "raw_unit": "mm",
+      "page_section_locator": "SPECIFICATIONS",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TREAD",
+      "source_code": "TOYOTA_TH_CAMRY_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "ความกว้างช่วงล้อ หน้า / หลัง",
+      "raw_value": "1580 / 1590",
+      "raw_unit": "mm",
+      "page_section_locator": "SPECIFICATIONS — HEV Premium Luxury",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "OEM tread is not AVT outer tyre-face track."
+    },
+    {
+      "observation_code": "OBS_GC",
+      "source_code": "TOYOTA_TH_CAMRY_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "ระยะต่ำสุดจากพื้น",
+      "raw_value": "135",
+      "raw_unit": "mm",
+      "page_section_locator": "SPECIFICATIONS",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Load state and limiting reference not stated."
+    },
+    {
+      "observation_code": "OBS_TURN",
+      "source_code": "TOYOTA_TH_CAMRY_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "รัศมีวงเลี้ยวแคบสุด",
+      "raw_value": "5.7",
+      "raw_unit": "m",
+      "page_section_locator": "SPECIFICATIONS",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": "Curb/wall reference and axle scope not stated."
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE",
+      "source_code": "TOYOTA_TH_CAMRY_CATALOG_2025",
+      "vehicle_identity_claim": "HEV Premium Luxury",
+      "raw_label": "ล้อ / ยาง",
+      "raw_value": "18-inch alloy / 235/45 R18",
+      "raw_unit": null,
+      "page_section_locator": "SPECIFICATIONS — HEV Premium Luxury",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-01T20:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4920,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1840,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1445,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2825,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB"
+      ]
+    },
+    {
+      "value_code": "VAL_FT",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1580,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_RT",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1590,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TREAD"
+      ]
+    },
+    {
+      "value_code": "VAL_GC",
+      "parameter_code": "clearance_value_mm",
+      "value": 135,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_LOAD_STATE_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GC"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.7,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURN"
+      ]
+    },
+    {
+      "value_code": "VAL_FW",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "18-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RW",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "18-inch alloy",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "235/45 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "235/45 R18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota publishes overall width 1,840 mm without body-excluding-mirrors semantics.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalogue"
+      ],
+      "search_notes": "Do not promote generic width.",
+      "assessed_at": "2026-09-01T20:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek explicit body-width data."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open width found in reviewed current Toyota sources.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalogue",
+        "Toyota Thailand current grade page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T20:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek body/dimension documentation."
+    },
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact HEV Premium Luxury kerb mass found in the reviewed current Toyota catalogue/grade sources.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalogue",
+        "Toyota Thailand current grade page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-01T20:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek homologation/technical certificate."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota OEM front tread is not AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalogue"
+      ],
+      "search_notes": "Do not convert OEM tread.",
+      "assessed_at": "2026-09-01T20:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek mounted geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota OEM rear tread is not AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Toyota Thailand 2025 catalogue"
+      ],
+      "search_notes": "Do not convert OEM tread.",
+      "assessed_at": "2026-09-01T20:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2B curation",
+      "next_action": "Seek mounted geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
