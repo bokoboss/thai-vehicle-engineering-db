@@ -29,7 +29,7 @@
     {
       "source_code": "LAMBORGHINI_GLOBAL_REVUELTO_BROCHURE_2024",
       "publisher": "Automobili Lamborghini S.p.A.",
-      "authority_class": "OEM_GLOBAL",
+      "authority_class": "OEM_REGIONAL_GLOBAL",
       "source_type": "OTHER",
       "source_subtype_raw": "OEM_DIGITAL_BROCHURE_PDF",
       "title": "Revuelto Digital Brochure 2024",
@@ -44,7 +44,7 @@
     {
       "source_code": "LAMBORGHINI_BANGKOK_DEALER_CURRENT_20260901",
       "publisher": "Automobili Lamborghini S.p.A.",
-      "authority_class": "OEM_GLOBAL",
+      "authority_class": "OEM_REGIONAL_GLOBAL",
       "source_type": "OTHER",
       "source_subtype_raw": "OEM_AUTHORIZED_DEALER_PAGE",
       "title": "Lamborghini Bangkok: authorized dealer and showroom",
