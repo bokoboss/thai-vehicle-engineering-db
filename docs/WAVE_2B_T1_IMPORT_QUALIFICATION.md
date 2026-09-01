@@ -200,7 +200,7 @@ No application source change was needed for the 27-to-34 catalogue growth.
 - Wave 2B create-only imports: **7/7 PASS**.
 - Focused curation/import, release-builder, Design Check, release-contract, and current-pointer tests: **85 passed**, one existing Starlette/httpx deprecation warning.
 - Full `python -m pytest`: **190 passed**, one existing Starlette/httpx deprecation warning.
-- GitHub Actions CI: **pending for the final pushed qualification commit**; no CI failure was observed locally.
+- GitHub Actions CI: **PASS** — run `33517387235` on final HEAD `a94855368c380587385b561d93c107cf5d29b2ac`.
 
 ## Limitations and release boundary
 
