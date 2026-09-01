@@ -11,8 +11,11 @@
       "model": "STARIA",
       "configuration": "Premium",
       "category": "large_passenger_van_mpv",
-      "research_status": "RESEARCH_ACTIVE",
-      "issue": 37
+      "research_status": "MANIFEST_DRAFT_READY",
+      "issue": 37,
+      "identity_time_basis_candidate": "MODEL_YEAR",
+      "identity_time_label_raw": "STARIA_MY25-BROCHURE_4pages_Nov2024 / Premium",
+      "manifest_path": "data/curation/manifests/wave2b/hyundai_staria_premium_my2025_v1.json"
     },
     {
       "target_id": "wave2b-byd-m6-extended-7seat",
@@ -63,15 +66,16 @@
       "issue": 37
     },
     {
-      "target_id": "wave2bs-porsche-911-carrera-gts-my2027",
+      "target_id": "wave2bs-porsche-911-carrera-gts-992ii-delivered-2025",
       "manufacturer": "Porsche",
       "model": "911",
-      "configuration": "Carrera GTS MY2027 Thailand",
+      "configuration": "Carrera GTS 992 II — Thailand-delivered 2025",
       "category": "supercar_sports_car",
-      "research_status": "RESEARCH_ACTIVE_HIGH_CONFIDENCE",
-      "identity_time_basis_candidate": "MODEL_YEAR",
-      "identity_time_label_raw": "2027",
-      "issue": 38
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "2025 Porsche 911 Carrera GTS (992 II), Porsche Centre Bangkok, first registration 06/2025",
+      "issue": 38,
+      "manifest_path": "data/curation/manifests/wave2b/porsche_911_carrera_gts_992ii_delivered_2025_v1.json"
     },
     {
       "target_id": "wave2bs-lamborghini-revuelto",
