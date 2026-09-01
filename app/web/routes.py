@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from math import isfinite
 from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
@@ -13,8 +14,15 @@ from app.config import PROJECT_ROOT
 from app.db.models import ReadinessResult, VehicleConfiguration
 from app.db.repositories import get_vehicle, list_issue_rows, list_vehicles
 from app.db.session import get_session
+from app.domain.design_check import (
+    DesignCheckInputs,
+    DesignCheckReport,
+    DesignCheckState,
+    VehicleDesignCheckResult,
+)
 from app.domain.readiness import evaluate_readiness
 from app.exports.exporter import csv_bytes, export_rows, xlsx_bytes
+from app.services.design_check import evaluate_configurations
 
 
 router = APIRouter()
@@ -33,6 +41,19 @@ READINESS_OPTIONS = tuple(
 )
 COMPARE_FILTER_KEYS = ("q", "manufacturer", "body_style", "powertrain", "identity_time")
 COMPARE_CANDIDATE_LIMIT = 100
+DESIGN_CHECK_RESULT_FILTERS = (
+    {"value": "", "label": "All results"},
+    {"value": "PASS", "label": "PASS only"},
+    {"value": "FAIL", "label": "FAIL only"},
+    {"value": "INDETERMINATE", "label": "INDETERMINATE only"},
+)
+DESIGN_CHECK_SORT_OPTIONS = (
+    {"value": "name", "label": "Vehicle name"},
+    {"value": "height", "label": "Smallest clear-height margin"},
+    {"value": "width", "label": "Smallest width margin"},
+    {"value": "length", "label": "Smallest length margin"},
+    {"value": "turning", "label": "Smallest turning margin"},
+)
 IDENTITY_TIME_LABELS = {
     "MODEL_YEAR": "Model year",
     "OEM_REVISION_LABEL": "OEM revision",
@@ -692,6 +713,308 @@ def _compare_candidates(
     return options, len(candidates), truncated
 
 
+def _parse_design_number(
+    params: Any,
+    errors: dict[str, str],
+    field_name: str,
+    *aliases: str,
+    default: float | None = None,
+    positive: bool = False,
+) -> float | None:
+    raw = _query_value(params, field_name, *aliases)
+    if not raw:
+        return default
+    try:
+        value = float(raw)
+    except ValueError:
+        errors[field_name] = "Enter a numeric value."
+        return None
+    if not isfinite(value):
+        errors[field_name] = "Enter a finite numeric value."
+        return None
+    if value < 0 or (positive and value <= 0):
+        errors[field_name] = "Enter a value greater than zero." if positive else "Enter a non-negative value."
+        return None
+    return value
+
+
+def _design_check_form_state(request: Request) -> tuple[dict[str, str], DesignCheckInputs | None, dict[str, str]]:
+    params = request.query_params
+    errors: dict[str, str] = {}
+    form = {
+        "available_clear_height_mm": _query_value(params, "available_clear_height_mm", "height_limit_mm"),
+        "vertical_allowance_mm": _query_value(params, "vertical_allowance_mm", "height_allowance_mm"),
+        "available_clear_width_mm": _query_value(params, "available_clear_width_mm", "width_limit_mm"),
+        "lateral_allowance_each_side_mm": _query_value(
+            params,
+            "lateral_allowance_each_side_mm",
+            "width_allowance_each_side_mm",
+        ),
+        "width_envelope": _query_value(params, "width_envelope", "required_vehicle_width_envelope"),
+        "maximum_vehicle_length_mm": _query_value(params, "maximum_vehicle_length_mm", "length_limit_mm"),
+        "maximum_turning_value_m": _query_value(
+            params,
+            "maximum_turning_value_m",
+            "turning_limit_m",
+            "turning_limit",
+        ),
+        "turning_input_shape": _query_value(params, "turning_input_shape", "turning_shape"),
+        "turning_reference": _query_value(params, "turning_reference"),
+    }
+
+    height_limit = _parse_design_number(
+        params,
+        errors,
+        "available_clear_height_mm",
+        "height_limit_mm",
+        positive=True,
+    )
+    vertical_allowance = _parse_design_number(
+        params,
+        errors,
+        "vertical_allowance_mm",
+        "height_allowance_mm",
+        default=0,
+    )
+    width_limit = _parse_design_number(
+        params,
+        errors,
+        "available_clear_width_mm",
+        "width_limit_mm",
+        positive=True,
+    )
+    width_allowance = _parse_design_number(
+        params,
+        errors,
+        "lateral_allowance_each_side_mm",
+        "width_allowance_each_side_mm",
+    )
+    length_limit = _parse_design_number(
+        params,
+        errors,
+        "maximum_vehicle_length_mm",
+        "length_limit_mm",
+        positive=True,
+    )
+    turning_limit = _parse_design_number(
+        params,
+        errors,
+        "maximum_turning_value_m",
+        "turning_limit_m",
+        "turning_limit",
+        positive=True,
+    )
+
+    width_envelope = form["width_envelope"] or None
+    if width_limit is not None:
+        if not width_envelope:
+            errors["width_envelope"] = "Choose the vehicle width envelope for this active width check."
+        elif width_envelope not in {
+            "BODY_EXCLUDING_MIRRORS",
+            "INCLUDING_MIRRORS_OPEN",
+            "INCLUDING_MIRRORS_FOLDED",
+            "OEM_UNSPECIFIED",
+        }:
+            errors["width_envelope"] = "Choose a supported width envelope."
+        if not _query_value(params, "lateral_allowance_each_side_mm", "width_allowance_each_side_mm"):
+            errors["lateral_allowance_each_side_mm"] = "Enter the required lateral allowance per side, including 0 if none."
+
+    turning_shape = form["turning_input_shape"] or None
+    turning_reference = form["turning_reference"] or None
+    if turning_limit is not None:
+        if turning_shape not in {"RADIUS", "DIAMETER"}:
+            errors["turning_input_shape"] = "Choose Radius or Diameter for the active turning check."
+        if turning_reference not in {"CURB_TO_CURB", "WALL_TO_WALL"}:
+            errors["turning_reference"] = "Choose Curb-to-curb or Wall-to-wall for the active turning check."
+
+    if errors:
+        return form, None, errors
+    try:
+        inputs = DesignCheckInputs(
+            available_clear_height_mm=height_limit,
+            vertical_allowance_mm=vertical_allowance or 0,
+            available_clear_width_mm=width_limit,
+            lateral_allowance_each_side_mm=width_allowance,
+            width_envelope=width_envelope,
+            maximum_vehicle_length_mm=length_limit,
+            maximum_turning_value_m=turning_limit,
+            turning_input_shape=turning_shape,
+            turning_reference=turning_reference,
+        )
+    except ValueError as exc:
+        errors["form"] = str(exc)
+        return form, None, errors
+    return form, inputs, errors
+
+
+def _design_check_filters(request: Request) -> tuple[dict[str, str], str, str]:
+    params = request.query_params
+    filters = {
+        "q": _query_value(params, "q", "search"),
+        "manufacturer": _query_value(params, "manufacturer"),
+        "body_style": _query_value(params, "body_style"),
+        "powertrain": _query_value(params, "powertrain"),
+        "identity_time": _query_value(params, "identity_time", "identity_basis"),
+    }
+    result_filter = _query_value(params, "result", "result_filter")
+    if result_filter not in {option["value"] for option in DESIGN_CHECK_RESULT_FILTERS}:
+        result_filter = ""
+    sort = _query_value(params, "sort") or "name"
+    if sort not in {option["value"] for option in DESIGN_CHECK_SORT_OPTIONS}:
+        sort = "name"
+    return filters, result_filter, sort
+
+
+def _design_catalog_records(configurations: list[VehicleConfiguration]) -> list[dict[str, Any]]:
+    return [
+        {
+            "manufacturer_code": config.vehicle_model.manufacturer.canonical_name,
+            "manufacturer": config.vehicle_model.manufacturer.display_name,
+            "body_style": config.body_style,
+            "powertrain": config.powertrain,
+            "identity_time_basis": config.identity_time_basis,
+        }
+        for config in configurations
+    ]
+
+
+def _design_sort_key(result: VehicleDesignCheckResult, sort: str) -> tuple[Any, ...]:
+    if sort == "name":
+        return (
+            result.vehicle.manufacturer.lower(),
+            result.vehicle.commercial_model.lower(),
+            result.vehicle.variant.lower(),
+            result.vehicle.stable_vehicle_code,
+        )
+    constraint = next((item for item in result.constraint_results if item.code == sort), None)
+    if constraint is None or constraint.margin is None:
+        return (1, 0, result.vehicle.display_label.lower(), result.vehicle.stable_vehicle_code)
+    return (0, constraint.margin, result.vehicle.display_label.lower(), result.vehicle.stable_vehicle_code)
+
+
+def _design_filter_results(
+    results: list[VehicleDesignCheckResult],
+    result_filter: str,
+    sort: str,
+) -> list[VehicleDesignCheckResult]:
+    filtered = [
+        result
+        for result in results
+        if not result_filter
+        or (result.overall_state is not None and result.overall_state.value == result_filter)
+    ]
+    return sorted(filtered, key=lambda result: _design_sort_key(result, sort))
+
+
+def _signed_display(value: float | None, unit: str | None) -> str:
+    if value is None:
+        return "—"
+    formatted = _format_display_value(value)
+    if value > 0:
+        formatted = f"+{formatted}"
+    return f"{formatted} {unit}" if unit else formatted
+
+
+def _design_constraint_view(constraint: Any) -> dict[str, Any]:
+    state = constraint.state.value if isinstance(constraint.state, DesignCheckState) else str(constraint.state)
+    return {
+        "code": constraint.code,
+        "label": constraint.label,
+        "state": state,
+        "state_label": state,
+        "state_tone": state.lower(),
+        "parameter_code": constraint.parameter_code,
+        "requested_limit": (
+            f"{_format_display_value(constraint.requested_limit)} {constraint.requested_unit}"
+        ),
+        "allowance": f"{_format_display_value(constraint.allowance)} {constraint.allowance_unit}",
+        "effective_limit": (
+            f"{_format_display_value(constraint.effective_limit)} {constraint.effective_unit}"
+        ),
+        "vehicle_value": (
+            f"{_format_display_value(constraint.vehicle_value)} {constraint.vehicle_unit}"
+            if constraint.vehicle_value is not None
+            else "Unknown"
+        ),
+        "signed_margin": _signed_display(constraint.margin, constraint.margin_unit),
+        "semantic_cue": constraint.semantic_cue,
+        "scope_text": constraint.scope_text,
+        "reason": constraint.reason,
+        "detail_url": constraint.detail_url,
+        "value_id": constraint.value_id,
+        "evidence_state": constraint.evidence_state,
+        "active": True,
+        "utilization": constraint.utilization,
+    }
+
+
+def _design_result_view(result: VehicleDesignCheckResult) -> dict[str, Any]:
+    overall = result.overall_state.value if result.overall_state is not None else None
+    constraints = {item.code: _design_constraint_view(item) for item in result.constraint_results}
+
+    def summary(item: Any | None) -> dict[str, str] | None:
+        if item is None:
+            return None
+        return {
+            "label": item.label,
+            "margin": _signed_display(item.margin, item.margin_unit),
+            "vehicle_value": (
+                f"{_format_display_value(item.vehicle_value)} {item.vehicle_unit}"
+                if item.vehicle_value is not None
+                else "Unknown"
+            ),
+        }
+
+    return {
+        "vehicle": {
+            "code": result.vehicle.stable_vehicle_code,
+            "label": result.vehicle.display_label,
+            "manufacturer": result.vehicle.manufacturer,
+            "commercial_model": result.vehicle.commercial_model,
+            "variant": result.vehicle.variant,
+            "generation": result.vehicle.generation,
+            "identity_time_label": result.vehicle.identity_time_label,
+            "body_style": result.vehicle.body_style,
+            "detail_url": result.vehicle.detail_url,
+        },
+        "overall_state": overall,
+        "overall_state_label": overall or "No verdict",
+        "overall_state_tone": overall.lower() if overall else "muted",
+        "overall_reason": result.overall_reason,
+        "constraints": constraints,
+        "closest_active_limit": summary(result.closest_active_limit),
+        "largest_exceedance": summary(result.largest_exceedance),
+        "failed_constraints": [item.label for item in result.failed_constraints],
+        "decision_blockers": [
+            {"label": item.label, "reason": item.reason} for item in result.decision_blockers
+        ],
+    }
+
+
+def _design_report_view(
+    report: DesignCheckReport | None,
+    *,
+    candidate_count: int,
+    shown_count: int,
+    result_filter: str,
+    sort: str,
+) -> dict[str, Any] | None:
+    if report is None:
+        return None
+    counts = report.result_counts
+    return {
+        "method_id": report.method_id,
+        "has_active_constraints": report.has_active_constraints,
+        "active_constraints": list(report.inputs.active_constraint_codes),
+        "counts": counts,
+        "candidate_count": candidate_count,
+        "shown_count": shown_count,
+        "result_filter": result_filter,
+        "sort": sort,
+        "vehicles": [_design_result_view(result) for result in report.vehicles],
+    }
+
+
 def _assessment_view(assessment: Any, fitments: dict[str, Any]) -> dict[str, Any]:
     fitment = fitments.get(assessment.vehicle_fitment_id) if assessment.vehicle_fitment_id else None
     scope_text = fitment.fitment_code if fitment else "Configuration-wide"
@@ -1140,6 +1463,58 @@ def vehicle_page(stable_vehicle_code: str, request: Request, session: Session = 
     if config is None:
         raise HTTPException(status_code=404, detail="vehicle configuration not found")
     return templates.TemplateResponse(request=request, name="vehicle_detail.html", context={"vehicle": _detail(session, config)})
+
+
+@router.get("/design-check", response_class=HTMLResponse)
+def design_check_page(request: Request, session: Session = Depends(get_session)) -> HTMLResponse:
+    filters, result_filter, sort = _design_check_filters(request)
+    form, inputs, errors = _design_check_form_state(request)
+    catalog = list_vehicles(session)
+    candidate_configs = list_vehicles(
+        session,
+        search=filters["q"] or None,
+        manufacturer=filters["manufacturer"] or None,
+        body_style=filters["body_style"] or None,
+        powertrain=filters["powertrain"] or None,
+        identity_time=filters["identity_time"] or None,
+    )
+
+    report: DesignCheckReport | None = None
+    shown_results: list[VehicleDesignCheckResult] = []
+    if inputs is not None and inputs.active_constraint_codes:
+        detailed_configs = [
+            detailed
+            for config in candidate_configs
+            if (detailed := get_vehicle(session, config.stable_vehicle_code)) is not None
+        ]
+        report = evaluate_configurations(detailed_configs, inputs)
+        shown_results = _design_filter_results(list(report.vehicles), result_filter, sort)
+
+    report_view = _design_report_view(
+        report,
+        candidate_count=len(candidate_configs),
+        shown_count=len(shown_results),
+        result_filter=result_filter,
+        sort=sort,
+    )
+    if report_view is not None:
+        report_view["vehicles"] = [_design_result_view(result) for result in shown_results]
+    return templates.TemplateResponse(
+        request=request,
+        name="design_check.html",
+        context={
+            "form": form,
+            "errors": errors,
+            "filters": filters,
+            "filter_options": _catalog_filters(_design_catalog_records(catalog)),
+            "result_filter_options": DESIGN_CHECK_RESULT_FILTERS,
+            "sort_options": DESIGN_CHECK_SORT_OPTIONS,
+            "result_filter": result_filter,
+            "sort": sort,
+            "candidate_count": len(candidate_configs),
+            "report": report_view,
+        },
+    )
 
 
 @router.get("/issues", response_class=HTMLResponse)
