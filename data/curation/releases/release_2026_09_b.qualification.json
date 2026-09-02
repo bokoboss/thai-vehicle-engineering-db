@@ -1,0 +1,369 @@
+{
+  "build_utc": "2026-09-02T02:26:41+00:00",
+  "database_counts": {
+    "assessments": 116,
+    "axles": 0,
+    "conflict_decisions": 0,
+    "fitments": 14,
+    "geometry_assets": 0,
+    "loads": 32,
+    "manufacturers": 17,
+    "models": 34,
+    "observations": 317,
+    "parameters": 48,
+    "readiness_results": 192,
+    "sources": 91,
+    "steering_relations": 0,
+    "values": 405,
+    "vehicles": 34
+  },
+  "expected_manifest_counts": {
+    "assessments": 116,
+    "axles": 0,
+    "conflict_decisions": 0,
+    "conflicting_values": 2,
+    "fitments": 14,
+    "geometry_assets": 0,
+    "loads": 32,
+    "observations": 317,
+    "source_entries": 92,
+    "sources": 91,
+    "steering_relations": 0,
+    "values": 405,
+    "vehicles": 34
+  },
+  "exports": {
+    "conflict_state_present": true,
+    "credentials_exposed": false,
+    "csv_bytes": 257717,
+    "csv_path": "vehicle_engineering_curated.release_2026_09_b.promoted.csv",
+    "csv_rows": 521,
+    "fitment_scope_present": true,
+    "headers_match": true,
+    "load_scope_present": true,
+    "provenance_present": true,
+    "vehicles": 34,
+    "xlsx_bytes": 96258,
+    "xlsx_path": "vehicle_engineering_curated.release_2026_09_b.promoted.xlsx"
+  },
+  "manifest_count": 34,
+  "previous_accepted_database": {
+    "bytes": 880640,
+    "path": "vehicle_engineering_curated.db",
+    "sha256": "cfd5f71b5790ccee6ab76b530c1e2cd09a2721a27001e0e895c20a4b52fa28b0",
+    "vehicles": 27
+  },
+  "promotion": {
+    "database": "vehicle_engineering_curated.db",
+    "previous_database": "vehicle_engineering_curated.db.previous",
+    "requested": true,
+    "result": "PROMOTED"
+  },
+  "qa_result": "PASS",
+  "qualification_schema_version": "1.0",
+  "readiness_status": {
+    "AVT_READY:NOT_READY": 48,
+    "DIMENSION_READY:NOT_READY": 11,
+    "DIMENSION_READY:READY": 37,
+    "IDENTITY_RESOLVED:READY": 48,
+    "RAMP_SCREENING_READY:NOT_READY": 48
+  },
+  "registry_only": {
+    "parameters": 48,
+    "vehicles": 0
+  },
+  "release_date": "2026-09-01",
+  "release_definition": "data\\curation\\releases\\release_2026_09_b.json",
+  "release_id": "release_2026_09_b",
+  "release_status": "ACCEPTED",
+  "repository_sha": "ef12aa99ed7066b1f1a8f8f88e959a8789d85228",
+  "representative_proofs": {
+    "BYD ATTO 3": {
+      "clearance_load_basis": [
+        "OEM_LADEN",
+        "UNLADEN"
+      ],
+      "clearance_mm": [
+        150,
+        175
+      ]
+    },
+    "BYD M6": {
+      "avt_outer_face_track_values_present": false,
+      "clearance_mm_by_load": {
+        "OEM maximum loaded": 140,
+        "OEM unladen": 170
+      },
+      "oem_track_definition": "OEM_UNSPECIFIED",
+      "turning_axle_scope": "OEM_UNSPECIFIED",
+      "turning_radius_m": 8.5,
+      "turning_radius_or_diameter": "RADIUS",
+      "turning_reference": "OEM_UNSPECIFIED",
+      "turning_value_preserved_without_halving": true,
+      "status": "PASS"
+    },
+    "Honda CR-V": {
+      "height_unknown": true,
+      "height_values": 0
+    },
+    "Honda HR-V e:HEV RS": {
+      "identity_time_basis": "EDITION_RELEASE",
+      "kerb_mass_normalized": false,
+      "raw_weight_observation": {
+        "raw_label": "น้ำหนักรถ (กิโลกรัม) / Weight (kg)",
+        "raw_unit": "kg",
+        "raw_value": "1404"
+      },
+      "status": "PASS",
+      "steering_wheel_lock_to_lock_turns": 2.44,
+      "track_definition": "OEM_UNSPECIFIED",
+      "turning_radius_m": 5.5,
+      "turning_reference": "OEM_UNSPECIFIED"
+    },
+    "Lexus LM": {
+      "turning_radius_m": 5.9,
+      "turning_reference": "WHEEL_PATH_OTHER"
+    },
+    "Lamborghini Revuelto": {
+      "body_width_mm": 2033,
+      "clearance_value_present": false,
+      "dry_weight_raw_kg": 1772,
+      "global_structural_geometry_applicability": "SAME_GEOMETRY_CONFIRMED",
+      "kerb_mass_normalized": false,
+      "mirrors_open_width_mm": 2266,
+      "oem_track_definition": "OEM_UNSPECIFIED",
+      "ramp_angle_values_present": false,
+      "standard_wheels": [
+        "20 x 9.5J",
+        "21 x 12J"
+      ],
+      "status": "PASS",
+      "turning_value_present": false
+    },
+    "MG IM6": {
+      "four_wheel_steering_observation": "Intelligent Four-wheel Steering System (with Crab Mode)",
+      "steering_relations": 0
+    },
+    "Mitsubishi Triton": {
+      "identity_time_basis": "EDITION_RELEASE",
+      "model_year_from": null,
+      "turning_radius_m": 6.2,
+      "turning_reference": "OEM_UNSPECIFIED"
+    },
+    "Porsche 911 Carrera GTS": {
+      "body_width_mm": 1852,
+      "clearance_value_present": false,
+      "front_lift_raw_mm": 40,
+      "gross_vehicle_mass_kg": 2045,
+      "identity_time_basis": "EDITION_RELEASE",
+      "kerb_mass_kg": 1604,
+      "mirrors_open_width_mm": 2033,
+      "normalized_turning_radius_present": false,
+      "raw_turning_text": "10.9 m turning circle diameter",
+      "rear_steering_relation_count": 0,
+      "ramp_angle_values_present": false,
+      "status": "PASS"
+    },
+    "Toyota Camry HEV Premium Luxury": {
+      "clearance_mm": 135,
+      "identity_time_basis": "EDITION_RELEASE",
+      "identity_time_label_raw": "รถยนต์คัมรี ไฮบริดรุ่นใหม่ตุลาคม 2567 — HEV Premium Luxury",
+      "model_year_normalized": false,
+      "oem_track_definition": "OEM_UNSPECIFIED",
+      "status": "PASS",
+      "turning_radius_m": 5.7,
+      "turning_reference": "OEM_UNSPECIFIED"
+    },
+    "Toyota Yaris Cross HEV Premium Luxury": {
+      "clearance_mm": 210,
+      "identity_time_basis": "EDITION_RELEASE",
+      "model_year_normalized": false,
+      "oem_track_definition": "OEM_UNSPECIFIED",
+      "status": "PASS",
+      "turning_radius_m": 5.2,
+      "turning_reference": "OEM_UNSPECIFIED"
+    },
+    "Hyundai STARIA Premium MY25": {
+      "clearance_load_reference_semantics_unresolved": true,
+      "clearance_mm": 186,
+      "front_rear_tread_mm": [
+        1721,
+        1732
+      ],
+      "identity_time_basis": "MODEL_YEAR",
+      "model_year_from": 2025,
+      "oem_track_definition": "OEM_UNSPECIFIED",
+      "reported_width_mm": 1997,
+      "reported_width_definition": "OEM_UNSPECIFIED",
+      "status": "PASS",
+      "turning_radius_m": 5.97,
+      "turning_reference": "OEM_UNSPECIFIED"
+    },
+    "Nissan Serena": {
+      "approximate_weight_raw": "1797",
+      "kerb_mass_values": 0
+    },
+    "Volvo EX30": {
+      "conflict_decisions": 0,
+      "fitment_codes": [
+        "WHEEL19"
+      ],
+      "turning_radius_normalized": false,
+      "turning_text_values": [
+        "10.7 m",
+        "11 m"
+      ]
+    },
+    "th-honda-accord-ehev-rs-release-2025-08-22": {
+      "authority_B_values": 8,
+      "source_authority": "REPUTABLE_SECONDARY"
+    },
+    "th-honda-civic-ehev-rs-release-2026-07-23": {
+      "authority_B_values": 8,
+      "source_authority": "REPUTABLE_SECONDARY"
+    },
+    "th-tesla-model3-premium-long-range-rwd-2024plus": {
+      "normalized_radius": false,
+      "raw_turning_text": [
+        "11.7 m curb-to-curb turning circle"
+      ]
+    },
+    "th-tesla-modely-premium-lr-rwd-19-2025plus": {
+      "normalized_radius": false,
+      "raw_turning_text": [
+        "12.13 m curb-to-curb turning circle"
+      ]
+    }
+  },
+  "source_reuse": {
+    "manifest_entries": 92,
+    "unique_source_codes": 91
+  },
+  "stable_vehicle_codes": [
+    "th-byd-atto3-my24-extended-local",
+    "th-mitsubishi-triton-ultra-4wd-at-release-2023",
+    "th-volvo-ex30-ultra-smer-my2026-19",
+    "th-bmw-520d-m-sport-pro-g60-effective-2025-03-24",
+    "th-bmw-740d-m-sport-g70-current-2026-03",
+    "th-byd-dolphin-extended-local-saleperiod-2026-03",
+    "th-byd-seal-my24-awd-performance",
+    "th-ford-ranger-wildtrak-20-biturbo-4x4-nextgen",
+    "th-honda-accord-ehev-rs-release-2025-08-22",
+    "th-honda-civic-ehev-rs-release-2026-07-23",
+    "th-hyundai-ioniq6-exclusive-revision-2024",
+    "th-isuzu-mux-22-ultimate-4wd-release-2026",
+    "th-isuzu-vcross-22-z-4door-at-4x4-release-2026",
+    "th-mazda-mx5-35ae-rf-at-release-2025",
+    "th-mg-im6-long-range-release-2025-08-22",
+    "th-nissan-navara-pro4x-7at-upgrade-2024",
+    "th-tesla-model3-premium-long-range-rwd-2024plus",
+    "th-tesla-modely-premium-lr-rwd-19-2025plus",
+    "th-toyota-bz4x-fwd-revision-2568",
+    "th-toyota-commuter-28-at-highroof-revision-2568",
+    "th-toyota-fortuner-leader-v-4wd-revision-2568",
+    "th-honda-crv-ehev-rs4wd-minorchange-release-2025-11-28",
+    "th-kia-carnival-hev-7seat-luxury-release-2025-10-03",
+    "th-lexus-lm350h-executive-7seat-allnew-2023",
+    "th-nissan-serena-epower-highway-star-release-2025-03-24",
+    "th-toyota-corolla-cross-hev-premium-luxury-revision-2569",
+    "th-toyota-innova-zenix-hev-premium-revision-2568",
+    "th-byd-m6-extended-7seat-release-2024-11-28",
+    "th-hyundai-staria-premium-my2025",
+    "th-toyota-yaris-cross-hev-premium-luxury-catalog-2026",
+    "th-honda-hrv-ehev-rs-new-release-2024-11-28",
+    "th-toyota-camry-hev-premium-luxury-new-release-2567",
+    "th-porsche-911-carrera-gts-992ii-delivered-2025",
+    "th-lamborghini-revuelto-launch-2023-07-25"
+  ],
+  "stable_vehicle_digest_sha256": "5f374d05e282e71c335250e487014bbf9eb6d514ba685177c4b486b3842cf09a",
+  "staging_database": "vehicle_engineering_curated.release_2026_09_b.promote.staging.db",
+  "wave2b_semantic_proofs": {
+    "result": "PASS",
+    "BYD M6": {
+      "identity_time_basis": "EDITION_RELEASE",
+      "turning_radius_m": 8.5,
+      "turning_radius_or_diameter": "RADIUS",
+      "turning_reference": "OEM_UNSPECIFIED",
+      "turning_axle_scope": "OEM_UNSPECIFIED",
+      "clearances_mm_by_load": {
+        "UNLADEN": 170,
+        "OEM_LADEN": 140
+      },
+      "oem_track_non_avt": true,
+      "no_diameter_halving": true
+    },
+    "Hyundai STARIA": {
+      "identity_time_basis": "MODEL_YEAR",
+      "model_year_from": 2025,
+      "width_envelope_definition": "OEM_UNSPECIFIED",
+      "tread_mm": [
+        1721,
+        1732
+      ],
+      "tread_applicability": "SAME_GEOMETRY_CONFIRMED",
+      "tread_non_avt": true,
+      "clearance_mm": 186,
+      "clearance_load_scope": "OEM load state unspecified",
+      "turning_radius_m": 5.97,
+      "turning_reference": "OEM_UNSPECIFIED"
+    },
+    "Toyota Yaris Cross": {
+      "identity_time_basis": "EDITION_RELEASE",
+      "model_year_from": null,
+      "catalogue_year_preserved_as_release": true,
+      "clearance_mm": 210,
+      "clearance_type": "OEM_MINIMUM_UNSPECIFIED",
+      "turning_radius_m": 5.2,
+      "turning_reference": "OEM_UNSPECIFIED",
+      "oem_track_non_avt": true
+    },
+    "Honda HR-V e:HEV RS": {
+      "identity_time_basis": "EDITION_RELEASE",
+      "raw_weight_observation_kg": "1404",
+      "kerb_mass_values": 0,
+      "steering_wheel_lock_to_lock_turns": 2.44,
+      "turning_radius_m": 5.5,
+      "turning_reference": "OEM_UNSPECIFIED",
+      "oem_track_non_avt": true
+    },
+    "Toyota Camry": {
+      "identity_time_basis": "EDITION_RELEASE",
+      "identity_time_label_contains": "2567",
+      "model_year_from": null,
+      "clearance_mm": 135,
+      "turning_radius_m": 5.7,
+      "turning_reference": "OEM_UNSPECIFIED",
+      "oem_track_non_avt": true
+    },
+    "Porsche 911 Carrera GTS": {
+      "identity_time_basis": "EDITION_RELEASE",
+      "body_width_mm": 1852,
+      "mirrors_open_width_mm": 2033,
+      "raw_turning_text": "10.9 m turning circle diameter",
+      "normalized_turning_radius_present": false,
+      "kerb_mass_kg": 1604,
+      "gross_vehicle_mass_kg": 2045,
+      "front_lift_raw": "Optionally available hydraulic lift system raises the chassis at the front by approximately 40 mm; usable up to approximately 35 km/h",
+      "clearance_value_present": false,
+      "ramp_angle_values_present": false,
+      "rear_axle_steering_observation_present": true,
+      "axle_rows": 0,
+      "steering_relation_rows": 0
+    },
+    "Lamborghini Revuelto": {
+      "identity_time_basis": "EDITION_RELEASE",
+      "body_width_mm": 2033,
+      "mirrors_open_width_mm": 2266,
+      "geometry_applicability": "SAME_GEOMETRY_CONFIRMED",
+      "raw_dry_weight_kg": "1772",
+      "kerb_mass_values": 0,
+      "standard_wheel_rims": {
+        "front": "20 x 9.5J",
+        "rear": "21 x 12J"
+      },
+      "ground_clearance_values": 0,
+      "turning_values": 0,
+      "oem_track_non_avt": true
+    }
+  }
+}
