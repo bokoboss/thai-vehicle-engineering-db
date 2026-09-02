@@ -1,0 +1,478 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-LAMBORGHINI-URUS-SE-TH-LAUNCH-20240522",
+  "vehicle": {
+    "stable_vehicle_code": "th-lamborghini-urus-se-launch-2024-05-22",
+    "manufacturer_name": "Lamborghini",
+    "manufacturer_display_name": "Lamborghini",
+    "canonical_model_name": "urus-se",
+    "display_model_name": "Urus SE",
+    "market_code": "TH",
+    "generation_name": "Urus SE Thailand launch",
+    "body_style": "Plug-in hybrid high-performance SUV",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "Lamborghini Urus SE Thailand debut — Lamborghini Bangkok / Renazzo Motor — 22 May 2024",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Urus SE",
+    "powertrain": "4.0L V8 twin-turbo plug-in hybrid / 8-speed automatic",
+    "drivetrain": "AWD",
+    "body_configuration": "5-door 5-seat SUV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Lamborghini Bangkok / Renazzo Motor launched the Urus SE in Thailand in May 2024. Thailand launch specifications match Lamborghini's official Urus SE brochure for length, body width, height, wheelbase and standard 21-inch wheel/tyre package. Global OEM structural geometry is therefore normalized as SAME_GEOMETRY_CONFIRMED. Air-suspension height adjustment and rear-wheel steering are retained as raw/model observations only; no ground clearance or steering relation is inferred."
+  },
+  "sources": [
+    {
+      "source_code": "LAMBORGHINI_GLOBAL_URUS_SE_BROCHURE",
+      "publisher": "Automobili Lamborghini S.p.A.",
+      "authority_class": "OEM_REGIONAL_GLOBAL",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_DIGITAL_BROCHURE_PDF",
+      "title": "Lamborghini Urus SE Technical Specifications",
+      "url": "https://www.lamborghini.com/original/DAM/lamborghini/facelift_2019/model_detail/gateway_urus/se/2025/brochure/05_22/Lamborghini%20URUS_PHEV_2024_WCAG_EN.pdf",
+      "retrieved_at": "2026-09-02T10:45:00+07:00",
+      "publication_year": 2024,
+      "page_section_default": "Technical Specifications — Wheels / Dimensions / Suspension",
+      "applicability_notes": "Global OEM structural geometry corroborated by exact Thailand Urus SE launch specifications",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "HEADLIGHT_TH_URUS_SE_LAUNCH_20240516",
+      "publisher": "HeadLight Magazine",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "source_type": "OTHER",
+      "source_subtype_raw": "THAILAND_LAUNCH_SPEC_REPORT",
+      "title": "Official price Lamborghini Urus SE Thailand",
+      "url": "https://www.headlightmag.com/2024-05-16-official-price-lamborghini-urus-se-phev/",
+      "retrieved_at": "2026-09-02T10:45:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2024,
+      "page_section_default": "Thailand launch / dimensions",
+      "applicability_notes": "Exact Thailand Urus SE launch dimensions 5123 x 2022 x 1638, wheelbase 3003",
+      "archival_status": "URL_ONLY",
+      "notes": "Used to corroborate global OEM structural geometry."
+    },
+    {
+      "source_code": "AUTOLIFE_TH_URUS_SE_LAUNCH_20240516",
+      "publisher": "AutoLifeThailand",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "source_type": "OTHER",
+      "source_subtype_raw": "THAILAND_LAUNCH_SPEC_REPORT",
+      "title": "Official price Lamborghini Urus SE Thailand — Thai wheel/tyre specification",
+      "url": "https://autolifethailand.tv/official-price-lamborghini-urus-se-plug-in-hybrid/",
+      "retrieved_at": "2026-09-02T10:45:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2024,
+      "page_section_default": "Thailand-version specification",
+      "applicability_notes": "Exact Thailand standard 21-inch wheel/tyre package and Renazzo/Lamborghini Bangkok importer identity",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_GEOMETRY_OEM",
+      "source_code": "LAMBORGHINI_GLOBAL_URUS_SE_BROCHURE",
+      "vehicle_identity_claim": "Urus SE same structural geometry as Thailand launch",
+      "raw_label": "Wheelbase / Length / Front-Rear overhang / Width excluding-including mirrors / Height",
+      "raw_value": "3003 / 5123 / 1067 / 1053 / 2022 / 2181 / 1638",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Specifications — Dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TRACK_OEM",
+      "source_code": "LAMBORGHINI_GLOBAL_URUS_SE_BROCHURE",
+      "vehicle_identity_claim": "Urus SE same structural geometry as Thailand launch",
+      "raw_label": "Track Front / Rear",
+      "raw_value": "1695 / 1710",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical Specifications — Dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "OEM track is not AVT outer tyre-face track."
+    },
+    {
+      "observation_code": "OBS_WHEELS_OEM",
+      "source_code": "LAMBORGHINI_GLOBAL_URUS_SE_BROCHURE",
+      "vehicle_identity_claim": "Urus SE standard fitment",
+      "raw_label": "Standard rims / tires",
+      "raw_value": "Front 9.5Jx21 ET28 285/45 ZR21; Rear 10.5Jx21 ET18 315/40 ZR21",
+      "raw_unit": null,
+      "page_section_locator": "Technical Specifications — Wheels",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TH_CORROBORATION",
+      "source_code": "HEADLIGHT_TH_URUS_SE_LAUNCH_20240516",
+      "vehicle_identity_claim": "Thailand Urus SE launch",
+      "raw_label": "Thailand dimensions",
+      "raw_value": "5123 x 2022 x 1638; wheelbase 3003",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimension",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "Thai source width is generic; matches OEM width excluding mirrors."
+    },
+    {
+      "observation_code": "OBS_TH_WHEELS",
+      "source_code": "AUTOLIFE_TH_URUS_SE_LAUNCH_20240516",
+      "vehicle_identity_claim": "Thailand Urus SE version",
+      "raw_label": "Thailand-version front/rear wheels and tyres",
+      "raw_value": "21-inch 9.5J / 21-inch 10.5J; 285/45 ZR21 / 315/40 ZR21",
+      "raw_unit": null,
+      "page_section_locator": "Specification Thailand version",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "Matches Lamborghini OEM standard fitment."
+    },
+    {
+      "observation_code": "OBS_HEIGHT_STEER",
+      "source_code": "LAMBORGHINI_GLOBAL_URUS_SE_BROCHURE",
+      "vehicle_identity_claim": "Urus SE",
+      "raw_label": "Suspension",
+      "raw_value": "Air springs with vehicle height adjustment; rear suspension includes rear-wheel steering / two steering axles",
+      "raw_unit": null,
+      "page_section_locator": "Technical Specifications — Suspensions",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "No ground-clearance value, lift amount or steering angle/relationship is inferred."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5123,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_BODY_WIDTH",
+      "parameter_code": "overall_width_body_mm",
+      "value": 2022,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_MIRROR_WIDTH",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 2181,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1638,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3003,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_FOH",
+      "parameter_code": "front_overhang_mm",
+      "value": 1067,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_ROH",
+      "parameter_code": "rear_overhang_mm",
+      "value": 1053,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_FT",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1695,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_RT",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1710,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_FW",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "9.5J x 21 ET28",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELS_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_RW",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "10.5J x 21 ET18",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELS_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "285/45 ZR21",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELS_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "315/40 ZR21",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEELS_OEM"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact Thailand/OEM kerb-mass value was established in the reviewed accepted source set.",
+      "source_families_searched": [
+        "Lamborghini official Urus SE brochure",
+        "Thailand launch specifications"
+      ],
+      "search_notes": "Do not use market-specific secondary weights without exact semantic/applicability proof.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek homologation or official market technical data explicitly labelled kerb/curb."
+    },
+    {
+      "parameter_code": "clearance_value_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "OEM documents vehicle-height adjustment but no exact ground-clearance value/reference was located.",
+      "source_families_searched": [
+        "Lamborghini official Urus SE brochure",
+        "Thailand launch sources"
+      ],
+      "search_notes": "Air-suspension height adjustment is not ground clearance.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek homologation/service lower-envelope data."
+    },
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM turning radius/circle was located in reviewed Urus SE sources.",
+      "source_families_searched": [
+        "Lamborghini official Urus SE brochure/model page",
+        "Thailand launch sources"
+      ],
+      "search_notes": "Rear-wheel steering presence is not a turning value.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek homologation/technical documentation."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM front track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Lamborghini official brochure"
+      ],
+      "search_notes": "Do not convert OEM track.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek mounted wheel geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "OEM rear track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Lamborghini official brochure"
+      ],
+      "search_notes": "Do not convert OEM track.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek mounted wheel geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
