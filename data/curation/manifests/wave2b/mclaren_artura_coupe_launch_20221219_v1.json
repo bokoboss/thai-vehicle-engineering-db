@@ -1,0 +1,312 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-MCLAREN-ARTURA-COUPE-TH-LAUNCH-20221219",
+  "vehicle": {
+    "stable_vehicle_code": "th-mclaren-artura-coupe-launch-2022-12-19",
+    "manufacturer_name": "McLaren",
+    "manufacturer_display_name": "McLaren",
+    "canonical_model_name": "artura",
+    "display_model_name": "Artura",
+    "market_code": "TH",
+    "generation_name": "Artura Thailand launch",
+    "body_style": "Plug-in hybrid supercar coupe",
+    "chassis_platform_code": "MCLA",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "McLaren Artura official Thailand price / CBU launch — 19 December 2022 — Niche Cars Group",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Artura Coupe",
+    "powertrain": "3.0L V6 twin-turbo plug-in hybrid / 8-speed SSG",
+    "drivetrain": "RWD",
+    "body_configuration": "2-seat supercar coupé",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Thailand launch coverage identifies the Artura Coupe as a CBU import by Niche Cars Group on 19 December 2022 and publishes exact local dimensions. McLaren's official Artura page independently publishes DIN kerb mass 1,498 kg. The local 1,913 mm width is retained as OEM/market-reported width only; separate McLaren Qualified listings have also published 2,080 mm 'Vehicle Width', so body/mirror envelope semantics remain unresolved."
+  },
+  "sources": [
+    {
+      "source_code": "AUTOLIFE_TH_MCLAREN_ARTURA_LAUNCH_20221219",
+      "publisher": "AutoLifeThailand",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "source_type": "OTHER",
+      "source_subtype_raw": "THAILAND_OFFICIAL_PRICE_LAUNCH_REPORT",
+      "title": "Official price McLaren Artura Thailand",
+      "url": "https://autolifethailand.tv/official-price-mclaren-artura-plug-in-hybrid/",
+      "retrieved_at": "2026-09-02T10:32:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2022,
+      "page_section_default": "Thailand launch / dimensions",
+      "applicability_notes": "Exact Thailand Artura Coupe launch imported by Niche Cars Group",
+      "archival_status": "URL_ONLY",
+      "notes": "Primary local dimensional evidence in this pass; authority grade B."
+    },
+    {
+      "source_code": "MCLAREN_GLOBAL_ARTURA_CURRENT",
+      "publisher": "McLaren Automotive",
+      "authority_class": "OEM_REGIONAL_GLOBAL",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "OEM_MODEL_SPECIFICATION_PAGE",
+      "title": "McLaren Artura Coupe — specification",
+      "url": "https://cars.mclaren.com/gl_en/artura",
+      "retrieved_at": "2026-09-02T10:32:00+07:00",
+      "publication_year": 2026,
+      "page_section_default": "Weights and Dimensions",
+      "applicability_notes": "Model-level DIN kerb mass corroborated against Thailand launch raw 1,498 kg weight",
+      "archival_status": "URL_ONLY",
+      "notes": "Current page output may redirect by region; DIN kerb mass semantics are explicit."
+    },
+    {
+      "source_code": "MCLAREN_QUALIFIED_ARTURA_WIDTH_2080",
+      "publisher": "McLaren Automotive",
+      "authority_class": "OEM_REGIONAL_GLOBAL",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "OEM_QUALIFIED_PREOWNED_LISTING",
+      "title": "McLaren Qualified Artura dimensions example",
+      "url": "https://preowned-eu.mclaren.com/eu/de/en/vehicles/mclaren-artura-qualified-s1dqzdpg",
+      "retrieved_at": "2026-09-02T10:32:00+07:00",
+      "publication_year": 2023,
+      "page_section_default": "Dimensions",
+      "applicability_notes": "Non-Thailand model-family observation only; used to preserve width-envelope ambiguity",
+      "archival_status": "URL_ONLY",
+      "notes": "Publishes Vehicle Width 2,080 mm; not normalized into Thailand width."
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_TH_DIMENSIONS",
+      "source_code": "AUTOLIFE_TH_MCLAREN_ARTURA_LAUNCH_20221219",
+      "vehicle_identity_claim": "McLaren Artura Thailand launch",
+      "raw_label": "Dimension",
+      "raw_value": "4539 / 1913 / 1193 / wheelbase 2640",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimension มิติตัวรถ",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:32:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "Thailand source labels width generically; body/mirror inclusion not stated."
+    },
+    {
+      "observation_code": "OBS_TH_WEIGHT",
+      "source_code": "AUTOLIFE_TH_MCLAREN_ARTURA_LAUNCH_20221219",
+      "vehicle_identity_claim": "McLaren Artura Thailand launch",
+      "raw_label": "น้ำหนักตัวรถ",
+      "raw_value": "1498",
+      "raw_unit": "kg",
+      "page_section_locator": "Dimension มิติตัวรถ",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:32:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "Local source wording alone does not establish kerb semantics."
+    },
+    {
+      "observation_code": "OBS_OEM_KERB",
+      "source_code": "MCLAREN_GLOBAL_ARTURA_CURRENT",
+      "vehicle_identity_claim": "McLaren Artura Coupe model family",
+      "raw_label": "DIN Kerb Weight",
+      "raw_value": "1498",
+      "raw_unit": "kg",
+      "page_section_locator": "Weights and Dimensions",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:32:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "Model-level OEM value exactly matches Thailand launch raw weight; normalized with SAME_GEOMETRY_CONFIRMED applicability."
+    },
+    {
+      "observation_code": "OBS_OEM_WIDTH_ALT",
+      "source_code": "MCLAREN_QUALIFIED_ARTURA_WIDTH_2080",
+      "vehicle_identity_claim": "McLaren Artura model-family non-Thailand example",
+      "raw_label": "Vehicle Width",
+      "raw_value": "2080",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:32:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "Different from Thailand-reported 1,913 mm. Reference/envelope definition not stated; retained raw only."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4539,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TH_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1913,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TH_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1193,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TH_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2640,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "B",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TH_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 1498,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_OEM_KERB"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Thailand source publishes width 1,913 mm while McLaren Qualified model-family listings can publish Vehicle Width 2,080 mm; neither source establishes body-vs-mirror envelope sufficiently for normalization.",
+      "source_families_searched": [
+        "Thailand launch report",
+        "McLaren OEM Artura/Qualified sources"
+      ],
+      "search_notes": "Preserve both raw observations; do not infer which is body or mirrors-open width.",
+      "assessed_at": "2026-09-02T10:32:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek explicit McLaren width-envelope drawing/specification."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "The 2,080 mm OEM Qualified width is not explicitly labelled mirrors-open and is not exact Thailand applicability.",
+      "source_families_searched": [
+        "McLaren Qualified",
+        "Thailand launch report"
+      ],
+      "search_notes": "Do not promote 2,080 mm to mirrors-open.",
+      "assessed_at": "2026-09-02T10:32:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek explicit mirrors-open dimension."
+    },
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM turning value was located in reviewed Artura sources.",
+      "source_families_searched": [
+        "McLaren official model page",
+        "Thailand launch report"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-02T10:32:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek homologation/technical specification."
+    },
+    {
+      "parameter_code": "clearance_value_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM ground-clearance value was located in reviewed Artura sources.",
+      "source_families_searched": [
+        "McLaren official model page",
+        "Thailand launch report"
+      ],
+      "search_notes": "Do not infer from ride height/images.",
+      "assessed_at": "2026-09-02T10:32:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek homologation/service geometry."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact outer tyre-face track was located.",
+      "source_families_searched": [
+        "McLaren official/Thailand sources"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-02T10:32:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek wheel/offset geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact outer tyre-face track was located.",
+      "source_families_searched": [
+        "McLaren official/Thailand sources"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-02T10:32:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek wheel/offset geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
