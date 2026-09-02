@@ -1,0 +1,448 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-FERRARI-PUROSANGUE-TH-PREMIERE-20230407",
+  "vehicle": {
+    "stable_vehicle_code": "th-ferrari-purosangue-thailand-premiere-2023-04-07",
+    "manufacturer_name": "Ferrari",
+    "manufacturer_display_name": "Ferrari",
+    "canonical_model_name": "purosangue",
+    "display_model_name": "Purosangue",
+    "market_code": "TH",
+    "generation_name": "Purosangue Thailand / Southeast Asia premiere",
+    "body_style": "Four-door high-performance sports car",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "Ferrari Purosangue Thailand / Southeast Asia Premiere — Cavallino Motors — 7 April 2023",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Purosangue",
+    "powertrain": "6.5L V12 / 8-speed F1 DCT",
+    "drivetrain": "AWD",
+    "body_configuration": "4-door 4-seat sports car",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Cavallino Motors launched the Purosangue in Thailand / Southeast Asia in April 2023. Thailand launch dimensions match Ferrari's official technical specification exactly for length, width, height and wheelbase. Ferrari global track and wheel/tyre geometry is therefore normalized as SAME_GEOMETRY_CONFIRMED. Ferrari's 2,033 kg figure is explicitly Dry Weight with optional lightweight content and is retained raw only."
+  },
+  "sources": [
+    {
+      "source_code": "FERRARI_GLOBAL_PUROSANGUE_TECHSPEC",
+      "publisher": "Ferrari S.p.A.",
+      "authority_class": "OEM_REGIONAL_GLOBAL",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_TECHNICAL_SPECIFICATION_PDF",
+      "title": "Purosangue — Technical Specifications",
+      "url": "https://cdn.ferrari.com/cms/network/media/pdf/CS_Ferrari_Purosangue_EN.pdf",
+      "retrieved_at": "2026-09-02T10:45:00+07:00",
+      "publication_year": 2022,
+      "page_section_default": "Purosangue — Technical Specifications",
+      "applicability_notes": "Global OEM structural geometry corroborated against exact Thailand launch dimensions",
+      "archival_status": "URL_ONLY",
+      "notes": "Dry weight remains raw evidence only."
+    },
+    {
+      "source_code": "HEADLIGHT_TH_PUROSANGUE_LAUNCH_20230407",
+      "publisher": "HeadLight Magazine",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "source_type": "OTHER",
+      "source_subtype_raw": "THAILAND_LAUNCH_SPEC_REPORT",
+      "title": "Official price Ferrari Purosangue Thailand",
+      "url": "https://www.headlightmag.com/2023-04-07-ferrari-purosangue-official-price-thailand/",
+      "retrieved_at": "2026-09-02T10:45:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2023,
+      "page_section_default": "Thailand launch / dimensions",
+      "applicability_notes": "Exact Thailand Purosangue launch; dimensions match Ferrari OEM technical sheet",
+      "archival_status": "URL_ONLY",
+      "notes": null
+    },
+    {
+      "source_code": "GRANDPRIX_TH_PUROSANGUE_PREMIERE_20230407",
+      "publisher": "Grand Prix Online",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "source_type": "OTHER",
+      "source_subtype_raw": "THAILAND_PREMIERE_REPORT",
+      "title": "Ferrari Purosangue Southeast Asia Premiere in Thailand",
+      "url": "https://www.grandprix.co.th/ferrari-purosangue-suv-southeast-asia-premiere-thailand-cavallino-motors/",
+      "retrieved_at": "2026-09-02T10:45:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2023,
+      "page_section_default": "Thailand / Southeast Asia premiere identity",
+      "applicability_notes": "Exact Cavallino Motors Thailand premiere identity",
+      "archival_status": "URL_ONLY",
+      "notes": "Report credits information to Cavallino Motors."
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_GEOMETRY_OEM",
+      "source_code": "FERRARI_GLOBAL_PUROSANGUE_TECHSPEC",
+      "vehicle_identity_claim": "Purosangue same geometry as Thailand premiere",
+      "raw_label": "Length / Width / Height / Wheelbase",
+      "raw_value": "4973 / 2028 / 1589 / 3018",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions and Weight",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "Ferrari labels Width generically; mirror/body inclusion not stated."
+    },
+    {
+      "observation_code": "OBS_TRACK_OEM",
+      "source_code": "FERRARI_GLOBAL_PUROSANGUE_TECHSPEC",
+      "vehicle_identity_claim": "Purosangue same geometry as Thailand premiere",
+      "raw_label": "Front track / Rear track",
+      "raw_value": "1737 / 1720",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions and Weight",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "OEM track is not AVT outer tyre-face track."
+    },
+    {
+      "observation_code": "OBS_DRY_WEIGHT",
+      "source_code": "FERRARI_GLOBAL_PUROSANGUE_TECHSPEC",
+      "vehicle_identity_claim": "Purosangue",
+      "raw_label": "Dry weight",
+      "raw_value": "2033",
+      "raw_unit": "kg",
+      "page_section_locator": "Dimensions and Weight",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "With optional lightweight content. Dry weight is not kerb mass."
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE",
+      "source_code": "FERRARI_GLOBAL_PUROSANGUE_TECHSPEC",
+      "vehicle_identity_claim": "Purosangue same geometry as Thailand premiere",
+      "raw_label": "Tyres and Wheels Front / Rear",
+      "raw_value": "255/35 R22 J9.0 / 315/30 R23 J11.0",
+      "raw_unit": null,
+      "page_section_locator": "Tyres and Wheels",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TH_CORROBORATION",
+      "source_code": "HEADLIGHT_TH_PUROSANGUE_LAUNCH_20230407",
+      "vehicle_identity_claim": "Thailand Purosangue launch",
+      "raw_label": "Thailand launch dimensions",
+      "raw_value": "4973 / 2028 / 1589 / wheelbase 3018",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimension",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "Exact local dimensions match Ferrari OEM."
+    },
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "GRANDPRIX_TH_PUROSANGUE_PREMIERE_20230407",
+      "vehicle_identity_claim": "Ferrari Purosangue Thailand",
+      "raw_label": "Southeast Asia Premiere",
+      "raw_value": "Ferrari Purosangue launched in Thailand first in Southeast Asia by Cavallino Motors — 7 April 2023",
+      "raw_unit": null,
+      "page_section_locator": "Premiere report",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4973,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 2028,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1589,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3018,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_FT",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1737,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_RT",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1720,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_FW",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "J9.0 x 22",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RW",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "J11.0 x 23",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "255/35 R22",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "315/30 R23",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Ferrari publishes Dry Weight 2,033 kg with optional lightweight content, not kerb/curb mass.",
+      "source_families_searched": [
+        "Ferrari official technical sheet",
+        "Thailand launch sources"
+      ],
+      "search_notes": "Dry weight retained raw only.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek official homologation/technical source explicitly labelled kerb/curb."
+    },
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Ferrari publishes Width 2,028 mm without body-excluding-mirrors semantics.",
+      "source_families_searched": [
+        "Ferrari official technical sheet",
+        "Thailand launch dimensions"
+      ],
+      "search_notes": "Do not infer body width.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek explicit width-envelope definition."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open width was found in reviewed Ferrari Purosangue sources.",
+      "source_families_searched": [
+        "Ferrari official technical sheet",
+        "Thailand launch sources"
+      ],
+      "search_notes": "Generic width is not substituted.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek body/dimension documentation."
+    },
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM turning value was located in reviewed Purosangue sources.",
+      "source_families_searched": [
+        "Ferrari official technical sheet",
+        "Thailand launch sources"
+      ],
+      "search_notes": "Four-wheel steering presence is not a turning value.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek homologation/technical documentation."
+    },
+    {
+      "parameter_code": "clearance_value_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM ground-clearance value was located in reviewed Purosangue sources.",
+      "source_families_searched": [
+        "Ferrari official technical sheet",
+        "Thailand launch sources"
+      ],
+      "search_notes": "Do not infer from raised body style or images.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek homologation/service geometry."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Ferrari front track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Ferrari official technical sheet"
+      ],
+      "search_notes": "Do not convert OEM track.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek mounted wheel geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Ferrari rear track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Ferrari official technical sheet"
+      ],
+      "search_notes": "Do not convert OEM track.",
+      "assessed_at": "2026-09-02T10:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek mounted wheel geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
