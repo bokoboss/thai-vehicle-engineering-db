@@ -35,9 +35,12 @@
       "model": "D9",
       "configuration": "Performance AWD",
       "category": "premium_electric_mpv",
-      "research_status": "RESEARCH_ACTIVE_SOURCE_GAP",
+      "research_status": "MANIFEST_DRAFT_READY",
       "issue": 37,
-      "research_note": "Thailand Performance AWD identity/current sale confirmed, but exact first-party Thailand technical geometry/mass source not yet recovered."
+      "research_note": "Official DENZA Thailand/Rêver e-catalog recovered; exact Performance AWD geometry, mass, load-scoped clearance, turning and fitment available.",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "DENZA D9 Performance AWD official Thailand launch — 1 November 2024",
+      "manifest_path": "data/curation/manifests/wave2b/denza_d9_performance_awd_launch_20241101_v1.json"
     },
     {
       "target_id": "wave2b-toyota-yaris-cross-hev-premium-luxury",
@@ -103,21 +106,53 @@
       "target_id": "wave2bs-ferrari-296-gtb-thailand-delivered",
       "manufacturer": "Ferrari",
       "model": "296 GTB",
-      "configuration": "Thailand-delivered official-dealer configuration",
+      "configuration": "296 GTB — Thailand Premiere April 2022",
       "category": "supercar",
-      "research_status": "RESEARCH_ACTIVE_GEOMETRY_APPLICABILITY",
+      "research_status": "MANIFEST_DRAFT_READY",
       "issue": 38,
-      "research_note": "Ferrari Approved Thailand exact 2024 296 GTB identity exists at Cavallino Motors; global Ferrari technical sheet recovered, but exact Thailand-to-global geometry/option applicability not yet promoted."
+      "research_note": "Ferrari global technical geometry matched exact Thailand launch dimensions; geometry normalized SAME_GEOMETRY_CONFIRMED. Dry weight remains raw only.",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "Thailand Premiere of Ferrari 296 GTB — Cavallino Motors Ferrari Thailand — April 2022",
+      "manifest_path": "data/curation/manifests/wave2b/ferrari_296_gtb_thailand_premiere_202204_v1.json"
     },
     {
       "target_id": "wave2bs-mclaren-artura-coupe",
       "manufacturer": "McLaren",
       "model": "Artura",
-      "configuration": "Coupe Thailand/APAC applicability TBD",
+      "configuration": "Artura Coupe — Thailand launch 19 December 2022",
       "category": "supercar",
-      "research_status": "RESEARCH_ACTIVE_GEOMETRY_APPLICABILITY",
+      "research_status": "MANIFEST_DRAFT_READY_CONSERVATIVE",
       "issue": 38,
-      "research_note": "Official McLaren Thailand/APAC programme and Artura model support exist; exact Thailand-delivered Coupe technical record not yet recovered."
+      "research_note": "Thailand dimensions retained at authority B; OEM DIN kerb mass SAME_GEOMETRY_CONFIRMED. 1,913 vs 2,080 mm width ambiguity remains unresolved and fail-closed.",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "McLaren Artura official Thailand price / CBU launch — 19 December 2022 — Niche Cars Group",
+      "manifest_path": "data/curation/manifests/wave2b/mclaren_artura_coupe_launch_20221219_v1.json"
+    },
+    {
+      "target_id": "wave2bs-lamborghini-urus-se-th-launch-20240522",
+      "manufacturer": "Lamborghini",
+      "model": "Urus SE",
+      "configuration": "Urus SE — Thailand launch May 2024",
+      "category": "super_suv",
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "Lamborghini Urus SE Thailand debut — Lamborghini Bangkok / Renazzo Motor — 22 May 2024",
+      "manifest_path": "data/curation/manifests/wave2b/lamborghini_urus_se_th_launch_20240522_v1.json",
+      "issue": 38
+    },
+    {
+      "target_id": "wave2bs-ferrari-purosangue-th-premiere-20230407",
+      "manufacturer": "Ferrari",
+      "model": "Purosangue",
+      "configuration": "Purosangue — Thailand / Southeast Asia Premiere April 2023",
+      "category": "high_performance_four_door",
+      "research_status": "MANIFEST_DRAFT_READY",
+      "identity_time_basis_candidate": "EDITION_RELEASE",
+      "identity_time_label_raw": "Ferrari Purosangue Thailand / Southeast Asia Premiere — Cavallino Motors — 7 April 2023",
+      "manifest_path": "data/curation/manifests/wave2b/ferrari_purosangue_th_premiere_20230407_v1.json",
+      "issue": 38
     }
-  ]
+  ],
+  "current_accepted_release_at_tranche2": "release_2026_09_b",
+  "current_accepted_vehicle_count_at_tranche2": 34
 }

@@ -269,3 +269,189 @@ Static draft totals:
 - **total: 86 normalized values + 36 explicit assessments**.
 
 DENZA D9 Performance AWD, Ferrari 296 GTB and McLaren Artura Coupe remain research-active and are not forced into tranche 1.
+
+
+# Wave 2B Tranche 2 — research / curation QA
+
+Baseline accepted release for this tranche: `release_2026_09_b` — **34 configurations**.
+
+Tranche 2 extends premium-MPV and supercar / high-performance engineering envelopes. This section records research-clean manifest drafts only. It does not publish a new accepted release.
+
+## DENZA D9 Performance AWD — Thailand launch 1 November 2024
+
+Research state: **MANIFEST DRAFT READY**
+
+Identity basis: `EDITION_RELEASE`.
+
+The prior source gap is resolved. DENZA Thailand / Rêver provides an official Thailand launch source and an official Thailand D9 e-catalog with an exact `Performance AWD` specification column.
+
+Normalized draft values:
+
+- overall length: 5,250 mm;
+- reported width: 1,960 mm, `OEM_UNSPECIFIED` envelope;
+- height: 1,920 mm;
+- wheelbase: 3,110 mm;
+- OEM front/rear wheel track: 1,675 / 1,675 mm;
+- kerb mass: 2,865 kg;
+- gross vehicle weight: 3,439 kg;
+- clearance: 155 mm unladen;
+- clearance: 140 mm maximum loaded;
+- minimum turning radius: 5.95 m, reference/axle scope `OEM_UNSPECIFIED`;
+- front/rear wheel: 18-inch low-wind-resistance alloy;
+- front/rear tyre: 235/60 R18.
+
+Generic width is not promoted to body or mirrors-open width. OEM track remains non-AVT.
+
+Manifest:
+
+`data/curation/manifests/wave2b/denza_d9_performance_awd_launch_20241101_v1.json`
+
+Static contract: **PASS — 15 values + 4 assessments**.
+
+## Ferrari 296 GTB — Thailand Premiere April 2022
+
+Research state: **MANIFEST DRAFT READY**
+
+Identity basis: `EDITION_RELEASE`.
+
+Cavallino Motors' official Ferrari Thailand channel documents the Thailand Premiere. Ferrari's official technical sheet and the exact Thailand launch specification agree on structural geometry, track, dry-weight wording and wheel/tyre sizes.
+
+Global OEM structural values are therefore normalized with `SAME_GEOMETRY_CONFIRMED` applicability:
+
+- length: 4,565 mm;
+- reported width: 1,958 mm, envelope `OEM_UNSPECIFIED`;
+- height: 1,187 mm;
+- wheelbase: 2,600 mm;
+- OEM track front/rear: 1,665 / 1,632 mm;
+- front wheel/tyre: J9.0 x 20 / 245/35 ZR20;
+- rear wheel/tyre: J11.0 x 20 / 305/35 ZR20.
+
+Ferrari's published 1,470 kg is explicitly **Dry Weight** with optional lightweight content. It remains raw evidence and is not normalized as kerb mass.
+
+Body/mirror width, ground clearance, turning and AVT outer-face tracks remain unresolved.
+
+Manifest:
+
+`data/curation/manifests/wave2b/ferrari_296_gtb_thailand_premiere_202204_v1.json`
+
+Static contract: **PASS — 10 values + 7 assessments**.
+
+## McLaren Artura Coupe — Thailand launch 19 December 2022
+
+Research state: **MANIFEST DRAFT READY — CONSERVATIVE**
+
+Identity basis: `EDITION_RELEASE`.
+
+Thailand launch evidence identifies a CBU Artura imported by Niche Cars Group and publishes:
+
+- length: 4,539 mm;
+- reported width: 1,913 mm;
+- height: 1,193 mm;
+- wheelbase: 2,640 mm;
+- raw vehicle weight: 1,498 kg.
+
+The four Thailand dimensions are normalized at authority grade B because exact local first-party technical geometry was not recovered.
+
+McLaren OEM material explicitly identifies **DIN Kerb Weight = 1,498 kg**. Because the value matches the Thailand launch raw weight, kerb mass is normalized at A1 with `SAME_GEOMETRY_CONFIRMED` applicability.
+
+A McLaren Qualified model-family listing also publishes `Vehicle Width = 2,080 mm`, but does not establish the envelope definition and is not exact Thailand applicability. That 2,080 mm value is retained only as a raw ambiguity observation.
+
+Therefore:
+
+- 1,913 mm remains `overall_width_reported_mm` with `OEM_UNSPECIFIED`;
+- no body-width value is created;
+- no mirrors-open value is created.
+
+Turning, ground clearance and AVT outer-face tracks remain unresolved.
+
+Manifest:
+
+`data/curation/manifests/wave2b/mclaren_artura_coupe_launch_20221219_v1.json`
+
+Static contract: **PASS — 5 values + 6 assessments**.
+
+## Lamborghini Urus SE — Thailand launch May 2024
+
+Research state: **MANIFEST DRAFT READY**
+
+Identity basis: `EDITION_RELEASE`.
+
+Thailand launch dimensions and the exact Thailand standard 21-inch wheel/tyre package match Lamborghini's official Urus SE technical brochure. Global OEM structural values are normalized with `SAME_GEOMETRY_CONFIRMED` applicability.
+
+Normalized:
+
+- length: 5,123 mm;
+- body width excluding mirrors: 2,022 mm;
+- width including mirrors: 2,181 mm;
+- height: 1,638 mm;
+- wheelbase: 3,003 mm;
+- front/rear overhang: 1,067 / 1,053 mm;
+- OEM front/rear track: 1,695 / 1,710 mm;
+- front wheel/tyre: 9.5J x 21 ET28 / 285/45 ZR21;
+- rear wheel/tyre: 10.5J x 21 ET18 / 315/40 ZR21.
+
+Lamborghini documents air-suspension vehicle-height adjustment and rear-wheel steering. Those are retained as raw observations only. No ground clearance, lift amount, turning value, steering relation or ramp angle is inferred.
+
+Manifest:
+
+`data/curation/manifests/wave2b/lamborghini_urus_se_th_launch_20240522_v1.json`
+
+Static contract: **PASS — 13 values + 5 assessments**.
+
+## Ferrari Purosangue — Thailand / Southeast Asia Premiere April 2023
+
+Research state: **MANIFEST DRAFT READY**
+
+Identity basis: `EDITION_RELEASE`.
+
+Cavallino Motors' Thailand/Southeast Asia premiere evidence and Thailand launch dimensions match Ferrari's official technical specification. Global OEM structural values are therefore normalized with `SAME_GEOMETRY_CONFIRMED` applicability.
+
+Normalized:
+
+- length: 4,973 mm;
+- reported width: 2,028 mm, envelope `OEM_UNSPECIFIED`;
+- height: 1,589 mm;
+- wheelbase: 3,018 mm;
+- OEM front/rear track: 1,737 / 1,720 mm;
+- front wheel/tyre: J9.0 x 22 / 255/35 R22;
+- rear wheel/tyre: J11.0 x 23 / 315/30 R23.
+
+Ferrari's 2,033 kg value is explicitly **Dry Weight** with optional lightweight content. It remains raw evidence only and is not normalized as kerb mass.
+
+Four-wheel-steering/model behaviour does not create a steering relation without direct geometry. Ground clearance, turning value, body/mirror width and AVT outer-face tracks remain unresolved.
+
+Manifest:
+
+`data/curation/manifests/wave2b/ferrari_purosangue_th_premiere_20230407_v1.json`
+
+Static contract: **PASS — 10 values + 7 assessments**.
+
+## Tranche 2 draft summary
+
+Five research-clean manifest drafts:
+
+1. DENZA D9 Performance AWD
+2. Ferrari 296 GTB
+3. McLaren Artura Coupe
+4. Lamborghini Urus SE
+5. Ferrari Purosangue
+
+Static total:
+
+- **53 normalized values**
+- **29 explicit assessments**
+
+Proposed controlled staging progression after importer qualification:
+
+`34 accepted configurations -> 39 staging configurations`
+
+No `current_release.json` change, accepted DB promotion, or application-source change is part of this research tranche.
+
+Permanent tranche-2 invariants:
+
+- DENZA D9 155/140 mm clearance remains load-scoped.
+- Ferrari dry weights are not kerb masses.
+- McLaren 1,913 vs 2,080 mm width ambiguity remains fail-closed.
+- Urus SE body/mirrors widths remain distinct 2,022 / 2,181 mm.
+- Air suspension and rear-wheel/four-wheel steering observations do not create unsupported clearance, ramp or steering geometry.
+- OEM tread/track never becomes AVT outer-face track by implication.

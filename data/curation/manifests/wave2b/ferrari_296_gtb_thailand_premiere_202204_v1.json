@@ -1,0 +1,447 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-FERRARI-296-GTB-TH-PREMIERE-202204",
+  "vehicle": {
+    "stable_vehicle_code": "th-ferrari-296-gtb-thailand-premiere-2022-04",
+    "manufacturer_name": "Ferrari",
+    "manufacturer_display_name": "Ferrari",
+    "canonical_model_name": "296-gtb",
+    "display_model_name": "296 GTB",
+    "market_code": "TH",
+    "generation_name": "296 GTB Thailand premiere",
+    "body_style": "Plug-in hybrid supercar coupe",
+    "chassis_platform_code": null,
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "EDITION_RELEASE",
+    "identity_time_label_raw": "Thailand Premiere of Ferrari 296 GTB — Cavallino Motors Ferrari Thailand — April 2022",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "296 GTB",
+    "powertrain": "3.0L V6 twin-turbo plug-in hybrid / 8-speed F1 DCT",
+    "drivetrain": "RWD",
+    "body_configuration": "2-seat berlinetta coupé",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Cavallino Motors Ferrari Thailand's official channel documents the Thailand Premiere in April 2022. Ferrari's official technical specification is corroborated by Thailand launch coverage with exactly matching dimensions, track, dry-weight wording and tyre/wheel sizes. Global OEM geometry is therefore recorded as SAME_GEOMETRY_CONFIRMED, not EXACT_CONFIGURATION."
+  },
+  "sources": [
+    {
+      "source_code": "FERRARI_CAVALLINO_TH_296GTB_PREMIERE_202204",
+      "publisher": "Ferrari Cavallino Motors",
+      "authority_class": "OFFICIAL_LOCAL_DISTRIBUTOR_IMPORTER",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OFFICIAL_DEALER_VIDEO_LAUNCH",
+      "title": "Thailand Premiere of Ferrari 296 GTB",
+      "url": "https://www.youtube.com/watch?v=LiT0WIzHVAs",
+      "retrieved_at": "2026-09-02T10:18:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2022,
+      "page_section_default": "Thailand premiere / model identity",
+      "applicability_notes": "Exact Thailand 296 GTB launch identity",
+      "archival_status": "URL_ONLY",
+      "notes": "Official Cavallino Motors Ferrari Thailand channel."
+    },
+    {
+      "source_code": "FERRARI_GLOBAL_296GTB_TECHSPEC",
+      "publisher": "Ferrari S.p.A.",
+      "authority_class": "OEM_REGIONAL_GLOBAL",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_TECHNICAL_SPECIFICATION_PDF",
+      "title": "296 GTB — Technical Specifications",
+      "url": "https://www.ferrari.com/content/dam/ferrari-fcom/old/pdf/CS_296_GTB_final_gbr.pdf",
+      "retrieved_at": "2026-09-02T10:18:00+07:00",
+      "publication_year": 2021,
+      "page_section_default": "Technical Specifications",
+      "applicability_notes": "Ferrari model-level structural geometry corroborated against Thailand launch values",
+      "archival_status": "URL_ONLY",
+      "notes": "Dry weight is raw evidence only."
+    },
+    {
+      "source_code": "HEADLIGHT_TH_296GTB_PRICE_20220406",
+      "publisher": "HeadLight Magazine",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "source_type": "OTHER",
+      "source_subtype_raw": "THAILAND_LAUNCH_SPEC_REPORT",
+      "title": "Official price Ferrari 296 GTB Thailand",
+      "url": "https://www.headlightmag.com/2022-04-05-official-price-ferrari-296-gtb-thailand/",
+      "retrieved_at": "2026-09-02T10:18:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2022,
+      "page_section_default": "Dimensions / Tyres",
+      "applicability_notes": "Exact Thailand launch; dimensions and dry-weight wording match Ferrari official technical sheet",
+      "archival_status": "URL_ONLY",
+      "notes": "Used for local same-geometry corroboration."
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "FERRARI_CAVALLINO_TH_296GTB_PREMIERE_202204",
+      "vehicle_identity_claim": "Ferrari 296 GTB Thailand",
+      "raw_label": "Thailand Premiere",
+      "raw_value": "Ferrari 296 GTB Thailand Premiere — April 2022",
+      "raw_unit": null,
+      "page_section_locator": "Video description",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:18:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GEOMETRY_OEM",
+      "source_code": "FERRARI_GLOBAL_296GTB_TECHSPEC",
+      "vehicle_identity_claim": "296 GTB same geometry as Thailand launch",
+      "raw_label": "Length / Width / Height / Wheelbase",
+      "raw_value": "4565 / 1958 / 1187 / 2600",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions and Weights",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:18:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "Ferrari labels Width generically; mirror/body inclusion not stated."
+    },
+    {
+      "observation_code": "OBS_TRACK_OEM",
+      "source_code": "FERRARI_GLOBAL_296GTB_TECHSPEC",
+      "vehicle_identity_claim": "296 GTB same geometry as Thailand launch",
+      "raw_label": "Front track / Rear track",
+      "raw_value": "1665 / 1632",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions and Weights",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:18:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "OEM track is not AVT outer tyre-face track."
+    },
+    {
+      "observation_code": "OBS_DRY_WEIGHT",
+      "source_code": "FERRARI_GLOBAL_296GTB_TECHSPEC",
+      "vehicle_identity_claim": "296 GTB",
+      "raw_label": "Dry weight",
+      "raw_value": "1470",
+      "raw_unit": "kg",
+      "page_section_locator": "Dimensions and Weights",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:18:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "Ferrari footnote: with optional lightweight content. Dry weight is not kerb mass."
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE",
+      "source_code": "FERRARI_GLOBAL_296GTB_TECHSPEC",
+      "vehicle_identity_claim": "296 GTB same geometry as Thailand launch",
+      "raw_label": "Tyres and Wheels Front / Rear",
+      "raw_value": "245/35 ZR20 J9.0 / 305/35 ZR20 J11.0",
+      "raw_unit": null,
+      "page_section_locator": "Tyres and Wheels",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:18:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_TH_CORROBORATION",
+      "source_code": "HEADLIGHT_TH_296GTB_PRICE_20220406",
+      "vehicle_identity_claim": "Thailand 296 GTB launch",
+      "raw_label": "Thailand launch dimensions / dry weight / tyres",
+      "raw_value": "4565 x 1958 x 1187; WB 2600; track 1665/1632; Dry Weight 1470; 245/35 ZR20 J9.0 / 305/35 ZR20 J11.0",
+      "raw_unit": null,
+      "page_section_locator": "Dimension / Tyres",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-02T10:18:00+07:00",
+      "extracted_by": "ChatGPT Wave 2B T2 curation",
+      "ambiguity_note": "Used to corroborate same geometry, not as primary authority."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4565,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1958,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1187,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2600,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GEOMETRY_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_FT",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1665,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_RT",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1632,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TRACK_OEM"
+      ]
+    },
+    {
+      "value_code": "VAL_FW",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "J9.0 x 20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RW",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "J11.0 x 20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "245/35 ZR20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "305/35 ZR20",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Ferrari publishes Dry Weight 1,470 kg with optional lightweight content, not kerb/curb mass.",
+      "source_families_searched": [
+        "Ferrari official technical sheet",
+        "Thailand launch specification"
+      ],
+      "search_notes": "Dry weight retained raw only.",
+      "assessed_at": "2026-09-02T10:18:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek official homologation/technical source explicitly labelled kerb/curb."
+    },
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Ferrari publishes generic Width 1,958 mm without body-excluding-mirrors semantics.",
+      "source_families_searched": [
+        "Ferrari official technical sheet"
+      ],
+      "search_notes": "Do not infer body width.",
+      "assessed_at": "2026-09-02T10:18:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek explicit width-envelope definition."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open width was found in reviewed Ferrari/Thailand sources.",
+      "source_families_searched": [
+        "Ferrari official technical sheet",
+        "Thailand launch specification"
+      ],
+      "search_notes": "Generic width is not substituted.",
+      "assessed_at": "2026-09-02T10:18:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek body/dimension documentation."
+    },
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM turning radius/circle was located in reviewed Ferrari 296 GTB sources.",
+      "source_families_searched": [
+        "Ferrari official technical sheet",
+        "Thailand launch sources"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-02T10:18:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek homologation/technical documentation."
+    },
+    {
+      "parameter_code": "clearance_value_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM ground-clearance value was located in reviewed Ferrari 296 GTB sources.",
+      "source_families_searched": [
+        "Ferrari official technical sheet",
+        "Thailand launch sources"
+      ],
+      "search_notes": "Do not infer from body height or imagery.",
+      "assessed_at": "2026-09-02T10:18:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek homologation/service geometry."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Ferrari front track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Ferrari official technical sheet"
+      ],
+      "search_notes": "Do not convert OEM track.",
+      "assessed_at": "2026-09-02T10:18:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek mounted wheel geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Ferrari rear track is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Ferrari official technical sheet"
+      ],
+      "search_notes": "Do not convert OEM track.",
+      "assessed_at": "2026-09-02T10:18:00+07:00",
+      "reviewer": "ChatGPT Wave 2B T2 curation",
+      "next_action": "Seek mounted wheel geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
