@@ -1,0 +1,311 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-MERCEDES-MAYBACH-S580E-PREMIUM-TH-SALE-SNAPSHOT-20260903",
+  "vehicle": {
+    "stable_vehicle_code": "th-mercedes-maybach-s580e-premium-sale-snapshot-2026-09-03",
+    "manufacturer_name": "Mercedes-Benz",
+    "manufacturer_display_name": "Mercedes-Maybach",
+    "canonical_model_name": "mercedes-maybach-s-class",
+    "display_model_name": "Mercedes-Maybach S-Class",
+    "market_code": "TH",
+    "generation_name": "Z223 Mercedes-Maybach S-Class",
+    "body_style": "Ultra-long-wheelbase chauffeur sedan",
+    "chassis_platform_code": "Z223",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "SALE_PERIOD",
+    "identity_time_label_raw": "Mercedes-Benz Thailand current Mercedes-Maybach S 580 e Premium technical configuration observed 3 September 2026",
+    "sale_period_from": "2026-09-03",
+    "sale_period_to": "2026-09-03",
+    "variant_trim": "S 580 e Premium",
+    "powertrain": "2,999 cc plug-in hybrid / 9G-TRONIC",
+    "drivetrain": null,
+    "body_configuration": "4-door 4-seat chauffeur sedan",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Mercedes-Benz Thailand currently publishes S 580 e Premium in three paint treatments sharing the same engineering column. The Thailand technical page reports 1,921 mm as width including mirrors, while Mercedes-Maybach Z223 owner documentation reports 2,109 mm including mirrors. Both claims are retained as an unresolved explicit conflict. Body-excluding-mirrors width is not normalized because Mercedes owner-manual editions themselves disagree (1,921 vs 1,954 mm)."
+  },
+  "sources": [
+    {
+      "source_code": "MERCEDES_TH_MAYBACH_S580E_PREMIUM_CURRENT_20260903",
+      "publisher": "Mercedes-Benz (Thailand) Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_THAI_MODEL_TECHNICAL_PAGE",
+      "title": "Mercedes-Maybach S-Class — S 580 e Premium technical data",
+      "url": "https://www.mercedes-benz.co.th/th/passengercars/models/saloon-long/mercedes-maybach-s-class/overview.html",
+      "retrieved_at": "2026-09-03T15:55:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "ข้อมูลทางเทคนิคทั้งหมด — เมอร์เซเดส-มายบัค เอส 580 อี พรีเมียม",
+      "applicability_notes": "Exact current Thailand S 580 e Premium engineering grade",
+      "archival_status": "URL_ONLY",
+      "notes": "Three S 580 e Premium paint columns share 5,469 / 1,921-labelled-with-mirrors / 1,510 mm and 4-seat specification."
+    },
+    {
+      "source_code": "MERCEDES_GLOBAL_MAYBACH_Z223_OWNERMANUAL_2021",
+      "publisher": "Mercedes-Benz AG",
+      "authority_class": "OEM_SERVICE_TECHNICAL",
+      "source_type": "OWNER_MANUAL",
+      "source_subtype_raw": "OEM_OWNER_MANUAL_PDF",
+      "title": "Mercedes-Maybach S-Class Saloon 2021 Owner's Manual — Z223 vehicle dimensions",
+      "url": "https://static.oneweb.mercedes-benz.com/css-oom-assets/en-bh/pdf/mercedes-maybach-s-class-saloon-2021-october-z223-mbux-owners-manual-1.pdf",
+      "retrieved_at": "2026-09-03T15:55:00+07:00",
+      "publication_year": 2021,
+      "page_section_default": "Technical data — Vehicle dimensions, page 493",
+      "applicability_notes": "Z223 structural-dimension evidence for Mercedes-Maybach S 580/S 680 body family",
+      "archival_status": "URL_ONLY",
+      "notes": "Reports 5,469 mm length, 2,109 mm width including outside mirrors, and 1,921 mm width excluding outside mirrors for S 580/S 680."
+    },
+    {
+      "source_code": "MERCEDES_GLOBAL_MAYBACH_Z223_OWNERMANUAL_2020",
+      "publisher": "Mercedes-Benz AG",
+      "authority_class": "OEM_SERVICE_TECHNICAL",
+      "source_type": "OWNER_MANUAL",
+      "source_subtype_raw": "OEM_OWNER_MANUAL_PDF",
+      "title": "Mercedes-Maybach S-Class Saloon 2020 Owner's Manual — Z223 vehicle dimensions",
+      "url": "https://static.oneweb.mercedes-benz.com/css-oom-assets/en-bh/pdf/mercedes-maybach-s-class-saloon-2020-october-z223-mbux-owners-manual-1.pdf",
+      "retrieved_at": "2026-09-03T15:55:00+07:00",
+      "publication_year": 2020,
+      "page_section_default": "Technical data — Vehicle dimensions, page 470",
+      "applicability_notes": "Earlier Z223 structural-dimension evidence used only to expose OEM body-width inconsistency",
+      "archival_status": "URL_ONLY",
+      "notes": "Reports 5,469 mm length, 2,109 mm mirrors-open width, 1,954 mm excluding-mirrors width, 1,510 mm height and 3,396 mm wheelbase for S 580 4MATIC."
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_TH_IDENTITY",
+      "source_code": "MERCEDES_TH_MAYBACH_S580E_PREMIUM_CURRENT_20260903",
+      "vehicle_identity_claim": "Mercedes-Maybach S 580 e Premium Thailand current configuration",
+      "raw_label": "Current technical variants",
+      "raw_value": "Mercedes-Maybach S 580 e Premium — metallic / MANUFAKTUR / Maybach two-tone; Plug-In Hybrid; 4 seats",
+      "raw_unit": null,
+      "page_section_locator": "ข้อมูลทางเทคนิคทั้งหมด",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "Paint treatments do not alter the engineering envelope represented by this trim record."
+    },
+    {
+      "observation_code": "OBS_TH_DIMENSIONS",
+      "source_code": "MERCEDES_TH_MAYBACH_S580E_PREMIUM_CURRENT_20260903",
+      "vehicle_identity_claim": "Mercedes-Maybach S 580 e Premium",
+      "raw_label": "ความยาว / ความกว้าง (รวมกระจกมองข้าง) / ความสูง",
+      "raw_value": "5469 / 1921 / 1510",
+      "raw_unit": "mm",
+      "page_section_locator": "ขนาด",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "The 1,921 mm mirror-inclusive label conflicts with Mercedes Z223 owner documentation reporting 2,109 mm including mirrors."
+    },
+    {
+      "observation_code": "OBS_GLOBAL_2021_WIDTH",
+      "source_code": "MERCEDES_GLOBAL_MAYBACH_Z223_OWNERMANUAL_2021",
+      "vehicle_identity_claim": "Mercedes-Maybach Z223 S 580 / S 680 body family",
+      "raw_label": "Vehicle length / width including outside mirrors / width excluding outside mirrors",
+      "raw_value": "5469 / 2109 / 1921",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical data — Vehicle dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "Cross-powertrain/model-family structural evidence; mirror width conflicts with Thailand page label."
+    },
+    {
+      "observation_code": "OBS_GLOBAL_2020_WIDTH",
+      "source_code": "MERCEDES_GLOBAL_MAYBACH_Z223_OWNERMANUAL_2020",
+      "vehicle_identity_claim": "Mercedes-Maybach Z223 S 580 4MATIC",
+      "raw_label": "Vehicle dimensions",
+      "raw_value": "length 5469 / mirrors 2109 / excluding mirrors 1954 / height 1510 / wheelbase 3396",
+      "raw_unit": "mm",
+      "page_section_locator": "Technical data — Vehicle dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:55:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "Earlier Mercedes owner manual agrees on mirrors-open width but disagrees with 2021 manual on excluding-mirrors width."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5469,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TH_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1510,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TH_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_MIRROR_WIDTH_TH",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 1921,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "CONFLICTING",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TH_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_MIRROR_WIDTH_Z223",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 2109,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "CONFLICTING",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_2021_WIDTH",
+        "OBS_GLOBAL_2020_WIDTH"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Mercedes first-party Z223 owner-manual editions disagree on width excluding outside mirrors (1,921 vs 1,954 mm), while the Thailand page labels 1,921 mm as including mirrors. No body-width candidate is selected.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current Maybach technical page",
+        "Mercedes-Maybach Z223 2020/2021 owner manuals"
+      ],
+      "search_notes": "Do not silently relabel 1,921 mm as body width.",
+      "assessed_at": "2026-09-03T15:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek current exact Z223 S 580 e homologation/body-dimension documentation."
+    },
+    {
+      "parameter_code": "wheelbase_actual_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "A 3,396 mm wheelbase appears in older Z223 S 580 4MATIC owner documentation, but no exact current Thailand S 580 e Premium wheelbase source was recovered and it is not promoted across powertrain without stronger continuity evidence.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current Maybach page",
+        "Mercedes-Maybach Z223 owner manuals"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T15:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek current S 580 e Premium homologation/technical data."
+    },
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact current Thailand S 580 e Premium turning value was found in the reviewed sources.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current Maybach page",
+        "Mercedes-Maybach owner manuals"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T15:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek exact current technical/homologation data."
+    },
+    {
+      "parameter_code": "clearance_value_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact ground-clearance value/load/ride-height state was found for current Thailand S 580 e Premium.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current Maybach page",
+        "Mercedes-Maybach owner manuals"
+      ],
+      "search_notes": "Suspension behavior is not converted into clearance.",
+      "assessed_at": "2026-09-03T15:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek current OEM ride-height/clearance data."
+    },
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact current Thailand S 580 e Premium kerb-mass value was found in the reviewed technical page.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current Maybach page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T15:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek exact Thailand homologation/technical data."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact AVT outer tyre-face front track was found.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current Maybach page",
+        "Mercedes-Maybach owner manuals"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T15:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek wheel offset/mounted geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact AVT outer tyre-face rear track was found.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current Maybach page",
+        "Mercedes-Maybach owner manuals"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T15:55:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek wheel offset/mounted geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
