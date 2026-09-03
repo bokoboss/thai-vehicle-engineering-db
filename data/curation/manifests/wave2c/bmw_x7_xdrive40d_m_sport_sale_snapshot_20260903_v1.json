@@ -1,0 +1,258 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-BMW-X7-XDRIVE40D-MSPORT-TH-SALE-SNAPSHOT-20260903",
+  "vehicle": {
+    "stable_vehicle_code": "th-bmw-x7-xdrive40d-m-sport-sale-snapshot-2026-09-03",
+    "manufacturer_name": "BMW",
+    "manufacturer_display_name": "BMW",
+    "canonical_model_name": "x7",
+    "display_model_name": "X7",
+    "market_code": "TH",
+    "generation_name": "G07",
+    "body_style": "Full-size luxury SUV",
+    "chassis_platform_code": "G07",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "SALE_PERIOD",
+    "identity_time_label_raw": "BMW Thailand current X7 xDrive40d M Sport technical configuration observed 3 September 2026",
+    "sale_period_from": "2026-09-03",
+    "sale_period_to": "2026-09-03",
+    "variant_trim": "xDrive40d M Sport",
+    "powertrain": "3.0L inline-6 diesel mild hybrid / 8-speed automatic",
+    "drivetrain": "AWD",
+    "body_configuration": "Large 7-seat SUV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "BMW Thailand publishes an exact current X7 xDrive40d M Sport technical page. Temporal scope is intentionally bounded to the observed sale snapshot on 3 September 2026. The published 2,565 kg EC ready-to-drive mass includes 90% fuel and a 75 kg driver and is therefore retained raw rather than silently normalized as kerb mass."
+  },
+  "sources": [
+    {
+      "source_code": "BMW_TH_X7_XDRIVE40D_MSPORT_CURRENT_20260903",
+      "publisher": "BMW (Thailand) Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_THAI_MODEL_TECHNICAL_PAGE",
+      "title": "BMW X7 xDrive40d M Sport — technical data",
+      "url": "https://www.bmw.co.th/th/all-models/x-series/x7/bmw-x7-technical-data.html",
+      "retrieved_at": "2026-09-03T13:10:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "ข้อมูลทางเทคนิคของ BMW X7 — ขนาด/น้ำหนัก",
+      "applicability_notes": "Exact current Thailand X7 xDrive40d M Sport configuration",
+      "archival_status": "URL_ONLY",
+      "notes": "OEM footnote defines 2,565 kg as EC ready-to-drive mass including 90% fuel and 75 kg driver."
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "BMW_TH_X7_XDRIVE40D_MSPORT_CURRENT_20260903",
+      "vehicle_identity_claim": "BMW X7 xDrive40d M Sport Thailand",
+      "raw_label": "X7 xDrive40d M Sport",
+      "raw_value": "X7 xDrive40d M Sport",
+      "raw_unit": null,
+      "page_section_locator": "Technical data",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T13:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C curation",
+      "ambiguity_note": "Observed-current snapshot; no model year inferred."
+    },
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "BMW_TH_X7_XDRIVE40D_MSPORT_CURRENT_20260903",
+      "vehicle_identity_claim": "X7 xDrive40d M Sport",
+      "raw_label": "ความยาว / ความกว้าง / ความสูง / ระยะฐานล้อ",
+      "raw_value": "5181 / 2000 / 1835 / 3105",
+      "raw_unit": "mm",
+      "page_section_locator": "ขนาด/น้ำหนัก",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T13:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C curation",
+      "ambiguity_note": "Width is generic; body/mirror inclusion is not stated."
+    },
+    {
+      "observation_code": "OBS_EC_MASS",
+      "source_code": "BMW_TH_X7_XDRIVE40D_MSPORT_CURRENT_20260903",
+      "vehicle_identity_claim": "X7 xDrive40d M Sport",
+      "raw_label": "น้ำหนักรถเปล่า / EC ready-to-drive mass",
+      "raw_value": "2565",
+      "raw_unit": "kg",
+      "page_section_locator": "ขนาด/น้ำหนัก + footnote 4",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T13:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C curation",
+      "ambiguity_note": "OEM footnote: EC ready-to-drive mass includes standard equipment, 90% fuel and 75 kg driver. This is not normalized as kerb mass under current registry semantics."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5181,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 2000,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1835,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3105,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "BMW publishes 2,565 kg as EC ready-to-drive mass including 90% fuel and a 75 kg driver; current registry has no separate EC-mass parameter and this value is not silently normalized as kerb mass.",
+      "source_families_searched": [
+        "BMW Thailand current X7 technical page"
+      ],
+      "search_notes": "Raw EC mass observation retained.",
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek exact OEM kerb/DIN mass if separately published."
+    },
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "BMW publishes generic width 2,000 mm without body-excluding-mirrors semantics.",
+      "source_families_searched": [
+        "BMW Thailand current X7 technical page"
+      ],
+      "search_notes": "Do not promote generic width.",
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek explicit width-envelope definition."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open width was found in the reviewed current BMW Thailand technical page.",
+      "source_families_searched": [
+        "BMW Thailand current X7 technical page"
+      ],
+      "search_notes": "Generic width is not substituted.",
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek body/dimension data."
+    },
+    {
+      "parameter_code": "clearance_value_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM ground-clearance value was found in the reviewed current BMW Thailand page.",
+      "source_families_searched": [
+        "BMW Thailand current X7 technical page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek exact Thailand technical/homologation data."
+    },
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM turning radius/circle value was found in the reviewed current BMW Thailand page.",
+      "source_families_searched": [
+        "BMW Thailand current X7 technical page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek official technical/homologation data."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact AVT outer tyre-face track geometry was found.",
+      "source_families_searched": [
+        "BMW Thailand current X7 technical page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek wheel offset/mounted geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact AVT outer tyre-face track geometry was found.",
+      "source_families_searched": [
+        "BMW Thailand current X7 technical page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek wheel offset/mounted geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
