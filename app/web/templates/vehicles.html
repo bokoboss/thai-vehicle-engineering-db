@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% block title %}Vehicles · Vehicle Engineering Database{% endblock %}
 {% block content %}
-<section class="page-intro">
+<section class="page-intro catalog-intro">
   <p class="eyebrow">Evidence-aware vehicle catalog</p>
   <h1>Vehicles</h1>
   <p class="lede">Find an exact Thailand configuration, then inspect the engineering evidence behind its values.</p>
 </section>
 
-<form class="filter-bar" method="get" action="/vehicles" aria-label="Filter vehicle catalog">
-  <div class="search-field">
+<form class="filter-panel filter-bar catalog-filter-panel" method="get" action="/vehicles" aria-label="Filter vehicle catalog">
+  <div class="field-group search-field">
     <label for="vehicle-search">Search</label>
     <input id="vehicle-search" type="search" name="q" value="{{ q }}" placeholder="Model, generation, or variant" aria-describedby="vehicle-search-help">
     <span id="vehicle-search-help" class="field-help">Search uses the exact configuration catalog.</span>
   </div>
-  <div>
+  <div class="field-group">
     <label for="manufacturer-filter">Manufacturer</label>
     <select id="manufacturer-filter" name="manufacturer">
       <option value="">All manufacturers</option>
@@ -22,7 +22,7 @@
       {% endfor %}
     </select>
   </div>
-  <div>
+  <div class="field-group">
     <label for="body-style-filter">Body style</label>
     <select id="body-style-filter" name="body_style">
       <option value="">All body styles</option>
@@ -31,7 +31,7 @@
       {% endfor %}
     </select>
   </div>
-  <div>
+  <div class="field-group">
     <label for="readiness-filter">Ready for</label>
     <select id="readiness-filter" name="readiness">
       <option value="">Any readiness</option>
@@ -40,12 +40,13 @@
       {% endfor %}
     </select>
   </div>
-  <div class="filter-actions">
+  <div class="action-row filter-actions">
     <button type="submit">Apply filters</button>
     <a class="button secondary" href="/vehicles">Reset</a>
   </div>
 </form>
 
+<div class="result-block catalog-results">
 <div class="table-wrap">
   <table class="catalog-table">
     <caption class="sr-only">Exact vehicle configurations</caption>
@@ -61,7 +62,7 @@
     {% for vehicle in vehicles %}
       <tr>
         <th scope="row">
-          <a class="vehicle-link" href="/vehicles/{{ vehicle.stable_vehicle_code }}">{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</a>
+          <a class="vehicle-link" href="/vehicles/{{ vehicle.stable_vehicle_code }}"><span class="catalog-primary">{{ vehicle.manufacturer }} · {{ vehicle.commercial_model }}</span></a>
           <span class="row-primary">{{ vehicle.variant }}</span>
           <small class="stable-code">Configuration code: <code>{{ vehicle.stable_vehicle_code }}</code></small>
         </th>
@@ -86,10 +87,11 @@
         </td>
       </tr>
     {% else %}
-      <tr><td colspan="4" class="empty">No configurations match these filters. <a href="/vehicles">Reset the catalog filters</a>.</td></tr>
+      <tr><td colspan="4" class="empty table-empty"><div class="table-empty-content"><strong>No configurations match these filters.</strong><span>Reset the catalog filters to show the full catalog.</span><a href="/vehicles">Reset the catalog filters</a></div></td></tr>
     {% endfor %}
     </tbody>
   </table>
 </div>
-<p class="muted result-count">{{ vehicles|length }} exact configuration{% if vehicles|length != 1 %}s{% endif %} shown.</p>
+<p class="muted result-summary result-count"><strong>{{ vehicles|length }}</strong> exact configuration{% if vehicles|length != 1 %}s{% endif %} shown.</p>
+</div>
 {% endblock %}

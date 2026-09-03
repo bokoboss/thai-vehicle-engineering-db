@@ -39,36 +39,45 @@
   <p>This workflow checks only the entered minimum clear height, width envelope, overall length, and like-for-like turning-envelope semantics. It does not perform swept-path simulation, parking-aisle maneuver solving, collision/ramp-contact analysis, or regulatory/code compliance. No legal or recommended design limit is prefilled.</p>
 </aside>
 
-<form class="design-check-form" method="get" action="/design-check" aria-label="Design check inputs">
-  <fieldset class="design-fieldset">
+<form class="filter-panel design-check-form" method="get" action="/design-check" aria-label="Design check inputs">
+  <fieldset class="design-fieldset design-constraints-fieldset">
     <legend>Site / design constraints</legend>
     <p class="field-help">Every active constraint is an explicit upper-bound input. Leave a constraint limit blank to leave that check inactive.</p>
-    <div class="design-input-grid">
-      <div class="design-input-group">
+    <div class="constraint-cluster-grid">
+      <section class="constraint-cluster" aria-labelledby="height-constraints-heading">
+        <div class="cluster-heading"><p class="section-kicker">Vertical boundary</p><h3 id="height-constraints-heading">Height clearance</h3></div>
+        <div class="design-input-grid">
+          <div class="design-input-group field-group">
         <label for="available-clear-height-mm">Minimum available clear height <span class="field-unit">mm</span></label>
         <input id="available-clear-height-mm" name="available_clear_height_mm" type="number" min="0" step="any" value="{{ form.available_clear_height_mm }}" placeholder="e.g. 2100" aria-describedby="available-clear-height-help{% if errors.get('available_clear_height_mm') %} available-clear-height-mm-error{% endif %}"{% if errors.get('available_clear_height_mm') %} aria-invalid="true"{% endif %}>
         <span id="available-clear-height-help" class="field-help">Enter the minimum clear height after considering beams, sprinklers, signs, MEP, door equipment, slopes, and similar obstructions. The tool checks this entered minimum only.</span>
         {{ field_error("available_clear_height_mm") }}
-      </div>
-      <div class="design-input-group">
+          </div>
+          <div class="design-input-group field-group">
         <label for="vertical-allowance-mm">Required vertical allowance <span class="field-unit">mm</span></label>
         <input id="vertical-allowance-mm" name="vertical_allowance_mm" type="number" min="0" step="any" value="{{ form.vertical_allowance_mm }}" placeholder="0 = no additional allowance" aria-describedby="vertical-allowance-help{% if errors.get('vertical_allowance_mm') %} vertical-allowance-mm-error{% endif %}"{% if errors.get('vertical_allowance_mm') %} aria-invalid="true"{% endif %}>
         <span id="vertical-allowance-help" class="field-help">Blank is treated as 0 mm only when the height check is active; enter 0 explicitly when no additional allowance is required.</span>
         {{ field_error("vertical_allowance_mm") }}
-      </div>
-      <div class="design-input-group">
+          </div>
+        </div>
+      </section>
+
+      <section class="constraint-cluster" aria-labelledby="width-constraints-heading">
+        <div class="cluster-heading"><p class="section-kicker">Plan boundary</p><h3 id="width-constraints-heading">Width envelope</h3></div>
+        <div class="design-input-grid">
+          <div class="design-input-group field-group">
         <label for="available-clear-width-mm">Available clear width <span class="field-unit">mm</span></label>
         <input id="available-clear-width-mm" name="available_clear_width_mm" type="number" min="0" step="any" value="{{ form.available_clear_width_mm }}" placeholder="e.g. 2100" aria-describedby="available-clear-width-help{% if errors.get('available_clear_width_mm') %} available-clear-width-mm-error{% endif %}"{% if errors.get('available_clear_width_mm') %} aria-invalid="true"{% endif %}>
         <span id="available-clear-width-help" class="field-help">The clear opening available to the selected vehicle envelope before the explicit per-side allowance is deducted.</span>
         {{ field_error("available_clear_width_mm") }}
-      </div>
-      <div class="design-input-group">
+          </div>
+          <div class="design-input-group field-group">
         <label for="lateral-allowance-each-side-mm">Required lateral allowance per side <span class="field-unit">mm each side</span></label>
         <input id="lateral-allowance-each-side-mm" name="lateral_allowance_each_side_mm" type="number" min="0" step="any" value="{{ form.lateral_allowance_each_side_mm }}" placeholder="Enter 0 if none" aria-describedby="lateral-allowance-help{% if errors.get('lateral_allowance_each_side_mm') %} lateral-allowance-each-side-mm-error{% endif %}"{% if errors.get('lateral_allowance_each_side_mm') %} aria-invalid="true"{% endif %}>
         <span id="lateral-allowance-help" class="field-help">Required when the width check is active. Effective limit = clear width − 2 × this allowance.</span>
         {{ field_error("lateral_allowance_each_side_mm") }}
-      </div>
-      <div class="design-input-group">
+          </div>
+          <div class="design-input-group field-group">
         <label for="width-envelope">Required vehicle width envelope</label>
         <select id="width-envelope" name="width_envelope" aria-describedby="width-envelope-help{% if errors.get('width_envelope') %} width-envelope-error{% endif %}"{% if errors.get('width_envelope') %} aria-invalid="true"{% endif %}>
           <option value="">No width check</option>
@@ -79,20 +88,32 @@
         </select>
         <span id="width-envelope-help" class="field-help">Definitions are not interchangeable. Body width is never substituted for mirrors-open or mirrors-folded width.</span>
         {{ field_error("width_envelope") }}
-      </div>
-      <div class="design-input-group">
+          </div>
+        </div>
+      </section>
+
+      <section class="constraint-cluster" aria-labelledby="length-constraints-heading">
+        <div class="cluster-heading"><p class="section-kicker">Longitudinal boundary</p><h3 id="length-constraints-heading">Length limit</h3></div>
+        <div class="design-input-grid design-input-grid-single">
+          <div class="design-input-group field-group">
         <label for="maximum-vehicle-length-mm">Maximum acceptable vehicle length <span class="field-unit">mm</span></label>
         <input id="maximum-vehicle-length-mm" name="maximum_vehicle_length_mm" type="number" min="0" step="any" value="{{ form.maximum_vehicle_length_mm }}" placeholder="e.g. 5000" aria-describedby="maximum-vehicle-length-help{% if errors.get('maximum_vehicle_length_mm') %} maximum-vehicle-length-mm-error{% endif %}"{% if errors.get('maximum_vehicle_length_mm') %} aria-invalid="true"{% endif %}>
         <span id="maximum-vehicle-length-help" class="field-help">Uses the curated overall length only; wheelbase and overhangs are not recombined here.</span>
         {{ field_error("maximum_vehicle_length_mm") }}
-      </div>
-      <div class="design-input-group">
+          </div>
+        </div>
+      </section>
+
+      <section class="constraint-cluster constraint-cluster-turning" aria-labelledby="turning-constraints-heading">
+        <div class="cluster-heading"><p class="section-kicker">Maneuvering boundary</p><h3 id="turning-constraints-heading">Turning envelope</h3></div>
+        <div class="design-input-grid">
+          <div class="design-input-group field-group">
         <label for="maximum-turning-value-m">Maximum available turning value <span class="field-unit">m</span></label>
         <input id="maximum-turning-value-m" name="maximum_turning_value_m" type="number" min="0" step="any" value="{{ form.maximum_turning_value_m }}" placeholder="e.g. 11.0" aria-describedby="maximum-turning-value-help{% if errors.get('maximum_turning_value_m') %} maximum-turning-value-m-error{% endif %}"{% if errors.get('maximum_turning_value_m') %} aria-invalid="true"{% endif %}>
         <span id="maximum-turning-value-help" class="field-help">Activates Turning-envelope screening. Enter a radius or diameter and the exact reference below.</span>
         {{ field_error("maximum_turning_value_m") }}
-      </div>
-      <div class="design-input-group">
+          </div>
+          <div class="design-input-group field-group">
         <label for="turning-input-shape">Turning input shape</label>
         <select id="turning-input-shape" name="turning_input_shape" aria-describedby="turning-input-shape-help{% if errors.get('turning_input_shape') %} turning-input-shape-error{% endif %}"{% if errors.get('turning_input_shape') %} aria-invalid="true"{% endif %}>
           <option value="">No turning check</option>
@@ -101,8 +122,8 @@
         </select>
         <span id="turning-input-shape-help" class="field-help">The entered limit is normalized to radius internally with the versioned deterministic conversion.</span>
         {{ field_error("turning_input_shape") }}
-      </div>
-      <div class="design-input-group">
+          </div>
+          <div class="design-input-group field-group">
         <label for="turning-reference">Turning reference</label>
         <select id="turning-reference" name="turning_reference" aria-describedby="turning-reference-help{% if errors.get('turning_reference') %} turning-reference-error{% endif %}"{% if errors.get('turning_reference') %} aria-invalid="true"{% endif %}>
           <option value="">No turning check</option>
@@ -111,7 +132,9 @@
         </select>
         <span id="turning-reference-help" class="field-help">Vehicle reference must match exactly. OEM-unspecified reference remains INDETERMINATE.</span>
         {{ field_error("turning_reference") }}
-      </div>
+          </div>
+        </div>
+      </section>
     </div>
   </fieldset>
 
@@ -119,45 +142,45 @@
     <legend>Candidate vehicle filtering</legend>
     <p class="field-help">Filters select which exact curated configurations are assessed; they never change parameter semantics.</p>
     <div class="candidate-filter-grid">
-      <div class="design-input-group search-field">
+      <div class="design-input-group field-group search-field">
         <label for="design-check-search">Search</label>
         <input id="design-check-search" type="search" name="q" value="{{ filters.q }}" placeholder="Model, generation, variant, or code">
       </div>
-      <div class="design-input-group">
+      <div class="design-input-group field-group">
         <label for="design-check-manufacturer">Manufacturer</label>
         <select id="design-check-manufacturer" name="manufacturer">
           <option value="">All manufacturers</option>
           {% for option in filter_options.manufacturers %}<option value="{{ option.value }}"{% if filters.manufacturer == option.value %} selected{% endif %}>{{ option.label }}</option>{% endfor %}
         </select>
       </div>
-      <div class="design-input-group">
+      <div class="design-input-group field-group">
         <label for="design-check-body-style">Body style / class</label>
         <select id="design-check-body-style" name="body_style">
           <option value="">All body styles</option>
           {% for option in filter_options.body_styles %}<option value="{{ option.value }}"{% if filters.body_style == option.value %} selected{% endif %}>{{ option.label }}</option>{% endfor %}
         </select>
       </div>
-      <div class="design-input-group">
+      <div class="design-input-group field-group">
         <label for="design-check-powertrain">Powertrain</label>
         <select id="design-check-powertrain" name="powertrain">
           <option value="">All powertrains</option>
           {% for option in filter_options.powertrains %}<option value="{{ option.value }}"{% if filters.powertrain == option.value %} selected{% endif %}>{{ option.label }}</option>{% endfor %}
         </select>
       </div>
-      <div class="design-input-group">
+      <div class="design-input-group field-group">
         <label for="design-check-identity-time">Identity time</label>
         <select id="design-check-identity-time" name="identity_time">
           <option value="">Any identity time</option>
           {% for option in filter_options.identity_times %}<option value="{{ option.value }}"{% if filters.identity_time == option.value %} selected{% endif %}>{{ option.label }}</option>{% endfor %}
         </select>
       </div>
-      <div class="design-input-group">
+      <div class="design-input-group field-group">
         <label for="design-check-result">Result view</label>
         <select id="design-check-result" name="result">
           {% for option in result_filter_options %}<option value="{{ option.value }}"{% if result_filter == option.value %} selected{% endif %}>{{ option.label }}</option>{% endfor %}
         </select>
       </div>
-      <div class="design-input-group">
+      <div class="design-input-group field-group">
         <label for="design-check-sort">Sort results</label>
         <select id="design-check-sort" name="sort">
           {% for option in sort_options %}<option value="{{ option.value }}"{% if sort == option.value %} selected{% endif %}>{{ option.label }}</option>{% endfor %}
@@ -167,9 +190,9 @@
   </fieldset>
 
   {% if errors.get("form") %}<p class="field-error form-error" role="alert">{{ errors.form }}</p>{% endif %}
-  <div class="design-form-actions">
+  <div class="action-row design-form-actions">
     <button type="submit">Run design check</button>
-    <a class="button secondary" href="/design-check">Reset / clear</a>
+    <a class="button secondary" href="/design-check">Reset</a>
     <span class="field-help">{{ candidate_count }} exact candidate{% if candidate_count != 1 %}s{% endif %} match the current vehicle filters.</span>
   </div>
 </form>
@@ -192,13 +215,15 @@
   </div>
 
   <dl class="design-counts" aria-label="Overall result counts">
-    <div class="design-count design-count-pass"><dt>PASS</dt><dd>{{ report.counts.PASS }}</dd><small>All active constraints pass.</small></div>
-    <div class="design-count design-count-fail"><dt>FAIL</dt><dd>{{ report.counts.FAIL }}</dd><small>At least one active constraint fails.</small></div>
-    <div class="design-count design-count-indeterminate"><dt>INDETERMINATE</dt><dd>{{ report.counts.INDETERMINATE }}</dd><small>No FAIL, but a decision blocker remains.</small></div>
+    <div class="design-count design-count-pass"><dt><span class="state-symbol" aria-hidden="true">✓</span> PASS</dt><dd>{{ report.counts.PASS }}</dd><small>All active constraints pass.</small></div>
+    <div class="design-count design-count-fail"><dt><span class="state-symbol" aria-hidden="true">×</span> FAIL</dt><dd>{{ report.counts.FAIL }}</dd><small>At least one active constraint fails.</small></div>
+    <div class="design-count design-count-indeterminate"><dt><span class="state-symbol" aria-hidden="true">?</span> INDETERMINATE</dt><dd>{{ report.counts.INDETERMINATE }}</dd><small>No FAIL, but a decision blocker remains.</small></div>
   </dl>
 
   {% if report.vehicles %}
-  <div class="table-wrap design-results-wrap">
+  <div class="table-frame design-results-frame">
+  <p class="table-scroll-hint">Scroll horizontally to inspect every constraint and control column.</p>
+  <div class="table-wrap design-results-wrap" role="region" aria-label="Design check result matrix" tabindex="0">
     <table class="design-results-table">
       <caption class="sr-only">Design check result matrix by exact vehicle configuration</caption>
       <colgroup><col class="design-vehicle-column"><col class="design-overall-column"><col class="design-constraint-column"><col class="design-constraint-column"><col class="design-constraint-column"><col class="design-constraint-column"><col class="design-control-column"></colgroup>
@@ -238,6 +263,7 @@
       {% endfor %}
       </tbody>
     </table>
+  </div>
   </div>
   {% else %}
     <div class="empty-state"><h3>No candidates match the active result filter.</h3><p>Clear the result filter or adjust the candidate vehicle filters. The entered constraints remain in the URL.</p></div>

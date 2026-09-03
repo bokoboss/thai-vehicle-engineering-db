@@ -26,6 +26,51 @@ def test_vehicle_catalog_uses_human_filters_and_compact_readiness(client):
     assert 'value="AVT_READY" selected' in filtered.text
 
 
+def test_shared_ui_hooks_mark_navigation_and_dense_page_boundaries(client):
+    vehicles = client.get("/vehicles").text
+    assert '<a class="nav-link is-active" href="/vehicles" aria-current="page">Vehicles</a>' in vehicles
+    assert vehicles.count('aria-current="page"') == 1
+    assert 'class="filter-panel filter-bar catalog-filter-panel"' in vehicles
+    assert 'class="muted result-summary result-count"' in vehicles
+
+    detail = client.get("/vehicles/FIXTURE-PRIMARY-PUBLISHED").text
+    assert '<a class="nav-link is-active" href="/vehicles" aria-current="page">Vehicles</a>' in detail
+    assert detail.count('aria-current="page"') == 1
+
+    compare = client.get(
+        "/compare",
+        params={"codes": "FIXTURE-PRIMARY-PUBLISHED,FIXTURE-CLEARANCE-LOADS"},
+    ).text
+    assert '<a class="nav-link is-active" href="/compare" aria-current="page">Compare</a>' in compare
+    assert 'class="selection-summary"' in compare
+    assert "Scroll horizontally to inspect every selected vehicle column." in compare
+
+    design = client.get(
+        "/design-check",
+        params={"available_clear_height_mm": "2100"},
+    ).text
+    assert '<a class="nav-link is-active" href="/design-check" aria-current="page">Design Check</a>' in design
+    assert 'class="constraint-cluster-grid"' in design
+    assert "Scroll horizontally to inspect every constraint and control column." in design
+
+    issues = client.get("/issues").text
+    assert '<a class="nav-link is-active" href="/issues" aria-current="page">Data Issues</a>' in issues
+    assert 'class="filter-panel issue-filter"' in issues
+    assert 'class="muted result-summary result-count"' in issues
+
+
+def test_empty_catalog_and_issue_states_use_shared_table_language(client):
+    catalog = client.get("/vehicles", params={"q": "no-such-configuration"})
+    assert catalog.status_code == 200
+    assert 'class="empty table-empty"' in catalog.text
+    assert "Reset the catalog filters to show the full catalog." in catalog.text
+
+    issues = client.get("/issues", params={"kind": "not-a-real-kind"})
+    assert issues.status_code == 200
+    assert 'class="empty table-empty"' in issues.text
+    assert "Show all issue types to restore the complete work queue." in issues.text
+
+
 def test_vehicle_detail_groups_values_and_discloses_provenance(client):
     response = client.get("/vehicles/FIXTURE-WIDTH-UNSPECIFIED")
 

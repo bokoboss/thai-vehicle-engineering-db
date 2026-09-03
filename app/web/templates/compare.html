@@ -38,7 +38,9 @@
 {%- endmacro %}
 
 {% macro comparison_table(vehicles, groups, caption) -%}
-<div class="table-wrap comparison-wrap">
+<div class="table-frame comparison-frame">
+  <p class="table-scroll-hint">Scroll horizontally to inspect every selected vehicle column.</p>
+  <div class="table-wrap comparison-wrap" role="region" aria-label="{{ caption }}" tabindex="0">
   <table class="comparison-matrix">
     <caption class="sr-only">{{ caption }}</caption>
     <colgroup>
@@ -70,6 +72,7 @@
     {% endfor %}
     </tbody>
   </table>
+  </div>
 </div>
 {%- endmacro %}
 
@@ -80,16 +83,16 @@
   <p class="lede">Select two to four exact configurations. Shared filters help narrow the catalog; each slot can refine or escape them independently.</p>
 </section>
 
-<form class="compare-selector" method="get" action="/compare" aria-label="Select vehicle configurations to compare">
+<form class="filter-panel compare-selector" method="get" action="/compare" aria-label="Select vehicle configurations to compare">
   <fieldset class="compare-shared-filters" aria-describedby="shared-filter-help">
     <legend>Shared candidate filters</legend>
     <p id="shared-filter-help" class="field-help">Convenience filters only. Selected exact configurations stay in their slots even when they fall outside these results.</p>
     <div class="compare-filter-grid">
-      <div class="search-field">
+      <div class="field-group search-field">
         <label for="compare-search">Search <span class="field-help">Model, code, generation, or variant</span></label>
         <input id="compare-search" type="search" name="q" value="{{ shared_filters.q }}" placeholder="Start typing a model or code">
       </div>
-      <div>
+      <div class="field-group">
         <label for="compare-manufacturer">Manufacturer</label>
         <select id="compare-manufacturer" name="manufacturer">
           <option value="">All manufacturers</option>
@@ -98,7 +101,7 @@
           {% endfor %}
         </select>
       </div>
-      <div>
+      <div class="field-group">
         <label for="compare-body-style">Body style / class</label>
         <select id="compare-body-style" name="body_style">
           <option value="">All body styles</option>
@@ -107,7 +110,7 @@
           {% endfor %}
         </select>
       </div>
-      <div>
+      <div class="field-group">
         <label for="compare-powertrain">Powertrain</label>
         <select id="compare-powertrain" name="powertrain">
           <option value="">All powertrains</option>
@@ -116,7 +119,7 @@
           {% endfor %}
         </select>
       </div>
-      <div>
+      <div class="field-group">
         <label for="compare-identity-time">Identity time</label>
         <select id="compare-identity-time" name="identity_time">
           <option value="">Any identity time</option>
@@ -127,6 +130,12 @@
       </div>
     </div>
   </fieldset>
+
+  <div class="selection-summary" aria-live="polite">
+    <span class="section-kicker">Current selection</span>
+    <strong>{{ vehicles|length }} of 4 slots filled</strong>
+    <span>Each slot keeps its exact configuration independently.</span>
+  </div>
 
   <div class="compare-slot-grid">
   {% for slot in compare_slots %}
@@ -142,7 +151,7 @@
           <span class="muted">No exact configuration selected.</span>
         {% endif %}
       </div>
-      <div class="slot-choice">
+      <div class="slot-choice field-group">
         <label for="vehicle-{{ slot.number }}">Choose exact configuration <span class="field-help">{{ slot.scope_label }}</span></label>
         <select id="vehicle-{{ slot.number }}" name="vehicle_{{ slot.number }}" aria-describedby="slot-{{ slot.number }}-help">
           <option value="">No vehicle selected</option>
@@ -163,7 +172,7 @@
             <label for="slot-{{ slot.number }}-search">Search this slot</label>
             <input id="slot-{{ slot.number }}-search" type="search" name="slot_{{ slot.number }}_q" value="{{ slot.filters.q }}" placeholder="Model, code, or variant">
           </div>
-          <div>
+          <div class="field-group">
             <label for="slot-{{ slot.number }}-manufacturer">Manufacturer</label>
             <select id="slot-{{ slot.number }}-manufacturer" name="slot_{{ slot.number }}_manufacturer">
               <option value="">Inherit shared</option>
@@ -172,7 +181,7 @@
               {% endfor %}
             </select>
           </div>
-          <div>
+          <div class="field-group">
             <label for="slot-{{ slot.number }}-body-style">Body style / class</label>
             <select id="slot-{{ slot.number }}-body-style" name="slot_{{ slot.number }}_body_style">
               <option value="">Inherit shared</option>
@@ -181,7 +190,7 @@
               {% endfor %}
             </select>
           </div>
-          <div>
+          <div class="field-group">
             <label for="slot-{{ slot.number }}-powertrain">Powertrain</label>
             <select id="slot-{{ slot.number }}-powertrain" name="slot_{{ slot.number }}_powertrain">
               <option value="">Inherit shared</option>
@@ -190,7 +199,7 @@
               {% endfor %}
             </select>
           </div>
-          <div>
+          <div class="field-group">
             <label for="slot-{{ slot.number }}-identity-time">Identity time</label>
             <select id="slot-{{ slot.number }}-identity-time" name="slot_{{ slot.number }}_identity_time">
               <option value="">Inherit shared</option>
@@ -200,7 +209,7 @@
             </select>
           </div>
         </div>
-        <div class="filter-actions slot-actions">
+        <div class="action-row filter-actions slot-actions">
           {% if slot.scope == "all" %}
             <button type="submit" class="button secondary" name="slot_action" value="use_shared:{{ slot.number }}">Use shared filters</button>
           {% else %}
@@ -214,9 +223,9 @@
   {% endfor %}
   </div>
 
-  <div class="compare-form-actions">
+  <div class="action-row compare-form-actions">
     <button type="submit">Update comparison</button>
-    <a class="button secondary" href="/compare">Clear selections and filters</a>
+    <a class="button secondary" href="/compare" aria-label="Reset comparison selections and filters">Reset</a>
   </div>
   <p class="field-help compare-form-help">Existing <code>/compare?codes=CODE_A,CODE_B</code> deep links remain supported. Empty slots stay independent.</p>
 </form>
