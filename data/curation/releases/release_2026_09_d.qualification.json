@@ -1,0 +1,454 @@
+{
+  "build_utc": "2026-09-03T07:55:17+00:00",
+  "database_counts": {
+    "assessments": 158,
+    "axles": 0,
+    "conflict_decisions": 0,
+    "fitments": 14,
+    "geometry_assets": 0,
+    "loads": 34,
+    "manufacturers": 21,
+    "models": 41,
+    "observations": 354,
+    "parameters": 48,
+    "readiness_results": 220,
+    "sources": 107,
+    "steering_relations": 0,
+    "values": 466,
+    "vehicles": 41
+  },
+  "expected_manifest_counts": {
+    "assessments": 158,
+    "axles": 0,
+    "conflict_decisions": 0,
+    "conflicting_values": 2,
+    "fitments": 14,
+    "geometry_assets": 0,
+    "loads": 34,
+    "observations": 354,
+    "source_entries": 108,
+    "sources": 107,
+    "steering_relations": 0,
+    "values": 466,
+    "vehicles": 41
+  },
+  "exports": {
+    "conflict_state_present": true,
+    "credentials_exposed": false,
+    "csv_bytes": 308924,
+    "csv_path": "vehicle_engineering_curated.release_2026_09_d.issue53.promotion.csv",
+    "csv_rows": 624,
+    "fitment_scope_present": true,
+    "headers_match": true,
+    "load_scope_present": true,
+    "provenance_present": true,
+    "vehicles": 41,
+    "xlsx_bytes": 113368,
+    "xlsx_path": "vehicle_engineering_curated.release_2026_09_d.issue53.promotion.xlsx"
+  },
+  "manifest_count": 41,
+  "previous_accepted_database": {
+    "bytes": 1134592,
+    "path": "vehicle_engineering_curated.db",
+    "sha256": "8fef9a1c12550893c966b32119bdd0e05a78b0f09fcbf9afab73558c5aa9ed46",
+    "vehicles": 39
+  },
+  "promotion": {
+    "database": "vehicle_engineering_curated.db",
+    "previous_database": "vehicle_engineering_curated.db.previous",
+    "requested": true,
+    "result": "PROMOTED"
+  },
+  "qa_result": "PASS",
+  "qualification_schema_version": "1.0",
+  "readiness_status": {
+    "AVT_READY:NOT_READY": 55,
+    "DIMENSION_READY:NOT_READY": 13,
+    "DIMENSION_READY:READY": 42,
+    "IDENTITY_RESOLVED:READY": 55,
+    "RAMP_SCREENING_READY:NOT_READY": 55
+  },
+  "registry_only": {
+    "parameters": 48,
+    "vehicles": 0
+  },
+  "release_date": "2026-09-03",
+  "release_definition": "data\\curation\\releases\\release_2026_09_d.json",
+  "release_id": "release_2026_09_d",
+  "release_status": "ACCEPTED",
+  "repository_sha": "34d198d3059601fb4191cd5de40dc69d3966073d",
+  "representative_proofs": {
+    "BYD ATTO 3": {
+      "clearance_load_basis": [
+        "OEM_LADEN",
+        "UNLADEN"
+      ],
+      "clearance_mm": [
+        150,
+        175
+      ]
+    },
+    "Honda CR-V": {
+      "height_unknown": true,
+      "height_values": 0
+    },
+    "Lexus LM": {
+      "turning_radius_m": 5.9,
+      "turning_reference": "WHEEL_PATH_OTHER"
+    },
+    "MG IM6": {
+      "four_wheel_steering_observation": "Intelligent Four-wheel Steering System (with Crab Mode)",
+      "steering_relations": 0
+    },
+    "Mitsubishi Triton": {
+      "identity_time_basis": "EDITION_RELEASE",
+      "model_year_from": null,
+      "turning_radius_m": 6.2,
+      "turning_reference": "OEM_UNSPECIFIED"
+    },
+    "Nissan Serena": {
+      "approximate_weight_raw": "1797",
+      "kerb_mass_values": 0
+    },
+    "Volvo EX30": {
+      "conflict_decisions": 0,
+      "fitment_codes": [
+        "WHEEL19"
+      ],
+      "turning_radius_normalized": false,
+      "turning_text_values": [
+        "10.7 m",
+        "11 m"
+      ]
+    },
+    "th-honda-accord-ehev-rs-release-2025-08-22": {
+      "authority_B_values": 8,
+      "source_authority": "REPUTABLE_SECONDARY"
+    },
+    "th-honda-civic-ehev-rs-release-2026-07-23": {
+      "authority_B_values": 8,
+      "source_authority": "REPUTABLE_SECONDARY"
+    },
+    "th-tesla-model3-premium-long-range-rwd-2024plus": {
+      "normalized_radius": false,
+      "raw_turning_text": [
+        "11.7 m curb-to-curb turning circle"
+      ]
+    },
+    "th-tesla-modely-premium-lr-rwd-19-2025plus": {
+      "normalized_radius": false,
+      "raw_turning_text": [
+        "12.13 m curb-to-curb turning circle"
+      ]
+    }
+  },
+  "source_reuse": {
+    "manifest_entries": 108,
+    "unique_source_codes": 107
+  },
+  "stable_vehicle_codes": [
+    "th-byd-atto3-my24-extended-local",
+    "th-mitsubishi-triton-ultra-4wd-at-release-2023",
+    "th-volvo-ex30-ultra-smer-my2026-19",
+    "th-bmw-520d-m-sport-pro-g60-effective-2025-03-24",
+    "th-bmw-740d-m-sport-g70-current-2026-03",
+    "th-byd-dolphin-extended-local-saleperiod-2026-03",
+    "th-byd-seal-my24-awd-performance",
+    "th-ford-ranger-wildtrak-20-biturbo-4x4-nextgen",
+    "th-honda-accord-ehev-rs-release-2025-08-22",
+    "th-honda-civic-ehev-rs-release-2026-07-23",
+    "th-hyundai-ioniq6-exclusive-revision-2024",
+    "th-isuzu-mux-22-ultimate-4wd-release-2026",
+    "th-isuzu-vcross-22-z-4door-at-4x4-release-2026",
+    "th-mazda-mx5-35ae-rf-at-release-2025",
+    "th-mg-im6-long-range-release-2025-08-22",
+    "th-nissan-navara-pro4x-7at-upgrade-2024",
+    "th-tesla-model3-premium-long-range-rwd-2024plus",
+    "th-tesla-modely-premium-lr-rwd-19-2025plus",
+    "th-toyota-bz4x-fwd-revision-2568",
+    "th-toyota-commuter-28-at-highroof-revision-2568",
+    "th-toyota-fortuner-leader-v-4wd-revision-2568",
+    "th-honda-crv-ehev-rs4wd-minorchange-release-2025-11-28",
+    "th-kia-carnival-hev-7seat-luxury-release-2025-10-03",
+    "th-lexus-lm350h-executive-7seat-allnew-2023",
+    "th-nissan-serena-epower-highway-star-release-2025-03-24",
+    "th-toyota-corolla-cross-hev-premium-luxury-revision-2569",
+    "th-toyota-innova-zenix-hev-premium-revision-2568",
+    "th-byd-m6-extended-7seat-release-2024-11-28",
+    "th-hyundai-staria-premium-my2025",
+    "th-toyota-yaris-cross-hev-premium-luxury-catalog-2026",
+    "th-honda-hrv-ehev-rs-new-release-2024-11-28",
+    "th-toyota-camry-hev-premium-luxury-new-release-2567",
+    "th-porsche-911-carrera-gts-992ii-delivered-2025",
+    "th-lamborghini-revuelto-launch-2023-07-25",
+    "th-denza-d9-performance-awd-launch-2024-11-01",
+    "th-ferrari-296-gtb-thailand-premiere-2022-04",
+    "th-mclaren-artura-coupe-launch-2022-12-19",
+    "th-lamborghini-urus-se-launch-2024-05-22",
+    "th-ferrari-purosangue-thailand-premiere-2023-04-07",
+    "th-mercedes-s350d-exclusive-sale-snapshot-2026-09-03",
+    "th-bmw-x7-xdrive40d-m-sport-sale-snapshot-2026-09-03"
+  ],
+  "stable_vehicle_digest_sha256": "923c5607f4789a44368172cfe88c9fe1c6190ab2e895e61476430c1546258306",
+  "staging_database": "vehicle_engineering_curated.release_2026_09_d.issue53.promotion.staging.db",
+  "qualification_evidence": {
+    "issue": 53,
+    "pull_request": 54,
+    "repository": "bokoboss/thai-vehicle-engineering-db",
+    "branch": "chatgpt/release-2026-09-d-41-vehicles",
+    "starting_main_sha": "6bc3ac5ca394ac424829a6285861f38e599ed670",
+    "starting_pr_head_sha": "34d198d3059601fb4191cd5de40dc69d3966073d",
+    "repository_sha_at_build": "34d198d3059601fb4191cd5de40dc69d3966073d",
+    "accepted_base_release": "release_2026_09_c",
+    "accepted_base_vehicle_count": 39,
+    "current_release_pointer": "release_2026_09_d.json",
+    "no_new_automotive_research": true,
+    "worktree_clean_before_qualification": true,
+    "final_contract_counts": {
+      "vehicles": 41,
+      "parameters": 48,
+      "manufacturers": 21,
+      "models": 41,
+      "sources": 107,
+      "source_entries": 108,
+      "observations": 354,
+      "normalized_values": 466,
+      "assessments": 158,
+      "loads": 34,
+      "fitments": 14,
+      "axles": 0,
+      "steering": 0,
+      "geometry": 0,
+      "conflict_decisions": 0,
+      "conflicting_normalized_values": 2,
+      "readiness": 220,
+      "evidence_links": 470
+    },
+    "manifest_delta": {
+      "release_c_manifest_count": 39,
+      "release_d_manifest_count": 41,
+      "additions": [
+        "data/curation/manifests/wave2c/mercedes_s350d_exclusive_sale_snapshot_20260903_v1.json",
+        "data/curation/manifests/wave2c/bmw_x7_xdrive40d_m_sport_sale_snapshot_20260903_v1.json"
+      ],
+      "removals": [],
+      "duplicate_paths": [],
+      "pointer_resolves_to_release_d": true
+    },
+    "pre_promotion": {
+      "accepted_database": {
+        "path": "vehicle_engineering_curated.db",
+        "bytes": 1134592,
+        "sha256": "8fef9a1c12550893c966b32119bdd0e05a78b0f09fcbf9afab73558c5aa9ed46",
+        "integrity_check": "ok",
+        "vehicles": 39,
+        "stable_vehicle_digest_sha256": "569f171065c44e9aec610d5a59657e7cb54d093479e5c44a72ac1cb99970c460"
+      },
+      "existing_previous_database": {
+        "path": "vehicle_engineering_curated.db.previous",
+        "bytes": 1028096,
+        "sha256": "f01101a6ca8eb6f577e8b10fa22eb1a5f30705c45ea04988d01f685304bc7574",
+        "integrity_check": "ok",
+        "vehicles": 34,
+        "stable_vehicle_digest_sha256": "5f374d05e282e71c335250e487014bbf9eb6d514ba685177c4b486b3842cf09a"
+      }
+    },
+    "staging_verification": {
+      "path": "vehicle_engineering_curated.release_2026_09_d.issue53.staging.db",
+      "bytes": 1159168,
+      "sha256": "d05f6e4fe1bf7237619756b64f526bd93f48422953d9569c906ecdede698ff23",
+      "integrity_check": "ok",
+      "vehicles": 41,
+      "stable_vehicle_digest_sha256": "923c5607f4789a44368172cfe88c9fe1c6190ab2e895e61476430c1546258306",
+      "built_with_no_promote": true,
+      "no_wal_or_shm_sidecars": true
+    },
+    "post_promotion": {
+      "accepted_database": {
+        "path": "vehicle_engineering_curated.db",
+        "bytes": 1142784,
+        "sha256": "5aa2b21b6588475594104fa2df078b52bd0c7a06b8117966c9e294a3c4001a1f",
+        "integrity_check": "ok",
+        "vehicles": 41,
+        "stable_vehicle_digest_sha256": "923c5607f4789a44368172cfe88c9fe1c6190ab2e895e61476430c1546258306"
+      },
+      "previous_database": {
+        "path": "vehicle_engineering_curated.db.previous",
+        "bytes": 1134592,
+        "sha256": "8fef9a1c12550893c966b32119bdd0e05a78b0f09fcbf9afab73558c5aa9ed46",
+        "integrity_check": "ok",
+        "vehicles": 39,
+        "stable_vehicle_digest_sha256": "569f171065c44e9aec610d5a59657e7cb54d093479e5c44a72ac1cb99970c460",
+        "matches_pre_promotion_accepted_database": true
+      },
+      "promotion_staging_database_consumed": true,
+      "manual_sqlite_copy_replace_used": false
+    },
+    "promotion_evidence": {
+      "command": "python scripts/build_curated_db.py --staging vehicle_engineering_curated.release_2026_09_d.issue53.promotion.staging.db --final vehicle_engineering_curated.db --csv vehicle_engineering_curated.release_2026_09_d.issue53.promotion.csv --xlsx vehicle_engineering_curated.release_2026_09_d.issue53.promotion.xlsx --qualification data/curation/releases/release_2026_09_d.qualification.json --replace-final",
+      "result": "PROMOTED",
+      "atomic_promotion_path": true,
+      "previous_snapshot_preserved": true
+    },
+    "semantic_preservation": {
+      "baseline_database": "vehicle_engineering_curated.release_2026_09_c.issue53.baseline.staging.db",
+      "target_database": "vehicle_engineering_curated.release_2026_09_d.issue53.staging.db",
+      "baseline_vehicle_count": 39,
+      "promoted_vehicle_count": 41,
+      "common_original_vehicle_count": 39,
+      "unchanged_original_vehicle_fingerprints": 39,
+      "semantic_mismatch_count": 0,
+      "missing_original_codes": [],
+      "expected_added_codes": [
+        "th-mercedes-s350d-exclusive-sale-snapshot-2026-09-03",
+        "th-bmw-x7-xdrive40d-m-sport-sale-snapshot-2026-09-03"
+      ],
+      "registry_semantics_unchanged": true,
+      "baseline_original_fingerprint_digest": "5b3078cb6b01cd2fc1620a40c892a6e4e7725a113f859b43f28d2750f936bb0f",
+      "promoted_original_fingerprint_digest": "5b3078cb6b01cd2fc1620a40c892a6e4e7725a113f859b43f28d2750f936bb0f",
+      "baseline_registry_digest": "a5b6e14097933e5e1fed136f42d6fd4a0033fc4de746bc6fb2f72e97ee9fb933",
+      "promoted_registry_digest": "a5b6e14097933e5e1fed136f42d6fd4a0033fc4de746bc6fb2f72e97ee9fb933",
+      "fingerprint_sections": [
+        "identity/model/manufacturer",
+        "source documents",
+        "raw observations",
+        "normalized values and semantic metadata",
+        "evidence links",
+        "assessments/readiness",
+        "loads/fitments",
+        "axles/steering/geometry/conflicts",
+        "QA/AVT/derivation records"
+      ],
+      "excluded_generated_fields": [
+        "database IDs",
+        "created_at",
+        "updated_at",
+        "reviewed_at",
+        "assessed_at",
+        "evaluated_at",
+        "generated_at",
+        "decided_at",
+        "executed_at",
+        "resolved_at"
+      ],
+      "source_retrieved_at_and_extracted_at_retained": true
+    },
+    "sentinel_verification": {
+      "permanent_contract_sentinels": {
+        "status": "PASS",
+        "scope": "builder database QA plus accepted-DB regression checks"
+      },
+      "wave2c_t1": {
+        "status": "PASS",
+        "vehicles_checked": [
+          "th-mercedes-s350d-exclusive-sale-snapshot-2026-09-03",
+          "th-bmw-x7-xdrive40d-m-sport-sale-snapshot-2026-09-03"
+        ],
+        "s_class": {
+          "sale_period": ["2026-09-03", "2026-09-03"],
+          "model_years": [null, null],
+          "normalized_values": {
+            "overall_length_mm": 5289,
+            "overall_width_including_mirrors_mm": 2109,
+            "overall_height_mm": 1503,
+            "kerb_mass_kg": 2020
+          },
+          "width_envelope_definition": "INCLUDING_MIRRORS_OPEN",
+          "airmatic_raw_preserved": true,
+          "eu_kerb_raw_preserved": true,
+          "body_width_wheelbase_clearance_turning_and_avt_track_inferences_absent": true
+        },
+        "x7": {
+          "sale_period": ["2026-09-03", "2026-09-03"],
+          "model_years": [null, null],
+          "normalized_values": {
+            "overall_length_mm": 5181,
+            "overall_width_reported_mm": 2000,
+            "overall_height_mm": 1835,
+            "wheelbase_actual_mm": 3105
+          },
+          "width_envelope_definition": "OEM_UNSPECIFIED",
+          "ec_ready_to_drive_mass_raw_only_kg": 2565,
+          "kerb_mass_2565_absent": true,
+          "body_width_mirror_width_clearance_turning_and_avt_track_inferences_absent": true
+        }
+      }
+    },
+    "application_smoke": {
+      "status": "PASS",
+      "database": "vehicle_engineering_curated.db",
+      "healthz_status": 200,
+      "root_status": 307,
+      "vehicles_page_status": 200,
+      "api_vehicles_count": 41,
+      "detail_api_and_page_checks": 2,
+      "comparisons_checked": 4,
+      "mixed_old_new_comparisons": 3,
+      "design_check_fail_closed": true,
+      "issues_page_status": 200,
+      "api_issues_count": 123,
+      "csv_rows": 624,
+      "csv_bytes": 308924,
+      "xlsx_rows": 624,
+      "xlsx_bytes": 113368,
+      "xlsx_provenance_headers_present": true
+    },
+    "launcher_smoke": {
+      "status": "PASS",
+      "command": "Start Vehicle Engineering DB.cmd",
+      "healthz_status": 200,
+      "root_status": 307,
+      "vehicles_page_status": 200,
+      "live_api_vehicles_count": 41,
+      "both_wave2c_vehicle_codes_present": true,
+      "server_shutdown_log_observed": true,
+      "no_listener_or_runner_after_shutdown": true,
+      "no_seed_fallback_or_rebuild_observed": true,
+      "accepted_database_sha256_unchanged_after_launcher": true
+    },
+    "test_evidence": {
+      "focused_pytest": {
+        "status": "PASS",
+        "passed": 107,
+        "command": "python -m pytest tests/integration/test_curation_importer.py tests/contract/test_release_definition.py tests/contract/test_current_release_pointer.py tests/integration/test_curated_release_builder.py tests/unit/test_design_check.py tests/integration/test_design_check_real.py tests/integration/test_generic_release_application.py tests/integration/test_api_and_exports.py tests/unit/test_local_runner.py"
+      },
+      "full_pytest_before_artifact_enrichment": {
+        "status": "PASS",
+        "passed": 190,
+        "command": "python -m pytest"
+      },
+      "post_artifact_full_pytest": {
+        "status": "PASS",
+        "passed": 190,
+        "command": "python -m pytest"
+      }
+    },
+    "export_artifacts": {
+      "csv": {
+        "path": "vehicle_engineering_curated.release_2026_09_d.issue53.promotion.csv",
+        "bytes": 308924,
+        "sha256": "e950b6799b29aff9ecfb3554aa1b8404c0afb9db8857392083ac3457cbb42713"
+      },
+      "xlsx": {
+        "path": "vehicle_engineering_curated.release_2026_09_d.issue53.promotion.xlsx",
+        "bytes": 113368,
+        "sha256": "3974c8fa4d46cf698e73721b1b8dfca6ba651d34dca01395ea73bf93f1d18109"
+      }
+    },
+    "source_edit_audit": {
+      "production_builder_changed": false,
+      "application_changed": false,
+      "tests_changed": false,
+      "launcher_changed": false,
+      "qualification_artifact_added": true
+    },
+    "unresolved_data_methodology_questions": [
+      "Generic OEM width values remain OEM_UNSPECIFIED unless body/mirror inclusion is explicitly established.",
+      "OEM tread/track values remain separate from Autodesk Vehicle Tracking outer-face track semantics.",
+      "No AVT steering angles, lock-to-lock times, ramp angles, or geometry assets were inferred from the two Wave2C T1 manifests.",
+      "Readiness remains NOT_READY where the required AVT or ramp-specific inputs are absent.",
+      "The S 350 d record remains bounded to the 2026-09-03 sale-period snapshot with no model year inferred.",
+      "The X7 2,565 kg value remains EC ready-to-drive mass only; a separate kerb-mass parameter is not populated."
+    ]
+  }
+}
