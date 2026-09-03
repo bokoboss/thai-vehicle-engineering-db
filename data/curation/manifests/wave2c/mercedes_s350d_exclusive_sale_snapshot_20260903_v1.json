@@ -1,0 +1,260 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-MERCEDES-S350D-EXCLUSIVE-TH-SALE-SNAPSHOT-20260903",
+  "vehicle": {
+    "stable_vehicle_code": "th-mercedes-s350d-exclusive-sale-snapshot-2026-09-03",
+    "manufacturer_name": "Mercedes-Benz",
+    "manufacturer_display_name": "Mercedes-Benz",
+    "canonical_model_name": "s-class",
+    "display_model_name": "S-Class",
+    "market_code": "TH",
+    "generation_name": "W223 S-Class Saloon Long",
+    "body_style": "Long-wheelbase executive sedan",
+    "chassis_platform_code": "W223",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "SALE_PERIOD",
+    "identity_time_label_raw": "Mercedes-Benz Thailand current S 350 d Exclusive technical configuration observed 3 September 2026",
+    "sale_period_from": "2026-09-03",
+    "sale_period_to": "2026-09-03",
+    "variant_trim": "S 350 d Exclusive",
+    "powertrain": "2.9L inline-6 diesel / 9G-TRONIC",
+    "drivetrain": null,
+    "body_configuration": "4-door 5-seat long-wheelbase sedan",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "The official Mercedes-Benz Thailand S-Class Saloon Long page identifies the exact S 350 d Exclusive grade and publishes current Thailand technical data. Temporal scope is deliberately bounded to the observed sale snapshot on 3 September 2026; no model year or launch date is inferred."
+  },
+  "sources": [
+    {
+      "source_code": "MERCEDES_TH_SCLASS_S350D_CURRENT_20260903",
+      "publisher": "Mercedes-Benz (Thailand) Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_THAI_MODEL_TECHNICAL_PAGE",
+      "title": "S-Class Saloon Long — S 350 d Exclusive technical data",
+      "url": "https://www.mercedes-benz.co.th/th/passengercars/models/saloon-long/s-class/overview.html",
+      "retrieved_at": "2026-09-03T13:10:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "ข้อมูลทางเทคนิคทั้งหมด (ดีเซล) — เมอร์เซเดส-เบนซ์ เอส 350 ดี เอ็กซ์คลูซีฟ",
+      "applicability_notes": "Exact current Thailand S 350 d Exclusive technical configuration",
+      "archival_status": "URL_ONLY",
+      "notes": "Official page explicitly labels width as including door mirrors and mass as EU kerb weight."
+    }
+  ],
+  "load_conditions": [],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "MERCEDES_TH_SCLASS_S350D_CURRENT_20260903",
+      "vehicle_identity_claim": "Mercedes-Benz S 350 d Exclusive Thailand",
+      "raw_label": "ข้อมูลทางเทคนิคของ S-Class Saloon",
+      "raw_value": "เมอร์เซเดส-เบนซ์ เอส 350 ดี เอ็กซ์คลูซีฟ",
+      "raw_unit": null,
+      "page_section_locator": "Technical data",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T13:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C curation",
+      "ambiguity_note": "Observed-current snapshot; no model year inferred."
+    },
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "MERCEDES_TH_SCLASS_S350D_CURRENT_20260903",
+      "vehicle_identity_claim": "S 350 d Exclusive",
+      "raw_label": "ความยาว / ความกว้าง (รวมกระจกมองข้าง) / ความสูง",
+      "raw_value": "5289 / 2109 / 1503",
+      "raw_unit": "mm",
+      "page_section_locator": "ข้อมูลทางเทคนิคทั้งหมด — ขนาด",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T13:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C curation",
+      "ambiguity_note": "Width is explicitly mirrors-included; body width is not published on this page."
+    },
+    {
+      "observation_code": "OBS_KERB_EU",
+      "source_code": "MERCEDES_TH_SCLASS_S350D_CURRENT_20260903",
+      "vehicle_identity_claim": "S 350 d Exclusive",
+      "raw_label": "น้ำหนักรถเปล่า (EU) / Kerb weight (EU)",
+      "raw_value": "2020",
+      "raw_unit": "kg",
+      "page_section_locator": "ข้อมูลทางเทคนิคทั้งหมด — น้ำหนัก",
+      "reported_precision": "nearest 1 kg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T13:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C curation",
+      "ambiguity_note": "EU kerb basis retained in raw label; normalized as kerb mass because OEM explicitly calls the value kerb weight."
+    },
+    {
+      "observation_code": "OBS_AIRMATIC",
+      "source_code": "MERCEDES_TH_SCLASS_S350D_CURRENT_20260903",
+      "vehicle_identity_claim": "S-Class Saloon Long current Thailand equipment",
+      "raw_label": "AIRMATIC",
+      "raw_value": "Air suspension with automatic level control depending on load",
+      "raw_unit": null,
+      "page_section_locator": "Equipment — Chassis",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T13:10:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C curation",
+      "ambiguity_note": "No ground-clearance or ride-height value is inferred from AIRMATIC presence."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5289,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_MIRROR_WIDTH",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 2109,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1503,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_KERB",
+      "parameter_code": "kerb_mass_kg",
+      "value": 2020,
+      "canonical_unit": "kg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_KERB_EU"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "Official Thailand technical page publishes only width including mirrors (2,109 mm), not body-excluding-mirrors width.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current S-Class technical page"
+      ],
+      "search_notes": "Do not back-calculate body width.",
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek exact Thailand spec sheet/homologation with body width."
+    },
+    {
+      "parameter_code": "wheelbase_actual_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "Exact wheelbase is not published in the reviewed current Thailand technical page.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current S-Class technical page"
+      ],
+      "search_notes": "Do not import global W223 wheelbase without explicit same-geometry applicability.",
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Recover exact Thailand specification sheet or homologation."
+    },
+    {
+      "parameter_code": "clearance_value_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "AIRMATIC automatic level control is documented, but no exact ground-clearance value/state was found.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current S-Class technical page"
+      ],
+      "search_notes": "Air suspension presence does not establish clearance.",
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek OEM ride-height/clearance technical data."
+    },
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM turning radius/circle value was found in the reviewed current Thailand source.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current S-Class technical page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek official technical/homologation data."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact AVT outer tyre-face track geometry was found.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current S-Class technical page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek wheel offset/mounted geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact AVT outer tyre-face track geometry was found.",
+      "source_families_searched": [
+        "Mercedes-Benz Thailand current S-Class technical page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T13:10:00+07:00",
+      "reviewer": "ChatGPT Wave 2C curation",
+      "next_action": "Seek wheel offset/mounted geometry."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
