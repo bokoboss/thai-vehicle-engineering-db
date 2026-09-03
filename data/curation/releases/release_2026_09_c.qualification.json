@@ -1,0 +1,449 @@
+{
+  "status": "PASS",
+  "qualification_scope": {
+    "issue": 47,
+    "pull_request": 48,
+    "repository": "bokoboss/thai-vehicle-engineering-db",
+    "branch": "chatgpt/release-2026-09-c-39-vehicles",
+    "source_head": "0cc9bf2bef57f46da0d5b8775217b2e7ddb7fc81",
+    "accepted_main_sha": "90218eba90b6944b961d906940e8245cdd608333",
+    "base_accepted_release": "release_2026_09_b",
+    "base_vehicle_count": 34,
+    "promotion_boundary": "data/curation/releases/current_release.json -> release_2026_09_c.json",
+    "no_new_automotive_research": true,
+    "no_builder_app_test_launcher_source_changes": true
+  },
+  "manifest_delta": {
+    "base_manifest_count": 34,
+    "promoted_manifest_count": 39,
+    "removed_manifest_paths": [],
+    "added_manifest_paths": [
+      "data/curation/manifests/wave2b/denza_d9_performance_awd_launch_20241101_v1.json",
+      "data/curation/manifests/wave2b/ferrari_296_gtb_thailand_premiere_202204_v1.json",
+      "data/curation/manifests/wave2b/mclaren_artura_coupe_launch_20221219_v1.json",
+      "data/curation/manifests/wave2b/lamborghini_urus_se_th_launch_20240522_v1.json",
+      "data/curation/manifests/wave2b/ferrari_purosangue_th_premiere_20230407_v1.json"
+    ],
+    "pointer_resolves_to_promoted_release": true,
+    "stable_vehicle_code_count": 39,
+    "stable_vehicle_digest_sha256": "569f171065c44e9aec610d5a59657e7cb54d093479e5c44a72ac1cb99970c460"
+  },
+  "build_utc": "2026-09-03T04:14:56+00:00",
+  "database_counts": {
+    "assessments": 145,
+    "axles": 0,
+    "conflict_decisions": 0,
+    "fitments": 14,
+    "geometry_assets": 0,
+    "loads": 34,
+    "manufacturers": 20,
+    "models": 39,
+    "observations": 347,
+    "parameters": 48,
+    "readiness_results": 212,
+    "sources": 105,
+    "steering_relations": 0,
+    "values": 458,
+    "vehicles": 39
+  },
+  "expected_manifest_counts": {
+    "assessments": 145,
+    "axles": 0,
+    "conflict_decisions": 0,
+    "conflicting_values": 2,
+    "fitments": 14,
+    "geometry_assets": 0,
+    "loads": 34,
+    "observations": 347,
+    "source_entries": 106,
+    "sources": 105,
+    "steering_relations": 0,
+    "values": 458,
+    "vehicles": 39
+  },
+  "exports": {
+    "conflict_state_present": true,
+    "credentials_exposed": false,
+    "csv_bytes": 297779,
+    "csv_path": "vehicle_engineering_curated.release_2026_09_c.csv",
+    "csv_rows": 603,
+    "fitment_scope_present": true,
+    "headers_match": true,
+    "load_scope_present": true,
+    "provenance_present": true,
+    "vehicles": 39,
+    "xlsx_bytes": 109219,
+    "xlsx_path": "vehicle_engineering_curated.release_2026_09_c.xlsx"
+  },
+  "manifest_count": 39,
+  "previous_accepted_database": {
+    "bytes": 1028096,
+    "path": "vehicle_engineering_curated.db",
+    "sha256": "f01101a6ca8eb6f577e8b10fa22eb1a5f30705c45ea04988d01f685304bc7574",
+    "vehicles": 34
+  },
+  "promotion": {
+    "database": "vehicle_engineering_curated.db",
+    "previous_database": "vehicle_engineering_curated.db.previous",
+    "requested": true,
+    "result": "PROMOTED"
+  },
+  "qa_result": "PASS",
+  "qualification_schema_version": "1.0",
+  "readiness_status": {
+    "AVT_READY:NOT_READY": 53,
+    "DIMENSION_READY:NOT_READY": 12,
+    "DIMENSION_READY:READY": 41,
+    "IDENTITY_RESOLVED:READY": 53,
+    "RAMP_SCREENING_READY:NOT_READY": 53
+  },
+  "registry_only": {
+    "parameters": 48,
+    "vehicles": 0
+  },
+  "release_date": "2026-09-02",
+  "release_definition": "data\\curation\\releases\\release_2026_09_c.json",
+  "release_id": "release_2026_09_c",
+  "release_status": "ACCEPTED",
+  "repository_sha": "0cc9bf2bef57f46da0d5b8775217b2e7ddb7fc81",
+  "representative_proofs": {
+    "BYD ATTO 3": {
+      "clearance_load_basis": [
+        "OEM_LADEN",
+        "UNLADEN"
+      ],
+      "clearance_mm": [
+        150,
+        175
+      ]
+    },
+    "Honda CR-V": {
+      "height_unknown": true,
+      "height_values": 0
+    },
+    "Lexus LM": {
+      "turning_radius_m": 5.9,
+      "turning_reference": "WHEEL_PATH_OTHER"
+    },
+    "MG IM6": {
+      "four_wheel_steering_observation": "Intelligent Four-wheel Steering System (with Crab Mode)",
+      "steering_relations": 0
+    },
+    "Mitsubishi Triton": {
+      "identity_time_basis": "EDITION_RELEASE",
+      "model_year_from": null,
+      "turning_radius_m": 6.2,
+      "turning_reference": "OEM_UNSPECIFIED"
+    },
+    "Nissan Serena": {
+      "approximate_weight_raw": "1797",
+      "kerb_mass_values": 0
+    },
+    "Volvo EX30": {
+      "conflict_decisions": 0,
+      "fitment_codes": [
+        "WHEEL19"
+      ],
+      "turning_radius_normalized": false,
+      "turning_text_values": [
+        "10.7 m",
+        "11 m"
+      ]
+    },
+    "th-honda-accord-ehev-rs-release-2025-08-22": {
+      "authority_B_values": 8,
+      "source_authority": "REPUTABLE_SECONDARY"
+    },
+    "th-honda-civic-ehev-rs-release-2026-07-23": {
+      "authority_B_values": 8,
+      "source_authority": "REPUTABLE_SECONDARY"
+    },
+    "th-tesla-model3-premium-long-range-rwd-2024plus": {
+      "normalized_radius": false,
+      "raw_turning_text": [
+        "11.7 m curb-to-curb turning circle"
+      ]
+    },
+    "th-tesla-modely-premium-lr-rwd-19-2025plus": {
+      "normalized_radius": false,
+      "raw_turning_text": [
+        "12.13 m curb-to-curb turning circle"
+      ]
+    }
+  },
+  "source_reuse": {
+    "manifest_entries": 106,
+    "unique_source_codes": 105
+  },
+  "stable_vehicle_codes": [
+    "th-byd-atto3-my24-extended-local",
+    "th-mitsubishi-triton-ultra-4wd-at-release-2023",
+    "th-volvo-ex30-ultra-smer-my2026-19",
+    "th-bmw-520d-m-sport-pro-g60-effective-2025-03-24",
+    "th-bmw-740d-m-sport-g70-current-2026-03",
+    "th-byd-dolphin-extended-local-saleperiod-2026-03",
+    "th-byd-seal-my24-awd-performance",
+    "th-ford-ranger-wildtrak-20-biturbo-4x4-nextgen",
+    "th-honda-accord-ehev-rs-release-2025-08-22",
+    "th-honda-civic-ehev-rs-release-2026-07-23",
+    "th-hyundai-ioniq6-exclusive-revision-2024",
+    "th-isuzu-mux-22-ultimate-4wd-release-2026",
+    "th-isuzu-vcross-22-z-4door-at-4x4-release-2026",
+    "th-mazda-mx5-35ae-rf-at-release-2025",
+    "th-mg-im6-long-range-release-2025-08-22",
+    "th-nissan-navara-pro4x-7at-upgrade-2024",
+    "th-tesla-model3-premium-long-range-rwd-2024plus",
+    "th-tesla-modely-premium-lr-rwd-19-2025plus",
+    "th-toyota-bz4x-fwd-revision-2568",
+    "th-toyota-commuter-28-at-highroof-revision-2568",
+    "th-toyota-fortuner-leader-v-4wd-revision-2568",
+    "th-honda-crv-ehev-rs4wd-minorchange-release-2025-11-28",
+    "th-kia-carnival-hev-7seat-luxury-release-2025-10-03",
+    "th-lexus-lm350h-executive-7seat-allnew-2023",
+    "th-nissan-serena-epower-highway-star-release-2025-03-24",
+    "th-toyota-corolla-cross-hev-premium-luxury-revision-2569",
+    "th-toyota-innova-zenix-hev-premium-revision-2568",
+    "th-byd-m6-extended-7seat-release-2024-11-28",
+    "th-hyundai-staria-premium-my2025",
+    "th-toyota-yaris-cross-hev-premium-luxury-catalog-2026",
+    "th-honda-hrv-ehev-rs-new-release-2024-11-28",
+    "th-toyota-camry-hev-premium-luxury-new-release-2567",
+    "th-porsche-911-carrera-gts-992ii-delivered-2025",
+    "th-lamborghini-revuelto-launch-2023-07-25",
+    "th-denza-d9-performance-awd-launch-2024-11-01",
+    "th-ferrari-296-gtb-thailand-premiere-2022-04",
+    "th-mclaren-artura-coupe-launch-2022-12-19",
+    "th-lamborghini-urus-se-launch-2024-05-22",
+    "th-ferrari-purosangue-thailand-premiere-2023-04-07"
+  ],
+  "stable_vehicle_digest_sha256": "569f171065c44e9aec610d5a59657e7cb54d093479e5c44a72ac1cb99970c460",
+  "staging_database": "vehicle_engineering_curated.staging.db",
+  "staging_proof": {
+    "path": "vehicle_engineering_curated.release_2026_09_c.issue47.staging.db",
+    "bytes": 1126400,
+    "sha256": "4074c806aa11668f53bc632f7e165e248bfc1aedad65d6f5036ce04eea10dd59",
+    "integrity_check": "ok",
+    "source_entries": 106,
+    "unique_source_codes": 105,
+    "counts": {
+      "vehicles": 39,
+      "parameters": 48,
+      "manufacturers": 20,
+      "models": 39,
+      "sources": 105,
+      "observations": 347,
+      "normalized_values": 458,
+      "assessments": 145,
+      "load_conditions": 34,
+      "fitments": 14,
+      "axles": 0,
+      "steering_relations": 0,
+      "geometry_assets": 0,
+      "conflict_decisions": 0,
+      "readiness_results": 212,
+      "evidence_links": 462,
+      "conflicting_values": 2
+    }
+  },
+  "pre_promotion": {
+    "accepted_database": {
+      "path": "vehicle_engineering_curated.db",
+      "bytes": 1028096,
+      "sha256": "f01101a6ca8eb6f577e8b10fa22eb1a5f30705c45ea04988d01f685304bc7574",
+      "integrity_check": "ok",
+      "vehicles": 34,
+      "stable_vehicle_digest_sha256": "5f374d05e282e71c335250e487014bbf9eb6d514ba685177c4b486b3842cf09a",
+      "counts": {
+        "parameters": 48,
+        "manufacturers": 17,
+        "models": 34,
+        "sources": 91,
+        "observations": 317,
+        "normalized_values": 405,
+        "assessments": 116,
+        "load_conditions": 32,
+        "fitments": 14,
+        "axles": 0,
+        "steering_relations": 0,
+        "geometry_assets": 0,
+        "conflict_decisions": 0,
+        "readiness_results": 192,
+        "evidence_links": 409,
+        "conflicting_values": 2
+      }
+    },
+    "existing_previous_database": {
+      "path": "vehicle_engineering_curated.db.previous",
+      "bytes": 880640,
+      "sha256": "cfd5f71b5790ccee6ab76b530c1e2cd09a2721a27001e0e895c20a4b52fa28b0",
+      "integrity_check": "ok",
+      "vehicles": 27,
+      "stable_vehicle_digest_sha256": "0b644d3f10fd7f70a631612c87ecfc03e94a4ab59a37d5fd51278b1f6e560446"
+    }
+  },
+  "final_database": {
+    "path": "vehicle_engineering_curated.db",
+    "bytes": 1134592,
+    "sha256": "8fef9a1c12550893c966b32119bdd0e05a78b0f09fcbf9afab73558c5aa9ed46",
+    "integrity_check": "ok",
+    "vehicles": 39,
+    "stable_vehicle_digest_sha256": "569f171065c44e9aec610d5a59657e7cb54d093479e5c44a72ac1cb99970c460",
+    "counts": {
+      "parameters": 48,
+      "manufacturers": 20,
+      "models": 39,
+      "sources": 105,
+      "observations": 347,
+      "normalized_values": 458,
+      "assessments": 145,
+      "load_conditions": 34,
+      "fitments": 14,
+      "axles": 0,
+      "steering_relations": 0,
+      "geometry_assets": 0,
+      "conflict_decisions": 0,
+      "readiness_results": 212,
+      "evidence_links": 462,
+      "conflicting_values": 2
+    }
+  },
+  "rollback_verification": {
+    "path": "vehicle_engineering_curated.db.previous",
+    "bytes": 1028096,
+    "sha256": "f01101a6ca8eb6f577e8b10fa22eb1a5f30705c45ea04988d01f685304bc7574",
+    "integrity_check": "ok",
+    "vehicles": 34,
+    "matches_pre_promotion_accepted_database": true
+  },
+  "semantic_preservation": {
+    "baseline_vehicle_count": 34,
+    "promoted_vehicle_count": 39,
+    "common_original_vehicle_count": 34,
+    "unchanged_original_vehicle_fingerprints": 34,
+    "semantic_mismatch_count": 0,
+    "missing_original_codes": [],
+    "expected_added_codes": [
+      "th-denza-d9-performance-awd-launch-2024-11-01",
+      "th-ferrari-296-gtb-thailand-premiere-2022-04",
+      "th-ferrari-purosangue-thailand-premiere-2023-04-07",
+      "th-lamborghini-urus-se-launch-2024-05-22",
+      "th-mclaren-artura-coupe-launch-2022-12-19"
+    ],
+    "registry_semantics_unchanged": true,
+    "baseline_original_fingerprint_digest": "2a5efd4b9a08a6e8b507c23877f919dea8690c8159c073165787157e35ce6141",
+    "promoted_original_fingerprint_digest": "2a5efd4b9a08a6e8b507c23877f919dea8690c8159c073165787157e35ce6141",
+    "baseline_registry_digest": "300e4fb9eec1b2a7946f9a53d433d3c74052d5fa24c282e7aaa8d15d4d12d56e",
+    "promoted_registry_digest": "300e4fb9eec1b2a7946f9a53d433d3c74052d5fa24c282e7aaa8d15d4d12d56e",
+    "fingerprint_sections": [
+      "identity/model/manufacturer",
+      "source documents",
+      "raw observations",
+      "normalized values and semantic metadata",
+      "evidence links",
+      "assessments/readiness",
+      "loads/fitments",
+      "axles/steering/geometry/conflicts",
+      "QA/AVT/derivation records"
+    ],
+    "excluded_generated_fields": [
+      "database IDs",
+      "created_at",
+      "updated_at",
+      "retrieved_at",
+      "extracted_at",
+      "assessed_at",
+      "evaluated_at",
+      "generated_at",
+      "decided_at",
+      "executed_at"
+    ]
+  },
+  "sentinel_verification": {
+    "permanent_contract_sentinels": {
+      "status": "PASS",
+      "scope": "builder database QA plus accepted-DB regression checks"
+    },
+    "tranche2": {
+      "status": "PASS",
+      "vehicles_checked": [
+        "th-denza-d9-performance-awd-launch-2024-11-01",
+        "th-ferrari-296-gtb-thailand-premiere-2022-04",
+        "th-mclaren-artura-coupe-launch-2022-12-19",
+        "th-lamborghini-urus-se-launch-2024-05-22",
+        "th-ferrari-purosangue-thailand-premiere-2023-04-07"
+      ],
+      "assertions": [
+        "identity and edition-release labels retained",
+        "published dimensions, wheelbase, overhangs, masses, wheel and tyre strings retained",
+        "generic OEM width remains OEM_UNSPECIFIED where unresolved",
+        "OEM tread/track remains OEM_UNSPECIFIED and is not AVT outer-face track",
+        "D9 clearance values retain UNLADEN/OEM_LADEN load scope and OEM minimum semantics",
+        "D9 turning value retains RADIUS and OEM_UNSPECIFIED references",
+        "Urus body and mirrors-open widths retain distinct envelope semantics",
+        "dry-weight observations remain raw-only where not kerb mass",
+        "no AVT, ramp-angle, steering-relation, or geometry inference was created"
+      ]
+    }
+  },
+  "application_smoke": {
+    "status": "PASS",
+    "database": "vehicle_engineering_curated.db",
+    "api_vehicles_count": 39,
+    "api_issues_count": 118,
+    "detail_and_api_routes_checked": 10,
+    "comparisons_checked": 4,
+    "design_check_fail_closed": true,
+    "csv_filtered_bytes": 40660,
+    "xlsx_filtered_rows": 82,
+    "xlsx_filtered_bytes": 19350,
+    "xlsx_provenance_headers_present": true
+  },
+  "launcher_smoke": {
+    "status": "PASS",
+    "command": "Start Vehicle Engineering DB.cmd",
+    "healthz_status": 200,
+    "root_status": 307,
+    "vehicles_page_status": 200,
+    "live_api_vehicles_count": 39,
+    "server_shutdown_log_observed": true,
+    "no_listener_or_runner_after_shutdown": true,
+    "no_seed_fallback_or_rebuild_observed": true
+  },
+  "test_evidence": {
+    "focused_pytest": {
+      "status": "PASS",
+      "passed": 107,
+      "command": "python -m pytest tests/integration/test_curation_importer.py tests/contract/test_release_definition.py tests/contract/test_current_release_pointer.py tests/integration/test_curated_release_builder.py tests/unit/test_design_check.py tests/integration/test_design_check_real.py tests/integration/test_generic_release_application.py tests/integration/test_api_and_exports.py tests/unit/test_local_runner.py"
+    },
+    "full_pytest": {
+      "status": "PASS",
+      "passed": 190,
+      "command": "python -m pytest"
+    }
+  },
+  "export_artifacts": {
+    "csv": {
+      "path": "vehicle_engineering_curated.release_2026_09_c.csv",
+      "bytes": 297779,
+      "sha256": "b148f57e8617adac88cdc40fc247f83bcbe76d9edea00fb950f3f0933e3b0b1d"
+    },
+    "xlsx": {
+      "path": "vehicle_engineering_curated.release_2026_09_c.xlsx",
+      "bytes": 109219,
+      "sha256": "8a33d2d113b348e09832e2a6f2aa62ac886f1960d882bc713b3f9abb8ece248a"
+    }
+  },
+  "source_edit_audit": {
+    "production_builder_changed": false,
+    "application_changed": false,
+    "tests_changed": false,
+    "launcher_changed": false,
+    "qualification_artifact_added": true
+  },
+  "unresolved_data_methodology_questions": [
+    "Generic OEM width values remain OEM_UNSPECIFIED unless body/mirror inclusion is explicitly established.",
+    "OEM tread/track values remain separate from Autodesk Vehicle Tracking outer-face track semantics.",
+    "No AVT steering angles, lock-to-lock times, ramp angles, or geometry assets were inferred from the five tranche-2 manifests.",
+    "Readiness remains NOT_READY where the required AVT or ramp-specific inputs are absent."
+  ]
+}
