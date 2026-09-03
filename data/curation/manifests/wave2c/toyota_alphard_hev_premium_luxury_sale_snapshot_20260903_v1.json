@@ -1,0 +1,480 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-TOYOTA-ALPHARD-HEV-PREMIUM-LUXURY-TH-SALE-SNAPSHOT-20260903",
+  "vehicle": {
+    "stable_vehicle_code": "th-toyota-alphard-hev-premium-luxury-sale-snapshot-2026-09-03",
+    "manufacturer_name": "Toyota",
+    "manufacturer_display_name": "Toyota",
+    "canonical_model_name": "alphard",
+    "display_model_name": "Alphard",
+    "market_code": "TH",
+    "generation_name": "AH40 current Thailand generation",
+    "body_style": "Luxury 7-seat MPV",
+    "chassis_platform_code": "AH40",
+    "model_year_from": null,
+    "model_year_to": null,
+    "identity_time_basis": "SALE_PERIOD",
+    "identity_time_label_raw": "Toyota Thailand current Alphard HEV Premium Luxury technical configuration observed 3 September 2026",
+    "sale_period_from": "2026-09-03",
+    "sale_period_to": "2026-09-03",
+    "variant_trim": "HEV Premium Luxury",
+    "powertrain": "2.5L A25A-FXS hybrid / E-CVT",
+    "drivetrain": "E-Four AWD",
+    "body_configuration": "7-seat luxury MPV",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Toyota Thailand currently identifies the exact Alphard HEV Premium Luxury grade and publishes the current technical column directly. This record intentionally uses a bounded current sale snapshot rather than silently mapping the earlier 2.5 HEV Luxury name. The current page publishes 161 mm minimum ground clearance, so the older 2025 150 mm figure is not carried forward."
+  },
+  "sources": [
+    {
+      "source_code": "TOYOTA_TH_ALPHARD_GRADES_CURRENT_20260903",
+      "publisher": "Toyota Motor Thailand Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_THAI_GRADE_PAGE",
+      "title": "Toyota Alphard — current Thailand grade line-up",
+      "url": "https://www.toyota.co.th/en/model/alphard/grade",
+      "retrieved_at": "2026-09-03T15:45:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "MODEL LINE-UP — Alphard HEV Premium Luxury",
+      "applicability_notes": "Exact current Thailand grade identity",
+      "archival_status": "URL_ONLY",
+      "notes": "Current grade page identifies Alphard HEV Premium Luxury as a 7-seat HEV grade."
+    },
+    {
+      "source_code": "TOYOTA_TH_ALPHARD_SPEC_CURRENT_20260903",
+      "publisher": "Toyota Motor Thailand Co., Ltd.",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_THAI_SPECIFICATION_PAGE",
+      "title": "Toyota Alphard — current Thailand specifications",
+      "url": "https://www.toyota.co.th/en/model/alphard/specification/",
+      "retrieved_at": "2026-09-03T15:45:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "page_section_default": "Specifications — Alphard HEV Premium Luxury",
+      "applicability_notes": "Exact current Thailand HEV Premium Luxury technical column",
+      "archival_status": "URL_ONLY",
+      "notes": "Current exact-grade specification is used instead of the older 2.5 HEV Luxury catalogue mapping."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "OEM_CLEARANCE_LOAD_UNSPECIFIED",
+      "name": "OEM minimum-clearance condition; load unspecified",
+      "mass_basis": "OTHER",
+      "source_code": "TOYOTA_TH_ALPHARD_SPEC_CURRENT_20260903",
+      "raw_oem_wording": "Min. Ground Clearance (mm.)",
+      "notes": "Toyota publishes the clearance value without an explicit load state; no unladen/laden basis is inferred."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_IDENTITY",
+      "source_code": "TOYOTA_TH_ALPHARD_GRADES_CURRENT_20260903",
+      "vehicle_identity_claim": "Toyota Alphard HEV Premium Luxury Thailand current configuration",
+      "raw_label": "Current grade",
+      "raw_value": "Alphard HEV Premium Luxury — 7 Seats — HEV",
+      "raw_unit": null,
+      "page_section_locator": "MODEL LINE-UP",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "Bounded current sale snapshot; no model year inferred."
+    },
+    {
+      "observation_code": "OBS_DIMENSIONS",
+      "source_code": "TOYOTA_TH_ALPHARD_SPEC_CURRENT_20260903",
+      "vehicle_identity_claim": "Alphard HEV Premium Luxury",
+      "raw_label": "Overall Length x Width x Height",
+      "raw_value": "5010 x 1850 x 1950",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimension",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "Width is generic and does not establish body/mirror inclusion."
+    },
+    {
+      "observation_code": "OBS_WB_TRACK",
+      "source_code": "TOYOTA_TH_ALPHARD_SPEC_CURRENT_20260903",
+      "vehicle_identity_claim": "Alphard HEV Premium Luxury",
+      "raw_label": "Wheelbase / Tread Front x Rear",
+      "raw_value": "3000 / 1605 / 1625",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimension",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "OEM tread is not AVT outer tyre-face track."
+    },
+    {
+      "observation_code": "OBS_CLEARANCE",
+      "source_code": "TOYOTA_TH_ALPHARD_SPEC_CURRENT_20260903",
+      "vehicle_identity_claim": "Alphard HEV Premium Luxury",
+      "raw_label": "Min. Ground Clearance",
+      "raw_value": "161",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimension",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "Load state is not stated."
+    },
+    {
+      "observation_code": "OBS_TURNING",
+      "source_code": "TOYOTA_TH_ALPHARD_SPEC_CURRENT_20260903",
+      "vehicle_identity_claim": "Alphard HEV Premium Luxury",
+      "raw_label": "Min. Turning Radius",
+      "raw_value": "5.9",
+      "raw_unit": "m",
+      "page_section_locator": "Dimension",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "Reference path and axle scope are not stated."
+    },
+    {
+      "observation_code": "OBS_WHEEL_TYRE",
+      "source_code": "TOYOTA_TH_ALPHARD_SPEC_CURRENT_20260903",
+      "vehicle_identity_claim": "Alphard HEV Premium Luxury",
+      "raw_label": "Wheel & Tires",
+      "raw_value": "19-inch Alloy Wheels, 225/55 R19",
+      "raw_unit": null,
+      "page_section_locator": "Transmission and Suspension",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:45:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": null
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 5010,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WIDTH_REPORTED",
+      "parameter_code": "overall_width_reported_mm",
+      "value": 1850,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "width_envelope_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1950,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 3000,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_FT",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1605,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_RT",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1625,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WB_TRACK"
+      ]
+    },
+    {
+      "value_code": "VAL_CLEARANCE",
+      "parameter_code": "clearance_value_mm",
+      "value": 161,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED"
+      },
+      "load_condition_code": "OEM_CLEARANCE_LOAD_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_CLEARANCE"
+      ]
+    },
+    {
+      "value_code": "VAL_TURN",
+      "parameter_code": "turning_radius_normalized_m",
+      "value": 5.9,
+      "canonical_unit": "m",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": {
+        "turning_radius_or_diameter": "RADIUS",
+        "turning_reference": "OEM_UNSPECIFIED",
+        "turning_axle_scope": "OEM_UNSPECIFIED",
+        "source_label": "Min. Turning Radius"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_TURNING"
+      ]
+    },
+    {
+      "value_code": "VAL_FW",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "19-inch alloy wheels",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RW",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "19-inch alloy wheels",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "225/55 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "225/55 R19",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "EXACT_CONFIGURATION",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_WHEEL_TYRE"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "overall_width_body_mm",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Toyota Thailand publishes 1,850 mm as generic overall width without body-excluding-mirrors semantics.",
+      "source_families_searched": [
+        "Toyota Thailand current grade/specification pages"
+      ],
+      "search_notes": "Generic width is not promoted to body width.",
+      "assessed_at": "2026-09-03T15:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek explicit Toyota body-envelope dimensions."
+    },
+    {
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No mirrors-open width was found in the reviewed current exact-grade Toyota Thailand source.",
+      "source_families_searched": [
+        "Toyota Thailand current specification page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T15:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek official dimension drawing/specification with mirror envelope."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "Published tread 1,605 mm does not establish AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Toyota Thailand current specification page"
+      ],
+      "search_notes": "OEM tread is retained separately.",
+      "assessed_at": "2026-09-03T15:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek wheel offset/mounted geometry."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "Published tread 1,625 mm does not establish AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Toyota Thailand current specification page"
+      ],
+      "search_notes": "OEM tread is retained separately.",
+      "assessed_at": "2026-09-03T15:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek wheel offset/mounted geometry."
+    },
+    {
+      "parameter_code": "oem_published_approach_angle_deg",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM approach angle was found in the reviewed current Thailand specification.",
+      "source_families_searched": [
+        "Toyota Thailand current specification page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T15:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek official lower-envelope/ramp data."
+    },
+    {
+      "parameter_code": "oem_published_departure_angle_deg",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM departure angle was found in the reviewed current Thailand specification.",
+      "source_families_searched": [
+        "Toyota Thailand current specification page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T15:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek official lower-envelope/ramp data."
+    },
+    {
+      "parameter_code": "oem_published_breakover_angle_deg",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "No exact OEM breakover angle was found in the reviewed current Thailand specification.",
+      "source_families_searched": [
+        "Toyota Thailand current specification page"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T15:45:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek official lower-envelope/ramp data."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
