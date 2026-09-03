@@ -2,18 +2,21 @@
   "registry_version": "1.0",
   "wave_id": "wave2c",
   "issue": 49,
-  "baseline_release": "release_2026_09_c",
-  "baseline_vehicle_count": 39,
+  "baseline_release": "release_2026_09_d",
+  "baseline_vehicle_count": 41,
   "created_at": "2026-09-03T13:20:00+07:00",
   "targets": [
     {
       "target_id": "wave2c-toyota-alphard-hev-luxury",
       "manufacturer": "Toyota",
       "model": "Alphard",
-      "configuration": "2.5 HEV Luxury / current exact equivalent",
+      "configuration": "Alphard HEV Premium Luxury",
       "category": "luxury_mpv",
-      "research_status": "RESEARCH_ACTIVE_TEMPORAL_GRADE_MAPPING",
-      "research_note": "Toyota current model/grade surfaces and the 2025 official catalogue use changing grade labels. The 2025 catalogue visually confirms 2.5 HEV Luxury geometry, but exact current-grade temporal mapping must be resolved before manifest normalization."
+      "research_status": "MANIFEST_DRAFT_READY_TRANCHE2",
+      "research_note": "Temporal/grade gate closed using Toyota Thailand current grade and current exact-grade specification pages. Current exact grade publishes 5010 x 1850 x 1950 mm, wheelbase 3000, tread 1605/1625, minimum ground clearance 161 mm, minimum turning radius 5.9 m, E-Four and 225/55 R19. Earlier 2.5 HEV Luxury naming/150 mm clearance is not silently carried forward.",
+      "identity_time_basis_candidate": "SALE_PERIOD",
+      "identity_time_label_raw": "Toyota Thailand current Alphard HEV Premium Luxury technical configuration observed 3 September 2026",
+      "manifest_path": "data/curation/manifests/wave2c/toyota_alphard_hev_premium_luxury_sale_snapshot_20260903_v1.json"
     },
     {
       "target_id": "wave2c-mercedes-s350d-exclusive",
@@ -21,11 +24,11 @@
       "model": "S-Class",
       "configuration": "S 350 d Exclusive",
       "category": "long_wheelbase_executive_sedan",
-      "research_status": "MANIFEST_DRAFT_READY",
+      "research_status": "ACCEPTED_RELEASE_D",
       "identity_time_basis_candidate": "SALE_PERIOD",
       "identity_time_label_raw": "Mercedes-Benz Thailand current S 350 d Exclusive technical configuration observed 3 September 2026",
       "manifest_path": "data/curation/manifests/wave2c/mercedes_s350d_exclusive_sale_snapshot_20260903_v1.json",
-      "research_note": "Exact current Thailand grade. Explicit 5289 mm length, 2109 mm width including mirrors, 1503 mm height and 2020 kg EU kerb weight. Wheelbase/turning/clearance remain unresolved."
+      "research_note": "Accepted in Release 2026_09_d after importer qualification and safe promotion."
     },
     {
       "target_id": "wave2c-bmw-x7-xdrive40d-m-sport",
@@ -33,11 +36,11 @@
       "model": "X7",
       "configuration": "xDrive40d M Sport",
       "category": "full_size_luxury_suv",
-      "research_status": "MANIFEST_DRAFT_READY",
+      "research_status": "ACCEPTED_RELEASE_D",
       "identity_time_basis_candidate": "SALE_PERIOD",
       "identity_time_label_raw": "BMW Thailand current X7 xDrive40d M Sport technical configuration observed 3 September 2026",
       "manifest_path": "data/curation/manifests/wave2c/bmw_x7_xdrive40d_m_sport_sale_snapshot_20260903_v1.json",
-      "research_note": "Exact current Thailand configuration. Dimensions 5181 x 2000 x 1835 mm and wheelbase 3105 mm. Published 2565 kg is EC ready-to-drive mass including 90% fuel + 75 kg driver, retained raw only."
+      "research_note": "Accepted in Release 2026_09_d after importer qualification and safe promotion."
     },
     {
       "target_id": "wave2c-defender130-xdynamic-hse",
@@ -45,8 +48,8 @@
       "model": "Defender 130",
       "configuration": "X-Dynamic HSE MY27",
       "category": "long_offroad_suv",
-      "research_status": "RESEARCH_ACTIVE_SOURCE_GAP",
-      "research_note": "Land Rover Thailand explicitly lists MY27 Defender 130 X-Dynamic HSE and electronic air suspension, but exact dimensions/clearance table has not yet been recovered from the current Thailand source."
+      "research_status": "RESEARCH_ACTIVE_MY27_GEOMETRY_APPLICABILITY_HOLD",
+      "research_note": "Thailand MY27 X-Dynamic HSE identity remains strong. A Land Rover global 2024 Defender 130 technical sheet publishes 5358 mm length, 2008/2105 mm folded/open mirrors, 218.5/293 mm clearance and turning-circle values, but current MY27 Thailand-to-global geometry continuity is not explicit enough for normalization. HOLD rather than silently bridge 2024 body data to MY27."
     },
     {
       "target_id": "wave2c-porsche-taycan-turbo-gt-my2027",
@@ -54,8 +57,9 @@
       "model": "Taycan",
       "configuration": "Turbo GT MY2027",
       "category": "low_performance_ev_sedan",
-      "research_status": "RESEARCH_ACTIVE_GEOMETRY_APPLICABILITY",
-      "research_note": "Porsche Thailand explicitly lists current MY2027 Taycan Turbo GT. Porsche Finder identifies J1 II since 2024 and global OEM Finder provides rich geometry/air-suspension states; exact Thailand-to-global same-geometry applicability remains to be closed."
+      "research_status": "MANIFEST_DRAFT_READY_TRANCHE2",
+      "research_note": "Porsche Thailand explicitly identifies Taycan Turbo GT MY2027. Porsche OEM exact-model technical data supports structural geometry at SAME_GEOMETRY_CONFIRMED. Official exact-model turning surfaces disagree 11.1 vs 11.2 m, so no normalized turning radius is created.",
+      "manifest_path": "data/curation/manifests/wave2c/porsche_taycan_turbo_gt_my2027_v1.json"
     },
     {
       "target_id": "wave2c-mercedes-maybach-s580e-premium",
@@ -63,8 +67,12 @@
       "model": "S-Class",
       "configuration": "S 580 e Premium",
       "category": "ultra_long_wheelbase_chauffeur_sedan",
-      "research_status": "RESEARCH_ACTIVE_WIDTH_SEMANTIC_CONFLICT",
-      "research_note": "Mercedes-Benz Thailand currently publishes 5469 x 1921 x 1510 mm and labels 1921 mm as width including mirrors. This conflicts with expected envelope semantics and must remain unresolved; no normalization until source semantics are reconciled."
+      "research_status": "MANIFEST_DRAFT_READY_CONFLICT_AWARE",
+      "research_note": "Exact Thailand S 580 e Premium is established. Thailand labels 1921 mm as including mirrors while Mercedes Z223 owner documentation reports 2109 mm including mirrors. Both mirror-width claims are retained as an unresolved conflict. Body width is not normalized because Mercedes owner-manual editions themselves disagree at 1921 vs 1954 mm.",
+      "identity_time_basis_candidate": "SALE_PERIOD",
+      "identity_time_label_raw": "Mercedes-Benz Thailand current Mercedes-Maybach S 580 e Premium technical configuration observed 3 September 2026",
+      "manifest_path": "data/curation/manifests/wave2c/mercedes_maybach_s580e_premium_sale_snapshot_20260903_v1.json"
     }
-  ]
+  ],
+  "updated_at": "2026-09-03T16:00:00+07:00"
 }
