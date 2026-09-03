@@ -12,10 +12,10 @@
       <div class="shell header-inner">
         <a class="brand" href="/vehicles">Vehicle Engineering Database <span>TH</span></a>
         <nav aria-label="Primary navigation">
-          <a href="/vehicles">Vehicles</a>
-          <a href="/compare">Compare</a>
-          <a href="/design-check">Design Check</a>
-          <a href="/issues">Data Issues</a>
+          <a class="nav-link{% if request.url.path == '/vehicles' or request.url.path.startswith('/vehicles/') %} is-active{% endif %}" href="/vehicles"{% if request.url.path == '/vehicles' or request.url.path.startswith('/vehicles/') %} aria-current="page"{% endif %}>Vehicles</a>
+          <a class="nav-link{% if request.url.path == '/compare' %} is-active{% endif %}" href="/compare"{% if request.url.path == '/compare' %} aria-current="page"{% endif %}>Compare</a>
+          <a class="nav-link{% if request.url.path == '/design-check' %} is-active{% endif %}" href="/design-check"{% if request.url.path == '/design-check' %} aria-current="page"{% endif %}>Design Check</a>
+          <a class="nav-link{% if request.url.path == '/issues' %} is-active{% endif %}" href="/issues"{% if request.url.path == '/issues' %} aria-current="page"{% endif %}>Data Issues</a>
         </nav>
       </div>
     </header>
