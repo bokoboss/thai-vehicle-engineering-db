@@ -215,9 +215,12 @@ python -m pytest
 190 passed in 127.56s
 ```
 
-Post-push GitHub Actions CI was pending when this artifact was first authored;
-the final CI run and exact URL are returned with the completion result. The
-qualification is not a release promotion.
+Post-push GitHub Actions CI run
+[`33725788886`](https://github.com/bokoboss/thai-vehicle-engineering-db/actions/runs/33725788886)
+completed with **success** for qualification commit
+`31aa8e24e739771e0c9fd868e2bd114d58045814`. The final docs-only commit below
+records this result; its own CI result is reported with the completion result.
+The qualification is not a release promotion.
 
 ## Release and repository boundaries
 
