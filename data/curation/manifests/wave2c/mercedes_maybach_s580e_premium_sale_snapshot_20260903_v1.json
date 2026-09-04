@@ -4,10 +4,10 @@
   "record_id": "CURATE-MERCEDES-MAYBACH-S580E-PREMIUM-TH-SALE-SNAPSHOT-20260903",
   "vehicle": {
     "stable_vehicle_code": "th-mercedes-maybach-s580e-premium-sale-snapshot-2026-09-03",
-    "manufacturer_name": "Mercedes-Benz",
+    "manufacturer_name": "Mercedes-Maybach",
     "manufacturer_display_name": "Mercedes-Maybach",
-    "canonical_model_name": "mercedes-maybach-s-class",
-    "display_model_name": "Mercedes-Maybach S-Class",
+    "canonical_model_name": "s-class",
+    "display_model_name": "S-Class",
     "market_code": "TH",
     "generation_name": "Z223 Mercedes-Maybach S-Class",
     "body_style": "Ultra-long-wheelbase chauffeur sedan",
