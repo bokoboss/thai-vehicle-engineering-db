@@ -223,3 +223,58 @@ result.
 
 Qualification result: **BLOCKED at the existing-manufacturer display-metadata
 gate; stop condition satisfied; no candidate data imported.**
+
+## Issue #60 Mercedes-Maybach marque remediation follow-up
+
+Issue #60 supersedes the earlier one-field Mercedes-Benz display-name proposal.
+After Issue #61 was completed and PR #62 was squash-merged, accepted `main`
+advanced to `d3954ae05c56b2035c9bab3ea7bddc989907caaf` without engineering data,
+release, importer, application or test-semantic changes.
+
+The pre-remediation PR #57 HEAD was
+`01754019fbd771e5da5e406515832580b1f8475b`. The bounded remediation commit is
+`84e0d93132a736910c43b76712530d6b3fbca483`.
+
+Only the four approved vehicle identity fields changed:
+
+| Field | Before | After |
+|---|---|---|
+| `manufacturer_name` | `Mercedes-Benz` | `Mercedes-Maybach` |
+| `manufacturer_display_name` | `Mercedes-Maybach` | `Mercedes-Maybach` |
+| `canonical_model_name` | `mercedes-maybach-s-class` | `s-class` |
+| `display_model_name` | `Mercedes-Maybach S-Class` | `S-Class` |
+
+Git content hashes for the manifest are recorded to make this remediation
+reproducible without inventing a SHA-256 value that was not recomputed in the
+current connector-only execution environment:
+
+- pre-remediation Git blob: `ae2b9ad346b976fa1d82d20fa93cbe8d11b7b8f0`;
+- post-remediation Git blob: `9c2796bfb8cfc0609e5a9565b21575791ecf169a`;
+- previously recorded pre-remediation SHA-256 remains
+  `00393b19d3a2974162a0c3790913862d06736112364cf6c5e94ad85377ccf23b`.
+
+A commit-to-commit comparison from `01754019...` to `84e0d931...` reports one
+modified file with exactly four additions and four deletions. Therefore the
+stable vehicle code, temporal identity, generation/chassis, variant,
+powertrain/body configuration, all source metadata and raw observations, all
+four normalized engineering values, all seven assessments, applicability
+grades, conflict states, unresolved body width/wheelbase/turning/clearance/mass
+and empty conflict-decision set remain semantically unchanged by this
+remediation.
+
+The reviewed normalized catalog identity is now:
+
+`Mercedes-Maybach · S-Class · S 580 e Premium`
+
+and remains distinct from accepted
+`Mercedes-Benz · S-Class · S 350 d Exclusive`. A later successful 41 -> 44
+qualification is expected to create a distinct `Mercedes-Maybach` manufacturer
+row, making the predicted manufacturer count 22, subject to actual importer and
+database results.
+
+This follow-up does **not** claim Issue #60 complete yet. The required fresh
+Release D no-write importer validation and manufacturer/model planning proof
+must still be run in a repository execution environment. GitHub CI is useful
+regression evidence but is not a substitute for that specific validation.
+Issue #58 must not perform the 41 -> 44 import until Issue #60 validation and
+independent review are complete.
