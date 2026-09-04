@@ -3,11 +3,33 @@
 This repository contains engineering software **and engineering data**. Data integrity is a protected product behavior.
 
 ## Before changing anything
-1. Read `PROJECT_PROFILE.md`.
-2. Read the current Issue / execution contract.
-3. Read the relevant documents under `docs/`, especially `VEHICLE_DATA_STANDARD.md`.
-4. Inspect the actual repository state before editing.
-5. For material schema, engineering-methodology or AVT-mapping changes, apply scrutiny before implementation.
+
+1. Read `AGENTS.md`.
+2. Read `PROJECT_PROFILE.md`.
+3. Read the current GitHub Issue / execution contract and referenced PR.
+4. Read the relevant documents under `docs/`, especially `docs/VEHICLE_DATA_STANDARD.md`.
+5. Inspect `git status`.
+6. Record the current branch and exact `HEAD`.
+7. Inspect recent commits and relevant refs (`main`, the task branch, and remote-tracking refs).
+8. Confirm the expected branch, base and PR from the execution packet before editing.
+9. Treat repository files, Git history, GitHub Issues/PRs and accepted release artifacts as authoritative over remembered chat context.
+
+If the execution packet conflicts with actual repository/Git/GitHub state, stop and report the conflict instead of silently guessing or repairing around it.
+
+Do not assume access to any previous ChatGPT or Codex conversation, account, session or scratchpad. A task must be reconstructable from the repository, Git/GitHub state and the current execution packet.
+
+For material schema, engineering-methodology or AVT-mapping changes, apply scrutiny before implementation.
+
+## Control plane and execution plane
+
+Use the workflow boundary below unless a task-specific contract explicitly overrides it:
+
+- **ChatGPT = control plane:** reasoning, source research, architecture/methodology, scope, acceptance criteria, independent review, GitHub/PR/CI inspection and preparation of execution packets.
+- **Codex = execution plane:** bounded local repository/file/code/data mutation, local runtime or browser execution, tests, packaging and implementation work.
+
+Codex tasks must be self-contained. They must state the repository, expected branch/base, baseline `HEAD`, bounded scope, acceptance criteria, required tests and stop conditions, and must not depend on prior Codex chat history.
+
+Preserve recoverable Git baselines. Do not use destructive Git/file operations or overwrite accepted data/release artifacts unless the execution contract explicitly authorizes them.
 
 ## Non-negotiable data rules
 - Never fabricate a vehicle dimension or parameter.
@@ -45,10 +67,12 @@ Every calculation intended for publication must have:
 Implementation exists != accepted.
 
 Report:
-- exact branch/commit/PR;
-- changed contracts/behavior;
+- repository and exact branch;
+- baseline `HEAD` and final `HEAD`;
+- changed files/contracts/behavior;
 - tests and evidence;
-- unresolved data/methodology questions;
+- PR and CI state where applicable;
+- unresolved data/methodology questions or blockers;
 - any values or records that remain partial or unverified.
 
 This project uses a lean adoption of:
