@@ -401,6 +401,12 @@ summary { cursor: pointer; color: var(--accent); font-weight: 750; }
   .identity-facts > div:nth-child(n + 3) { border-top: 1px solid var(--line); }
   .mini-definition-list { grid-template-columns: 1fr; gap: 1px; }
   .mini-definition-list dd { margin-bottom: 5px; }
+  .readiness-table { min-width: 0; table-layout: fixed; }
+  .readiness-table th:first-child { width: 36%; overflow-wrap: anywhere; }
+  .readiness-table th:nth-child(2) { width: 30%; }
+  .readiness-table th:nth-child(3) { width: 34%; }
+  .evidence-body { width: 100%; min-width: 0; max-width: none; }
+  .issues-table .table-empty-content { width: min(100%, calc(100vw - 56px)); }
   .actions { flex-wrap: wrap; }
   .comparison-wrap { max-height: 65vh; }
   .table-scroll-hint { padding-right: 8px; padding-left: 8px; font-size: .72rem; }
