@@ -99,6 +99,37 @@ def test_fingerprint_changes_for_registry_and_build_compatibility_inputs(tmp_pat
     ) != changed_registry.build_input_digest_sha256
 
 
+def test_fingerprint_changes_for_an_additional_migration_file(tmp_path: Path):
+    root = tmp_path / "repo"
+    release = _copy_fingerprint_inputs(root)
+    versions_dir = root / "alembic/versions"
+    versions_dir.mkdir(parents=True, exist_ok=True)
+    for migration in (ROOT / "alembic/versions").glob("*.py"):
+        shutil.copy2(migration, versions_dir / migration.name)
+
+    baseline = builder.collect_inventory(release, root=root)
+    release_bytes = release.read_bytes()
+    manifest = root / "data/curation/manifests/sentinel/byd.json"
+    manifest_bytes = manifest.read_bytes()
+    registry = root / "data/reference/parameter_registry_v1.json"
+    registry_bytes = registry.read_bytes()
+    migration_paths = [relative.as_posix() for relative, _ in builder._migration_compatibility_files(root)]
+    assert migration_paths == sorted(migration_paths)
+
+    (versions_dir / "0003_synthetic_issue_63.py").write_text(
+        '''"""Synthetic migration used by the Issue #63 fingerprint regression."""\n\nrevision = "0003_synthetic_issue_63"\ndown_revision = "0002_identity_time_basis"\nbranch_labels = None\ndepends_on = None\n\ndef upgrade():\n    pass\n\ndef downgrade():\n    pass\n''',
+        encoding="utf-8",
+    )
+    changed = builder.collect_inventory(release, root=root)
+
+    assert changed.release.manifest_paths == baseline.release.manifest_paths
+    assert changed.stable_vehicle_codes == baseline.stable_vehicle_codes
+    assert release.read_bytes() == release_bytes
+    assert manifest.read_bytes() == manifest_bytes
+    assert registry.read_bytes() == registry_bytes
+    assert changed.build_input_digest_sha256 != baseline.build_input_digest_sha256
+
+
 def test_successful_promotion_writes_matching_database_metadata(tmp_path: Path):
     release = _write_release(tmp_path, [
         "data/curation/manifests/sentinel/byd_atto3_my24_extended_local_v1.json",

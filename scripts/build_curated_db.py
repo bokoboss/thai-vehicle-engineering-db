@@ -71,12 +71,12 @@ BUILD_INPUT_FINGERPRINT_SCHEMA_VERSION = "1.0"
 BUILD_COMPATIBILITY_VERSION = "2.0"
 PROMOTED_DATABASE_METADATA_SCHEMA_VERSION = "1.0"
 PARAMETER_REGISTRY_RELATIVE_PATH = Path("data/reference/parameter_registry_v1.json")
+MIGRATION_RELATIVE_DIRECTORY = Path("alembic/versions")
 # Explicitly enumerate build/schema code that can change the produced DB.
 # Hashing content plus repository-relative labels keeps the result portable.
 BUILD_COMPATIBILITY_FILES = (
     Path("alembic.ini"),
     Path("alembic/env.py"),
-    Path("alembic/versions/0001_phase0_foundation.py"),
     Path("app/config.py"),
     Path("app/curate/__main__.py"),
     Path("app/curate/loader.py"),
@@ -192,7 +192,33 @@ def _text_input_sha256(path: Path) -> str:
     return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
 
 
+def _migration_compatibility_files(root: Path) -> tuple[tuple[Path, Path], ...]:
+    """Return all migration files with stable repository-relative identities."""
+
+    versions_dir = (root / MIGRATION_RELATIVE_DIRECTORY).resolve()
+    if not versions_dir.is_dir():
+        versions_dir = (ROOT / MIGRATION_RELATIVE_DIRECTORY).resolve()
+    files = [
+        (
+            MIGRATION_RELATIVE_DIRECTORY / path.relative_to(versions_dir),
+            path,
+        )
+        for path in versions_dir.glob("*.py")
+        if path.is_file()
+    ]
+    return tuple(sorted(files, key=lambda item: item[0].as_posix()))
+
+
 def _build_compatibility_payload(root: Path) -> dict[str, Any]:
+    compatibility_inputs = [
+        (
+            relative_path,
+            _resolve_fingerprint_input(root, relative_path),
+        )
+        for relative_path in BUILD_COMPATIBILITY_FILES
+    ]
+    compatibility_inputs.extend(_migration_compatibility_files(root))
+    compatibility_inputs.sort(key=lambda item: item[0].as_posix())
     return {
         "compatibility_version": BUILD_COMPATIBILITY_VERSION,
         "release_schema_version": RELEASE_SCHEMA_VERSION,
@@ -201,11 +227,9 @@ def _build_compatibility_payload(root: Path) -> dict[str, Any]:
         "inputs": [
             {
                 "path": relative_path.as_posix(),
-                "sha256": _text_input_sha256(
-                    _resolve_fingerprint_input(root, relative_path)
-                ),
+                "sha256": _text_input_sha256(path),
             }
-            for relative_path in BUILD_COMPATIBILITY_FILES
+            for relative_path, path in compatibility_inputs
         ],
     }
 
