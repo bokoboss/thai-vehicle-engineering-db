@@ -224,7 +224,11 @@ def usable_database_path(repository_root: Path) -> Path | None:
     return None
 
 
-def refresh_curated_database(repository_root: Path) -> dict[str, Any]:
+def refresh_curated_database(
+    repository_root: Path,
+    *,
+    lock_held: bool = False,
+) -> dict[str, Any]:
     """Run one disposable controlled build for the repository's current release."""
 
     repository_root = Path(repository_root).resolve()
@@ -241,7 +245,7 @@ def refresh_curated_database(repository_root: Path) -> dict[str, Any]:
         no_promote=False,
         replace_final=True,
     )
-    return builder.build(args, root=repository_root)
+    return builder.build(args, root=repository_root, lock_held=lock_held)
 
 
 def prepare_runtime(repository_root: Path, database_path: Path | None = None) -> Path:
@@ -593,15 +597,35 @@ def run_local_app(
         )
     else:
         print(
-            "The local accepted database is missing or stale; running one controlled refresh "
-            f"for {release_state.release_id}."
+            "The local accepted database is missing or stale; waiting for the shared refresh "
+            f"lock before checking {release_state.release_id} again."
         )
         try:
-            refresh_curated_database(root)
-            refreshed, refresh_reason = database_matches_current_release(final_path, release_state)
-            if not refreshed:
-                raise LauncherError(f"refresh completed without a current accepted DB: {refresh_reason}")
-            print(f"Refreshed accepted release {release_state.release_id}; starting it.")
+            builder = _load_builder(root)
+            with builder.database_refresh_lock(final_path):
+                release_state = current_release_state(root)
+                current, current_reason = database_matches_current_release(final_path, release_state)
+                if current:
+                    print(
+                        f"Another launcher refreshed accepted release {release_state.release_id}; "
+                        "starting it."
+                    )
+                else:
+                    print(
+                        "The local accepted database is still stale; running one controlled refresh "
+                        f"for {release_state.release_id}."
+                    )
+                    refresh_curated_database(root, lock_held=True)
+                    refreshed, refresh_reason = database_matches_current_release(
+                        final_path,
+                        release_state,
+                    )
+                    if not refreshed:
+                        raise LauncherError(
+                            "refresh completed without a current accepted DB: "
+                            f"{refresh_reason}"
+                        )
+                    print(f"Refreshed accepted release {release_state.release_id}; starting it.")
         except Exception as exc:
             selected_database = usable_database_path(root)
             if selected_database is None:

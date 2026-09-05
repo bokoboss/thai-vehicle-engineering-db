@@ -112,6 +112,11 @@ fails with instructions. `--no-auto-refresh` disables all builder invocation
 for troubleshooting or reproducibility. The runner never pulls, fetches,
 resets, stashes, or checks out Git state.
 
+Refresh and promotion of the shared accepted database are serialized by an
+adjacent OS-released advisory lock. After acquiring the lock, each launcher
+recomputes the current release and database match, so a waiting launcher skips
+the builder when another launcher has already completed the refresh.
+
 `Update Vehicle Database.cmd` remains the explicit manual update path and
 writes qualification/export proofs under ignored `artifacts/local/`. Direct
 builder invocation can still pass an explicit `--qualification` path when a

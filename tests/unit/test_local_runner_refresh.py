@@ -34,7 +34,11 @@ def _patch_launch(monkeypatch: pytest.MonkeyPatch, *, state, status, refresh=Non
     monkeypatch.setattr(run_local_app, "database_matches_current_release", lambda path, current: status())
     monkeypatch.setattr(run_local_app, "port_is_available", lambda host, port: True)
     if refresh is not None:
-        monkeypatch.setattr(run_local_app, "refresh_curated_database", refresh)
+        monkeypatch.setattr(
+            run_local_app,
+            "refresh_curated_database",
+            lambda path, **kwargs: refresh(path),
+        )
 
 
 def test_matching_release_starts_without_invoking_builder(monkeypatch: pytest.MonkeyPatch, tmp_path: Path):
@@ -63,7 +67,13 @@ def test_stale_release_invokes_builder_once_and_launches_refreshed_db(
     root = tmp_path / "repo"
     root.mkdir()
     _write_database(root / run_local_app.CURATED_DATABASE_NAME, "TH-CURRENT")
-    statuses = iter([(False, "build-input fingerprint is stale"), (True, "")])
+    statuses = iter(
+        [
+            (False, "build-input fingerprint is stale"),
+            (False, "build-input fingerprint is still stale"),
+            (True, ""),
+        ]
+    )
     refresh_calls: list[Path] = []
     _patch_launch(
         monkeypatch,
@@ -82,6 +92,30 @@ def test_stale_release_invokes_builder_once_and_launches_refreshed_db(
     assert run_local_app.run_local_app(repository_root=root, open_browser=False) == 0
     assert len(refresh_calls) == 1
     assert captured["application"] == "refreshed-app"
+
+
+def test_stale_release_recheck_skips_refresh_after_another_launcher_promotes(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+):
+    root = tmp_path / "repo"
+    root.mkdir()
+    _write_database(root / run_local_app.CURATED_DATABASE_NAME, "TH-CURRENT")
+    statuses = iter([(False, "build-input fingerprint is stale"), (True, "")])
+    refresh_calls: list[Path] = []
+    _patch_launch(
+        monkeypatch,
+        state=_state("TH-CURRENT"),
+        status=lambda: next(statuses),
+        refresh=lambda path: refresh_calls.append(path),
+    )
+    monkeypatch.setattr(run_local_app, "load_application", lambda repository_root: "refreshed-app")
+    monkeypatch.setattr(run_local_app, "serve_application", lambda application, **kwargs: 0)
+
+    assert run_local_app.run_local_app(repository_root=root, open_browser=False) == 0
+    assert refresh_calls == []
+    assert "Another launcher refreshed" in capsys.readouterr().out
 
 
 def test_refresh_failure_warns_and_launches_previous_accepted_db(

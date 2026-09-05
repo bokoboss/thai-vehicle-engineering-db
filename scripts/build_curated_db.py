@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from contextlib import contextmanager
 import hashlib
 import json
 import os
@@ -17,13 +18,24 @@ import shutil
 import sqlite3
 import subprocess
 import sys
+import time
 import uuid
 from collections import Counter
 from dataclasses import dataclass, field, replace
 from datetime import date, datetime, timezone
 from io import BytesIO
 from pathlib import Path
-from typing import Any, Iterable, Mapping
+from typing import Any, Iterable, Iterator, Mapping
+
+try:
+    import fcntl
+except ImportError:  # pragma: no cover - Windows provides msvcrt instead.
+    fcntl = None
+
+try:
+    import msvcrt
+except ImportError:  # pragma: no cover - POSIX provides fcntl instead.
+    msvcrt = None
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -72,6 +84,9 @@ BUILD_COMPATIBILITY_VERSION = "2.0"
 PROMOTED_DATABASE_METADATA_SCHEMA_VERSION = "1.0"
 PARAMETER_REGISTRY_RELATIVE_PATH = Path("data/reference/parameter_registry_v1.json")
 MIGRATION_RELATIVE_DIRECTORY = Path("alembic/versions")
+REFRESH_LOCK_SUFFIX = ".refresh.lock"
+REFRESH_LOCK_TIMEOUT_SECONDS = 30.0
+REFRESH_LOCK_POLL_SECONDS = 0.05
 # Explicitly enumerate build/schema code that can change the produced DB.
 # Hashing content plus repository-relative labels keeps the result portable.
 BUILD_COMPATIBILITY_FILES = (
@@ -106,6 +121,76 @@ _VERSIONED_RELEASE_FILENAME_RE = re.compile(
 
 class BuildError(RuntimeError):
     """Raised when a curated release cannot pass an acceptance gate."""
+
+
+def refresh_lock_path(database_path: Path) -> Path:
+    """Return the shared advisory-lock path for one accepted database."""
+
+    database_path = Path(database_path).resolve()
+    return database_path.with_name(database_path.name + REFRESH_LOCK_SUFFIX)
+
+
+@contextmanager
+def database_refresh_lock(
+    database_path: Path,
+    *,
+    timeout_seconds: float = REFRESH_LOCK_TIMEOUT_SECONDS,
+    poll_seconds: float = REFRESH_LOCK_POLL_SECONDS,
+) -> Iterator[None]:
+    """Serialize refresh/promotion of one accepted DB across processes.
+
+    The adjacent file is only the stable OS-lock target; its existence is not
+    used as a sentinel.  The operating system releases the advisory lock when
+    the owning file handle or process exits.
+    """
+
+    if timeout_seconds < 0 or poll_seconds <= 0:
+        raise ValueError("lock timeout must be non-negative and poll interval must be positive")
+    if fcntl is None and msvcrt is None:
+        raise BuildError("curated database refresh locking is unsupported on this platform")
+
+    lock_path = refresh_lock_path(database_path)
+    try:
+        lock_path.parent.mkdir(parents=True, exist_ok=True)
+        handle = lock_path.open("a+b")
+    except OSError as exc:
+        raise BuildError(f"could not open curated database refresh lock {lock_path}: {exc}") from exc
+
+    acquired = False
+    deadline = time.monotonic() + timeout_seconds
+    try:
+        if handle.seek(0, os.SEEK_END) == 0:
+            handle.write(b"\0")
+            handle.flush()
+        while not acquired:
+            try:
+                if fcntl is not None:
+                    fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                else:
+                    handle.seek(0)
+                    msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+                acquired = True
+            except (BlockingIOError, OSError) as exc:
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise BuildError(
+                        "timed out acquiring curated database refresh lock "
+                        f"{lock_path}; another launcher or build may still be refreshing"
+                    ) from exc
+                time.sleep(min(poll_seconds, remaining))
+        yield
+    finally:
+        if acquired:
+            try:
+                if fcntl is not None:
+                    fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+                else:
+                    handle.seek(0)
+                    msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
+            finally:
+                handle.close()
+        else:
+            handle.close()
 
 
 @dataclass(frozen=True)
@@ -1576,7 +1661,7 @@ def _promote_staging(
     return previous_path if final_path.is_file() and previous_path.is_file() else None
 
 
-def build(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
+def _build_unlocked(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
     root = root.resolve()
     release_path = getattr(args, "release", None)
     inventory = collect_inventory(release_path, root=root)
@@ -1724,6 +1809,22 @@ def build(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
         **qa,
         "exports": exports,
     }
+
+
+def build(
+    args: argparse.Namespace,
+    *,
+    root: Path = ROOT,
+    lock_held: bool = False,
+) -> dict[str, Any]:
+    """Build and promote while serializing mutations of the accepted DB pair."""
+
+    root = root.resolve()
+    if args.no_promote or lock_held:
+        return _build_unlocked(args, root=root)
+    final_path = _resolved_path(Path(args.final), root).resolve()
+    with database_refresh_lock(final_path):
+        return _build_unlocked(args, root=root)
 
 
 def _parser() -> argparse.ArgumentParser:
