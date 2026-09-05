@@ -1,0 +1,623 @@
+{
+  "manifest_version": "1.0",
+  "mode": "CREATE_ONLY",
+  "record_id": "CURATE-PORSCHE-TAYCAN-TURBO-GT-MY2027-TH",
+  "vehicle": {
+    "stable_vehicle_code": "th-porsche-taycan-turbo-gt-my2027",
+    "manufacturer_name": "Porsche",
+    "manufacturer_display_name": "Porsche",
+    "canonical_model_name": "taycan",
+    "display_model_name": "Taycan",
+    "market_code": "TH",
+    "generation_name": "J1 II",
+    "body_style": "High-performance electric sport saloon",
+    "chassis_platform_code": "J1 II",
+    "model_year_from": 2027,
+    "model_year_to": 2027,
+    "identity_time_basis": "MODEL_YEAR",
+    "identity_time_label_raw": "Porsche Thailand Taycan Turbo GT — 2027",
+    "sale_period_from": null,
+    "sale_period_to": null,
+    "variant_trim": "Turbo GT",
+    "powertrain": "Battery electric dual-motor",
+    "drivetrain": "AWD",
+    "body_configuration": "4-door sport saloon",
+    "identity_verification_state": "RESOLVED_EXACT",
+    "identity_notes": "Porsche Thailand explicitly identifies the Taycan Turbo GT as model year 2027 with 760 kW / 1,034 PS overboost and 290 km/h top speed. Porsche OEM global Turbo GT technical documents publish matching exact-model structural data. Those global engineering values are used only at SAME_GEOMETRY_CONFIRMED applicability; country-variable mass is not normalized."
+  },
+  "sources": [
+    {
+      "source_code": "PORSCHE_TH_TAYCAN_TURBO_GT_MY2027",
+      "publisher": "Porsche Thailand",
+      "authority_class": "OEM_THAILAND",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "CURRENT_THAI_MODEL_PAGE",
+      "title": "Porsche Taycan Turbo GT — Porsche Thailand",
+      "url": "https://www.porsche.com/pap/_thailand_/models/taycan/taycan-models/taycan-turbo-gt/",
+      "retrieved_at": "2026-09-03T15:50:00+07:00",
+      "market_code": "TH",
+      "publication_year": 2026,
+      "model_year_from": 2027,
+      "model_year_to": 2027,
+      "page_section_default": "Taycan Turbo GT / model comparison",
+      "applicability_notes": "Exact Thailand MY2027 Turbo GT identity",
+      "archival_status": "URL_ONLY",
+      "notes": "Thailand page explicitly states 2027, AWD, 760 kW / 1,034 PS and 290 km/h."
+    },
+    {
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_TECH_202403",
+      "publisher": "Dr. Ing. h.c. F. Porsche AG",
+      "authority_class": "OEM_REGIONAL_GLOBAL",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_TECHNICAL_DATA_PDF",
+      "title": "Taycan Turbo GT — Technical Data, MY S 03/2024",
+      "url": "https://newsroom.porsche.com/dam/jcr%3Adb7be217-7b2a-44a6-b2b3-3493b5baf1c1/pag-taycan-turbo-gt-td-en.pdf.PDF",
+      "retrieved_at": "2026-09-03T15:50:00+07:00",
+      "publication_year": 2024,
+      "page_section_default": "Wheels and tyres / Dimensions",
+      "applicability_notes": "Exact Turbo GT structural geometry; Thailand identity/performance corroborates same J1 II variant family",
+      "archival_status": "URL_ONLY",
+      "notes": "PDF states EU model (Germany) and that technical data may vary by country; mass is therefore not normalized for Thailand."
+    },
+    {
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_VEHINFO",
+      "publisher": "Dr. Ing. h.c. F. Porsche AG",
+      "authority_class": "OEM_REGIONAL_GLOBAL",
+      "source_type": "OTHER",
+      "source_subtype_raw": "OEM_VEHICLE_INFORMATION_PDF",
+      "title": "Taycan Turbo GT — Vehicle information",
+      "url": "https://newsroom.porsche.com/dam/jcr%3A46f3d053-fa20-4c29-bf81-e528059acd67/Vehicle_information_Taycan_Turbo_GT_S-GO_905E.pdf",
+      "retrieved_at": "2026-09-03T15:50:00+07:00",
+      "publication_year": 2024,
+      "page_section_default": "Body / Terrain features",
+      "applicability_notes": "Exact Turbo GT geometry and air-suspension terrain metrics",
+      "archival_status": "URL_ONLY",
+      "notes": "Used for published OEM terrain metrics and one turning-circle observation; turning remains unresolved because another official Porsche vehicle-information surface reports 11.1 m."
+    },
+    {
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_FINDER_CURRENT",
+      "publisher": "Porsche AG / Porsche Finder",
+      "authority_class": "OEM_REGIONAL_GLOBAL",
+      "source_type": "WEB_SPECIFICATION",
+      "source_subtype_raw": "OEM_VEHICLE_FINDER_EXACT_MODEL",
+      "title": "Porsche Taycan Turbo GT — current exact-model Finder technical data",
+      "url": "https://finder.porsche.com/tt/en-TT/details/porsche-taycan-turbo-gt-new-0OPKW4",
+      "retrieved_at": "2026-09-03T15:50:00+07:00",
+      "publication_year": 2026,
+      "page_section_default": "Body - Dimensions and Weights",
+      "applicability_notes": "Exact Turbo GT current geometry corroboration; adjacent market exact model",
+      "archival_status": "URL_ONLY",
+      "notes": "Corroborates 4,968 / 1,998 / 2,144 / 1,378 / 2,900 and air-suspension clearance states. Reports turning-circle diameter 11.1 m, differing from another Porsche vehicle-information source."
+    }
+  ],
+  "load_conditions": [
+    {
+      "load_condition_code": "PORSCHE_NORMAL_RIDE_LOAD_UNSPECIFIED",
+      "name": "Air suspension normal ride height; load unspecified",
+      "mass_basis": "OTHER",
+      "ride_height_mode": "normal ride height",
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_FINDER_CURRENT",
+      "raw_oem_wording": "Max. ground clearance with air suspension (normal ride height)",
+      "notes": "No vehicle load state is inferred."
+    },
+    {
+      "load_condition_code": "PORSCHE_LOW_RIDE_LOAD_UNSPECIFIED",
+      "name": "Air suspension low level; load unspecified",
+      "mass_basis": "OTHER",
+      "ride_height_mode": "low level",
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_FINDER_CURRENT",
+      "raw_oem_wording": "Max. ground clearance with air suspension (low level)",
+      "notes": "No vehicle load state is inferred."
+    },
+    {
+      "load_condition_code": "PORSCHE_OFFROAD_RIDE_LOAD_UNSPECIFIED",
+      "name": "Air suspension off-road level; load unspecified",
+      "mass_basis": "OTHER",
+      "ride_height_mode": "off-road level",
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_FINDER_CURRENT",
+      "raw_oem_wording": "Max. ground clearance with air suspension (off-road level)",
+      "notes": "No vehicle load state is inferred."
+    }
+  ],
+  "fitments": [],
+  "axles": [],
+  "observations": [
+    {
+      "observation_code": "OBS_TH_IDENTITY",
+      "source_code": "PORSCHE_TH_TAYCAN_TURBO_GT_MY2027",
+      "vehicle_identity_claim": "Porsche Taycan Turbo GT MY2027 Thailand",
+      "raw_label": "Thailand current model identity",
+      "raw_value": "Taycan Turbo GT — 2027 — Electro — All-Wheel Drive — 760 kW / 1,034 PS — 290 km/h",
+      "raw_unit": null,
+      "page_section_locator": "Model page / Which Taycan is right for you?",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:50:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": null
+    },
+    {
+      "observation_code": "OBS_GLOBAL_DIMENSIONS",
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_TECH_202403",
+      "vehicle_identity_claim": "Taycan Turbo GT",
+      "raw_label": "Dimensions",
+      "raw_value": "4968 / 1998 (2144 with exterior mirrors) / 1378 / wheelbase 2900 / track 1690 / 1655",
+      "raw_unit": "mm",
+      "page_section_locator": "Dimensions",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:50:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "EU/global exact-model source; structural values used as SAME_GEOMETRY_CONFIRMED, not exact Thailand publication."
+    },
+    {
+      "observation_code": "OBS_GLOBAL_WHEELS_TYRES",
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_TECH_202403",
+      "vehicle_identity_claim": "Taycan Turbo GT",
+      "raw_label": "Front / rear wheels and tyres",
+      "raw_value": "9.5 J x 21 ET60 with 265/35 ZR21 / 11.5 J x 21 ET66 with 305/30 ZR21",
+      "raw_unit": null,
+      "page_section_locator": "Wheels and tyres",
+      "reported_precision": "as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:50:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "Exact model global OEM technical data."
+    },
+    {
+      "observation_code": "OBS_CLEARANCE_STATES",
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_FINDER_CURRENT",
+      "vehicle_identity_claim": "Taycan Turbo GT",
+      "raw_label": "Max. ground clearance with air suspension",
+      "raw_value": "normal 126 / low 116 / off-road 146",
+      "raw_unit": "mm",
+      "page_section_locator": "Body - Dimensions and Weights",
+      "reported_precision": "nearest 1 mm as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:50:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "Load state not stated; ride-height state retained explicitly."
+    },
+    {
+      "observation_code": "OBS_RAMP_ANGLES",
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_VEHINFO",
+      "vehicle_identity_claim": "Taycan Turbo GT",
+      "raw_label": "Slope angle front/rear and ramp break-over angle, air suspension normal ride height",
+      "raw_value": "8.0 / 14.4 / 10.5",
+      "raw_unit": "deg",
+      "page_section_locator": "Terrain features",
+      "reported_precision": "0.1 deg as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:50:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "Published OEM angles; no geometric derivation performed."
+    },
+    {
+      "observation_code": "OBS_TURNING_112",
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_VEHINFO",
+      "vehicle_identity_claim": "Taycan Turbo GT",
+      "raw_label": "Turning circle",
+      "raw_value": "11.2",
+      "raw_unit": "m",
+      "page_section_locator": "Body",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:50:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "OEM vehicle-information value."
+    },
+    {
+      "observation_code": "OBS_TURNING_111",
+      "source_code": "PORSCHE_GLOBAL_TAYCAN_TURBO_GT_FINDER_CURRENT",
+      "vehicle_identity_claim": "Taycan Turbo GT",
+      "raw_label": "Turning circle diameter",
+      "raw_value": "11.1",
+      "raw_unit": "m",
+      "page_section_locator": "Body - Dimensions and Weights",
+      "reported_precision": "0.1 m as published",
+      "extraction_method": "MANUAL",
+      "extracted_at": "2026-09-03T15:50:00+07:00",
+      "extracted_by": "ChatGPT Wave 2C tranche 2 curation",
+      "ambiguity_note": "Conflicts by 0.1 m with another official Porsche exact-model surface; no normalized turning radius is created."
+    }
+  ],
+  "values": [
+    {
+      "value_code": "VAL_LENGTH",
+      "parameter_code": "overall_length_mm",
+      "value": 4968,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_BODY_WIDTH",
+      "parameter_code": "overall_width_body_mm",
+      "value": 1998,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "BODY_EXCLUDING_MIRRORS"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_MIRROR_WIDTH",
+      "parameter_code": "overall_width_including_mirrors_mm",
+      "value": 2144,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "width_envelope_definition": "INCLUDING_MIRRORS_OPEN"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_HEIGHT",
+      "parameter_code": "overall_height_mm",
+      "value": 1378,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_WB",
+      "parameter_code": "wheelbase_actual_mm",
+      "value": 2900,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_FT",
+      "parameter_code": "oem_front_tread_or_track_mm",
+      "value": 1690,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_RT",
+      "parameter_code": "oem_rear_tread_or_track_mm",
+      "value": 1655,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "track_definition": "OEM_UNSPECIFIED"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_DIMENSIONS"
+      ]
+    },
+    {
+      "value_code": "VAL_FW",
+      "parameter_code": "front_wheel_rim_text",
+      "value": "9.5 J x 21 ET 60",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_WHEELS_TYRES"
+      ]
+    },
+    {
+      "value_code": "VAL_RW",
+      "parameter_code": "rear_wheel_rim_text",
+      "value": "11.5 J x 21 ET 66",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_WHEELS_TYRES"
+      ]
+    },
+    {
+      "value_code": "VAL_FTYRE",
+      "parameter_code": "front_tyre_size_text",
+      "value": "265/35 ZR21 performance tyre",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_WHEELS_TYRES"
+      ]
+    },
+    {
+      "value_code": "VAL_RTYRE",
+      "parameter_code": "rear_tyre_size_text",
+      "value": "305/30 ZR21 performance tyre",
+      "canonical_unit": null,
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": null,
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_GLOBAL_WHEELS_TYRES"
+      ]
+    },
+    {
+      "value_code": "VAL_CLEAR_NORMAL",
+      "parameter_code": "clearance_value_mm",
+      "value": 126,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED",
+        "ride_height_mode": "normal ride height"
+      },
+      "load_condition_code": "PORSCHE_NORMAL_RIDE_LOAD_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_CLEARANCE_STATES"
+      ]
+    },
+    {
+      "value_code": "VAL_CLEAR_LOW",
+      "parameter_code": "clearance_value_mm",
+      "value": 116,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED",
+        "ride_height_mode": "low level"
+      },
+      "load_condition_code": "PORSCHE_LOW_RIDE_LOAD_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_CLEARANCE_STATES"
+      ]
+    },
+    {
+      "value_code": "VAL_CLEAR_OFFROAD",
+      "parameter_code": "clearance_value_mm",
+      "value": 146,
+      "canonical_unit": "mm",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "clearance_type": "OEM_MINIMUM_UNSPECIFIED",
+        "ride_height_mode": "off-road level"
+      },
+      "load_condition_code": "PORSCHE_OFFROAD_RIDE_LOAD_UNSPECIFIED",
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_CLEARANCE_STATES"
+      ]
+    },
+    {
+      "value_code": "VAL_APPROACH",
+      "parameter_code": "oem_published_approach_angle_deg",
+      "value": 8,
+      "canonical_unit": "deg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "ride_height_mode": "normal ride height"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RAMP_ANGLES"
+      ]
+    },
+    {
+      "value_code": "VAL_DEPARTURE",
+      "parameter_code": "oem_published_departure_angle_deg",
+      "value": 14.4,
+      "canonical_unit": "deg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "ride_height_mode": "normal ride height"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RAMP_ANGLES"
+      ]
+    },
+    {
+      "value_code": "VAL_BREAKOVER",
+      "parameter_code": "oem_published_breakover_angle_deg",
+      "value": 10.5,
+      "canonical_unit": "deg",
+      "evidence_method": "PUBLISHED",
+      "resolution_state": "UNCONTESTED",
+      "verification_state": "REVIEWED",
+      "availability_state": "AVAILABLE",
+      "authority_grade": "A1",
+      "applicability_grade": "SAME_GEOMETRY_CONFIRMED",
+      "semantic_metadata": {
+        "ride_height_mode": "normal ride height"
+      },
+      "load_condition_code": null,
+      "fitment_code": null,
+      "evidence_observation_codes": [
+        "OBS_RAMP_ANGLES"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "parameter_code": "turning_radius_normalized_m",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Two official Porsche exact-model surfaces report turning-circle diameter as 11.2 m and 11.1 m. The database retains both raw observations and does not choose or convert either to a normalized radius.",
+      "source_families_searched": [
+        "Porsche Newsroom vehicle information",
+        "Porsche Finder exact Turbo GT"
+      ],
+      "search_notes": "No silent diameter-to-radius conversion and no conflict selection.",
+      "assessed_at": "2026-09-03T15:50:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek a Thailand exact-vehicle Finder or current homologation value."
+    },
+    {
+      "parameter_code": "kerb_mass_kg",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Global/EU Turbo GT sources publish DIN/curb-related masses but explicitly note country variation; no exact Thailand kerb-mass basis was recovered.",
+      "source_families_searched": [
+        "Porsche Thailand model page",
+        "Porsche global technical data / Finder"
+      ],
+      "search_notes": "Country-variable mass is not promoted across markets.",
+      "assessed_at": "2026-09-03T15:50:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek exact Thailand vehicle Finder/homologation mass."
+    },
+    {
+      "parameter_code": "gross_vehicle_mass_kg",
+      "availability_state": "UNKNOWN",
+      "unknown_reason": "Permissible gross weight is published in global/EU exact-model data but may vary by country; exact Thailand value was not established.",
+      "source_families_searched": [
+        "Porsche Thailand model page",
+        "Porsche global technical data / Finder"
+      ],
+      "search_notes": null,
+      "assessed_at": "2026-09-03T15:50:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Seek exact Thailand homologation/Finder data."
+    },
+    {
+      "parameter_code": "avt_front_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "OEM front track 1,690 mm is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Porsche Turbo GT technical data"
+      ],
+      "search_notes": "OEM track retained separately.",
+      "assessed_at": "2026-09-03T15:50:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Use wheel offset/section geometry only under an approved AVT method."
+    },
+    {
+      "parameter_code": "avt_rear_outer_face_track_mm",
+      "availability_state": "NOT_FOUND_AFTER_SEARCH",
+      "unknown_reason": "OEM rear track 1,655 mm is not established as AVT outer tyre-face track.",
+      "source_families_searched": [
+        "Porsche Turbo GT technical data"
+      ],
+      "search_notes": "OEM track retained separately.",
+      "assessed_at": "2026-09-03T15:50:00+07:00",
+      "reviewer": "ChatGPT Wave 2C tranche 2 curation",
+      "next_action": "Use wheel offset/section geometry only under an approved AVT method."
+    }
+  ],
+  "steering_relations": [],
+  "geometry_assets": [],
+  "conflict_decisions": []
+}
