@@ -3,6 +3,10 @@ setlocal EnableExtensions
 cd /d "%~dp0"
 
 set "BUILDER=%~dp0scripts\build_curated_db.py"
+set "LOCAL_ARTIFACT_DIR=%~dp0artifacts\local"
+set "LOCAL_QUALIFICATION=%LOCAL_ARTIFACT_DIR%\manual-update-qualification.json"
+set "LOCAL_CSV=%LOCAL_ARTIFACT_DIR%\manual-update.csv"
+set "LOCAL_XLSX=%LOCAL_ARTIFACT_DIR%\manual-update.xlsx"
 set "VENV_PYTHON=%~dp0.venv\Scripts\python.exe"
 set "EXIT_CODE=1"
 
@@ -28,17 +32,17 @@ echo Install Python 3.11+ or create the repository .venv, then try again.
 goto :failed
 
 :run_venv
-"%VENV_PYTHON%" "%BUILDER%" --replace-final
+"%VENV_PYTHON%" "%BUILDER%" --replace-final --qualification "%LOCAL_QUALIFICATION%" --csv "%LOCAL_CSV%" --xlsx "%LOCAL_XLSX%"
 set "EXIT_CODE=%ERRORLEVEL%"
 goto :finish
 
 :run_py_launcher
-py -3 "%BUILDER%" --replace-final
+py -3 "%BUILDER%" --replace-final --qualification "%LOCAL_QUALIFICATION%" --csv "%LOCAL_CSV%" --xlsx "%LOCAL_XLSX%"
 set "EXIT_CODE=%ERRORLEVEL%"
 goto :finish
 
 :run_python
-python "%BUILDER%" --replace-final
+python "%BUILDER%" --replace-final --qualification "%LOCAL_QUALIFICATION%" --csv "%LOCAL_CSV%" --xlsx "%LOCAL_XLSX%"
 set "EXIT_CODE=%ERRORLEVEL%"
 goto :finish
 

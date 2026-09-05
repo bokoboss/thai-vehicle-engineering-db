@@ -28,17 +28,17 @@ echo Install Python 3.11+ or create the repository .venv, then try again.
 goto :failed
 
 :run_venv
-"%VENV_PYTHON%" "%RUNNER%"
+"%VENV_PYTHON%" "%RUNNER%" %*
 set "EXIT_CODE=%ERRORLEVEL%"
 goto :finish
 
 :run_py_launcher
-py -3 "%RUNNER%"
+py -3 "%RUNNER%" %*
 set "EXIT_CODE=%ERRORLEVEL%"
 goto :finish
 
 :run_python
-python "%RUNNER%"
+python "%RUNNER%" %*
 set "EXIT_CODE=%ERRORLEVEL%"
 goto :finish
 

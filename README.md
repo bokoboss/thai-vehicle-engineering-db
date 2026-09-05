@@ -30,7 +30,7 @@ The web application should remain simple.
 
 ## Current state
 
-**Release `release_2026_09_a` is accepted for controlled local ingestion.** The stable [`current_release.json`](data/curation/releases/current_release.json) pointer currently selects it. It explicitly contains 27 reviewed manifests: 3 sentinels, 18 Wave 1 records, and 6 Wave 2A records. The curated SQLite database and export proofs are generated locally and remain ignored by Git.
+**Release `release_2026_09_d` is accepted for controlled local ingestion.** The stable [`current_release.json`](data/curation/releases/current_release.json) pointer currently selects it. It explicitly contains 41 reviewed manifests/configurations. The curated SQLite database, sidecar metadata, and export proofs are generated locally and remain ignored by Git.
 
 Foundation research returned **GO WITH CONDITIONS — High confidence** and the required data-contract amendments have been incorporated on PR #1.
 
@@ -67,7 +67,7 @@ No React SPA or microservices are planned for the MVP.
 
 ## Run the accepted curated application locally
 
-The current local-use workflow is the accepted 27-vehicle release application, backed only by the ignored file `vehicle_engineering_curated.db`. This is a FastAPI/Jinja server-rendered web application: pages are rendered by the server, no static `index.html` is required, and `/` is the application start URL that redirects to the vehicle catalog at `/vehicles`.
+The current local-use workflow is the accepted 41-vehicle Release D application, backed by the ignored file `vehicle_engineering_curated.db` and its local metadata sidecar. This is a FastAPI/Jinja server-rendered web application: pages are rendered by the server, no static `index.html` is required, and `/` is the application start URL that redirects to the vehicle catalog at `/vehicles`.
 
 ### Windows first-time setup
 
@@ -91,13 +91,13 @@ The equivalent manual command is:
 .venv\Scripts\python.exe scripts\build_curated_db.py --replace-final
 ```
 
-The updater invokes the generic builder without a version-specific filename. The builder resolves [`data/curation/releases/current_release.json`](data/curation/releases/current_release.json), validates its target, and then uses that immutable accepted release definition as the membership source of truth. A JSON file merely present in a manifest directory is not included unless its repository-relative path is listed in the selected release definition. The generic builder derives vehicle and evidence counts from that membership and writes a qualification record under `data/curation/releases/`.
+The updater invokes the generic builder without a version-specific filename. The builder resolves [`data/curation/releases/current_release.json`](data/curation/releases/current_release.json), validates its target, and then uses that immutable accepted release definition as the membership source of truth. A JSON file merely present in a manifest directory is not included unless its repository-relative path is listed in the selected release definition. The generic builder derives vehicle and evidence counts from that membership and writes local qualification/export outputs under `artifacts/local/`; an explicit `--qualification` path remains available for reviewed release evidence.
 
 ### Windows normal daily launch
 
-Double-click [`Start Vehicle Engineering DB.cmd`](Start%20Vehicle%20Engineering%20DB.cmd) in the repository folder. It finds the repository-relative runner, prefers `.venv`, sets the curated database URL, starts the server without reload, and opens `http://127.0.0.1:8000/` in the default browser. The root URL redirects to `/vehicles`.
+Double-click [`Start Vehicle Engineering DB.cmd`](Start%20Vehicle%20Engineering%20DB.cmd) in the repository folder. It finds the repository-relative runner, prefers `.venv`, checks the current release fingerprint and promoted DB metadata, refreshes only when stale, starts the server without reload, and opens `http://127.0.0.1:8000/` in the default browser. The root URL redirects to `/vehicles`.
 
-The launcher does not run seed, migration, build, or replacement commands on each launch. To stop the local server, press `Ctrl+C` in its console window.
+The launcher never pulls or mutates Git state. It runs the same controlled staging/QA/promotion build only when the local accepted DB is missing or stale. If refresh fails, it preserves and opens a readable previous accepted local DB with a prominent warning; if no usable DB exists, it fails clearly. Use `--no-auto-refresh` for a no-build troubleshooting/reproducibility launch. To stop the local server, press `Ctrl+C` in its console window.
 
 ### Manual equivalent
 
@@ -115,15 +115,15 @@ py -3 scripts\run_local_app.py
 
 When invoked with absolute paths, the runner also resolves the repository correctly if the caller's working directory is elsewhere.
 
-The runner uses `sqlite:///./vehicle_engineering_curated.db` and never falls back to `vehicle_engineering.db`. If port 8000 belongs to another process, it reports the conflict and does not kill that process. If the curated application is already safely detected on port 8000, it reuses that running URL.
+The runner uses `sqlite:///./vehicle_engineering_curated.db` for the current accepted DB and can point the app at the matching `.previous` DB only during an explicitly warned fallback. It never falls back to `vehicle_engineering.db`. If port 8000 belongs to another process, it reports the conflict and does not kill that process. If the curated application is already safely detected on port 8000, it reuses that running URL.
 
-If `vehicle_engineering_curated.db` is missing, run the one-time controlled build above and launch again. The runner fails clearly rather than creating an empty database or using synthetic data.
+If `vehicle_engineering_curated.db` is missing, the normal launcher attempts the controlled build above; `--no-auto-refresh` instead requires an existing readable accepted-path DB. The runner fails clearly rather than creating an empty database or using synthetic data.
 
 Do not run `python -m app.seed` against `vehicle_engineering_curated.db`; that command creates Phase 0 synthetic fixtures and is not part of the curated workflow.
 
 ### Controlled curated database build details
 
-The primary command is `scripts/build_curated_db.py`. With no `--release`, it resolves and validates the current accepted-release pointer, then resolves exactly the selected versioned definition's manifests. It runs Alembic upgrade, registry-only curation initialization, validation and create-only import, database-level readiness/provenance QA, CSV/XLSX export proof, and final promotion. It refuses an existing staging database and does not replace an existing final database unless `--replace-final` is supplied after a successful staging run. If a run stops, inspect and remove only the disposable staging database and matching SQLite sidecar files named in the error before retrying. The database and generated export proofs are local/ignored files.
+The primary command is `scripts/build_curated_db.py`. With no `--release`, it resolves and validates the current accepted-release pointer, then resolves exactly the selected versioned definition's manifests. It runs Alembic upgrade, registry-only curation initialization, validation and create-only import, database-level readiness/provenance QA, CSV/XLSX export proof, and final promotion. It computes a deterministic build-input fingerprint over the selected release, listed manifest content, accepted registry, and build/schema compatibility inputs. A successful promotion writes `vehicle_engineering_curated.db` beside matching ignored metadata at `vehicle_engineering_curated.db.meta.json`; the retained `.previous` DB keeps its matching metadata when present. It refuses an existing staging database and does not replace an existing final database unless `--replace-final` is supplied after a successful staging run. If a run stops, inspect and remove only disposable staging/sidecar artifacts named in the error before retrying. The database, sidecar, and generated export/qualification proofs are local/ignored files.
 
 For historical/reproducible builds, pass the versioned definition explicitly, for example:
 
@@ -133,7 +133,21 @@ For historical/reproducible builds, pass the versioned definition explicitly, fo
 
 `scripts/build_wave1_curated_db.py` remains as a compatibility/reproducibility wrapper for the explicit historical 21-record release. It is not a second build implementation.
 
-See [`data/curation/releases/current_release.json`](data/curation/releases/current_release.json) for the current selector, [`data/curation/releases/release_2026_09_a.json`](data/curation/releases/release_2026_09_a.json) for the current immutable membership, and [`data/curation/releases/release_2026_09_a.qualification.json`](data/curation/releases/release_2026_09_a.qualification.json) for its qualification record.
+See [`data/curation/releases/current_release.json`](data/curation/releases/current_release.json) for the current selector, [`data/curation/releases/release_2026_09_d.json`](data/curation/releases/release_2026_09_d.json) for the current immutable membership, and [`data/curation/releases/release_2026_09_d.qualification.json`](data/curation/releases/release_2026_09_d.qualification.json) for its historical qualification record.
+
+### Data publication v2 workflow
+
+The steady-state publication path is:
+
+```text
+research/manifest + explicit immutable release PR
+  -> path-scoped data-release CI qualification
+  -> review/merge
+  -> local checkout contains the accepted release
+  -> Start launcher refreshes only when the build-input fingerprint changes
+```
+
+The dedicated [data-release workflow](.github/workflows/data-release.yml) checks the branch's explicit `current_release.json`, runs the generic builder against runner-temporary staging and qualification/export paths, verifies the staging metadata/hash contract, and uploads compact evidence. It does not promote into a repository-local accepted DB or rewrite tracked qualification JSON. The launcher does not auto-pull, fetch, reset, stash, or checkout; synchronizing the local checkout remains a separate user-controlled step.
 
 ### Data-only versus software/methodology changes
 
