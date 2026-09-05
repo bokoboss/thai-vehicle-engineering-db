@@ -51,6 +51,19 @@ def test_run_local_app_forces_curated_environment_before_app_import(monkeypatch,
         connection.execute("INSERT INTO vehicle_configuration VALUES (?)", ("TH-ATTO3",))
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("DATABASE_URL", "sqlite:///./vehicle_engineering.db")
+    monkeypatch.setattr(
+        run_local_app,
+        "current_release_state",
+        lambda root: run_local_app.CurrentReleaseState(
+            release_id="test-release",
+            release_definition="release.json",
+            build_input_digest_sha256="digest",
+            stable_vehicle_digest_sha256="stable",
+            vehicle_count=1,
+            stable_vehicle_codes=frozenset({"TH-ATTO3"}),
+        ),
+    )
+    monkeypatch.setattr(run_local_app, "database_matches_current_release", lambda path, state: (True, ""))
     monkeypatch.setattr(run_local_app, "port_is_available", lambda host, port: True)
     monkeypatch.setattr(run_local_app, "load_application", lambda root: object())
     captured = {}

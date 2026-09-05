@@ -17,8 +17,9 @@ import shutil
 import sqlite3
 import subprocess
 import sys
+import uuid
 from collections import Counter
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import date, datetime, timezone
 from io import BytesIO
 from pathlib import Path
@@ -66,6 +67,37 @@ CURRENT_RELEASE_POINTER_SCHEMA_VERSION = "1.0"
 DEFAULT_RELEASE_PATH = CURRENT_RELEASE_POINTER_PATH
 READINESS_TYPES_PER_SCOPE = 4
 RELEASE_SCHEMA_VERSION = "1.0"
+BUILD_INPUT_FINGERPRINT_SCHEMA_VERSION = "1.0"
+BUILD_COMPATIBILITY_VERSION = "2.0"
+PROMOTED_DATABASE_METADATA_SCHEMA_VERSION = "1.0"
+PARAMETER_REGISTRY_RELATIVE_PATH = Path("data/reference/parameter_registry_v1.json")
+# Explicitly enumerate build/schema code that can change the produced DB.
+# Hashing content plus repository-relative labels keeps the result portable.
+BUILD_COMPATIBILITY_FILES = (
+    Path("alembic.ini"),
+    Path("alembic/env.py"),
+    Path("alembic/versions/0001_phase0_foundation.py"),
+    Path("app/config.py"),
+    Path("app/curate/__main__.py"),
+    Path("app/curate/loader.py"),
+    Path("app/curate/report.py"),
+    Path("app/curate/schemas.py"),
+    Path("app/curate/validation.py"),
+    Path("app/db/base.py"),
+    Path("app/db/models/__init__.py"),
+    Path("app/db/models/entities.py"),
+    Path("app/db/session.py"),
+    Path("app/domain/candidate_resolution.py"),
+    Path("app/domain/enums.py"),
+    Path("app/domain/readiness.py"),
+    Path("app/domain/schemas.py"),
+    Path("app/domain/scope.py"),
+    Path("app/domain/validation.py"),
+    Path("app/exports/exporter.py"),
+    Path("app/seed/registry.py"),
+    Path("app/services/foundation.py"),
+    Path("scripts/build_curated_db.py"),
+)
 _RELEASE_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]*$")
 _VERSIONED_RELEASE_FILENAME_RE = re.compile(
     r"^release_[A-Za-z0-9][A-Za-z0-9_.-]*\.json$"
@@ -98,13 +130,130 @@ class ManifestInventory:
     source_codes: tuple[str, ...]
     expected_counts: dict[str, int]
     stable_vehicle_digest: str
+    build_input_digest_sha256: str
 
 
 def _relative(path: Path, root: Path = ROOT) -> str:
     try:
-        return str(path.resolve().relative_to(root.resolve()))
+        return path.resolve().relative_to(root.resolve()).as_posix()
     except ValueError:
-        return str(path)
+        return Path(path).as_posix()
+
+
+def _portable_relative(path: Path | None, root: Path = ROOT) -> str | None:
+    """Report repository paths without leaking disposable absolute paths."""
+
+    if path is None:
+        return None
+    path = Path(path).resolve()
+    try:
+        return path.relative_to(root.resolve()).as_posix()
+    except ValueError:
+        return f"external/{path.name}"
+
+
+def _canonical_json_bytes(value: Any) -> bytes:
+    return json.dumps(
+        value,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+        allow_nan=False,
+    ).encode("utf-8")
+
+
+def _reject_json_constant(value: str) -> Any:
+    raise ValueError(f"non-standard JSON constant is not allowed: {value}")
+
+
+def _load_json_value(path: Path) -> Any:
+    try:
+        return json.loads(
+            path.read_text(encoding="utf-8"),
+            object_pairs_hook=_duplicate_key_guard,
+            parse_constant=_reject_json_constant,
+        )
+    except (OSError, TypeError, ValueError, json.JSONDecodeError) as exc:
+        raise BuildError(f"invalid JSON input {path}: {exc}") from exc
+
+
+def _resolve_fingerprint_input(root: Path, relative_path: Path) -> Path:
+    candidate = (root / relative_path).resolve()
+    if candidate.is_file():
+        return candidate
+    fallback = (ROOT / relative_path).resolve()
+    if fallback.is_file():
+        return fallback
+    raise BuildError(f"build compatibility input was not found: {relative_path.as_posix()}")
+
+
+def _text_input_sha256(path: Path) -> str:
+    normalized = path.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+
+
+def _build_compatibility_payload(root: Path) -> dict[str, Any]:
+    return {
+        "compatibility_version": BUILD_COMPATIBILITY_VERSION,
+        "release_schema_version": RELEASE_SCHEMA_VERSION,
+        "current_release_pointer_schema_version": CURRENT_RELEASE_POINTER_SCHEMA_VERSION,
+        "metadata_schema_version": PROMOTED_DATABASE_METADATA_SCHEMA_VERSION,
+        "inputs": [
+            {
+                "path": relative_path.as_posix(),
+                "sha256": _text_input_sha256(
+                    _resolve_fingerprint_input(root, relative_path)
+                ),
+            }
+            for relative_path in BUILD_COMPATIBILITY_FILES
+        ],
+    }
+
+
+def build_input_fingerprint(
+    inventory: ManifestInventory,
+    *,
+    root: Path = ROOT,
+    compatibility_version: str | None = None,
+) -> str:
+    """Hash the exact accepted-release inputs used by the curated build."""
+
+    root = root.resolve()
+    if inventory.release.path is None:
+        raise BuildError("cannot fingerprint a release without its definition path")
+
+    manifests = [
+        {
+            "path": Path(relative_path).as_posix(),
+            "content": _load_json_value(manifest_path),
+        }
+        for relative_path, manifest_path in zip(
+            inventory.release.manifest_paths,
+            inventory.paths,
+        )
+    ]
+    manifests.sort(key=lambda item: item["path"])
+
+    compatibility = _build_compatibility_payload(root)
+    if compatibility_version is not None:
+        compatibility["compatibility_version"] = compatibility_version
+
+    payload = {
+        "fingerprint_schema_version": BUILD_INPUT_FINGERPRINT_SCHEMA_VERSION,
+        "release_definition": {
+            "path": _portable_relative(inventory.release.path, root),
+            "content": _load_json_value(inventory.release.path),
+        },
+        "manifests": manifests,
+        "parameter_registry": {
+            "path": PARAMETER_REGISTRY_RELATIVE_PATH.as_posix(),
+            "content": _load_json_value(
+                _resolve_fingerprint_input(root, PARAMETER_REGISTRY_RELATIVE_PATH)
+            ),
+        },
+        "build_compatibility": compatibility,
+    }
+    return hashlib.sha256(_canonical_json_bytes(payload)).hexdigest()
 
 
 def _resolved_path(path: Path, root: Path = ROOT) -> Path:
@@ -427,7 +576,7 @@ def collect_inventory(
     stable_vehicle_digest = hashlib.sha256(
         "\n".join(sorted(stable_codes)).encode("utf-8")
     ).hexdigest()
-    return ManifestInventory(
+    inventory = ManifestInventory(
         release=release,
         paths=paths,
         manifests=manifests,
@@ -435,6 +584,11 @@ def collect_inventory(
         source_codes=tuple(sorted(source_signatures)),
         expected_counts=expected_counts,
         stable_vehicle_digest=stable_vehicle_digest,
+        build_input_digest_sha256="",
+    )
+    return replace(
+        inventory,
+        build_input_digest_sha256=build_input_fingerprint(inventory, root=root),
     )
 
 
@@ -967,6 +1121,8 @@ def _export_proof(
     inventory: ManifestInventory,
     csv_path: Path,
     xlsx_path: Path,
+    *,
+    root: Path = ROOT,
 ) -> dict[str, Any]:
     rows = export_rows(session, inventory.stable_vehicle_codes)
     csv_data = csv_bytes(rows)
@@ -1015,8 +1171,8 @@ def _export_proof(
         raise BuildError("export proof failed:\n" + "\n".join(f"- {failure}" for failure in failures))
 
     return {
-        "csv_path": _relative(csv_path),
-        "xlsx_path": _relative(xlsx_path),
+        "csv_path": _portable_relative(csv_path, root),
+        "xlsx_path": _portable_relative(xlsx_path, root),
         "csv_rows": len(csv_rows),
         "vehicles": len({row["stable_vehicle_code"] for row in csv_rows}),
         "csv_bytes": len(csv_data),
@@ -1052,13 +1208,164 @@ def _write_json(path: Path, document: Mapping[str, Any]) -> None:
     )
 
 
+def metadata_path_for(database_path: Path) -> Path:
+    """Return the local metadata sidecar path for one database file."""
+
+    database_path = Path(database_path)
+    return database_path.with_name(database_path.name + ".meta.json")
+
+
+def database_sha256(database_path: Path) -> str:
+    """Hash one database file without opening or mutating it."""
+
+    try:
+        return hashlib.sha256(Path(database_path).read_bytes()).hexdigest()
+    except OSError as exc:
+        raise BuildError(f"could not hash database {database_path}: {exc}") from exc
+
+
+def load_database_metadata(database_path: Path) -> dict[str, Any] | None:
+    """Load the adjacent metadata sidecar, or None when it is absent."""
+
+    metadata_path = metadata_path_for(database_path)
+    if not metadata_path.is_file():
+        return None
+    value = _load_json_value(metadata_path)
+    if not isinstance(value, dict):
+        raise BuildError(f"database metadata root must be an object: {metadata_path}")
+    return value
+
+
+def validate_database_metadata(
+    database_path: Path,
+    *,
+    expected_release_id: str | None = None,
+    expected_release_definition: str | None = None,
+    expected_build_input_digest: str | None = None,
+    expected_stable_vehicle_digest: str | None = None,
+    expected_vehicle_count: int | None = None,
+    require_promoted: bool = False,
+) -> dict[str, Any]:
+    """Validate that a database and its sidecar describe the same build."""
+
+    database_path = Path(database_path).resolve()
+    if not database_path.is_file():
+        raise BuildError(f"database file was not found: {database_path}")
+    metadata = load_database_metadata(database_path)
+    if metadata is None:
+        raise BuildError(f"database metadata sidecar was not found: {metadata_path_for(database_path)}")
+
+    required = {
+        "metadata_schema_version",
+        "release_id",
+        "release_definition",
+        "build_input_digest_sha256",
+        "stable_vehicle_digest_sha256",
+        "vehicle_count",
+        "database_sha256",
+        "promoted_database_sha256",
+        "promotion_result",
+        "build_utc",
+        "promotion_utc",
+    }
+    missing = sorted(required - set(metadata))
+    if missing:
+        raise BuildError("database metadata is missing fields: " + ", ".join(missing))
+    if metadata["metadata_schema_version"] != PROMOTED_DATABASE_METADATA_SCHEMA_VERSION:
+        raise BuildError(
+            "unsupported database metadata schema version "
+            f"{metadata['metadata_schema_version']!r}; expected "
+            f"{PROMOTED_DATABASE_METADATA_SCHEMA_VERSION!r}"
+        )
+    if require_promoted and metadata["promotion_result"] != "PROMOTED":
+        raise BuildError(
+            f"database metadata promotion result is {metadata['promotion_result']!r}, expected 'PROMOTED'"
+        )
+    if metadata["promotion_result"] not in {"PROMOTED", "NOT_REQUESTED"}:
+        raise BuildError(
+            f"invalid database metadata promotion result: {metadata['promotion_result']!r}"
+        )
+
+    actual_sha256 = database_sha256(database_path)
+    if metadata["database_sha256"] != actual_sha256:
+        raise BuildError(
+            "database SHA-256 mismatch against metadata: "
+            f"expected {metadata['database_sha256']}, found {actual_sha256}"
+        )
+    promoted_sha256 = metadata["promoted_database_sha256"]
+    if promoted_sha256 != actual_sha256:
+        raise BuildError(
+            "promoted database SHA-256 mismatch against metadata: "
+            f"expected {promoted_sha256}, found {actual_sha256}"
+        )
+
+    expected_values = {
+        "release_id": expected_release_id,
+        "release_definition": expected_release_definition,
+        "build_input_digest_sha256": expected_build_input_digest,
+        "stable_vehicle_digest_sha256": expected_stable_vehicle_digest,
+        "vehicle_count": expected_vehicle_count,
+    }
+    for field_name, expected in expected_values.items():
+        if expected is not None and metadata[field_name] != expected:
+            raise BuildError(
+                f"database metadata {field_name} mismatch: "
+                f"expected {expected!r}, found {metadata[field_name]!r}"
+            )
+    return metadata
+
+
+def validate_promoted_database_metadata(
+    database_path: Path,
+    **expected: Any,
+) -> dict[str, Any]:
+    """Validate metadata required for an accepted promoted database."""
+
+    return validate_database_metadata(database_path, require_promoted=True, **expected)
+
+
+def _metadata_document(
+    inventory: ManifestInventory,
+    *,
+    root: Path,
+    database_hash: str,
+    promotion_result: str,
+    timestamp: str | None = None,
+) -> dict[str, Any]:
+    timestamp = timestamp or datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    return {
+        "metadata_schema_version": PROMOTED_DATABASE_METADATA_SCHEMA_VERSION,
+        "release_id": inventory.release.release_id,
+        "release_definition": _portable_relative(inventory.release.path, root),
+        "build_input_digest_sha256": inventory.build_input_digest_sha256,
+        "stable_vehicle_digest_sha256": inventory.stable_vehicle_digest,
+        "vehicle_count": len(inventory.manifests),
+        "database_sha256": database_hash,
+        "promoted_database_sha256": database_hash,
+        "promotion_result": promotion_result,
+        "build_utc": timestamp,
+        "promotion_utc": timestamp,
+    }
+
+
+def _promotion_temp_path(path: Path, label: str) -> Path:
+    return path.with_name(f".{path.name}.{label}.{os.getpid()}.{uuid.uuid4().hex}.tmp")
+
+
+def _remove_file(path: Path) -> None:
+    try:
+        path.unlink()
+    except FileNotFoundError:
+        pass
+
+
 def _accepted_database_snapshot(path: Path, root: Path) -> dict[str, Any] | None:
     """Capture the accepted file before a replacement is attempted."""
 
     if not path.is_file():
         return None
     snapshot: dict[str, Any] = {
-        "path": _relative(path, root),
+        "path": _portable_relative(path, root),
         "bytes": path.stat().st_size,
         "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
         "vehicles": None,
@@ -1081,8 +1388,12 @@ def _qualification_record(
     inventory: ManifestInventory,
     root: Path,
     staging_path: Path,
+    staging_database_sha256: str,
+    staging_metadata_path: Path,
     promoted_path: Path | None,
+    promoted_metadata_path: Path | None,
     previous_path: Path | None,
+    previous_metadata_path: Path | None,
     previous_accepted: dict[str, Any] | None,
     registry_only: dict[str, int],
     qa: dict[str, Any],
@@ -1091,13 +1402,14 @@ def _qualification_record(
     return {
         "qualification_schema_version": "1.0",
         "release_id": inventory.release.release_id,
-        "release_definition": _relative(inventory.release.path or Path(""), root),
+        "release_definition": _portable_relative(inventory.release.path, root),
         "release_date": inventory.release.release_date,
         "release_status": inventory.release.release_status,
         "repository_sha": _git_revision(root),
         "manifest_count": len(inventory.manifests),
         "stable_vehicle_codes": list(inventory.stable_vehicle_codes),
         "stable_vehicle_digest_sha256": inventory.stable_vehicle_digest,
+        "build_input_digest_sha256": inventory.build_input_digest_sha256,
         "expected_manifest_counts": inventory.expected_counts,
         "database_counts": qa["database_counts"],
         "registry_only": registry_only,
@@ -1105,12 +1417,16 @@ def _qualification_record(
         "representative_proofs": qa["representative_proofs"],
         "source_reuse": qa["source_reuse"],
         "exports": exports,
-        "staging_database": _relative(staging_path, root),
+        "staging_database": _portable_relative(staging_path, root),
+        "staging_database_sha256": staging_database_sha256,
+        "staging_metadata": _portable_relative(staging_metadata_path, root),
         "promotion": {
             "requested": promoted_path is not None,
             "result": "PROMOTED" if promoted_path is not None else "NOT_REQUESTED",
-            "database": _relative(promoted_path, root) if promoted_path is not None else None,
-            "previous_database": _relative(previous_path, root) if previous_path is not None else None,
+            "database": _portable_relative(promoted_path, root),
+            "metadata": _portable_relative(promoted_metadata_path, root),
+            "previous_database": _portable_relative(previous_path, root),
+            "previous_metadata": _portable_relative(previous_metadata_path, root),
         },
         "previous_accepted_database": previous_accepted,
         "qa_result": "PASS",
@@ -1125,20 +1441,115 @@ def _sidecars(path: Path) -> tuple[Path, Path]:
     )
 
 
-def _promote_staging(staging_path: Path, final_path: Path) -> Path | None:
-    """Atomically replace the accepted DB after all staging gates pass."""
+def _promote_staging(
+    staging_path: Path,
+    final_path: Path,
+    *,
+    metadata_document: Mapping[str, Any],
+) -> Path | None:
+    """Replace the accepted DB and sidecar with rollback-safe file operations."""
 
+    staging_path = Path(staging_path).resolve()
+    final_path = Path(final_path).resolve()
     final_path.parent.mkdir(parents=True, exist_ok=True)
+    staging_metadata_path = metadata_path_for(staging_path)
+    final_metadata_path = metadata_path_for(final_path)
     previous_path = final_path.with_name(final_path.name + ".previous")
-    if final_path.exists():
-        # Keep one recoverable copy of the previously accepted DB.  Copying is
-        # completed before os.replace, so a backup or replacement failure
-        # cannot leave the accepted path partially written.
-        shutil.copy2(final_path, previous_path)
-    # os.replace is the Windows-compatible same-volume replacement primitive.
-    # It is intentionally the last database operation in the build.
-    os.replace(staging_path, final_path)
-    return previous_path if previous_path.exists() else None
+    previous_metadata_path = metadata_path_for(previous_path)
+
+    if not staging_path.is_file():
+        raise BuildError(f"staging database was not found: {staging_path}")
+    staging_hash = database_sha256(staging_path)
+    if metadata_document.get("database_sha256") != staging_hash:
+        raise BuildError("staging database SHA-256 does not match promotion metadata")
+    if metadata_document.get("promoted_database_sha256") not in {None, staging_hash}:
+        raise BuildError("staging promoted database SHA-256 does not match promotion metadata")
+
+    live_paths = {
+        "staging": staging_path,
+        "staging_metadata": staging_metadata_path,
+        "final": final_path,
+        "final_metadata": final_metadata_path,
+        "previous": previous_path,
+        "previous_metadata": previous_metadata_path,
+    }
+    original_files = {name: path.is_file() for name, path in live_paths.items()}
+    backups: dict[str, Path] = {}
+    pending: list[Path] = []
+    try:
+        # Back up every file that may be touched before the first live replace.
+        # The backups stay beside the targets so copy/replace uses one volume.
+        for name, path in live_paths.items():
+            if original_files[name]:
+                backup = _promotion_temp_path(path, f"backup-{name}")
+                shutil.copy2(path, backup)
+                backups[name] = backup
+
+        pending_previous = _promotion_temp_path(previous_path, "pending-previous")
+        pending.append(pending_previous)
+        if final_path.is_file():
+            shutil.copy2(final_path, pending_previous)
+
+            old_metadata: dict[str, Any] | None = None
+            try:
+                old_metadata = load_database_metadata(final_path)
+            except BuildError:
+                # An invalid old marker must not be copied beside a valid old
+                # database.  The accepted pair is still restorable from backup.
+                old_metadata = None
+            old_hash = database_sha256(final_path)
+            pending_previous_metadata = _promotion_temp_path(
+                previous_metadata_path,
+                "pending-previous-metadata",
+            )
+            pending.append(pending_previous_metadata)
+            if (
+                old_metadata is not None
+                and old_metadata.get("promotion_result") == "PROMOTED"
+                and old_metadata.get("database_sha256") == old_hash
+                and old_metadata.get("promoted_database_sha256") == old_hash
+            ):
+                shutil.copy2(metadata_path_for(final_path), pending_previous_metadata)
+
+        pending_metadata = _promotion_temp_path(final_metadata_path, "pending-metadata")
+        pending.append(pending_metadata)
+        _write_json(pending_metadata, metadata_document)
+
+        if final_path.is_file():
+            os.replace(pending_previous, previous_path)
+            if pending_previous_metadata in pending and pending_previous_metadata.is_file():
+                os.replace(pending_previous_metadata, previous_metadata_path)
+            else:
+                _remove_file(previous_metadata_path)
+        os.replace(staging_path, final_path)
+        os.replace(pending_metadata, final_metadata_path)
+        _remove_file(staging_metadata_path)
+    except (BuildError, OSError, ValueError) as exc:
+        rollback_errors: list[str] = []
+        # Restore the complete pre-promotion file set, including the staging
+        # input.  This is deliberately conservative: a failed pair update
+        # must leave the accepted DB and marker as they were.
+        for name, path in live_paths.items():
+            backup = backups.get(name)
+            try:
+                if not original_files[name]:
+                    _remove_file(path)
+                elif backup is not None:
+                    _remove_file(path)
+                    shutil.copy2(backup, path)
+                else:
+                    rollback_errors.append(f"{path}: original backup was not created")
+            except (OSError, shutil.Error) as rollback_error:
+                rollback_errors.append(f"{path}: {rollback_error}")
+        detail = f"database promotion failed: {exc}"
+        if rollback_errors:
+            detail += "; rollback also failed: " + "; ".join(rollback_errors)
+        raise BuildError(detail) from exc
+    finally:
+        for path in [*pending, *backups.values()]:
+            _remove_file(path)
+
+    return previous_path if final_path.is_file() and previous_path.is_file() else None
 
 
 def build(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
@@ -1163,8 +1574,10 @@ def build(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
     qualification_path = (
         _resolved_path(Path(qualification_argument), root).resolve()
         if qualification_argument
-        else root / "data" / "curation" / "releases" / f"{inventory.release.release_id}.qualification.json"
+        else root / "artifacts" / "local" / f"{inventory.release.release_id}.qualification.json"
     )
+    staging_metadata_path = metadata_path_for(staging_path)
+    final_metadata_path = metadata_path_for(final_path)
 
     if staging_path == final_path:
         raise BuildError("staging and final database paths must differ")
@@ -1172,6 +1585,10 @@ def build(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
     if staging_path.exists():
         raise BuildError(
             f"staging database already exists: {staging_path}; remove the failed/disposable staging file before retrying"
+        )
+    if staging_metadata_path.exists():
+        raise BuildError(
+            f"staging metadata already exists: {staging_metadata_path}; remove the failed/disposable metadata before retrying"
         )
     if not args.no_promote and final_path.exists() and not args.replace_final:
         raise BuildError(
@@ -1199,7 +1616,7 @@ def build(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
     try:
         with factory() as session:
             qa = _qa_database(session, inventory)
-            exports = _export_proof(session, inventory, csv_path, xlsx_path)
+            exports = _export_proof(session, inventory, csv_path, xlsx_path, root=root)
     finally:
         engine.dispose()
 
@@ -1207,18 +1624,42 @@ def build(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
         if sidecar.exists():
             raise BuildError(f"refusing to promote while SQLite sidecar exists: {sidecar}")
 
+    staging_database_hash = database_sha256(staging_path)
+    build_timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    staging_metadata = _metadata_document(
+        inventory,
+        root=root,
+        database_hash=staging_database_hash,
+        promotion_result="PROMOTED" if not args.no_promote else "NOT_REQUESTED",
+        timestamp=build_timestamp,
+    )
+    _write_json(staging_metadata_path, staging_metadata)
+
     promoted_to: Path | None = None
     previous_database: Path | None = None
     if not args.no_promote:
-        previous_database = _promote_staging(staging_path, final_path)
+        previous_database = _promote_staging(
+            staging_path,
+            final_path,
+            metadata_document=staging_metadata,
+        )
         promoted_to = final_path
+    previous_metadata = (
+        metadata_path_for(previous_database)
+        if previous_database is not None and metadata_path_for(previous_database).is_file()
+        else None
+    )
 
     record = _qualification_record(
         inventory=inventory,
         root=root,
         staging_path=staging_path,
+        staging_database_sha256=staging_database_hash,
+        staging_metadata_path=staging_metadata_path,
         promoted_path=promoted_to,
+        promoted_metadata_path=final_metadata_path if promoted_to is not None else None,
         previous_path=previous_database,
+        previous_metadata_path=previous_metadata,
         previous_accepted=previous_accepted,
         registry_only=registry_only,
         qa=qa,
@@ -1237,16 +1678,24 @@ def build(args: argparse.Namespace, *, root: Path = ROOT) -> dict[str, Any]:
     return {
         "status": "PASS",
         "release_id": inventory.release.release_id,
-        "release_definition": _relative(inventory.release.path or Path(""), root),
+        "release_definition": _portable_relative(inventory.release.path, root),
         "manifest_count": len(inventory.manifests),
         "stable_vehicle_codes": list(inventory.stable_vehicle_codes),
         "stable_vehicle_digest_sha256": inventory.stable_vehicle_digest,
+        "build_input_digest_sha256": inventory.build_input_digest_sha256,
         "expected_manifest_counts": inventory.expected_counts,
-        "staging_database": _relative(staging_path, root),
-        "promoted_database": _relative(promoted_to, root) if promoted_to is not None else None,
-        "previous_database": _relative(previous_database, root) if previous_database is not None else None,
+        "staging_database": _portable_relative(staging_path, root),
+        "staging_database_sha256": staging_database_hash,
+        "staging_metadata": _portable_relative(staging_metadata_path, root),
+        "promoted_database": _portable_relative(promoted_to, root),
+        "promoted_metadata": _portable_relative(
+            final_metadata_path if promoted_to is not None else None,
+            root,
+        ),
+        "previous_database": _portable_relative(previous_database, root),
+        "previous_metadata": _portable_relative(previous_metadata, root),
         "registry_only": registry_only,
-        "qualification_record": _relative(qualification_path, root),
+        "qualification_record": _portable_relative(qualification_path, root),
         "qualification_write_error": qualification_error,
         **qa,
         "exports": exports,
@@ -1282,7 +1731,7 @@ def _parser() -> argparse.ArgumentParser:
         "--qualification",
         type=Path,
         default=None,
-        help="qualification JSON output path (default: data/curation/releases/<release-id>.qualification.json)",
+        help="qualification JSON output path (default: artifacts/local/<release-id>.qualification.json)",
     )
     parser.add_argument(
         "--no-promote",

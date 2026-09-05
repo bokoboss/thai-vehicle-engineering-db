@@ -12,12 +12,15 @@ vehicle_engineering.db-*
 vehicle_engineering_curated.db
 vehicle_engineering_curated.db-*
 vehicle_engineering_curated.db.previous
+vehicle_engineering_curated.db*.meta.json
 vehicle_engineering_curated.staging.db
 vehicle_engineering_curated.staging.db-*
+vehicle_engineering_curated.auto_refresh.*
 vehicle_engineering_curated.wave1.csv
 vehicle_engineering_curated.wave1.xlsx
 vehicle_engineering_curated.*.csv
 vehicle_engineering_curated.*.xlsx
+artifacts/local/
 *.sqlite
 *.sqlite3
 .env

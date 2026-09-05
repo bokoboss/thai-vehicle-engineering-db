@@ -1,0 +1,152 @@
+name: Data release qualification
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/curation/manifests/**"
+      - "data/curation/releases/**"
+      - "data/reference/parameter_registry_v1.json"
+      - "alembic/**"
+      - "alembic.ini"
+      - "app/config.py"
+      - "app/curate/**"
+      - "app/db/**"
+      - "app/domain/candidate_resolution.py"
+      - "app/domain/enums.py"
+      - "app/domain/readiness.py"
+      - "app/domain/schemas.py"
+      - "app/domain/scope.py"
+      - "app/domain/validation.py"
+      - "app/exports/**"
+      - "app/seed/registry.py"
+      - "app/services/foundation.py"
+      - "scripts/build_curated_db.py"
+      - "pyproject.toml"
+      - ".github/workflows/data-release.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  qualification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact pull-request head
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install project
+        run: python -m pip install --upgrade pip && python -m pip install -e ".[dev]"
+
+      - name: Resolve explicit current release
+        run: |
+          python -c 'import json; from scripts.build_curated_db import collect_inventory; i = collect_inventory(); print(json.dumps({"release_id": i.release.release_id, "manifest_count": len(i.manifests), "build_input_digest_sha256": i.build_input_digest_sha256, "stable_vehicle_digest_sha256": i.stable_vehicle_digest}, sort_keys=True))'
+
+      - name: Qualify disposable current release
+        env:
+          QUALIFICATION_DIR: ${{ runner.temp }}/data-release-qualification
+        run: |
+          mkdir -p "$QUALIFICATION_DIR"
+          python scripts/build_curated_db.py \
+            --release data/curation/releases/current_release.json \
+            --staging "$QUALIFICATION_DIR/staging.db" \
+            --final "$QUALIFICATION_DIR/accepted.db" \
+            --csv "$QUALIFICATION_DIR/curated.csv" \
+            --xlsx "$QUALIFICATION_DIR/curated.xlsx" \
+            --qualification "$QUALIFICATION_DIR/qualification.json" \
+            --no-promote
+
+      - name: Verify staging DB and metadata contract
+        env:
+          QUALIFICATION_DIR: ${{ runner.temp }}/data-release-qualification
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          from scripts import build_curated_db as builder
+
+          output_dir = Path(os.environ["QUALIFICATION_DIR"])
+          qualification = json.loads((output_dir / "qualification.json").read_text(encoding="utf-8"))
+          inventory = builder.collect_inventory()
+          staging = output_dir / "staging.db"
+          metadata = builder.validate_database_metadata(
+              staging,
+              expected_release_id=inventory.release.release_id,
+              expected_release_definition=inventory.release.path.relative_to(Path.cwd()).as_posix(),
+              expected_build_input_digest=inventory.build_input_digest_sha256,
+              expected_stable_vehicle_digest=inventory.stable_vehicle_digest,
+              expected_vehicle_count=len(inventory.manifests),
+          )
+          if qualification["qa_result"] != "PASS":
+              raise SystemExit("qualification did not pass")
+          if qualification["promotion"]["result"] != "NOT_REQUESTED":
+              raise SystemExit("qualification unexpectedly promoted a database")
+          if metadata["promotion_result"] != "NOT_REQUESTED":
+              raise SystemExit("staging metadata is not marked NOT_REQUESTED")
+          if metadata["database_sha256"] != builder.database_sha256(staging):
+              raise SystemExit("staging metadata database hash mismatch")
+          if qualification["build_input_digest_sha256"] != metadata["build_input_digest_sha256"]:
+              raise SystemExit("qualification and metadata fingerprint mismatch")
+          if (output_dir / "accepted.db").exists():
+              raise SystemExit("disposable qualification created an accepted DB")
+          print(json.dumps({
+              "release_id": metadata["release_id"],
+              "manifest_count": qualification["manifest_count"],
+              "build_input_digest_sha256": metadata["build_input_digest_sha256"],
+              "stable_vehicle_digest_sha256": metadata["stable_vehicle_digest_sha256"],
+              "qualification": "PASS",
+          }, sort_keys=True))
+          PY
+
+      - name: Publish qualification summary
+        if: always()
+        env:
+          QUALIFICATION_DIR: ${{ runner.temp }}/data-release-qualification
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          qualification_path = Path(os.environ["QUALIFICATION_DIR"]) / "qualification.json"
+          lines = ["## Data release qualification"]
+          if qualification_path.is_file():
+              record = json.loads(qualification_path.read_text(encoding="utf-8"))
+              result = "PASS" if os.environ["JOB_STATUS"] == "success" and record.get("qa_result") == "PASS" else "FAIL"
+              lines.extend([
+                  f"- qualification: `{result}`",
+                  f"- release_id: `{record.get('release_id', 'UNKNOWN')}`",
+                  f"- manifest/vehicle count: `{record.get('manifest_count', 'UNKNOWN')}`",
+                  f"- build-input digest: `{record.get('build_input_digest_sha256', 'UNKNOWN')}`",
+                  f"- stable-vehicle digest: `{record.get('stable_vehicle_digest_sha256', 'UNKNOWN')}`",
+                  f"- database counts: `{json.dumps(record.get('database_counts', {}), sort_keys=True)}`",
+                  f"- readiness: `{json.dumps(record.get('readiness_status', {}), sort_keys=True)}`",
+                  "- artifact names: `qualification.json`, `staging.db.meta.json`, `curated.csv`, `curated.xlsx`",
+              ])
+          else:
+              lines.append("- qualification: `FAIL` (qualification output was not created)")
+          Path(os.environ["GITHUB_STEP_SUMMARY"]).write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+
+      - name: Upload qualification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-release-qualification
+          path: |
+            ${{ runner.temp }}/data-release-qualification/qualification.json
+            ${{ runner.temp }}/data-release-qualification/staging.db.meta.json
+            ${{ runner.temp }}/data-release-qualification/curated.csv
+            ${{ runner.temp }}/data-release-qualification/curated.xlsx
+          if-no-files-found: warn

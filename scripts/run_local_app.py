@@ -1,7 +1,7 @@
 """Run the accepted curated Vehicle Engineering DB application locally.
 
-This is the normal-use runner for the Windows launcher.  It intentionally does
-not create, migrate, seed, rebuild, or replace a database.
+The runner refreshes only through the generic controlled builder when the
+explicit current release no longer matches the promoted local DB marker.
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ import urllib.request
 import webbrowser
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable, Iterable
+from typing import Any, Callable, Iterable
 
 
 CURATED_DATABASE_NAME = "vehicle_engineering_curated.db"
@@ -41,6 +41,16 @@ class HttpResult:
     status: int
     headers: dict[str, str]
     body: bytes
+
+
+@dataclass(frozen=True)
+class CurrentReleaseState:
+    release_id: str
+    release_definition: str
+    build_input_digest_sha256: str
+    stable_vehicle_digest_sha256: str
+    vehicle_count: int
+    stable_vehicle_codes: frozenset[str]
 
 
 class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):
@@ -64,8 +74,44 @@ def curated_database_path(repository_root: Path) -> Path:
     return Path(repository_root).resolve() / CURATED_DATABASE_NAME
 
 
+def _load_builder(repository_root: Path | None = None):
+    repository_root = Path(repository_root or resolve_repository_root()).resolve()
+    repository_root_text = str(repository_root)
+    if repository_root_text not in sys.path:
+        sys.path.insert(0, repository_root_text)
+    from scripts import build_curated_db
+
+    return build_curated_db
+
+
+def current_release_state(repository_root: Path) -> CurrentReleaseState:
+    """Resolve the explicit current release and its deterministic build marker."""
+
+    repository_root = Path(repository_root).resolve()
+    builder = _load_builder(repository_root)
+    try:
+        inventory = builder.collect_inventory(root=repository_root)
+    except builder.BuildError as exc:
+        raise LauncherError(f"Current accepted release could not be resolved: {exc}") from exc
+    release_path = inventory.release.path
+    if release_path is None:
+        raise LauncherError("Current accepted release has no release definition path")
+    try:
+        release_definition = release_path.relative_to(repository_root).as_posix()
+    except ValueError as exc:
+        raise LauncherError("Current accepted release definition is outside the repository") from exc
+    return CurrentReleaseState(
+        release_id=inventory.release.release_id,
+        release_definition=release_definition,
+        build_input_digest_sha256=inventory.build_input_digest_sha256,
+        stable_vehicle_digest_sha256=inventory.stable_vehicle_digest,
+        vehicle_count=len(inventory.manifests),
+        stable_vehicle_codes=frozenset(inventory.stable_vehicle_codes),
+    )
+
+
 def ensure_curated_database(database_path: Path) -> Path:
-    """Require the accepted DB without creating or selecting another DB."""
+    """Require an accepted-path DB without selecting another database."""
 
     database_path = Path(database_path).resolve()
     if database_path.is_file():
@@ -80,8 +126,7 @@ def ensure_curated_database(database_path: Path) -> Path:
         f"{detail}\n\n"
         "Run the one-time controlled build from the repository root, then launch again:\n"
         "  python scripts/build_curated_db.py\n\n"
-        "This launcher never creates, seeds, migrates, rebuilds, or replaces a database, "
-        "and it will not fall back to vehicle_engineering.db."
+        "The launcher will not fall back to vehicle_engineering.db."
     )
 
 
@@ -122,22 +167,116 @@ def validate_curated_database(database_path: Path) -> frozenset[str]:
     return codes
 
 
-def prepare_runtime(repository_root: Path) -> Path:
+def database_matches_current_release(
+    database_path: Path,
+    release_state: CurrentReleaseState,
+    *,
+    require_metadata: bool = True,
+) -> tuple[bool, str]:
+    """Return whether one local DB is readable and matches the current release."""
+
+    database_path = Path(database_path).resolve()
+    try:
+        codes = validate_curated_database(database_path)
+    except LauncherError as exc:
+        return False, str(exc)
+    if codes != release_state.stable_vehicle_codes:
+        return (
+            False,
+            "stable vehicle code set does not match the current accepted release",
+        )
+    if len(codes) != release_state.vehicle_count:
+        return False, "vehicle count does not match the current accepted release"
+    if require_metadata:
+        builder = _load_builder(database_path.parent)
+        try:
+            builder.validate_promoted_database_metadata(
+                database_path,
+                expected_release_id=release_state.release_id,
+                expected_release_definition=release_state.release_definition,
+                expected_build_input_digest=release_state.build_input_digest_sha256,
+                expected_stable_vehicle_digest=release_state.stable_vehicle_digest_sha256,
+                expected_vehicle_count=release_state.vehicle_count,
+            )
+        except builder.BuildError as exc:
+            return False, str(exc)
+    return True, ""
+
+
+def usable_database_path(repository_root: Path) -> Path | None:
+    """Find a readable non-fixture DB in accepted or previous local slots."""
+
+    builder = _load_builder(repository_root)
+    final_path = curated_database_path(repository_root)
+    candidates = [final_path, final_path.with_name(final_path.name + ".previous")]
+    for candidate in candidates:
+        try:
+            validate_curated_database(candidate)
+        except LauncherError:
+            continue
+        marker_path = builder.metadata_path_for(candidate)
+        if marker_path.is_file():
+            try:
+                builder.validate_promoted_database_metadata(candidate)
+            except builder.BuildError:
+                continue
+        return candidate
+    return None
+
+
+def refresh_curated_database(repository_root: Path) -> dict[str, Any]:
+    """Run one disposable controlled build for the repository's current release."""
+
+    repository_root = Path(repository_root).resolve()
+    token = f"{os.getpid()}.{time.time_ns()}.{id(repository_root)}"
+    local_artifacts = repository_root / "artifacts" / "local"
+    builder = _load_builder(repository_root)
+    args = argparse.Namespace(
+        release=None,
+        staging=repository_root / f"vehicle_engineering_curated.auto_refresh.{token}.staging.db",
+        final=curated_database_path(repository_root),
+        csv=local_artifacts / f"auto-refresh-{token}.csv",
+        xlsx=local_artifacts / f"auto-refresh-{token}.xlsx",
+        qualification=local_artifacts / f"auto-refresh-{token}.qualification.json",
+        no_promote=False,
+        replace_final=True,
+    )
+    return builder.build(args, root=repository_root)
+
+
+def prepare_runtime(repository_root: Path, database_path: Path | None = None) -> Path:
     """Set the process CWD/import path and curated URL before app import."""
 
     repository_root = Path(repository_root).resolve()
     os.chdir(repository_root)
-    os.environ["DATABASE_URL"] = CURATED_DATABASE_URL
+    selected_database = (
+        Path(database_path).resolve()
+        if database_path is not None
+        else curated_database_path(repository_root)
+    )
+    if selected_database == curated_database_path(repository_root):
+        os.environ["DATABASE_URL"] = CURATED_DATABASE_URL
+    else:
+        os.environ["DATABASE_URL"] = f"sqlite:///{selected_database.as_posix()}"
     repository_root_text = str(repository_root)
     if repository_root_text not in sys.path:
         sys.path.insert(0, repository_root_text)
     return repository_root
 
 
-def load_application(repository_root: Path):
+def load_application(repository_root: Path, database_path: Path | None = None):
     """Import the FastAPI app only after the curated runtime is prepared."""
 
-    prepare_runtime(repository_root)
+    prepare_runtime(repository_root, database_path)
+    if database_path is not None:
+        # Release inspection imports the builder first, which imports the
+        # application's process-global session. Rebind it before a fallback
+        # path is imported so the app cannot silently reopen the stale final DB.
+        from app.db import session as database_session
+
+        database_session.engine.dispose()
+        database_session.engine = database_session.make_engine(os.environ["DATABASE_URL"])
+        database_session.SessionLocal.configure(bind=database_session.engine)
     from app.main import app
 
     return app
@@ -393,6 +532,11 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
         help="seconds to wait before giving up on automatic browser opening",
     )
     parser.add_argument("--no-browser", action="store_true", help="do not open the default browser")
+    parser.add_argument(
+        "--no-auto-refresh",
+        action="store_true",
+        help="do not rebuild a stale/missing local DB; use an existing readable DB only",
+    )
     return parser.parse_args(argv)
 
 
@@ -403,15 +547,24 @@ def run_local_app(
     port: int = DEFAULT_PORT,
     open_browser: bool = True,
     ready_timeout: float = DEFAULT_READY_TIMEOUT_SECONDS,
+    no_auto_refresh: bool = False,
 ) -> int:
     root = Path(repository_root).resolve() if repository_root is not None else resolve_repository_root()
-    database_path = ensure_curated_database(curated_database_path(root))
-    expected_codes = validate_curated_database(database_path)
-    prepare_runtime(root)
+    final_path = curated_database_path(root)
+    # The builder imports the application's DB session module.  Prepare the
+    # final URL before that import so its process-global engine cannot bind to
+    # the historical fixture database.
+    prepare_runtime(root, final_path)
+    release_state = current_release_state(root)
 
     browser_url = local_url(host, port, START_PATH)
     if not port_is_available(host, port):
-        if is_curated_app_running(browser_url, expected_codes):
+        known_code_sets = [release_state.stable_vehicle_codes]
+        for candidate in (final_path, final_path.with_name(final_path.name + ".previous")):
+            candidate_codes = read_curated_vehicle_codes(candidate)
+            if candidate_codes and candidate_codes not in known_code_sets:
+                known_code_sets.append(candidate_codes)
+        if any(is_curated_app_running(browser_url, codes) for codes in known_code_sets):
             print(f"The curated Vehicle Engineering DB is already running at {browser_url}")
             if open_browser:
                 open_browser_best_effort(browser_url)
@@ -422,7 +575,56 @@ def run_local_app(
             "or run this script with a different --port."
         )
 
-    application = load_application(root)
+    current, current_reason = database_matches_current_release(final_path, release_state)
+    selected_database = final_path
+    if current:
+        print(f"Current accepted release {release_state.release_id} is already promoted; starting it.")
+    elif no_auto_refresh:
+        selected_database = usable_database_path(root)
+        if selected_database is None:
+            raise LauncherError(
+                "Automatic refresh is disabled and no usable accepted local database is available. "
+                "Run the controlled builder or remove --no-auto-refresh."
+            )
+        print(
+            "WARNING: automatic refresh is disabled; launching the existing local database "
+            f"without matching the current accepted release ({current_reason}).",
+            file=sys.stderr,
+        )
+    else:
+        print(
+            "The local accepted database is missing or stale; running one controlled refresh "
+            f"for {release_state.release_id}."
+        )
+        try:
+            refresh_curated_database(root)
+            refreshed, refresh_reason = database_matches_current_release(final_path, release_state)
+            if not refreshed:
+                raise LauncherError(f"refresh completed without a current accepted DB: {refresh_reason}")
+            print(f"Refreshed accepted release {release_state.release_id}; starting it.")
+        except Exception as exc:
+            selected_database = usable_database_path(root)
+            if selected_database is None:
+                raise LauncherError(
+                    "Automatic refresh failed and no usable accepted local database is available. "
+                    f"Fix the release/build error and retry: {exc}"
+                ) from exc
+            print(
+                "WARNING: automatic refresh failed. Opening the previous accepted local database "
+                f"({selected_database.name}); it does not match the repository's current accepted "
+                "release. The prior accepted database was left in place. "
+                f"Refresh error: {exc}",
+                file=sys.stderr,
+            )
+
+    validate_curated_database(selected_database)
+    prepare_runtime(root, selected_database)
+    if selected_database == final_path:
+        # Keep the one-argument call compatible with existing integrations that
+        # replace the application loader in tests or local wrappers.
+        application = load_application(root)
+    else:
+        application = load_application(root, selected_database)
     return serve_application(
         application,
         host=host,
@@ -442,6 +644,7 @@ def main(argv: Iterable[str] | None = None) -> int:
             port=args.port,
             open_browser=not args.no_browser,
             ready_timeout=args.ready_timeout,
+            no_auto_refresh=args.no_auto_refresh,
         )
     except ModuleNotFoundError as error:
         print(dependency_error_message(error), file=sys.stderr)
